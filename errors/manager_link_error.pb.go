@@ -55,7 +55,7 @@ const (
 	ManagerLinkErrorEnum_ALREADY_MANAGED_BY_THIS_MANAGER ManagerLinkErrorEnum_ManagerLinkError = 6
 	// Client is already managed in hierarchy.
 	ManagerLinkErrorEnum_ALREADY_MANAGED_IN_HIERARCHY ManagerLinkErrorEnum_ManagerLinkError = 7
-	// Manger and sub-manager to be linked have duplicate client.
+	// Manager and sub-manager to be linked have duplicate client.
 	ManagerLinkErrorEnum_DUPLICATE_CHILD_FOUND ManagerLinkErrorEnum_ManagerLinkError = 8
 	// Client has no active user that can access the client account.
 	ManagerLinkErrorEnum_CLIENT_HAS_NO_ADMIN_USER ManagerLinkErrorEnum_ManagerLinkError = 9

@@ -275,14 +275,14 @@ type ConversionValueRuleSetOperation_Create struct {
 }
 
 type ConversionValueRuleSetOperation_Update struct {
-	// Update operation: The conversion action is expected to have a valid
-	// resource name.
+	// Update operation: The conversion value rule set is expected to have a
+	// valid resource name.
 	Update *resources.ConversionValueRuleSet `protobuf:"bytes,2,opt,name=update,proto3,oneof"`
 }
 
 type ConversionValueRuleSetOperation_Remove struct {
-	// Remove operation: A resource name for the removed conversion action is
-	// expected, in this format:
+	// Remove operation: A resource name for the removed conversion value rule
+	// set is expected, in this format:
 	//
 	// `customers/{customer_id}/conversionValueRuleSets/{conversion_value_rule_set_id}`
 	Remove string `protobuf:"bytes,3,opt,name=remove,proto3,oneof"`

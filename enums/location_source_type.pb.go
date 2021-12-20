@@ -43,8 +43,7 @@ const (
 	LocationSourceTypeEnum_UNSPECIFIED LocationSourceTypeEnum_LocationSourceType = 0
 	// Used for return value only. Represents value unknown in this version.
 	LocationSourceTypeEnum_UNKNOWN LocationSourceTypeEnum_LocationSourceType = 1
-	// Locations associated with the customer's linked Google My Business
-	// account.
+	// Locations associated with the customer's linked Business Profile.
 	LocationSourceTypeEnum_GOOGLE_MY_BUSINESS LocationSourceTypeEnum_LocationSourceType = 2
 	// Affiliate (chain) store locations. For example, Best Buy store locations.
 	LocationSourceTypeEnum_AFFILIATE LocationSourceTypeEnum_LocationSourceType = 3

@@ -360,8 +360,8 @@ type ExtensionFeedItem_PromotionFeedItem struct {
 }
 
 type ExtensionFeedItem_LocationFeedItem struct {
-	// Output only. Location extension. Locations are synced from a GMB account into a feed.
-	// This field is read-only.
+	// Output only. Location extension. Locations are synced from a Business Profile into a
+	// feed. This field is read-only.
 	LocationFeedItem *common.LocationFeedItem `protobuf:"bytes,14,opt,name=location_feed_item,json=locationFeedItem,proto3,oneof"`
 }
 

@@ -154,7 +154,7 @@ type SmartCampaignSuggestionInfo struct {
 	// accuracy and we recommend always setting it if possible.
 	KeywordThemes []*common.KeywordThemeInfo `protobuf:"bytes,7,rep,name=keyword_themes,json=keywordThemes,proto3" json:"keyword_themes,omitempty"`
 	// The business settings to consider when generating suggestions.
-	// Settings are automatically extracted from the GMB location when provided.
+	// Settings are automatically extracted from the business when provided.
 	// Otherwise, these settings must be specified explicitly.
 	//
 	// Types that are assignable to BusinessSetting:
@@ -282,11 +282,11 @@ type SmartCampaignSuggestionInfo_BusinessContext_ struct {
 }
 
 type SmartCampaignSuggestionInfo_BusinessLocationId struct {
-	// Optional. The ID of the Google My Business (GMB) Location.
-	// The location ID can be fetched by GMB API with its form:
+	// Optional. The ID of the Business Profile location.
+	// The location ID can be fetched by Business Profile API with its form:
 	// accounts/{accountId}/locations/{locationId}. The last {locationId}
-	// component from the GMB API represents the business_location_id.
-	// See the [Google My Business API]
+	// component from the Business Profile API represents the
+	// business_location_id. See the [Business Profile API]
 	// (https://developers.google.com/my-business/reference/rest/v4/accounts.locations)
 	BusinessLocationId int64 `protobuf:"varint,2,opt,name=business_location_id,json=businessLocationId,proto3,oneof"`
 }

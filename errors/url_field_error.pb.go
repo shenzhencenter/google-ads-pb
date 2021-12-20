@@ -150,7 +150,7 @@ const (
 	UrlFieldErrorEnum_FINAL_URL_SUFFIX_MALFORMED UrlFieldErrorEnum_UrlFieldError = 50
 	// The final url suffix cannot contain {lpurl} related or {ignore} tags.
 	UrlFieldErrorEnum_INVALID_TAG_IN_FINAL_URL_SUFFIX UrlFieldErrorEnum_UrlFieldError = 51
-	// The top level domain is invalid, e.g, not a public top level domain
+	// The top level domain is invalid, e.g. not a public top level domain
 	// listed in publicsuffix.org.
 	UrlFieldErrorEnum_INVALID_TOP_LEVEL_DOMAIN UrlFieldErrorEnum_UrlFieldError = 53
 	// Malformed top level domain in URL.

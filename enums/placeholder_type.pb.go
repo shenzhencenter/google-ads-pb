@@ -52,8 +52,8 @@ const (
 	// Lets you provide users with a link that points to a mobile app in
 	// addition to a website.
 	PlaceholderTypeEnum_APP PlaceholderTypeEnum_PlaceholderType = 4
-	// Lets you show locations of businesses from your Google My Business
-	// account in your ad. This helps people find your locations by showing your
+	// Lets you show locations of businesses from your Business Profile
+	// in your ad. This helps people find your locations by showing your
 	// ads with your address, a map to your location, or the distance to your
 	// business. This extension type is useful to draw customers to your
 	// brick-and-mortar location.

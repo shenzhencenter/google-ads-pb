@@ -7,7 +7,7 @@ You can use the golang library to interact with the Google Ads API across grpc. 
 ## Installation
 
 ```
-$ go get github.com/shenzhencenter/google-ads-pb
+$ go get -d github.com/shenzhencenter/google-ads-pb
 ```
 
 ## Usage
