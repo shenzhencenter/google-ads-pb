@@ -1,4 +1,4 @@
-// Copyright 2021 Google LLC
+// Copyright 2022 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,10 +24,10 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -37,10 +37,10 @@ var newReachPlanClientHook clientHook
 
 // ReachPlanCallOptions contains the retry settings for each method of ReachPlanClient.
 type ReachPlanCallOptions struct {
-	ListPlannableLocations  []gax.CallOption
-	ListPlannableProducts   []gax.CallOption
+	ListPlannableLocations []gax.CallOption
+	ListPlannableProducts []gax.CallOption
 	GenerateProductMixIdeas []gax.CallOption
-	GenerateReachForecast   []gax.CallOption
+	GenerateReachForecast []gax.CallOption
 }
 
 func defaultReachPlanGRPCClientOptions() []option.ClientOption {
@@ -51,7 +51,7 @@ func defaultReachPlanGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -133,6 +133,7 @@ type ReachPlanClient struct {
 
 	// The call options for this service.
 	CallOptions *ReachPlanCallOptions
+
 }
 
 // Wrapper methods routed to the internal client.
@@ -266,10 +267,11 @@ func NewReachPlanClient(ctx context.Context, opts ...option.ClientOption) (*Reac
 	client := ReachPlanClient{CallOptions: defaultReachPlanCallOptions()}
 
 	c := &reachPlanGRPCClient{
-		connPool:         connPool,
+		connPool:    connPool,
 		disableDeadlines: disableDeadlines,
-		reachPlanClient:  servicespb.NewReachPlanServiceClient(connPool),
-		CallOptions:      &client.CallOptions,
+		reachPlanClient: servicespb.NewReachPlanServiceClient(connPool),
+		CallOptions: &client.CallOptions,
+
 	}
 	c.setGoogleClientInfo()
 
@@ -302,7 +304,7 @@ func (c *reachPlanGRPCClient) Close() error {
 
 func (c *reachPlanGRPCClient) ListPlannableLocations(ctx context.Context, req *servicespb.ListPlannableLocationsRequest, opts ...gax.CallOption) (*servicespb.ListPlannableLocationsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -322,7 +324,7 @@ func (c *reachPlanGRPCClient) ListPlannableLocations(ctx context.Context, req *s
 
 func (c *reachPlanGRPCClient) ListPlannableProducts(ctx context.Context, req *servicespb.ListPlannableProductsRequest, opts ...gax.CallOption) (*servicespb.ListPlannableProductsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -342,7 +344,7 @@ func (c *reachPlanGRPCClient) ListPlannableProducts(ctx context.Context, req *se
 
 func (c *reachPlanGRPCClient) GenerateProductMixIdeas(ctx context.Context, req *servicespb.GenerateProductMixIdeasRequest, opts ...gax.CallOption) (*servicespb.GenerateProductMixIdeasResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -363,7 +365,7 @@ func (c *reachPlanGRPCClient) GenerateProductMixIdeas(ctx context.Context, req *
 
 func (c *reachPlanGRPCClient) GenerateReachForecast(ctx context.Context, req *servicespb.GenerateReachForecastRequest, opts ...gax.CallOption) (*servicespb.GenerateReachForecastResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

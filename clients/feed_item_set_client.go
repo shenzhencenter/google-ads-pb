@@ -1,4 +1,4 @@
-// Copyright 2021 Google LLC
+// Copyright 2022 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,11 +24,11 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
+	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -38,7 +38,7 @@ var newFeedItemSetClientHook clientHook
 
 // FeedItemSetCallOptions contains the retry settings for each method of FeedItemSetClient.
 type FeedItemSetCallOptions struct {
-	GetFeedItemSet     []gax.CallOption
+	GetFeedItemSet []gax.CallOption
 	MutateFeedItemSets []gax.CallOption
 }
 
@@ -50,7 +50,7 @@ func defaultFeedItemSetGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -102,6 +102,7 @@ type FeedItemSetClient struct {
 
 	// The call options for this service.
 	CallOptions *FeedItemSetCallOptions
+
 }
 
 // Wrapper methods routed to the internal client.
@@ -200,10 +201,11 @@ func NewFeedItemSetClient(ctx context.Context, opts ...option.ClientOption) (*Fe
 	client := FeedItemSetClient{CallOptions: defaultFeedItemSetCallOptions()}
 
 	c := &feedItemSetGRPCClient{
-		connPool:          connPool,
-		disableDeadlines:  disableDeadlines,
+		connPool:    connPool,
+		disableDeadlines: disableDeadlines,
 		feedItemSetClient: servicespb.NewFeedItemSetServiceClient(connPool),
-		CallOptions:       &client.CallOptions,
+		CallOptions: &client.CallOptions,
+
 	}
 	c.setGoogleClientInfo()
 
@@ -236,7 +238,7 @@ func (c *feedItemSetGRPCClient) Close() error {
 
 func (c *feedItemSetGRPCClient) GetFeedItemSet(ctx context.Context, req *servicespb.GetFeedItemSetRequest, opts ...gax.CallOption) (*resourcespb.FeedItemSet, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -257,7 +259,7 @@ func (c *feedItemSetGRPCClient) GetFeedItemSet(ctx context.Context, req *service
 
 func (c *feedItemSetGRPCClient) MutateFeedItemSets(ctx context.Context, req *servicespb.MutateFeedItemSetsRequest, opts ...gax.CallOption) (*servicespb.MutateFeedItemSetsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

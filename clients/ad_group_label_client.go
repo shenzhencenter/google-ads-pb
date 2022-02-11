@@ -1,4 +1,4 @@
-// Copyright 2021 Google LLC
+// Copyright 2022 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,11 +24,11 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
+	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -38,7 +38,7 @@ var newAdGroupLabelClientHook clientHook
 
 // AdGroupLabelCallOptions contains the retry settings for each method of AdGroupLabelClient.
 type AdGroupLabelCallOptions struct {
-	GetAdGroupLabel     []gax.CallOption
+	GetAdGroupLabel []gax.CallOption
 	MutateAdGroupLabels []gax.CallOption
 }
 
@@ -50,7 +50,7 @@ func defaultAdGroupLabelGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -102,6 +102,7 @@ type AdGroupLabelClient struct {
 
 	// The call options for this service.
 	CallOptions *AdGroupLabelCallOptions
+
 }
 
 // Wrapper methods routed to the internal client.
@@ -204,10 +205,11 @@ func NewAdGroupLabelClient(ctx context.Context, opts ...option.ClientOption) (*A
 	client := AdGroupLabelClient{CallOptions: defaultAdGroupLabelCallOptions()}
 
 	c := &adGroupLabelGRPCClient{
-		connPool:           connPool,
-		disableDeadlines:   disableDeadlines,
+		connPool:    connPool,
+		disableDeadlines: disableDeadlines,
 		adGroupLabelClient: servicespb.NewAdGroupLabelServiceClient(connPool),
-		CallOptions:        &client.CallOptions,
+		CallOptions: &client.CallOptions,
+
 	}
 	c.setGoogleClientInfo()
 
@@ -240,7 +242,7 @@ func (c *adGroupLabelGRPCClient) Close() error {
 
 func (c *adGroupLabelGRPCClient) GetAdGroupLabel(ctx context.Context, req *servicespb.GetAdGroupLabelRequest, opts ...gax.CallOption) (*resourcespb.AdGroupLabel, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -261,7 +263,7 @@ func (c *adGroupLabelGRPCClient) GetAdGroupLabel(ctx context.Context, req *servi
 
 func (c *adGroupLabelGRPCClient) MutateAdGroupLabels(ctx context.Context, req *servicespb.MutateAdGroupLabelsRequest, opts ...gax.CallOption) (*servicespb.MutateAdGroupLabelsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

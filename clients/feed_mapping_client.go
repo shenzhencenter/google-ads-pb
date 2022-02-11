@@ -1,4 +1,4 @@
-// Copyright 2021 Google LLC
+// Copyright 2022 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,11 +24,11 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
+	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -38,7 +38,7 @@ var newFeedMappingClientHook clientHook
 
 // FeedMappingCallOptions contains the retry settings for each method of FeedMappingClient.
 type FeedMappingCallOptions struct {
-	GetFeedMapping     []gax.CallOption
+	GetFeedMapping []gax.CallOption
 	MutateFeedMappings []gax.CallOption
 }
 
@@ -50,7 +50,7 @@ func defaultFeedMappingGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -102,6 +102,7 @@ type FeedMappingClient struct {
 
 	// The call options for this service.
 	CallOptions *FeedMappingCallOptions
+
 }
 
 // Wrapper methods routed to the internal client.
@@ -212,10 +213,11 @@ func NewFeedMappingClient(ctx context.Context, opts ...option.ClientOption) (*Fe
 	client := FeedMappingClient{CallOptions: defaultFeedMappingCallOptions()}
 
 	c := &feedMappingGRPCClient{
-		connPool:          connPool,
-		disableDeadlines:  disableDeadlines,
+		connPool:    connPool,
+		disableDeadlines: disableDeadlines,
 		feedMappingClient: servicespb.NewFeedMappingServiceClient(connPool),
-		CallOptions:       &client.CallOptions,
+		CallOptions: &client.CallOptions,
+
 	}
 	c.setGoogleClientInfo()
 
@@ -248,7 +250,7 @@ func (c *feedMappingGRPCClient) Close() error {
 
 func (c *feedMappingGRPCClient) GetFeedMapping(ctx context.Context, req *servicespb.GetFeedMappingRequest, opts ...gax.CallOption) (*resourcespb.FeedMapping, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -269,7 +271,7 @@ func (c *feedMappingGRPCClient) GetFeedMapping(ctx context.Context, req *service
 
 func (c *feedMappingGRPCClient) MutateFeedMappings(ctx context.Context, req *servicespb.MutateFeedMappingsRequest, opts ...gax.CallOption) (*servicespb.MutateFeedMappingsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

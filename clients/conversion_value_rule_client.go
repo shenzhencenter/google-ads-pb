@@ -1,4 +1,4 @@
-// Copyright 2021 Google LLC
+// Copyright 2022 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,11 +24,11 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
+	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -38,7 +38,7 @@ var newConversionValueRuleClientHook clientHook
 
 // ConversionValueRuleCallOptions contains the retry settings for each method of ConversionValueRuleClient.
 type ConversionValueRuleCallOptions struct {
-	GetConversionValueRule     []gax.CallOption
+	GetConversionValueRule []gax.CallOption
 	MutateConversionValueRules []gax.CallOption
 }
 
@@ -50,7 +50,7 @@ func defaultConversionValueRuleGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -102,6 +102,7 @@ type ConversionValueRuleClient struct {
 
 	// The call options for this service.
 	CallOptions *ConversionValueRuleCallOptions
+
 }
 
 // Wrapper methods routed to the internal client.
@@ -183,10 +184,11 @@ func NewConversionValueRuleClient(ctx context.Context, opts ...option.ClientOpti
 	client := ConversionValueRuleClient{CallOptions: defaultConversionValueRuleCallOptions()}
 
 	c := &conversionValueRuleGRPCClient{
-		connPool:                  connPool,
-		disableDeadlines:          disableDeadlines,
+		connPool:    connPool,
+		disableDeadlines: disableDeadlines,
 		conversionValueRuleClient: servicespb.NewConversionValueRuleServiceClient(connPool),
-		CallOptions:               &client.CallOptions,
+		CallOptions: &client.CallOptions,
+
 	}
 	c.setGoogleClientInfo()
 
@@ -219,7 +221,7 @@ func (c *conversionValueRuleGRPCClient) Close() error {
 
 func (c *conversionValueRuleGRPCClient) GetConversionValueRule(ctx context.Context, req *servicespb.GetConversionValueRuleRequest, opts ...gax.CallOption) (*resourcespb.ConversionValueRule, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -240,7 +242,7 @@ func (c *conversionValueRuleGRPCClient) GetConversionValueRule(ctx context.Conte
 
 func (c *conversionValueRuleGRPCClient) MutateConversionValueRules(ctx context.Context, req *servicespb.MutateConversionValueRulesRequest, opts ...gax.CallOption) (*servicespb.MutateConversionValueRulesResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

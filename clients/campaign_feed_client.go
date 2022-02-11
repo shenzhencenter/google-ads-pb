@@ -1,4 +1,4 @@
-// Copyright 2021 Google LLC
+// Copyright 2022 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,11 +24,11 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
+	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -38,7 +38,7 @@ var newCampaignFeedClientHook clientHook
 
 // CampaignFeedCallOptions contains the retry settings for each method of CampaignFeedClient.
 type CampaignFeedCallOptions struct {
-	GetCampaignFeed     []gax.CallOption
+	GetCampaignFeed []gax.CallOption
 	MutateCampaignFeeds []gax.CallOption
 }
 
@@ -50,7 +50,7 @@ func defaultCampaignFeedGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -102,6 +102,7 @@ type CampaignFeedClient struct {
 
 	// The call options for this service.
 	CallOptions *CampaignFeedCallOptions
+
 }
 
 // Wrapper methods routed to the internal client.
@@ -216,10 +217,11 @@ func NewCampaignFeedClient(ctx context.Context, opts ...option.ClientOption) (*C
 	client := CampaignFeedClient{CallOptions: defaultCampaignFeedCallOptions()}
 
 	c := &campaignFeedGRPCClient{
-		connPool:           connPool,
-		disableDeadlines:   disableDeadlines,
+		connPool:    connPool,
+		disableDeadlines: disableDeadlines,
 		campaignFeedClient: servicespb.NewCampaignFeedServiceClient(connPool),
-		CallOptions:        &client.CallOptions,
+		CallOptions: &client.CallOptions,
+
 	}
 	c.setGoogleClientInfo()
 
@@ -252,7 +254,7 @@ func (c *campaignFeedGRPCClient) Close() error {
 
 func (c *campaignFeedGRPCClient) GetCampaignFeed(ctx context.Context, req *servicespb.GetCampaignFeedRequest, opts ...gax.CallOption) (*resourcespb.CampaignFeed, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -273,7 +275,7 @@ func (c *campaignFeedGRPCClient) GetCampaignFeed(ctx context.Context, req *servi
 
 func (c *campaignFeedGRPCClient) MutateCampaignFeeds(ctx context.Context, req *servicespb.MutateCampaignFeedsRequest, opts ...gax.CallOption) (*servicespb.MutateCampaignFeedsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

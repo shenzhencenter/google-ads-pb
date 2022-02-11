@@ -1,4 +1,4 @@
-// Copyright 2021 Google LLC
+// Copyright 2022 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,11 +24,11 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
+	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -38,7 +38,7 @@ var newAdGroupCriterionClientHook clientHook
 
 // AdGroupCriterionCallOptions contains the retry settings for each method of AdGroupCriterionClient.
 type AdGroupCriterionCallOptions struct {
-	GetAdGroupCriterion   []gax.CallOption
+	GetAdGroupCriterion []gax.CallOption
 	MutateAdGroupCriteria []gax.CallOption
 }
 
@@ -50,7 +50,7 @@ func defaultAdGroupCriterionGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -102,6 +102,7 @@ type AdGroupCriterionClient struct {
 
 	// The call options for this service.
 	CallOptions *AdGroupCriterionCallOptions
+
 }
 
 // Wrapper methods routed to the internal client.
@@ -225,10 +226,11 @@ func NewAdGroupCriterionClient(ctx context.Context, opts ...option.ClientOption)
 	client := AdGroupCriterionClient{CallOptions: defaultAdGroupCriterionCallOptions()}
 
 	c := &adGroupCriterionGRPCClient{
-		connPool:               connPool,
-		disableDeadlines:       disableDeadlines,
+		connPool:    connPool,
+		disableDeadlines: disableDeadlines,
 		adGroupCriterionClient: servicespb.NewAdGroupCriterionServiceClient(connPool),
-		CallOptions:            &client.CallOptions,
+		CallOptions: &client.CallOptions,
+
 	}
 	c.setGoogleClientInfo()
 
@@ -261,7 +263,7 @@ func (c *adGroupCriterionGRPCClient) Close() error {
 
 func (c *adGroupCriterionGRPCClient) GetAdGroupCriterion(ctx context.Context, req *servicespb.GetAdGroupCriterionRequest, opts ...gax.CallOption) (*resourcespb.AdGroupCriterion, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -282,7 +284,7 @@ func (c *adGroupCriterionGRPCClient) GetAdGroupCriterion(ctx context.Context, re
 
 func (c *adGroupCriterionGRPCClient) MutateAdGroupCriteria(ctx context.Context, req *servicespb.MutateAdGroupCriteriaRequest, opts ...gax.CallOption) (*servicespb.MutateAdGroupCriteriaResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

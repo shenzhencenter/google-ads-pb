@@ -1,4 +1,4 @@
-// Copyright 2021 Google LLC
+// Copyright 2022 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,11 +24,11 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
+	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -38,7 +38,7 @@ var newCampaignSharedSetClientHook clientHook
 
 // CampaignSharedSetCallOptions contains the retry settings for each method of CampaignSharedSetClient.
 type CampaignSharedSetCallOptions struct {
-	GetCampaignSharedSet     []gax.CallOption
+	GetCampaignSharedSet []gax.CallOption
 	MutateCampaignSharedSets []gax.CallOption
 }
 
@@ -50,7 +50,7 @@ func defaultCampaignSharedSetGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -102,6 +102,7 @@ type CampaignSharedSetClient struct {
 
 	// The call options for this service.
 	CallOptions *CampaignSharedSetCallOptions
+
 }
 
 // Wrapper methods routed to the internal client.
@@ -214,10 +215,11 @@ func NewCampaignSharedSetClient(ctx context.Context, opts ...option.ClientOption
 	client := CampaignSharedSetClient{CallOptions: defaultCampaignSharedSetCallOptions()}
 
 	c := &campaignSharedSetGRPCClient{
-		connPool:                connPool,
-		disableDeadlines:        disableDeadlines,
+		connPool:    connPool,
+		disableDeadlines: disableDeadlines,
 		campaignSharedSetClient: servicespb.NewCampaignSharedSetServiceClient(connPool),
-		CallOptions:             &client.CallOptions,
+		CallOptions: &client.CallOptions,
+
 	}
 	c.setGoogleClientInfo()
 
@@ -250,7 +252,7 @@ func (c *campaignSharedSetGRPCClient) Close() error {
 
 func (c *campaignSharedSetGRPCClient) GetCampaignSharedSet(ctx context.Context, req *servicespb.GetCampaignSharedSetRequest, opts ...gax.CallOption) (*resourcespb.CampaignSharedSet, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -271,7 +273,7 @@ func (c *campaignSharedSetGRPCClient) GetCampaignSharedSet(ctx context.Context, 
 
 func (c *campaignSharedSetGRPCClient) MutateCampaignSharedSets(ctx context.Context, req *servicespb.MutateCampaignSharedSetsRequest, opts ...gax.CallOption) (*servicespb.MutateCampaignSharedSetsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

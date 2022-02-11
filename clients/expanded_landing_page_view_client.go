@@ -1,4 +1,4 @@
-// Copyright 2021 Google LLC
+// Copyright 2022 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,11 +24,11 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
+	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -49,7 +49,7 @@ func defaultExpandedLandingPageViewGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -88,6 +88,7 @@ type ExpandedLandingPageViewClient struct {
 
 	// The call options for this service.
 	CallOptions *ExpandedLandingPageViewCallOptions
+
 }
 
 // Wrapper methods routed to the internal client.
@@ -171,10 +172,11 @@ func NewExpandedLandingPageViewClient(ctx context.Context, opts ...option.Client
 	client := ExpandedLandingPageViewClient{CallOptions: defaultExpandedLandingPageViewCallOptions()}
 
 	c := &expandedLandingPageViewGRPCClient{
-		connPool:                      connPool,
-		disableDeadlines:              disableDeadlines,
+		connPool:    connPool,
+		disableDeadlines: disableDeadlines,
 		expandedLandingPageViewClient: servicespb.NewExpandedLandingPageViewServiceClient(connPool),
-		CallOptions:                   &client.CallOptions,
+		CallOptions: &client.CallOptions,
+
 	}
 	c.setGoogleClientInfo()
 
@@ -207,7 +209,7 @@ func (c *expandedLandingPageViewGRPCClient) Close() error {
 
 func (c *expandedLandingPageViewGRPCClient) GetExpandedLandingPageView(ctx context.Context, req *servicespb.GetExpandedLandingPageViewRequest, opts ...gax.CallOption) (*resourcespb.ExpandedLandingPageView, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

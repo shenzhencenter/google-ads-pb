@@ -1,4 +1,4 @@
-// Copyright 2021 Google LLC
+// Copyright 2022 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,11 +24,11 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
+	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -38,7 +38,7 @@ var newBiddingStrategyClientHook clientHook
 
 // BiddingStrategyCallOptions contains the retry settings for each method of BiddingStrategyClient.
 type BiddingStrategyCallOptions struct {
-	GetBiddingStrategy      []gax.CallOption
+	GetBiddingStrategy []gax.CallOption
 	MutateBiddingStrategies []gax.CallOption
 }
 
@@ -50,7 +50,7 @@ func defaultBiddingStrategyGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -102,6 +102,7 @@ type BiddingStrategyClient struct {
 
 	// The call options for this service.
 	CallOptions *BiddingStrategyCallOptions
+
 }
 
 // Wrapper methods routed to the internal client.
@@ -219,10 +220,11 @@ func NewBiddingStrategyClient(ctx context.Context, opts ...option.ClientOption) 
 	client := BiddingStrategyClient{CallOptions: defaultBiddingStrategyCallOptions()}
 
 	c := &biddingStrategyGRPCClient{
-		connPool:              connPool,
-		disableDeadlines:      disableDeadlines,
+		connPool:    connPool,
+		disableDeadlines: disableDeadlines,
 		biddingStrategyClient: servicespb.NewBiddingStrategyServiceClient(connPool),
-		CallOptions:           &client.CallOptions,
+		CallOptions: &client.CallOptions,
+
 	}
 	c.setGoogleClientInfo()
 
@@ -255,7 +257,7 @@ func (c *biddingStrategyGRPCClient) Close() error {
 
 func (c *biddingStrategyGRPCClient) GetBiddingStrategy(ctx context.Context, req *servicespb.GetBiddingStrategyRequest, opts ...gax.CallOption) (*resourcespb.BiddingStrategy, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -276,7 +278,7 @@ func (c *biddingStrategyGRPCClient) GetBiddingStrategy(ctx context.Context, req 
 
 func (c *biddingStrategyGRPCClient) MutateBiddingStrategies(ctx context.Context, req *servicespb.MutateBiddingStrategiesRequest, opts ...gax.CallOption) (*servicespb.MutateBiddingStrategiesResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

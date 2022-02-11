@@ -1,4 +1,4 @@
-// Copyright 2021 Google LLC
+// Copyright 2022 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,11 +24,11 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
+	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -38,7 +38,7 @@ var newSharedSetClientHook clientHook
 
 // SharedSetCallOptions contains the retry settings for each method of SharedSetClient.
 type SharedSetCallOptions struct {
-	GetSharedSet     []gax.CallOption
+	GetSharedSet []gax.CallOption
 	MutateSharedSets []gax.CallOption
 }
 
@@ -50,7 +50,7 @@ func defaultSharedSetGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -102,6 +102,7 @@ type SharedSetClient struct {
 
 	// The call options for this service.
 	CallOptions *SharedSetCallOptions
+
 }
 
 // Wrapper methods routed to the internal client.
@@ -215,10 +216,11 @@ func NewSharedSetClient(ctx context.Context, opts ...option.ClientOption) (*Shar
 	client := SharedSetClient{CallOptions: defaultSharedSetCallOptions()}
 
 	c := &sharedSetGRPCClient{
-		connPool:         connPool,
+		connPool:    connPool,
 		disableDeadlines: disableDeadlines,
-		sharedSetClient:  servicespb.NewSharedSetServiceClient(connPool),
-		CallOptions:      &client.CallOptions,
+		sharedSetClient: servicespb.NewSharedSetServiceClient(connPool),
+		CallOptions: &client.CallOptions,
+
 	}
 	c.setGoogleClientInfo()
 
@@ -251,7 +253,7 @@ func (c *sharedSetGRPCClient) Close() error {
 
 func (c *sharedSetGRPCClient) GetSharedSet(ctx context.Context, req *servicespb.GetSharedSetRequest, opts ...gax.CallOption) (*resourcespb.SharedSet, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -272,7 +274,7 @@ func (c *sharedSetGRPCClient) GetSharedSet(ctx context.Context, req *servicespb.
 
 func (c *sharedSetGRPCClient) MutateSharedSets(ctx context.Context, req *servicespb.MutateSharedSetsRequest, opts ...gax.CallOption) (*servicespb.MutateSharedSetsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

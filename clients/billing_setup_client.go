@@ -1,4 +1,4 @@
-// Copyright 2021 Google LLC
+// Copyright 2022 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,11 +24,11 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
+	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -38,7 +38,7 @@ var newBillingSetupClientHook clientHook
 
 // BillingSetupCallOptions contains the retry settings for each method of BillingSetupClient.
 type BillingSetupCallOptions struct {
-	GetBillingSetup    []gax.CallOption
+	GetBillingSetup []gax.CallOption
 	MutateBillingSetup []gax.CallOption
 }
 
@@ -50,7 +50,7 @@ func defaultBillingSetupGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -110,6 +110,7 @@ type BillingSetupClient struct {
 
 	// The call options for this service.
 	CallOptions *BillingSetupCallOptions
+
 }
 
 // Wrapper methods routed to the internal client.
@@ -218,10 +219,11 @@ func NewBillingSetupClient(ctx context.Context, opts ...option.ClientOption) (*B
 	client := BillingSetupClient{CallOptions: defaultBillingSetupCallOptions()}
 
 	c := &billingSetupGRPCClient{
-		connPool:           connPool,
-		disableDeadlines:   disableDeadlines,
+		connPool:    connPool,
+		disableDeadlines: disableDeadlines,
 		billingSetupClient: servicespb.NewBillingSetupServiceClient(connPool),
-		CallOptions:        &client.CallOptions,
+		CallOptions: &client.CallOptions,
+
 	}
 	c.setGoogleClientInfo()
 
@@ -254,7 +256,7 @@ func (c *billingSetupGRPCClient) Close() error {
 
 func (c *billingSetupGRPCClient) GetBillingSetup(ctx context.Context, req *servicespb.GetBillingSetupRequest, opts ...gax.CallOption) (*resourcespb.BillingSetup, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -275,7 +277,7 @@ func (c *billingSetupGRPCClient) GetBillingSetup(ctx context.Context, req *servi
 
 func (c *billingSetupGRPCClient) MutateBillingSetup(ctx context.Context, req *servicespb.MutateBillingSetupRequest, opts ...gax.CallOption) (*servicespb.MutateBillingSetupResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

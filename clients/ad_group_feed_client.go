@@ -1,4 +1,4 @@
-// Copyright 2021 Google LLC
+// Copyright 2022 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,11 +24,11 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
+	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -38,7 +38,7 @@ var newAdGroupFeedClientHook clientHook
 
 // AdGroupFeedCallOptions contains the retry settings for each method of AdGroupFeedClient.
 type AdGroupFeedCallOptions struct {
-	GetAdGroupFeed     []gax.CallOption
+	GetAdGroupFeed []gax.CallOption
 	MutateAdGroupFeeds []gax.CallOption
 }
 
@@ -50,7 +50,7 @@ func defaultAdGroupFeedGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -102,6 +102,7 @@ type AdGroupFeedClient struct {
 
 	// The call options for this service.
 	CallOptions *AdGroupFeedCallOptions
+
 }
 
 // Wrapper methods routed to the internal client.
@@ -215,10 +216,11 @@ func NewAdGroupFeedClient(ctx context.Context, opts ...option.ClientOption) (*Ad
 	client := AdGroupFeedClient{CallOptions: defaultAdGroupFeedCallOptions()}
 
 	c := &adGroupFeedGRPCClient{
-		connPool:          connPool,
-		disableDeadlines:  disableDeadlines,
+		connPool:    connPool,
+		disableDeadlines: disableDeadlines,
 		adGroupFeedClient: servicespb.NewAdGroupFeedServiceClient(connPool),
-		CallOptions:       &client.CallOptions,
+		CallOptions: &client.CallOptions,
+
 	}
 	c.setGoogleClientInfo()
 
@@ -251,7 +253,7 @@ func (c *adGroupFeedGRPCClient) Close() error {
 
 func (c *adGroupFeedGRPCClient) GetAdGroupFeed(ctx context.Context, req *servicespb.GetAdGroupFeedRequest, opts ...gax.CallOption) (*resourcespb.AdGroupFeed, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -272,7 +274,7 @@ func (c *adGroupFeedGRPCClient) GetAdGroupFeed(ctx context.Context, req *service
 
 func (c *adGroupFeedGRPCClient) MutateAdGroupFeeds(ctx context.Context, req *servicespb.MutateAdGroupFeedsRequest, opts ...gax.CallOption) (*servicespb.MutateAdGroupFeedsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

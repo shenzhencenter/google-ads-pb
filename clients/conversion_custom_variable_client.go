@@ -1,4 +1,4 @@
-// Copyright 2021 Google LLC
+// Copyright 2022 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,11 +24,11 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
+	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -38,7 +38,7 @@ var newConversionCustomVariableClientHook clientHook
 
 // ConversionCustomVariableCallOptions contains the retry settings for each method of ConversionCustomVariableClient.
 type ConversionCustomVariableCallOptions struct {
-	GetConversionCustomVariable     []gax.CallOption
+	GetConversionCustomVariable []gax.CallOption
 	MutateConversionCustomVariables []gax.CallOption
 }
 
@@ -50,7 +50,7 @@ func defaultConversionCustomVariableGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -102,6 +102,7 @@ type ConversionCustomVariableClient struct {
 
 	// The call options for this service.
 	CallOptions *ConversionCustomVariableCallOptions
+
 }
 
 // Wrapper methods routed to the internal client.
@@ -201,10 +202,11 @@ func NewConversionCustomVariableClient(ctx context.Context, opts ...option.Clien
 	client := ConversionCustomVariableClient{CallOptions: defaultConversionCustomVariableCallOptions()}
 
 	c := &conversionCustomVariableGRPCClient{
-		connPool:                       connPool,
-		disableDeadlines:               disableDeadlines,
+		connPool:    connPool,
+		disableDeadlines: disableDeadlines,
 		conversionCustomVariableClient: servicespb.NewConversionCustomVariableServiceClient(connPool),
-		CallOptions:                    &client.CallOptions,
+		CallOptions: &client.CallOptions,
+
 	}
 	c.setGoogleClientInfo()
 
@@ -237,7 +239,7 @@ func (c *conversionCustomVariableGRPCClient) Close() error {
 
 func (c *conversionCustomVariableGRPCClient) GetConversionCustomVariable(ctx context.Context, req *servicespb.GetConversionCustomVariableRequest, opts ...gax.CallOption) (*resourcespb.ConversionCustomVariable, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -258,7 +260,7 @@ func (c *conversionCustomVariableGRPCClient) GetConversionCustomVariable(ctx con
 
 func (c *conversionCustomVariableGRPCClient) MutateConversionCustomVariables(ctx context.Context, req *servicespb.MutateConversionCustomVariablesRequest, opts ...gax.CallOption) (*servicespb.MutateConversionCustomVariablesResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

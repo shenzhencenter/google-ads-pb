@@ -1,4 +1,4 @@
-// Copyright 2021 Google LLC
+// Copyright 2022 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,11 +24,11 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/iterator"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -39,9 +39,9 @@ var newGoogleAdsClientHook clientHook
 
 // GoogleAdsCallOptions contains the retry settings for each method of GoogleAdsClient.
 type GoogleAdsCallOptions struct {
-	Search       []gax.CallOption
+	Search []gax.CallOption
 	SearchStream []gax.CallOption
-	Mutate       []gax.CallOption
+	Mutate []gax.CallOption
 }
 
 func defaultGoogleAdsGRPCClientOptions() []option.ClientOption {
@@ -52,7 +52,7 @@ func defaultGoogleAdsGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -117,6 +117,7 @@ type GoogleAdsClient struct {
 
 	// The call options for this service.
 	CallOptions *GoogleAdsCallOptions
+
 }
 
 // Wrapper methods routed to the internal client.
@@ -336,10 +337,11 @@ func NewGoogleAdsClient(ctx context.Context, opts ...option.ClientOption) (*Goog
 	client := GoogleAdsClient{CallOptions: defaultGoogleAdsCallOptions()}
 
 	c := &googleAdsGRPCClient{
-		connPool:         connPool,
+		connPool:    connPool,
 		disableDeadlines: disableDeadlines,
-		googleAdsClient:  servicespb.NewGoogleAdsServiceClient(connPool),
-		CallOptions:      &client.CallOptions,
+		googleAdsClient: servicespb.NewGoogleAdsServiceClient(connPool),
+		CallOptions: &client.CallOptions,
+
 	}
 	c.setGoogleClientInfo()
 
@@ -431,7 +433,7 @@ func (c *googleAdsGRPCClient) SearchStream(ctx context.Context, req *servicespb.
 
 func (c *googleAdsGRPCClient) Mutate(ctx context.Context, req *servicespb.MutateGoogleAdsRequest, opts ...gax.CallOption) (*servicespb.MutateGoogleAdsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

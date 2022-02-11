@@ -1,4 +1,4 @@
-// Copyright 2021 Google LLC
+// Copyright 2022 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,11 +24,11 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
+	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -38,7 +38,7 @@ var newCustomerAssetClientHook clientHook
 
 // CustomerAssetCallOptions contains the retry settings for each method of CustomerAssetClient.
 type CustomerAssetCallOptions struct {
-	GetCustomerAsset     []gax.CallOption
+	GetCustomerAsset []gax.CallOption
 	MutateCustomerAssets []gax.CallOption
 }
 
@@ -50,7 +50,7 @@ func defaultCustomerAssetGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -102,6 +102,7 @@ type CustomerAssetClient struct {
 
 	// The call options for this service.
 	CallOptions *CustomerAssetCallOptions
+
 }
 
 // Wrapper methods routed to the internal client.
@@ -202,10 +203,11 @@ func NewCustomerAssetClient(ctx context.Context, opts ...option.ClientOption) (*
 	client := CustomerAssetClient{CallOptions: defaultCustomerAssetCallOptions()}
 
 	c := &customerAssetGRPCClient{
-		connPool:            connPool,
-		disableDeadlines:    disableDeadlines,
+		connPool:    connPool,
+		disableDeadlines: disableDeadlines,
 		customerAssetClient: servicespb.NewCustomerAssetServiceClient(connPool),
-		CallOptions:         &client.CallOptions,
+		CallOptions: &client.CallOptions,
+
 	}
 	c.setGoogleClientInfo()
 
@@ -238,7 +240,7 @@ func (c *customerAssetGRPCClient) Close() error {
 
 func (c *customerAssetGRPCClient) GetCustomerAsset(ctx context.Context, req *servicespb.GetCustomerAssetRequest, opts ...gax.CallOption) (*resourcespb.CustomerAsset, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -259,7 +261,7 @@ func (c *customerAssetGRPCClient) GetCustomerAsset(ctx context.Context, req *ser
 
 func (c *customerAssetGRPCClient) MutateCustomerAssets(ctx context.Context, req *servicespb.MutateCustomerAssetsRequest, opts ...gax.CallOption) (*servicespb.MutateCustomerAssetsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

@@ -1,4 +1,4 @@
-// Copyright 2021 Google LLC
+// Copyright 2022 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -26,11 +26,11 @@ import (
 	"cloud.google.com/go/longrunning"
 	lroauto "cloud.google.com/go/longrunning/autogen"
 	gax "github.com/googleapis/gax-go/v2"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
+	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	longrunningpb "google.golang.org/genproto/googleapis/longrunning"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -41,10 +41,10 @@ var newOfflineUserDataJobClientHook clientHook
 
 // OfflineUserDataJobCallOptions contains the retry settings for each method of OfflineUserDataJobClient.
 type OfflineUserDataJobCallOptions struct {
-	CreateOfflineUserDataJob        []gax.CallOption
-	GetOfflineUserDataJob           []gax.CallOption
+	CreateOfflineUserDataJob []gax.CallOption
+	GetOfflineUserDataJob []gax.CallOption
 	AddOfflineUserDataJobOperations []gax.CallOption
-	RunOfflineUserDataJob           []gax.CallOption
+	RunOfflineUserDataJob []gax.CallOption
 }
 
 func defaultOfflineUserDataJobGRPCClientOptions() []option.ClientOption {
@@ -55,7 +55,7 @@ func defaultOfflineUserDataJobGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -139,6 +139,7 @@ type OfflineUserDataJobClient struct {
 	// It is exposed so that its CallOptions can be modified if required.
 	// Users should not Close this client.
 	LROClient *lroauto.OperationsClient
+
 }
 
 // Wrapper methods routed to the internal client.
@@ -285,10 +286,11 @@ func NewOfflineUserDataJobClient(ctx context.Context, opts ...option.ClientOptio
 	client := OfflineUserDataJobClient{CallOptions: defaultOfflineUserDataJobCallOptions()}
 
 	c := &offlineUserDataJobGRPCClient{
-		connPool:                 connPool,
-		disableDeadlines:         disableDeadlines,
+		connPool:    connPool,
+		disableDeadlines: disableDeadlines,
 		offlineUserDataJobClient: servicespb.NewOfflineUserDataJobServiceClient(connPool),
-		CallOptions:              &client.CallOptions,
+		CallOptions: &client.CallOptions,
+
 	}
 	c.setGoogleClientInfo()
 
@@ -332,7 +334,7 @@ func (c *offlineUserDataJobGRPCClient) Close() error {
 
 func (c *offlineUserDataJobGRPCClient) CreateOfflineUserDataJob(ctx context.Context, req *servicespb.CreateOfflineUserDataJobRequest, opts ...gax.CallOption) (*servicespb.CreateOfflineUserDataJobResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -353,7 +355,7 @@ func (c *offlineUserDataJobGRPCClient) CreateOfflineUserDataJob(ctx context.Cont
 
 func (c *offlineUserDataJobGRPCClient) GetOfflineUserDataJob(ctx context.Context, req *servicespb.GetOfflineUserDataJobRequest, opts ...gax.CallOption) (*resourcespb.OfflineUserDataJob, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -374,7 +376,7 @@ func (c *offlineUserDataJobGRPCClient) GetOfflineUserDataJob(ctx context.Context
 
 func (c *offlineUserDataJobGRPCClient) AddOfflineUserDataJobOperations(ctx context.Context, req *servicespb.AddOfflineUserDataJobOperationsRequest, opts ...gax.CallOption) (*servicespb.AddOfflineUserDataJobOperationsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -395,7 +397,7 @@ func (c *offlineUserDataJobGRPCClient) AddOfflineUserDataJobOperations(ctx conte
 
 func (c *offlineUserDataJobGRPCClient) RunOfflineUserDataJob(ctx context.Context, req *servicespb.RunOfflineUserDataJobRequest, opts ...gax.CallOption) (*RunOfflineUserDataJobOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

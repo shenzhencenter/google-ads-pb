@@ -1,4 +1,4 @@
-// Copyright 2021 Google LLC
+// Copyright 2022 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,11 +24,11 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
+	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -38,7 +38,7 @@ var newCustomerUserAccessInvitationClientHook clientHook
 
 // CustomerUserAccessInvitationCallOptions contains the retry settings for each method of CustomerUserAccessInvitationClient.
 type CustomerUserAccessInvitationCallOptions struct {
-	GetCustomerUserAccessInvitation    []gax.CallOption
+	GetCustomerUserAccessInvitation []gax.CallOption
 	MutateCustomerUserAccessInvitation []gax.CallOption
 }
 
@@ -50,7 +50,7 @@ func defaultCustomerUserAccessInvitationGRPCClientOptions() []option.ClientOptio
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -103,6 +103,7 @@ type CustomerUserAccessInvitationClient struct {
 
 	// The call options for this service.
 	CallOptions *CustomerUserAccessInvitationCallOptions
+
 }
 
 // Wrapper methods routed to the internal client.
@@ -201,10 +202,11 @@ func NewCustomerUserAccessInvitationClient(ctx context.Context, opts ...option.C
 	client := CustomerUserAccessInvitationClient{CallOptions: defaultCustomerUserAccessInvitationCallOptions()}
 
 	c := &customerUserAccessInvitationGRPCClient{
-		connPool:                           connPool,
-		disableDeadlines:                   disableDeadlines,
+		connPool:    connPool,
+		disableDeadlines: disableDeadlines,
 		customerUserAccessInvitationClient: servicespb.NewCustomerUserAccessInvitationServiceClient(connPool),
-		CallOptions:                        &client.CallOptions,
+		CallOptions: &client.CallOptions,
+
 	}
 	c.setGoogleClientInfo()
 
@@ -237,7 +239,7 @@ func (c *customerUserAccessInvitationGRPCClient) Close() error {
 
 func (c *customerUserAccessInvitationGRPCClient) GetCustomerUserAccessInvitation(ctx context.Context, req *servicespb.GetCustomerUserAccessInvitationRequest, opts ...gax.CallOption) (*resourcespb.CustomerUserAccessInvitation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -258,7 +260,7 @@ func (c *customerUserAccessInvitationGRPCClient) GetCustomerUserAccessInvitation
 
 func (c *customerUserAccessInvitationGRPCClient) MutateCustomerUserAccessInvitation(ctx context.Context, req *servicespb.MutateCustomerUserAccessInvitationRequest, opts ...gax.CallOption) (*servicespb.MutateCustomerUserAccessInvitationResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

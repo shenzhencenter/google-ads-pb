@@ -1,4 +1,4 @@
-// Copyright 2021 Google LLC
+// Copyright 2022 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,10 +24,10 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -38,8 +38,8 @@ var newSmartCampaignSuggestClientHook clientHook
 // SmartCampaignSuggestCallOptions contains the retry settings for each method of SmartCampaignSuggestClient.
 type SmartCampaignSuggestCallOptions struct {
 	SuggestSmartCampaignBudgetOptions []gax.CallOption
-	SuggestSmartCampaignAd            []gax.CallOption
-	SuggestKeywordThemes              []gax.CallOption
+	SuggestSmartCampaignAd []gax.CallOption
+	SuggestKeywordThemes []gax.CallOption
 }
 
 func defaultSmartCampaignSuggestGRPCClientOptions() []option.ClientOption {
@@ -50,7 +50,7 @@ func defaultSmartCampaignSuggestGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -115,6 +115,7 @@ type SmartCampaignSuggestClient struct {
 
 	// The call options for this service.
 	CallOptions *SmartCampaignSuggestCallOptions
+
 }
 
 // Wrapper methods routed to the internal client.
@@ -201,10 +202,11 @@ func NewSmartCampaignSuggestClient(ctx context.Context, opts ...option.ClientOpt
 	client := SmartCampaignSuggestClient{CallOptions: defaultSmartCampaignSuggestCallOptions()}
 
 	c := &smartCampaignSuggestGRPCClient{
-		connPool:                   connPool,
-		disableDeadlines:           disableDeadlines,
+		connPool:    connPool,
+		disableDeadlines: disableDeadlines,
 		smartCampaignSuggestClient: servicespb.NewSmartCampaignSuggestServiceClient(connPool),
-		CallOptions:                &client.CallOptions,
+		CallOptions: &client.CallOptions,
+
 	}
 	c.setGoogleClientInfo()
 
@@ -237,7 +239,7 @@ func (c *smartCampaignSuggestGRPCClient) Close() error {
 
 func (c *smartCampaignSuggestGRPCClient) SuggestSmartCampaignBudgetOptions(ctx context.Context, req *servicespb.SuggestSmartCampaignBudgetOptionsRequest, opts ...gax.CallOption) (*servicespb.SuggestSmartCampaignBudgetOptionsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -258,7 +260,7 @@ func (c *smartCampaignSuggestGRPCClient) SuggestSmartCampaignBudgetOptions(ctx c
 
 func (c *smartCampaignSuggestGRPCClient) SuggestSmartCampaignAd(ctx context.Context, req *servicespb.SuggestSmartCampaignAdRequest, opts ...gax.CallOption) (*servicespb.SuggestSmartCampaignAdResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -279,7 +281,7 @@ func (c *smartCampaignSuggestGRPCClient) SuggestSmartCampaignAd(ctx context.Cont
 
 func (c *smartCampaignSuggestGRPCClient) SuggestKeywordThemes(ctx context.Context, req *servicespb.SuggestKeywordThemesRequest, opts ...gax.CallOption) (*servicespb.SuggestKeywordThemesResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

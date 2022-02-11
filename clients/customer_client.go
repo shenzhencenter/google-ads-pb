@@ -1,4 +1,4 @@
-// Copyright 2021 Google LLC
+// Copyright 2022 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,11 +24,11 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
+	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -38,10 +38,10 @@ var newCustomerClientHook clientHook
 
 // CustomerCallOptions contains the retry settings for each method of CustomerClient.
 type CustomerCallOptions struct {
-	GetCustomer             []gax.CallOption
-	MutateCustomer          []gax.CallOption
+	GetCustomer []gax.CallOption
+	MutateCustomer []gax.CallOption
 	ListAccessibleCustomers []gax.CallOption
-	CreateCustomerClient    []gax.CallOption
+	CreateCustomerClient []gax.CallOption
 }
 
 func defaultCustomerGRPCClientOptions() []option.ClientOption {
@@ -52,7 +52,7 @@ func defaultCustomerGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -130,6 +130,7 @@ type CustomerClient struct {
 
 	// The call options for this service.
 	CallOptions *CustomerCallOptions
+
 }
 
 // Wrapper methods routed to the internal client.
@@ -261,10 +262,11 @@ func NewCustomerClient(ctx context.Context, opts ...option.ClientOption) (*Custo
 	client := CustomerClient{CallOptions: defaultCustomerCallOptions()}
 
 	c := &customerGRPCClient{
-		connPool:         connPool,
+		connPool:    connPool,
 		disableDeadlines: disableDeadlines,
-		customerClient:   servicespb.NewCustomerServiceClient(connPool),
-		CallOptions:      &client.CallOptions,
+		customerClient: servicespb.NewCustomerServiceClient(connPool),
+		CallOptions: &client.CallOptions,
+
 	}
 	c.setGoogleClientInfo()
 
@@ -297,7 +299,7 @@ func (c *customerGRPCClient) Close() error {
 
 func (c *customerGRPCClient) GetCustomer(ctx context.Context, req *servicespb.GetCustomerRequest, opts ...gax.CallOption) (*resourcespb.Customer, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -318,7 +320,7 @@ func (c *customerGRPCClient) GetCustomer(ctx context.Context, req *servicespb.Ge
 
 func (c *customerGRPCClient) MutateCustomer(ctx context.Context, req *servicespb.MutateCustomerRequest, opts ...gax.CallOption) (*servicespb.MutateCustomerResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -339,7 +341,7 @@ func (c *customerGRPCClient) MutateCustomer(ctx context.Context, req *servicespb
 
 func (c *customerGRPCClient) ListAccessibleCustomers(ctx context.Context, req *servicespb.ListAccessibleCustomersRequest, opts ...gax.CallOption) (*servicespb.ListAccessibleCustomersResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -359,7 +361,7 @@ func (c *customerGRPCClient) ListAccessibleCustomers(ctx context.Context, req *s
 
 func (c *customerGRPCClient) CreateCustomerClient(ctx context.Context, req *servicespb.CreateCustomerClientRequest, opts ...gax.CallOption) (*servicespb.CreateCustomerClientResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

@@ -1,4 +1,4 @@
-// Copyright 2021 Google LLC
+// Copyright 2022 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,11 +24,11 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
+	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -38,7 +38,7 @@ var newSharedCriterionClientHook clientHook
 
 // SharedCriterionCallOptions contains the retry settings for each method of SharedCriterionClient.
 type SharedCriterionCallOptions struct {
-	GetSharedCriterion   []gax.CallOption
+	GetSharedCriterion []gax.CallOption
 	MutateSharedCriteria []gax.CallOption
 }
 
@@ -50,7 +50,7 @@ func defaultSharedCriterionGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -102,6 +102,7 @@ type SharedCriterionClient struct {
 
 	// The call options for this service.
 	CallOptions *SharedCriterionCallOptions
+
 }
 
 // Wrapper methods routed to the internal client.
@@ -212,10 +213,11 @@ func NewSharedCriterionClient(ctx context.Context, opts ...option.ClientOption) 
 	client := SharedCriterionClient{CallOptions: defaultSharedCriterionCallOptions()}
 
 	c := &sharedCriterionGRPCClient{
-		connPool:              connPool,
-		disableDeadlines:      disableDeadlines,
+		connPool:    connPool,
+		disableDeadlines: disableDeadlines,
 		sharedCriterionClient: servicespb.NewSharedCriterionServiceClient(connPool),
-		CallOptions:           &client.CallOptions,
+		CallOptions: &client.CallOptions,
+
 	}
 	c.setGoogleClientInfo()
 
@@ -248,7 +250,7 @@ func (c *sharedCriterionGRPCClient) Close() error {
 
 func (c *sharedCriterionGRPCClient) GetSharedCriterion(ctx context.Context, req *servicespb.GetSharedCriterionRequest, opts ...gax.CallOption) (*resourcespb.SharedCriterion, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -269,7 +271,7 @@ func (c *sharedCriterionGRPCClient) GetSharedCriterion(ctx context.Context, req 
 
 func (c *sharedCriterionGRPCClient) MutateSharedCriteria(ctx context.Context, req *servicespb.MutateSharedCriteriaRequest, opts ...gax.CallOption) (*servicespb.MutateSharedCriteriaResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

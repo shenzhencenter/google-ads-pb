@@ -1,4 +1,4 @@
-// Copyright 2021 Google LLC
+// Copyright 2022 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,11 +24,11 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
+	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -38,7 +38,7 @@ var newCampaignClientHook clientHook
 
 // CampaignCallOptions contains the retry settings for each method of CampaignClient.
 type CampaignCallOptions struct {
-	GetCampaign     []gax.CallOption
+	GetCampaign []gax.CallOption
 	MutateCampaigns []gax.CallOption
 }
 
@@ -50,7 +50,7 @@ func defaultCampaignGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -102,6 +102,7 @@ type CampaignClient struct {
 
 	// The call options for this service.
 	CallOptions *CampaignCallOptions
+
 }
 
 // Wrapper methods routed to the internal client.
@@ -227,10 +228,11 @@ func NewCampaignClient(ctx context.Context, opts ...option.ClientOption) (*Campa
 	client := CampaignClient{CallOptions: defaultCampaignCallOptions()}
 
 	c := &campaignGRPCClient{
-		connPool:         connPool,
+		connPool:    connPool,
 		disableDeadlines: disableDeadlines,
-		campaignClient:   servicespb.NewCampaignServiceClient(connPool),
-		CallOptions:      &client.CallOptions,
+		campaignClient: servicespb.NewCampaignServiceClient(connPool),
+		CallOptions: &client.CallOptions,
+
 	}
 	c.setGoogleClientInfo()
 
@@ -263,7 +265,7 @@ func (c *campaignGRPCClient) Close() error {
 
 func (c *campaignGRPCClient) GetCampaign(ctx context.Context, req *servicespb.GetCampaignRequest, opts ...gax.CallOption) (*resourcespb.Campaign, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -284,7 +286,7 @@ func (c *campaignGRPCClient) GetCampaign(ctx context.Context, req *servicespb.Ge
 
 func (c *campaignGRPCClient) MutateCampaigns(ctx context.Context, req *servicespb.MutateCampaignsRequest, opts ...gax.CallOption) (*servicespb.MutateCampaignsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

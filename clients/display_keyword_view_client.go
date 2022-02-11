@@ -1,4 +1,4 @@
-// Copyright 2021 Google LLC
+// Copyright 2022 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,11 +24,11 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
+	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -49,7 +49,7 @@ func defaultDisplayKeywordViewGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -88,6 +88,7 @@ type DisplayKeywordViewClient struct {
 
 	// The call options for this service.
 	CallOptions *DisplayKeywordViewCallOptions
+
 }
 
 // Wrapper methods routed to the internal client.
@@ -171,10 +172,11 @@ func NewDisplayKeywordViewClient(ctx context.Context, opts ...option.ClientOptio
 	client := DisplayKeywordViewClient{CallOptions: defaultDisplayKeywordViewCallOptions()}
 
 	c := &displayKeywordViewGRPCClient{
-		connPool:                 connPool,
-		disableDeadlines:         disableDeadlines,
+		connPool:    connPool,
+		disableDeadlines: disableDeadlines,
 		displayKeywordViewClient: servicespb.NewDisplayKeywordViewServiceClient(connPool),
-		CallOptions:              &client.CallOptions,
+		CallOptions: &client.CallOptions,
+
 	}
 	c.setGoogleClientInfo()
 
@@ -207,7 +209,7 @@ func (c *displayKeywordViewGRPCClient) Close() error {
 
 func (c *displayKeywordViewGRPCClient) GetDisplayKeywordView(ctx context.Context, req *servicespb.GetDisplayKeywordViewRequest, opts ...gax.CallOption) (*resourcespb.DisplayKeywordView, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

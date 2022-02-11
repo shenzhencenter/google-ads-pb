@@ -1,4 +1,4 @@
-// Copyright 2021 Google LLC
+// Copyright 2022 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,11 +24,11 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
+	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -38,9 +38,9 @@ var newCustomerManagerLinkClientHook clientHook
 
 // CustomerManagerLinkCallOptions contains the retry settings for each method of CustomerManagerLinkClient.
 type CustomerManagerLinkCallOptions struct {
-	GetCustomerManagerLink    []gax.CallOption
+	GetCustomerManagerLink []gax.CallOption
 	MutateCustomerManagerLink []gax.CallOption
-	MoveManagerLink           []gax.CallOption
+	MoveManagerLink []gax.CallOption
 }
 
 func defaultCustomerManagerLinkGRPCClientOptions() []option.ClientOption {
@@ -51,7 +51,7 @@ func defaultCustomerManagerLinkGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -116,6 +116,7 @@ type CustomerManagerLinkClient struct {
 
 	// The call options for this service.
 	CallOptions *CustomerManagerLinkCallOptions
+
 }
 
 // Wrapper methods routed to the internal client.
@@ -239,10 +240,11 @@ func NewCustomerManagerLinkClient(ctx context.Context, opts ...option.ClientOpti
 	client := CustomerManagerLinkClient{CallOptions: defaultCustomerManagerLinkCallOptions()}
 
 	c := &customerManagerLinkGRPCClient{
-		connPool:                  connPool,
-		disableDeadlines:          disableDeadlines,
+		connPool:    connPool,
+		disableDeadlines: disableDeadlines,
 		customerManagerLinkClient: servicespb.NewCustomerManagerLinkServiceClient(connPool),
-		CallOptions:               &client.CallOptions,
+		CallOptions: &client.CallOptions,
+
 	}
 	c.setGoogleClientInfo()
 
@@ -275,7 +277,7 @@ func (c *customerManagerLinkGRPCClient) Close() error {
 
 func (c *customerManagerLinkGRPCClient) GetCustomerManagerLink(ctx context.Context, req *servicespb.GetCustomerManagerLinkRequest, opts ...gax.CallOption) (*resourcespb.CustomerManagerLink, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -296,7 +298,7 @@ func (c *customerManagerLinkGRPCClient) GetCustomerManagerLink(ctx context.Conte
 
 func (c *customerManagerLinkGRPCClient) MutateCustomerManagerLink(ctx context.Context, req *servicespb.MutateCustomerManagerLinkRequest, opts ...gax.CallOption) (*servicespb.MutateCustomerManagerLinkResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -317,7 +319,7 @@ func (c *customerManagerLinkGRPCClient) MutateCustomerManagerLink(ctx context.Co
 
 func (c *customerManagerLinkGRPCClient) MoveManagerLink(ctx context.Context, req *servicespb.MoveManagerLinkRequest, opts ...gax.CallOption) (*servicespb.MoveManagerLinkResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

@@ -1,4 +1,4 @@
-// Copyright 2021 Google LLC
+// Copyright 2022 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,11 +24,11 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
+	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -38,7 +38,7 @@ var newExtensionFeedItemClientHook clientHook
 
 // ExtensionFeedItemCallOptions contains the retry settings for each method of ExtensionFeedItemClient.
 type ExtensionFeedItemCallOptions struct {
-	GetExtensionFeedItem     []gax.CallOption
+	GetExtensionFeedItem []gax.CallOption
 	MutateExtensionFeedItems []gax.CallOption
 }
 
@@ -50,7 +50,7 @@ func defaultExtensionFeedItemGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -102,6 +102,7 @@ type ExtensionFeedItemClient struct {
 
 	// The call options for this service.
 	CallOptions *ExtensionFeedItemCallOptions
+
 }
 
 // Wrapper methods routed to the internal client.
@@ -216,10 +217,11 @@ func NewExtensionFeedItemClient(ctx context.Context, opts ...option.ClientOption
 	client := ExtensionFeedItemClient{CallOptions: defaultExtensionFeedItemCallOptions()}
 
 	c := &extensionFeedItemGRPCClient{
-		connPool:                connPool,
-		disableDeadlines:        disableDeadlines,
+		connPool:    connPool,
+		disableDeadlines: disableDeadlines,
 		extensionFeedItemClient: servicespb.NewExtensionFeedItemServiceClient(connPool),
-		CallOptions:             &client.CallOptions,
+		CallOptions: &client.CallOptions,
+
 	}
 	c.setGoogleClientInfo()
 
@@ -252,7 +254,7 @@ func (c *extensionFeedItemGRPCClient) Close() error {
 
 func (c *extensionFeedItemGRPCClient) GetExtensionFeedItem(ctx context.Context, req *servicespb.GetExtensionFeedItemRequest, opts ...gax.CallOption) (*resourcespb.ExtensionFeedItem, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -273,7 +275,7 @@ func (c *extensionFeedItemGRPCClient) GetExtensionFeedItem(ctx context.Context, 
 
 func (c *extensionFeedItemGRPCClient) MutateExtensionFeedItems(ctx context.Context, req *servicespb.MutateExtensionFeedItemsRequest, opts ...gax.CallOption) (*servicespb.MutateExtensionFeedItemsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

@@ -1,4 +1,4 @@
-// Copyright 2021 Google LLC
+// Copyright 2022 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,11 +24,11 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/iterator"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -50,7 +50,7 @@ func defaultKeywordPlanIdeaGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -89,6 +89,7 @@ type KeywordPlanIdeaClient struct {
 
 	// The call options for this service.
 	CallOptions *KeywordPlanIdeaCallOptions
+
 }
 
 // Wrapper methods routed to the internal client.
@@ -174,10 +175,11 @@ func NewKeywordPlanIdeaClient(ctx context.Context, opts ...option.ClientOption) 
 	client := KeywordPlanIdeaClient{CallOptions: defaultKeywordPlanIdeaCallOptions()}
 
 	c := &keywordPlanIdeaGRPCClient{
-		connPool:              connPool,
-		disableDeadlines:      disableDeadlines,
+		connPool:    connPool,
+		disableDeadlines: disableDeadlines,
 		keywordPlanIdeaClient: servicespb.NewKeywordPlanIdeaServiceClient(connPool),
-		CallOptions:           &client.CallOptions,
+		CallOptions: &client.CallOptions,
+
 	}
 	c.setGoogleClientInfo()
 

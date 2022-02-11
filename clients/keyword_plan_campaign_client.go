@@ -1,4 +1,4 @@
-// Copyright 2021 Google LLC
+// Copyright 2022 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,11 +24,11 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
+	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -38,7 +38,7 @@ var newKeywordPlanCampaignClientHook clientHook
 
 // KeywordPlanCampaignCallOptions contains the retry settings for each method of KeywordPlanCampaignClient.
 type KeywordPlanCampaignCallOptions struct {
-	GetKeywordPlanCampaign     []gax.CallOption
+	GetKeywordPlanCampaign []gax.CallOption
 	MutateKeywordPlanCampaigns []gax.CallOption
 }
 
@@ -50,7 +50,7 @@ func defaultKeywordPlanCampaignGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -102,6 +102,7 @@ type KeywordPlanCampaignClient struct {
 
 	// The call options for this service.
 	CallOptions *KeywordPlanCampaignCallOptions
+
 }
 
 // Wrapper methods routed to the internal client.
@@ -208,10 +209,11 @@ func NewKeywordPlanCampaignClient(ctx context.Context, opts ...option.ClientOpti
 	client := KeywordPlanCampaignClient{CallOptions: defaultKeywordPlanCampaignCallOptions()}
 
 	c := &keywordPlanCampaignGRPCClient{
-		connPool:                  connPool,
-		disableDeadlines:          disableDeadlines,
+		connPool:    connPool,
+		disableDeadlines: disableDeadlines,
 		keywordPlanCampaignClient: servicespb.NewKeywordPlanCampaignServiceClient(connPool),
-		CallOptions:               &client.CallOptions,
+		CallOptions: &client.CallOptions,
+
 	}
 	c.setGoogleClientInfo()
 
@@ -244,7 +246,7 @@ func (c *keywordPlanCampaignGRPCClient) Close() error {
 
 func (c *keywordPlanCampaignGRPCClient) GetKeywordPlanCampaign(ctx context.Context, req *servicespb.GetKeywordPlanCampaignRequest, opts ...gax.CallOption) (*resourcespb.KeywordPlanCampaign, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -265,7 +267,7 @@ func (c *keywordPlanCampaignGRPCClient) GetKeywordPlanCampaign(ctx context.Conte
 
 func (c *keywordPlanCampaignGRPCClient) MutateKeywordPlanCampaigns(ctx context.Context, req *servicespb.MutateKeywordPlanCampaignsRequest, opts ...gax.CallOption) (*servicespb.MutateKeywordPlanCampaignsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

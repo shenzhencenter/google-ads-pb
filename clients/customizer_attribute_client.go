@@ -1,4 +1,4 @@
-// Copyright 2021 Google LLC
+// Copyright 2022 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,10 +24,10 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -48,7 +48,7 @@ func defaultCustomizerAttributeGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -87,6 +87,7 @@ type CustomizerAttributeClient struct {
 
 	// The call options for this service.
 	CallOptions *CustomizerAttributeCallOptions
+
 }
 
 // Wrapper methods routed to the internal client.
@@ -163,10 +164,11 @@ func NewCustomizerAttributeClient(ctx context.Context, opts ...option.ClientOpti
 	client := CustomizerAttributeClient{CallOptions: defaultCustomizerAttributeCallOptions()}
 
 	c := &customizerAttributeGRPCClient{
-		connPool:                  connPool,
-		disableDeadlines:          disableDeadlines,
+		connPool:    connPool,
+		disableDeadlines: disableDeadlines,
 		customizerAttributeClient: servicespb.NewCustomizerAttributeServiceClient(connPool),
-		CallOptions:               &client.CallOptions,
+		CallOptions: &client.CallOptions,
+
 	}
 	c.setGoogleClientInfo()
 
@@ -199,7 +201,7 @@ func (c *customizerAttributeGRPCClient) Close() error {
 
 func (c *customizerAttributeGRPCClient) MutateCustomizerAttributes(ctx context.Context, req *servicespb.MutateCustomizerAttributesRequest, opts ...gax.CallOption) (*servicespb.MutateCustomizerAttributesResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
