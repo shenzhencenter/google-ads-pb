@@ -4,7 +4,6 @@ package services
 
 import (
 	context "context"
-	resources "github.com/shenzhencenter/google-ads-pb/resources"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -19,16 +18,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type CustomerAssetServiceClient interface {
-	// Returns the requested customer asset in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetCustomerAsset(ctx context.Context, in *GetCustomerAssetRequest, opts ...grpc.CallOption) (*resources.CustomerAsset, error)
 	// Creates, updates, or removes customer assets. Operation statuses are
 	// returned.
 	//
@@ -53,18 +42,9 @@ func NewCustomerAssetServiceClient(cc grpc.ClientConnInterface) CustomerAssetSer
 	return &customerAssetServiceClient{cc}
 }
 
-func (c *customerAssetServiceClient) GetCustomerAsset(ctx context.Context, in *GetCustomerAssetRequest, opts ...grpc.CallOption) (*resources.CustomerAsset, error) {
-	out := new(resources.CustomerAsset)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.CustomerAssetService/GetCustomerAsset", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *customerAssetServiceClient) MutateCustomerAssets(ctx context.Context, in *MutateCustomerAssetsRequest, opts ...grpc.CallOption) (*MutateCustomerAssetsResponse, error) {
 	out := new(MutateCustomerAssetsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.CustomerAssetService/MutateCustomerAssets", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.CustomerAssetService/MutateCustomerAssets", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -75,16 +55,6 @@ func (c *customerAssetServiceClient) MutateCustomerAssets(ctx context.Context, i
 // All implementations must embed UnimplementedCustomerAssetServiceServer
 // for forward compatibility
 type CustomerAssetServiceServer interface {
-	// Returns the requested customer asset in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetCustomerAsset(context.Context, *GetCustomerAssetRequest) (*resources.CustomerAsset, error)
 	// Creates, updates, or removes customer assets. Operation statuses are
 	// returned.
 	//
@@ -106,9 +76,6 @@ type CustomerAssetServiceServer interface {
 type UnimplementedCustomerAssetServiceServer struct {
 }
 
-func (UnimplementedCustomerAssetServiceServer) GetCustomerAsset(context.Context, *GetCustomerAssetRequest) (*resources.CustomerAsset, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetCustomerAsset not implemented")
-}
 func (UnimplementedCustomerAssetServiceServer) MutateCustomerAssets(context.Context, *MutateCustomerAssetsRequest) (*MutateCustomerAssetsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MutateCustomerAssets not implemented")
 }
@@ -125,24 +92,6 @@ func RegisterCustomerAssetServiceServer(s grpc.ServiceRegistrar, srv CustomerAss
 	s.RegisterService(&CustomerAssetService_ServiceDesc, srv)
 }
 
-func _CustomerAssetService_GetCustomerAsset_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetCustomerAssetRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(CustomerAssetServiceServer).GetCustomerAsset(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.CustomerAssetService/GetCustomerAsset",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CustomerAssetServiceServer).GetCustomerAsset(ctx, req.(*GetCustomerAssetRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _CustomerAssetService_MutateCustomerAssets_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MutateCustomerAssetsRequest)
 	if err := dec(in); err != nil {
@@ -153,7 +102,7 @@ func _CustomerAssetService_MutateCustomerAssets_Handler(srv interface{}, ctx con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.CustomerAssetService/MutateCustomerAssets",
+		FullMethod: "/google.ads.googleads.v10.services.CustomerAssetService/MutateCustomerAssets",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CustomerAssetServiceServer).MutateCustomerAssets(ctx, req.(*MutateCustomerAssetsRequest))
@@ -165,18 +114,14 @@ func _CustomerAssetService_MutateCustomerAssets_Handler(srv interface{}, ctx con
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CustomerAssetService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v9.services.CustomerAssetService",
+	ServiceName: "google.ads.googleads.v10.services.CustomerAssetService",
 	HandlerType: (*CustomerAssetServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetCustomerAsset",
-			Handler:    _CustomerAssetService_GetCustomerAsset_Handler,
-		},
 		{
 			MethodName: "MutateCustomerAssets",
 			Handler:    _CustomerAssetService_MutateCustomerAssets_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v9/services/customer_asset_service.proto",
+	Metadata: "google/ads/googleads/v10/services/customer_asset_service.proto",
 }

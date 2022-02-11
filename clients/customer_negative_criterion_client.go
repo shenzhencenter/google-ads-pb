@@ -27,7 +27,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +37,6 @@ var newCustomerNegativeCriterionClientHook clientHook
 
 // CustomerNegativeCriterionCallOptions contains the retry settings for each method of CustomerNegativeCriterionClient.
 type CustomerNegativeCriterionCallOptions struct {
-	GetCustomerNegativeCriterion []gax.CallOption
 	MutateCustomerNegativeCriteria []gax.CallOption
 }
 
@@ -56,18 +54,6 @@ func defaultCustomerNegativeCriterionGRPCClientOptions() []option.ClientOption {
 
 func defaultCustomerNegativeCriterionCallOptions() *CustomerNegativeCriterionCallOptions {
 	return &CustomerNegativeCriterionCallOptions{
-		GetCustomerNegativeCriterion: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		MutateCustomerNegativeCriteria: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -88,7 +74,6 @@ type internalCustomerNegativeCriterionClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetCustomerNegativeCriterion(context.Context, *servicespb.GetCustomerNegativeCriterionRequest, ...gax.CallOption) (*resourcespb.CustomerNegativeCriterion, error)
 	MutateCustomerNegativeCriteria(context.Context, *servicespb.MutateCustomerNegativeCriteriaRequest, ...gax.CallOption) (*servicespb.MutateCustomerNegativeCriteriaResponse, error)
 }
 
@@ -125,19 +110,6 @@ func (c *CustomerNegativeCriterionClient) setGoogleClientInfo(keyval ...string) 
 // Deprecated.
 func (c *CustomerNegativeCriterionClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetCustomerNegativeCriterion returns the requested criterion in full detail.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *CustomerNegativeCriterionClient) GetCustomerNegativeCriterion(ctx context.Context, req *servicespb.GetCustomerNegativeCriterionRequest, opts ...gax.CallOption) (*resourcespb.CustomerNegativeCriterion, error) {
-	return c.internalClient.GetCustomerNegativeCriterion(ctx, req, opts...)
 }
 
 // MutateCustomerNegativeCriteria creates or removes criteria. Operation statuses are returned.
@@ -236,27 +208,6 @@ func (c *customerNegativeCriterionGRPCClient) setGoogleClientInfo(keyval ...stri
 // the client is no longer required.
 func (c *customerNegativeCriterionGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *customerNegativeCriterionGRPCClient) GetCustomerNegativeCriterion(ctx context.Context, req *servicespb.GetCustomerNegativeCriterionRequest, opts ...gax.CallOption) (*resourcespb.CustomerNegativeCriterion, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetCustomerNegativeCriterion[0:len((*c.CallOptions).GetCustomerNegativeCriterion):len((*c.CallOptions).GetCustomerNegativeCriterion)], opts...)
-	var resp *resourcespb.CustomerNegativeCriterion
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.customerNegativeCriterionClient.GetCustomerNegativeCriterion(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *customerNegativeCriterionGRPCClient) MutateCustomerNegativeCriteria(ctx context.Context, req *servicespb.MutateCustomerNegativeCriteriaRequest, opts ...gax.CallOption) (*servicespb.MutateCustomerNegativeCriteriaResponse, error) {

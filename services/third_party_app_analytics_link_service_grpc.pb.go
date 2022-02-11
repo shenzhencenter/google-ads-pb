@@ -4,7 +4,6 @@ package services
 
 import (
 	context "context"
-	resources "github.com/shenzhencenter/google-ads-pb/resources"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -19,16 +18,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ThirdPartyAppAnalyticsLinkServiceClient interface {
-	// Returns the third party app analytics link in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetThirdPartyAppAnalyticsLink(ctx context.Context, in *GetThirdPartyAppAnalyticsLinkRequest, opts ...grpc.CallOption) (*resources.ThirdPartyAppAnalyticsLink, error)
 	// Regenerate ThirdPartyAppAnalyticsLink.shareable_link_id that should be
 	// provided to the third party when setting up app analytics.
 	//
@@ -50,18 +39,9 @@ func NewThirdPartyAppAnalyticsLinkServiceClient(cc grpc.ClientConnInterface) Thi
 	return &thirdPartyAppAnalyticsLinkServiceClient{cc}
 }
 
-func (c *thirdPartyAppAnalyticsLinkServiceClient) GetThirdPartyAppAnalyticsLink(ctx context.Context, in *GetThirdPartyAppAnalyticsLinkRequest, opts ...grpc.CallOption) (*resources.ThirdPartyAppAnalyticsLink, error) {
-	out := new(resources.ThirdPartyAppAnalyticsLink)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.ThirdPartyAppAnalyticsLinkService/GetThirdPartyAppAnalyticsLink", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *thirdPartyAppAnalyticsLinkServiceClient) RegenerateShareableLinkId(ctx context.Context, in *RegenerateShareableLinkIdRequest, opts ...grpc.CallOption) (*RegenerateShareableLinkIdResponse, error) {
 	out := new(RegenerateShareableLinkIdResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.ThirdPartyAppAnalyticsLinkService/RegenerateShareableLinkId", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.ThirdPartyAppAnalyticsLinkService/RegenerateShareableLinkId", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -72,16 +52,6 @@ func (c *thirdPartyAppAnalyticsLinkServiceClient) RegenerateShareableLinkId(ctx 
 // All implementations must embed UnimplementedThirdPartyAppAnalyticsLinkServiceServer
 // for forward compatibility
 type ThirdPartyAppAnalyticsLinkServiceServer interface {
-	// Returns the third party app analytics link in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetThirdPartyAppAnalyticsLink(context.Context, *GetThirdPartyAppAnalyticsLinkRequest) (*resources.ThirdPartyAppAnalyticsLink, error)
 	// Regenerate ThirdPartyAppAnalyticsLink.shareable_link_id that should be
 	// provided to the third party when setting up app analytics.
 	//
@@ -100,9 +70,6 @@ type ThirdPartyAppAnalyticsLinkServiceServer interface {
 type UnimplementedThirdPartyAppAnalyticsLinkServiceServer struct {
 }
 
-func (UnimplementedThirdPartyAppAnalyticsLinkServiceServer) GetThirdPartyAppAnalyticsLink(context.Context, *GetThirdPartyAppAnalyticsLinkRequest) (*resources.ThirdPartyAppAnalyticsLink, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetThirdPartyAppAnalyticsLink not implemented")
-}
 func (UnimplementedThirdPartyAppAnalyticsLinkServiceServer) RegenerateShareableLinkId(context.Context, *RegenerateShareableLinkIdRequest) (*RegenerateShareableLinkIdResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RegenerateShareableLinkId not implemented")
 }
@@ -120,24 +87,6 @@ func RegisterThirdPartyAppAnalyticsLinkServiceServer(s grpc.ServiceRegistrar, sr
 	s.RegisterService(&ThirdPartyAppAnalyticsLinkService_ServiceDesc, srv)
 }
 
-func _ThirdPartyAppAnalyticsLinkService_GetThirdPartyAppAnalyticsLink_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetThirdPartyAppAnalyticsLinkRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ThirdPartyAppAnalyticsLinkServiceServer).GetThirdPartyAppAnalyticsLink(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.ThirdPartyAppAnalyticsLinkService/GetThirdPartyAppAnalyticsLink",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ThirdPartyAppAnalyticsLinkServiceServer).GetThirdPartyAppAnalyticsLink(ctx, req.(*GetThirdPartyAppAnalyticsLinkRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _ThirdPartyAppAnalyticsLinkService_RegenerateShareableLinkId_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(RegenerateShareableLinkIdRequest)
 	if err := dec(in); err != nil {
@@ -148,7 +97,7 @@ func _ThirdPartyAppAnalyticsLinkService_RegenerateShareableLinkId_Handler(srv in
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.ThirdPartyAppAnalyticsLinkService/RegenerateShareableLinkId",
+		FullMethod: "/google.ads.googleads.v10.services.ThirdPartyAppAnalyticsLinkService/RegenerateShareableLinkId",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ThirdPartyAppAnalyticsLinkServiceServer).RegenerateShareableLinkId(ctx, req.(*RegenerateShareableLinkIdRequest))
@@ -160,18 +109,14 @@ func _ThirdPartyAppAnalyticsLinkService_RegenerateShareableLinkId_Handler(srv in
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ThirdPartyAppAnalyticsLinkService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v9.services.ThirdPartyAppAnalyticsLinkService",
+	ServiceName: "google.ads.googleads.v10.services.ThirdPartyAppAnalyticsLinkService",
 	HandlerType: (*ThirdPartyAppAnalyticsLinkServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetThirdPartyAppAnalyticsLink",
-			Handler:    _ThirdPartyAppAnalyticsLinkService_GetThirdPartyAppAnalyticsLink_Handler,
-		},
 		{
 			MethodName: "RegenerateShareableLinkId",
 			Handler:    _ThirdPartyAppAnalyticsLinkService_RegenerateShareableLinkId_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v9/services/third_party_app_analytics_link_service.proto",
+	Metadata: "google/ads/googleads/v10/services/third_party_app_analytics_link_service.proto",
 }

@@ -23,7 +23,7 @@
 //
 // To get started with this package, create a client.
 //  ctx := context.Background()
-//  c, err := clients.NewIncomeRangeViewClient(ctx)
+//  c, err := clients.NewCampaignExperimentClient(ctx)
 //  if err != nil {
 //  	// TODO: Handle error.
 //  }
@@ -38,22 +38,25 @@
 // The following is an example of making an API call with the newly created client.
 //
 //  ctx := context.Background()
-//  c, err := clients.NewIncomeRangeViewClient(ctx)
+//  c, err := clients.NewCampaignExperimentClient(ctx)
 //  if err != nil {
 //  	// TODO: Handle error.
 //  }
 //  defer c.Close()
 //
-//  req := &servicespb.GetIncomeRangeViewRequest{
+//  req := &servicespb.CreateCampaignExperimentRequest{
 //  	// TODO: Fill request struct fields.
-//  	// See https://pkg.go.dev/github.com/shenzhencenter/google-ads-pb/services#GetIncomeRangeViewRequest.
+//  	// See https://pkg.go.dev/github.com/shenzhencenter/google-ads-pb/services#CreateCampaignExperimentRequest.
 //  }
-//  resp, err := c.GetIncomeRangeView(ctx, req)
+//  op, err := c.CreateCampaignExperiment(ctx, req)
 //  if err != nil {
 //  	// TODO: Handle error.
 //  }
-//  // TODO: Use resp.
-//  _ = resp
+//
+//  err = op.Wait(ctx)
+//  if err != nil {
+//  	// TODO: Handle error.
+//  }
 //
 // Use of Context
 //

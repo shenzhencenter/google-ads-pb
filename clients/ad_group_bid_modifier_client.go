@@ -27,7 +27,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +37,6 @@ var newAdGroupBidModifierClientHook clientHook
 
 // AdGroupBidModifierCallOptions contains the retry settings for each method of AdGroupBidModifierClient.
 type AdGroupBidModifierCallOptions struct {
-	GetAdGroupBidModifier []gax.CallOption
 	MutateAdGroupBidModifiers []gax.CallOption
 }
 
@@ -56,18 +54,6 @@ func defaultAdGroupBidModifierGRPCClientOptions() []option.ClientOption {
 
 func defaultAdGroupBidModifierCallOptions() *AdGroupBidModifierCallOptions {
 	return &AdGroupBidModifierCallOptions{
-		GetAdGroupBidModifier: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		MutateAdGroupBidModifiers: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -88,7 +74,6 @@ type internalAdGroupBidModifierClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetAdGroupBidModifier(context.Context, *servicespb.GetAdGroupBidModifierRequest, ...gax.CallOption) (*resourcespb.AdGroupBidModifier, error)
 	MutateAdGroupBidModifiers(context.Context, *servicespb.MutateAdGroupBidModifiersRequest, ...gax.CallOption) (*servicespb.MutateAdGroupBidModifiersResponse, error)
 }
 
@@ -125,19 +110,6 @@ func (c *AdGroupBidModifierClient) setGoogleClientInfo(keyval ...string) {
 // Deprecated.
 func (c *AdGroupBidModifierClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetAdGroupBidModifier returns the requested ad group bid modifier in full detail.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *AdGroupBidModifierClient) GetAdGroupBidModifier(ctx context.Context, req *servicespb.GetAdGroupBidModifierRequest, opts ...gax.CallOption) (*resourcespb.AdGroupBidModifier, error) {
-	return c.internalClient.GetAdGroupBidModifier(ctx, req, opts...)
 }
 
 // MutateAdGroupBidModifiers creates, updates, or removes ad group bid modifiers.
@@ -250,27 +222,6 @@ func (c *adGroupBidModifierGRPCClient) setGoogleClientInfo(keyval ...string) {
 // the client is no longer required.
 func (c *adGroupBidModifierGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *adGroupBidModifierGRPCClient) GetAdGroupBidModifier(ctx context.Context, req *servicespb.GetAdGroupBidModifierRequest, opts ...gax.CallOption) (*resourcespb.AdGroupBidModifier, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetAdGroupBidModifier[0:len((*c.CallOptions).GetAdGroupBidModifier):len((*c.CallOptions).GetAdGroupBidModifier)], opts...)
-	var resp *resourcespb.AdGroupBidModifier
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.adGroupBidModifierClient.GetAdGroupBidModifier(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *adGroupBidModifierGRPCClient) MutateAdGroupBidModifiers(ctx context.Context, req *servicespb.MutateAdGroupBidModifiersRequest, opts ...gax.CallOption) (*servicespb.MutateAdGroupBidModifiersResponse, error) {

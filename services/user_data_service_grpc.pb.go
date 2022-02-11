@@ -45,7 +45,7 @@ func NewUserDataServiceClient(cc grpc.ClientConnInterface) UserDataServiceClient
 
 func (c *userDataServiceClient) UploadUserData(ctx context.Context, in *UploadUserDataRequest, opts ...grpc.CallOption) (*UploadUserDataResponse, error) {
 	out := new(UploadUserDataResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.UserDataService/UploadUserData", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.UserDataService/UploadUserData", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -104,7 +104,7 @@ func _UserDataService_UploadUserData_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.UserDataService/UploadUserData",
+		FullMethod: "/google.ads.googleads.v10.services.UserDataService/UploadUserData",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(UserDataServiceServer).UploadUserData(ctx, req.(*UploadUserDataRequest))
@@ -116,7 +116,7 @@ func _UserDataService_UploadUserData_Handler(srv interface{}, ctx context.Contex
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var UserDataService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v9.services.UserDataService",
+	ServiceName: "google.ads.googleads.v10.services.UserDataService",
 	HandlerType: (*UserDataServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -125,5 +125,5 @@ var UserDataService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v9/services/user_data_service.proto",
+	Metadata: "google/ads/googleads/v10/services/user_data_service.proto",
 }

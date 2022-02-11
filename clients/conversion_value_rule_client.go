@@ -27,7 +27,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +37,6 @@ var newConversionValueRuleClientHook clientHook
 
 // ConversionValueRuleCallOptions contains the retry settings for each method of ConversionValueRuleClient.
 type ConversionValueRuleCallOptions struct {
-	GetConversionValueRule []gax.CallOption
 	MutateConversionValueRules []gax.CallOption
 }
 
@@ -56,18 +54,6 @@ func defaultConversionValueRuleGRPCClientOptions() []option.ClientOption {
 
 func defaultConversionValueRuleCallOptions() *ConversionValueRuleCallOptions {
 	return &ConversionValueRuleCallOptions{
-		GetConversionValueRule: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		MutateConversionValueRules: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -88,7 +74,6 @@ type internalConversionValueRuleClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetConversionValueRule(context.Context, *servicespb.GetConversionValueRuleRequest, ...gax.CallOption) (*resourcespb.ConversionValueRule, error)
 	MutateConversionValueRules(context.Context, *servicespb.MutateConversionValueRulesRequest, ...gax.CallOption) (*servicespb.MutateConversionValueRulesResponse, error)
 }
 
@@ -125,11 +110,6 @@ func (c *ConversionValueRuleClient) setGoogleClientInfo(keyval ...string) {
 // Deprecated.
 func (c *ConversionValueRuleClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetConversionValueRule returns the requested conversion value rule.
-func (c *ConversionValueRuleClient) GetConversionValueRule(ctx context.Context, req *servicespb.GetConversionValueRuleRequest, opts ...gax.CallOption) (*resourcespb.ConversionValueRule, error) {
-	return c.internalClient.GetConversionValueRule(ctx, req, opts...)
 }
 
 // MutateConversionValueRules creates, updates, or removes conversion value rules. Operation statuses are
@@ -217,27 +197,6 @@ func (c *conversionValueRuleGRPCClient) setGoogleClientInfo(keyval ...string) {
 // the client is no longer required.
 func (c *conversionValueRuleGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *conversionValueRuleGRPCClient) GetConversionValueRule(ctx context.Context, req *servicespb.GetConversionValueRuleRequest, opts ...gax.CallOption) (*resourcespb.ConversionValueRule, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetConversionValueRule[0:len((*c.CallOptions).GetConversionValueRule):len((*c.CallOptions).GetConversionValueRule)], opts...)
-	var resp *resourcespb.ConversionValueRule
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.conversionValueRuleClient.GetConversionValueRule(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *conversionValueRuleGRPCClient) MutateConversionValueRules(ctx context.Context, req *servicespb.MutateConversionValueRulesRequest, opts ...gax.CallOption) (*servicespb.MutateConversionValueRulesResponse, error) {

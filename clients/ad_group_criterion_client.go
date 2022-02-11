@@ -27,7 +27,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +37,6 @@ var newAdGroupCriterionClientHook clientHook
 
 // AdGroupCriterionCallOptions contains the retry settings for each method of AdGroupCriterionClient.
 type AdGroupCriterionCallOptions struct {
-	GetAdGroupCriterion []gax.CallOption
 	MutateAdGroupCriteria []gax.CallOption
 }
 
@@ -56,18 +54,6 @@ func defaultAdGroupCriterionGRPCClientOptions() []option.ClientOption {
 
 func defaultAdGroupCriterionCallOptions() *AdGroupCriterionCallOptions {
 	return &AdGroupCriterionCallOptions{
-		GetAdGroupCriterion: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		MutateAdGroupCriteria: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -88,7 +74,6 @@ type internalAdGroupCriterionClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetAdGroupCriterion(context.Context, *servicespb.GetAdGroupCriterionRequest, ...gax.CallOption) (*resourcespb.AdGroupCriterion, error)
 	MutateAdGroupCriteria(context.Context, *servicespb.MutateAdGroupCriteriaRequest, ...gax.CallOption) (*servicespb.MutateAdGroupCriteriaResponse, error)
 }
 
@@ -125,19 +110,6 @@ func (c *AdGroupCriterionClient) setGoogleClientInfo(keyval ...string) {
 // Deprecated.
 func (c *AdGroupCriterionClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetAdGroupCriterion returns the requested criterion in full detail.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *AdGroupCriterionClient) GetAdGroupCriterion(ctx context.Context, req *servicespb.GetAdGroupCriterionRequest, opts ...gax.CallOption) (*resourcespb.AdGroupCriterion, error) {
-	return c.internalClient.GetAdGroupCriterion(ctx, req, opts...)
 }
 
 // MutateAdGroupCriteria creates, updates, or removes criteria. Operation statuses are returned.
@@ -259,27 +231,6 @@ func (c *adGroupCriterionGRPCClient) setGoogleClientInfo(keyval ...string) {
 // the client is no longer required.
 func (c *adGroupCriterionGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *adGroupCriterionGRPCClient) GetAdGroupCriterion(ctx context.Context, req *servicespb.GetAdGroupCriterionRequest, opts ...gax.CallOption) (*resourcespb.AdGroupCriterion, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetAdGroupCriterion[0:len((*c.CallOptions).GetAdGroupCriterion):len((*c.CallOptions).GetAdGroupCriterion)], opts...)
-	var resp *resourcespb.AdGroupCriterion
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.adGroupCriterionClient.GetAdGroupCriterion(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *adGroupCriterionGRPCClient) MutateAdGroupCriteria(ctx context.Context, req *servicespb.MutateAdGroupCriteriaRequest, opts ...gax.CallOption) (*servicespb.MutateAdGroupCriteriaResponse, error) {

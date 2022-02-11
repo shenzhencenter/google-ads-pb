@@ -18,16 +18,13 @@ package clients
 
 import (
 	"context"
-	"fmt"
 	"math"
-	"net/url"
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +35,6 @@ var newKeywordThemeConstantClientHook clientHook
 
 // KeywordThemeConstantCallOptions contains the retry settings for each method of KeywordThemeConstantClient.
 type KeywordThemeConstantCallOptions struct {
-	GetKeywordThemeConstant []gax.CallOption
 	SuggestKeywordThemeConstants []gax.CallOption
 }
 
@@ -56,18 +52,6 @@ func defaultKeywordThemeConstantGRPCClientOptions() []option.ClientOption {
 
 func defaultKeywordThemeConstantCallOptions() *KeywordThemeConstantCallOptions {
 	return &KeywordThemeConstantCallOptions{
-		GetKeywordThemeConstant: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		SuggestKeywordThemeConstants: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -88,7 +72,6 @@ type internalKeywordThemeConstantClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetKeywordThemeConstant(context.Context, *servicespb.GetKeywordThemeConstantRequest, ...gax.CallOption) (*resourcespb.KeywordThemeConstant, error)
 	SuggestKeywordThemeConstants(context.Context, *servicespb.SuggestKeywordThemeConstantsRequest, ...gax.CallOption) (*servicespb.SuggestKeywordThemeConstantsResponse, error)
 }
 
@@ -125,11 +108,6 @@ func (c *KeywordThemeConstantClient) setGoogleClientInfo(keyval ...string) {
 // Deprecated.
 func (c *KeywordThemeConstantClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetKeywordThemeConstant returns the requested keyword theme constant in full detail.
-func (c *KeywordThemeConstantClient) GetKeywordThemeConstant(ctx context.Context, req *servicespb.GetKeywordThemeConstantRequest, opts ...gax.CallOption) (*resourcespb.KeywordThemeConstant, error) {
-	return c.internalClient.GetKeywordThemeConstant(ctx, req, opts...)
 }
 
 // SuggestKeywordThemeConstants returns KeywordThemeConstant suggestions by keyword themes.
@@ -224,27 +202,6 @@ func (c *keywordThemeConstantGRPCClient) setGoogleClientInfo(keyval ...string) {
 // the client is no longer required.
 func (c *keywordThemeConstantGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *keywordThemeConstantGRPCClient) GetKeywordThemeConstant(ctx context.Context, req *servicespb.GetKeywordThemeConstantRequest, opts ...gax.CallOption) (*resourcespb.KeywordThemeConstant, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetKeywordThemeConstant[0:len((*c.CallOptions).GetKeywordThemeConstant):len((*c.CallOptions).GetKeywordThemeConstant)], opts...)
-	var resp *resourcespb.KeywordThemeConstant
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.keywordThemeConstantClient.GetKeywordThemeConstant(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *keywordThemeConstantGRPCClient) SuggestKeywordThemeConstants(ctx context.Context, req *servicespb.SuggestKeywordThemeConstantsRequest, opts ...gax.CallOption) (*servicespb.SuggestKeywordThemeConstantsResponse, error) {

@@ -27,7 +27,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +37,6 @@ var newAccountBudgetProposalClientHook clientHook
 
 // AccountBudgetProposalCallOptions contains the retry settings for each method of AccountBudgetProposalClient.
 type AccountBudgetProposalCallOptions struct {
-	GetAccountBudgetProposal []gax.CallOption
 	MutateAccountBudgetProposal []gax.CallOption
 }
 
@@ -56,18 +54,6 @@ func defaultAccountBudgetProposalGRPCClientOptions() []option.ClientOption {
 
 func defaultAccountBudgetProposalCallOptions() *AccountBudgetProposalCallOptions {
 	return &AccountBudgetProposalCallOptions{
-		GetAccountBudgetProposal: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		MutateAccountBudgetProposal: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -88,7 +74,6 @@ type internalAccountBudgetProposalClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetAccountBudgetProposal(context.Context, *servicespb.GetAccountBudgetProposalRequest, ...gax.CallOption) (*resourcespb.AccountBudgetProposal, error)
 	MutateAccountBudgetProposal(context.Context, *servicespb.MutateAccountBudgetProposalRequest, ...gax.CallOption) (*servicespb.MutateAccountBudgetProposalResponse, error)
 }
 
@@ -99,11 +84,6 @@ type internalAccountBudgetProposalClient interface {
 //
 // A proposal is a request to create a new budget or make changes to an
 // existing one.
-//
-// Reads for account-level budgets managed by these proposals will be
-// supported in a future version. Until then, please use the
-// BudgetOrderService from the AdWords API. Learn more at
-// https://developers.google.com/adwords/api/docs/guides/budget-order (at https://developers.google.com/adwords/api/docs/guides/budget-order)
 //
 // Mutates:
 // The CREATE operation creates a new proposal.
@@ -138,19 +118,6 @@ func (c *AccountBudgetProposalClient) setGoogleClientInfo(keyval ...string) {
 // Deprecated.
 func (c *AccountBudgetProposalClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetAccountBudgetProposal returns an account-level budget proposal in full detail.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *AccountBudgetProposalClient) GetAccountBudgetProposal(ctx context.Context, req *servicespb.GetAccountBudgetProposalRequest, opts ...gax.CallOption) (*resourcespb.AccountBudgetProposal, error) {
-	return c.internalClient.GetAccountBudgetProposal(ctx, req, opts...)
 }
 
 // MutateAccountBudgetProposal creates, updates, or removes account budget proposals.  Operation statuses
@@ -201,11 +168,6 @@ type accountBudgetProposalGRPCClient struct {
 //
 // A proposal is a request to create a new budget or make changes to an
 // existing one.
-//
-// Reads for account-level budgets managed by these proposals will be
-// supported in a future version. Until then, please use the
-// BudgetOrderService from the AdWords API. Learn more at
-// https://developers.google.com/adwords/api/docs/guides/budget-order (at https://developers.google.com/adwords/api/docs/guides/budget-order)
 //
 // Mutates:
 // The CREATE operation creates a new proposal.
@@ -266,27 +228,6 @@ func (c *accountBudgetProposalGRPCClient) setGoogleClientInfo(keyval ...string) 
 // the client is no longer required.
 func (c *accountBudgetProposalGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *accountBudgetProposalGRPCClient) GetAccountBudgetProposal(ctx context.Context, req *servicespb.GetAccountBudgetProposalRequest, opts ...gax.CallOption) (*resourcespb.AccountBudgetProposal, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetAccountBudgetProposal[0:len((*c.CallOptions).GetAccountBudgetProposal):len((*c.CallOptions).GetAccountBudgetProposal)], opts...)
-	var resp *resourcespb.AccountBudgetProposal
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.accountBudgetProposalClient.GetAccountBudgetProposal(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *accountBudgetProposalGRPCClient) MutateAccountBudgetProposal(ctx context.Context, req *servicespb.MutateAccountBudgetProposalRequest, opts ...gax.CallOption) (*servicespb.MutateAccountBudgetProposalResponse, error) {

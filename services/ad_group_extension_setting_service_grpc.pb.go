@@ -4,7 +4,6 @@ package services
 
 import (
 	context "context"
-	resources "github.com/shenzhencenter/google-ads-pb/resources"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -19,16 +18,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type AdGroupExtensionSettingServiceClient interface {
-	// Returns the requested ad group extension setting in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetAdGroupExtensionSetting(ctx context.Context, in *GetAdGroupExtensionSettingRequest, opts ...grpc.CallOption) (*resources.AdGroupExtensionSetting, error)
 	// Creates, updates, or removes ad group extension settings. Operation
 	// statuses are returned.
 	//
@@ -72,18 +61,9 @@ func NewAdGroupExtensionSettingServiceClient(cc grpc.ClientConnInterface) AdGrou
 	return &adGroupExtensionSettingServiceClient{cc}
 }
 
-func (c *adGroupExtensionSettingServiceClient) GetAdGroupExtensionSetting(ctx context.Context, in *GetAdGroupExtensionSettingRequest, opts ...grpc.CallOption) (*resources.AdGroupExtensionSetting, error) {
-	out := new(resources.AdGroupExtensionSetting)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.AdGroupExtensionSettingService/GetAdGroupExtensionSetting", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *adGroupExtensionSettingServiceClient) MutateAdGroupExtensionSettings(ctx context.Context, in *MutateAdGroupExtensionSettingsRequest, opts ...grpc.CallOption) (*MutateAdGroupExtensionSettingsResponse, error) {
 	out := new(MutateAdGroupExtensionSettingsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.AdGroupExtensionSettingService/MutateAdGroupExtensionSettings", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.AdGroupExtensionSettingService/MutateAdGroupExtensionSettings", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -94,16 +74,6 @@ func (c *adGroupExtensionSettingServiceClient) MutateAdGroupExtensionSettings(ct
 // All implementations must embed UnimplementedAdGroupExtensionSettingServiceServer
 // for forward compatibility
 type AdGroupExtensionSettingServiceServer interface {
-	// Returns the requested ad group extension setting in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetAdGroupExtensionSetting(context.Context, *GetAdGroupExtensionSettingRequest) (*resources.AdGroupExtensionSetting, error)
 	// Creates, updates, or removes ad group extension settings. Operation
 	// statuses are returned.
 	//
@@ -144,9 +114,6 @@ type AdGroupExtensionSettingServiceServer interface {
 type UnimplementedAdGroupExtensionSettingServiceServer struct {
 }
 
-func (UnimplementedAdGroupExtensionSettingServiceServer) GetAdGroupExtensionSetting(context.Context, *GetAdGroupExtensionSettingRequest) (*resources.AdGroupExtensionSetting, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAdGroupExtensionSetting not implemented")
-}
 func (UnimplementedAdGroupExtensionSettingServiceServer) MutateAdGroupExtensionSettings(context.Context, *MutateAdGroupExtensionSettingsRequest) (*MutateAdGroupExtensionSettingsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MutateAdGroupExtensionSettings not implemented")
 }
@@ -164,24 +131,6 @@ func RegisterAdGroupExtensionSettingServiceServer(s grpc.ServiceRegistrar, srv A
 	s.RegisterService(&AdGroupExtensionSettingService_ServiceDesc, srv)
 }
 
-func _AdGroupExtensionSettingService_GetAdGroupExtensionSetting_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAdGroupExtensionSettingRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AdGroupExtensionSettingServiceServer).GetAdGroupExtensionSetting(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.AdGroupExtensionSettingService/GetAdGroupExtensionSetting",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AdGroupExtensionSettingServiceServer).GetAdGroupExtensionSetting(ctx, req.(*GetAdGroupExtensionSettingRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _AdGroupExtensionSettingService_MutateAdGroupExtensionSettings_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MutateAdGroupExtensionSettingsRequest)
 	if err := dec(in); err != nil {
@@ -192,7 +141,7 @@ func _AdGroupExtensionSettingService_MutateAdGroupExtensionSettings_Handler(srv 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.AdGroupExtensionSettingService/MutateAdGroupExtensionSettings",
+		FullMethod: "/google.ads.googleads.v10.services.AdGroupExtensionSettingService/MutateAdGroupExtensionSettings",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AdGroupExtensionSettingServiceServer).MutateAdGroupExtensionSettings(ctx, req.(*MutateAdGroupExtensionSettingsRequest))
@@ -204,18 +153,14 @@ func _AdGroupExtensionSettingService_MutateAdGroupExtensionSettings_Handler(srv 
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AdGroupExtensionSettingService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v9.services.AdGroupExtensionSettingService",
+	ServiceName: "google.ads.googleads.v10.services.AdGroupExtensionSettingService",
 	HandlerType: (*AdGroupExtensionSettingServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetAdGroupExtensionSetting",
-			Handler:    _AdGroupExtensionSettingService_GetAdGroupExtensionSetting_Handler,
-		},
 		{
 			MethodName: "MutateAdGroupExtensionSettings",
 			Handler:    _AdGroupExtensionSettingService_MutateAdGroupExtensionSettings_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v9/services/ad_group_extension_setting_service.proto",
+	Metadata: "google/ads/googleads/v10/services/ad_group_extension_setting_service.proto",
 }

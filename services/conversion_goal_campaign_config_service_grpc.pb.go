@@ -33,7 +33,7 @@ func NewConversionGoalCampaignConfigServiceClient(cc grpc.ClientConnInterface) C
 
 func (c *conversionGoalCampaignConfigServiceClient) MutateConversionGoalCampaignConfigs(ctx context.Context, in *MutateConversionGoalCampaignConfigsRequest, opts ...grpc.CallOption) (*MutateConversionGoalCampaignConfigsResponse, error) {
 	out := new(MutateConversionGoalCampaignConfigsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.ConversionGoalCampaignConfigService/MutateConversionGoalCampaignConfigs", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.ConversionGoalCampaignConfigService/MutateConversionGoalCampaignConfigs", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -81,7 +81,7 @@ func _ConversionGoalCampaignConfigService_MutateConversionGoalCampaignConfigs_Ha
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.ConversionGoalCampaignConfigService/MutateConversionGoalCampaignConfigs",
+		FullMethod: "/google.ads.googleads.v10.services.ConversionGoalCampaignConfigService/MutateConversionGoalCampaignConfigs",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ConversionGoalCampaignConfigServiceServer).MutateConversionGoalCampaignConfigs(ctx, req.(*MutateConversionGoalCampaignConfigsRequest))
@@ -93,7 +93,7 @@ func _ConversionGoalCampaignConfigService_MutateConversionGoalCampaignConfigs_Ha
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ConversionGoalCampaignConfigService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v9.services.ConversionGoalCampaignConfigService",
+	ServiceName: "google.ads.googleads.v10.services.ConversionGoalCampaignConfigService",
 	HandlerType: (*ConversionGoalCampaignConfigServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -102,5 +102,5 @@ var ConversionGoalCampaignConfigService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v9/services/conversion_goal_campaign_config_service.proto",
+	Metadata: "google/ads/googleads/v10/services/conversion_goal_campaign_config_service.proto",
 }

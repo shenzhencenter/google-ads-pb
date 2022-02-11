@@ -27,7 +27,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +37,6 @@ var newAdGroupAdClientHook clientHook
 
 // AdGroupAdCallOptions contains the retry settings for each method of AdGroupAdClient.
 type AdGroupAdCallOptions struct {
-	GetAdGroupAd []gax.CallOption
 	MutateAdGroupAds []gax.CallOption
 }
 
@@ -56,18 +54,6 @@ func defaultAdGroupAdGRPCClientOptions() []option.ClientOption {
 
 func defaultAdGroupAdCallOptions() *AdGroupAdCallOptions {
 	return &AdGroupAdCallOptions{
-		GetAdGroupAd: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		MutateAdGroupAds: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -88,7 +74,6 @@ type internalAdGroupAdClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetAdGroupAd(context.Context, *servicespb.GetAdGroupAdRequest, ...gax.CallOption) (*resourcespb.AdGroupAd, error)
 	MutateAdGroupAds(context.Context, *servicespb.MutateAdGroupAdsRequest, ...gax.CallOption) (*servicespb.MutateAdGroupAdsResponse, error)
 }
 
@@ -125,19 +110,6 @@ func (c *AdGroupAdClient) setGoogleClientInfo(keyval ...string) {
 // Deprecated.
 func (c *AdGroupAdClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetAdGroupAd returns the requested ad in full detail.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *AdGroupAdClient) GetAdGroupAd(ctx context.Context, req *servicespb.GetAdGroupAdRequest, opts ...gax.CallOption) (*resourcespb.AdGroupAd, error) {
-	return c.internalClient.GetAdGroupAd(ctx, req, opts...)
 }
 
 // MutateAdGroupAds creates, updates, or removes ads. Operation statuses are returned.
@@ -269,27 +241,6 @@ func (c *adGroupAdGRPCClient) setGoogleClientInfo(keyval ...string) {
 // the client is no longer required.
 func (c *adGroupAdGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *adGroupAdGRPCClient) GetAdGroupAd(ctx context.Context, req *servicespb.GetAdGroupAdRequest, opts ...gax.CallOption) (*resourcespb.AdGroupAd, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetAdGroupAd[0:len((*c.CallOptions).GetAdGroupAd):len((*c.CallOptions).GetAdGroupAd)], opts...)
-	var resp *resourcespb.AdGroupAd
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.adGroupAdClient.GetAdGroupAd(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *adGroupAdGRPCClient) MutateAdGroupAds(ctx context.Context, req *servicespb.MutateAdGroupAdsRequest, opts ...gax.CallOption) (*servicespb.MutateAdGroupAdsResponse, error) {

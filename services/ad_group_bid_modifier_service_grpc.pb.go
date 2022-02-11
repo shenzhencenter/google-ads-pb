@@ -4,7 +4,6 @@ package services
 
 import (
 	context "context"
-	resources "github.com/shenzhencenter/google-ads-pb/resources"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -19,16 +18,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type AdGroupBidModifierServiceClient interface {
-	// Returns the requested ad group bid modifier in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetAdGroupBidModifier(ctx context.Context, in *GetAdGroupBidModifierRequest, opts ...grpc.CallOption) (*resources.AdGroupBidModifier, error)
 	// Creates, updates, or removes ad group bid modifiers.
 	// Operation statuses are returned.
 	//
@@ -67,18 +56,9 @@ func NewAdGroupBidModifierServiceClient(cc grpc.ClientConnInterface) AdGroupBidM
 	return &adGroupBidModifierServiceClient{cc}
 }
 
-func (c *adGroupBidModifierServiceClient) GetAdGroupBidModifier(ctx context.Context, in *GetAdGroupBidModifierRequest, opts ...grpc.CallOption) (*resources.AdGroupBidModifier, error) {
-	out := new(resources.AdGroupBidModifier)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.AdGroupBidModifierService/GetAdGroupBidModifier", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *adGroupBidModifierServiceClient) MutateAdGroupBidModifiers(ctx context.Context, in *MutateAdGroupBidModifiersRequest, opts ...grpc.CallOption) (*MutateAdGroupBidModifiersResponse, error) {
 	out := new(MutateAdGroupBidModifiersResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.AdGroupBidModifierService/MutateAdGroupBidModifiers", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.AdGroupBidModifierService/MutateAdGroupBidModifiers", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -89,16 +69,6 @@ func (c *adGroupBidModifierServiceClient) MutateAdGroupBidModifiers(ctx context.
 // All implementations must embed UnimplementedAdGroupBidModifierServiceServer
 // for forward compatibility
 type AdGroupBidModifierServiceServer interface {
-	// Returns the requested ad group bid modifier in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetAdGroupBidModifier(context.Context, *GetAdGroupBidModifierRequest) (*resources.AdGroupBidModifier, error)
 	// Creates, updates, or removes ad group bid modifiers.
 	// Operation statuses are returned.
 	//
@@ -134,9 +104,6 @@ type AdGroupBidModifierServiceServer interface {
 type UnimplementedAdGroupBidModifierServiceServer struct {
 }
 
-func (UnimplementedAdGroupBidModifierServiceServer) GetAdGroupBidModifier(context.Context, *GetAdGroupBidModifierRequest) (*resources.AdGroupBidModifier, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAdGroupBidModifier not implemented")
-}
 func (UnimplementedAdGroupBidModifierServiceServer) MutateAdGroupBidModifiers(context.Context, *MutateAdGroupBidModifiersRequest) (*MutateAdGroupBidModifiersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MutateAdGroupBidModifiers not implemented")
 }
@@ -154,24 +121,6 @@ func RegisterAdGroupBidModifierServiceServer(s grpc.ServiceRegistrar, srv AdGrou
 	s.RegisterService(&AdGroupBidModifierService_ServiceDesc, srv)
 }
 
-func _AdGroupBidModifierService_GetAdGroupBidModifier_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAdGroupBidModifierRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AdGroupBidModifierServiceServer).GetAdGroupBidModifier(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.AdGroupBidModifierService/GetAdGroupBidModifier",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AdGroupBidModifierServiceServer).GetAdGroupBidModifier(ctx, req.(*GetAdGroupBidModifierRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _AdGroupBidModifierService_MutateAdGroupBidModifiers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MutateAdGroupBidModifiersRequest)
 	if err := dec(in); err != nil {
@@ -182,7 +131,7 @@ func _AdGroupBidModifierService_MutateAdGroupBidModifiers_Handler(srv interface{
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.AdGroupBidModifierService/MutateAdGroupBidModifiers",
+		FullMethod: "/google.ads.googleads.v10.services.AdGroupBidModifierService/MutateAdGroupBidModifiers",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AdGroupBidModifierServiceServer).MutateAdGroupBidModifiers(ctx, req.(*MutateAdGroupBidModifiersRequest))
@@ -194,18 +143,14 @@ func _AdGroupBidModifierService_MutateAdGroupBidModifiers_Handler(srv interface{
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AdGroupBidModifierService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v9.services.AdGroupBidModifierService",
+	ServiceName: "google.ads.googleads.v10.services.AdGroupBidModifierService",
 	HandlerType: (*AdGroupBidModifierServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetAdGroupBidModifier",
-			Handler:    _AdGroupBidModifierService_GetAdGroupBidModifier_Handler,
-		},
 		{
 			MethodName: "MutateAdGroupBidModifiers",
 			Handler:    _AdGroupBidModifierService_MutateAdGroupBidModifiers_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v9/services/ad_group_bid_modifier_service.proto",
+	Metadata: "google/ads/googleads/v10/services/ad_group_bid_modifier_service.proto",
 }

@@ -27,7 +27,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +37,6 @@ var newFeedItemClientHook clientHook
 
 // FeedItemCallOptions contains the retry settings for each method of FeedItemClient.
 type FeedItemCallOptions struct {
-	GetFeedItem []gax.CallOption
 	MutateFeedItems []gax.CallOption
 }
 
@@ -56,18 +54,6 @@ func defaultFeedItemGRPCClientOptions() []option.ClientOption {
 
 func defaultFeedItemCallOptions() *FeedItemCallOptions {
 	return &FeedItemCallOptions{
-		GetFeedItem: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		MutateFeedItems: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -88,7 +74,6 @@ type internalFeedItemClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetFeedItem(context.Context, *servicespb.GetFeedItemRequest, ...gax.CallOption) (*resourcespb.FeedItem, error)
 	MutateFeedItems(context.Context, *servicespb.MutateFeedItemsRequest, ...gax.CallOption) (*servicespb.MutateFeedItemsResponse, error)
 }
 
@@ -125,19 +110,6 @@ func (c *FeedItemClient) setGoogleClientInfo(keyval ...string) {
 // Deprecated.
 func (c *FeedItemClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetFeedItem returns the requested feed item in full detail.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *FeedItemClient) GetFeedItem(ctx context.Context, req *servicespb.GetFeedItemRequest, opts ...gax.CallOption) (*resourcespb.FeedItem, error) {
-	return c.internalClient.GetFeedItem(ctx, req, opts...)
 }
 
 // MutateFeedItems creates, updates, or removes feed items. Operation statuses are
@@ -252,27 +224,6 @@ func (c *feedItemGRPCClient) setGoogleClientInfo(keyval ...string) {
 // the client is no longer required.
 func (c *feedItemGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *feedItemGRPCClient) GetFeedItem(ctx context.Context, req *servicespb.GetFeedItemRequest, opts ...gax.CallOption) (*resourcespb.FeedItem, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetFeedItem[0:len((*c.CallOptions).GetFeedItem):len((*c.CallOptions).GetFeedItem)], opts...)
-	var resp *resourcespb.FeedItem
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.feedItemClient.GetFeedItem(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *feedItemGRPCClient) MutateFeedItems(ctx context.Context, req *servicespb.MutateFeedItemsRequest, opts ...gax.CallOption) (*servicespb.MutateFeedItemsResponse, error) {

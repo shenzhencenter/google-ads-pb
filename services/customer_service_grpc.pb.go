@@ -4,7 +4,6 @@ package services
 
 import (
 	context "context"
-	resources "github.com/shenzhencenter/google-ads-pb/resources"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -19,16 +18,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type CustomerServiceClient interface {
-	// Returns the requested customer in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetCustomer(ctx context.Context, in *GetCustomerRequest, opts ...grpc.CallOption) (*resources.Customer, error)
 	// Updates a customer. Operation statuses are returned.
 	//
 	// List of thrown errors:
@@ -78,18 +67,9 @@ func NewCustomerServiceClient(cc grpc.ClientConnInterface) CustomerServiceClient
 	return &customerServiceClient{cc}
 }
 
-func (c *customerServiceClient) GetCustomer(ctx context.Context, in *GetCustomerRequest, opts ...grpc.CallOption) (*resources.Customer, error) {
-	out := new(resources.Customer)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.CustomerService/GetCustomer", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *customerServiceClient) MutateCustomer(ctx context.Context, in *MutateCustomerRequest, opts ...grpc.CallOption) (*MutateCustomerResponse, error) {
 	out := new(MutateCustomerResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.CustomerService/MutateCustomer", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.CustomerService/MutateCustomer", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -98,7 +78,7 @@ func (c *customerServiceClient) MutateCustomer(ctx context.Context, in *MutateCu
 
 func (c *customerServiceClient) ListAccessibleCustomers(ctx context.Context, in *ListAccessibleCustomersRequest, opts ...grpc.CallOption) (*ListAccessibleCustomersResponse, error) {
 	out := new(ListAccessibleCustomersResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.CustomerService/ListAccessibleCustomers", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.CustomerService/ListAccessibleCustomers", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -107,7 +87,7 @@ func (c *customerServiceClient) ListAccessibleCustomers(ctx context.Context, in 
 
 func (c *customerServiceClient) CreateCustomerClient(ctx context.Context, in *CreateCustomerClientRequest, opts ...grpc.CallOption) (*CreateCustomerClientResponse, error) {
 	out := new(CreateCustomerClientResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.CustomerService/CreateCustomerClient", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.CustomerService/CreateCustomerClient", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -118,16 +98,6 @@ func (c *customerServiceClient) CreateCustomerClient(ctx context.Context, in *Cr
 // All implementations must embed UnimplementedCustomerServiceServer
 // for forward compatibility
 type CustomerServiceServer interface {
-	// Returns the requested customer in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetCustomer(context.Context, *GetCustomerRequest) (*resources.Customer, error)
 	// Updates a customer. Operation statuses are returned.
 	//
 	// List of thrown errors:
@@ -174,9 +144,6 @@ type CustomerServiceServer interface {
 type UnimplementedCustomerServiceServer struct {
 }
 
-func (UnimplementedCustomerServiceServer) GetCustomer(context.Context, *GetCustomerRequest) (*resources.Customer, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetCustomer not implemented")
-}
 func (UnimplementedCustomerServiceServer) MutateCustomer(context.Context, *MutateCustomerRequest) (*MutateCustomerResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MutateCustomer not implemented")
 }
@@ -199,24 +166,6 @@ func RegisterCustomerServiceServer(s grpc.ServiceRegistrar, srv CustomerServiceS
 	s.RegisterService(&CustomerService_ServiceDesc, srv)
 }
 
-func _CustomerService_GetCustomer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetCustomerRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(CustomerServiceServer).GetCustomer(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.CustomerService/GetCustomer",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CustomerServiceServer).GetCustomer(ctx, req.(*GetCustomerRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _CustomerService_MutateCustomer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MutateCustomerRequest)
 	if err := dec(in); err != nil {
@@ -227,7 +176,7 @@ func _CustomerService_MutateCustomer_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.CustomerService/MutateCustomer",
+		FullMethod: "/google.ads.googleads.v10.services.CustomerService/MutateCustomer",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CustomerServiceServer).MutateCustomer(ctx, req.(*MutateCustomerRequest))
@@ -245,7 +194,7 @@ func _CustomerService_ListAccessibleCustomers_Handler(srv interface{}, ctx conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.CustomerService/ListAccessibleCustomers",
+		FullMethod: "/google.ads.googleads.v10.services.CustomerService/ListAccessibleCustomers",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CustomerServiceServer).ListAccessibleCustomers(ctx, req.(*ListAccessibleCustomersRequest))
@@ -263,7 +212,7 @@ func _CustomerService_CreateCustomerClient_Handler(srv interface{}, ctx context.
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.CustomerService/CreateCustomerClient",
+		FullMethod: "/google.ads.googleads.v10.services.CustomerService/CreateCustomerClient",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CustomerServiceServer).CreateCustomerClient(ctx, req.(*CreateCustomerClientRequest))
@@ -275,13 +224,9 @@ func _CustomerService_CreateCustomerClient_Handler(srv interface{}, ctx context.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CustomerService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v9.services.CustomerService",
+	ServiceName: "google.ads.googleads.v10.services.CustomerService",
 	HandlerType: (*CustomerServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetCustomer",
-			Handler:    _CustomerService_GetCustomer_Handler,
-		},
 		{
 			MethodName: "MutateCustomer",
 			Handler:    _CustomerService_MutateCustomer_Handler,
@@ -296,5 +241,5 @@ var CustomerService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v9/services/customer_service.proto",
+	Metadata: "google/ads/googleads/v10/services/customer_service.proto",
 }

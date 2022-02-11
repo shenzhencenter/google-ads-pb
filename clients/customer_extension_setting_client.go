@@ -27,7 +27,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +37,6 @@ var newCustomerExtensionSettingClientHook clientHook
 
 // CustomerExtensionSettingCallOptions contains the retry settings for each method of CustomerExtensionSettingClient.
 type CustomerExtensionSettingCallOptions struct {
-	GetCustomerExtensionSetting []gax.CallOption
 	MutateCustomerExtensionSettings []gax.CallOption
 }
 
@@ -56,18 +54,6 @@ func defaultCustomerExtensionSettingGRPCClientOptions() []option.ClientOption {
 
 func defaultCustomerExtensionSettingCallOptions() *CustomerExtensionSettingCallOptions {
 	return &CustomerExtensionSettingCallOptions{
-		GetCustomerExtensionSetting: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		MutateCustomerExtensionSettings: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -88,7 +74,6 @@ type internalCustomerExtensionSettingClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetCustomerExtensionSetting(context.Context, *servicespb.GetCustomerExtensionSettingRequest, ...gax.CallOption) (*resourcespb.CustomerExtensionSetting, error)
 	MutateCustomerExtensionSettings(context.Context, *servicespb.MutateCustomerExtensionSettingsRequest, ...gax.CallOption) (*servicespb.MutateCustomerExtensionSettingsResponse, error)
 }
 
@@ -125,19 +110,6 @@ func (c *CustomerExtensionSettingClient) setGoogleClientInfo(keyval ...string) {
 // Deprecated.
 func (c *CustomerExtensionSettingClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetCustomerExtensionSetting returns the requested customer extension setting in full detail.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *CustomerExtensionSettingClient) GetCustomerExtensionSetting(ctx context.Context, req *servicespb.GetCustomerExtensionSettingRequest, opts ...gax.CallOption) (*resourcespb.CustomerExtensionSetting, error) {
-	return c.internalClient.GetCustomerExtensionSetting(ctx, req, opts...)
 }
 
 // MutateCustomerExtensionSettings creates, updates, or removes customer extension settings. Operation
@@ -252,27 +224,6 @@ func (c *customerExtensionSettingGRPCClient) setGoogleClientInfo(keyval ...strin
 // the client is no longer required.
 func (c *customerExtensionSettingGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *customerExtensionSettingGRPCClient) GetCustomerExtensionSetting(ctx context.Context, req *servicespb.GetCustomerExtensionSettingRequest, opts ...gax.CallOption) (*resourcespb.CustomerExtensionSetting, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetCustomerExtensionSetting[0:len((*c.CallOptions).GetCustomerExtensionSetting):len((*c.CallOptions).GetCustomerExtensionSetting)], opts...)
-	var resp *resourcespb.CustomerExtensionSetting
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.customerExtensionSettingClient.GetCustomerExtensionSetting(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *customerExtensionSettingGRPCClient) MutateCustomerExtensionSettings(ctx context.Context, req *servicespb.MutateCustomerExtensionSettingsRequest, opts ...gax.CallOption) (*servicespb.MutateCustomerExtensionSettingsResponse, error) {

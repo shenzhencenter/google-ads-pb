@@ -4,7 +4,6 @@ package services
 
 import (
 	context "context"
-	resources "github.com/shenzhencenter/google-ads-pb/resources"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -19,16 +18,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type SharedCriterionServiceClient interface {
-	// Returns the requested shared criterion in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetSharedCriterion(ctx context.Context, in *GetSharedCriterionRequest, opts ...grpc.CallOption) (*resources.SharedCriterion, error)
 	// Creates or removes shared criteria. Operation statuses are returned.
 	//
 	// List of thrown errors:
@@ -63,18 +52,9 @@ func NewSharedCriterionServiceClient(cc grpc.ClientConnInterface) SharedCriterio
 	return &sharedCriterionServiceClient{cc}
 }
 
-func (c *sharedCriterionServiceClient) GetSharedCriterion(ctx context.Context, in *GetSharedCriterionRequest, opts ...grpc.CallOption) (*resources.SharedCriterion, error) {
-	out := new(resources.SharedCriterion)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.SharedCriterionService/GetSharedCriterion", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *sharedCriterionServiceClient) MutateSharedCriteria(ctx context.Context, in *MutateSharedCriteriaRequest, opts ...grpc.CallOption) (*MutateSharedCriteriaResponse, error) {
 	out := new(MutateSharedCriteriaResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.SharedCriterionService/MutateSharedCriteria", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.SharedCriterionService/MutateSharedCriteria", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -85,16 +65,6 @@ func (c *sharedCriterionServiceClient) MutateSharedCriteria(ctx context.Context,
 // All implementations must embed UnimplementedSharedCriterionServiceServer
 // for forward compatibility
 type SharedCriterionServiceServer interface {
-	// Returns the requested shared criterion in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetSharedCriterion(context.Context, *GetSharedCriterionRequest) (*resources.SharedCriterion, error)
 	// Creates or removes shared criteria. Operation statuses are returned.
 	//
 	// List of thrown errors:
@@ -126,9 +96,6 @@ type SharedCriterionServiceServer interface {
 type UnimplementedSharedCriterionServiceServer struct {
 }
 
-func (UnimplementedSharedCriterionServiceServer) GetSharedCriterion(context.Context, *GetSharedCriterionRequest) (*resources.SharedCriterion, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetSharedCriterion not implemented")
-}
 func (UnimplementedSharedCriterionServiceServer) MutateSharedCriteria(context.Context, *MutateSharedCriteriaRequest) (*MutateSharedCriteriaResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MutateSharedCriteria not implemented")
 }
@@ -146,24 +113,6 @@ func RegisterSharedCriterionServiceServer(s grpc.ServiceRegistrar, srv SharedCri
 	s.RegisterService(&SharedCriterionService_ServiceDesc, srv)
 }
 
-func _SharedCriterionService_GetSharedCriterion_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetSharedCriterionRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(SharedCriterionServiceServer).GetSharedCriterion(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.SharedCriterionService/GetSharedCriterion",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SharedCriterionServiceServer).GetSharedCriterion(ctx, req.(*GetSharedCriterionRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _SharedCriterionService_MutateSharedCriteria_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MutateSharedCriteriaRequest)
 	if err := dec(in); err != nil {
@@ -174,7 +123,7 @@ func _SharedCriterionService_MutateSharedCriteria_Handler(srv interface{}, ctx c
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.SharedCriterionService/MutateSharedCriteria",
+		FullMethod: "/google.ads.googleads.v10.services.SharedCriterionService/MutateSharedCriteria",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SharedCriterionServiceServer).MutateSharedCriteria(ctx, req.(*MutateSharedCriteriaRequest))
@@ -186,18 +135,14 @@ func _SharedCriterionService_MutateSharedCriteria_Handler(srv interface{}, ctx c
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var SharedCriterionService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v9.services.SharedCriterionService",
+	ServiceName: "google.ads.googleads.v10.services.SharedCriterionService",
 	HandlerType: (*SharedCriterionServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetSharedCriterion",
-			Handler:    _SharedCriterionService_GetSharedCriterion_Handler,
-		},
 		{
 			MethodName: "MutateSharedCriteria",
 			Handler:    _SharedCriterionService_MutateSharedCriteria_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v9/services/shared_criterion_service.proto",
+	Metadata: "google/ads/googleads/v10/services/shared_criterion_service.proto",
 }

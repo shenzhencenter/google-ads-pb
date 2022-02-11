@@ -27,7 +27,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +37,6 @@ var newCustomerUserAccessClientHook clientHook
 
 // CustomerUserAccessCallOptions contains the retry settings for each method of CustomerUserAccessClient.
 type CustomerUserAccessCallOptions struct {
-	GetCustomerUserAccess []gax.CallOption
 	MutateCustomerUserAccess []gax.CallOption
 }
 
@@ -56,18 +54,6 @@ func defaultCustomerUserAccessGRPCClientOptions() []option.ClientOption {
 
 func defaultCustomerUserAccessCallOptions() *CustomerUserAccessCallOptions {
 	return &CustomerUserAccessCallOptions{
-		GetCustomerUserAccess: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		MutateCustomerUserAccess: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -88,7 +74,6 @@ type internalCustomerUserAccessClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetCustomerUserAccess(context.Context, *servicespb.GetCustomerUserAccessRequest, ...gax.CallOption) (*resourcespb.CustomerUserAccess, error)
 	MutateCustomerUserAccess(context.Context, *servicespb.MutateCustomerUserAccessRequest, ...gax.CallOption) (*servicespb.MutateCustomerUserAccessResponse, error)
 }
 
@@ -125,19 +110,6 @@ func (c *CustomerUserAccessClient) setGoogleClientInfo(keyval ...string) {
 // Deprecated.
 func (c *CustomerUserAccessClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetCustomerUserAccess returns the CustomerUserAccess in full detail.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *CustomerUserAccessClient) GetCustomerUserAccess(ctx context.Context, req *servicespb.GetCustomerUserAccessRequest, opts ...gax.CallOption) (*resourcespb.CustomerUserAccess, error) {
-	return c.internalClient.GetCustomerUserAccess(ctx, req, opts...)
 }
 
 // MutateCustomerUserAccess updates, removes permission of a user on a given customer. Operation
@@ -236,27 +208,6 @@ func (c *customerUserAccessGRPCClient) setGoogleClientInfo(keyval ...string) {
 // the client is no longer required.
 func (c *customerUserAccessGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *customerUserAccessGRPCClient) GetCustomerUserAccess(ctx context.Context, req *servicespb.GetCustomerUserAccessRequest, opts ...gax.CallOption) (*resourcespb.CustomerUserAccess, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetCustomerUserAccess[0:len((*c.CallOptions).GetCustomerUserAccess):len((*c.CallOptions).GetCustomerUserAccess)], opts...)
-	var resp *resourcespb.CustomerUserAccess
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.customerUserAccessClient.GetCustomerUserAccess(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *customerUserAccessGRPCClient) MutateCustomerUserAccess(ctx context.Context, req *servicespb.MutateCustomerUserAccessRequest, opts ...gax.CallOption) (*servicespb.MutateCustomerUserAccessResponse, error) {

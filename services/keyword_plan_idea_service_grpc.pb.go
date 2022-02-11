@@ -42,7 +42,7 @@ func NewKeywordPlanIdeaServiceClient(cc grpc.ClientConnInterface) KeywordPlanIde
 
 func (c *keywordPlanIdeaServiceClient) GenerateKeywordIdeas(ctx context.Context, in *GenerateKeywordIdeasRequest, opts ...grpc.CallOption) (*GenerateKeywordIdeaResponse, error) {
 	out := new(GenerateKeywordIdeaResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.KeywordPlanIdeaService/GenerateKeywordIdeas", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.KeywordPlanIdeaService/GenerateKeywordIdeas", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -99,7 +99,7 @@ func _KeywordPlanIdeaService_GenerateKeywordIdeas_Handler(srv interface{}, ctx c
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.KeywordPlanIdeaService/GenerateKeywordIdeas",
+		FullMethod: "/google.ads.googleads.v10.services.KeywordPlanIdeaService/GenerateKeywordIdeas",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(KeywordPlanIdeaServiceServer).GenerateKeywordIdeas(ctx, req.(*GenerateKeywordIdeasRequest))
@@ -111,7 +111,7 @@ func _KeywordPlanIdeaService_GenerateKeywordIdeas_Handler(srv interface{}, ctx c
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var KeywordPlanIdeaService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v9.services.KeywordPlanIdeaService",
+	ServiceName: "google.ads.googleads.v10.services.KeywordPlanIdeaService",
 	HandlerType: (*KeywordPlanIdeaServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -120,5 +120,5 @@ var KeywordPlanIdeaService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v9/services/keyword_plan_idea_service.proto",
+	Metadata: "google/ads/googleads/v10/services/keyword_plan_idea_service.proto",
 }

@@ -4,7 +4,6 @@ package services
 
 import (
 	context "context"
-	resources "github.com/shenzhencenter/google-ads-pb/resources"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -19,16 +18,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type CampaignAssetServiceClient interface {
-	// Returns the requested campaign asset in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetCampaignAsset(ctx context.Context, in *GetCampaignAssetRequest, opts ...grpc.CallOption) (*resources.CampaignAsset, error)
 	// Creates, updates, or removes campaign assets. Operation statuses are
 	// returned.
 	//
@@ -56,18 +45,9 @@ func NewCampaignAssetServiceClient(cc grpc.ClientConnInterface) CampaignAssetSer
 	return &campaignAssetServiceClient{cc}
 }
 
-func (c *campaignAssetServiceClient) GetCampaignAsset(ctx context.Context, in *GetCampaignAssetRequest, opts ...grpc.CallOption) (*resources.CampaignAsset, error) {
-	out := new(resources.CampaignAsset)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.CampaignAssetService/GetCampaignAsset", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *campaignAssetServiceClient) MutateCampaignAssets(ctx context.Context, in *MutateCampaignAssetsRequest, opts ...grpc.CallOption) (*MutateCampaignAssetsResponse, error) {
 	out := new(MutateCampaignAssetsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.CampaignAssetService/MutateCampaignAssets", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.CampaignAssetService/MutateCampaignAssets", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -78,16 +58,6 @@ func (c *campaignAssetServiceClient) MutateCampaignAssets(ctx context.Context, i
 // All implementations must embed UnimplementedCampaignAssetServiceServer
 // for forward compatibility
 type CampaignAssetServiceServer interface {
-	// Returns the requested campaign asset in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetCampaignAsset(context.Context, *GetCampaignAssetRequest) (*resources.CampaignAsset, error)
 	// Creates, updates, or removes campaign assets. Operation statuses are
 	// returned.
 	//
@@ -112,9 +82,6 @@ type CampaignAssetServiceServer interface {
 type UnimplementedCampaignAssetServiceServer struct {
 }
 
-func (UnimplementedCampaignAssetServiceServer) GetCampaignAsset(context.Context, *GetCampaignAssetRequest) (*resources.CampaignAsset, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetCampaignAsset not implemented")
-}
 func (UnimplementedCampaignAssetServiceServer) MutateCampaignAssets(context.Context, *MutateCampaignAssetsRequest) (*MutateCampaignAssetsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MutateCampaignAssets not implemented")
 }
@@ -131,24 +98,6 @@ func RegisterCampaignAssetServiceServer(s grpc.ServiceRegistrar, srv CampaignAss
 	s.RegisterService(&CampaignAssetService_ServiceDesc, srv)
 }
 
-func _CampaignAssetService_GetCampaignAsset_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetCampaignAssetRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(CampaignAssetServiceServer).GetCampaignAsset(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.CampaignAssetService/GetCampaignAsset",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CampaignAssetServiceServer).GetCampaignAsset(ctx, req.(*GetCampaignAssetRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _CampaignAssetService_MutateCampaignAssets_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MutateCampaignAssetsRequest)
 	if err := dec(in); err != nil {
@@ -159,7 +108,7 @@ func _CampaignAssetService_MutateCampaignAssets_Handler(srv interface{}, ctx con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.CampaignAssetService/MutateCampaignAssets",
+		FullMethod: "/google.ads.googleads.v10.services.CampaignAssetService/MutateCampaignAssets",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CampaignAssetServiceServer).MutateCampaignAssets(ctx, req.(*MutateCampaignAssetsRequest))
@@ -171,18 +120,14 @@ func _CampaignAssetService_MutateCampaignAssets_Handler(srv interface{}, ctx con
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CampaignAssetService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v9.services.CampaignAssetService",
+	ServiceName: "google.ads.googleads.v10.services.CampaignAssetService",
 	HandlerType: (*CampaignAssetServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetCampaignAsset",
-			Handler:    _CampaignAssetService_GetCampaignAsset_Handler,
-		},
 		{
 			MethodName: "MutateCampaignAssets",
 			Handler:    _CampaignAssetService_MutateCampaignAssets_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v9/services/campaign_asset_service.proto",
+	Metadata: "google/ads/googleads/v10/services/campaign_asset_service.proto",
 }

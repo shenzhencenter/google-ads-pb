@@ -27,7 +27,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +37,6 @@ var newSharedSetClientHook clientHook
 
 // SharedSetCallOptions contains the retry settings for each method of SharedSetClient.
 type SharedSetCallOptions struct {
-	GetSharedSet []gax.CallOption
 	MutateSharedSets []gax.CallOption
 }
 
@@ -56,18 +54,6 @@ func defaultSharedSetGRPCClientOptions() []option.ClientOption {
 
 func defaultSharedSetCallOptions() *SharedSetCallOptions {
 	return &SharedSetCallOptions{
-		GetSharedSet: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		MutateSharedSets: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -88,7 +74,6 @@ type internalSharedSetClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetSharedSet(context.Context, *servicespb.GetSharedSetRequest, ...gax.CallOption) (*resourcespb.SharedSet, error)
 	MutateSharedSets(context.Context, *servicespb.MutateSharedSetsRequest, ...gax.CallOption) (*servicespb.MutateSharedSetsResponse, error)
 }
 
@@ -125,19 +110,6 @@ func (c *SharedSetClient) setGoogleClientInfo(keyval ...string) {
 // Deprecated.
 func (c *SharedSetClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetSharedSet returns the requested shared set in full detail.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *SharedSetClient) GetSharedSet(ctx context.Context, req *servicespb.GetSharedSetRequest, opts ...gax.CallOption) (*resourcespb.SharedSet, error) {
-	return c.internalClient.GetSharedSet(ctx, req, opts...)
 }
 
 // MutateSharedSets creates, updates, or removes shared sets. Operation statuses are returned.
@@ -249,27 +221,6 @@ func (c *sharedSetGRPCClient) setGoogleClientInfo(keyval ...string) {
 // the client is no longer required.
 func (c *sharedSetGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *sharedSetGRPCClient) GetSharedSet(ctx context.Context, req *servicespb.GetSharedSetRequest, opts ...gax.CallOption) (*resourcespb.SharedSet, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetSharedSet[0:len((*c.CallOptions).GetSharedSet):len((*c.CallOptions).GetSharedSet)], opts...)
-	var resp *resourcespb.SharedSet
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.sharedSetClient.GetSharedSet(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *sharedSetGRPCClient) MutateSharedSets(ctx context.Context, req *servicespb.MutateSharedSetsRequest, opts ...gax.CallOption) (*servicespb.MutateSharedSetsResponse, error) {

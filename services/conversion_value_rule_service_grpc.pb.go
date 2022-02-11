@@ -4,7 +4,6 @@ package services
 
 import (
 	context "context"
-	resources "github.com/shenzhencenter/google-ads-pb/resources"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -19,8 +18,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ConversionValueRuleServiceClient interface {
-	// Returns the requested conversion value rule.
-	GetConversionValueRule(ctx context.Context, in *GetConversionValueRuleRequest, opts ...grpc.CallOption) (*resources.ConversionValueRule, error)
 	// Creates, updates, or removes conversion value rules. Operation statuses are
 	// returned.
 	MutateConversionValueRules(ctx context.Context, in *MutateConversionValueRulesRequest, opts ...grpc.CallOption) (*MutateConversionValueRulesResponse, error)
@@ -34,18 +31,9 @@ func NewConversionValueRuleServiceClient(cc grpc.ClientConnInterface) Conversion
 	return &conversionValueRuleServiceClient{cc}
 }
 
-func (c *conversionValueRuleServiceClient) GetConversionValueRule(ctx context.Context, in *GetConversionValueRuleRequest, opts ...grpc.CallOption) (*resources.ConversionValueRule, error) {
-	out := new(resources.ConversionValueRule)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.ConversionValueRuleService/GetConversionValueRule", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *conversionValueRuleServiceClient) MutateConversionValueRules(ctx context.Context, in *MutateConversionValueRulesRequest, opts ...grpc.CallOption) (*MutateConversionValueRulesResponse, error) {
 	out := new(MutateConversionValueRulesResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.ConversionValueRuleService/MutateConversionValueRules", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.ConversionValueRuleService/MutateConversionValueRules", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -56,8 +44,6 @@ func (c *conversionValueRuleServiceClient) MutateConversionValueRules(ctx contex
 // All implementations must embed UnimplementedConversionValueRuleServiceServer
 // for forward compatibility
 type ConversionValueRuleServiceServer interface {
-	// Returns the requested conversion value rule.
-	GetConversionValueRule(context.Context, *GetConversionValueRuleRequest) (*resources.ConversionValueRule, error)
 	// Creates, updates, or removes conversion value rules. Operation statuses are
 	// returned.
 	MutateConversionValueRules(context.Context, *MutateConversionValueRulesRequest) (*MutateConversionValueRulesResponse, error)
@@ -68,9 +54,6 @@ type ConversionValueRuleServiceServer interface {
 type UnimplementedConversionValueRuleServiceServer struct {
 }
 
-func (UnimplementedConversionValueRuleServiceServer) GetConversionValueRule(context.Context, *GetConversionValueRuleRequest) (*resources.ConversionValueRule, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetConversionValueRule not implemented")
-}
 func (UnimplementedConversionValueRuleServiceServer) MutateConversionValueRules(context.Context, *MutateConversionValueRulesRequest) (*MutateConversionValueRulesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MutateConversionValueRules not implemented")
 }
@@ -88,24 +71,6 @@ func RegisterConversionValueRuleServiceServer(s grpc.ServiceRegistrar, srv Conve
 	s.RegisterService(&ConversionValueRuleService_ServiceDesc, srv)
 }
 
-func _ConversionValueRuleService_GetConversionValueRule_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetConversionValueRuleRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ConversionValueRuleServiceServer).GetConversionValueRule(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.ConversionValueRuleService/GetConversionValueRule",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ConversionValueRuleServiceServer).GetConversionValueRule(ctx, req.(*GetConversionValueRuleRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _ConversionValueRuleService_MutateConversionValueRules_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MutateConversionValueRulesRequest)
 	if err := dec(in); err != nil {
@@ -116,7 +81,7 @@ func _ConversionValueRuleService_MutateConversionValueRules_Handler(srv interfac
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.ConversionValueRuleService/MutateConversionValueRules",
+		FullMethod: "/google.ads.googleads.v10.services.ConversionValueRuleService/MutateConversionValueRules",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ConversionValueRuleServiceServer).MutateConversionValueRules(ctx, req.(*MutateConversionValueRulesRequest))
@@ -128,18 +93,14 @@ func _ConversionValueRuleService_MutateConversionValueRules_Handler(srv interfac
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ConversionValueRuleService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v9.services.ConversionValueRuleService",
+	ServiceName: "google.ads.googleads.v10.services.ConversionValueRuleService",
 	HandlerType: (*ConversionValueRuleServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetConversionValueRule",
-			Handler:    _ConversionValueRuleService_GetConversionValueRule_Handler,
-		},
 		{
 			MethodName: "MutateConversionValueRules",
 			Handler:    _ConversionValueRuleService_MutateConversionValueRules_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v9/services/conversion_value_rule_service.proto",
+	Metadata: "google/ads/googleads/v10/services/conversion_value_rule_service.proto",
 }

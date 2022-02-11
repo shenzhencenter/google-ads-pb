@@ -27,7 +27,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +37,6 @@ var newSmartCampaignSettingClientHook clientHook
 
 // SmartCampaignSettingCallOptions contains the retry settings for each method of SmartCampaignSettingClient.
 type SmartCampaignSettingCallOptions struct {
-	GetSmartCampaignSetting []gax.CallOption
 	MutateSmartCampaignSettings []gax.CallOption
 }
 
@@ -56,18 +54,6 @@ func defaultSmartCampaignSettingGRPCClientOptions() []option.ClientOption {
 
 func defaultSmartCampaignSettingCallOptions() *SmartCampaignSettingCallOptions {
 	return &SmartCampaignSettingCallOptions{
-		GetSmartCampaignSetting: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		MutateSmartCampaignSettings: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -88,7 +74,6 @@ type internalSmartCampaignSettingClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetSmartCampaignSetting(context.Context, *servicespb.GetSmartCampaignSettingRequest, ...gax.CallOption) (*resourcespb.SmartCampaignSetting, error)
 	MutateSmartCampaignSettings(context.Context, *servicespb.MutateSmartCampaignSettingsRequest, ...gax.CallOption) (*servicespb.MutateSmartCampaignSettingsResponse, error)
 }
 
@@ -125,11 +110,6 @@ func (c *SmartCampaignSettingClient) setGoogleClientInfo(keyval ...string) {
 // Deprecated.
 func (c *SmartCampaignSettingClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetSmartCampaignSetting returns the requested Smart campaign setting in full detail.
-func (c *SmartCampaignSettingClient) GetSmartCampaignSetting(ctx context.Context, req *servicespb.GetSmartCampaignSettingRequest, opts ...gax.CallOption) (*resourcespb.SmartCampaignSetting, error) {
-	return c.internalClient.GetSmartCampaignSetting(ctx, req, opts...)
 }
 
 // MutateSmartCampaignSettings updates Smart campaign settings for campaigns.
@@ -216,27 +196,6 @@ func (c *smartCampaignSettingGRPCClient) setGoogleClientInfo(keyval ...string) {
 // the client is no longer required.
 func (c *smartCampaignSettingGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *smartCampaignSettingGRPCClient) GetSmartCampaignSetting(ctx context.Context, req *servicespb.GetSmartCampaignSettingRequest, opts ...gax.CallOption) (*resourcespb.SmartCampaignSetting, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetSmartCampaignSetting[0:len((*c.CallOptions).GetSmartCampaignSetting):len((*c.CallOptions).GetSmartCampaignSetting)], opts...)
-	var resp *resourcespb.SmartCampaignSetting
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.smartCampaignSettingClient.GetSmartCampaignSetting(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *smartCampaignSettingGRPCClient) MutateSmartCampaignSettings(ctx context.Context, req *servicespb.MutateSmartCampaignSettingsRequest, opts ...gax.CallOption) (*servicespb.MutateSmartCampaignSettingsResponse, error) {

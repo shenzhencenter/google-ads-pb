@@ -4,7 +4,6 @@ package services
 
 import (
 	context "context"
-	resources "github.com/shenzhencenter/google-ads-pb/resources"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -19,16 +18,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type FeedMappingServiceClient interface {
-	// Returns the requested feed mapping in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetFeedMapping(ctx context.Context, in *GetFeedMappingRequest, opts ...grpc.CallOption) (*resources.FeedMapping, error)
 	// Creates or removes feed mappings. Operation statuses are
 	// returned.
 	//
@@ -63,18 +52,9 @@ func NewFeedMappingServiceClient(cc grpc.ClientConnInterface) FeedMappingService
 	return &feedMappingServiceClient{cc}
 }
 
-func (c *feedMappingServiceClient) GetFeedMapping(ctx context.Context, in *GetFeedMappingRequest, opts ...grpc.CallOption) (*resources.FeedMapping, error) {
-	out := new(resources.FeedMapping)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.FeedMappingService/GetFeedMapping", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *feedMappingServiceClient) MutateFeedMappings(ctx context.Context, in *MutateFeedMappingsRequest, opts ...grpc.CallOption) (*MutateFeedMappingsResponse, error) {
 	out := new(MutateFeedMappingsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.FeedMappingService/MutateFeedMappings", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.FeedMappingService/MutateFeedMappings", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -85,16 +65,6 @@ func (c *feedMappingServiceClient) MutateFeedMappings(ctx context.Context, in *M
 // All implementations must embed UnimplementedFeedMappingServiceServer
 // for forward compatibility
 type FeedMappingServiceServer interface {
-	// Returns the requested feed mapping in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetFeedMapping(context.Context, *GetFeedMappingRequest) (*resources.FeedMapping, error)
 	// Creates or removes feed mappings. Operation statuses are
 	// returned.
 	//
@@ -126,9 +96,6 @@ type FeedMappingServiceServer interface {
 type UnimplementedFeedMappingServiceServer struct {
 }
 
-func (UnimplementedFeedMappingServiceServer) GetFeedMapping(context.Context, *GetFeedMappingRequest) (*resources.FeedMapping, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetFeedMapping not implemented")
-}
 func (UnimplementedFeedMappingServiceServer) MutateFeedMappings(context.Context, *MutateFeedMappingsRequest) (*MutateFeedMappingsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MutateFeedMappings not implemented")
 }
@@ -145,24 +112,6 @@ func RegisterFeedMappingServiceServer(s grpc.ServiceRegistrar, srv FeedMappingSe
 	s.RegisterService(&FeedMappingService_ServiceDesc, srv)
 }
 
-func _FeedMappingService_GetFeedMapping_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetFeedMappingRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(FeedMappingServiceServer).GetFeedMapping(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.FeedMappingService/GetFeedMapping",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(FeedMappingServiceServer).GetFeedMapping(ctx, req.(*GetFeedMappingRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _FeedMappingService_MutateFeedMappings_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MutateFeedMappingsRequest)
 	if err := dec(in); err != nil {
@@ -173,7 +122,7 @@ func _FeedMappingService_MutateFeedMappings_Handler(srv interface{}, ctx context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.FeedMappingService/MutateFeedMappings",
+		FullMethod: "/google.ads.googleads.v10.services.FeedMappingService/MutateFeedMappings",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(FeedMappingServiceServer).MutateFeedMappings(ctx, req.(*MutateFeedMappingsRequest))
@@ -185,18 +134,14 @@ func _FeedMappingService_MutateFeedMappings_Handler(srv interface{}, ctx context
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var FeedMappingService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v9.services.FeedMappingService",
+	ServiceName: "google.ads.googleads.v10.services.FeedMappingService",
 	HandlerType: (*FeedMappingServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetFeedMapping",
-			Handler:    _FeedMappingService_GetFeedMapping_Handler,
-		},
 		{
 			MethodName: "MutateFeedMappings",
 			Handler:    _FeedMappingService_MutateFeedMappings_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v9/services/feed_mapping_service.proto",
+	Metadata: "google/ads/googleads/v10/services/feed_mapping_service.proto",
 }

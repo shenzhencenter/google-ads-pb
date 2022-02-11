@@ -42,7 +42,6 @@ var newOfflineUserDataJobClientHook clientHook
 // OfflineUserDataJobCallOptions contains the retry settings for each method of OfflineUserDataJobClient.
 type OfflineUserDataJobCallOptions struct {
 	CreateOfflineUserDataJob []gax.CallOption
-	GetOfflineUserDataJob []gax.CallOption
 	AddOfflineUserDataJobOperations []gax.CallOption
 	RunOfflineUserDataJob []gax.CallOption
 }
@@ -62,18 +61,6 @@ func defaultOfflineUserDataJobGRPCClientOptions() []option.ClientOption {
 func defaultOfflineUserDataJobCallOptions() *OfflineUserDataJobCallOptions {
 	return &OfflineUserDataJobCallOptions{
 		CreateOfflineUserDataJob: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
-		GetOfflineUserDataJob: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
 					codes.Unavailable,
@@ -118,7 +105,6 @@ type internalOfflineUserDataJobClient interface {
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
 	CreateOfflineUserDataJob(context.Context, *servicespb.CreateOfflineUserDataJobRequest, ...gax.CallOption) (*servicespb.CreateOfflineUserDataJobResponse, error)
-	GetOfflineUserDataJob(context.Context, *servicespb.GetOfflineUserDataJobRequest, ...gax.CallOption) (*resourcespb.OfflineUserDataJob, error)
 	AddOfflineUserDataJobOperations(context.Context, *servicespb.AddOfflineUserDataJobOperationsRequest, ...gax.CallOption) (*servicespb.AddOfflineUserDataJobOperationsResponse, error)
 	RunOfflineUserDataJob(context.Context, *servicespb.RunOfflineUserDataJobRequest, ...gax.CallOption) (*RunOfflineUserDataJobOperation, error)
 	RunOfflineUserDataJobOperation(name string) *RunOfflineUserDataJobOperation
@@ -179,19 +165,6 @@ func (c *OfflineUserDataJobClient) Connection() *grpc.ClientConn {
 // RequestError (at )
 func (c *OfflineUserDataJobClient) CreateOfflineUserDataJob(ctx context.Context, req *servicespb.CreateOfflineUserDataJobRequest, opts ...gax.CallOption) (*servicespb.CreateOfflineUserDataJobResponse, error) {
 	return c.internalClient.CreateOfflineUserDataJob(ctx, req, opts...)
-}
-
-// GetOfflineUserDataJob returns the offline user data job.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *OfflineUserDataJobClient) GetOfflineUserDataJob(ctx context.Context, req *servicespb.GetOfflineUserDataJobRequest, opts ...gax.CallOption) (*resourcespb.OfflineUserDataJob, error) {
-	return c.internalClient.GetOfflineUserDataJob(ctx, req, opts...)
 }
 
 // AddOfflineUserDataJobOperations adds operations to the offline user data job.
@@ -345,27 +318,6 @@ func (c *offlineUserDataJobGRPCClient) CreateOfflineUserDataJob(ctx context.Cont
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
 		resp, err = c.offlineUserDataJobClient.CreateOfflineUserDataJob(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
-}
-
-func (c *offlineUserDataJobGRPCClient) GetOfflineUserDataJob(ctx context.Context, req *servicespb.GetOfflineUserDataJobRequest, opts ...gax.CallOption) (*resourcespb.OfflineUserDataJob, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetOfflineUserDataJob[0:len((*c.CallOptions).GetOfflineUserDataJob):len((*c.CallOptions).GetOfflineUserDataJob)], opts...)
-	var resp *resourcespb.OfflineUserDataJob
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.offlineUserDataJobClient.GetOfflineUserDataJob(ctx, req, settings.GRPC...)
 		return err
 	}, opts...)
 	if err != nil {

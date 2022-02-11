@@ -4,7 +4,6 @@ package services
 
 import (
 	context "context"
-	resources "github.com/shenzhencenter/google-ads-pb/resources"
 	longrunning "google.golang.org/genproto/googleapis/longrunning"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
@@ -20,16 +19,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type CampaignDraftServiceClient interface {
-	// Returns the requested campaign draft in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetCampaignDraft(ctx context.Context, in *GetCampaignDraftRequest, opts ...grpc.CallOption) (*resources.CampaignDraft, error)
 	// Creates, updates, or removes campaign drafts. Operation statuses are
 	// returned.
 	//
@@ -52,7 +41,7 @@ type CampaignDraftServiceClient interface {
 	// is done. Only a done status is returned in the response. See the status
 	// in the Campaign Draft resource to determine if the promotion was
 	// successful. If the LRO failed, use
-	// [CampaignDraftService.ListCampaignDraftAsyncErrors][google.ads.googleads.v9.services.CampaignDraftService.ListCampaignDraftAsyncErrors] to view the list of
+	// [CampaignDraftService.ListCampaignDraftAsyncErrors][google.ads.googleads.v10.services.CampaignDraftService.ListCampaignDraftAsyncErrors] to view the list of
 	// error reasons.
 	//
 	// List of thrown errors:
@@ -86,18 +75,9 @@ func NewCampaignDraftServiceClient(cc grpc.ClientConnInterface) CampaignDraftSer
 	return &campaignDraftServiceClient{cc}
 }
 
-func (c *campaignDraftServiceClient) GetCampaignDraft(ctx context.Context, in *GetCampaignDraftRequest, opts ...grpc.CallOption) (*resources.CampaignDraft, error) {
-	out := new(resources.CampaignDraft)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.CampaignDraftService/GetCampaignDraft", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *campaignDraftServiceClient) MutateCampaignDrafts(ctx context.Context, in *MutateCampaignDraftsRequest, opts ...grpc.CallOption) (*MutateCampaignDraftsResponse, error) {
 	out := new(MutateCampaignDraftsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.CampaignDraftService/MutateCampaignDrafts", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.CampaignDraftService/MutateCampaignDrafts", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -106,7 +86,7 @@ func (c *campaignDraftServiceClient) MutateCampaignDrafts(ctx context.Context, i
 
 func (c *campaignDraftServiceClient) PromoteCampaignDraft(ctx context.Context, in *PromoteCampaignDraftRequest, opts ...grpc.CallOption) (*longrunning.Operation, error) {
 	out := new(longrunning.Operation)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.CampaignDraftService/PromoteCampaignDraft", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.CampaignDraftService/PromoteCampaignDraft", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -115,7 +95,7 @@ func (c *campaignDraftServiceClient) PromoteCampaignDraft(ctx context.Context, i
 
 func (c *campaignDraftServiceClient) ListCampaignDraftAsyncErrors(ctx context.Context, in *ListCampaignDraftAsyncErrorsRequest, opts ...grpc.CallOption) (*ListCampaignDraftAsyncErrorsResponse, error) {
 	out := new(ListCampaignDraftAsyncErrorsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.CampaignDraftService/ListCampaignDraftAsyncErrors", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.CampaignDraftService/ListCampaignDraftAsyncErrors", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -126,16 +106,6 @@ func (c *campaignDraftServiceClient) ListCampaignDraftAsyncErrors(ctx context.Co
 // All implementations must embed UnimplementedCampaignDraftServiceServer
 // for forward compatibility
 type CampaignDraftServiceServer interface {
-	// Returns the requested campaign draft in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetCampaignDraft(context.Context, *GetCampaignDraftRequest) (*resources.CampaignDraft, error)
 	// Creates, updates, or removes campaign drafts. Operation statuses are
 	// returned.
 	//
@@ -158,7 +128,7 @@ type CampaignDraftServiceServer interface {
 	// is done. Only a done status is returned in the response. See the status
 	// in the Campaign Draft resource to determine if the promotion was
 	// successful. If the LRO failed, use
-	// [CampaignDraftService.ListCampaignDraftAsyncErrors][google.ads.googleads.v9.services.CampaignDraftService.ListCampaignDraftAsyncErrors] to view the list of
+	// [CampaignDraftService.ListCampaignDraftAsyncErrors][google.ads.googleads.v10.services.CampaignDraftService.ListCampaignDraftAsyncErrors] to view the list of
 	// error reasons.
 	//
 	// List of thrown errors:
@@ -189,9 +159,6 @@ type CampaignDraftServiceServer interface {
 type UnimplementedCampaignDraftServiceServer struct {
 }
 
-func (UnimplementedCampaignDraftServiceServer) GetCampaignDraft(context.Context, *GetCampaignDraftRequest) (*resources.CampaignDraft, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetCampaignDraft not implemented")
-}
 func (UnimplementedCampaignDraftServiceServer) MutateCampaignDrafts(context.Context, *MutateCampaignDraftsRequest) (*MutateCampaignDraftsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MutateCampaignDrafts not implemented")
 }
@@ -214,24 +181,6 @@ func RegisterCampaignDraftServiceServer(s grpc.ServiceRegistrar, srv CampaignDra
 	s.RegisterService(&CampaignDraftService_ServiceDesc, srv)
 }
 
-func _CampaignDraftService_GetCampaignDraft_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetCampaignDraftRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(CampaignDraftServiceServer).GetCampaignDraft(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.CampaignDraftService/GetCampaignDraft",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CampaignDraftServiceServer).GetCampaignDraft(ctx, req.(*GetCampaignDraftRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _CampaignDraftService_MutateCampaignDrafts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MutateCampaignDraftsRequest)
 	if err := dec(in); err != nil {
@@ -242,7 +191,7 @@ func _CampaignDraftService_MutateCampaignDrafts_Handler(srv interface{}, ctx con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.CampaignDraftService/MutateCampaignDrafts",
+		FullMethod: "/google.ads.googleads.v10.services.CampaignDraftService/MutateCampaignDrafts",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CampaignDraftServiceServer).MutateCampaignDrafts(ctx, req.(*MutateCampaignDraftsRequest))
@@ -260,7 +209,7 @@ func _CampaignDraftService_PromoteCampaignDraft_Handler(srv interface{}, ctx con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.CampaignDraftService/PromoteCampaignDraft",
+		FullMethod: "/google.ads.googleads.v10.services.CampaignDraftService/PromoteCampaignDraft",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CampaignDraftServiceServer).PromoteCampaignDraft(ctx, req.(*PromoteCampaignDraftRequest))
@@ -278,7 +227,7 @@ func _CampaignDraftService_ListCampaignDraftAsyncErrors_Handler(srv interface{},
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.CampaignDraftService/ListCampaignDraftAsyncErrors",
+		FullMethod: "/google.ads.googleads.v10.services.CampaignDraftService/ListCampaignDraftAsyncErrors",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CampaignDraftServiceServer).ListCampaignDraftAsyncErrors(ctx, req.(*ListCampaignDraftAsyncErrorsRequest))
@@ -290,13 +239,9 @@ func _CampaignDraftService_ListCampaignDraftAsyncErrors_Handler(srv interface{},
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CampaignDraftService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v9.services.CampaignDraftService",
+	ServiceName: "google.ads.googleads.v10.services.CampaignDraftService",
 	HandlerType: (*CampaignDraftServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetCampaignDraft",
-			Handler:    _CampaignDraftService_GetCampaignDraft_Handler,
-		},
 		{
 			MethodName: "MutateCampaignDrafts",
 			Handler:    _CampaignDraftService_MutateCampaignDrafts_Handler,
@@ -311,5 +256,5 @@ var CampaignDraftService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v9/services/campaign_draft_service.proto",
+	Metadata: "google/ads/googleads/v10/services/campaign_draft_service.proto",
 }

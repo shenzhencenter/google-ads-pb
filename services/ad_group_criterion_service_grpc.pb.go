@@ -4,7 +4,6 @@ package services
 
 import (
 	context "context"
-	resources "github.com/shenzhencenter/google-ads-pb/resources"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -19,16 +18,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type AdGroupCriterionServiceClient interface {
-	// Returns the requested criterion in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetAdGroupCriterion(ctx context.Context, in *GetAdGroupCriterionRequest, opts ...grpc.CallOption) (*resources.AdGroupCriterion, error)
 	// Creates, updates, or removes criteria. Operation statuses are returned.
 	//
 	// List of thrown errors:
@@ -76,18 +65,9 @@ func NewAdGroupCriterionServiceClient(cc grpc.ClientConnInterface) AdGroupCriter
 	return &adGroupCriterionServiceClient{cc}
 }
 
-func (c *adGroupCriterionServiceClient) GetAdGroupCriterion(ctx context.Context, in *GetAdGroupCriterionRequest, opts ...grpc.CallOption) (*resources.AdGroupCriterion, error) {
-	out := new(resources.AdGroupCriterion)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.AdGroupCriterionService/GetAdGroupCriterion", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *adGroupCriterionServiceClient) MutateAdGroupCriteria(ctx context.Context, in *MutateAdGroupCriteriaRequest, opts ...grpc.CallOption) (*MutateAdGroupCriteriaResponse, error) {
 	out := new(MutateAdGroupCriteriaResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.AdGroupCriterionService/MutateAdGroupCriteria", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.AdGroupCriterionService/MutateAdGroupCriteria", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -98,16 +78,6 @@ func (c *adGroupCriterionServiceClient) MutateAdGroupCriteria(ctx context.Contex
 // All implementations must embed UnimplementedAdGroupCriterionServiceServer
 // for forward compatibility
 type AdGroupCriterionServiceServer interface {
-	// Returns the requested criterion in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetAdGroupCriterion(context.Context, *GetAdGroupCriterionRequest) (*resources.AdGroupCriterion, error)
 	// Creates, updates, or removes criteria. Operation statuses are returned.
 	//
 	// List of thrown errors:
@@ -152,9 +122,6 @@ type AdGroupCriterionServiceServer interface {
 type UnimplementedAdGroupCriterionServiceServer struct {
 }
 
-func (UnimplementedAdGroupCriterionServiceServer) GetAdGroupCriterion(context.Context, *GetAdGroupCriterionRequest) (*resources.AdGroupCriterion, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAdGroupCriterion not implemented")
-}
 func (UnimplementedAdGroupCriterionServiceServer) MutateAdGroupCriteria(context.Context, *MutateAdGroupCriteriaRequest) (*MutateAdGroupCriteriaResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MutateAdGroupCriteria not implemented")
 }
@@ -172,24 +139,6 @@ func RegisterAdGroupCriterionServiceServer(s grpc.ServiceRegistrar, srv AdGroupC
 	s.RegisterService(&AdGroupCriterionService_ServiceDesc, srv)
 }
 
-func _AdGroupCriterionService_GetAdGroupCriterion_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAdGroupCriterionRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AdGroupCriterionServiceServer).GetAdGroupCriterion(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.AdGroupCriterionService/GetAdGroupCriterion",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AdGroupCriterionServiceServer).GetAdGroupCriterion(ctx, req.(*GetAdGroupCriterionRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _AdGroupCriterionService_MutateAdGroupCriteria_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MutateAdGroupCriteriaRequest)
 	if err := dec(in); err != nil {
@@ -200,7 +149,7 @@ func _AdGroupCriterionService_MutateAdGroupCriteria_Handler(srv interface{}, ctx
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.AdGroupCriterionService/MutateAdGroupCriteria",
+		FullMethod: "/google.ads.googleads.v10.services.AdGroupCriterionService/MutateAdGroupCriteria",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AdGroupCriterionServiceServer).MutateAdGroupCriteria(ctx, req.(*MutateAdGroupCriteriaRequest))
@@ -212,18 +161,14 @@ func _AdGroupCriterionService_MutateAdGroupCriteria_Handler(srv interface{}, ctx
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AdGroupCriterionService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v9.services.AdGroupCriterionService",
+	ServiceName: "google.ads.googleads.v10.services.AdGroupCriterionService",
 	HandlerType: (*AdGroupCriterionServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetAdGroupCriterion",
-			Handler:    _AdGroupCriterionService_GetAdGroupCriterion_Handler,
-		},
 		{
 			MethodName: "MutateAdGroupCriteria",
 			Handler:    _AdGroupCriterionService_MutateAdGroupCriteria_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v9/services/ad_group_criterion_service.proto",
+	Metadata: "google/ads/googleads/v10/services/ad_group_criterion_service.proto",
 }

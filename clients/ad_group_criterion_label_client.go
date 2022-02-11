@@ -27,7 +27,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +37,6 @@ var newAdGroupCriterionLabelClientHook clientHook
 
 // AdGroupCriterionLabelCallOptions contains the retry settings for each method of AdGroupCriterionLabelClient.
 type AdGroupCriterionLabelCallOptions struct {
-	GetAdGroupCriterionLabel []gax.CallOption
 	MutateAdGroupCriterionLabels []gax.CallOption
 }
 
@@ -56,18 +54,6 @@ func defaultAdGroupCriterionLabelGRPCClientOptions() []option.ClientOption {
 
 func defaultAdGroupCriterionLabelCallOptions() *AdGroupCriterionLabelCallOptions {
 	return &AdGroupCriterionLabelCallOptions{
-		GetAdGroupCriterionLabel: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		MutateAdGroupCriterionLabels: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -88,7 +74,6 @@ type internalAdGroupCriterionLabelClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetAdGroupCriterionLabel(context.Context, *servicespb.GetAdGroupCriterionLabelRequest, ...gax.CallOption) (*resourcespb.AdGroupCriterionLabel, error)
 	MutateAdGroupCriterionLabels(context.Context, *servicespb.MutateAdGroupCriterionLabelsRequest, ...gax.CallOption) (*servicespb.MutateAdGroupCriterionLabelsResponse, error)
 }
 
@@ -125,19 +110,6 @@ func (c *AdGroupCriterionLabelClient) setGoogleClientInfo(keyval ...string) {
 // Deprecated.
 func (c *AdGroupCriterionLabelClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetAdGroupCriterionLabel returns the requested ad group criterion label in full detail.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *AdGroupCriterionLabelClient) GetAdGroupCriterionLabel(ctx context.Context, req *servicespb.GetAdGroupCriterionLabelRequest, opts ...gax.CallOption) (*resourcespb.AdGroupCriterionLabel, error) {
-	return c.internalClient.GetAdGroupCriterionLabel(ctx, req, opts...)
 }
 
 // MutateAdGroupCriterionLabels creates and removes ad group criterion labels.
@@ -235,27 +207,6 @@ func (c *adGroupCriterionLabelGRPCClient) setGoogleClientInfo(keyval ...string) 
 // the client is no longer required.
 func (c *adGroupCriterionLabelGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *adGroupCriterionLabelGRPCClient) GetAdGroupCriterionLabel(ctx context.Context, req *servicespb.GetAdGroupCriterionLabelRequest, opts ...gax.CallOption) (*resourcespb.AdGroupCriterionLabel, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetAdGroupCriterionLabel[0:len((*c.CallOptions).GetAdGroupCriterionLabel):len((*c.CallOptions).GetAdGroupCriterionLabel)], opts...)
-	var resp *resourcespb.AdGroupCriterionLabel
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.adGroupCriterionLabelClient.GetAdGroupCriterionLabel(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *adGroupCriterionLabelGRPCClient) MutateAdGroupCriterionLabels(ctx context.Context, req *servicespb.MutateAdGroupCriterionLabelsRequest, opts ...gax.CallOption) (*servicespb.MutateAdGroupCriterionLabelsResponse, error) {

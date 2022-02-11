@@ -4,7 +4,6 @@ package services
 
 import (
 	context "context"
-	resources "github.com/shenzhencenter/google-ads-pb/resources"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -19,16 +18,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type CampaignLabelServiceClient interface {
-	// Returns the requested campaign-label relationship in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetCampaignLabel(ctx context.Context, in *GetCampaignLabelRequest, opts ...grpc.CallOption) (*resources.CampaignLabel, error)
 	// Creates and removes campaign-label relationships.
 	// Operation statuses are returned.
 	//
@@ -55,18 +44,9 @@ func NewCampaignLabelServiceClient(cc grpc.ClientConnInterface) CampaignLabelSer
 	return &campaignLabelServiceClient{cc}
 }
 
-func (c *campaignLabelServiceClient) GetCampaignLabel(ctx context.Context, in *GetCampaignLabelRequest, opts ...grpc.CallOption) (*resources.CampaignLabel, error) {
-	out := new(resources.CampaignLabel)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.CampaignLabelService/GetCampaignLabel", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *campaignLabelServiceClient) MutateCampaignLabels(ctx context.Context, in *MutateCampaignLabelsRequest, opts ...grpc.CallOption) (*MutateCampaignLabelsResponse, error) {
 	out := new(MutateCampaignLabelsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.CampaignLabelService/MutateCampaignLabels", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.CampaignLabelService/MutateCampaignLabels", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -77,16 +57,6 @@ func (c *campaignLabelServiceClient) MutateCampaignLabels(ctx context.Context, i
 // All implementations must embed UnimplementedCampaignLabelServiceServer
 // for forward compatibility
 type CampaignLabelServiceServer interface {
-	// Returns the requested campaign-label relationship in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetCampaignLabel(context.Context, *GetCampaignLabelRequest) (*resources.CampaignLabel, error)
 	// Creates and removes campaign-label relationships.
 	// Operation statuses are returned.
 	//
@@ -110,9 +80,6 @@ type CampaignLabelServiceServer interface {
 type UnimplementedCampaignLabelServiceServer struct {
 }
 
-func (UnimplementedCampaignLabelServiceServer) GetCampaignLabel(context.Context, *GetCampaignLabelRequest) (*resources.CampaignLabel, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetCampaignLabel not implemented")
-}
 func (UnimplementedCampaignLabelServiceServer) MutateCampaignLabels(context.Context, *MutateCampaignLabelsRequest) (*MutateCampaignLabelsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MutateCampaignLabels not implemented")
 }
@@ -129,24 +96,6 @@ func RegisterCampaignLabelServiceServer(s grpc.ServiceRegistrar, srv CampaignLab
 	s.RegisterService(&CampaignLabelService_ServiceDesc, srv)
 }
 
-func _CampaignLabelService_GetCampaignLabel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetCampaignLabelRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(CampaignLabelServiceServer).GetCampaignLabel(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.CampaignLabelService/GetCampaignLabel",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CampaignLabelServiceServer).GetCampaignLabel(ctx, req.(*GetCampaignLabelRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _CampaignLabelService_MutateCampaignLabels_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MutateCampaignLabelsRequest)
 	if err := dec(in); err != nil {
@@ -157,7 +106,7 @@ func _CampaignLabelService_MutateCampaignLabels_Handler(srv interface{}, ctx con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.CampaignLabelService/MutateCampaignLabels",
+		FullMethod: "/google.ads.googleads.v10.services.CampaignLabelService/MutateCampaignLabels",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CampaignLabelServiceServer).MutateCampaignLabels(ctx, req.(*MutateCampaignLabelsRequest))
@@ -169,18 +118,14 @@ func _CampaignLabelService_MutateCampaignLabels_Handler(srv interface{}, ctx con
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CampaignLabelService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v9.services.CampaignLabelService",
+	ServiceName: "google.ads.googleads.v10.services.CampaignLabelService",
 	HandlerType: (*CampaignLabelServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetCampaignLabel",
-			Handler:    _CampaignLabelService_GetCampaignLabel_Handler,
-		},
 		{
 			MethodName: "MutateCampaignLabels",
 			Handler:    _CampaignLabelService_MutateCampaignLabels_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v9/services/campaign_label_service.proto",
+	Metadata: "google/ads/googleads/v10/services/campaign_label_service.proto",
 }

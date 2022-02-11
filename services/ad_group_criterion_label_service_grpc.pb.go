@@ -4,7 +4,6 @@ package services
 
 import (
 	context "context"
-	resources "github.com/shenzhencenter/google-ads-pb/resources"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -19,16 +18,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type AdGroupCriterionLabelServiceClient interface {
-	// Returns the requested ad group criterion label in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetAdGroupCriterionLabel(ctx context.Context, in *GetAdGroupCriterionLabelRequest, opts ...grpc.CallOption) (*resources.AdGroupCriterionLabel, error)
 	// Creates and removes ad group criterion labels.
 	// Operation statuses are returned.
 	//
@@ -52,18 +41,9 @@ func NewAdGroupCriterionLabelServiceClient(cc grpc.ClientConnInterface) AdGroupC
 	return &adGroupCriterionLabelServiceClient{cc}
 }
 
-func (c *adGroupCriterionLabelServiceClient) GetAdGroupCriterionLabel(ctx context.Context, in *GetAdGroupCriterionLabelRequest, opts ...grpc.CallOption) (*resources.AdGroupCriterionLabel, error) {
-	out := new(resources.AdGroupCriterionLabel)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.AdGroupCriterionLabelService/GetAdGroupCriterionLabel", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *adGroupCriterionLabelServiceClient) MutateAdGroupCriterionLabels(ctx context.Context, in *MutateAdGroupCriterionLabelsRequest, opts ...grpc.CallOption) (*MutateAdGroupCriterionLabelsResponse, error) {
 	out := new(MutateAdGroupCriterionLabelsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.AdGroupCriterionLabelService/MutateAdGroupCriterionLabels", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.AdGroupCriterionLabelService/MutateAdGroupCriterionLabels", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -74,16 +54,6 @@ func (c *adGroupCriterionLabelServiceClient) MutateAdGroupCriterionLabels(ctx co
 // All implementations must embed UnimplementedAdGroupCriterionLabelServiceServer
 // for forward compatibility
 type AdGroupCriterionLabelServiceServer interface {
-	// Returns the requested ad group criterion label in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetAdGroupCriterionLabel(context.Context, *GetAdGroupCriterionLabelRequest) (*resources.AdGroupCriterionLabel, error)
 	// Creates and removes ad group criterion labels.
 	// Operation statuses are returned.
 	//
@@ -104,9 +74,6 @@ type AdGroupCriterionLabelServiceServer interface {
 type UnimplementedAdGroupCriterionLabelServiceServer struct {
 }
 
-func (UnimplementedAdGroupCriterionLabelServiceServer) GetAdGroupCriterionLabel(context.Context, *GetAdGroupCriterionLabelRequest) (*resources.AdGroupCriterionLabel, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAdGroupCriterionLabel not implemented")
-}
 func (UnimplementedAdGroupCriterionLabelServiceServer) MutateAdGroupCriterionLabels(context.Context, *MutateAdGroupCriterionLabelsRequest) (*MutateAdGroupCriterionLabelsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MutateAdGroupCriterionLabels not implemented")
 }
@@ -124,24 +91,6 @@ func RegisterAdGroupCriterionLabelServiceServer(s grpc.ServiceRegistrar, srv AdG
 	s.RegisterService(&AdGroupCriterionLabelService_ServiceDesc, srv)
 }
 
-func _AdGroupCriterionLabelService_GetAdGroupCriterionLabel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAdGroupCriterionLabelRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AdGroupCriterionLabelServiceServer).GetAdGroupCriterionLabel(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.AdGroupCriterionLabelService/GetAdGroupCriterionLabel",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AdGroupCriterionLabelServiceServer).GetAdGroupCriterionLabel(ctx, req.(*GetAdGroupCriterionLabelRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _AdGroupCriterionLabelService_MutateAdGroupCriterionLabels_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MutateAdGroupCriterionLabelsRequest)
 	if err := dec(in); err != nil {
@@ -152,7 +101,7 @@ func _AdGroupCriterionLabelService_MutateAdGroupCriterionLabels_Handler(srv inte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.AdGroupCriterionLabelService/MutateAdGroupCriterionLabels",
+		FullMethod: "/google.ads.googleads.v10.services.AdGroupCriterionLabelService/MutateAdGroupCriterionLabels",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AdGroupCriterionLabelServiceServer).MutateAdGroupCriterionLabels(ctx, req.(*MutateAdGroupCriterionLabelsRequest))
@@ -164,18 +113,14 @@ func _AdGroupCriterionLabelService_MutateAdGroupCriterionLabels_Handler(srv inte
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AdGroupCriterionLabelService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v9.services.AdGroupCriterionLabelService",
+	ServiceName: "google.ads.googleads.v10.services.AdGroupCriterionLabelService",
 	HandlerType: (*AdGroupCriterionLabelServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetAdGroupCriterionLabel",
-			Handler:    _AdGroupCriterionLabelService_GetAdGroupCriterionLabel_Handler,
-		},
 		{
 			MethodName: "MutateAdGroupCriterionLabels",
 			Handler:    _AdGroupCriterionLabelService_MutateAdGroupCriterionLabels_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v9/services/ad_group_criterion_label_service.proto",
+	Metadata: "google/ads/googleads/v10/services/ad_group_criterion_label_service.proto",
 }

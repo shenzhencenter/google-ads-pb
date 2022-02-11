@@ -27,7 +27,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +37,6 @@ var newBillingSetupClientHook clientHook
 
 // BillingSetupCallOptions contains the retry settings for each method of BillingSetupClient.
 type BillingSetupCallOptions struct {
-	GetBillingSetup []gax.CallOption
 	MutateBillingSetup []gax.CallOption
 }
 
@@ -56,18 +54,6 @@ func defaultBillingSetupGRPCClientOptions() []option.ClientOption {
 
 func defaultBillingSetupCallOptions() *BillingSetupCallOptions {
 	return &BillingSetupCallOptions{
-		GetBillingSetup: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		MutateBillingSetup: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -88,7 +74,6 @@ type internalBillingSetupClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetBillingSetup(context.Context, *servicespb.GetBillingSetupRequest, ...gax.CallOption) (*resourcespb.BillingSetup, error)
 	MutateBillingSetup(context.Context, *servicespb.MutateBillingSetupRequest, ...gax.CallOption) (*servicespb.MutateBillingSetupResponse, error)
 }
 
@@ -133,19 +118,6 @@ func (c *BillingSetupClient) setGoogleClientInfo(keyval ...string) {
 // Deprecated.
 func (c *BillingSetupClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetBillingSetup returns a billing setup.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *BillingSetupClient) GetBillingSetup(ctx context.Context, req *servicespb.GetBillingSetupRequest, opts ...gax.CallOption) (*resourcespb.BillingSetup, error) {
-	return c.internalClient.GetBillingSetup(ctx, req, opts...)
 }
 
 // MutateBillingSetup creates a billing setup, or cancels an existing billing setup.
@@ -252,27 +224,6 @@ func (c *billingSetupGRPCClient) setGoogleClientInfo(keyval ...string) {
 // the client is no longer required.
 func (c *billingSetupGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *billingSetupGRPCClient) GetBillingSetup(ctx context.Context, req *servicespb.GetBillingSetupRequest, opts ...gax.CallOption) (*resourcespb.BillingSetup, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetBillingSetup[0:len((*c.CallOptions).GetBillingSetup):len((*c.CallOptions).GetBillingSetup)], opts...)
-	var resp *resourcespb.BillingSetup
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.billingSetupClient.GetBillingSetup(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *billingSetupGRPCClient) MutateBillingSetup(ctx context.Context, req *servicespb.MutateBillingSetupRequest, opts ...gax.CallOption) (*servicespb.MutateBillingSetupResponse, error) {

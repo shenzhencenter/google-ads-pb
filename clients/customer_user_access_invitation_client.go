@@ -27,7 +27,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +37,6 @@ var newCustomerUserAccessInvitationClientHook clientHook
 
 // CustomerUserAccessInvitationCallOptions contains the retry settings for each method of CustomerUserAccessInvitationClient.
 type CustomerUserAccessInvitationCallOptions struct {
-	GetCustomerUserAccessInvitation []gax.CallOption
 	MutateCustomerUserAccessInvitation []gax.CallOption
 }
 
@@ -56,18 +54,6 @@ func defaultCustomerUserAccessInvitationGRPCClientOptions() []option.ClientOptio
 
 func defaultCustomerUserAccessInvitationCallOptions() *CustomerUserAccessInvitationCallOptions {
 	return &CustomerUserAccessInvitationCallOptions{
-		GetCustomerUserAccessInvitation: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		MutateCustomerUserAccessInvitation: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -88,7 +74,6 @@ type internalCustomerUserAccessInvitationClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetCustomerUserAccessInvitation(context.Context, *servicespb.GetCustomerUserAccessInvitationRequest, ...gax.CallOption) (*resourcespb.CustomerUserAccessInvitation, error)
 	MutateCustomerUserAccessInvitation(context.Context, *servicespb.MutateCustomerUserAccessInvitationRequest, ...gax.CallOption) (*servicespb.MutateCustomerUserAccessInvitationResponse, error)
 }
 
@@ -126,19 +111,6 @@ func (c *CustomerUserAccessInvitationClient) setGoogleClientInfo(keyval ...strin
 // Deprecated.
 func (c *CustomerUserAccessInvitationClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetCustomerUserAccessInvitation returns the requested access invitation in full detail.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *CustomerUserAccessInvitationClient) GetCustomerUserAccessInvitation(ctx context.Context, req *servicespb.GetCustomerUserAccessInvitationRequest, opts ...gax.CallOption) (*resourcespb.CustomerUserAccessInvitation, error) {
-	return c.internalClient.GetCustomerUserAccessInvitation(ctx, req, opts...)
 }
 
 // MutateCustomerUserAccessInvitation creates or removes an access invitation.
@@ -235,27 +207,6 @@ func (c *customerUserAccessInvitationGRPCClient) setGoogleClientInfo(keyval ...s
 // the client is no longer required.
 func (c *customerUserAccessInvitationGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *customerUserAccessInvitationGRPCClient) GetCustomerUserAccessInvitation(ctx context.Context, req *servicespb.GetCustomerUserAccessInvitationRequest, opts ...gax.CallOption) (*resourcespb.CustomerUserAccessInvitation, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetCustomerUserAccessInvitation[0:len((*c.CallOptions).GetCustomerUserAccessInvitation):len((*c.CallOptions).GetCustomerUserAccessInvitation)], opts...)
-	var resp *resourcespb.CustomerUserAccessInvitation
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.customerUserAccessInvitationClient.GetCustomerUserAccessInvitation(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *customerUserAccessInvitationGRPCClient) MutateCustomerUserAccessInvitation(ctx context.Context, req *servicespb.MutateCustomerUserAccessInvitationRequest, opts ...gax.CallOption) (*servicespb.MutateCustomerUserAccessInvitationResponse, error) {

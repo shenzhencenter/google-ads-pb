@@ -4,7 +4,6 @@ package services
 
 import (
 	context "context"
-	resources "github.com/shenzhencenter/google-ads-pb/resources"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -19,16 +18,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ConversionCustomVariableServiceClient interface {
-	// Returns the requested conversion custom variable.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetConversionCustomVariable(ctx context.Context, in *GetConversionCustomVariableRequest, opts ...grpc.CallOption) (*resources.ConversionCustomVariable, error)
 	// Creates or updates conversion custom variables. Operation statuses are
 	// returned.
 	//
@@ -52,18 +41,9 @@ func NewConversionCustomVariableServiceClient(cc grpc.ClientConnInterface) Conve
 	return &conversionCustomVariableServiceClient{cc}
 }
 
-func (c *conversionCustomVariableServiceClient) GetConversionCustomVariable(ctx context.Context, in *GetConversionCustomVariableRequest, opts ...grpc.CallOption) (*resources.ConversionCustomVariable, error) {
-	out := new(resources.ConversionCustomVariable)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.ConversionCustomVariableService/GetConversionCustomVariable", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *conversionCustomVariableServiceClient) MutateConversionCustomVariables(ctx context.Context, in *MutateConversionCustomVariablesRequest, opts ...grpc.CallOption) (*MutateConversionCustomVariablesResponse, error) {
 	out := new(MutateConversionCustomVariablesResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.ConversionCustomVariableService/MutateConversionCustomVariables", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.ConversionCustomVariableService/MutateConversionCustomVariables", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -74,16 +54,6 @@ func (c *conversionCustomVariableServiceClient) MutateConversionCustomVariables(
 // All implementations must embed UnimplementedConversionCustomVariableServiceServer
 // for forward compatibility
 type ConversionCustomVariableServiceServer interface {
-	// Returns the requested conversion custom variable.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetConversionCustomVariable(context.Context, *GetConversionCustomVariableRequest) (*resources.ConversionCustomVariable, error)
 	// Creates or updates conversion custom variables. Operation statuses are
 	// returned.
 	//
@@ -104,9 +74,6 @@ type ConversionCustomVariableServiceServer interface {
 type UnimplementedConversionCustomVariableServiceServer struct {
 }
 
-func (UnimplementedConversionCustomVariableServiceServer) GetConversionCustomVariable(context.Context, *GetConversionCustomVariableRequest) (*resources.ConversionCustomVariable, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetConversionCustomVariable not implemented")
-}
 func (UnimplementedConversionCustomVariableServiceServer) MutateConversionCustomVariables(context.Context, *MutateConversionCustomVariablesRequest) (*MutateConversionCustomVariablesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MutateConversionCustomVariables not implemented")
 }
@@ -124,24 +91,6 @@ func RegisterConversionCustomVariableServiceServer(s grpc.ServiceRegistrar, srv 
 	s.RegisterService(&ConversionCustomVariableService_ServiceDesc, srv)
 }
 
-func _ConversionCustomVariableService_GetConversionCustomVariable_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetConversionCustomVariableRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ConversionCustomVariableServiceServer).GetConversionCustomVariable(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.ConversionCustomVariableService/GetConversionCustomVariable",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ConversionCustomVariableServiceServer).GetConversionCustomVariable(ctx, req.(*GetConversionCustomVariableRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _ConversionCustomVariableService_MutateConversionCustomVariables_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MutateConversionCustomVariablesRequest)
 	if err := dec(in); err != nil {
@@ -152,7 +101,7 @@ func _ConversionCustomVariableService_MutateConversionCustomVariables_Handler(sr
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.ConversionCustomVariableService/MutateConversionCustomVariables",
+		FullMethod: "/google.ads.googleads.v10.services.ConversionCustomVariableService/MutateConversionCustomVariables",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ConversionCustomVariableServiceServer).MutateConversionCustomVariables(ctx, req.(*MutateConversionCustomVariablesRequest))
@@ -164,18 +113,14 @@ func _ConversionCustomVariableService_MutateConversionCustomVariables_Handler(sr
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ConversionCustomVariableService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v9.services.ConversionCustomVariableService",
+	ServiceName: "google.ads.googleads.v10.services.ConversionCustomVariableService",
 	HandlerType: (*ConversionCustomVariableServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetConversionCustomVariable",
-			Handler:    _ConversionCustomVariableService_GetConversionCustomVariable_Handler,
-		},
 		{
 			MethodName: "MutateConversionCustomVariables",
 			Handler:    _ConversionCustomVariableService_MutateConversionCustomVariables_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v9/services/conversion_custom_variable_service.proto",
+	Metadata: "google/ads/googleads/v10/services/conversion_custom_variable_service.proto",
 }

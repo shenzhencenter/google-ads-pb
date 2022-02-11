@@ -44,7 +44,6 @@ var newBatchJobClientHook clientHook
 // BatchJobCallOptions contains the retry settings for each method of BatchJobClient.
 type BatchJobCallOptions struct {
 	MutateBatchJob []gax.CallOption
-	GetBatchJob []gax.CallOption
 	ListBatchJobResults []gax.CallOption
 	RunBatchJob []gax.CallOption
 	AddBatchJobOperations []gax.CallOption
@@ -65,18 +64,6 @@ func defaultBatchJobGRPCClientOptions() []option.ClientOption {
 func defaultBatchJobCallOptions() *BatchJobCallOptions {
 	return &BatchJobCallOptions{
 		MutateBatchJob: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
-		GetBatchJob: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
 					codes.Unavailable,
@@ -133,7 +120,6 @@ type internalBatchJobClient interface {
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
 	MutateBatchJob(context.Context, *servicespb.MutateBatchJobRequest, ...gax.CallOption) (*servicespb.MutateBatchJobResponse, error)
-	GetBatchJob(context.Context, *servicespb.GetBatchJobRequest, ...gax.CallOption) (*resourcespb.BatchJob, error)
 	ListBatchJobResults(context.Context, *servicespb.ListBatchJobResultsRequest, ...gax.CallOption) *BatchJobResultIterator
 	RunBatchJob(context.Context, *servicespb.RunBatchJobRequest, ...gax.CallOption) (*RunBatchJobOperation, error)
 	RunBatchJobOperation(name string) *RunBatchJobOperation
@@ -192,19 +178,6 @@ func (c *BatchJobClient) Connection() *grpc.ClientConn {
 // ResourceCountLimitExceededError (at )
 func (c *BatchJobClient) MutateBatchJob(ctx context.Context, req *servicespb.MutateBatchJobRequest, opts ...gax.CallOption) (*servicespb.MutateBatchJobResponse, error) {
 	return c.internalClient.MutateBatchJob(ctx, req, opts...)
-}
-
-// GetBatchJob returns the batch job.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *BatchJobClient) GetBatchJob(ctx context.Context, req *servicespb.GetBatchJobRequest, opts ...gax.CallOption) (*resourcespb.BatchJob, error) {
-	return c.internalClient.GetBatchJob(ctx, req, opts...)
 }
 
 // ListBatchJobResults returns the results of the batch job. The job must be done.
@@ -371,27 +344,6 @@ func (c *batchJobGRPCClient) MutateBatchJob(ctx context.Context, req *servicespb
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
 		resp, err = c.batchJobClient.MutateBatchJob(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
-}
-
-func (c *batchJobGRPCClient) GetBatchJob(ctx context.Context, req *servicespb.GetBatchJobRequest, opts ...gax.CallOption) (*resourcespb.BatchJob, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetBatchJob[0:len((*c.CallOptions).GetBatchJob):len((*c.CallOptions).GetBatchJob)], opts...)
-	var resp *resourcespb.BatchJob
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.batchJobClient.GetBatchJob(ctx, req, settings.GRPC...)
 		return err
 	}, opts...)
 	if err != nil {

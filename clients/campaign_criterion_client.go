@@ -27,7 +27,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +37,6 @@ var newCampaignCriterionClientHook clientHook
 
 // CampaignCriterionCallOptions contains the retry settings for each method of CampaignCriterionClient.
 type CampaignCriterionCallOptions struct {
-	GetCampaignCriterion []gax.CallOption
 	MutateCampaignCriteria []gax.CallOption
 }
 
@@ -56,18 +54,6 @@ func defaultCampaignCriterionGRPCClientOptions() []option.ClientOption {
 
 func defaultCampaignCriterionCallOptions() *CampaignCriterionCallOptions {
 	return &CampaignCriterionCallOptions{
-		GetCampaignCriterion: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		MutateCampaignCriteria: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -88,7 +74,6 @@ type internalCampaignCriterionClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetCampaignCriterion(context.Context, *servicespb.GetCampaignCriterionRequest, ...gax.CallOption) (*resourcespb.CampaignCriterion, error)
 	MutateCampaignCriteria(context.Context, *servicespb.MutateCampaignCriteriaRequest, ...gax.CallOption) (*servicespb.MutateCampaignCriteriaResponse, error)
 }
 
@@ -125,19 +110,6 @@ func (c *CampaignCriterionClient) setGoogleClientInfo(keyval ...string) {
 // Deprecated.
 func (c *CampaignCriterionClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetCampaignCriterion returns the requested criterion in full detail.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *CampaignCriterionClient) GetCampaignCriterion(ctx context.Context, req *servicespb.GetCampaignCriterionRequest, opts ...gax.CallOption) (*resourcespb.CampaignCriterion, error) {
-	return c.internalClient.GetCampaignCriterion(ctx, req, opts...)
 }
 
 // MutateCampaignCriteria creates, updates, or removes criteria. Operation statuses are returned.
@@ -255,27 +227,6 @@ func (c *campaignCriterionGRPCClient) setGoogleClientInfo(keyval ...string) {
 // the client is no longer required.
 func (c *campaignCriterionGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *campaignCriterionGRPCClient) GetCampaignCriterion(ctx context.Context, req *servicespb.GetCampaignCriterionRequest, opts ...gax.CallOption) (*resourcespb.CampaignCriterion, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetCampaignCriterion[0:len((*c.CallOptions).GetCampaignCriterion):len((*c.CallOptions).GetCampaignCriterion)], opts...)
-	var resp *resourcespb.CampaignCriterion
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.campaignCriterionClient.GetCampaignCriterion(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *campaignCriterionGRPCClient) MutateCampaignCriteria(ctx context.Context, req *servicespb.MutateCampaignCriteriaRequest, opts ...gax.CallOption) (*servicespb.MutateCampaignCriteriaResponse, error) {

@@ -4,7 +4,6 @@ package services
 
 import (
 	context "context"
-	resources "github.com/shenzhencenter/google-ads-pb/resources"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -19,8 +18,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type KeywordThemeConstantServiceClient interface {
-	// Returns the requested keyword theme constant in full detail.
-	GetKeywordThemeConstant(ctx context.Context, in *GetKeywordThemeConstantRequest, opts ...grpc.CallOption) (*resources.KeywordThemeConstant, error)
 	// Returns KeywordThemeConstant suggestions by keyword themes.
 	//
 	// List of thrown errors:
@@ -41,18 +38,9 @@ func NewKeywordThemeConstantServiceClient(cc grpc.ClientConnInterface) KeywordTh
 	return &keywordThemeConstantServiceClient{cc}
 }
 
-func (c *keywordThemeConstantServiceClient) GetKeywordThemeConstant(ctx context.Context, in *GetKeywordThemeConstantRequest, opts ...grpc.CallOption) (*resources.KeywordThemeConstant, error) {
-	out := new(resources.KeywordThemeConstant)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.KeywordThemeConstantService/GetKeywordThemeConstant", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *keywordThemeConstantServiceClient) SuggestKeywordThemeConstants(ctx context.Context, in *SuggestKeywordThemeConstantsRequest, opts ...grpc.CallOption) (*SuggestKeywordThemeConstantsResponse, error) {
 	out := new(SuggestKeywordThemeConstantsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.KeywordThemeConstantService/SuggestKeywordThemeConstants", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.KeywordThemeConstantService/SuggestKeywordThemeConstants", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -63,8 +51,6 @@ func (c *keywordThemeConstantServiceClient) SuggestKeywordThemeConstants(ctx con
 // All implementations must embed UnimplementedKeywordThemeConstantServiceServer
 // for forward compatibility
 type KeywordThemeConstantServiceServer interface {
-	// Returns the requested keyword theme constant in full detail.
-	GetKeywordThemeConstant(context.Context, *GetKeywordThemeConstantRequest) (*resources.KeywordThemeConstant, error)
 	// Returns KeywordThemeConstant suggestions by keyword themes.
 	//
 	// List of thrown errors:
@@ -82,9 +68,6 @@ type KeywordThemeConstantServiceServer interface {
 type UnimplementedKeywordThemeConstantServiceServer struct {
 }
 
-func (UnimplementedKeywordThemeConstantServiceServer) GetKeywordThemeConstant(context.Context, *GetKeywordThemeConstantRequest) (*resources.KeywordThemeConstant, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetKeywordThemeConstant not implemented")
-}
 func (UnimplementedKeywordThemeConstantServiceServer) SuggestKeywordThemeConstants(context.Context, *SuggestKeywordThemeConstantsRequest) (*SuggestKeywordThemeConstantsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SuggestKeywordThemeConstants not implemented")
 }
@@ -102,24 +85,6 @@ func RegisterKeywordThemeConstantServiceServer(s grpc.ServiceRegistrar, srv Keyw
 	s.RegisterService(&KeywordThemeConstantService_ServiceDesc, srv)
 }
 
-func _KeywordThemeConstantService_GetKeywordThemeConstant_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetKeywordThemeConstantRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(KeywordThemeConstantServiceServer).GetKeywordThemeConstant(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.KeywordThemeConstantService/GetKeywordThemeConstant",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(KeywordThemeConstantServiceServer).GetKeywordThemeConstant(ctx, req.(*GetKeywordThemeConstantRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _KeywordThemeConstantService_SuggestKeywordThemeConstants_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(SuggestKeywordThemeConstantsRequest)
 	if err := dec(in); err != nil {
@@ -130,7 +95,7 @@ func _KeywordThemeConstantService_SuggestKeywordThemeConstants_Handler(srv inter
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.KeywordThemeConstantService/SuggestKeywordThemeConstants",
+		FullMethod: "/google.ads.googleads.v10.services.KeywordThemeConstantService/SuggestKeywordThemeConstants",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(KeywordThemeConstantServiceServer).SuggestKeywordThemeConstants(ctx, req.(*SuggestKeywordThemeConstantsRequest))
@@ -142,18 +107,14 @@ func _KeywordThemeConstantService_SuggestKeywordThemeConstants_Handler(srv inter
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var KeywordThemeConstantService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v9.services.KeywordThemeConstantService",
+	ServiceName: "google.ads.googleads.v10.services.KeywordThemeConstantService",
 	HandlerType: (*KeywordThemeConstantServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetKeywordThemeConstant",
-			Handler:    _KeywordThemeConstantService_GetKeywordThemeConstant_Handler,
-		},
 		{
 			MethodName: "SuggestKeywordThemeConstants",
 			Handler:    _KeywordThemeConstantService_SuggestKeywordThemeConstants_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v9/services/keyword_theme_constant_service.proto",
+	Metadata: "google/ads/googleads/v10/services/keyword_theme_constant_service.proto",
 }

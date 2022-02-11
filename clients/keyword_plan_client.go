@@ -27,7 +27,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +37,6 @@ var newKeywordPlanClientHook clientHook
 
 // KeywordPlanCallOptions contains the retry settings for each method of KeywordPlanClient.
 type KeywordPlanCallOptions struct {
-	GetKeywordPlan []gax.CallOption
 	MutateKeywordPlans []gax.CallOption
 	GenerateForecastCurve []gax.CallOption
 	GenerateForecastTimeSeries []gax.CallOption
@@ -60,18 +58,6 @@ func defaultKeywordPlanGRPCClientOptions() []option.ClientOption {
 
 func defaultKeywordPlanCallOptions() *KeywordPlanCallOptions {
 	return &KeywordPlanCallOptions{
-		GetKeywordPlan: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		MutateKeywordPlans: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -140,7 +126,6 @@ type internalKeywordPlanClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetKeywordPlan(context.Context, *servicespb.GetKeywordPlanRequest, ...gax.CallOption) (*resourcespb.KeywordPlan, error)
 	MutateKeywordPlans(context.Context, *servicespb.MutateKeywordPlansRequest, ...gax.CallOption) (*servicespb.MutateKeywordPlansResponse, error)
 	GenerateForecastCurve(context.Context, *servicespb.GenerateForecastCurveRequest, ...gax.CallOption) (*servicespb.GenerateForecastCurveResponse, error)
 	GenerateForecastTimeSeries(context.Context, *servicespb.GenerateForecastTimeSeriesRequest, ...gax.CallOption) (*servicespb.GenerateForecastTimeSeriesResponse, error)
@@ -181,19 +166,6 @@ func (c *KeywordPlanClient) setGoogleClientInfo(keyval ...string) {
 // Deprecated.
 func (c *KeywordPlanClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetKeywordPlan returns the requested plan in full detail.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *KeywordPlanClient) GetKeywordPlan(ctx context.Context, req *servicespb.GetKeywordPlanRequest, opts ...gax.CallOption) (*resourcespb.KeywordPlan, error) {
-	return c.internalClient.GetKeywordPlan(ctx, req, opts...)
 }
 
 // MutateKeywordPlans creates, updates, or removes keyword plans. Operation statuses are
@@ -363,27 +335,6 @@ func (c *keywordPlanGRPCClient) setGoogleClientInfo(keyval ...string) {
 // the client is no longer required.
 func (c *keywordPlanGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *keywordPlanGRPCClient) GetKeywordPlan(ctx context.Context, req *servicespb.GetKeywordPlanRequest, opts ...gax.CallOption) (*resourcespb.KeywordPlan, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetKeywordPlan[0:len((*c.CallOptions).GetKeywordPlan):len((*c.CallOptions).GetKeywordPlan)], opts...)
-	var resp *resourcespb.KeywordPlan
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.keywordPlanClient.GetKeywordPlan(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *keywordPlanGRPCClient) MutateKeywordPlans(ctx context.Context, req *servicespb.MutateKeywordPlansRequest, opts ...gax.CallOption) (*servicespb.MutateKeywordPlansResponse, error) {

@@ -4,7 +4,6 @@ package services
 
 import (
 	context "context"
-	resources "github.com/shenzhencenter/google-ads-pb/resources"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -19,8 +18,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type BiddingDataExclusionServiceClient interface {
-	// Returns the requested data exclusion in full detail.
-	GetBiddingDataExclusion(ctx context.Context, in *GetBiddingDataExclusionRequest, opts ...grpc.CallOption) (*resources.BiddingDataExclusion, error)
 	// Creates, updates, or removes data exclusions.
 	// Operation statuses are returned.
 	MutateBiddingDataExclusions(ctx context.Context, in *MutateBiddingDataExclusionsRequest, opts ...grpc.CallOption) (*MutateBiddingDataExclusionsResponse, error)
@@ -34,18 +31,9 @@ func NewBiddingDataExclusionServiceClient(cc grpc.ClientConnInterface) BiddingDa
 	return &biddingDataExclusionServiceClient{cc}
 }
 
-func (c *biddingDataExclusionServiceClient) GetBiddingDataExclusion(ctx context.Context, in *GetBiddingDataExclusionRequest, opts ...grpc.CallOption) (*resources.BiddingDataExclusion, error) {
-	out := new(resources.BiddingDataExclusion)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.BiddingDataExclusionService/GetBiddingDataExclusion", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *biddingDataExclusionServiceClient) MutateBiddingDataExclusions(ctx context.Context, in *MutateBiddingDataExclusionsRequest, opts ...grpc.CallOption) (*MutateBiddingDataExclusionsResponse, error) {
 	out := new(MutateBiddingDataExclusionsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.BiddingDataExclusionService/MutateBiddingDataExclusions", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.BiddingDataExclusionService/MutateBiddingDataExclusions", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -56,8 +44,6 @@ func (c *biddingDataExclusionServiceClient) MutateBiddingDataExclusions(ctx cont
 // All implementations must embed UnimplementedBiddingDataExclusionServiceServer
 // for forward compatibility
 type BiddingDataExclusionServiceServer interface {
-	// Returns the requested data exclusion in full detail.
-	GetBiddingDataExclusion(context.Context, *GetBiddingDataExclusionRequest) (*resources.BiddingDataExclusion, error)
 	// Creates, updates, or removes data exclusions.
 	// Operation statuses are returned.
 	MutateBiddingDataExclusions(context.Context, *MutateBiddingDataExclusionsRequest) (*MutateBiddingDataExclusionsResponse, error)
@@ -68,9 +54,6 @@ type BiddingDataExclusionServiceServer interface {
 type UnimplementedBiddingDataExclusionServiceServer struct {
 }
 
-func (UnimplementedBiddingDataExclusionServiceServer) GetBiddingDataExclusion(context.Context, *GetBiddingDataExclusionRequest) (*resources.BiddingDataExclusion, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetBiddingDataExclusion not implemented")
-}
 func (UnimplementedBiddingDataExclusionServiceServer) MutateBiddingDataExclusions(context.Context, *MutateBiddingDataExclusionsRequest) (*MutateBiddingDataExclusionsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MutateBiddingDataExclusions not implemented")
 }
@@ -88,24 +71,6 @@ func RegisterBiddingDataExclusionServiceServer(s grpc.ServiceRegistrar, srv Bidd
 	s.RegisterService(&BiddingDataExclusionService_ServiceDesc, srv)
 }
 
-func _BiddingDataExclusionService_GetBiddingDataExclusion_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetBiddingDataExclusionRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(BiddingDataExclusionServiceServer).GetBiddingDataExclusion(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.BiddingDataExclusionService/GetBiddingDataExclusion",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(BiddingDataExclusionServiceServer).GetBiddingDataExclusion(ctx, req.(*GetBiddingDataExclusionRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _BiddingDataExclusionService_MutateBiddingDataExclusions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MutateBiddingDataExclusionsRequest)
 	if err := dec(in); err != nil {
@@ -116,7 +81,7 @@ func _BiddingDataExclusionService_MutateBiddingDataExclusions_Handler(srv interf
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.BiddingDataExclusionService/MutateBiddingDataExclusions",
+		FullMethod: "/google.ads.googleads.v10.services.BiddingDataExclusionService/MutateBiddingDataExclusions",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(BiddingDataExclusionServiceServer).MutateBiddingDataExclusions(ctx, req.(*MutateBiddingDataExclusionsRequest))
@@ -128,18 +93,14 @@ func _BiddingDataExclusionService_MutateBiddingDataExclusions_Handler(srv interf
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var BiddingDataExclusionService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v9.services.BiddingDataExclusionService",
+	ServiceName: "google.ads.googleads.v10.services.BiddingDataExclusionService",
 	HandlerType: (*BiddingDataExclusionServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetBiddingDataExclusion",
-			Handler:    _BiddingDataExclusionService_GetBiddingDataExclusion_Handler,
-		},
 		{
 			MethodName: "MutateBiddingDataExclusions",
 			Handler:    _BiddingDataExclusionService_MutateBiddingDataExclusions_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v9/services/bidding_data_exclusion_service.proto",
+	Metadata: "google/ads/googleads/v10/services/bidding_data_exclusion_service.proto",
 }

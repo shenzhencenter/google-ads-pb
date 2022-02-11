@@ -27,7 +27,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +37,6 @@ var newCampaignFeedClientHook clientHook
 
 // CampaignFeedCallOptions contains the retry settings for each method of CampaignFeedClient.
 type CampaignFeedCallOptions struct {
-	GetCampaignFeed []gax.CallOption
 	MutateCampaignFeeds []gax.CallOption
 }
 
@@ -56,18 +54,6 @@ func defaultCampaignFeedGRPCClientOptions() []option.ClientOption {
 
 func defaultCampaignFeedCallOptions() *CampaignFeedCallOptions {
 	return &CampaignFeedCallOptions{
-		GetCampaignFeed: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		MutateCampaignFeeds: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -88,7 +74,6 @@ type internalCampaignFeedClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetCampaignFeed(context.Context, *servicespb.GetCampaignFeedRequest, ...gax.CallOption) (*resourcespb.CampaignFeed, error)
 	MutateCampaignFeeds(context.Context, *servicespb.MutateCampaignFeedsRequest, ...gax.CallOption) (*servicespb.MutateCampaignFeedsResponse, error)
 }
 
@@ -125,19 +110,6 @@ func (c *CampaignFeedClient) setGoogleClientInfo(keyval ...string) {
 // Deprecated.
 func (c *CampaignFeedClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetCampaignFeed returns the requested campaign feed in full detail.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *CampaignFeedClient) GetCampaignFeed(ctx context.Context, req *servicespb.GetCampaignFeedRequest, opts ...gax.CallOption) (*resourcespb.CampaignFeed, error) {
-	return c.internalClient.GetCampaignFeed(ctx, req, opts...)
 }
 
 // MutateCampaignFeeds creates, updates, or removes campaign feeds. Operation statuses are
@@ -250,27 +222,6 @@ func (c *campaignFeedGRPCClient) setGoogleClientInfo(keyval ...string) {
 // the client is no longer required.
 func (c *campaignFeedGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *campaignFeedGRPCClient) GetCampaignFeed(ctx context.Context, req *servicespb.GetCampaignFeedRequest, opts ...gax.CallOption) (*resourcespb.CampaignFeed, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetCampaignFeed[0:len((*c.CallOptions).GetCampaignFeed):len((*c.CallOptions).GetCampaignFeed)], opts...)
-	var resp *resourcespb.CampaignFeed
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.campaignFeedClient.GetCampaignFeed(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *campaignFeedGRPCClient) MutateCampaignFeeds(ctx context.Context, req *servicespb.MutateCampaignFeedsRequest, opts ...gax.CallOption) (*servicespb.MutateCampaignFeedsResponse, error) {

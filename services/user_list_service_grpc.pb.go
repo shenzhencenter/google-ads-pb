@@ -4,7 +4,6 @@ package services
 
 import (
 	context "context"
-	resources "github.com/shenzhencenter/google-ads-pb/resources"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -19,16 +18,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type UserListServiceClient interface {
-	// Returns the requested user list.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetUserList(ctx context.Context, in *GetUserListRequest, opts ...grpc.CallOption) (*resources.UserList, error)
 	// Creates or updates user lists. Operation statuses are returned.
 	//
 	// List of thrown errors:
@@ -63,18 +52,9 @@ func NewUserListServiceClient(cc grpc.ClientConnInterface) UserListServiceClient
 	return &userListServiceClient{cc}
 }
 
-func (c *userListServiceClient) GetUserList(ctx context.Context, in *GetUserListRequest, opts ...grpc.CallOption) (*resources.UserList, error) {
-	out := new(resources.UserList)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.UserListService/GetUserList", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *userListServiceClient) MutateUserLists(ctx context.Context, in *MutateUserListsRequest, opts ...grpc.CallOption) (*MutateUserListsResponse, error) {
 	out := new(MutateUserListsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.UserListService/MutateUserLists", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.UserListService/MutateUserLists", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -85,16 +65,6 @@ func (c *userListServiceClient) MutateUserLists(ctx context.Context, in *MutateU
 // All implementations must embed UnimplementedUserListServiceServer
 // for forward compatibility
 type UserListServiceServer interface {
-	// Returns the requested user list.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetUserList(context.Context, *GetUserListRequest) (*resources.UserList, error)
 	// Creates or updates user lists. Operation statuses are returned.
 	//
 	// List of thrown errors:
@@ -126,9 +96,6 @@ type UserListServiceServer interface {
 type UnimplementedUserListServiceServer struct {
 }
 
-func (UnimplementedUserListServiceServer) GetUserList(context.Context, *GetUserListRequest) (*resources.UserList, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetUserList not implemented")
-}
 func (UnimplementedUserListServiceServer) MutateUserLists(context.Context, *MutateUserListsRequest) (*MutateUserListsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MutateUserLists not implemented")
 }
@@ -145,24 +112,6 @@ func RegisterUserListServiceServer(s grpc.ServiceRegistrar, srv UserListServiceS
 	s.RegisterService(&UserListService_ServiceDesc, srv)
 }
 
-func _UserListService_GetUserList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetUserListRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(UserListServiceServer).GetUserList(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.UserListService/GetUserList",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserListServiceServer).GetUserList(ctx, req.(*GetUserListRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _UserListService_MutateUserLists_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MutateUserListsRequest)
 	if err := dec(in); err != nil {
@@ -173,7 +122,7 @@ func _UserListService_MutateUserLists_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.UserListService/MutateUserLists",
+		FullMethod: "/google.ads.googleads.v10.services.UserListService/MutateUserLists",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(UserListServiceServer).MutateUserLists(ctx, req.(*MutateUserListsRequest))
@@ -185,18 +134,14 @@ func _UserListService_MutateUserLists_Handler(srv interface{}, ctx context.Conte
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var UserListService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v9.services.UserListService",
+	ServiceName: "google.ads.googleads.v10.services.UserListService",
 	HandlerType: (*UserListServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetUserList",
-			Handler:    _UserListService_GetUserList_Handler,
-		},
 		{
 			MethodName: "MutateUserLists",
 			Handler:    _UserListService_MutateUserLists_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v9/services/user_list_service.proto",
+	Metadata: "google/ads/googleads/v10/services/user_list_service.proto",
 }

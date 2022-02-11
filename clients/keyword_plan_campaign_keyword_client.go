@@ -27,7 +27,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +37,6 @@ var newKeywordPlanCampaignKeywordClientHook clientHook
 
 // KeywordPlanCampaignKeywordCallOptions contains the retry settings for each method of KeywordPlanCampaignKeywordClient.
 type KeywordPlanCampaignKeywordCallOptions struct {
-	GetKeywordPlanCampaignKeyword []gax.CallOption
 	MutateKeywordPlanCampaignKeywords []gax.CallOption
 }
 
@@ -56,18 +54,6 @@ func defaultKeywordPlanCampaignKeywordGRPCClientOptions() []option.ClientOption 
 
 func defaultKeywordPlanCampaignKeywordCallOptions() *KeywordPlanCampaignKeywordCallOptions {
 	return &KeywordPlanCampaignKeywordCallOptions{
-		GetKeywordPlanCampaignKeyword: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		MutateKeywordPlanCampaignKeywords: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -88,7 +74,6 @@ type internalKeywordPlanCampaignKeywordClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetKeywordPlanCampaignKeyword(context.Context, *servicespb.GetKeywordPlanCampaignKeywordRequest, ...gax.CallOption) (*resourcespb.KeywordPlanCampaignKeyword, error)
 	MutateKeywordPlanCampaignKeywords(context.Context, *servicespb.MutateKeywordPlanCampaignKeywordsRequest, ...gax.CallOption) (*servicespb.MutateKeywordPlanCampaignKeywordsResponse, error)
 }
 
@@ -128,19 +113,6 @@ func (c *KeywordPlanCampaignKeywordClient) setGoogleClientInfo(keyval ...string)
 // Deprecated.
 func (c *KeywordPlanCampaignKeywordClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetKeywordPlanCampaignKeyword returns the requested plan in full detail.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *KeywordPlanCampaignKeywordClient) GetKeywordPlanCampaignKeyword(ctx context.Context, req *servicespb.GetKeywordPlanCampaignKeywordRequest, opts ...gax.CallOption) (*resourcespb.KeywordPlanCampaignKeyword, error) {
-	return c.internalClient.GetKeywordPlanCampaignKeyword(ctx, req, opts...)
 }
 
 // MutateKeywordPlanCampaignKeywords creates, updates, or removes Keyword Plan campaign keywords. Operation
@@ -244,27 +216,6 @@ func (c *keywordPlanCampaignKeywordGRPCClient) setGoogleClientInfo(keyval ...str
 // the client is no longer required.
 func (c *keywordPlanCampaignKeywordGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *keywordPlanCampaignKeywordGRPCClient) GetKeywordPlanCampaignKeyword(ctx context.Context, req *servicespb.GetKeywordPlanCampaignKeywordRequest, opts ...gax.CallOption) (*resourcespb.KeywordPlanCampaignKeyword, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetKeywordPlanCampaignKeyword[0:len((*c.CallOptions).GetKeywordPlanCampaignKeyword):len((*c.CallOptions).GetKeywordPlanCampaignKeyword)], opts...)
-	var resp *resourcespb.KeywordPlanCampaignKeyword
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.keywordPlanCampaignKeywordClient.GetKeywordPlanCampaignKeyword(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *keywordPlanCampaignKeywordGRPCClient) MutateKeywordPlanCampaignKeywords(ctx context.Context, req *servicespb.MutateKeywordPlanCampaignKeywordsRequest, opts ...gax.CallOption) (*servicespb.MutateKeywordPlanCampaignKeywordsResponse, error) {

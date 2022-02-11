@@ -4,7 +4,6 @@ package services
 
 import (
 	context "context"
-	resources "github.com/shenzhencenter/google-ads-pb/resources"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -19,16 +18,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type AdGroupFeedServiceClient interface {
-	// Returns the requested ad group feed in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetAdGroupFeed(ctx context.Context, in *GetAdGroupFeedRequest, opts ...grpc.CallOption) (*resources.AdGroupFeed, error)
 	// Creates, updates, or removes ad group feeds. Operation statuses are
 	// returned.
 	//
@@ -66,18 +55,9 @@ func NewAdGroupFeedServiceClient(cc grpc.ClientConnInterface) AdGroupFeedService
 	return &adGroupFeedServiceClient{cc}
 }
 
-func (c *adGroupFeedServiceClient) GetAdGroupFeed(ctx context.Context, in *GetAdGroupFeedRequest, opts ...grpc.CallOption) (*resources.AdGroupFeed, error) {
-	out := new(resources.AdGroupFeed)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.AdGroupFeedService/GetAdGroupFeed", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *adGroupFeedServiceClient) MutateAdGroupFeeds(ctx context.Context, in *MutateAdGroupFeedsRequest, opts ...grpc.CallOption) (*MutateAdGroupFeedsResponse, error) {
 	out := new(MutateAdGroupFeedsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.AdGroupFeedService/MutateAdGroupFeeds", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.AdGroupFeedService/MutateAdGroupFeeds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -88,16 +68,6 @@ func (c *adGroupFeedServiceClient) MutateAdGroupFeeds(ctx context.Context, in *M
 // All implementations must embed UnimplementedAdGroupFeedServiceServer
 // for forward compatibility
 type AdGroupFeedServiceServer interface {
-	// Returns the requested ad group feed in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetAdGroupFeed(context.Context, *GetAdGroupFeedRequest) (*resources.AdGroupFeed, error)
 	// Creates, updates, or removes ad group feeds. Operation statuses are
 	// returned.
 	//
@@ -132,9 +102,6 @@ type AdGroupFeedServiceServer interface {
 type UnimplementedAdGroupFeedServiceServer struct {
 }
 
-func (UnimplementedAdGroupFeedServiceServer) GetAdGroupFeed(context.Context, *GetAdGroupFeedRequest) (*resources.AdGroupFeed, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAdGroupFeed not implemented")
-}
 func (UnimplementedAdGroupFeedServiceServer) MutateAdGroupFeeds(context.Context, *MutateAdGroupFeedsRequest) (*MutateAdGroupFeedsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MutateAdGroupFeeds not implemented")
 }
@@ -151,24 +118,6 @@ func RegisterAdGroupFeedServiceServer(s grpc.ServiceRegistrar, srv AdGroupFeedSe
 	s.RegisterService(&AdGroupFeedService_ServiceDesc, srv)
 }
 
-func _AdGroupFeedService_GetAdGroupFeed_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAdGroupFeedRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AdGroupFeedServiceServer).GetAdGroupFeed(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.AdGroupFeedService/GetAdGroupFeed",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AdGroupFeedServiceServer).GetAdGroupFeed(ctx, req.(*GetAdGroupFeedRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _AdGroupFeedService_MutateAdGroupFeeds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MutateAdGroupFeedsRequest)
 	if err := dec(in); err != nil {
@@ -179,7 +128,7 @@ func _AdGroupFeedService_MutateAdGroupFeeds_Handler(srv interface{}, ctx context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.AdGroupFeedService/MutateAdGroupFeeds",
+		FullMethod: "/google.ads.googleads.v10.services.AdGroupFeedService/MutateAdGroupFeeds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AdGroupFeedServiceServer).MutateAdGroupFeeds(ctx, req.(*MutateAdGroupFeedsRequest))
@@ -191,18 +140,14 @@ func _AdGroupFeedService_MutateAdGroupFeeds_Handler(srv interface{}, ctx context
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AdGroupFeedService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v9.services.AdGroupFeedService",
+	ServiceName: "google.ads.googleads.v10.services.AdGroupFeedService",
 	HandlerType: (*AdGroupFeedServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetAdGroupFeed",
-			Handler:    _AdGroupFeedService_GetAdGroupFeed_Handler,
-		},
 		{
 			MethodName: "MutateAdGroupFeeds",
 			Handler:    _AdGroupFeedService_MutateAdGroupFeeds_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v9/services/ad_group_feed_service.proto",
+	Metadata: "google/ads/googleads/v10/services/ad_group_feed_service.proto",
 }

@@ -4,7 +4,6 @@ package services
 
 import (
 	context "context"
-	resources "github.com/shenzhencenter/google-ads-pb/resources"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -19,16 +18,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type AccountBudgetProposalServiceClient interface {
-	// Returns an account-level budget proposal in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetAccountBudgetProposal(ctx context.Context, in *GetAccountBudgetProposalRequest, opts ...grpc.CallOption) (*resources.AccountBudgetProposal, error)
 	// Creates, updates, or removes account budget proposals.  Operation statuses
 	// are returned.
 	//
@@ -57,18 +46,9 @@ func NewAccountBudgetProposalServiceClient(cc grpc.ClientConnInterface) AccountB
 	return &accountBudgetProposalServiceClient{cc}
 }
 
-func (c *accountBudgetProposalServiceClient) GetAccountBudgetProposal(ctx context.Context, in *GetAccountBudgetProposalRequest, opts ...grpc.CallOption) (*resources.AccountBudgetProposal, error) {
-	out := new(resources.AccountBudgetProposal)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.AccountBudgetProposalService/GetAccountBudgetProposal", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *accountBudgetProposalServiceClient) MutateAccountBudgetProposal(ctx context.Context, in *MutateAccountBudgetProposalRequest, opts ...grpc.CallOption) (*MutateAccountBudgetProposalResponse, error) {
 	out := new(MutateAccountBudgetProposalResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.AccountBudgetProposalService/MutateAccountBudgetProposal", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.AccountBudgetProposalService/MutateAccountBudgetProposal", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -79,16 +59,6 @@ func (c *accountBudgetProposalServiceClient) MutateAccountBudgetProposal(ctx con
 // All implementations must embed UnimplementedAccountBudgetProposalServiceServer
 // for forward compatibility
 type AccountBudgetProposalServiceServer interface {
-	// Returns an account-level budget proposal in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetAccountBudgetProposal(context.Context, *GetAccountBudgetProposalRequest) (*resources.AccountBudgetProposal, error)
 	// Creates, updates, or removes account budget proposals.  Operation statuses
 	// are returned.
 	//
@@ -114,9 +84,6 @@ type AccountBudgetProposalServiceServer interface {
 type UnimplementedAccountBudgetProposalServiceServer struct {
 }
 
-func (UnimplementedAccountBudgetProposalServiceServer) GetAccountBudgetProposal(context.Context, *GetAccountBudgetProposalRequest) (*resources.AccountBudgetProposal, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAccountBudgetProposal not implemented")
-}
 func (UnimplementedAccountBudgetProposalServiceServer) MutateAccountBudgetProposal(context.Context, *MutateAccountBudgetProposalRequest) (*MutateAccountBudgetProposalResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MutateAccountBudgetProposal not implemented")
 }
@@ -134,24 +101,6 @@ func RegisterAccountBudgetProposalServiceServer(s grpc.ServiceRegistrar, srv Acc
 	s.RegisterService(&AccountBudgetProposalService_ServiceDesc, srv)
 }
 
-func _AccountBudgetProposalService_GetAccountBudgetProposal_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAccountBudgetProposalRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AccountBudgetProposalServiceServer).GetAccountBudgetProposal(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.AccountBudgetProposalService/GetAccountBudgetProposal",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AccountBudgetProposalServiceServer).GetAccountBudgetProposal(ctx, req.(*GetAccountBudgetProposalRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _AccountBudgetProposalService_MutateAccountBudgetProposal_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MutateAccountBudgetProposalRequest)
 	if err := dec(in); err != nil {
@@ -162,7 +111,7 @@ func _AccountBudgetProposalService_MutateAccountBudgetProposal_Handler(srv inter
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.AccountBudgetProposalService/MutateAccountBudgetProposal",
+		FullMethod: "/google.ads.googleads.v10.services.AccountBudgetProposalService/MutateAccountBudgetProposal",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AccountBudgetProposalServiceServer).MutateAccountBudgetProposal(ctx, req.(*MutateAccountBudgetProposalRequest))
@@ -174,18 +123,14 @@ func _AccountBudgetProposalService_MutateAccountBudgetProposal_Handler(srv inter
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AccountBudgetProposalService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v9.services.AccountBudgetProposalService",
+	ServiceName: "google.ads.googleads.v10.services.AccountBudgetProposalService",
 	HandlerType: (*AccountBudgetProposalServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetAccountBudgetProposal",
-			Handler:    _AccountBudgetProposalService_GetAccountBudgetProposal_Handler,
-		},
 		{
 			MethodName: "MutateAccountBudgetProposal",
 			Handler:    _AccountBudgetProposalService_MutateAccountBudgetProposal_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v9/services/account_budget_proposal_service.proto",
+	Metadata: "google/ads/googleads/v10/services/account_budget_proposal_service.proto",
 }

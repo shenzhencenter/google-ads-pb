@@ -4,7 +4,6 @@ package services
 
 import (
 	context "context"
-	resources "github.com/shenzhencenter/google-ads-pb/resources"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -19,16 +18,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type CustomerClientLinkServiceClient interface {
-	// Returns the requested CustomerClientLink in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetCustomerClientLink(ctx context.Context, in *GetCustomerClientLinkRequest, opts ...grpc.CallOption) (*resources.CustomerClientLink, error)
 	// Creates or updates a customer client link. Operation statuses are returned.
 	//
 	// List of thrown errors:
@@ -55,18 +44,9 @@ func NewCustomerClientLinkServiceClient(cc grpc.ClientConnInterface) CustomerCli
 	return &customerClientLinkServiceClient{cc}
 }
 
-func (c *customerClientLinkServiceClient) GetCustomerClientLink(ctx context.Context, in *GetCustomerClientLinkRequest, opts ...grpc.CallOption) (*resources.CustomerClientLink, error) {
-	out := new(resources.CustomerClientLink)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.CustomerClientLinkService/GetCustomerClientLink", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *customerClientLinkServiceClient) MutateCustomerClientLink(ctx context.Context, in *MutateCustomerClientLinkRequest, opts ...grpc.CallOption) (*MutateCustomerClientLinkResponse, error) {
 	out := new(MutateCustomerClientLinkResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.CustomerClientLinkService/MutateCustomerClientLink", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.CustomerClientLinkService/MutateCustomerClientLink", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -77,16 +57,6 @@ func (c *customerClientLinkServiceClient) MutateCustomerClientLink(ctx context.C
 // All implementations must embed UnimplementedCustomerClientLinkServiceServer
 // for forward compatibility
 type CustomerClientLinkServiceServer interface {
-	// Returns the requested CustomerClientLink in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetCustomerClientLink(context.Context, *GetCustomerClientLinkRequest) (*resources.CustomerClientLink, error)
 	// Creates or updates a customer client link. Operation statuses are returned.
 	//
 	// List of thrown errors:
@@ -110,9 +80,6 @@ type CustomerClientLinkServiceServer interface {
 type UnimplementedCustomerClientLinkServiceServer struct {
 }
 
-func (UnimplementedCustomerClientLinkServiceServer) GetCustomerClientLink(context.Context, *GetCustomerClientLinkRequest) (*resources.CustomerClientLink, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetCustomerClientLink not implemented")
-}
 func (UnimplementedCustomerClientLinkServiceServer) MutateCustomerClientLink(context.Context, *MutateCustomerClientLinkRequest) (*MutateCustomerClientLinkResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MutateCustomerClientLink not implemented")
 }
@@ -130,24 +97,6 @@ func RegisterCustomerClientLinkServiceServer(s grpc.ServiceRegistrar, srv Custom
 	s.RegisterService(&CustomerClientLinkService_ServiceDesc, srv)
 }
 
-func _CustomerClientLinkService_GetCustomerClientLink_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetCustomerClientLinkRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(CustomerClientLinkServiceServer).GetCustomerClientLink(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.CustomerClientLinkService/GetCustomerClientLink",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CustomerClientLinkServiceServer).GetCustomerClientLink(ctx, req.(*GetCustomerClientLinkRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _CustomerClientLinkService_MutateCustomerClientLink_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MutateCustomerClientLinkRequest)
 	if err := dec(in); err != nil {
@@ -158,7 +107,7 @@ func _CustomerClientLinkService_MutateCustomerClientLink_Handler(srv interface{}
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.CustomerClientLinkService/MutateCustomerClientLink",
+		FullMethod: "/google.ads.googleads.v10.services.CustomerClientLinkService/MutateCustomerClientLink",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CustomerClientLinkServiceServer).MutateCustomerClientLink(ctx, req.(*MutateCustomerClientLinkRequest))
@@ -170,18 +119,14 @@ func _CustomerClientLinkService_MutateCustomerClientLink_Handler(srv interface{}
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CustomerClientLinkService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v9.services.CustomerClientLinkService",
+	ServiceName: "google.ads.googleads.v10.services.CustomerClientLinkService",
 	HandlerType: (*CustomerClientLinkServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetCustomerClientLink",
-			Handler:    _CustomerClientLinkService_GetCustomerClientLink_Handler,
-		},
 		{
 			MethodName: "MutateCustomerClientLink",
 			Handler:    _CustomerClientLinkService_MutateCustomerClientLink_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v9/services/customer_client_link_service.proto",
+	Metadata: "google/ads/googleads/v10/services/customer_client_link_service.proto",
 }

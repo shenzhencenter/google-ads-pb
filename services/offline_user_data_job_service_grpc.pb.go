@@ -4,7 +4,6 @@ package services
 
 import (
 	context "context"
-	resources "github.com/shenzhencenter/google-ads-pb/resources"
 	longrunning "google.golang.org/genproto/googleapis/longrunning"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
@@ -34,16 +33,6 @@ type OfflineUserDataJobServiceClient interface {
 	//   [QuotaError]()
 	//   [RequestError]()
 	CreateOfflineUserDataJob(ctx context.Context, in *CreateOfflineUserDataJobRequest, opts ...grpc.CallOption) (*CreateOfflineUserDataJobResponse, error)
-	// Returns the offline user data job.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetOfflineUserDataJob(ctx context.Context, in *GetOfflineUserDataJobRequest, opts ...grpc.CallOption) (*resources.OfflineUserDataJob, error)
 	// Adds operations to the offline user data job.
 	//
 	// List of thrown errors:
@@ -85,16 +74,7 @@ func NewOfflineUserDataJobServiceClient(cc grpc.ClientConnInterface) OfflineUser
 
 func (c *offlineUserDataJobServiceClient) CreateOfflineUserDataJob(ctx context.Context, in *CreateOfflineUserDataJobRequest, opts ...grpc.CallOption) (*CreateOfflineUserDataJobResponse, error) {
 	out := new(CreateOfflineUserDataJobResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.OfflineUserDataJobService/CreateOfflineUserDataJob", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *offlineUserDataJobServiceClient) GetOfflineUserDataJob(ctx context.Context, in *GetOfflineUserDataJobRequest, opts ...grpc.CallOption) (*resources.OfflineUserDataJob, error) {
-	out := new(resources.OfflineUserDataJob)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.OfflineUserDataJobService/GetOfflineUserDataJob", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.OfflineUserDataJobService/CreateOfflineUserDataJob", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -103,7 +83,7 @@ func (c *offlineUserDataJobServiceClient) GetOfflineUserDataJob(ctx context.Cont
 
 func (c *offlineUserDataJobServiceClient) AddOfflineUserDataJobOperations(ctx context.Context, in *AddOfflineUserDataJobOperationsRequest, opts ...grpc.CallOption) (*AddOfflineUserDataJobOperationsResponse, error) {
 	out := new(AddOfflineUserDataJobOperationsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.OfflineUserDataJobService/AddOfflineUserDataJobOperations", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.OfflineUserDataJobService/AddOfflineUserDataJobOperations", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -112,7 +92,7 @@ func (c *offlineUserDataJobServiceClient) AddOfflineUserDataJobOperations(ctx co
 
 func (c *offlineUserDataJobServiceClient) RunOfflineUserDataJob(ctx context.Context, in *RunOfflineUserDataJobRequest, opts ...grpc.CallOption) (*longrunning.Operation, error) {
 	out := new(longrunning.Operation)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.OfflineUserDataJobService/RunOfflineUserDataJob", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.OfflineUserDataJobService/RunOfflineUserDataJob", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -137,16 +117,6 @@ type OfflineUserDataJobServiceServer interface {
 	//   [QuotaError]()
 	//   [RequestError]()
 	CreateOfflineUserDataJob(context.Context, *CreateOfflineUserDataJobRequest) (*CreateOfflineUserDataJobResponse, error)
-	// Returns the offline user data job.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetOfflineUserDataJob(context.Context, *GetOfflineUserDataJobRequest) (*resources.OfflineUserDataJob, error)
 	// Adds operations to the offline user data job.
 	//
 	// List of thrown errors:
@@ -186,9 +156,6 @@ type UnimplementedOfflineUserDataJobServiceServer struct {
 func (UnimplementedOfflineUserDataJobServiceServer) CreateOfflineUserDataJob(context.Context, *CreateOfflineUserDataJobRequest) (*CreateOfflineUserDataJobResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateOfflineUserDataJob not implemented")
 }
-func (UnimplementedOfflineUserDataJobServiceServer) GetOfflineUserDataJob(context.Context, *GetOfflineUserDataJobRequest) (*resources.OfflineUserDataJob, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetOfflineUserDataJob not implemented")
-}
 func (UnimplementedOfflineUserDataJobServiceServer) AddOfflineUserDataJobOperations(context.Context, *AddOfflineUserDataJobOperationsRequest) (*AddOfflineUserDataJobOperationsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AddOfflineUserDataJobOperations not implemented")
 }
@@ -219,28 +186,10 @@ func _OfflineUserDataJobService_CreateOfflineUserDataJob_Handler(srv interface{}
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.OfflineUserDataJobService/CreateOfflineUserDataJob",
+		FullMethod: "/google.ads.googleads.v10.services.OfflineUserDataJobService/CreateOfflineUserDataJob",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(OfflineUserDataJobServiceServer).CreateOfflineUserDataJob(ctx, req.(*CreateOfflineUserDataJobRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _OfflineUserDataJobService_GetOfflineUserDataJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetOfflineUserDataJobRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(OfflineUserDataJobServiceServer).GetOfflineUserDataJob(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.OfflineUserDataJobService/GetOfflineUserDataJob",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OfflineUserDataJobServiceServer).GetOfflineUserDataJob(ctx, req.(*GetOfflineUserDataJobRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -255,7 +204,7 @@ func _OfflineUserDataJobService_AddOfflineUserDataJobOperations_Handler(srv inte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.OfflineUserDataJobService/AddOfflineUserDataJobOperations",
+		FullMethod: "/google.ads.googleads.v10.services.OfflineUserDataJobService/AddOfflineUserDataJobOperations",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(OfflineUserDataJobServiceServer).AddOfflineUserDataJobOperations(ctx, req.(*AddOfflineUserDataJobOperationsRequest))
@@ -273,7 +222,7 @@ func _OfflineUserDataJobService_RunOfflineUserDataJob_Handler(srv interface{}, c
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.OfflineUserDataJobService/RunOfflineUserDataJob",
+		FullMethod: "/google.ads.googleads.v10.services.OfflineUserDataJobService/RunOfflineUserDataJob",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(OfflineUserDataJobServiceServer).RunOfflineUserDataJob(ctx, req.(*RunOfflineUserDataJobRequest))
@@ -285,16 +234,12 @@ func _OfflineUserDataJobService_RunOfflineUserDataJob_Handler(srv interface{}, c
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var OfflineUserDataJobService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v9.services.OfflineUserDataJobService",
+	ServiceName: "google.ads.googleads.v10.services.OfflineUserDataJobService",
 	HandlerType: (*OfflineUserDataJobServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "CreateOfflineUserDataJob",
 			Handler:    _OfflineUserDataJobService_CreateOfflineUserDataJob_Handler,
-		},
-		{
-			MethodName: "GetOfflineUserDataJob",
-			Handler:    _OfflineUserDataJobService_GetOfflineUserDataJob_Handler,
 		},
 		{
 			MethodName: "AddOfflineUserDataJobOperations",
@@ -306,5 +251,5 @@ var OfflineUserDataJobService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v9/services/offline_user_data_job_service.proto",
+	Metadata: "google/ads/googleads/v10/services/offline_user_data_job_service.proto",
 }

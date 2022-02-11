@@ -27,7 +27,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +37,6 @@ var newConversionActionClientHook clientHook
 
 // ConversionActionCallOptions contains the retry settings for each method of ConversionActionClient.
 type ConversionActionCallOptions struct {
-	GetConversionAction []gax.CallOption
 	MutateConversionActions []gax.CallOption
 }
 
@@ -56,18 +54,6 @@ func defaultConversionActionGRPCClientOptions() []option.ClientOption {
 
 func defaultConversionActionCallOptions() *ConversionActionCallOptions {
 	return &ConversionActionCallOptions{
-		GetConversionAction: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		MutateConversionActions: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -88,7 +74,6 @@ type internalConversionActionClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetConversionAction(context.Context, *servicespb.GetConversionActionRequest, ...gax.CallOption) (*resourcespb.ConversionAction, error)
 	MutateConversionActions(context.Context, *servicespb.MutateConversionActionsRequest, ...gax.CallOption) (*servicespb.MutateConversionActionsResponse, error)
 }
 
@@ -125,19 +110,6 @@ func (c *ConversionActionClient) setGoogleClientInfo(keyval ...string) {
 // Deprecated.
 func (c *ConversionActionClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetConversionAction returns the requested conversion action.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *ConversionActionClient) GetConversionAction(ctx context.Context, req *servicespb.GetConversionActionRequest, opts ...gax.CallOption) (*resourcespb.ConversionAction, error) {
-	return c.internalClient.GetConversionAction(ctx, req, opts...)
 }
 
 // MutateConversionActions creates, updates or removes conversion actions. Operation statuses are
@@ -243,27 +215,6 @@ func (c *conversionActionGRPCClient) setGoogleClientInfo(keyval ...string) {
 // the client is no longer required.
 func (c *conversionActionGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *conversionActionGRPCClient) GetConversionAction(ctx context.Context, req *servicespb.GetConversionActionRequest, opts ...gax.CallOption) (*resourcespb.ConversionAction, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetConversionAction[0:len((*c.CallOptions).GetConversionAction):len((*c.CallOptions).GetConversionAction)], opts...)
-	var resp *resourcespb.ConversionAction
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.conversionActionClient.GetConversionAction(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *conversionActionGRPCClient) MutateConversionActions(ctx context.Context, req *servicespb.MutateConversionActionsRequest, opts ...gax.CallOption) (*servicespb.MutateConversionActionsResponse, error) {

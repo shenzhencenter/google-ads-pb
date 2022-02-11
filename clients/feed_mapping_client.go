@@ -27,7 +27,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +37,6 @@ var newFeedMappingClientHook clientHook
 
 // FeedMappingCallOptions contains the retry settings for each method of FeedMappingClient.
 type FeedMappingCallOptions struct {
-	GetFeedMapping []gax.CallOption
 	MutateFeedMappings []gax.CallOption
 }
 
@@ -56,18 +54,6 @@ func defaultFeedMappingGRPCClientOptions() []option.ClientOption {
 
 func defaultFeedMappingCallOptions() *FeedMappingCallOptions {
 	return &FeedMappingCallOptions{
-		GetFeedMapping: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		MutateFeedMappings: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -88,7 +74,6 @@ type internalFeedMappingClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetFeedMapping(context.Context, *servicespb.GetFeedMappingRequest, ...gax.CallOption) (*resourcespb.FeedMapping, error)
 	MutateFeedMappings(context.Context, *servicespb.MutateFeedMappingsRequest, ...gax.CallOption) (*servicespb.MutateFeedMappingsResponse, error)
 }
 
@@ -125,19 +110,6 @@ func (c *FeedMappingClient) setGoogleClientInfo(keyval ...string) {
 // Deprecated.
 func (c *FeedMappingClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetFeedMapping returns the requested feed mapping in full detail.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *FeedMappingClient) GetFeedMapping(ctx context.Context, req *servicespb.GetFeedMappingRequest, opts ...gax.CallOption) (*resourcespb.FeedMapping, error) {
-	return c.internalClient.GetFeedMapping(ctx, req, opts...)
 }
 
 // MutateFeedMappings creates or removes feed mappings. Operation statuses are
@@ -246,27 +218,6 @@ func (c *feedMappingGRPCClient) setGoogleClientInfo(keyval ...string) {
 // the client is no longer required.
 func (c *feedMappingGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *feedMappingGRPCClient) GetFeedMapping(ctx context.Context, req *servicespb.GetFeedMappingRequest, opts ...gax.CallOption) (*resourcespb.FeedMapping, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetFeedMapping[0:len((*c.CallOptions).GetFeedMapping):len((*c.CallOptions).GetFeedMapping)], opts...)
-	var resp *resourcespb.FeedMapping
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.feedMappingClient.GetFeedMapping(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *feedMappingGRPCClient) MutateFeedMappings(ctx context.Context, req *servicespb.MutateFeedMappingsRequest, opts ...gax.CallOption) (*servicespb.MutateFeedMappingsResponse, error) {

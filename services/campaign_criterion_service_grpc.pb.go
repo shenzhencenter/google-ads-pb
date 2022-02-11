@@ -4,7 +4,6 @@ package services
 
 import (
 	context "context"
-	resources "github.com/shenzhencenter/google-ads-pb/resources"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -19,16 +18,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type CampaignCriterionServiceClient interface {
-	// Returns the requested criterion in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetCampaignCriterion(ctx context.Context, in *GetCampaignCriterionRequest, opts ...grpc.CallOption) (*resources.CampaignCriterion, error)
 	// Creates, updates, or removes criteria. Operation statuses are returned.
 	//
 	// List of thrown errors:
@@ -72,18 +61,9 @@ func NewCampaignCriterionServiceClient(cc grpc.ClientConnInterface) CampaignCrit
 	return &campaignCriterionServiceClient{cc}
 }
 
-func (c *campaignCriterionServiceClient) GetCampaignCriterion(ctx context.Context, in *GetCampaignCriterionRequest, opts ...grpc.CallOption) (*resources.CampaignCriterion, error) {
-	out := new(resources.CampaignCriterion)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.CampaignCriterionService/GetCampaignCriterion", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *campaignCriterionServiceClient) MutateCampaignCriteria(ctx context.Context, in *MutateCampaignCriteriaRequest, opts ...grpc.CallOption) (*MutateCampaignCriteriaResponse, error) {
 	out := new(MutateCampaignCriteriaResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.CampaignCriterionService/MutateCampaignCriteria", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.CampaignCriterionService/MutateCampaignCriteria", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -94,16 +74,6 @@ func (c *campaignCriterionServiceClient) MutateCampaignCriteria(ctx context.Cont
 // All implementations must embed UnimplementedCampaignCriterionServiceServer
 // for forward compatibility
 type CampaignCriterionServiceServer interface {
-	// Returns the requested criterion in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetCampaignCriterion(context.Context, *GetCampaignCriterionRequest) (*resources.CampaignCriterion, error)
 	// Creates, updates, or removes criteria. Operation statuses are returned.
 	//
 	// List of thrown errors:
@@ -144,9 +114,6 @@ type CampaignCriterionServiceServer interface {
 type UnimplementedCampaignCriterionServiceServer struct {
 }
 
-func (UnimplementedCampaignCriterionServiceServer) GetCampaignCriterion(context.Context, *GetCampaignCriterionRequest) (*resources.CampaignCriterion, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetCampaignCriterion not implemented")
-}
 func (UnimplementedCampaignCriterionServiceServer) MutateCampaignCriteria(context.Context, *MutateCampaignCriteriaRequest) (*MutateCampaignCriteriaResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MutateCampaignCriteria not implemented")
 }
@@ -164,24 +131,6 @@ func RegisterCampaignCriterionServiceServer(s grpc.ServiceRegistrar, srv Campaig
 	s.RegisterService(&CampaignCriterionService_ServiceDesc, srv)
 }
 
-func _CampaignCriterionService_GetCampaignCriterion_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetCampaignCriterionRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(CampaignCriterionServiceServer).GetCampaignCriterion(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.CampaignCriterionService/GetCampaignCriterion",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CampaignCriterionServiceServer).GetCampaignCriterion(ctx, req.(*GetCampaignCriterionRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _CampaignCriterionService_MutateCampaignCriteria_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MutateCampaignCriteriaRequest)
 	if err := dec(in); err != nil {
@@ -192,7 +141,7 @@ func _CampaignCriterionService_MutateCampaignCriteria_Handler(srv interface{}, c
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.CampaignCriterionService/MutateCampaignCriteria",
+		FullMethod: "/google.ads.googleads.v10.services.CampaignCriterionService/MutateCampaignCriteria",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CampaignCriterionServiceServer).MutateCampaignCriteria(ctx, req.(*MutateCampaignCriteriaRequest))
@@ -204,18 +153,14 @@ func _CampaignCriterionService_MutateCampaignCriteria_Handler(srv interface{}, c
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CampaignCriterionService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v9.services.CampaignCriterionService",
+	ServiceName: "google.ads.googleads.v10.services.CampaignCriterionService",
 	HandlerType: (*CampaignCriterionServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetCampaignCriterion",
-			Handler:    _CampaignCriterionService_GetCampaignCriterion_Handler,
-		},
 		{
 			MethodName: "MutateCampaignCriteria",
 			Handler:    _CampaignCriterionService_MutateCampaignCriteria_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v9/services/campaign_criterion_service.proto",
+	Metadata: "google/ads/googleads/v10/services/campaign_criterion_service.proto",
 }

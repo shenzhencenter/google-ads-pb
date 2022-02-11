@@ -4,7 +4,6 @@ package services
 
 import (
 	context "context"
-	resources "github.com/shenzhencenter/google-ads-pb/resources"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -19,16 +18,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type AdParameterServiceClient interface {
-	// Returns the requested ad parameter in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetAdParameter(ctx context.Context, in *GetAdParameterRequest, opts ...grpc.CallOption) (*resources.AdParameter, error)
 	// Creates, updates, or removes ad parameters. Operation statuses are
 	// returned.
 	//
@@ -56,18 +45,9 @@ func NewAdParameterServiceClient(cc grpc.ClientConnInterface) AdParameterService
 	return &adParameterServiceClient{cc}
 }
 
-func (c *adParameterServiceClient) GetAdParameter(ctx context.Context, in *GetAdParameterRequest, opts ...grpc.CallOption) (*resources.AdParameter, error) {
-	out := new(resources.AdParameter)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.AdParameterService/GetAdParameter", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *adParameterServiceClient) MutateAdParameters(ctx context.Context, in *MutateAdParametersRequest, opts ...grpc.CallOption) (*MutateAdParametersResponse, error) {
 	out := new(MutateAdParametersResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.AdParameterService/MutateAdParameters", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.AdParameterService/MutateAdParameters", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -78,16 +58,6 @@ func (c *adParameterServiceClient) MutateAdParameters(ctx context.Context, in *M
 // All implementations must embed UnimplementedAdParameterServiceServer
 // for forward compatibility
 type AdParameterServiceServer interface {
-	// Returns the requested ad parameter in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetAdParameter(context.Context, *GetAdParameterRequest) (*resources.AdParameter, error)
 	// Creates, updates, or removes ad parameters. Operation statuses are
 	// returned.
 	//
@@ -112,9 +82,6 @@ type AdParameterServiceServer interface {
 type UnimplementedAdParameterServiceServer struct {
 }
 
-func (UnimplementedAdParameterServiceServer) GetAdParameter(context.Context, *GetAdParameterRequest) (*resources.AdParameter, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAdParameter not implemented")
-}
 func (UnimplementedAdParameterServiceServer) MutateAdParameters(context.Context, *MutateAdParametersRequest) (*MutateAdParametersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MutateAdParameters not implemented")
 }
@@ -131,24 +98,6 @@ func RegisterAdParameterServiceServer(s grpc.ServiceRegistrar, srv AdParameterSe
 	s.RegisterService(&AdParameterService_ServiceDesc, srv)
 }
 
-func _AdParameterService_GetAdParameter_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAdParameterRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AdParameterServiceServer).GetAdParameter(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.AdParameterService/GetAdParameter",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AdParameterServiceServer).GetAdParameter(ctx, req.(*GetAdParameterRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _AdParameterService_MutateAdParameters_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MutateAdParametersRequest)
 	if err := dec(in); err != nil {
@@ -159,7 +108,7 @@ func _AdParameterService_MutateAdParameters_Handler(srv interface{}, ctx context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.AdParameterService/MutateAdParameters",
+		FullMethod: "/google.ads.googleads.v10.services.AdParameterService/MutateAdParameters",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AdParameterServiceServer).MutateAdParameters(ctx, req.(*MutateAdParametersRequest))
@@ -171,18 +120,14 @@ func _AdParameterService_MutateAdParameters_Handler(srv interface{}, ctx context
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AdParameterService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v9.services.AdParameterService",
+	ServiceName: "google.ads.googleads.v10.services.AdParameterService",
 	HandlerType: (*AdParameterServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetAdParameter",
-			Handler:    _AdParameterService_GetAdParameter_Handler,
-		},
 		{
 			MethodName: "MutateAdParameters",
 			Handler:    _AdParameterService_MutateAdParameters_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v9/services/ad_parameter_service.proto",
+	Metadata: "google/ads/googleads/v10/services/ad_parameter_service.proto",
 }

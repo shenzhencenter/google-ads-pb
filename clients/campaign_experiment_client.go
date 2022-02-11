@@ -30,7 +30,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	longrunningpb "google.golang.org/genproto/googleapis/longrunning"
 	statuspb "google.golang.org/genproto/googleapis/rpc/status"
@@ -45,7 +44,6 @@ var newCampaignExperimentClientHook clientHook
 
 // CampaignExperimentCallOptions contains the retry settings for each method of CampaignExperimentClient.
 type CampaignExperimentCallOptions struct {
-	GetCampaignExperiment []gax.CallOption
 	CreateCampaignExperiment []gax.CallOption
 	MutateCampaignExperiments []gax.CallOption
 	GraduateCampaignExperiment []gax.CallOption
@@ -68,18 +66,6 @@ func defaultCampaignExperimentGRPCClientOptions() []option.ClientOption {
 
 func defaultCampaignExperimentCallOptions() *CampaignExperimentCallOptions {
 	return &CampaignExperimentCallOptions{
-		GetCampaignExperiment: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		CreateCampaignExperiment: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -160,7 +146,6 @@ type internalCampaignExperimentClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetCampaignExperiment(context.Context, *servicespb.GetCampaignExperimentRequest, ...gax.CallOption) (*resourcespb.CampaignExperiment, error)
 	CreateCampaignExperiment(context.Context, *servicespb.CreateCampaignExperimentRequest, ...gax.CallOption) (*CreateCampaignExperimentOperation, error)
 	CreateCampaignExperimentOperation(name string) *CreateCampaignExperimentOperation
 	MutateCampaignExperiments(context.Context, *servicespb.MutateCampaignExperimentsRequest, ...gax.CallOption) (*servicespb.MutateCampaignExperimentsResponse, error)
@@ -218,19 +203,6 @@ func (c *CampaignExperimentClient) setGoogleClientInfo(keyval ...string) {
 // Deprecated.
 func (c *CampaignExperimentClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetCampaignExperiment returns the requested campaign experiment in full detail.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *CampaignExperimentClient) GetCampaignExperiment(ctx context.Context, req *servicespb.GetCampaignExperimentRequest, opts ...gax.CallOption) (*resourcespb.CampaignExperiment, error) {
-	return c.internalClient.GetCampaignExperiment(ctx, req, opts...)
 }
 
 // CreateCampaignExperiment creates a campaign experiment based on a campaign draft. The draft campaign
@@ -456,27 +428,6 @@ func (c *campaignExperimentGRPCClient) setGoogleClientInfo(keyval ...string) {
 // the client is no longer required.
 func (c *campaignExperimentGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *campaignExperimentGRPCClient) GetCampaignExperiment(ctx context.Context, req *servicespb.GetCampaignExperimentRequest, opts ...gax.CallOption) (*resourcespb.CampaignExperiment, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetCampaignExperiment[0:len((*c.CallOptions).GetCampaignExperiment):len((*c.CallOptions).GetCampaignExperiment)], opts...)
-	var resp *resourcespb.CampaignExperiment
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.campaignExperimentClient.GetCampaignExperiment(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *campaignExperimentGRPCClient) CreateCampaignExperiment(ctx context.Context, req *servicespb.CreateCampaignExperimentRequest, opts ...gax.CallOption) (*CreateCampaignExperimentOperation, error) {

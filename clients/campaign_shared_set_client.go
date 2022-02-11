@@ -27,7 +27,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +37,6 @@ var newCampaignSharedSetClientHook clientHook
 
 // CampaignSharedSetCallOptions contains the retry settings for each method of CampaignSharedSetClient.
 type CampaignSharedSetCallOptions struct {
-	GetCampaignSharedSet []gax.CallOption
 	MutateCampaignSharedSets []gax.CallOption
 }
 
@@ -56,18 +54,6 @@ func defaultCampaignSharedSetGRPCClientOptions() []option.ClientOption {
 
 func defaultCampaignSharedSetCallOptions() *CampaignSharedSetCallOptions {
 	return &CampaignSharedSetCallOptions{
-		GetCampaignSharedSet: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		MutateCampaignSharedSets: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -88,7 +74,6 @@ type internalCampaignSharedSetClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetCampaignSharedSet(context.Context, *servicespb.GetCampaignSharedSetRequest, ...gax.CallOption) (*resourcespb.CampaignSharedSet, error)
 	MutateCampaignSharedSets(context.Context, *servicespb.MutateCampaignSharedSetsRequest, ...gax.CallOption) (*servicespb.MutateCampaignSharedSetsResponse, error)
 }
 
@@ -125,19 +110,6 @@ func (c *CampaignSharedSetClient) setGoogleClientInfo(keyval ...string) {
 // Deprecated.
 func (c *CampaignSharedSetClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetCampaignSharedSet returns the requested campaign shared set in full detail.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *CampaignSharedSetClient) GetCampaignSharedSet(ctx context.Context, req *servicespb.GetCampaignSharedSetRequest, opts ...gax.CallOption) (*resourcespb.CampaignSharedSet, error) {
-	return c.internalClient.GetCampaignSharedSet(ctx, req, opts...)
 }
 
 // MutateCampaignSharedSets creates or removes campaign shared sets. Operation statuses are returned.
@@ -248,27 +220,6 @@ func (c *campaignSharedSetGRPCClient) setGoogleClientInfo(keyval ...string) {
 // the client is no longer required.
 func (c *campaignSharedSetGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *campaignSharedSetGRPCClient) GetCampaignSharedSet(ctx context.Context, req *servicespb.GetCampaignSharedSetRequest, opts ...gax.CallOption) (*resourcespb.CampaignSharedSet, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetCampaignSharedSet[0:len((*c.CallOptions).GetCampaignSharedSet):len((*c.CallOptions).GetCampaignSharedSet)], opts...)
-	var resp *resourcespb.CampaignSharedSet
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.campaignSharedSetClient.GetCampaignSharedSet(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *campaignSharedSetGRPCClient) MutateCampaignSharedSets(ctx context.Context, req *servicespb.MutateCampaignSharedSetsRequest, opts ...gax.CallOption) (*servicespb.MutateCampaignSharedSetsResponse, error) {

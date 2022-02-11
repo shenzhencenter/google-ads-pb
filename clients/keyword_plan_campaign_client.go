@@ -27,7 +27,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +37,6 @@ var newKeywordPlanCampaignClientHook clientHook
 
 // KeywordPlanCampaignCallOptions contains the retry settings for each method of KeywordPlanCampaignClient.
 type KeywordPlanCampaignCallOptions struct {
-	GetKeywordPlanCampaign []gax.CallOption
 	MutateKeywordPlanCampaigns []gax.CallOption
 }
 
@@ -56,18 +54,6 @@ func defaultKeywordPlanCampaignGRPCClientOptions() []option.ClientOption {
 
 func defaultKeywordPlanCampaignCallOptions() *KeywordPlanCampaignCallOptions {
 	return &KeywordPlanCampaignCallOptions{
-		GetKeywordPlanCampaign: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		MutateKeywordPlanCampaigns: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -88,7 +74,6 @@ type internalKeywordPlanCampaignClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetKeywordPlanCampaign(context.Context, *servicespb.GetKeywordPlanCampaignRequest, ...gax.CallOption) (*resourcespb.KeywordPlanCampaign, error)
 	MutateKeywordPlanCampaigns(context.Context, *servicespb.MutateKeywordPlanCampaignsRequest, ...gax.CallOption) (*servicespb.MutateKeywordPlanCampaignsResponse, error)
 }
 
@@ -125,19 +110,6 @@ func (c *KeywordPlanCampaignClient) setGoogleClientInfo(keyval ...string) {
 // Deprecated.
 func (c *KeywordPlanCampaignClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetKeywordPlanCampaign returns the requested Keyword Plan campaign in full detail.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *KeywordPlanCampaignClient) GetKeywordPlanCampaign(ctx context.Context, req *servicespb.GetKeywordPlanCampaignRequest, opts ...gax.CallOption) (*resourcespb.KeywordPlanCampaign, error) {
-	return c.internalClient.GetKeywordPlanCampaign(ctx, req, opts...)
 }
 
 // MutateKeywordPlanCampaigns creates, updates, or removes Keyword Plan campaigns. Operation statuses are
@@ -242,27 +214,6 @@ func (c *keywordPlanCampaignGRPCClient) setGoogleClientInfo(keyval ...string) {
 // the client is no longer required.
 func (c *keywordPlanCampaignGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *keywordPlanCampaignGRPCClient) GetKeywordPlanCampaign(ctx context.Context, req *servicespb.GetKeywordPlanCampaignRequest, opts ...gax.CallOption) (*resourcespb.KeywordPlanCampaign, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetKeywordPlanCampaign[0:len((*c.CallOptions).GetKeywordPlanCampaign):len((*c.CallOptions).GetKeywordPlanCampaign)], opts...)
-	var resp *resourcespb.KeywordPlanCampaign
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.keywordPlanCampaignClient.GetKeywordPlanCampaign(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *keywordPlanCampaignGRPCClient) MutateKeywordPlanCampaigns(ctx context.Context, req *servicespb.MutateKeywordPlanCampaignsRequest, opts ...gax.CallOption) (*servicespb.MutateKeywordPlanCampaignsResponse, error) {

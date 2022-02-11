@@ -27,7 +27,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +37,6 @@ var newAccountLinkClientHook clientHook
 
 // AccountLinkCallOptions contains the retry settings for each method of AccountLinkClient.
 type AccountLinkCallOptions struct {
-	GetAccountLink []gax.CallOption
 	CreateAccountLink []gax.CallOption
 	MutateAccountLink []gax.CallOption
 }
@@ -57,18 +55,6 @@ func defaultAccountLinkGRPCClientOptions() []option.ClientOption {
 
 func defaultAccountLinkCallOptions() *AccountLinkCallOptions {
 	return &AccountLinkCallOptions{
-		GetAccountLink: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		CreateAccountLink: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -101,7 +87,6 @@ type internalAccountLinkClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetAccountLink(context.Context, *servicespb.GetAccountLinkRequest, ...gax.CallOption) (*resourcespb.AccountLink, error)
 	CreateAccountLink(context.Context, *servicespb.CreateAccountLinkRequest, ...gax.CallOption) (*servicespb.CreateAccountLinkResponse, error)
 	MutateAccountLink(context.Context, *servicespb.MutateAccountLinkRequest, ...gax.CallOption) (*servicespb.MutateAccountLinkResponse, error)
 }
@@ -140,19 +125,6 @@ func (c *AccountLinkClient) setGoogleClientInfo(keyval ...string) {
 // Deprecated.
 func (c *AccountLinkClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetAccountLink returns the account link in full detail.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *AccountLinkClient) GetAccountLink(ctx context.Context, req *servicespb.GetAccountLinkRequest, opts ...gax.CallOption) (*resourcespb.AccountLink, error) {
-	return c.internalClient.GetAccountLink(ctx, req, opts...)
 }
 
 // CreateAccountLink creates an account link.
@@ -271,27 +243,6 @@ func (c *accountLinkGRPCClient) setGoogleClientInfo(keyval ...string) {
 // the client is no longer required.
 func (c *accountLinkGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *accountLinkGRPCClient) GetAccountLink(ctx context.Context, req *servicespb.GetAccountLinkRequest, opts ...gax.CallOption) (*resourcespb.AccountLink, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetAccountLink[0:len((*c.CallOptions).GetAccountLink):len((*c.CallOptions).GetAccountLink)], opts...)
-	var resp *resourcespb.AccountLink
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.accountLinkClient.GetAccountLink(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *accountLinkGRPCClient) CreateAccountLink(ctx context.Context, req *servicespb.CreateAccountLinkRequest, opts ...gax.CallOption) (*servicespb.CreateAccountLinkResponse, error) {

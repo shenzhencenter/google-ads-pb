@@ -27,7 +27,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +37,6 @@ var newAdGroupFeedClientHook clientHook
 
 // AdGroupFeedCallOptions contains the retry settings for each method of AdGroupFeedClient.
 type AdGroupFeedCallOptions struct {
-	GetAdGroupFeed []gax.CallOption
 	MutateAdGroupFeeds []gax.CallOption
 }
 
@@ -56,18 +54,6 @@ func defaultAdGroupFeedGRPCClientOptions() []option.ClientOption {
 
 func defaultAdGroupFeedCallOptions() *AdGroupFeedCallOptions {
 	return &AdGroupFeedCallOptions{
-		GetAdGroupFeed: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		MutateAdGroupFeeds: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -88,7 +74,6 @@ type internalAdGroupFeedClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetAdGroupFeed(context.Context, *servicespb.GetAdGroupFeedRequest, ...gax.CallOption) (*resourcespb.AdGroupFeed, error)
 	MutateAdGroupFeeds(context.Context, *servicespb.MutateAdGroupFeedsRequest, ...gax.CallOption) (*servicespb.MutateAdGroupFeedsResponse, error)
 }
 
@@ -125,19 +110,6 @@ func (c *AdGroupFeedClient) setGoogleClientInfo(keyval ...string) {
 // Deprecated.
 func (c *AdGroupFeedClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetAdGroupFeed returns the requested ad group feed in full detail.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *AdGroupFeedClient) GetAdGroupFeed(ctx context.Context, req *servicespb.GetAdGroupFeedRequest, opts ...gax.CallOption) (*resourcespb.AdGroupFeed, error) {
-	return c.internalClient.GetAdGroupFeed(ctx, req, opts...)
 }
 
 // MutateAdGroupFeeds creates, updates, or removes ad group feeds. Operation statuses are
@@ -249,27 +221,6 @@ func (c *adGroupFeedGRPCClient) setGoogleClientInfo(keyval ...string) {
 // the client is no longer required.
 func (c *adGroupFeedGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *adGroupFeedGRPCClient) GetAdGroupFeed(ctx context.Context, req *servicespb.GetAdGroupFeedRequest, opts ...gax.CallOption) (*resourcespb.AdGroupFeed, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetAdGroupFeed[0:len((*c.CallOptions).GetAdGroupFeed):len((*c.CallOptions).GetAdGroupFeed)], opts...)
-	var resp *resourcespb.AdGroupFeed
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.adGroupFeedClient.GetAdGroupFeed(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *adGroupFeedGRPCClient) MutateAdGroupFeeds(ctx context.Context, req *servicespb.MutateAdGroupFeedsRequest, opts ...gax.CallOption) (*servicespb.MutateAdGroupFeedsResponse, error) {

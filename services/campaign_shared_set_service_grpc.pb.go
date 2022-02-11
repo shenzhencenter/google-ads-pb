@@ -4,7 +4,6 @@ package services
 
 import (
 	context "context"
-	resources "github.com/shenzhencenter/google-ads-pb/resources"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -19,16 +18,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type CampaignSharedSetServiceClient interface {
-	// Returns the requested campaign shared set in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetCampaignSharedSet(ctx context.Context, in *GetCampaignSharedSetRequest, opts ...grpc.CallOption) (*resources.CampaignSharedSet, error)
 	// Creates or removes campaign shared sets. Operation statuses are returned.
 	//
 	// List of thrown errors:
@@ -65,18 +54,9 @@ func NewCampaignSharedSetServiceClient(cc grpc.ClientConnInterface) CampaignShar
 	return &campaignSharedSetServiceClient{cc}
 }
 
-func (c *campaignSharedSetServiceClient) GetCampaignSharedSet(ctx context.Context, in *GetCampaignSharedSetRequest, opts ...grpc.CallOption) (*resources.CampaignSharedSet, error) {
-	out := new(resources.CampaignSharedSet)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.CampaignSharedSetService/GetCampaignSharedSet", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *campaignSharedSetServiceClient) MutateCampaignSharedSets(ctx context.Context, in *MutateCampaignSharedSetsRequest, opts ...grpc.CallOption) (*MutateCampaignSharedSetsResponse, error) {
 	out := new(MutateCampaignSharedSetsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.CampaignSharedSetService/MutateCampaignSharedSets", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.CampaignSharedSetService/MutateCampaignSharedSets", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -87,16 +67,6 @@ func (c *campaignSharedSetServiceClient) MutateCampaignSharedSets(ctx context.Co
 // All implementations must embed UnimplementedCampaignSharedSetServiceServer
 // for forward compatibility
 type CampaignSharedSetServiceServer interface {
-	// Returns the requested campaign shared set in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetCampaignSharedSet(context.Context, *GetCampaignSharedSetRequest) (*resources.CampaignSharedSet, error)
 	// Creates or removes campaign shared sets. Operation statuses are returned.
 	//
 	// List of thrown errors:
@@ -130,9 +100,6 @@ type CampaignSharedSetServiceServer interface {
 type UnimplementedCampaignSharedSetServiceServer struct {
 }
 
-func (UnimplementedCampaignSharedSetServiceServer) GetCampaignSharedSet(context.Context, *GetCampaignSharedSetRequest) (*resources.CampaignSharedSet, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetCampaignSharedSet not implemented")
-}
 func (UnimplementedCampaignSharedSetServiceServer) MutateCampaignSharedSets(context.Context, *MutateCampaignSharedSetsRequest) (*MutateCampaignSharedSetsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MutateCampaignSharedSets not implemented")
 }
@@ -150,24 +117,6 @@ func RegisterCampaignSharedSetServiceServer(s grpc.ServiceRegistrar, srv Campaig
 	s.RegisterService(&CampaignSharedSetService_ServiceDesc, srv)
 }
 
-func _CampaignSharedSetService_GetCampaignSharedSet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetCampaignSharedSetRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(CampaignSharedSetServiceServer).GetCampaignSharedSet(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.CampaignSharedSetService/GetCampaignSharedSet",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CampaignSharedSetServiceServer).GetCampaignSharedSet(ctx, req.(*GetCampaignSharedSetRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _CampaignSharedSetService_MutateCampaignSharedSets_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MutateCampaignSharedSetsRequest)
 	if err := dec(in); err != nil {
@@ -178,7 +127,7 @@ func _CampaignSharedSetService_MutateCampaignSharedSets_Handler(srv interface{},
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.CampaignSharedSetService/MutateCampaignSharedSets",
+		FullMethod: "/google.ads.googleads.v10.services.CampaignSharedSetService/MutateCampaignSharedSets",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CampaignSharedSetServiceServer).MutateCampaignSharedSets(ctx, req.(*MutateCampaignSharedSetsRequest))
@@ -190,18 +139,14 @@ func _CampaignSharedSetService_MutateCampaignSharedSets_Handler(srv interface{},
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CampaignSharedSetService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v9.services.CampaignSharedSetService",
+	ServiceName: "google.ads.googleads.v10.services.CampaignSharedSetService",
 	HandlerType: (*CampaignSharedSetServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetCampaignSharedSet",
-			Handler:    _CampaignSharedSetService_GetCampaignSharedSet_Handler,
-		},
 		{
 			MethodName: "MutateCampaignSharedSets",
 			Handler:    _CampaignSharedSetService_MutateCampaignSharedSets_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v9/services/campaign_shared_set_service.proto",
+	Metadata: "google/ads/googleads/v10/services/campaign_shared_set_service.proto",
 }

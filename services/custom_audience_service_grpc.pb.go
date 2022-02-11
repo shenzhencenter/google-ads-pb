@@ -4,7 +4,6 @@ package services
 
 import (
 	context "context"
-	resources "github.com/shenzhencenter/google-ads-pb/resources"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -19,16 +18,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type CustomAudienceServiceClient interface {
-	// Returns the requested custom audience in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetCustomAudience(ctx context.Context, in *GetCustomAudienceRequest, opts ...grpc.CallOption) (*resources.CustomAudience, error)
 	// Creates or updates custom audiences. Operation statuses are returned.
 	//
 	// List of thrown errors:
@@ -56,18 +45,9 @@ func NewCustomAudienceServiceClient(cc grpc.ClientConnInterface) CustomAudienceS
 	return &customAudienceServiceClient{cc}
 }
 
-func (c *customAudienceServiceClient) GetCustomAudience(ctx context.Context, in *GetCustomAudienceRequest, opts ...grpc.CallOption) (*resources.CustomAudience, error) {
-	out := new(resources.CustomAudience)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.CustomAudienceService/GetCustomAudience", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *customAudienceServiceClient) MutateCustomAudiences(ctx context.Context, in *MutateCustomAudiencesRequest, opts ...grpc.CallOption) (*MutateCustomAudiencesResponse, error) {
 	out := new(MutateCustomAudiencesResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.CustomAudienceService/MutateCustomAudiences", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.CustomAudienceService/MutateCustomAudiences", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -78,16 +58,6 @@ func (c *customAudienceServiceClient) MutateCustomAudiences(ctx context.Context,
 // All implementations must embed UnimplementedCustomAudienceServiceServer
 // for forward compatibility
 type CustomAudienceServiceServer interface {
-	// Returns the requested custom audience in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetCustomAudience(context.Context, *GetCustomAudienceRequest) (*resources.CustomAudience, error)
 	// Creates or updates custom audiences. Operation statuses are returned.
 	//
 	// List of thrown errors:
@@ -112,9 +82,6 @@ type CustomAudienceServiceServer interface {
 type UnimplementedCustomAudienceServiceServer struct {
 }
 
-func (UnimplementedCustomAudienceServiceServer) GetCustomAudience(context.Context, *GetCustomAudienceRequest) (*resources.CustomAudience, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetCustomAudience not implemented")
-}
 func (UnimplementedCustomAudienceServiceServer) MutateCustomAudiences(context.Context, *MutateCustomAudiencesRequest) (*MutateCustomAudiencesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MutateCustomAudiences not implemented")
 }
@@ -131,24 +98,6 @@ func RegisterCustomAudienceServiceServer(s grpc.ServiceRegistrar, srv CustomAudi
 	s.RegisterService(&CustomAudienceService_ServiceDesc, srv)
 }
 
-func _CustomAudienceService_GetCustomAudience_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetCustomAudienceRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(CustomAudienceServiceServer).GetCustomAudience(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.CustomAudienceService/GetCustomAudience",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CustomAudienceServiceServer).GetCustomAudience(ctx, req.(*GetCustomAudienceRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _CustomAudienceService_MutateCustomAudiences_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MutateCustomAudiencesRequest)
 	if err := dec(in); err != nil {
@@ -159,7 +108,7 @@ func _CustomAudienceService_MutateCustomAudiences_Handler(srv interface{}, ctx c
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.CustomAudienceService/MutateCustomAudiences",
+		FullMethod: "/google.ads.googleads.v10.services.CustomAudienceService/MutateCustomAudiences",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CustomAudienceServiceServer).MutateCustomAudiences(ctx, req.(*MutateCustomAudiencesRequest))
@@ -171,18 +120,14 @@ func _CustomAudienceService_MutateCustomAudiences_Handler(srv interface{}, ctx c
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CustomAudienceService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v9.services.CustomAudienceService",
+	ServiceName: "google.ads.googleads.v10.services.CustomAudienceService",
 	HandlerType: (*CustomAudienceServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetCustomAudience",
-			Handler:    _CustomAudienceService_GetCustomAudience_Handler,
-		},
 		{
 			MethodName: "MutateCustomAudiences",
 			Handler:    _CustomAudienceService_MutateCustomAudiences_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v9/services/custom_audience_service.proto",
+	Metadata: "google/ads/googleads/v10/services/custom_audience_service.proto",
 }

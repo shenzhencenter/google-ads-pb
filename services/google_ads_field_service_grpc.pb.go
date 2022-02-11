@@ -52,7 +52,7 @@ func NewGoogleAdsFieldServiceClient(cc grpc.ClientConnInterface) GoogleAdsFieldS
 
 func (c *googleAdsFieldServiceClient) GetGoogleAdsField(ctx context.Context, in *GetGoogleAdsFieldRequest, opts ...grpc.CallOption) (*resources.GoogleAdsField, error) {
 	out := new(resources.GoogleAdsField)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.GoogleAdsFieldService/GetGoogleAdsField", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.GoogleAdsFieldService/GetGoogleAdsField", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -61,7 +61,7 @@ func (c *googleAdsFieldServiceClient) GetGoogleAdsField(ctx context.Context, in 
 
 func (c *googleAdsFieldServiceClient) SearchGoogleAdsFields(ctx context.Context, in *SearchGoogleAdsFieldsRequest, opts ...grpc.CallOption) (*SearchGoogleAdsFieldsResponse, error) {
 	out := new(SearchGoogleAdsFieldsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.GoogleAdsFieldService/SearchGoogleAdsFields", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.GoogleAdsFieldService/SearchGoogleAdsFields", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -129,7 +129,7 @@ func _GoogleAdsFieldService_GetGoogleAdsField_Handler(srv interface{}, ctx conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.GoogleAdsFieldService/GetGoogleAdsField",
+		FullMethod: "/google.ads.googleads.v10.services.GoogleAdsFieldService/GetGoogleAdsField",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GoogleAdsFieldServiceServer).GetGoogleAdsField(ctx, req.(*GetGoogleAdsFieldRequest))
@@ -147,7 +147,7 @@ func _GoogleAdsFieldService_SearchGoogleAdsFields_Handler(srv interface{}, ctx c
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.GoogleAdsFieldService/SearchGoogleAdsFields",
+		FullMethod: "/google.ads.googleads.v10.services.GoogleAdsFieldService/SearchGoogleAdsFields",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GoogleAdsFieldServiceServer).SearchGoogleAdsFields(ctx, req.(*SearchGoogleAdsFieldsRequest))
@@ -159,7 +159,7 @@ func _GoogleAdsFieldService_SearchGoogleAdsFields_Handler(srv interface{}, ctx c
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var GoogleAdsFieldService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v9.services.GoogleAdsFieldService",
+	ServiceName: "google.ads.googleads.v10.services.GoogleAdsFieldService",
 	HandlerType: (*GoogleAdsFieldServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -172,5 +172,5 @@ var GoogleAdsFieldService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v9/services/google_ads_field_service.proto",
+	Metadata: "google/ads/googleads/v10/services/google_ads_field_service.proto",
 }

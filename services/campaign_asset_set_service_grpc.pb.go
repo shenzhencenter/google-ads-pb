@@ -33,7 +33,7 @@ func NewCampaignAssetSetServiceClient(cc grpc.ClientConnInterface) CampaignAsset
 
 func (c *campaignAssetSetServiceClient) MutateCampaignAssetSets(ctx context.Context, in *MutateCampaignAssetSetsRequest, opts ...grpc.CallOption) (*MutateCampaignAssetSetsResponse, error) {
 	out := new(MutateCampaignAssetSetsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.CampaignAssetSetService/MutateCampaignAssetSets", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.CampaignAssetSetService/MutateCampaignAssetSets", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -81,7 +81,7 @@ func _CampaignAssetSetService_MutateCampaignAssetSets_Handler(srv interface{}, c
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.CampaignAssetSetService/MutateCampaignAssetSets",
+		FullMethod: "/google.ads.googleads.v10.services.CampaignAssetSetService/MutateCampaignAssetSets",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CampaignAssetSetServiceServer).MutateCampaignAssetSets(ctx, req.(*MutateCampaignAssetSetsRequest))
@@ -93,7 +93,7 @@ func _CampaignAssetSetService_MutateCampaignAssetSets_Handler(srv interface{}, c
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CampaignAssetSetService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v9.services.CampaignAssetSetService",
+	ServiceName: "google.ads.googleads.v10.services.CampaignAssetSetService",
 	HandlerType: (*CampaignAssetSetServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -102,5 +102,5 @@ var CampaignAssetSetService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v9/services/campaign_asset_set_service.proto",
+	Metadata: "google/ads/googleads/v10/services/campaign_asset_set_service.proto",
 }

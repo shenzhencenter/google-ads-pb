@@ -27,7 +27,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +37,6 @@ var newAssetGroupClientHook clientHook
 
 // AssetGroupCallOptions contains the retry settings for each method of AssetGroupClient.
 type AssetGroupCallOptions struct {
-	GetAssetGroup []gax.CallOption
 	MutateAssetGroups []gax.CallOption
 }
 
@@ -56,18 +54,6 @@ func defaultAssetGroupGRPCClientOptions() []option.ClientOption {
 
 func defaultAssetGroupCallOptions() *AssetGroupCallOptions {
 	return &AssetGroupCallOptions{
-		GetAssetGroup: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		MutateAssetGroups: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -88,7 +74,6 @@ type internalAssetGroupClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetAssetGroup(context.Context, *servicespb.GetAssetGroupRequest, ...gax.CallOption) (*resourcespb.AssetGroup, error)
 	MutateAssetGroups(context.Context, *servicespb.MutateAssetGroupsRequest, ...gax.CallOption) (*servicespb.MutateAssetGroupsResponse, error)
 }
 
@@ -125,11 +110,6 @@ func (c *AssetGroupClient) setGoogleClientInfo(keyval ...string) {
 // Deprecated.
 func (c *AssetGroupClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetAssetGroup returns the requested asset group in full detail.
-func (c *AssetGroupClient) GetAssetGroup(ctx context.Context, req *servicespb.GetAssetGroupRequest, opts ...gax.CallOption) (*resourcespb.AssetGroup, error) {
-	return c.internalClient.GetAssetGroup(ctx, req, opts...)
 }
 
 // MutateAssetGroups creates, updates or removes asset groups. Operation statuses are
@@ -217,27 +197,6 @@ func (c *assetGroupGRPCClient) setGoogleClientInfo(keyval ...string) {
 // the client is no longer required.
 func (c *assetGroupGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *assetGroupGRPCClient) GetAssetGroup(ctx context.Context, req *servicespb.GetAssetGroupRequest, opts ...gax.CallOption) (*resourcespb.AssetGroup, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetAssetGroup[0:len((*c.CallOptions).GetAssetGroup):len((*c.CallOptions).GetAssetGroup)], opts...)
-	var resp *resourcespb.AssetGroup
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.assetGroupClient.GetAssetGroup(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *assetGroupGRPCClient) MutateAssetGroups(ctx context.Context, req *servicespb.MutateAssetGroupsRequest, opts ...gax.CallOption) (*servicespb.MutateAssetGroupsResponse, error) {

@@ -27,7 +27,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +37,6 @@ var newCustomInterestClientHook clientHook
 
 // CustomInterestCallOptions contains the retry settings for each method of CustomInterestClient.
 type CustomInterestCallOptions struct {
-	GetCustomInterest []gax.CallOption
 	MutateCustomInterests []gax.CallOption
 }
 
@@ -56,18 +54,6 @@ func defaultCustomInterestGRPCClientOptions() []option.ClientOption {
 
 func defaultCustomInterestCallOptions() *CustomInterestCallOptions {
 	return &CustomInterestCallOptions{
-		GetCustomInterest: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		MutateCustomInterests: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -88,7 +74,6 @@ type internalCustomInterestClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetCustomInterest(context.Context, *servicespb.GetCustomInterestRequest, ...gax.CallOption) (*resourcespb.CustomInterest, error)
 	MutateCustomInterests(context.Context, *servicespb.MutateCustomInterestsRequest, ...gax.CallOption) (*servicespb.MutateCustomInterestsResponse, error)
 }
 
@@ -125,19 +110,6 @@ func (c *CustomInterestClient) setGoogleClientInfo(keyval ...string) {
 // Deprecated.
 func (c *CustomInterestClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetCustomInterest returns the requested custom interest in full detail.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *CustomInterestClient) GetCustomInterest(ctx context.Context, req *servicespb.GetCustomInterestRequest, opts ...gax.CallOption) (*resourcespb.CustomInterest, error) {
-	return c.internalClient.GetCustomInterest(ctx, req, opts...)
 }
 
 // MutateCustomInterests creates or updates custom interests. Operation statuses are returned.
@@ -237,27 +209,6 @@ func (c *customInterestGRPCClient) setGoogleClientInfo(keyval ...string) {
 // the client is no longer required.
 func (c *customInterestGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *customInterestGRPCClient) GetCustomInterest(ctx context.Context, req *servicespb.GetCustomInterestRequest, opts ...gax.CallOption) (*resourcespb.CustomInterest, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetCustomInterest[0:len((*c.CallOptions).GetCustomInterest):len((*c.CallOptions).GetCustomInterest)], opts...)
-	var resp *resourcespb.CustomInterest
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.customInterestClient.GetCustomInterest(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *customInterestGRPCClient) MutateCustomInterests(ctx context.Context, req *servicespb.MutateCustomInterestsRequest, opts ...gax.CallOption) (*servicespb.MutateCustomInterestsResponse, error) {

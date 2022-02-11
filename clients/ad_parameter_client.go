@@ -27,7 +27,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +37,6 @@ var newAdParameterClientHook clientHook
 
 // AdParameterCallOptions contains the retry settings for each method of AdParameterClient.
 type AdParameterCallOptions struct {
-	GetAdParameter []gax.CallOption
 	MutateAdParameters []gax.CallOption
 }
 
@@ -56,18 +54,6 @@ func defaultAdParameterGRPCClientOptions() []option.ClientOption {
 
 func defaultAdParameterCallOptions() *AdParameterCallOptions {
 	return &AdParameterCallOptions{
-		GetAdParameter: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		MutateAdParameters: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -88,7 +74,6 @@ type internalAdParameterClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetAdParameter(context.Context, *servicespb.GetAdParameterRequest, ...gax.CallOption) (*resourcespb.AdParameter, error)
 	MutateAdParameters(context.Context, *servicespb.MutateAdParametersRequest, ...gax.CallOption) (*servicespb.MutateAdParametersResponse, error)
 }
 
@@ -125,19 +110,6 @@ func (c *AdParameterClient) setGoogleClientInfo(keyval ...string) {
 // Deprecated.
 func (c *AdParameterClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetAdParameter returns the requested ad parameter in full detail.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *AdParameterClient) GetAdParameter(ctx context.Context, req *servicespb.GetAdParameterRequest, opts ...gax.CallOption) (*resourcespb.AdParameter, error) {
-	return c.internalClient.GetAdParameter(ctx, req, opts...)
 }
 
 // MutateAdParameters creates, updates, or removes ad parameters. Operation statuses are
@@ -239,27 +211,6 @@ func (c *adParameterGRPCClient) setGoogleClientInfo(keyval ...string) {
 // the client is no longer required.
 func (c *adParameterGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *adParameterGRPCClient) GetAdParameter(ctx context.Context, req *servicespb.GetAdParameterRequest, opts ...gax.CallOption) (*resourcespb.AdParameter, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetAdParameter[0:len((*c.CallOptions).GetAdParameter):len((*c.CallOptions).GetAdParameter)], opts...)
-	var resp *resourcespb.AdParameter
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.adParameterClient.GetAdParameter(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *adParameterGRPCClient) MutateAdParameters(ctx context.Context, req *servicespb.MutateAdParametersRequest, opts ...gax.CallOption) (*servicespb.MutateAdParametersResponse, error) {

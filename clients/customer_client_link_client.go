@@ -27,7 +27,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +37,6 @@ var newCustomerClientLinkClientHook clientHook
 
 // CustomerClientLinkCallOptions contains the retry settings for each method of CustomerClientLinkClient.
 type CustomerClientLinkCallOptions struct {
-	GetCustomerClientLink []gax.CallOption
 	MutateCustomerClientLink []gax.CallOption
 }
 
@@ -56,18 +54,6 @@ func defaultCustomerClientLinkGRPCClientOptions() []option.ClientOption {
 
 func defaultCustomerClientLinkCallOptions() *CustomerClientLinkCallOptions {
 	return &CustomerClientLinkCallOptions{
-		GetCustomerClientLink: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		MutateCustomerClientLink: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -88,7 +74,6 @@ type internalCustomerClientLinkClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetCustomerClientLink(context.Context, *servicespb.GetCustomerClientLinkRequest, ...gax.CallOption) (*resourcespb.CustomerClientLink, error)
 	MutateCustomerClientLink(context.Context, *servicespb.MutateCustomerClientLinkRequest, ...gax.CallOption) (*servicespb.MutateCustomerClientLinkResponse, error)
 }
 
@@ -125,19 +110,6 @@ func (c *CustomerClientLinkClient) setGoogleClientInfo(keyval ...string) {
 // Deprecated.
 func (c *CustomerClientLinkClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetCustomerClientLink returns the requested CustomerClientLink in full detail.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *CustomerClientLinkClient) GetCustomerClientLink(ctx context.Context, req *servicespb.GetCustomerClientLinkRequest, opts ...gax.CallOption) (*resourcespb.CustomerClientLink, error) {
-	return c.internalClient.GetCustomerClientLink(ctx, req, opts...)
 }
 
 // MutateCustomerClientLink creates or updates a customer client link. Operation statuses are returned.
@@ -238,27 +210,6 @@ func (c *customerClientLinkGRPCClient) setGoogleClientInfo(keyval ...string) {
 // the client is no longer required.
 func (c *customerClientLinkGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *customerClientLinkGRPCClient) GetCustomerClientLink(ctx context.Context, req *servicespb.GetCustomerClientLinkRequest, opts ...gax.CallOption) (*resourcespb.CustomerClientLink, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetCustomerClientLink[0:len((*c.CallOptions).GetCustomerClientLink):len((*c.CallOptions).GetCustomerClientLink)], opts...)
-	var resp *resourcespb.CustomerClientLink
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.customerClientLinkClient.GetCustomerClientLink(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *customerClientLinkGRPCClient) MutateCustomerClientLink(ctx context.Context, req *servicespb.MutateCustomerClientLinkRequest, opts ...gax.CallOption) (*servicespb.MutateCustomerClientLinkResponse, error) {

@@ -27,7 +27,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +37,6 @@ var newCustomerAssetClientHook clientHook
 
 // CustomerAssetCallOptions contains the retry settings for each method of CustomerAssetClient.
 type CustomerAssetCallOptions struct {
-	GetCustomerAsset []gax.CallOption
 	MutateCustomerAssets []gax.CallOption
 }
 
@@ -56,18 +54,6 @@ func defaultCustomerAssetGRPCClientOptions() []option.ClientOption {
 
 func defaultCustomerAssetCallOptions() *CustomerAssetCallOptions {
 	return &CustomerAssetCallOptions{
-		GetCustomerAsset: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		MutateCustomerAssets: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -88,7 +74,6 @@ type internalCustomerAssetClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetCustomerAsset(context.Context, *servicespb.GetCustomerAssetRequest, ...gax.CallOption) (*resourcespb.CustomerAsset, error)
 	MutateCustomerAssets(context.Context, *servicespb.MutateCustomerAssetsRequest, ...gax.CallOption) (*servicespb.MutateCustomerAssetsResponse, error)
 }
 
@@ -125,19 +110,6 @@ func (c *CustomerAssetClient) setGoogleClientInfo(keyval ...string) {
 // Deprecated.
 func (c *CustomerAssetClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetCustomerAsset returns the requested customer asset in full detail.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *CustomerAssetClient) GetCustomerAsset(ctx context.Context, req *servicespb.GetCustomerAssetRequest, opts ...gax.CallOption) (*resourcespb.CustomerAsset, error) {
-	return c.internalClient.GetCustomerAsset(ctx, req, opts...)
 }
 
 // MutateCustomerAssets creates, updates, or removes customer assets. Operation statuses are
@@ -236,27 +208,6 @@ func (c *customerAssetGRPCClient) setGoogleClientInfo(keyval ...string) {
 // the client is no longer required.
 func (c *customerAssetGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *customerAssetGRPCClient) GetCustomerAsset(ctx context.Context, req *servicespb.GetCustomerAssetRequest, opts ...gax.CallOption) (*resourcespb.CustomerAsset, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetCustomerAsset[0:len((*c.CallOptions).GetCustomerAsset):len((*c.CallOptions).GetCustomerAsset)], opts...)
-	var resp *resourcespb.CustomerAsset
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.customerAssetClient.GetCustomerAsset(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *customerAssetGRPCClient) MutateCustomerAssets(ctx context.Context, req *servicespb.MutateCustomerAssetsRequest, opts ...gax.CallOption) (*servicespb.MutateCustomerAssetsResponse, error) {

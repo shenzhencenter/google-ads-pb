@@ -27,7 +27,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +37,6 @@ var newCampaignBidModifierClientHook clientHook
 
 // CampaignBidModifierCallOptions contains the retry settings for each method of CampaignBidModifierClient.
 type CampaignBidModifierCallOptions struct {
-	GetCampaignBidModifier []gax.CallOption
 	MutateCampaignBidModifiers []gax.CallOption
 }
 
@@ -56,18 +54,6 @@ func defaultCampaignBidModifierGRPCClientOptions() []option.ClientOption {
 
 func defaultCampaignBidModifierCallOptions() *CampaignBidModifierCallOptions {
 	return &CampaignBidModifierCallOptions{
-		GetCampaignBidModifier: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		MutateCampaignBidModifiers: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -88,7 +74,6 @@ type internalCampaignBidModifierClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetCampaignBidModifier(context.Context, *servicespb.GetCampaignBidModifierRequest, ...gax.CallOption) (*resourcespb.CampaignBidModifier, error)
 	MutateCampaignBidModifiers(context.Context, *servicespb.MutateCampaignBidModifiersRequest, ...gax.CallOption) (*servicespb.MutateCampaignBidModifiersResponse, error)
 }
 
@@ -125,19 +110,6 @@ func (c *CampaignBidModifierClient) setGoogleClientInfo(keyval ...string) {
 // Deprecated.
 func (c *CampaignBidModifierClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetCampaignBidModifier returns the requested campaign bid modifier in full detail.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *CampaignBidModifierClient) GetCampaignBidModifier(ctx context.Context, req *servicespb.GetCampaignBidModifierRequest, opts ...gax.CallOption) (*resourcespb.CampaignBidModifier, error) {
-	return c.internalClient.GetCampaignBidModifier(ctx, req, opts...)
 }
 
 // MutateCampaignBidModifiers creates, updates, or removes campaign bid modifiers.
@@ -249,27 +221,6 @@ func (c *campaignBidModifierGRPCClient) setGoogleClientInfo(keyval ...string) {
 // the client is no longer required.
 func (c *campaignBidModifierGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *campaignBidModifierGRPCClient) GetCampaignBidModifier(ctx context.Context, req *servicespb.GetCampaignBidModifierRequest, opts ...gax.CallOption) (*resourcespb.CampaignBidModifier, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetCampaignBidModifier[0:len((*c.CallOptions).GetCampaignBidModifier):len((*c.CallOptions).GetCampaignBidModifier)], opts...)
-	var resp *resourcespb.CampaignBidModifier
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.campaignBidModifierClient.GetCampaignBidModifier(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *campaignBidModifierGRPCClient) MutateCampaignBidModifiers(ctx context.Context, req *servicespb.MutateCampaignBidModifiersRequest, opts ...gax.CallOption) (*servicespb.MutateCampaignBidModifiersResponse, error) {

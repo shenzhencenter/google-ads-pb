@@ -4,7 +4,6 @@ package services
 
 import (
 	context "context"
-	resources "github.com/shenzhencenter/google-ads-pb/resources"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -19,16 +18,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type CustomerLabelServiceClient interface {
-	// Returns the requested customer-label relationship in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetCustomerLabel(ctx context.Context, in *GetCustomerLabelRequest, opts ...grpc.CallOption) (*resources.CustomerLabel, error)
 	// Creates and removes customer-label relationships.
 	// Operation statuses are returned.
 	//
@@ -53,18 +42,9 @@ func NewCustomerLabelServiceClient(cc grpc.ClientConnInterface) CustomerLabelSer
 	return &customerLabelServiceClient{cc}
 }
 
-func (c *customerLabelServiceClient) GetCustomerLabel(ctx context.Context, in *GetCustomerLabelRequest, opts ...grpc.CallOption) (*resources.CustomerLabel, error) {
-	out := new(resources.CustomerLabel)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.CustomerLabelService/GetCustomerLabel", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *customerLabelServiceClient) MutateCustomerLabels(ctx context.Context, in *MutateCustomerLabelsRequest, opts ...grpc.CallOption) (*MutateCustomerLabelsResponse, error) {
 	out := new(MutateCustomerLabelsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.CustomerLabelService/MutateCustomerLabels", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.CustomerLabelService/MutateCustomerLabels", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -75,16 +55,6 @@ func (c *customerLabelServiceClient) MutateCustomerLabels(ctx context.Context, i
 // All implementations must embed UnimplementedCustomerLabelServiceServer
 // for forward compatibility
 type CustomerLabelServiceServer interface {
-	// Returns the requested customer-label relationship in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetCustomerLabel(context.Context, *GetCustomerLabelRequest) (*resources.CustomerLabel, error)
 	// Creates and removes customer-label relationships.
 	// Operation statuses are returned.
 	//
@@ -106,9 +76,6 @@ type CustomerLabelServiceServer interface {
 type UnimplementedCustomerLabelServiceServer struct {
 }
 
-func (UnimplementedCustomerLabelServiceServer) GetCustomerLabel(context.Context, *GetCustomerLabelRequest) (*resources.CustomerLabel, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetCustomerLabel not implemented")
-}
 func (UnimplementedCustomerLabelServiceServer) MutateCustomerLabels(context.Context, *MutateCustomerLabelsRequest) (*MutateCustomerLabelsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MutateCustomerLabels not implemented")
 }
@@ -125,24 +92,6 @@ func RegisterCustomerLabelServiceServer(s grpc.ServiceRegistrar, srv CustomerLab
 	s.RegisterService(&CustomerLabelService_ServiceDesc, srv)
 }
 
-func _CustomerLabelService_GetCustomerLabel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetCustomerLabelRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(CustomerLabelServiceServer).GetCustomerLabel(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.CustomerLabelService/GetCustomerLabel",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CustomerLabelServiceServer).GetCustomerLabel(ctx, req.(*GetCustomerLabelRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _CustomerLabelService_MutateCustomerLabels_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MutateCustomerLabelsRequest)
 	if err := dec(in); err != nil {
@@ -153,7 +102,7 @@ func _CustomerLabelService_MutateCustomerLabels_Handler(srv interface{}, ctx con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.CustomerLabelService/MutateCustomerLabels",
+		FullMethod: "/google.ads.googleads.v10.services.CustomerLabelService/MutateCustomerLabels",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CustomerLabelServiceServer).MutateCustomerLabels(ctx, req.(*MutateCustomerLabelsRequest))
@@ -165,18 +114,14 @@ func _CustomerLabelService_MutateCustomerLabels_Handler(srv interface{}, ctx con
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CustomerLabelService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v9.services.CustomerLabelService",
+	ServiceName: "google.ads.googleads.v10.services.CustomerLabelService",
 	HandlerType: (*CustomerLabelServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetCustomerLabel",
-			Handler:    _CustomerLabelService_GetCustomerLabel_Handler,
-		},
 		{
 			MethodName: "MutateCustomerLabels",
 			Handler:    _CustomerLabelService_MutateCustomerLabels_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v9/services/customer_label_service.proto",
+	Metadata: "google/ads/googleads/v10/services/customer_label_service.proto",
 }

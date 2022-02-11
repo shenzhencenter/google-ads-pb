@@ -27,7 +27,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +37,6 @@ var newCustomerManagerLinkClientHook clientHook
 
 // CustomerManagerLinkCallOptions contains the retry settings for each method of CustomerManagerLinkClient.
 type CustomerManagerLinkCallOptions struct {
-	GetCustomerManagerLink []gax.CallOption
 	MutateCustomerManagerLink []gax.CallOption
 	MoveManagerLink []gax.CallOption
 }
@@ -57,18 +55,6 @@ func defaultCustomerManagerLinkGRPCClientOptions() []option.ClientOption {
 
 func defaultCustomerManagerLinkCallOptions() *CustomerManagerLinkCallOptions {
 	return &CustomerManagerLinkCallOptions{
-		GetCustomerManagerLink: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		MutateCustomerManagerLink: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -101,7 +87,6 @@ type internalCustomerManagerLinkClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetCustomerManagerLink(context.Context, *servicespb.GetCustomerManagerLinkRequest, ...gax.CallOption) (*resourcespb.CustomerManagerLink, error)
 	MutateCustomerManagerLink(context.Context, *servicespb.MutateCustomerManagerLinkRequest, ...gax.CallOption) (*servicespb.MutateCustomerManagerLinkResponse, error)
 	MoveManagerLink(context.Context, *servicespb.MoveManagerLinkRequest, ...gax.CallOption) (*servicespb.MoveManagerLinkResponse, error)
 }
@@ -139,19 +124,6 @@ func (c *CustomerManagerLinkClient) setGoogleClientInfo(keyval ...string) {
 // Deprecated.
 func (c *CustomerManagerLinkClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetCustomerManagerLink returns the requested CustomerManagerLink in full detail.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *CustomerManagerLinkClient) GetCustomerManagerLink(ctx context.Context, req *servicespb.GetCustomerManagerLinkRequest, opts ...gax.CallOption) (*resourcespb.CustomerManagerLink, error) {
-	return c.internalClient.GetCustomerManagerLink(ctx, req, opts...)
 }
 
 // MutateCustomerManagerLink creates or updates customer manager links. Operation statuses are returned.
@@ -273,27 +245,6 @@ func (c *customerManagerLinkGRPCClient) setGoogleClientInfo(keyval ...string) {
 // the client is no longer required.
 func (c *customerManagerLinkGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *customerManagerLinkGRPCClient) GetCustomerManagerLink(ctx context.Context, req *servicespb.GetCustomerManagerLinkRequest, opts ...gax.CallOption) (*resourcespb.CustomerManagerLink, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetCustomerManagerLink[0:len((*c.CallOptions).GetCustomerManagerLink):len((*c.CallOptions).GetCustomerManagerLink)], opts...)
-	var resp *resourcespb.CustomerManagerLink
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.customerManagerLinkClient.GetCustomerManagerLink(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *customerManagerLinkGRPCClient) MutateCustomerManagerLink(ctx context.Context, req *servicespb.MutateCustomerManagerLinkRequest, opts ...gax.CallOption) (*servicespb.MutateCustomerManagerLinkResponse, error) {

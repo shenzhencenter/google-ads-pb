@@ -27,7 +27,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +37,6 @@ var newExtensionFeedItemClientHook clientHook
 
 // ExtensionFeedItemCallOptions contains the retry settings for each method of ExtensionFeedItemClient.
 type ExtensionFeedItemCallOptions struct {
-	GetExtensionFeedItem []gax.CallOption
 	MutateExtensionFeedItems []gax.CallOption
 }
 
@@ -56,18 +54,6 @@ func defaultExtensionFeedItemGRPCClientOptions() []option.ClientOption {
 
 func defaultExtensionFeedItemCallOptions() *ExtensionFeedItemCallOptions {
 	return &ExtensionFeedItemCallOptions{
-		GetExtensionFeedItem: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		MutateExtensionFeedItems: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -88,7 +74,6 @@ type internalExtensionFeedItemClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetExtensionFeedItem(context.Context, *servicespb.GetExtensionFeedItemRequest, ...gax.CallOption) (*resourcespb.ExtensionFeedItem, error)
 	MutateExtensionFeedItems(context.Context, *servicespb.MutateExtensionFeedItemsRequest, ...gax.CallOption) (*servicespb.MutateExtensionFeedItemsResponse, error)
 }
 
@@ -125,19 +110,6 @@ func (c *ExtensionFeedItemClient) setGoogleClientInfo(keyval ...string) {
 // Deprecated.
 func (c *ExtensionFeedItemClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetExtensionFeedItem returns the requested extension feed item in full detail.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *ExtensionFeedItemClient) GetExtensionFeedItem(ctx context.Context, req *servicespb.GetExtensionFeedItemRequest, opts ...gax.CallOption) (*resourcespb.ExtensionFeedItem, error) {
-	return c.internalClient.GetExtensionFeedItem(ctx, req, opts...)
 }
 
 // MutateExtensionFeedItems creates, updates, or removes extension feed items. Operation
@@ -250,27 +222,6 @@ func (c *extensionFeedItemGRPCClient) setGoogleClientInfo(keyval ...string) {
 // the client is no longer required.
 func (c *extensionFeedItemGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *extensionFeedItemGRPCClient) GetExtensionFeedItem(ctx context.Context, req *servicespb.GetExtensionFeedItemRequest, opts ...gax.CallOption) (*resourcespb.ExtensionFeedItem, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetExtensionFeedItem[0:len((*c.CallOptions).GetExtensionFeedItem):len((*c.CallOptions).GetExtensionFeedItem)], opts...)
-	var resp *resourcespb.ExtensionFeedItem
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.extensionFeedItemClient.GetExtensionFeedItem(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *extensionFeedItemGRPCClient) MutateExtensionFeedItems(ctx context.Context, req *servicespb.MutateExtensionFeedItemsRequest, opts ...gax.CallOption) (*servicespb.MutateExtensionFeedItemsResponse, error) {

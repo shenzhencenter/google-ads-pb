@@ -27,7 +27,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +37,6 @@ var newCustomAudienceClientHook clientHook
 
 // CustomAudienceCallOptions contains the retry settings for each method of CustomAudienceClient.
 type CustomAudienceCallOptions struct {
-	GetCustomAudience []gax.CallOption
 	MutateCustomAudiences []gax.CallOption
 }
 
@@ -56,18 +54,6 @@ func defaultCustomAudienceGRPCClientOptions() []option.ClientOption {
 
 func defaultCustomAudienceCallOptions() *CustomAudienceCallOptions {
 	return &CustomAudienceCallOptions{
-		GetCustomAudience: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		MutateCustomAudiences: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -88,7 +74,6 @@ type internalCustomAudienceClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetCustomAudience(context.Context, *servicespb.GetCustomAudienceRequest, ...gax.CallOption) (*resourcespb.CustomAudience, error)
 	MutateCustomAudiences(context.Context, *servicespb.MutateCustomAudiencesRequest, ...gax.CallOption) (*servicespb.MutateCustomAudiencesResponse, error)
 }
 
@@ -125,19 +110,6 @@ func (c *CustomAudienceClient) setGoogleClientInfo(keyval ...string) {
 // Deprecated.
 func (c *CustomAudienceClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetCustomAudience returns the requested custom audience in full detail.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *CustomAudienceClient) GetCustomAudience(ctx context.Context, req *servicespb.GetCustomAudienceRequest, opts ...gax.CallOption) (*resourcespb.CustomAudience, error) {
-	return c.internalClient.GetCustomAudience(ctx, req, opts...)
 }
 
 // MutateCustomAudiences creates or updates custom audiences. Operation statuses are returned.
@@ -239,27 +211,6 @@ func (c *customAudienceGRPCClient) setGoogleClientInfo(keyval ...string) {
 // the client is no longer required.
 func (c *customAudienceGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *customAudienceGRPCClient) GetCustomAudience(ctx context.Context, req *servicespb.GetCustomAudienceRequest, opts ...gax.CallOption) (*resourcespb.CustomAudience, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetCustomAudience[0:len((*c.CallOptions).GetCustomAudience):len((*c.CallOptions).GetCustomAudience)], opts...)
-	var resp *resourcespb.CustomAudience
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.customAudienceClient.GetCustomAudience(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *customAudienceGRPCClient) MutateCustomAudiences(ctx context.Context, req *servicespb.MutateCustomAudiencesRequest, opts ...gax.CallOption) (*servicespb.MutateCustomAudiencesResponse, error) {

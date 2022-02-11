@@ -4,7 +4,6 @@ package services
 
 import (
 	context "context"
-	resources "github.com/shenzhencenter/google-ads-pb/resources"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -19,16 +18,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type RemarketingActionServiceClient interface {
-	// Returns the requested remarketing action in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetRemarketingAction(ctx context.Context, in *GetRemarketingActionRequest, opts ...grpc.CallOption) (*resources.RemarketingAction, error)
 	// Creates or updates remarketing actions. Operation statuses are returned.
 	//
 	// List of thrown errors:
@@ -50,18 +39,9 @@ func NewRemarketingActionServiceClient(cc grpc.ClientConnInterface) RemarketingA
 	return &remarketingActionServiceClient{cc}
 }
 
-func (c *remarketingActionServiceClient) GetRemarketingAction(ctx context.Context, in *GetRemarketingActionRequest, opts ...grpc.CallOption) (*resources.RemarketingAction, error) {
-	out := new(resources.RemarketingAction)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.RemarketingActionService/GetRemarketingAction", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *remarketingActionServiceClient) MutateRemarketingActions(ctx context.Context, in *MutateRemarketingActionsRequest, opts ...grpc.CallOption) (*MutateRemarketingActionsResponse, error) {
 	out := new(MutateRemarketingActionsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.RemarketingActionService/MutateRemarketingActions", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.RemarketingActionService/MutateRemarketingActions", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -72,16 +52,6 @@ func (c *remarketingActionServiceClient) MutateRemarketingActions(ctx context.Co
 // All implementations must embed UnimplementedRemarketingActionServiceServer
 // for forward compatibility
 type RemarketingActionServiceServer interface {
-	// Returns the requested remarketing action in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetRemarketingAction(context.Context, *GetRemarketingActionRequest) (*resources.RemarketingAction, error)
 	// Creates or updates remarketing actions. Operation statuses are returned.
 	//
 	// List of thrown errors:
@@ -100,9 +70,6 @@ type RemarketingActionServiceServer interface {
 type UnimplementedRemarketingActionServiceServer struct {
 }
 
-func (UnimplementedRemarketingActionServiceServer) GetRemarketingAction(context.Context, *GetRemarketingActionRequest) (*resources.RemarketingAction, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetRemarketingAction not implemented")
-}
 func (UnimplementedRemarketingActionServiceServer) MutateRemarketingActions(context.Context, *MutateRemarketingActionsRequest) (*MutateRemarketingActionsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MutateRemarketingActions not implemented")
 }
@@ -120,24 +87,6 @@ func RegisterRemarketingActionServiceServer(s grpc.ServiceRegistrar, srv Remarke
 	s.RegisterService(&RemarketingActionService_ServiceDesc, srv)
 }
 
-func _RemarketingActionService_GetRemarketingAction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetRemarketingActionRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(RemarketingActionServiceServer).GetRemarketingAction(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.RemarketingActionService/GetRemarketingAction",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(RemarketingActionServiceServer).GetRemarketingAction(ctx, req.(*GetRemarketingActionRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _RemarketingActionService_MutateRemarketingActions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MutateRemarketingActionsRequest)
 	if err := dec(in); err != nil {
@@ -148,7 +97,7 @@ func _RemarketingActionService_MutateRemarketingActions_Handler(srv interface{},
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.RemarketingActionService/MutateRemarketingActions",
+		FullMethod: "/google.ads.googleads.v10.services.RemarketingActionService/MutateRemarketingActions",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(RemarketingActionServiceServer).MutateRemarketingActions(ctx, req.(*MutateRemarketingActionsRequest))
@@ -160,18 +109,14 @@ func _RemarketingActionService_MutateRemarketingActions_Handler(srv interface{},
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var RemarketingActionService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v9.services.RemarketingActionService",
+	ServiceName: "google.ads.googleads.v10.services.RemarketingActionService",
 	HandlerType: (*RemarketingActionServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetRemarketingAction",
-			Handler:    _RemarketingActionService_GetRemarketingAction_Handler,
-		},
 		{
 			MethodName: "MutateRemarketingActions",
 			Handler:    _RemarketingActionService_MutateRemarketingActions_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v9/services/remarketing_action_service.proto",
+	Metadata: "google/ads/googleads/v10/services/remarketing_action_service.proto",
 }

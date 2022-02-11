@@ -27,7 +27,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +37,6 @@ var newKeywordPlanAdGroupClientHook clientHook
 
 // KeywordPlanAdGroupCallOptions contains the retry settings for each method of KeywordPlanAdGroupClient.
 type KeywordPlanAdGroupCallOptions struct {
-	GetKeywordPlanAdGroup []gax.CallOption
 	MutateKeywordPlanAdGroups []gax.CallOption
 }
 
@@ -56,18 +54,6 @@ func defaultKeywordPlanAdGroupGRPCClientOptions() []option.ClientOption {
 
 func defaultKeywordPlanAdGroupCallOptions() *KeywordPlanAdGroupCallOptions {
 	return &KeywordPlanAdGroupCallOptions{
-		GetKeywordPlanAdGroup: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		MutateKeywordPlanAdGroups: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -88,7 +74,6 @@ type internalKeywordPlanAdGroupClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetKeywordPlanAdGroup(context.Context, *servicespb.GetKeywordPlanAdGroupRequest, ...gax.CallOption) (*resourcespb.KeywordPlanAdGroup, error)
 	MutateKeywordPlanAdGroups(context.Context, *servicespb.MutateKeywordPlanAdGroupsRequest, ...gax.CallOption) (*servicespb.MutateKeywordPlanAdGroupsResponse, error)
 }
 
@@ -125,19 +110,6 @@ func (c *KeywordPlanAdGroupClient) setGoogleClientInfo(keyval ...string) {
 // Deprecated.
 func (c *KeywordPlanAdGroupClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetKeywordPlanAdGroup returns the requested Keyword Plan ad group in full detail.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *KeywordPlanAdGroupClient) GetKeywordPlanAdGroup(ctx context.Context, req *servicespb.GetKeywordPlanAdGroupRequest, opts ...gax.CallOption) (*resourcespb.KeywordPlanAdGroup, error) {
-	return c.internalClient.GetKeywordPlanAdGroup(ctx, req, opts...)
 }
 
 // MutateKeywordPlanAdGroups creates, updates, or removes Keyword Plan ad groups. Operation statuses are
@@ -241,27 +213,6 @@ func (c *keywordPlanAdGroupGRPCClient) setGoogleClientInfo(keyval ...string) {
 // the client is no longer required.
 func (c *keywordPlanAdGroupGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *keywordPlanAdGroupGRPCClient) GetKeywordPlanAdGroup(ctx context.Context, req *servicespb.GetKeywordPlanAdGroupRequest, opts ...gax.CallOption) (*resourcespb.KeywordPlanAdGroup, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetKeywordPlanAdGroup[0:len((*c.CallOptions).GetKeywordPlanAdGroup):len((*c.CallOptions).GetKeywordPlanAdGroup)], opts...)
-	var resp *resourcespb.KeywordPlanAdGroup
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.keywordPlanAdGroupClient.GetKeywordPlanAdGroup(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *keywordPlanAdGroupGRPCClient) MutateKeywordPlanAdGroups(ctx context.Context, req *servicespb.MutateKeywordPlanAdGroupsRequest, opts ...gax.CallOption) (*servicespb.MutateKeywordPlanAdGroupsResponse, error) {

@@ -4,7 +4,6 @@ package services
 
 import (
 	context "context"
-	resources "github.com/shenzhencenter/google-ads-pb/resources"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -19,16 +18,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type AccountLinkServiceClient interface {
-	// Returns the account link in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetAccountLink(ctx context.Context, in *GetAccountLinkRequest, opts ...grpc.CallOption) (*resources.AccountLink, error)
 	// Creates an account link.
 	//
 	// List of thrown errors:
@@ -69,18 +58,9 @@ func NewAccountLinkServiceClient(cc grpc.ClientConnInterface) AccountLinkService
 	return &accountLinkServiceClient{cc}
 }
 
-func (c *accountLinkServiceClient) GetAccountLink(ctx context.Context, in *GetAccountLinkRequest, opts ...grpc.CallOption) (*resources.AccountLink, error) {
-	out := new(resources.AccountLink)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.AccountLinkService/GetAccountLink", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *accountLinkServiceClient) CreateAccountLink(ctx context.Context, in *CreateAccountLinkRequest, opts ...grpc.CallOption) (*CreateAccountLinkResponse, error) {
 	out := new(CreateAccountLinkResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.AccountLinkService/CreateAccountLink", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.AccountLinkService/CreateAccountLink", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -89,7 +69,7 @@ func (c *accountLinkServiceClient) CreateAccountLink(ctx context.Context, in *Cr
 
 func (c *accountLinkServiceClient) MutateAccountLink(ctx context.Context, in *MutateAccountLinkRequest, opts ...grpc.CallOption) (*MutateAccountLinkResponse, error) {
 	out := new(MutateAccountLinkResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.AccountLinkService/MutateAccountLink", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.AccountLinkService/MutateAccountLink", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -100,16 +80,6 @@ func (c *accountLinkServiceClient) MutateAccountLink(ctx context.Context, in *Mu
 // All implementations must embed UnimplementedAccountLinkServiceServer
 // for forward compatibility
 type AccountLinkServiceServer interface {
-	// Returns the account link in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetAccountLink(context.Context, *GetAccountLinkRequest) (*resources.AccountLink, error)
 	// Creates an account link.
 	//
 	// List of thrown errors:
@@ -147,9 +117,6 @@ type AccountLinkServiceServer interface {
 type UnimplementedAccountLinkServiceServer struct {
 }
 
-func (UnimplementedAccountLinkServiceServer) GetAccountLink(context.Context, *GetAccountLinkRequest) (*resources.AccountLink, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAccountLink not implemented")
-}
 func (UnimplementedAccountLinkServiceServer) CreateAccountLink(context.Context, *CreateAccountLinkRequest) (*CreateAccountLinkResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAccountLink not implemented")
 }
@@ -169,24 +136,6 @@ func RegisterAccountLinkServiceServer(s grpc.ServiceRegistrar, srv AccountLinkSe
 	s.RegisterService(&AccountLinkService_ServiceDesc, srv)
 }
 
-func _AccountLinkService_GetAccountLink_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAccountLinkRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AccountLinkServiceServer).GetAccountLink(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.AccountLinkService/GetAccountLink",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AccountLinkServiceServer).GetAccountLink(ctx, req.(*GetAccountLinkRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _AccountLinkService_CreateAccountLink_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateAccountLinkRequest)
 	if err := dec(in); err != nil {
@@ -197,7 +146,7 @@ func _AccountLinkService_CreateAccountLink_Handler(srv interface{}, ctx context.
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.AccountLinkService/CreateAccountLink",
+		FullMethod: "/google.ads.googleads.v10.services.AccountLinkService/CreateAccountLink",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AccountLinkServiceServer).CreateAccountLink(ctx, req.(*CreateAccountLinkRequest))
@@ -215,7 +164,7 @@ func _AccountLinkService_MutateAccountLink_Handler(srv interface{}, ctx context.
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.AccountLinkService/MutateAccountLink",
+		FullMethod: "/google.ads.googleads.v10.services.AccountLinkService/MutateAccountLink",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AccountLinkServiceServer).MutateAccountLink(ctx, req.(*MutateAccountLinkRequest))
@@ -227,13 +176,9 @@ func _AccountLinkService_MutateAccountLink_Handler(srv interface{}, ctx context.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AccountLinkService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v9.services.AccountLinkService",
+	ServiceName: "google.ads.googleads.v10.services.AccountLinkService",
 	HandlerType: (*AccountLinkServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetAccountLink",
-			Handler:    _AccountLinkService_GetAccountLink_Handler,
-		},
 		{
 			MethodName: "CreateAccountLink",
 			Handler:    _AccountLinkService_CreateAccountLink_Handler,
@@ -244,5 +189,5 @@ var AccountLinkService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v9/services/account_link_service.proto",
+	Metadata: "google/ads/googleads/v10/services/account_link_service.proto",
 }

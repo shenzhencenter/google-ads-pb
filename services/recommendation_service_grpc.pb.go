@@ -4,7 +4,6 @@ package services
 
 import (
 	context "context"
-	resources "github.com/shenzhencenter/google-ads-pb/resources"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -19,16 +18,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type RecommendationServiceClient interface {
-	// Returns the requested recommendation in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetRecommendation(ctx context.Context, in *GetRecommendationRequest, opts ...grpc.CallOption) (*resources.Recommendation, error)
 	// Applies given recommendations with corresponding apply parameters.
 	//
 	// List of thrown errors:
@@ -65,18 +54,9 @@ func NewRecommendationServiceClient(cc grpc.ClientConnInterface) RecommendationS
 	return &recommendationServiceClient{cc}
 }
 
-func (c *recommendationServiceClient) GetRecommendation(ctx context.Context, in *GetRecommendationRequest, opts ...grpc.CallOption) (*resources.Recommendation, error) {
-	out := new(resources.Recommendation)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.RecommendationService/GetRecommendation", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *recommendationServiceClient) ApplyRecommendation(ctx context.Context, in *ApplyRecommendationRequest, opts ...grpc.CallOption) (*ApplyRecommendationResponse, error) {
 	out := new(ApplyRecommendationResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.RecommendationService/ApplyRecommendation", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.RecommendationService/ApplyRecommendation", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -85,7 +65,7 @@ func (c *recommendationServiceClient) ApplyRecommendation(ctx context.Context, i
 
 func (c *recommendationServiceClient) DismissRecommendation(ctx context.Context, in *DismissRecommendationRequest, opts ...grpc.CallOption) (*DismissRecommendationResponse, error) {
 	out := new(DismissRecommendationResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.RecommendationService/DismissRecommendation", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.RecommendationService/DismissRecommendation", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -96,16 +76,6 @@ func (c *recommendationServiceClient) DismissRecommendation(ctx context.Context,
 // All implementations must embed UnimplementedRecommendationServiceServer
 // for forward compatibility
 type RecommendationServiceServer interface {
-	// Returns the requested recommendation in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetRecommendation(context.Context, *GetRecommendationRequest) (*resources.Recommendation, error)
 	// Applies given recommendations with corresponding apply parameters.
 	//
 	// List of thrown errors:
@@ -139,9 +109,6 @@ type RecommendationServiceServer interface {
 type UnimplementedRecommendationServiceServer struct {
 }
 
-func (UnimplementedRecommendationServiceServer) GetRecommendation(context.Context, *GetRecommendationRequest) (*resources.Recommendation, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetRecommendation not implemented")
-}
 func (UnimplementedRecommendationServiceServer) ApplyRecommendation(context.Context, *ApplyRecommendationRequest) (*ApplyRecommendationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ApplyRecommendation not implemented")
 }
@@ -161,24 +128,6 @@ func RegisterRecommendationServiceServer(s grpc.ServiceRegistrar, srv Recommenda
 	s.RegisterService(&RecommendationService_ServiceDesc, srv)
 }
 
-func _RecommendationService_GetRecommendation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetRecommendationRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(RecommendationServiceServer).GetRecommendation(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.RecommendationService/GetRecommendation",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(RecommendationServiceServer).GetRecommendation(ctx, req.(*GetRecommendationRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _RecommendationService_ApplyRecommendation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ApplyRecommendationRequest)
 	if err := dec(in); err != nil {
@@ -189,7 +138,7 @@ func _RecommendationService_ApplyRecommendation_Handler(srv interface{}, ctx con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.RecommendationService/ApplyRecommendation",
+		FullMethod: "/google.ads.googleads.v10.services.RecommendationService/ApplyRecommendation",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(RecommendationServiceServer).ApplyRecommendation(ctx, req.(*ApplyRecommendationRequest))
@@ -207,7 +156,7 @@ func _RecommendationService_DismissRecommendation_Handler(srv interface{}, ctx c
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.RecommendationService/DismissRecommendation",
+		FullMethod: "/google.ads.googleads.v10.services.RecommendationService/DismissRecommendation",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(RecommendationServiceServer).DismissRecommendation(ctx, req.(*DismissRecommendationRequest))
@@ -219,13 +168,9 @@ func _RecommendationService_DismissRecommendation_Handler(srv interface{}, ctx c
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var RecommendationService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v9.services.RecommendationService",
+	ServiceName: "google.ads.googleads.v10.services.RecommendationService",
 	HandlerType: (*RecommendationServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetRecommendation",
-			Handler:    _RecommendationService_GetRecommendation_Handler,
-		},
 		{
 			MethodName: "ApplyRecommendation",
 			Handler:    _RecommendationService_ApplyRecommendation_Handler,
@@ -236,5 +181,5 @@ var RecommendationService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v9/services/recommendation_service.proto",
+	Metadata: "google/ads/googleads/v10/services/recommendation_service.proto",
 }

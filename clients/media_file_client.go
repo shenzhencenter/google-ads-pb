@@ -27,7 +27,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +37,6 @@ var newMediaFileClientHook clientHook
 
 // MediaFileCallOptions contains the retry settings for each method of MediaFileClient.
 type MediaFileCallOptions struct {
-	GetMediaFile []gax.CallOption
 	MutateMediaFiles []gax.CallOption
 }
 
@@ -56,18 +54,6 @@ func defaultMediaFileGRPCClientOptions() []option.ClientOption {
 
 func defaultMediaFileCallOptions() *MediaFileCallOptions {
 	return &MediaFileCallOptions{
-		GetMediaFile: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		MutateMediaFiles: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -88,7 +74,6 @@ type internalMediaFileClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetMediaFile(context.Context, *servicespb.GetMediaFileRequest, ...gax.CallOption) (*resourcespb.MediaFile, error)
 	MutateMediaFiles(context.Context, *servicespb.MutateMediaFilesRequest, ...gax.CallOption) (*servicespb.MutateMediaFilesResponse, error)
 }
 
@@ -125,19 +110,6 @@ func (c *MediaFileClient) setGoogleClientInfo(keyval ...string) {
 // Deprecated.
 func (c *MediaFileClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetMediaFile returns the requested media file in full detail.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *MediaFileClient) GetMediaFile(ctx context.Context, req *servicespb.GetMediaFileRequest, opts ...gax.CallOption) (*resourcespb.MediaFile, error) {
-	return c.internalClient.GetMediaFile(ctx, req, opts...)
 }
 
 // MutateMediaFiles creates media files. Operation statuses are returned.
@@ -247,27 +219,6 @@ func (c *mediaFileGRPCClient) setGoogleClientInfo(keyval ...string) {
 // the client is no longer required.
 func (c *mediaFileGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *mediaFileGRPCClient) GetMediaFile(ctx context.Context, req *servicespb.GetMediaFileRequest, opts ...gax.CallOption) (*resourcespb.MediaFile, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetMediaFile[0:len((*c.CallOptions).GetMediaFile):len((*c.CallOptions).GetMediaFile)], opts...)
-	var resp *resourcespb.MediaFile
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.mediaFileClient.GetMediaFile(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *mediaFileGRPCClient) MutateMediaFiles(ctx context.Context, req *servicespb.MutateMediaFilesRequest, opts ...gax.CallOption) (*servicespb.MutateMediaFilesResponse, error) {

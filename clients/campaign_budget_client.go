@@ -27,7 +27,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +37,6 @@ var newCampaignBudgetClientHook clientHook
 
 // CampaignBudgetCallOptions contains the retry settings for each method of CampaignBudgetClient.
 type CampaignBudgetCallOptions struct {
-	GetCampaignBudget []gax.CallOption
 	MutateCampaignBudgets []gax.CallOption
 }
 
@@ -56,18 +54,6 @@ func defaultCampaignBudgetGRPCClientOptions() []option.ClientOption {
 
 func defaultCampaignBudgetCallOptions() *CampaignBudgetCallOptions {
 	return &CampaignBudgetCallOptions{
-		GetCampaignBudget: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		MutateCampaignBudgets: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -88,7 +74,6 @@ type internalCampaignBudgetClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetCampaignBudget(context.Context, *servicespb.GetCampaignBudgetRequest, ...gax.CallOption) (*resourcespb.CampaignBudget, error)
 	MutateCampaignBudgets(context.Context, *servicespb.MutateCampaignBudgetsRequest, ...gax.CallOption) (*servicespb.MutateCampaignBudgetsResponse, error)
 }
 
@@ -125,19 +110,6 @@ func (c *CampaignBudgetClient) setGoogleClientInfo(keyval ...string) {
 // Deprecated.
 func (c *CampaignBudgetClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetCampaignBudget returns the requested Campaign Budget in full detail.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *CampaignBudgetClient) GetCampaignBudget(ctx context.Context, req *servicespb.GetCampaignBudgetRequest, opts ...gax.CallOption) (*resourcespb.CampaignBudget, error) {
-	return c.internalClient.GetCampaignBudget(ctx, req, opts...)
 }
 
 // MutateCampaignBudgets creates, updates, or removes campaign budgets. Operation statuses are
@@ -244,27 +216,6 @@ func (c *campaignBudgetGRPCClient) setGoogleClientInfo(keyval ...string) {
 // the client is no longer required.
 func (c *campaignBudgetGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *campaignBudgetGRPCClient) GetCampaignBudget(ctx context.Context, req *servicespb.GetCampaignBudgetRequest, opts ...gax.CallOption) (*resourcespb.CampaignBudget, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetCampaignBudget[0:len((*c.CallOptions).GetCampaignBudget):len((*c.CallOptions).GetCampaignBudget)], opts...)
-	var resp *resourcespb.CampaignBudget
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.campaignBudgetClient.GetCampaignBudget(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *campaignBudgetGRPCClient) MutateCampaignBudgets(ctx context.Context, req *servicespb.MutateCampaignBudgetsRequest, opts ...gax.CallOption) (*servicespb.MutateCampaignBudgetsResponse, error) {

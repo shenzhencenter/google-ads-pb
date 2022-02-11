@@ -4,7 +4,6 @@ package services
 
 import (
 	context "context"
-	resources "github.com/shenzhencenter/google-ads-pb/resources"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -19,16 +18,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type FeedItemTargetServiceClient interface {
-	// Returns the requested feed item targets in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetFeedItemTarget(ctx context.Context, in *GetFeedItemTargetRequest, opts ...grpc.CallOption) (*resources.FeedItemTarget, error)
 	// Creates or removes feed item targets. Operation statuses are returned.
 	//
 	// List of thrown errors:
@@ -62,18 +51,9 @@ func NewFeedItemTargetServiceClient(cc grpc.ClientConnInterface) FeedItemTargetS
 	return &feedItemTargetServiceClient{cc}
 }
 
-func (c *feedItemTargetServiceClient) GetFeedItemTarget(ctx context.Context, in *GetFeedItemTargetRequest, opts ...grpc.CallOption) (*resources.FeedItemTarget, error) {
-	out := new(resources.FeedItemTarget)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.FeedItemTargetService/GetFeedItemTarget", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *feedItemTargetServiceClient) MutateFeedItemTargets(ctx context.Context, in *MutateFeedItemTargetsRequest, opts ...grpc.CallOption) (*MutateFeedItemTargetsResponse, error) {
 	out := new(MutateFeedItemTargetsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.FeedItemTargetService/MutateFeedItemTargets", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.FeedItemTargetService/MutateFeedItemTargets", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -84,16 +64,6 @@ func (c *feedItemTargetServiceClient) MutateFeedItemTargets(ctx context.Context,
 // All implementations must embed UnimplementedFeedItemTargetServiceServer
 // for forward compatibility
 type FeedItemTargetServiceServer interface {
-	// Returns the requested feed item targets in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetFeedItemTarget(context.Context, *GetFeedItemTargetRequest) (*resources.FeedItemTarget, error)
 	// Creates or removes feed item targets. Operation statuses are returned.
 	//
 	// List of thrown errors:
@@ -124,9 +94,6 @@ type FeedItemTargetServiceServer interface {
 type UnimplementedFeedItemTargetServiceServer struct {
 }
 
-func (UnimplementedFeedItemTargetServiceServer) GetFeedItemTarget(context.Context, *GetFeedItemTargetRequest) (*resources.FeedItemTarget, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetFeedItemTarget not implemented")
-}
 func (UnimplementedFeedItemTargetServiceServer) MutateFeedItemTargets(context.Context, *MutateFeedItemTargetsRequest) (*MutateFeedItemTargetsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MutateFeedItemTargets not implemented")
 }
@@ -143,24 +110,6 @@ func RegisterFeedItemTargetServiceServer(s grpc.ServiceRegistrar, srv FeedItemTa
 	s.RegisterService(&FeedItemTargetService_ServiceDesc, srv)
 }
 
-func _FeedItemTargetService_GetFeedItemTarget_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetFeedItemTargetRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(FeedItemTargetServiceServer).GetFeedItemTarget(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.FeedItemTargetService/GetFeedItemTarget",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(FeedItemTargetServiceServer).GetFeedItemTarget(ctx, req.(*GetFeedItemTargetRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _FeedItemTargetService_MutateFeedItemTargets_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MutateFeedItemTargetsRequest)
 	if err := dec(in); err != nil {
@@ -171,7 +120,7 @@ func _FeedItemTargetService_MutateFeedItemTargets_Handler(srv interface{}, ctx c
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.FeedItemTargetService/MutateFeedItemTargets",
+		FullMethod: "/google.ads.googleads.v10.services.FeedItemTargetService/MutateFeedItemTargets",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(FeedItemTargetServiceServer).MutateFeedItemTargets(ctx, req.(*MutateFeedItemTargetsRequest))
@@ -183,18 +132,14 @@ func _FeedItemTargetService_MutateFeedItemTargets_Handler(srv interface{}, ctx c
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var FeedItemTargetService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v9.services.FeedItemTargetService",
+	ServiceName: "google.ads.googleads.v10.services.FeedItemTargetService",
 	HandlerType: (*FeedItemTargetServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetFeedItemTarget",
-			Handler:    _FeedItemTargetService_GetFeedItemTarget_Handler,
-		},
 		{
 			MethodName: "MutateFeedItemTargets",
 			Handler:    _FeedItemTargetService_MutateFeedItemTargets_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v9/services/feed_item_target_service.proto",
+	Metadata: "google/ads/googleads/v10/services/feed_item_target_service.proto",
 }

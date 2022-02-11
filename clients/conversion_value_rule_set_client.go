@@ -27,7 +27,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +37,6 @@ var newConversionValueRuleSetClientHook clientHook
 
 // ConversionValueRuleSetCallOptions contains the retry settings for each method of ConversionValueRuleSetClient.
 type ConversionValueRuleSetCallOptions struct {
-	GetConversionValueRuleSet []gax.CallOption
 	MutateConversionValueRuleSets []gax.CallOption
 }
 
@@ -56,18 +54,6 @@ func defaultConversionValueRuleSetGRPCClientOptions() []option.ClientOption {
 
 func defaultConversionValueRuleSetCallOptions() *ConversionValueRuleSetCallOptions {
 	return &ConversionValueRuleSetCallOptions{
-		GetConversionValueRuleSet: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		MutateConversionValueRuleSets: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -88,7 +74,6 @@ type internalConversionValueRuleSetClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetConversionValueRuleSet(context.Context, *servicespb.GetConversionValueRuleSetRequest, ...gax.CallOption) (*resourcespb.ConversionValueRuleSet, error)
 	MutateConversionValueRuleSets(context.Context, *servicespb.MutateConversionValueRuleSetsRequest, ...gax.CallOption) (*servicespb.MutateConversionValueRuleSetsResponse, error)
 }
 
@@ -125,11 +110,6 @@ func (c *ConversionValueRuleSetClient) setGoogleClientInfo(keyval ...string) {
 // Deprecated.
 func (c *ConversionValueRuleSetClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetConversionValueRuleSet returns the requested conversion value rule set.
-func (c *ConversionValueRuleSetClient) GetConversionValueRuleSet(ctx context.Context, req *servicespb.GetConversionValueRuleSetRequest, opts ...gax.CallOption) (*resourcespb.ConversionValueRuleSet, error) {
-	return c.internalClient.GetConversionValueRuleSet(ctx, req, opts...)
 }
 
 // MutateConversionValueRuleSets creates, updates or removes conversion value rule sets. Operation statuses
@@ -217,27 +197,6 @@ func (c *conversionValueRuleSetGRPCClient) setGoogleClientInfo(keyval ...string)
 // the client is no longer required.
 func (c *conversionValueRuleSetGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *conversionValueRuleSetGRPCClient) GetConversionValueRuleSet(ctx context.Context, req *servicespb.GetConversionValueRuleSetRequest, opts ...gax.CallOption) (*resourcespb.ConversionValueRuleSet, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetConversionValueRuleSet[0:len((*c.CallOptions).GetConversionValueRuleSet):len((*c.CallOptions).GetConversionValueRuleSet)], opts...)
-	var resp *resourcespb.ConversionValueRuleSet
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.conversionValueRuleSetClient.GetConversionValueRuleSet(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *conversionValueRuleSetGRPCClient) MutateConversionValueRuleSets(ctx context.Context, req *servicespb.MutateConversionValueRuleSetsRequest, opts ...gax.CallOption) (*servicespb.MutateConversionValueRuleSetsResponse, error) {

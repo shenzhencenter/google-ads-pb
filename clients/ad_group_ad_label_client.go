@@ -27,7 +27,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +37,6 @@ var newAdGroupAdLabelClientHook clientHook
 
 // AdGroupAdLabelCallOptions contains the retry settings for each method of AdGroupAdLabelClient.
 type AdGroupAdLabelCallOptions struct {
-	GetAdGroupAdLabel []gax.CallOption
 	MutateAdGroupAdLabels []gax.CallOption
 }
 
@@ -56,18 +54,6 @@ func defaultAdGroupAdLabelGRPCClientOptions() []option.ClientOption {
 
 func defaultAdGroupAdLabelCallOptions() *AdGroupAdLabelCallOptions {
 	return &AdGroupAdLabelCallOptions{
-		GetAdGroupAdLabel: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		MutateAdGroupAdLabels: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -88,7 +74,6 @@ type internalAdGroupAdLabelClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetAdGroupAdLabel(context.Context, *servicespb.GetAdGroupAdLabelRequest, ...gax.CallOption) (*resourcespb.AdGroupAdLabel, error)
 	MutateAdGroupAdLabels(context.Context, *servicespb.MutateAdGroupAdLabelsRequest, ...gax.CallOption) (*servicespb.MutateAdGroupAdLabelsResponse, error)
 }
 
@@ -125,19 +110,6 @@ func (c *AdGroupAdLabelClient) setGoogleClientInfo(keyval ...string) {
 // Deprecated.
 func (c *AdGroupAdLabelClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetAdGroupAdLabel returns the requested ad group ad label in full detail.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *AdGroupAdLabelClient) GetAdGroupAdLabel(ctx context.Context, req *servicespb.GetAdGroupAdLabelRequest, opts ...gax.CallOption) (*resourcespb.AdGroupAdLabel, error) {
-	return c.internalClient.GetAdGroupAdLabel(ctx, req, opts...)
 }
 
 // MutateAdGroupAdLabels creates and removes ad group ad labels.
@@ -237,27 +209,6 @@ func (c *adGroupAdLabelGRPCClient) setGoogleClientInfo(keyval ...string) {
 // the client is no longer required.
 func (c *adGroupAdLabelGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *adGroupAdLabelGRPCClient) GetAdGroupAdLabel(ctx context.Context, req *servicespb.GetAdGroupAdLabelRequest, opts ...gax.CallOption) (*resourcespb.AdGroupAdLabel, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetAdGroupAdLabel[0:len((*c.CallOptions).GetAdGroupAdLabel):len((*c.CallOptions).GetAdGroupAdLabel)], opts...)
-	var resp *resourcespb.AdGroupAdLabel
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.adGroupAdLabelClient.GetAdGroupAdLabel(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *adGroupAdLabelGRPCClient) MutateAdGroupAdLabels(ctx context.Context, req *servicespb.MutateAdGroupAdLabelsRequest, opts ...gax.CallOption) (*servicespb.MutateAdGroupAdLabelsResponse, error) {

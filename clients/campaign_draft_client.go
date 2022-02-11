@@ -30,7 +30,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	longrunningpb "google.golang.org/genproto/googleapis/longrunning"
 	statuspb "google.golang.org/genproto/googleapis/rpc/status"
@@ -45,7 +44,6 @@ var newCampaignDraftClientHook clientHook
 
 // CampaignDraftCallOptions contains the retry settings for each method of CampaignDraftClient.
 type CampaignDraftCallOptions struct {
-	GetCampaignDraft []gax.CallOption
 	MutateCampaignDrafts []gax.CallOption
 	PromoteCampaignDraft []gax.CallOption
 	ListCampaignDraftAsyncErrors []gax.CallOption
@@ -65,18 +63,6 @@ func defaultCampaignDraftGRPCClientOptions() []option.ClientOption {
 
 func defaultCampaignDraftCallOptions() *CampaignDraftCallOptions {
 	return &CampaignDraftCallOptions{
-		GetCampaignDraft: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		MutateCampaignDrafts: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -121,7 +107,6 @@ type internalCampaignDraftClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetCampaignDraft(context.Context, *servicespb.GetCampaignDraftRequest, ...gax.CallOption) (*resourcespb.CampaignDraft, error)
 	MutateCampaignDrafts(context.Context, *servicespb.MutateCampaignDraftsRequest, ...gax.CallOption) (*servicespb.MutateCampaignDraftsResponse, error)
 	PromoteCampaignDraft(context.Context, *servicespb.PromoteCampaignDraftRequest, ...gax.CallOption) (*PromoteCampaignDraftOperation, error)
 	PromoteCampaignDraftOperation(name string) *PromoteCampaignDraftOperation
@@ -168,19 +153,6 @@ func (c *CampaignDraftClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
 }
 
-// GetCampaignDraft returns the requested campaign draft in full detail.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *CampaignDraftClient) GetCampaignDraft(ctx context.Context, req *servicespb.GetCampaignDraftRequest, opts ...gax.CallOption) (*resourcespb.CampaignDraft, error) {
-	return c.internalClient.GetCampaignDraft(ctx, req, opts...)
-}
-
 // MutateCampaignDrafts creates, updates, or removes campaign drafts. Operation statuses are
 // returned.
 //
@@ -206,7 +178,7 @@ func (c *CampaignDraftClient) MutateCampaignDrafts(ctx context.Context, req *ser
 // is done. Only a done status is returned in the response. See the status
 // in the Campaign Draft resource to determine if the promotion was
 // successful. If the LRO failed, use
-// CampaignDraftService.ListCampaignDraftAsyncErrors to view the list of
+// [CampaignDraftService.ListCampaignDraftAsyncErrors][google.ads.googleads.v10.services.CampaignDraftService.ListCampaignDraftAsyncErrors] to view the list of
 // error reasons.
 //
 // List of thrown errors:
@@ -337,27 +309,6 @@ func (c *campaignDraftGRPCClient) setGoogleClientInfo(keyval ...string) {
 // the client is no longer required.
 func (c *campaignDraftGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *campaignDraftGRPCClient) GetCampaignDraft(ctx context.Context, req *servicespb.GetCampaignDraftRequest, opts ...gax.CallOption) (*resourcespb.CampaignDraft, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetCampaignDraft[0:len((*c.CallOptions).GetCampaignDraft):len((*c.CallOptions).GetCampaignDraft)], opts...)
-	var resp *resourcespb.CampaignDraft
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.campaignDraftClient.GetCampaignDraft(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *campaignDraftGRPCClient) MutateCampaignDrafts(ctx context.Context, req *servicespb.MutateCampaignDraftsRequest, opts ...gax.CallOption) (*servicespb.MutateCampaignDraftsResponse, error) {

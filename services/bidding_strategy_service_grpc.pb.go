@@ -4,7 +4,6 @@ package services
 
 import (
 	context "context"
-	resources "github.com/shenzhencenter/google-ads-pb/resources"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -19,16 +18,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type BiddingStrategyServiceClient interface {
-	// Returns the requested bidding strategy in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetBiddingStrategy(ctx context.Context, in *GetBiddingStrategyRequest, opts ...grpc.CallOption) (*resources.BiddingStrategy, error)
 	// Creates, updates, or removes bidding strategies. Operation statuses are
 	// returned.
 	//
@@ -70,18 +59,9 @@ func NewBiddingStrategyServiceClient(cc grpc.ClientConnInterface) BiddingStrateg
 	return &biddingStrategyServiceClient{cc}
 }
 
-func (c *biddingStrategyServiceClient) GetBiddingStrategy(ctx context.Context, in *GetBiddingStrategyRequest, opts ...grpc.CallOption) (*resources.BiddingStrategy, error) {
-	out := new(resources.BiddingStrategy)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.BiddingStrategyService/GetBiddingStrategy", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *biddingStrategyServiceClient) MutateBiddingStrategies(ctx context.Context, in *MutateBiddingStrategiesRequest, opts ...grpc.CallOption) (*MutateBiddingStrategiesResponse, error) {
 	out := new(MutateBiddingStrategiesResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.BiddingStrategyService/MutateBiddingStrategies", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.BiddingStrategyService/MutateBiddingStrategies", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -92,16 +72,6 @@ func (c *biddingStrategyServiceClient) MutateBiddingStrategies(ctx context.Conte
 // All implementations must embed UnimplementedBiddingStrategyServiceServer
 // for forward compatibility
 type BiddingStrategyServiceServer interface {
-	// Returns the requested bidding strategy in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetBiddingStrategy(context.Context, *GetBiddingStrategyRequest) (*resources.BiddingStrategy, error)
 	// Creates, updates, or removes bidding strategies. Operation statuses are
 	// returned.
 	//
@@ -140,9 +110,6 @@ type BiddingStrategyServiceServer interface {
 type UnimplementedBiddingStrategyServiceServer struct {
 }
 
-func (UnimplementedBiddingStrategyServiceServer) GetBiddingStrategy(context.Context, *GetBiddingStrategyRequest) (*resources.BiddingStrategy, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetBiddingStrategy not implemented")
-}
 func (UnimplementedBiddingStrategyServiceServer) MutateBiddingStrategies(context.Context, *MutateBiddingStrategiesRequest) (*MutateBiddingStrategiesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MutateBiddingStrategies not implemented")
 }
@@ -160,24 +127,6 @@ func RegisterBiddingStrategyServiceServer(s grpc.ServiceRegistrar, srv BiddingSt
 	s.RegisterService(&BiddingStrategyService_ServiceDesc, srv)
 }
 
-func _BiddingStrategyService_GetBiddingStrategy_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetBiddingStrategyRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(BiddingStrategyServiceServer).GetBiddingStrategy(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.BiddingStrategyService/GetBiddingStrategy",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(BiddingStrategyServiceServer).GetBiddingStrategy(ctx, req.(*GetBiddingStrategyRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _BiddingStrategyService_MutateBiddingStrategies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MutateBiddingStrategiesRequest)
 	if err := dec(in); err != nil {
@@ -188,7 +137,7 @@ func _BiddingStrategyService_MutateBiddingStrategies_Handler(srv interface{}, ct
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.BiddingStrategyService/MutateBiddingStrategies",
+		FullMethod: "/google.ads.googleads.v10.services.BiddingStrategyService/MutateBiddingStrategies",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(BiddingStrategyServiceServer).MutateBiddingStrategies(ctx, req.(*MutateBiddingStrategiesRequest))
@@ -200,18 +149,14 @@ func _BiddingStrategyService_MutateBiddingStrategies_Handler(srv interface{}, ct
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var BiddingStrategyService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v9.services.BiddingStrategyService",
+	ServiceName: "google.ads.googleads.v10.services.BiddingStrategyService",
 	HandlerType: (*BiddingStrategyServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetBiddingStrategy",
-			Handler:    _BiddingStrategyService_GetBiddingStrategy_Handler,
-		},
 		{
 			MethodName: "MutateBiddingStrategies",
 			Handler:    _BiddingStrategyService_MutateBiddingStrategies_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v9/services/bidding_strategy_service.proto",
+	Metadata: "google/ads/googleads/v10/services/bidding_strategy_service.proto",
 }

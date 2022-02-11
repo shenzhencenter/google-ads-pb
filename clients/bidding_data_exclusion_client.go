@@ -27,7 +27,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +37,6 @@ var newBiddingDataExclusionClientHook clientHook
 
 // BiddingDataExclusionCallOptions contains the retry settings for each method of BiddingDataExclusionClient.
 type BiddingDataExclusionCallOptions struct {
-	GetBiddingDataExclusion []gax.CallOption
 	MutateBiddingDataExclusions []gax.CallOption
 }
 
@@ -56,18 +54,6 @@ func defaultBiddingDataExclusionGRPCClientOptions() []option.ClientOption {
 
 func defaultBiddingDataExclusionCallOptions() *BiddingDataExclusionCallOptions {
 	return &BiddingDataExclusionCallOptions{
-		GetBiddingDataExclusion: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		MutateBiddingDataExclusions: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -88,7 +74,6 @@ type internalBiddingDataExclusionClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetBiddingDataExclusion(context.Context, *servicespb.GetBiddingDataExclusionRequest, ...gax.CallOption) (*resourcespb.BiddingDataExclusion, error)
 	MutateBiddingDataExclusions(context.Context, *servicespb.MutateBiddingDataExclusionsRequest, ...gax.CallOption) (*servicespb.MutateBiddingDataExclusionsResponse, error)
 }
 
@@ -125,11 +110,6 @@ func (c *BiddingDataExclusionClient) setGoogleClientInfo(keyval ...string) {
 // Deprecated.
 func (c *BiddingDataExclusionClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetBiddingDataExclusion returns the requested data exclusion in full detail.
-func (c *BiddingDataExclusionClient) GetBiddingDataExclusion(ctx context.Context, req *servicespb.GetBiddingDataExclusionRequest, opts ...gax.CallOption) (*resourcespb.BiddingDataExclusion, error) {
-	return c.internalClient.GetBiddingDataExclusion(ctx, req, opts...)
 }
 
 // MutateBiddingDataExclusions creates, updates, or removes data exclusions.
@@ -217,27 +197,6 @@ func (c *biddingDataExclusionGRPCClient) setGoogleClientInfo(keyval ...string) {
 // the client is no longer required.
 func (c *biddingDataExclusionGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *biddingDataExclusionGRPCClient) GetBiddingDataExclusion(ctx context.Context, req *servicespb.GetBiddingDataExclusionRequest, opts ...gax.CallOption) (*resourcespb.BiddingDataExclusion, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetBiddingDataExclusion[0:len((*c.CallOptions).GetBiddingDataExclusion):len((*c.CallOptions).GetBiddingDataExclusion)], opts...)
-	var resp *resourcespb.BiddingDataExclusion
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.biddingDataExclusionClient.GetBiddingDataExclusion(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *biddingDataExclusionGRPCClient) MutateBiddingDataExclusions(ctx context.Context, req *servicespb.MutateBiddingDataExclusionsRequest, opts ...gax.CallOption) (*servicespb.MutateBiddingDataExclusionsResponse, error) {

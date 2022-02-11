@@ -27,7 +27,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +37,6 @@ var newCampaignExtensionSettingClientHook clientHook
 
 // CampaignExtensionSettingCallOptions contains the retry settings for each method of CampaignExtensionSettingClient.
 type CampaignExtensionSettingCallOptions struct {
-	GetCampaignExtensionSetting []gax.CallOption
 	MutateCampaignExtensionSettings []gax.CallOption
 }
 
@@ -56,18 +54,6 @@ func defaultCampaignExtensionSettingGRPCClientOptions() []option.ClientOption {
 
 func defaultCampaignExtensionSettingCallOptions() *CampaignExtensionSettingCallOptions {
 	return &CampaignExtensionSettingCallOptions{
-		GetCampaignExtensionSetting: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		MutateCampaignExtensionSettings: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -88,7 +74,6 @@ type internalCampaignExtensionSettingClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetCampaignExtensionSetting(context.Context, *servicespb.GetCampaignExtensionSettingRequest, ...gax.CallOption) (*resourcespb.CampaignExtensionSetting, error)
 	MutateCampaignExtensionSettings(context.Context, *servicespb.MutateCampaignExtensionSettingsRequest, ...gax.CallOption) (*servicespb.MutateCampaignExtensionSettingsResponse, error)
 }
 
@@ -125,19 +110,6 @@ func (c *CampaignExtensionSettingClient) setGoogleClientInfo(keyval ...string) {
 // Deprecated.
 func (c *CampaignExtensionSettingClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetCampaignExtensionSetting returns the requested campaign extension setting in full detail.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *CampaignExtensionSettingClient) GetCampaignExtensionSetting(ctx context.Context, req *servicespb.GetCampaignExtensionSettingRequest, opts ...gax.CallOption) (*resourcespb.CampaignExtensionSetting, error) {
-	return c.internalClient.GetCampaignExtensionSetting(ctx, req, opts...)
 }
 
 // MutateCampaignExtensionSettings creates, updates, or removes campaign extension settings. Operation
@@ -254,27 +226,6 @@ func (c *campaignExtensionSettingGRPCClient) setGoogleClientInfo(keyval ...strin
 // the client is no longer required.
 func (c *campaignExtensionSettingGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *campaignExtensionSettingGRPCClient) GetCampaignExtensionSetting(ctx context.Context, req *servicespb.GetCampaignExtensionSettingRequest, opts ...gax.CallOption) (*resourcespb.CampaignExtensionSetting, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetCampaignExtensionSetting[0:len((*c.CallOptions).GetCampaignExtensionSetting):len((*c.CallOptions).GetCampaignExtensionSetting)], opts...)
-	var resp *resourcespb.CampaignExtensionSetting
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.campaignExtensionSettingClient.GetCampaignExtensionSetting(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *campaignExtensionSettingGRPCClient) MutateCampaignExtensionSettings(ctx context.Context, req *servicespb.MutateCampaignExtensionSettingsRequest, opts ...gax.CallOption) (*servicespb.MutateCampaignExtensionSettingsResponse, error) {

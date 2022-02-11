@@ -33,7 +33,7 @@ func NewAdGroupCustomizerServiceClient(cc grpc.ClientConnInterface) AdGroupCusto
 
 func (c *adGroupCustomizerServiceClient) MutateAdGroupCustomizers(ctx context.Context, in *MutateAdGroupCustomizersRequest, opts ...grpc.CallOption) (*MutateAdGroupCustomizersResponse, error) {
 	out := new(MutateAdGroupCustomizersResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.AdGroupCustomizerService/MutateAdGroupCustomizers", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.AdGroupCustomizerService/MutateAdGroupCustomizers", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -81,7 +81,7 @@ func _AdGroupCustomizerService_MutateAdGroupCustomizers_Handler(srv interface{},
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.AdGroupCustomizerService/MutateAdGroupCustomizers",
+		FullMethod: "/google.ads.googleads.v10.services.AdGroupCustomizerService/MutateAdGroupCustomizers",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AdGroupCustomizerServiceServer).MutateAdGroupCustomizers(ctx, req.(*MutateAdGroupCustomizersRequest))
@@ -93,7 +93,7 @@ func _AdGroupCustomizerService_MutateAdGroupCustomizers_Handler(srv interface{},
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AdGroupCustomizerService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v9.services.AdGroupCustomizerService",
+	ServiceName: "google.ads.googleads.v10.services.AdGroupCustomizerService",
 	HandlerType: (*AdGroupCustomizerServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -102,5 +102,5 @@ var AdGroupCustomizerService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v9/services/ad_group_customizer_service.proto",
+	Metadata: "google/ads/googleads/v10/services/ad_group_customizer_service.proto",
 }

@@ -2,7 +2,7 @@
 
 You can use the golang library to interact with the Google Ads API across grpc. This library is not the official Google Ads API library.
 
-> Generated from [googleapis/ads/v9](https://github.com/googleapis/googleapis/tree/master/google/ads/googleads/v9)
+> Generated from [googleapis/ads/v10](https://github.com/googleapis/googleapis/tree/master/google/ads/googleads/v10)
 
 ## Installation
 

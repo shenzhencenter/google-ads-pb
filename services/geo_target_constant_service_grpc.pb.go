@@ -4,7 +4,6 @@ package services
 
 import (
 	context "context"
-	resources "github.com/shenzhencenter/google-ads-pb/resources"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -19,16 +18,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GeoTargetConstantServiceClient interface {
-	// Returns the requested geo target constant in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetGeoTargetConstant(ctx context.Context, in *GetGeoTargetConstantRequest, opts ...grpc.CallOption) (*resources.GeoTargetConstant, error)
 	// Returns GeoTargetConstant suggestions by location name or by resource name.
 	//
 	// List of thrown errors:
@@ -50,18 +39,9 @@ func NewGeoTargetConstantServiceClient(cc grpc.ClientConnInterface) GeoTargetCon
 	return &geoTargetConstantServiceClient{cc}
 }
 
-func (c *geoTargetConstantServiceClient) GetGeoTargetConstant(ctx context.Context, in *GetGeoTargetConstantRequest, opts ...grpc.CallOption) (*resources.GeoTargetConstant, error) {
-	out := new(resources.GeoTargetConstant)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.GeoTargetConstantService/GetGeoTargetConstant", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *geoTargetConstantServiceClient) SuggestGeoTargetConstants(ctx context.Context, in *SuggestGeoTargetConstantsRequest, opts ...grpc.CallOption) (*SuggestGeoTargetConstantsResponse, error) {
 	out := new(SuggestGeoTargetConstantsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.GeoTargetConstantService/SuggestGeoTargetConstants", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.GeoTargetConstantService/SuggestGeoTargetConstants", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -72,16 +52,6 @@ func (c *geoTargetConstantServiceClient) SuggestGeoTargetConstants(ctx context.C
 // All implementations must embed UnimplementedGeoTargetConstantServiceServer
 // for forward compatibility
 type GeoTargetConstantServiceServer interface {
-	// Returns the requested geo target constant in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetGeoTargetConstant(context.Context, *GetGeoTargetConstantRequest) (*resources.GeoTargetConstant, error)
 	// Returns GeoTargetConstant suggestions by location name or by resource name.
 	//
 	// List of thrown errors:
@@ -100,9 +70,6 @@ type GeoTargetConstantServiceServer interface {
 type UnimplementedGeoTargetConstantServiceServer struct {
 }
 
-func (UnimplementedGeoTargetConstantServiceServer) GetGeoTargetConstant(context.Context, *GetGeoTargetConstantRequest) (*resources.GeoTargetConstant, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetGeoTargetConstant not implemented")
-}
 func (UnimplementedGeoTargetConstantServiceServer) SuggestGeoTargetConstants(context.Context, *SuggestGeoTargetConstantsRequest) (*SuggestGeoTargetConstantsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SuggestGeoTargetConstants not implemented")
 }
@@ -120,24 +87,6 @@ func RegisterGeoTargetConstantServiceServer(s grpc.ServiceRegistrar, srv GeoTarg
 	s.RegisterService(&GeoTargetConstantService_ServiceDesc, srv)
 }
 
-func _GeoTargetConstantService_GetGeoTargetConstant_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetGeoTargetConstantRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GeoTargetConstantServiceServer).GetGeoTargetConstant(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.GeoTargetConstantService/GetGeoTargetConstant",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GeoTargetConstantServiceServer).GetGeoTargetConstant(ctx, req.(*GetGeoTargetConstantRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _GeoTargetConstantService_SuggestGeoTargetConstants_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(SuggestGeoTargetConstantsRequest)
 	if err := dec(in); err != nil {
@@ -148,7 +97,7 @@ func _GeoTargetConstantService_SuggestGeoTargetConstants_Handler(srv interface{}
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.GeoTargetConstantService/SuggestGeoTargetConstants",
+		FullMethod: "/google.ads.googleads.v10.services.GeoTargetConstantService/SuggestGeoTargetConstants",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GeoTargetConstantServiceServer).SuggestGeoTargetConstants(ctx, req.(*SuggestGeoTargetConstantsRequest))
@@ -160,18 +109,14 @@ func _GeoTargetConstantService_SuggestGeoTargetConstants_Handler(srv interface{}
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var GeoTargetConstantService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v9.services.GeoTargetConstantService",
+	ServiceName: "google.ads.googleads.v10.services.GeoTargetConstantService",
 	HandlerType: (*GeoTargetConstantServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetGeoTargetConstant",
-			Handler:    _GeoTargetConstantService_GetGeoTargetConstant_Handler,
-		},
 		{
 			MethodName: "SuggestGeoTargetConstants",
 			Handler:    _GeoTargetConstantService_SuggestGeoTargetConstants_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v9/services/geo_target_constant_service.proto",
+	Metadata: "google/ads/googleads/v10/services/geo_target_constant_service.proto",
 }

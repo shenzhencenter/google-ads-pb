@@ -4,7 +4,6 @@ package services
 
 import (
 	context "context"
-	resources "github.com/shenzhencenter/google-ads-pb/resources"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -19,8 +18,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type SmartCampaignSettingServiceClient interface {
-	// Returns the requested Smart campaign setting in full detail.
-	GetSmartCampaignSetting(ctx context.Context, in *GetSmartCampaignSettingRequest, opts ...grpc.CallOption) (*resources.SmartCampaignSetting, error)
 	// Updates Smart campaign settings for campaigns.
 	MutateSmartCampaignSettings(ctx context.Context, in *MutateSmartCampaignSettingsRequest, opts ...grpc.CallOption) (*MutateSmartCampaignSettingsResponse, error)
 }
@@ -33,18 +30,9 @@ func NewSmartCampaignSettingServiceClient(cc grpc.ClientConnInterface) SmartCamp
 	return &smartCampaignSettingServiceClient{cc}
 }
 
-func (c *smartCampaignSettingServiceClient) GetSmartCampaignSetting(ctx context.Context, in *GetSmartCampaignSettingRequest, opts ...grpc.CallOption) (*resources.SmartCampaignSetting, error) {
-	out := new(resources.SmartCampaignSetting)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.SmartCampaignSettingService/GetSmartCampaignSetting", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *smartCampaignSettingServiceClient) MutateSmartCampaignSettings(ctx context.Context, in *MutateSmartCampaignSettingsRequest, opts ...grpc.CallOption) (*MutateSmartCampaignSettingsResponse, error) {
 	out := new(MutateSmartCampaignSettingsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.SmartCampaignSettingService/MutateSmartCampaignSettings", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.SmartCampaignSettingService/MutateSmartCampaignSettings", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -55,8 +43,6 @@ func (c *smartCampaignSettingServiceClient) MutateSmartCampaignSettings(ctx cont
 // All implementations must embed UnimplementedSmartCampaignSettingServiceServer
 // for forward compatibility
 type SmartCampaignSettingServiceServer interface {
-	// Returns the requested Smart campaign setting in full detail.
-	GetSmartCampaignSetting(context.Context, *GetSmartCampaignSettingRequest) (*resources.SmartCampaignSetting, error)
 	// Updates Smart campaign settings for campaigns.
 	MutateSmartCampaignSettings(context.Context, *MutateSmartCampaignSettingsRequest) (*MutateSmartCampaignSettingsResponse, error)
 	mustEmbedUnimplementedSmartCampaignSettingServiceServer()
@@ -66,9 +52,6 @@ type SmartCampaignSettingServiceServer interface {
 type UnimplementedSmartCampaignSettingServiceServer struct {
 }
 
-func (UnimplementedSmartCampaignSettingServiceServer) GetSmartCampaignSetting(context.Context, *GetSmartCampaignSettingRequest) (*resources.SmartCampaignSetting, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetSmartCampaignSetting not implemented")
-}
 func (UnimplementedSmartCampaignSettingServiceServer) MutateSmartCampaignSettings(context.Context, *MutateSmartCampaignSettingsRequest) (*MutateSmartCampaignSettingsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MutateSmartCampaignSettings not implemented")
 }
@@ -86,24 +69,6 @@ func RegisterSmartCampaignSettingServiceServer(s grpc.ServiceRegistrar, srv Smar
 	s.RegisterService(&SmartCampaignSettingService_ServiceDesc, srv)
 }
 
-func _SmartCampaignSettingService_GetSmartCampaignSetting_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetSmartCampaignSettingRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(SmartCampaignSettingServiceServer).GetSmartCampaignSetting(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.SmartCampaignSettingService/GetSmartCampaignSetting",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SmartCampaignSettingServiceServer).GetSmartCampaignSetting(ctx, req.(*GetSmartCampaignSettingRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _SmartCampaignSettingService_MutateSmartCampaignSettings_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MutateSmartCampaignSettingsRequest)
 	if err := dec(in); err != nil {
@@ -114,7 +79,7 @@ func _SmartCampaignSettingService_MutateSmartCampaignSettings_Handler(srv interf
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.SmartCampaignSettingService/MutateSmartCampaignSettings",
+		FullMethod: "/google.ads.googleads.v10.services.SmartCampaignSettingService/MutateSmartCampaignSettings",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SmartCampaignSettingServiceServer).MutateSmartCampaignSettings(ctx, req.(*MutateSmartCampaignSettingsRequest))
@@ -126,18 +91,14 @@ func _SmartCampaignSettingService_MutateSmartCampaignSettings_Handler(srv interf
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var SmartCampaignSettingService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v9.services.SmartCampaignSettingService",
+	ServiceName: "google.ads.googleads.v10.services.SmartCampaignSettingService",
 	HandlerType: (*SmartCampaignSettingServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetSmartCampaignSetting",
-			Handler:    _SmartCampaignSettingService_GetSmartCampaignSetting_Handler,
-		},
 		{
 			MethodName: "MutateSmartCampaignSettings",
 			Handler:    _SmartCampaignSettingService_MutateSmartCampaignSettings_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v9/services/smart_campaign_setting_service.proto",
+	Metadata: "google/ads/googleads/v10/services/smart_campaign_setting_service.proto",
 }

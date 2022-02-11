@@ -27,7 +27,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +37,6 @@ var newConversionCustomVariableClientHook clientHook
 
 // ConversionCustomVariableCallOptions contains the retry settings for each method of ConversionCustomVariableClient.
 type ConversionCustomVariableCallOptions struct {
-	GetConversionCustomVariable []gax.CallOption
 	MutateConversionCustomVariables []gax.CallOption
 }
 
@@ -56,18 +54,6 @@ func defaultConversionCustomVariableGRPCClientOptions() []option.ClientOption {
 
 func defaultConversionCustomVariableCallOptions() *ConversionCustomVariableCallOptions {
 	return &ConversionCustomVariableCallOptions{
-		GetConversionCustomVariable: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		MutateConversionCustomVariables: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -88,7 +74,6 @@ type internalConversionCustomVariableClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetConversionCustomVariable(context.Context, *servicespb.GetConversionCustomVariableRequest, ...gax.CallOption) (*resourcespb.ConversionCustomVariable, error)
 	MutateConversionCustomVariables(context.Context, *servicespb.MutateConversionCustomVariablesRequest, ...gax.CallOption) (*servicespb.MutateConversionCustomVariablesResponse, error)
 }
 
@@ -125,19 +110,6 @@ func (c *ConversionCustomVariableClient) setGoogleClientInfo(keyval ...string) {
 // Deprecated.
 func (c *ConversionCustomVariableClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetConversionCustomVariable returns the requested conversion custom variable.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *ConversionCustomVariableClient) GetConversionCustomVariable(ctx context.Context, req *servicespb.GetConversionCustomVariableRequest, opts ...gax.CallOption) (*resourcespb.ConversionCustomVariable, error) {
-	return c.internalClient.GetConversionCustomVariable(ctx, req, opts...)
 }
 
 // MutateConversionCustomVariables creates or updates conversion custom variables. Operation statuses are
@@ -235,27 +207,6 @@ func (c *conversionCustomVariableGRPCClient) setGoogleClientInfo(keyval ...strin
 // the client is no longer required.
 func (c *conversionCustomVariableGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *conversionCustomVariableGRPCClient) GetConversionCustomVariable(ctx context.Context, req *servicespb.GetConversionCustomVariableRequest, opts ...gax.CallOption) (*resourcespb.ConversionCustomVariable, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetConversionCustomVariable[0:len((*c.CallOptions).GetConversionCustomVariable):len((*c.CallOptions).GetConversionCustomVariable)], opts...)
-	var resp *resourcespb.ConversionCustomVariable
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.conversionCustomVariableClient.GetConversionCustomVariable(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *conversionCustomVariableGRPCClient) MutateConversionCustomVariables(ctx context.Context, req *servicespb.MutateConversionCustomVariablesRequest, opts ...gax.CallOption) (*servicespb.MutateConversionCustomVariablesResponse, error) {

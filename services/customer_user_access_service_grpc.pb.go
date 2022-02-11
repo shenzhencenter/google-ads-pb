@@ -4,7 +4,6 @@ package services
 
 import (
 	context "context"
-	resources "github.com/shenzhencenter/google-ads-pb/resources"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -19,16 +18,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type CustomerUserAccessServiceClient interface {
-	// Returns the CustomerUserAccess in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetCustomerUserAccess(ctx context.Context, in *GetCustomerUserAccessRequest, opts ...grpc.CallOption) (*resources.CustomerUserAccess, error)
 	// Updates, removes permission of a user on a given customer. Operation
 	// statuses are returned.
 	//
@@ -53,18 +42,9 @@ func NewCustomerUserAccessServiceClient(cc grpc.ClientConnInterface) CustomerUse
 	return &customerUserAccessServiceClient{cc}
 }
 
-func (c *customerUserAccessServiceClient) GetCustomerUserAccess(ctx context.Context, in *GetCustomerUserAccessRequest, opts ...grpc.CallOption) (*resources.CustomerUserAccess, error) {
-	out := new(resources.CustomerUserAccess)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.CustomerUserAccessService/GetCustomerUserAccess", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *customerUserAccessServiceClient) MutateCustomerUserAccess(ctx context.Context, in *MutateCustomerUserAccessRequest, opts ...grpc.CallOption) (*MutateCustomerUserAccessResponse, error) {
 	out := new(MutateCustomerUserAccessResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.CustomerUserAccessService/MutateCustomerUserAccess", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.CustomerUserAccessService/MutateCustomerUserAccess", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -75,16 +55,6 @@ func (c *customerUserAccessServiceClient) MutateCustomerUserAccess(ctx context.C
 // All implementations must embed UnimplementedCustomerUserAccessServiceServer
 // for forward compatibility
 type CustomerUserAccessServiceServer interface {
-	// Returns the CustomerUserAccess in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetCustomerUserAccess(context.Context, *GetCustomerUserAccessRequest) (*resources.CustomerUserAccess, error)
 	// Updates, removes permission of a user on a given customer. Operation
 	// statuses are returned.
 	//
@@ -106,9 +76,6 @@ type CustomerUserAccessServiceServer interface {
 type UnimplementedCustomerUserAccessServiceServer struct {
 }
 
-func (UnimplementedCustomerUserAccessServiceServer) GetCustomerUserAccess(context.Context, *GetCustomerUserAccessRequest) (*resources.CustomerUserAccess, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetCustomerUserAccess not implemented")
-}
 func (UnimplementedCustomerUserAccessServiceServer) MutateCustomerUserAccess(context.Context, *MutateCustomerUserAccessRequest) (*MutateCustomerUserAccessResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MutateCustomerUserAccess not implemented")
 }
@@ -126,24 +93,6 @@ func RegisterCustomerUserAccessServiceServer(s grpc.ServiceRegistrar, srv Custom
 	s.RegisterService(&CustomerUserAccessService_ServiceDesc, srv)
 }
 
-func _CustomerUserAccessService_GetCustomerUserAccess_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetCustomerUserAccessRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(CustomerUserAccessServiceServer).GetCustomerUserAccess(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.CustomerUserAccessService/GetCustomerUserAccess",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CustomerUserAccessServiceServer).GetCustomerUserAccess(ctx, req.(*GetCustomerUserAccessRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _CustomerUserAccessService_MutateCustomerUserAccess_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MutateCustomerUserAccessRequest)
 	if err := dec(in); err != nil {
@@ -154,7 +103,7 @@ func _CustomerUserAccessService_MutateCustomerUserAccess_Handler(srv interface{}
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.CustomerUserAccessService/MutateCustomerUserAccess",
+		FullMethod: "/google.ads.googleads.v10.services.CustomerUserAccessService/MutateCustomerUserAccess",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CustomerUserAccessServiceServer).MutateCustomerUserAccess(ctx, req.(*MutateCustomerUserAccessRequest))
@@ -166,18 +115,14 @@ func _CustomerUserAccessService_MutateCustomerUserAccess_Handler(srv interface{}
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CustomerUserAccessService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v9.services.CustomerUserAccessService",
+	ServiceName: "google.ads.googleads.v10.services.CustomerUserAccessService",
 	HandlerType: (*CustomerUserAccessServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetCustomerUserAccess",
-			Handler:    _CustomerUserAccessService_GetCustomerUserAccess_Handler,
-		},
 		{
 			MethodName: "MutateCustomerUserAccess",
 			Handler:    _CustomerUserAccessService_MutateCustomerUserAccess_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v9/services/customer_user_access_service.proto",
+	Metadata: "google/ads/googleads/v10/services/customer_user_access_service.proto",
 }

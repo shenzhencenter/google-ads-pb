@@ -4,7 +4,6 @@ package services
 
 import (
 	context "context"
-	resources "github.com/shenzhencenter/google-ads-pb/resources"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -19,16 +18,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type CustomerFeedServiceClient interface {
-	// Returns the requested customer feed in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetCustomerFeed(ctx context.Context, in *GetCustomerFeedRequest, opts ...grpc.CallOption) (*resources.CustomerFeed, error)
 	// Creates, updates, or removes customer feeds. Operation statuses are
 	// returned.
 	//
@@ -66,18 +55,9 @@ func NewCustomerFeedServiceClient(cc grpc.ClientConnInterface) CustomerFeedServi
 	return &customerFeedServiceClient{cc}
 }
 
-func (c *customerFeedServiceClient) GetCustomerFeed(ctx context.Context, in *GetCustomerFeedRequest, opts ...grpc.CallOption) (*resources.CustomerFeed, error) {
-	out := new(resources.CustomerFeed)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.CustomerFeedService/GetCustomerFeed", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *customerFeedServiceClient) MutateCustomerFeeds(ctx context.Context, in *MutateCustomerFeedsRequest, opts ...grpc.CallOption) (*MutateCustomerFeedsResponse, error) {
 	out := new(MutateCustomerFeedsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.CustomerFeedService/MutateCustomerFeeds", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.CustomerFeedService/MutateCustomerFeeds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -88,16 +68,6 @@ func (c *customerFeedServiceClient) MutateCustomerFeeds(ctx context.Context, in 
 // All implementations must embed UnimplementedCustomerFeedServiceServer
 // for forward compatibility
 type CustomerFeedServiceServer interface {
-	// Returns the requested customer feed in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetCustomerFeed(context.Context, *GetCustomerFeedRequest) (*resources.CustomerFeed, error)
 	// Creates, updates, or removes customer feeds. Operation statuses are
 	// returned.
 	//
@@ -132,9 +102,6 @@ type CustomerFeedServiceServer interface {
 type UnimplementedCustomerFeedServiceServer struct {
 }
 
-func (UnimplementedCustomerFeedServiceServer) GetCustomerFeed(context.Context, *GetCustomerFeedRequest) (*resources.CustomerFeed, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetCustomerFeed not implemented")
-}
 func (UnimplementedCustomerFeedServiceServer) MutateCustomerFeeds(context.Context, *MutateCustomerFeedsRequest) (*MutateCustomerFeedsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MutateCustomerFeeds not implemented")
 }
@@ -151,24 +118,6 @@ func RegisterCustomerFeedServiceServer(s grpc.ServiceRegistrar, srv CustomerFeed
 	s.RegisterService(&CustomerFeedService_ServiceDesc, srv)
 }
 
-func _CustomerFeedService_GetCustomerFeed_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetCustomerFeedRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(CustomerFeedServiceServer).GetCustomerFeed(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.CustomerFeedService/GetCustomerFeed",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CustomerFeedServiceServer).GetCustomerFeed(ctx, req.(*GetCustomerFeedRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _CustomerFeedService_MutateCustomerFeeds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MutateCustomerFeedsRequest)
 	if err := dec(in); err != nil {
@@ -179,7 +128,7 @@ func _CustomerFeedService_MutateCustomerFeeds_Handler(srv interface{}, ctx conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.CustomerFeedService/MutateCustomerFeeds",
+		FullMethod: "/google.ads.googleads.v10.services.CustomerFeedService/MutateCustomerFeeds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CustomerFeedServiceServer).MutateCustomerFeeds(ctx, req.(*MutateCustomerFeedsRequest))
@@ -191,18 +140,14 @@ func _CustomerFeedService_MutateCustomerFeeds_Handler(srv interface{}, ctx conte
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CustomerFeedService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v9.services.CustomerFeedService",
+	ServiceName: "google.ads.googleads.v10.services.CustomerFeedService",
 	HandlerType: (*CustomerFeedServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetCustomerFeed",
-			Handler:    _CustomerFeedService_GetCustomerFeed_Handler,
-		},
 		{
 			MethodName: "MutateCustomerFeeds",
 			Handler:    _CustomerFeedService_MutateCustomerFeeds_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v9/services/customer_feed_service.proto",
+	Metadata: "google/ads/googleads/v10/services/customer_feed_service.proto",
 }

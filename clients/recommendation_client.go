@@ -27,7 +27,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +37,6 @@ var newRecommendationClientHook clientHook
 
 // RecommendationCallOptions contains the retry settings for each method of RecommendationClient.
 type RecommendationCallOptions struct {
-	GetRecommendation []gax.CallOption
 	ApplyRecommendation []gax.CallOption
 	DismissRecommendation []gax.CallOption
 }
@@ -57,18 +55,6 @@ func defaultRecommendationGRPCClientOptions() []option.ClientOption {
 
 func defaultRecommendationCallOptions() *RecommendationCallOptions {
 	return &RecommendationCallOptions{
-		GetRecommendation: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		ApplyRecommendation: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -101,7 +87,6 @@ type internalRecommendationClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetRecommendation(context.Context, *servicespb.GetRecommendationRequest, ...gax.CallOption) (*resourcespb.Recommendation, error)
 	ApplyRecommendation(context.Context, *servicespb.ApplyRecommendationRequest, ...gax.CallOption) (*servicespb.ApplyRecommendationResponse, error)
 	DismissRecommendation(context.Context, *servicespb.DismissRecommendationRequest, ...gax.CallOption) (*servicespb.DismissRecommendationResponse, error)
 }
@@ -139,19 +124,6 @@ func (c *RecommendationClient) setGoogleClientInfo(keyval ...string) {
 // Deprecated.
 func (c *RecommendationClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetRecommendation returns the requested recommendation in full detail.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *RecommendationClient) GetRecommendation(ctx context.Context, req *servicespb.GetRecommendationRequest, opts ...gax.CallOption) (*resourcespb.Recommendation, error) {
-	return c.internalClient.GetRecommendation(ctx, req, opts...)
 }
 
 // ApplyRecommendation applies given recommendations with corresponding apply parameters.
@@ -265,27 +237,6 @@ func (c *recommendationGRPCClient) setGoogleClientInfo(keyval ...string) {
 // the client is no longer required.
 func (c *recommendationGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *recommendationGRPCClient) GetRecommendation(ctx context.Context, req *servicespb.GetRecommendationRequest, opts ...gax.CallOption) (*resourcespb.Recommendation, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetRecommendation[0:len((*c.CallOptions).GetRecommendation):len((*c.CallOptions).GetRecommendation)], opts...)
-	var resp *resourcespb.Recommendation
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.recommendationClient.GetRecommendation(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *recommendationGRPCClient) ApplyRecommendation(ctx context.Context, req *servicespb.ApplyRecommendationRequest, opts ...gax.CallOption) (*servicespb.ApplyRecommendationResponse, error) {

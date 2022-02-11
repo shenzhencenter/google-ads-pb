@@ -4,7 +4,6 @@ package services
 
 import (
 	context "context"
-	resources "github.com/shenzhencenter/google-ads-pb/resources"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -19,16 +18,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ExtensionFeedItemServiceClient interface {
-	// Returns the requested extension feed item in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetExtensionFeedItem(ctx context.Context, in *GetExtensionFeedItemRequest, opts ...grpc.CallOption) (*resources.ExtensionFeedItem, error)
 	// Creates, updates, or removes extension feed items. Operation
 	// statuses are returned.
 	//
@@ -67,18 +56,9 @@ func NewExtensionFeedItemServiceClient(cc grpc.ClientConnInterface) ExtensionFee
 	return &extensionFeedItemServiceClient{cc}
 }
 
-func (c *extensionFeedItemServiceClient) GetExtensionFeedItem(ctx context.Context, in *GetExtensionFeedItemRequest, opts ...grpc.CallOption) (*resources.ExtensionFeedItem, error) {
-	out := new(resources.ExtensionFeedItem)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.ExtensionFeedItemService/GetExtensionFeedItem", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *extensionFeedItemServiceClient) MutateExtensionFeedItems(ctx context.Context, in *MutateExtensionFeedItemsRequest, opts ...grpc.CallOption) (*MutateExtensionFeedItemsResponse, error) {
 	out := new(MutateExtensionFeedItemsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.ExtensionFeedItemService/MutateExtensionFeedItems", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.ExtensionFeedItemService/MutateExtensionFeedItems", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -89,16 +69,6 @@ func (c *extensionFeedItemServiceClient) MutateExtensionFeedItems(ctx context.Co
 // All implementations must embed UnimplementedExtensionFeedItemServiceServer
 // for forward compatibility
 type ExtensionFeedItemServiceServer interface {
-	// Returns the requested extension feed item in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetExtensionFeedItem(context.Context, *GetExtensionFeedItemRequest) (*resources.ExtensionFeedItem, error)
 	// Creates, updates, or removes extension feed items. Operation
 	// statuses are returned.
 	//
@@ -134,9 +104,6 @@ type ExtensionFeedItemServiceServer interface {
 type UnimplementedExtensionFeedItemServiceServer struct {
 }
 
-func (UnimplementedExtensionFeedItemServiceServer) GetExtensionFeedItem(context.Context, *GetExtensionFeedItemRequest) (*resources.ExtensionFeedItem, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetExtensionFeedItem not implemented")
-}
 func (UnimplementedExtensionFeedItemServiceServer) MutateExtensionFeedItems(context.Context, *MutateExtensionFeedItemsRequest) (*MutateExtensionFeedItemsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MutateExtensionFeedItems not implemented")
 }
@@ -154,24 +121,6 @@ func RegisterExtensionFeedItemServiceServer(s grpc.ServiceRegistrar, srv Extensi
 	s.RegisterService(&ExtensionFeedItemService_ServiceDesc, srv)
 }
 
-func _ExtensionFeedItemService_GetExtensionFeedItem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetExtensionFeedItemRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ExtensionFeedItemServiceServer).GetExtensionFeedItem(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.ExtensionFeedItemService/GetExtensionFeedItem",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ExtensionFeedItemServiceServer).GetExtensionFeedItem(ctx, req.(*GetExtensionFeedItemRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _ExtensionFeedItemService_MutateExtensionFeedItems_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MutateExtensionFeedItemsRequest)
 	if err := dec(in); err != nil {
@@ -182,7 +131,7 @@ func _ExtensionFeedItemService_MutateExtensionFeedItems_Handler(srv interface{},
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.ExtensionFeedItemService/MutateExtensionFeedItems",
+		FullMethod: "/google.ads.googleads.v10.services.ExtensionFeedItemService/MutateExtensionFeedItems",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ExtensionFeedItemServiceServer).MutateExtensionFeedItems(ctx, req.(*MutateExtensionFeedItemsRequest))
@@ -194,18 +143,14 @@ func _ExtensionFeedItemService_MutateExtensionFeedItems_Handler(srv interface{},
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ExtensionFeedItemService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v9.services.ExtensionFeedItemService",
+	ServiceName: "google.ads.googleads.v10.services.ExtensionFeedItemService",
 	HandlerType: (*ExtensionFeedItemServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetExtensionFeedItem",
-			Handler:    _ExtensionFeedItemService_GetExtensionFeedItem_Handler,
-		},
 		{
 			MethodName: "MutateExtensionFeedItems",
 			Handler:    _ExtensionFeedItemService_MutateExtensionFeedItems_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v9/services/extension_feed_item_service.proto",
+	Metadata: "google/ads/googleads/v10/services/extension_feed_item_service.proto",
 }

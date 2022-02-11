@@ -27,7 +27,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +37,6 @@ var newBiddingStrategyClientHook clientHook
 
 // BiddingStrategyCallOptions contains the retry settings for each method of BiddingStrategyClient.
 type BiddingStrategyCallOptions struct {
-	GetBiddingStrategy []gax.CallOption
 	MutateBiddingStrategies []gax.CallOption
 }
 
@@ -56,18 +54,6 @@ func defaultBiddingStrategyGRPCClientOptions() []option.ClientOption {
 
 func defaultBiddingStrategyCallOptions() *BiddingStrategyCallOptions {
 	return &BiddingStrategyCallOptions{
-		GetBiddingStrategy: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		MutateBiddingStrategies: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -88,7 +74,6 @@ type internalBiddingStrategyClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetBiddingStrategy(context.Context, *servicespb.GetBiddingStrategyRequest, ...gax.CallOption) (*resourcespb.BiddingStrategy, error)
 	MutateBiddingStrategies(context.Context, *servicespb.MutateBiddingStrategiesRequest, ...gax.CallOption) (*servicespb.MutateBiddingStrategiesResponse, error)
 }
 
@@ -125,19 +110,6 @@ func (c *BiddingStrategyClient) setGoogleClientInfo(keyval ...string) {
 // Deprecated.
 func (c *BiddingStrategyClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetBiddingStrategy returns the requested bidding strategy in full detail.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *BiddingStrategyClient) GetBiddingStrategy(ctx context.Context, req *servicespb.GetBiddingStrategyRequest, opts ...gax.CallOption) (*resourcespb.BiddingStrategy, error) {
-	return c.internalClient.GetBiddingStrategy(ctx, req, opts...)
 }
 
 // MutateBiddingStrategies creates, updates, or removes bidding strategies. Operation statuses are
@@ -253,27 +225,6 @@ func (c *biddingStrategyGRPCClient) setGoogleClientInfo(keyval ...string) {
 // the client is no longer required.
 func (c *biddingStrategyGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *biddingStrategyGRPCClient) GetBiddingStrategy(ctx context.Context, req *servicespb.GetBiddingStrategyRequest, opts ...gax.CallOption) (*resourcespb.BiddingStrategy, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetBiddingStrategy[0:len((*c.CallOptions).GetBiddingStrategy):len((*c.CallOptions).GetBiddingStrategy)], opts...)
-	var resp *resourcespb.BiddingStrategy
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.biddingStrategyClient.GetBiddingStrategy(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *biddingStrategyGRPCClient) MutateBiddingStrategies(ctx context.Context, req *servicespb.MutateBiddingStrategiesRequest, opts ...gax.CallOption) (*servicespb.MutateBiddingStrategiesResponse, error) {

@@ -18,16 +18,13 @@ package clients
 
 import (
 	"context"
-	"fmt"
 	"math"
-	"net/url"
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +35,6 @@ var newGeoTargetConstantClientHook clientHook
 
 // GeoTargetConstantCallOptions contains the retry settings for each method of GeoTargetConstantClient.
 type GeoTargetConstantCallOptions struct {
-	GetGeoTargetConstant []gax.CallOption
 	SuggestGeoTargetConstants []gax.CallOption
 }
 
@@ -56,18 +52,6 @@ func defaultGeoTargetConstantGRPCClientOptions() []option.ClientOption {
 
 func defaultGeoTargetConstantCallOptions() *GeoTargetConstantCallOptions {
 	return &GeoTargetConstantCallOptions{
-		GetGeoTargetConstant: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		SuggestGeoTargetConstants: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -88,7 +72,6 @@ type internalGeoTargetConstantClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetGeoTargetConstant(context.Context, *servicespb.GetGeoTargetConstantRequest, ...gax.CallOption) (*resourcespb.GeoTargetConstant, error)
 	SuggestGeoTargetConstants(context.Context, *servicespb.SuggestGeoTargetConstantsRequest, ...gax.CallOption) (*servicespb.SuggestGeoTargetConstantsResponse, error)
 }
 
@@ -125,19 +108,6 @@ func (c *GeoTargetConstantClient) setGoogleClientInfo(keyval ...string) {
 // Deprecated.
 func (c *GeoTargetConstantClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetGeoTargetConstant returns the requested geo target constant in full detail.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *GeoTargetConstantClient) GetGeoTargetConstant(ctx context.Context, req *servicespb.GetGeoTargetConstantRequest, opts ...gax.CallOption) (*resourcespb.GeoTargetConstant, error) {
-	return c.internalClient.GetGeoTargetConstant(ctx, req, opts...)
 }
 
 // SuggestGeoTargetConstants returns GeoTargetConstant suggestions by location name or by resource name.
@@ -233,27 +203,6 @@ func (c *geoTargetConstantGRPCClient) setGoogleClientInfo(keyval ...string) {
 // the client is no longer required.
 func (c *geoTargetConstantGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *geoTargetConstantGRPCClient) GetGeoTargetConstant(ctx context.Context, req *servicespb.GetGeoTargetConstantRequest, opts ...gax.CallOption) (*resourcespb.GeoTargetConstant, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetGeoTargetConstant[0:len((*c.CallOptions).GetGeoTargetConstant):len((*c.CallOptions).GetGeoTargetConstant)], opts...)
-	var resp *resourcespb.GeoTargetConstant
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.geoTargetConstantClient.GetGeoTargetConstant(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *geoTargetConstantGRPCClient) SuggestGeoTargetConstants(ctx context.Context, req *servicespb.SuggestGeoTargetConstantsRequest, opts ...gax.CallOption) (*servicespb.SuggestGeoTargetConstantsResponse, error) {

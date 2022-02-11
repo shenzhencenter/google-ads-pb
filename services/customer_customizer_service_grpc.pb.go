@@ -33,7 +33,7 @@ func NewCustomerCustomizerServiceClient(cc grpc.ClientConnInterface) CustomerCus
 
 func (c *customerCustomizerServiceClient) MutateCustomerCustomizers(ctx context.Context, in *MutateCustomerCustomizersRequest, opts ...grpc.CallOption) (*MutateCustomerCustomizersResponse, error) {
 	out := new(MutateCustomerCustomizersResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.CustomerCustomizerService/MutateCustomerCustomizers", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.CustomerCustomizerService/MutateCustomerCustomizers", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -81,7 +81,7 @@ func _CustomerCustomizerService_MutateCustomerCustomizers_Handler(srv interface{
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.CustomerCustomizerService/MutateCustomerCustomizers",
+		FullMethod: "/google.ads.googleads.v10.services.CustomerCustomizerService/MutateCustomerCustomizers",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CustomerCustomizerServiceServer).MutateCustomerCustomizers(ctx, req.(*MutateCustomerCustomizersRequest))
@@ -93,7 +93,7 @@ func _CustomerCustomizerService_MutateCustomerCustomizers_Handler(srv interface{
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CustomerCustomizerService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v9.services.CustomerCustomizerService",
+	ServiceName: "google.ads.googleads.v10.services.CustomerCustomizerService",
 	HandlerType: (*CustomerCustomizerServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -102,5 +102,5 @@ var CustomerCustomizerService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v9/services/customer_customizer_service.proto",
+	Metadata: "google/ads/googleads/v10/services/customer_customizer_service.proto",
 }

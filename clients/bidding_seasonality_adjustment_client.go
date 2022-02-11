@@ -27,7 +27,6 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
 	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -38,7 +37,6 @@ var newBiddingSeasonalityAdjustmentClientHook clientHook
 
 // BiddingSeasonalityAdjustmentCallOptions contains the retry settings for each method of BiddingSeasonalityAdjustmentClient.
 type BiddingSeasonalityAdjustmentCallOptions struct {
-	GetBiddingSeasonalityAdjustment []gax.CallOption
 	MutateBiddingSeasonalityAdjustments []gax.CallOption
 }
 
@@ -56,18 +54,6 @@ func defaultBiddingSeasonalityAdjustmentGRPCClientOptions() []option.ClientOptio
 
 func defaultBiddingSeasonalityAdjustmentCallOptions() *BiddingSeasonalityAdjustmentCallOptions {
 	return &BiddingSeasonalityAdjustmentCallOptions{
-		GetBiddingSeasonalityAdjustment: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		MutateBiddingSeasonalityAdjustments: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -88,7 +74,6 @@ type internalBiddingSeasonalityAdjustmentClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetBiddingSeasonalityAdjustment(context.Context, *servicespb.GetBiddingSeasonalityAdjustmentRequest, ...gax.CallOption) (*resourcespb.BiddingSeasonalityAdjustment, error)
 	MutateBiddingSeasonalityAdjustments(context.Context, *servicespb.MutateBiddingSeasonalityAdjustmentsRequest, ...gax.CallOption) (*servicespb.MutateBiddingSeasonalityAdjustmentsResponse, error)
 }
 
@@ -125,11 +110,6 @@ func (c *BiddingSeasonalityAdjustmentClient) setGoogleClientInfo(keyval ...strin
 // Deprecated.
 func (c *BiddingSeasonalityAdjustmentClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetBiddingSeasonalityAdjustment returns the requested seasonality adjustment in full detail.
-func (c *BiddingSeasonalityAdjustmentClient) GetBiddingSeasonalityAdjustment(ctx context.Context, req *servicespb.GetBiddingSeasonalityAdjustmentRequest, opts ...gax.CallOption) (*resourcespb.BiddingSeasonalityAdjustment, error) {
-	return c.internalClient.GetBiddingSeasonalityAdjustment(ctx, req, opts...)
 }
 
 // MutateBiddingSeasonalityAdjustments creates, updates, or removes seasonality adjustments.
@@ -217,27 +197,6 @@ func (c *biddingSeasonalityAdjustmentGRPCClient) setGoogleClientInfo(keyval ...s
 // the client is no longer required.
 func (c *biddingSeasonalityAdjustmentGRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *biddingSeasonalityAdjustmentGRPCClient) GetBiddingSeasonalityAdjustment(ctx context.Context, req *servicespb.GetBiddingSeasonalityAdjustmentRequest, opts ...gax.CallOption) (*resourcespb.BiddingSeasonalityAdjustment, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GetBiddingSeasonalityAdjustment[0:len((*c.CallOptions).GetBiddingSeasonalityAdjustment):len((*c.CallOptions).GetBiddingSeasonalityAdjustment)], opts...)
-	var resp *resourcespb.BiddingSeasonalityAdjustment
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.biddingSeasonalityAdjustmentClient.GetBiddingSeasonalityAdjustment(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *biddingSeasonalityAdjustmentGRPCClient) MutateBiddingSeasonalityAdjustments(ctx context.Context, req *servicespb.MutateBiddingSeasonalityAdjustmentsRequest, opts ...gax.CallOption) (*servicespb.MutateBiddingSeasonalityAdjustmentsResponse, error) {

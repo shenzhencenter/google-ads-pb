@@ -4,7 +4,6 @@ package services
 
 import (
 	context "context"
-	resources "github.com/shenzhencenter/google-ads-pb/resources"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -19,16 +18,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type CustomerManagerLinkServiceClient interface {
-	// Returns the requested CustomerManagerLink in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetCustomerManagerLink(ctx context.Context, in *GetCustomerManagerLinkRequest, opts ...grpc.CallOption) (*resources.CustomerManagerLink, error)
 	// Creates or updates customer manager links. Operation statuses are returned.
 	//
 	// List of thrown errors:
@@ -71,18 +60,9 @@ func NewCustomerManagerLinkServiceClient(cc grpc.ClientConnInterface) CustomerMa
 	return &customerManagerLinkServiceClient{cc}
 }
 
-func (c *customerManagerLinkServiceClient) GetCustomerManagerLink(ctx context.Context, in *GetCustomerManagerLinkRequest, opts ...grpc.CallOption) (*resources.CustomerManagerLink, error) {
-	out := new(resources.CustomerManagerLink)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.CustomerManagerLinkService/GetCustomerManagerLink", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *customerManagerLinkServiceClient) MutateCustomerManagerLink(ctx context.Context, in *MutateCustomerManagerLinkRequest, opts ...grpc.CallOption) (*MutateCustomerManagerLinkResponse, error) {
 	out := new(MutateCustomerManagerLinkResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.CustomerManagerLinkService/MutateCustomerManagerLink", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.CustomerManagerLinkService/MutateCustomerManagerLink", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -91,7 +71,7 @@ func (c *customerManagerLinkServiceClient) MutateCustomerManagerLink(ctx context
 
 func (c *customerManagerLinkServiceClient) MoveManagerLink(ctx context.Context, in *MoveManagerLinkRequest, opts ...grpc.CallOption) (*MoveManagerLinkResponse, error) {
 	out := new(MoveManagerLinkResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.CustomerManagerLinkService/MoveManagerLink", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.CustomerManagerLinkService/MoveManagerLink", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -102,16 +82,6 @@ func (c *customerManagerLinkServiceClient) MoveManagerLink(ctx context.Context, 
 // All implementations must embed UnimplementedCustomerManagerLinkServiceServer
 // for forward compatibility
 type CustomerManagerLinkServiceServer interface {
-	// Returns the requested CustomerManagerLink in full detail.
-	//
-	// List of thrown errors:
-	//   [AuthenticationError]()
-	//   [AuthorizationError]()
-	//   [HeaderError]()
-	//   [InternalError]()
-	//   [QuotaError]()
-	//   [RequestError]()
-	GetCustomerManagerLink(context.Context, *GetCustomerManagerLinkRequest) (*resources.CustomerManagerLink, error)
 	// Creates or updates customer manager links. Operation statuses are returned.
 	//
 	// List of thrown errors:
@@ -151,9 +121,6 @@ type CustomerManagerLinkServiceServer interface {
 type UnimplementedCustomerManagerLinkServiceServer struct {
 }
 
-func (UnimplementedCustomerManagerLinkServiceServer) GetCustomerManagerLink(context.Context, *GetCustomerManagerLinkRequest) (*resources.CustomerManagerLink, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetCustomerManagerLink not implemented")
-}
 func (UnimplementedCustomerManagerLinkServiceServer) MutateCustomerManagerLink(context.Context, *MutateCustomerManagerLinkRequest) (*MutateCustomerManagerLinkResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MutateCustomerManagerLink not implemented")
 }
@@ -174,24 +141,6 @@ func RegisterCustomerManagerLinkServiceServer(s grpc.ServiceRegistrar, srv Custo
 	s.RegisterService(&CustomerManagerLinkService_ServiceDesc, srv)
 }
 
-func _CustomerManagerLinkService_GetCustomerManagerLink_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetCustomerManagerLinkRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(CustomerManagerLinkServiceServer).GetCustomerManagerLink(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.CustomerManagerLinkService/GetCustomerManagerLink",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CustomerManagerLinkServiceServer).GetCustomerManagerLink(ctx, req.(*GetCustomerManagerLinkRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _CustomerManagerLinkService_MutateCustomerManagerLink_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MutateCustomerManagerLinkRequest)
 	if err := dec(in); err != nil {
@@ -202,7 +151,7 @@ func _CustomerManagerLinkService_MutateCustomerManagerLink_Handler(srv interface
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.CustomerManagerLinkService/MutateCustomerManagerLink",
+		FullMethod: "/google.ads.googleads.v10.services.CustomerManagerLinkService/MutateCustomerManagerLink",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CustomerManagerLinkServiceServer).MutateCustomerManagerLink(ctx, req.(*MutateCustomerManagerLinkRequest))
@@ -220,7 +169,7 @@ func _CustomerManagerLinkService_MoveManagerLink_Handler(srv interface{}, ctx co
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.CustomerManagerLinkService/MoveManagerLink",
+		FullMethod: "/google.ads.googleads.v10.services.CustomerManagerLinkService/MoveManagerLink",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CustomerManagerLinkServiceServer).MoveManagerLink(ctx, req.(*MoveManagerLinkRequest))
@@ -232,13 +181,9 @@ func _CustomerManagerLinkService_MoveManagerLink_Handler(srv interface{}, ctx co
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CustomerManagerLinkService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v9.services.CustomerManagerLinkService",
+	ServiceName: "google.ads.googleads.v10.services.CustomerManagerLinkService",
 	HandlerType: (*CustomerManagerLinkServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetCustomerManagerLink",
-			Handler:    _CustomerManagerLinkService_GetCustomerManagerLink_Handler,
-		},
 		{
 			MethodName: "MutateCustomerManagerLink",
 			Handler:    _CustomerManagerLinkService_MutateCustomerManagerLink_Handler,
@@ -249,5 +194,5 @@ var CustomerManagerLinkService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v9/services/customer_manager_link_service.proto",
+	Metadata: "google/ads/googleads/v10/services/customer_manager_link_service.proto",
 }

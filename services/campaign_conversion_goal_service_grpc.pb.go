@@ -33,7 +33,7 @@ func NewCampaignConversionGoalServiceClient(cc grpc.ClientConnInterface) Campaig
 
 func (c *campaignConversionGoalServiceClient) MutateCampaignConversionGoals(ctx context.Context, in *MutateCampaignConversionGoalsRequest, opts ...grpc.CallOption) (*MutateCampaignConversionGoalsResponse, error) {
 	out := new(MutateCampaignConversionGoalsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v9.services.CampaignConversionGoalService/MutateCampaignConversionGoals", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.CampaignConversionGoalService/MutateCampaignConversionGoals", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -81,7 +81,7 @@ func _CampaignConversionGoalService_MutateCampaignConversionGoals_Handler(srv in
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v9.services.CampaignConversionGoalService/MutateCampaignConversionGoals",
+		FullMethod: "/google.ads.googleads.v10.services.CampaignConversionGoalService/MutateCampaignConversionGoals",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CampaignConversionGoalServiceServer).MutateCampaignConversionGoals(ctx, req.(*MutateCampaignConversionGoalsRequest))
@@ -93,7 +93,7 @@ func _CampaignConversionGoalService_MutateCampaignConversionGoals_Handler(srv in
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CampaignConversionGoalService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v9.services.CampaignConversionGoalService",
+	ServiceName: "google.ads.googleads.v10.services.CampaignConversionGoalService",
 	HandlerType: (*CampaignConversionGoalServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -102,5 +102,5 @@ var CampaignConversionGoalService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v9/services/campaign_conversion_goal_service.proto",
+	Metadata: "google/ads/googleads/v10/services/campaign_conversion_goal_service.proto",
 }
