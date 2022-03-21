@@ -8,13 +8,16 @@ import (
 )
 
 func GetCustomer(ctx context.Context, conn *grpc.ClientConn, customerID string) {
-	request := services.GetCustomerRequest{
-		ResourceName: "customers/" + customerID,
+	request := services.SearchGoogleAdsRequest{
+		CustomerId: customerID,
+		Query: 	"SELECT customer.descriptive_name FROM customer WHERE customer.id = " + customerID,
 	}
-	customer, err := services.NewCustomerServiceClient(conn).GetCustomer(ctx, &request)
+	search, err := services.NewGoogleAdsServiceClient(conn).Search(ctx, &request)
 	if err != nil {
 		return
 	}
 
-	fmt.Println(*customer.DescriptiveName)
+	for _, resource := range search.Results {
+		fmt.Println(*resource.Customer.DescriptiveName)
+	}
 }
