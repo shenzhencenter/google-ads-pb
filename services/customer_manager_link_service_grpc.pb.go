@@ -18,7 +18,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type CustomerManagerLinkServiceClient interface {
-	// Creates or updates customer manager links. Operation statuses are returned.
+	// Updates customer manager links. Operation statuses are returned.
 	//
 	// List of thrown errors:
 	//   [AuthenticationError]()
@@ -82,7 +82,7 @@ func (c *customerManagerLinkServiceClient) MoveManagerLink(ctx context.Context, 
 // All implementations must embed UnimplementedCustomerManagerLinkServiceServer
 // for forward compatibility
 type CustomerManagerLinkServiceServer interface {
-	// Creates or updates customer manager links. Operation statuses are returned.
+	// Updates customer manager links. Operation statuses are returned.
 	//
 	// List of thrown errors:
 	//   [AuthenticationError]()

@@ -201,7 +201,7 @@ func (c *assetSetAssetGRPCClient) Close() error {
 
 func (c *assetSetAssetGRPCClient) MutateAssetSetAssets(ctx context.Context, req *servicespb.MutateAssetSetAssetsRequest, opts ...gax.CallOption) (*servicespb.MutateAssetSetAssetsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

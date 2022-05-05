@@ -235,7 +235,7 @@ func (c *adGroupCriterionGRPCClient) Close() error {
 
 func (c *adGroupCriterionGRPCClient) MutateAdGroupCriteria(ctx context.Context, req *servicespb.MutateAdGroupCriteriaRequest, opts ...gax.CallOption) (*servicespb.MutateAdGroupCriteriaResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

@@ -201,7 +201,7 @@ func (c *assetGroupSignalGRPCClient) Close() error {
 
 func (c *assetGroupSignalGRPCClient) MutateAssetGroupSignals(ctx context.Context, req *servicespb.MutateAssetGroupSignalsRequest, opts ...gax.CallOption) (*servicespb.MutateAssetGroupSignalsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

@@ -126,7 +126,7 @@ func (c *CustomerManagerLinkClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
 }
 
-// MutateCustomerManagerLink creates or updates customer manager links. Operation statuses are returned.
+// MutateCustomerManagerLink updates customer manager links. Operation statuses are returned.
 //
 // List of thrown errors:
 // AuthenticationError (at )
@@ -249,7 +249,7 @@ func (c *customerManagerLinkGRPCClient) Close() error {
 
 func (c *customerManagerLinkGRPCClient) MutateCustomerManagerLink(ctx context.Context, req *servicespb.MutateCustomerManagerLinkRequest, opts ...gax.CallOption) (*servicespb.MutateCustomerManagerLinkResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -270,7 +270,7 @@ func (c *customerManagerLinkGRPCClient) MutateCustomerManagerLink(ctx context.Co
 
 func (c *customerManagerLinkGRPCClient) MoveManagerLink(ctx context.Context, req *servicespb.MoveManagerLinkRequest, opts ...gax.CallOption) (*servicespb.MoveManagerLinkResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

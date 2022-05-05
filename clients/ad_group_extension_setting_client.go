@@ -231,7 +231,7 @@ func (c *adGroupExtensionSettingGRPCClient) Close() error {
 
 func (c *adGroupExtensionSettingGRPCClient) MutateAdGroupExtensionSettings(ctx context.Context, req *servicespb.MutateAdGroupExtensionSettingsRequest, opts ...gax.CallOption) (*servicespb.MutateAdGroupExtensionSettingsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

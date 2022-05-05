@@ -211,7 +211,7 @@ func (c *adGroupCriterionLabelGRPCClient) Close() error {
 
 func (c *adGroupCriterionLabelGRPCClient) MutateAdGroupCriterionLabels(ctx context.Context, req *servicespb.MutateAdGroupCriterionLabelsRequest, opts ...gax.CallOption) (*servicespb.MutateAdGroupCriterionLabelsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

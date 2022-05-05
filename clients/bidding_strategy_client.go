@@ -229,7 +229,7 @@ func (c *biddingStrategyGRPCClient) Close() error {
 
 func (c *biddingStrategyGRPCClient) MutateBiddingStrategies(ctx context.Context, req *servicespb.MutateBiddingStrategiesRequest, opts ...gax.CallOption) (*servicespb.MutateBiddingStrategiesResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

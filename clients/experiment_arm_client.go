@@ -210,7 +210,7 @@ func (c *experimentArmGRPCClient) Close() error {
 
 func (c *experimentArmGRPCClient) MutateExperimentArms(ctx context.Context, req *servicespb.MutateExperimentArmsRequest, opts ...gax.CallOption) (*servicespb.MutateExperimentArmsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

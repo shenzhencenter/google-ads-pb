@@ -206,7 +206,7 @@ func (c *keywordThemeConstantGRPCClient) Close() error {
 
 func (c *keywordThemeConstantGRPCClient) SuggestKeywordThemeConstants(ctx context.Context, req *servicespb.SuggestKeywordThemeConstantsRequest, opts ...gax.CallOption) (*servicespb.SuggestKeywordThemeConstantsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

@@ -201,7 +201,7 @@ func (c *biddingDataExclusionGRPCClient) Close() error {
 
 func (c *biddingDataExclusionGRPCClient) MutateBiddingDataExclusions(ctx context.Context, req *servicespb.MutateBiddingDataExclusionsRequest, opts ...gax.CallOption) (*servicespb.MutateBiddingDataExclusionsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

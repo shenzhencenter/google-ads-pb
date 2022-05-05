@@ -225,7 +225,7 @@ func (c *labelGRPCClient) Close() error {
 
 func (c *labelGRPCClient) MutateLabels(ctx context.Context, req *servicespb.MutateLabelsRequest, opts ...gax.CallOption) (*servicespb.MutateLabelsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

@@ -208,7 +208,7 @@ func (c *feedItemSetLinkGRPCClient) Close() error {
 
 func (c *feedItemSetLinkGRPCClient) MutateFeedItemSetLinks(ctx context.Context, req *servicespb.MutateFeedItemSetLinksRequest, opts ...gax.CallOption) (*servicespb.MutateFeedItemSetLinksResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

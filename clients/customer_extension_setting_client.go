@@ -228,7 +228,7 @@ func (c *customerExtensionSettingGRPCClient) Close() error {
 
 func (c *customerExtensionSettingGRPCClient) MutateCustomerExtensionSettings(ctx context.Context, req *servicespb.MutateCustomerExtensionSettingsRequest, opts ...gax.CallOption) (*servicespb.MutateCustomerExtensionSettingsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

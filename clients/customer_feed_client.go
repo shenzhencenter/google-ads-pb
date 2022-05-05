@@ -225,7 +225,7 @@ func (c *customerFeedGRPCClient) Close() error {
 
 func (c *customerFeedGRPCClient) MutateCustomerFeeds(ctx context.Context, req *servicespb.MutateCustomerFeedsRequest, opts ...gax.CallOption) (*servicespb.MutateCustomerFeedsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

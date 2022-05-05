@@ -230,7 +230,7 @@ func (c *campaignExtensionSettingGRPCClient) Close() error {
 
 func (c *campaignExtensionSettingGRPCClient) MutateCampaignExtensionSettings(ctx context.Context, req *servicespb.MutateCampaignExtensionSettingsRequest, opts ...gax.CallOption) (*servicespb.MutateCampaignExtensionSettingsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

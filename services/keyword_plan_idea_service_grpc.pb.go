@@ -30,6 +30,17 @@ type KeywordPlanIdeaServiceClient interface {
 	//   [QuotaError]()
 	//   [RequestError]()
 	GenerateKeywordIdeas(ctx context.Context, in *GenerateKeywordIdeasRequest, opts ...grpc.CallOption) (*GenerateKeywordIdeaResponse, error)
+	// Returns a list of keyword historical metrics.
+	//
+	// List of thrown errors:
+	//   [AuthenticationError]()
+	//   [AuthorizationError]()
+	//   [CollectionSizeError]()
+	//   [HeaderError]()
+	//   [InternalError]()
+	//   [QuotaError]()
+	//   [RequestError]()
+	GenerateKeywordHistoricalMetrics(ctx context.Context, in *GenerateKeywordHistoricalMetricsRequest, opts ...grpc.CallOption) (*GenerateKeywordHistoricalMetricsResponse, error)
 }
 
 type keywordPlanIdeaServiceClient struct {
@@ -43,6 +54,15 @@ func NewKeywordPlanIdeaServiceClient(cc grpc.ClientConnInterface) KeywordPlanIde
 func (c *keywordPlanIdeaServiceClient) GenerateKeywordIdeas(ctx context.Context, in *GenerateKeywordIdeasRequest, opts ...grpc.CallOption) (*GenerateKeywordIdeaResponse, error) {
 	out := new(GenerateKeywordIdeaResponse)
 	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.KeywordPlanIdeaService/GenerateKeywordIdeas", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *keywordPlanIdeaServiceClient) GenerateKeywordHistoricalMetrics(ctx context.Context, in *GenerateKeywordHistoricalMetricsRequest, opts ...grpc.CallOption) (*GenerateKeywordHistoricalMetricsResponse, error) {
+	out := new(GenerateKeywordHistoricalMetricsResponse)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.KeywordPlanIdeaService/GenerateKeywordHistoricalMetrics", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -65,6 +85,17 @@ type KeywordPlanIdeaServiceServer interface {
 	//   [QuotaError]()
 	//   [RequestError]()
 	GenerateKeywordIdeas(context.Context, *GenerateKeywordIdeasRequest) (*GenerateKeywordIdeaResponse, error)
+	// Returns a list of keyword historical metrics.
+	//
+	// List of thrown errors:
+	//   [AuthenticationError]()
+	//   [AuthorizationError]()
+	//   [CollectionSizeError]()
+	//   [HeaderError]()
+	//   [InternalError]()
+	//   [QuotaError]()
+	//   [RequestError]()
+	GenerateKeywordHistoricalMetrics(context.Context, *GenerateKeywordHistoricalMetricsRequest) (*GenerateKeywordHistoricalMetricsResponse, error)
 	mustEmbedUnimplementedKeywordPlanIdeaServiceServer()
 }
 
@@ -74,6 +105,9 @@ type UnimplementedKeywordPlanIdeaServiceServer struct {
 
 func (UnimplementedKeywordPlanIdeaServiceServer) GenerateKeywordIdeas(context.Context, *GenerateKeywordIdeasRequest) (*GenerateKeywordIdeaResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GenerateKeywordIdeas not implemented")
+}
+func (UnimplementedKeywordPlanIdeaServiceServer) GenerateKeywordHistoricalMetrics(context.Context, *GenerateKeywordHistoricalMetricsRequest) (*GenerateKeywordHistoricalMetricsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GenerateKeywordHistoricalMetrics not implemented")
 }
 func (UnimplementedKeywordPlanIdeaServiceServer) mustEmbedUnimplementedKeywordPlanIdeaServiceServer() {
 }
@@ -107,6 +141,24 @@ func _KeywordPlanIdeaService_GenerateKeywordIdeas_Handler(srv interface{}, ctx c
 	return interceptor(ctx, in, info, handler)
 }
 
+func _KeywordPlanIdeaService_GenerateKeywordHistoricalMetrics_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenerateKeywordHistoricalMetricsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(KeywordPlanIdeaServiceServer).GenerateKeywordHistoricalMetrics(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/google.ads.googleads.v10.services.KeywordPlanIdeaService/GenerateKeywordHistoricalMetrics",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(KeywordPlanIdeaServiceServer).GenerateKeywordHistoricalMetrics(ctx, req.(*GenerateKeywordHistoricalMetricsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // KeywordPlanIdeaService_ServiceDesc is the grpc.ServiceDesc for KeywordPlanIdeaService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -117,6 +169,10 @@ var KeywordPlanIdeaService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GenerateKeywordIdeas",
 			Handler:    _KeywordPlanIdeaService_GenerateKeywordIdeas_Handler,
+		},
+		{
+			MethodName: "GenerateKeywordHistoricalMetrics",
+			Handler:    _KeywordPlanIdeaService_GenerateKeywordHistoricalMetrics_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

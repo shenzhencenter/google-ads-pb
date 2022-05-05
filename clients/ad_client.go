@@ -269,7 +269,7 @@ func (c *adGRPCClient) Close() error {
 
 func (c *adGRPCClient) GetAd(ctx context.Context, req *servicespb.GetAdRequest, opts ...gax.CallOption) (*resourcespb.Ad, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -290,7 +290,7 @@ func (c *adGRPCClient) GetAd(ctx context.Context, req *servicespb.GetAdRequest, 
 
 func (c *adGRPCClient) MutateAds(ctx context.Context, req *servicespb.MutateAdsRequest, opts ...gax.CallOption) (*servicespb.MutateAdsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

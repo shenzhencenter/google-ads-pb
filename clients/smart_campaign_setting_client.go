@@ -200,7 +200,7 @@ func (c *smartCampaignSettingGRPCClient) Close() error {
 
 func (c *smartCampaignSettingGRPCClient) MutateSmartCampaignSettings(ctx context.Context, req *servicespb.MutateSmartCampaignSettingsRequest, opts ...gax.CallOption) (*servicespb.MutateSmartCampaignSettingsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

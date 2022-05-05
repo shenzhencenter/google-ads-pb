@@ -339,7 +339,7 @@ func (c *keywordPlanGRPCClient) Close() error {
 
 func (c *keywordPlanGRPCClient) MutateKeywordPlans(ctx context.Context, req *servicespb.MutateKeywordPlansRequest, opts ...gax.CallOption) (*servicespb.MutateKeywordPlansResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -360,7 +360,7 @@ func (c *keywordPlanGRPCClient) MutateKeywordPlans(ctx context.Context, req *ser
 
 func (c *keywordPlanGRPCClient) GenerateForecastCurve(ctx context.Context, req *servicespb.GenerateForecastCurveRequest, opts ...gax.CallOption) (*servicespb.GenerateForecastCurveResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -381,7 +381,7 @@ func (c *keywordPlanGRPCClient) GenerateForecastCurve(ctx context.Context, req *
 
 func (c *keywordPlanGRPCClient) GenerateForecastTimeSeries(ctx context.Context, req *servicespb.GenerateForecastTimeSeriesRequest, opts ...gax.CallOption) (*servicespb.GenerateForecastTimeSeriesResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -402,7 +402,7 @@ func (c *keywordPlanGRPCClient) GenerateForecastTimeSeries(ctx context.Context, 
 
 func (c *keywordPlanGRPCClient) GenerateForecastMetrics(ctx context.Context, req *servicespb.GenerateForecastMetricsRequest, opts ...gax.CallOption) (*servicespb.GenerateForecastMetricsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -423,7 +423,7 @@ func (c *keywordPlanGRPCClient) GenerateForecastMetrics(ctx context.Context, req
 
 func (c *keywordPlanGRPCClient) GenerateHistoricalMetrics(ctx context.Context, req *servicespb.GenerateHistoricalMetricsRequest, opts ...gax.CallOption) (*servicespb.GenerateHistoricalMetricsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

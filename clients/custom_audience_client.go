@@ -215,7 +215,7 @@ func (c *customAudienceGRPCClient) Close() error {
 
 func (c *customAudienceGRPCClient) MutateCustomAudiences(ctx context.Context, req *servicespb.MutateCustomAudiencesRequest, opts ...gax.CallOption) (*servicespb.MutateCustomAudiencesResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

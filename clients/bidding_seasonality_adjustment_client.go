@@ -201,7 +201,7 @@ func (c *biddingSeasonalityAdjustmentGRPCClient) Close() error {
 
 func (c *biddingSeasonalityAdjustmentGRPCClient) MutateBiddingSeasonalityAdjustments(ctx context.Context, req *servicespb.MutateBiddingSeasonalityAdjustmentsRequest, opts ...gax.CallOption) (*servicespb.MutateBiddingSeasonalityAdjustmentsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

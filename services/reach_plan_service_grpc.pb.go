@@ -18,7 +18,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ReachPlanServiceClient interface {
-	// Returns the list of plannable locations (for example, countries & DMAs).
+	// Returns the list of plannable locations (for example, countries).
 	//
 	// List of thrown errors:
 	//   [AuthenticationError]()
@@ -115,7 +115,7 @@ func (c *reachPlanServiceClient) GenerateReachForecast(ctx context.Context, in *
 // All implementations must embed UnimplementedReachPlanServiceServer
 // for forward compatibility
 type ReachPlanServiceServer interface {
-	// Returns the list of plannable locations (for example, countries & DMAs).
+	// Returns the list of plannable locations (for example, countries).
 	//
 	// List of thrown errors:
 	//   [AuthenticationError]()

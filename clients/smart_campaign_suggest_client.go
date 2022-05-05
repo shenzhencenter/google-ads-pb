@@ -239,7 +239,7 @@ func (c *smartCampaignSuggestGRPCClient) Close() error {
 
 func (c *smartCampaignSuggestGRPCClient) SuggestSmartCampaignBudgetOptions(ctx context.Context, req *servicespb.SuggestSmartCampaignBudgetOptionsRequest, opts ...gax.CallOption) (*servicespb.SuggestSmartCampaignBudgetOptionsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -260,7 +260,7 @@ func (c *smartCampaignSuggestGRPCClient) SuggestSmartCampaignBudgetOptions(ctx c
 
 func (c *smartCampaignSuggestGRPCClient) SuggestSmartCampaignAd(ctx context.Context, req *servicespb.SuggestSmartCampaignAdRequest, opts ...gax.CallOption) (*servicespb.SuggestSmartCampaignAdResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -281,7 +281,7 @@ func (c *smartCampaignSuggestGRPCClient) SuggestSmartCampaignAd(ctx context.Cont
 
 func (c *smartCampaignSuggestGRPCClient) SuggestKeywordThemes(ctx context.Context, req *servicespb.SuggestKeywordThemesRequest, opts ...gax.CallOption) (*servicespb.SuggestKeywordThemesResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

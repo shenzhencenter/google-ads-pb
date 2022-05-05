@@ -215,7 +215,7 @@ func (c *adParameterGRPCClient) Close() error {
 
 func (c *adParameterGRPCClient) MutateAdParameters(ctx context.Context, req *servicespb.MutateAdParametersRequest, opts ...gax.CallOption) (*servicespb.MutateAdParametersResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

@@ -210,7 +210,7 @@ func (c *invoiceGRPCClient) Close() error {
 
 func (c *invoiceGRPCClient) ListInvoices(ctx context.Context, req *servicespb.ListInvoicesRequest, opts ...gax.CallOption) (*servicespb.ListInvoicesResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

@@ -201,7 +201,7 @@ func (c *customerConversionGoalGRPCClient) Close() error {
 
 func (c *customerConversionGoalGRPCClient) MutateCustomerConversionGoals(ctx context.Context, req *servicespb.MutateCustomerConversionGoalsRequest, opts ...gax.CallOption) (*servicespb.MutateCustomerConversionGoalsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

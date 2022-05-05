@@ -225,7 +225,7 @@ func (c *adGroupFeedGRPCClient) Close() error {
 
 func (c *adGroupFeedGRPCClient) MutateAdGroupFeeds(ctx context.Context, req *servicespb.MutateAdGroupFeedsRequest, opts ...gax.CallOption) (*servicespb.MutateAdGroupFeedsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

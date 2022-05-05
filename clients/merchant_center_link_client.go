@@ -266,7 +266,7 @@ func (c *merchantCenterLinkGRPCClient) Close() error {
 
 func (c *merchantCenterLinkGRPCClient) ListMerchantCenterLinks(ctx context.Context, req *servicespb.ListMerchantCenterLinksRequest, opts ...gax.CallOption) (*servicespb.ListMerchantCenterLinksResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -287,7 +287,7 @@ func (c *merchantCenterLinkGRPCClient) ListMerchantCenterLinks(ctx context.Conte
 
 func (c *merchantCenterLinkGRPCClient) GetMerchantCenterLink(ctx context.Context, req *servicespb.GetMerchantCenterLinkRequest, opts ...gax.CallOption) (*resourcespb.MerchantCenterLink, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -308,7 +308,7 @@ func (c *merchantCenterLinkGRPCClient) GetMerchantCenterLink(ctx context.Context
 
 func (c *merchantCenterLinkGRPCClient) MutateMerchantCenterLink(ctx context.Context, req *servicespb.MutateMerchantCenterLinkRequest, opts ...gax.CallOption) (*servicespb.MutateMerchantCenterLinkResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

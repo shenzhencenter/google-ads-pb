@@ -82,11 +82,10 @@ type ListPlannableLocationsResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// The list of locations available for planning (Countries, DMAs,
-	// sub-countries).
-	// For locations like Countries and DMAs see
-	// https://developers.google.com/google-ads/api/reference/data/geotargets for
-	// more information.
+	// The list of locations available for planning.
+	// See
+	// https://developers.google.com/google-ads/api/reference/data/geotargets
+	// for sample locations.
 	PlannableLocations []*PlannableLocation `protobuf:"bytes,1,rep,name=plannable_locations,json=plannableLocations,proto3" json:"plannable_locations,omitempty"`
 }
 
@@ -129,8 +128,7 @@ func (x *ListPlannableLocationsResponse) GetPlannableLocations() []*PlannableLoc
 	return nil
 }
 
-// A plannable location: a country, a DMA, a metro region, a tv region,
-// a province.
+// A plannable location: country, metro region, province, etc.
 type PlannableLocation struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -138,10 +136,10 @@ type PlannableLocation struct {
 
 	// The location identifier.
 	Id *string `protobuf:"bytes,4,opt,name=id,proto3,oneof" json:"id,omitempty"`
-	// The unique location name in english.
+	// The unique location name in English.
 	Name *string `protobuf:"bytes,5,opt,name=name,proto3,oneof" json:"name,omitempty"`
-	// The parent country, not present if location is a country.
-	// If present will always be a GeoTargetConstant ID. Additional information,
+	// The parent country (not present if location is a country).
+	// If present, will always be a GeoTargetConstant ID. Additional information
 	// such as country name is provided by
 	// [ReachPlanService.ListPlannableLocations][google.ads.googleads.v10.services.ReachPlanService.ListPlannableLocations] or
 	// [GoogleAdsService.Search/SearchStream][].
@@ -227,7 +225,7 @@ type ListPlannableProductsRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Required. The ID of the selected location for planning. To list the available
-	// plannable location ids use [ReachPlanService.ListPlannableLocations][google.ads.googleads.v10.services.ReachPlanService.ListPlannableLocations].
+	// plannable location IDs use [ReachPlanService.ListPlannableLocations][google.ads.googleads.v10.services.ReachPlanService.ListPlannableLocations].
 	PlannableLocationId string `protobuf:"bytes,2,opt,name=plannable_location_id,json=plannableLocationId,proto3" json:"plannable_location_id,omitempty"`
 }
 
@@ -325,8 +323,10 @@ type ProductMetadata struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// The code associated with the ad product. E.g. BUMPER, TRUEVIEW_IN_STREAM
-	// To list the available plannable product codes use ListPlannableProducts.
+	// The code associated with the ad product (for example: BUMPER,
+	// TRUEVIEW_IN_STREAM).
+	// To list the available plannable product codes use
+	// [ReachPlanService.ListPlannableProducts][google.ads.googleads.v10.services.ReachPlanService.ListPlannableProducts].
 	PlannableProductCode *string `protobuf:"bytes,4,opt,name=plannable_product_code,json=plannableProductCode,proto3,oneof" json:"plannable_product_code,omitempty"`
 	// The name associated with the ad product.
 	PlannableProductName string `protobuf:"bytes,3,opt,name=plannable_product_name,json=plannableProductName,proto3" json:"plannable_product_name,omitempty"`
@@ -402,7 +402,7 @@ type PlannableTargeting struct {
 	// Targetable devices for the ad product.
 	// TABLET device targeting is automatically applied to reported metrics
 	// when MOBILE targeting is selected for CPM_MASTHEAD,
-	// GOOGLE_PREFERRED_BUMPER and GOOGLE_PREFERRED_SHORT products.
+	// GOOGLE_PREFERRED_BUMPER, and GOOGLE_PREFERRED_SHORT products.
 	Devices []*common.DeviceInfo `protobuf:"bytes,3,rep,name=devices,proto3" json:"devices,omitempty"`
 	// Targetable networks for the ad product.
 	Networks []enums.ReachPlanNetworkEnum_ReachPlanNetwork `protobuf:"varint,4,rep,packed,name=networks,proto3,enum=google.ads.googleads.v10.enums.ReachPlanNetworkEnum_ReachPlanNetwork" json:"networks,omitempty"`
@@ -476,7 +476,7 @@ type GenerateProductMixIdeasRequest struct {
 
 	// Required. The ID of the customer.
 	CustomerId string `protobuf:"bytes,1,opt,name=customer_id,json=customerId,proto3" json:"customer_id,omitempty"`
-	// Required. The ID of the location, this is one of the ids returned by
+	// Required. The ID of the location, this is one of the IDs returned by
 	// [ReachPlanService.ListPlannableLocations][google.ads.googleads.v10.services.ReachPlanService.ListPlannableLocations].
 	PlannableLocationId string `protobuf:"bytes,6,opt,name=plannable_location_id,json=plannableLocationId,proto3" json:"plannable_location_id,omitempty"`
 	// Required. Currency code.
@@ -576,8 +576,8 @@ type Preferences struct {
 	// True if ad will only show on the top content.
 	// If not set, default is false.
 	TopContentOnly *bool `protobuf:"varint,8,opt,name=top_content_only,json=topContentOnly,proto3,oneof" json:"top_content_only,omitempty"`
-	// True if the price guaranteed. The cost of serving the ad is agreed upfront
-	// and not subject to an auction.
+	// True if the price is guaranteed. The cost of serving the ad is agreed
+	// upfront and not subject to an auction.
 	// If not set, default is any value.
 	HasGuaranteedPrice *bool `protobuf:"varint,9,opt,name=has_guaranteed_price,json=hasGuaranteedPrice,proto3,oneof" json:"has_guaranteed_price,omitempty"`
 }
@@ -772,16 +772,16 @@ type GenerateReachForecastRequest struct {
 	CurrencyCode *string `protobuf:"bytes,9,opt,name=currency_code,json=currencyCode,proto3,oneof" json:"currency_code,omitempty"`
 	// Required. Campaign duration.
 	CampaignDuration *CampaignDuration `protobuf:"bytes,3,opt,name=campaign_duration,json=campaignDuration,proto3" json:"campaign_duration,omitempty"`
-	// Desired cookie frequency cap that will be applied to each planned product.
+	// Desired cookie frequency cap to be applied to each planned product.
 	// This is equivalent to the frequency cap exposed in Google Ads when creating
 	// a campaign, it represents the maximum number of times an ad can be shown to
 	// the same user.
-	// If not specified no cap is applied.
+	// If not specified, no cap is applied.
 	//
 	// This field is deprecated in v4 and will eventually be removed.
 	// Please use cookie_frequency_cap_setting instead.
 	CookieFrequencyCap *int32 `protobuf:"varint,10,opt,name=cookie_frequency_cap,json=cookieFrequencyCap,proto3,oneof" json:"cookie_frequency_cap,omitempty"`
-	// Desired cookie frequency cap that will be applied to each planned product.
+	// Desired cookie frequency cap to be applied to each planned product.
 	// This is equivalent to the frequency cap exposed in Google Ads when creating
 	// a campaign, it represents the maximum number of times an ad can be shown to
 	// the same user during a specified time interval.
@@ -1190,13 +1190,13 @@ type PlannedProduct struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Required. Selected product for planning.
-	// The code associated with the ad product. E.g. Trueview, Bumper
+	// The code associated with the ad product (for example: Trueview, Bumper).
 	// To list the available plannable product codes use
 	// [ReachPlanService.ListPlannableProducts][google.ads.googleads.v10.services.ReachPlanService.ListPlannableProducts].
 	PlannableProductCode *string `protobuf:"bytes,3,opt,name=plannable_product_code,json=plannableProductCode,proto3,oneof" json:"plannable_product_code,omitempty"`
 	// Required. Maximum budget allocation in micros for the selected product.
 	// The value is specified in the selected planning currency_code.
-	// E.g. 1 000 000$ = 1 000 000 000 000 micros.
+	// For example: 1 000 000$ = 1 000 000 000 000 micros.
 	BudgetMicros *int64 `protobuf:"varint,4,opt,name=budget_micros,json=budgetMicros,proto3,oneof" json:"budget_micros,omitempty"`
 }
 

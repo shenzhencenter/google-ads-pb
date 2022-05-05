@@ -333,7 +333,7 @@ func (c *batchJobGRPCClient) Close() error {
 
 func (c *batchJobGRPCClient) MutateBatchJob(ctx context.Context, req *servicespb.MutateBatchJobRequest, opts ...gax.CallOption) (*servicespb.MutateBatchJobResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -398,7 +398,7 @@ func (c *batchJobGRPCClient) ListBatchJobResults(ctx context.Context, req *servi
 
 func (c *batchJobGRPCClient) RunBatchJob(ctx context.Context, req *servicespb.RunBatchJobRequest, opts ...gax.CallOption) (*RunBatchJobOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -421,7 +421,7 @@ func (c *batchJobGRPCClient) RunBatchJob(ctx context.Context, req *servicespb.Ru
 
 func (c *batchJobGRPCClient) AddBatchJobOperations(ctx context.Context, req *servicespb.AddBatchJobOperationsRequest, opts ...gax.CallOption) (*servicespb.AddBatchJobOperationsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

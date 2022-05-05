@@ -238,7 +238,7 @@ func (c *conversionUploadGRPCClient) Close() error {
 
 func (c *conversionUploadGRPCClient) UploadClickConversions(ctx context.Context, req *servicespb.UploadClickConversionsRequest, opts ...gax.CallOption) (*servicespb.UploadClickConversionsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -259,7 +259,7 @@ func (c *conversionUploadGRPCClient) UploadClickConversions(ctx context.Context,
 
 func (c *conversionUploadGRPCClient) UploadCallConversions(ctx context.Context, req *servicespb.UploadCallConversionsRequest, opts ...gax.CallOption) (*servicespb.UploadCallConversionsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

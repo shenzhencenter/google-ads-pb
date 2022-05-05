@@ -213,7 +213,7 @@ func (c *customInterestGRPCClient) Close() error {
 
 func (c *customInterestGRPCClient) MutateCustomInterests(ctx context.Context, req *servicespb.MutateCustomInterestsRequest, opts ...gax.CallOption) (*servicespb.MutateCustomInterestsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

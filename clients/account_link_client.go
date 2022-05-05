@@ -247,7 +247,7 @@ func (c *accountLinkGRPCClient) Close() error {
 
 func (c *accountLinkGRPCClient) CreateAccountLink(ctx context.Context, req *servicespb.CreateAccountLinkRequest, opts ...gax.CallOption) (*servicespb.CreateAccountLinkResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -268,7 +268,7 @@ func (c *accountLinkGRPCClient) CreateAccountLink(ctx context.Context, req *serv
 
 func (c *accountLinkGRPCClient) MutateAccountLink(ctx context.Context, req *servicespb.MutateAccountLinkRequest, opts ...gax.CallOption) (*servicespb.MutateAccountLinkResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

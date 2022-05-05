@@ -432,7 +432,7 @@ func (c *campaignExperimentGRPCClient) Close() error {
 
 func (c *campaignExperimentGRPCClient) CreateCampaignExperiment(ctx context.Context, req *servicespb.CreateCampaignExperimentRequest, opts ...gax.CallOption) (*CreateCampaignExperimentOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -455,7 +455,7 @@ func (c *campaignExperimentGRPCClient) CreateCampaignExperiment(ctx context.Cont
 
 func (c *campaignExperimentGRPCClient) MutateCampaignExperiments(ctx context.Context, req *servicespb.MutateCampaignExperimentsRequest, opts ...gax.CallOption) (*servicespb.MutateCampaignExperimentsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -476,7 +476,7 @@ func (c *campaignExperimentGRPCClient) MutateCampaignExperiments(ctx context.Con
 
 func (c *campaignExperimentGRPCClient) GraduateCampaignExperiment(ctx context.Context, req *servicespb.GraduateCampaignExperimentRequest, opts ...gax.CallOption) (*servicespb.GraduateCampaignExperimentResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -497,7 +497,7 @@ func (c *campaignExperimentGRPCClient) GraduateCampaignExperiment(ctx context.Co
 
 func (c *campaignExperimentGRPCClient) PromoteCampaignExperiment(ctx context.Context, req *servicespb.PromoteCampaignExperimentRequest, opts ...gax.CallOption) (*PromoteCampaignExperimentOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -520,7 +520,7 @@ func (c *campaignExperimentGRPCClient) PromoteCampaignExperiment(ctx context.Con
 
 func (c *campaignExperimentGRPCClient) EndCampaignExperiment(ctx context.Context, req *servicespb.EndCampaignExperimentRequest, opts ...gax.CallOption) error {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

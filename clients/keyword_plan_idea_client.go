@@ -40,6 +40,7 @@ var newKeywordPlanIdeaClientHook clientHook
 // KeywordPlanIdeaCallOptions contains the retry settings for each method of KeywordPlanIdeaClient.
 type KeywordPlanIdeaCallOptions struct {
 	GenerateKeywordIdeas []gax.CallOption
+	GenerateKeywordHistoricalMetrics []gax.CallOption
 }
 
 func defaultKeywordPlanIdeaGRPCClientOptions() []option.ClientOption {
@@ -68,6 +69,18 @@ func defaultKeywordPlanIdeaCallOptions() *KeywordPlanIdeaCallOptions {
 				})
 			}),
 		},
+		GenerateKeywordHistoricalMetrics: []gax.CallOption{
+			gax.WithRetry(func() gax.Retryer {
+				return gax.OnCodes([]codes.Code{
+					codes.Unavailable,
+					codes.DeadlineExceeded,
+				}, gax.Backoff{
+					Initial:    5000 * time.Millisecond,
+					Max:        60000 * time.Millisecond,
+					Multiplier: 1.30,
+				})
+			}),
+		},
 	}
 }
 
@@ -77,6 +90,7 @@ type internalKeywordPlanIdeaClient interface {
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
 	GenerateKeywordIdeas(context.Context, *servicespb.GenerateKeywordIdeasRequest, ...gax.CallOption) *GenerateKeywordIdeaResultIterator
+	GenerateKeywordHistoricalMetrics(context.Context, *servicespb.GenerateKeywordHistoricalMetricsRequest, ...gax.CallOption) (*servicespb.GenerateKeywordHistoricalMetricsResponse, error)
 }
 
 // KeywordPlanIdeaClient is a client for interacting with Google Ads API.
@@ -127,6 +141,20 @@ func (c *KeywordPlanIdeaClient) Connection() *grpc.ClientConn {
 // RequestError (at )
 func (c *KeywordPlanIdeaClient) GenerateKeywordIdeas(ctx context.Context, req *servicespb.GenerateKeywordIdeasRequest, opts ...gax.CallOption) *GenerateKeywordIdeaResultIterator {
 	return c.internalClient.GenerateKeywordIdeas(ctx, req, opts...)
+}
+
+// GenerateKeywordHistoricalMetrics returns a list of keyword historical metrics.
+//
+// List of thrown errors:
+// AuthenticationError (at )
+// AuthorizationError (at )
+// CollectionSizeError (at )
+// HeaderError (at )
+// InternalError (at )
+// QuotaError (at )
+// RequestError (at )
+func (c *KeywordPlanIdeaClient) GenerateKeywordHistoricalMetrics(ctx context.Context, req *servicespb.GenerateKeywordHistoricalMetricsRequest, opts ...gax.CallOption) (*servicespb.GenerateKeywordHistoricalMetricsResponse, error) {
+	return c.internalClient.GenerateKeywordHistoricalMetrics(ctx, req, opts...)
 }
 
 // keywordPlanIdeaGRPCClient is a client for interacting with Google Ads API over gRPC transport.
@@ -252,6 +280,27 @@ func (c *keywordPlanIdeaGRPCClient) GenerateKeywordIdeas(ctx context.Context, re
 	it.pageInfo.Token = req.GetPageToken()
 
 	return it
+}
+
+func (c *keywordPlanIdeaGRPCClient) GenerateKeywordHistoricalMetrics(ctx context.Context, req *servicespb.GenerateKeywordHistoricalMetricsRequest, opts ...gax.CallOption) (*servicespb.GenerateKeywordHistoricalMetricsResponse, error) {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
+	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	opts = append((*c.CallOptions).GenerateKeywordHistoricalMetrics[0:len((*c.CallOptions).GenerateKeywordHistoricalMetrics):len((*c.CallOptions).GenerateKeywordHistoricalMetrics)], opts...)
+	var resp *servicespb.GenerateKeywordHistoricalMetricsResponse
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		resp, err = c.keywordPlanIdeaClient.GenerateKeywordHistoricalMetrics(ctx, req, settings.GRPC...)
+		return err
+	}, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return resp, nil
 }
 
 // GenerateKeywordIdeaResultIterator manages a stream of *servicespb.GenerateKeywordIdeaResult.

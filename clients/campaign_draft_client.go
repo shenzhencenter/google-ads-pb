@@ -313,7 +313,7 @@ func (c *campaignDraftGRPCClient) Close() error {
 
 func (c *campaignDraftGRPCClient) MutateCampaignDrafts(ctx context.Context, req *servicespb.MutateCampaignDraftsRequest, opts ...gax.CallOption) (*servicespb.MutateCampaignDraftsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -334,7 +334,7 @@ func (c *campaignDraftGRPCClient) MutateCampaignDrafts(ctx context.Context, req 
 
 func (c *campaignDraftGRPCClient) PromoteCampaignDraft(ctx context.Context, req *servicespb.PromoteCampaignDraftRequest, opts ...gax.CallOption) (*PromoteCampaignDraftOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
