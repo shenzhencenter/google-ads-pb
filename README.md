@@ -120,7 +120,7 @@ for _, customer := range listAccessibleCustomersResponse.ResourceNames {
 
 ### Campaign management
 
-- GetCampaignsByLabel [[GRPC](https://github.com/shenzhencenter/google-ads-pb/blob/main/examples/campaign_management/get_campaigns_by_label.go) [HTTP](https://github.com/shenzhencenter/google-ads-pb/blob/main/examples/campaign_management/http_get_campaigns_by_label.go)]
+- GetCampaignsByLabel [[GRPC](https://github.com/shenzhencenter/google-ads-pb/blob/main/examples/campaign_management/get_campaigns_by_label.go)] [[HTTP](https://github.com/shenzhencenter/google-ads-pb/blob/main/examples/campaign_management/http_get_campaigns_by_label.go)]
 
 ## Related
 
