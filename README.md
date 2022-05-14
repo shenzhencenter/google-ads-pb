@@ -8,7 +8,7 @@ This project is a client library for the [Google Ads API](https://developers.goo
 
 - Fully support for Google Ads API.
 - Support for GRPC calls.
-- Support for HTTP calls by using [protojson](google.golang.org/protobuf/encoding/protojson).
+- Support for HTTP calls by using [protojson](https://google.golang.org/protobuf/encoding/protojson).
 - Frequent updates based on [official repository](https://github.com/googleapis/googleapis).
 
 
