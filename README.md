@@ -67,7 +67,7 @@ for _, customer := range accessibleCustomers.ResourceNames {
 }
 ```
 
-4. Make HTTP calls with [protojson](google.golang.org/protobuf/encoding/protojson).
+4. Make HTTP calls with using [protojson](https://google.golang.org/protobuf/encoding/protojson).
 
 ```
 // 4.1 Set request
@@ -131,4 +131,4 @@ Here are some related projects
 
 ## Contributing
 
-Welcome to contribute more examples and documentation.
+Welcome to contribute more examples and documentations.
