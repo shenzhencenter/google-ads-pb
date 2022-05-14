@@ -1,48 +1,134 @@
-# google-ads-pb
 
-You can use the golang library to interact with the Google Ads API across grpc. This library is not the official Google Ads API library.
+# Google Ads API Client Library for Golang
 
-> Generated from [googleapis/ads/v10](https://github.com/googleapis/googleapis/tree/master/google/ads/googleads/v10)
+This project is a client library for the [Google Ads API](https://developers.google.com/google-ads/api/docs/start). Most of the code is generated from [googleapis](https://github.com/googleapis/googleapis/tree/master/google/ads/googleads). And this project only adds some examples and minor adjustments. Please note this is an unofficial project.
+
+
+## Features
+
+- Fully support for Google Ads API.
+- Support for GRPC calls.
+- Support for HTTP calls by using [protojson](google.golang.org/protobuf/encoding/protojson).
+- Frequent updates based on [official repository](https://github.com/googleapis/googleapis).
+
+
+## Requirements
+
+- Golang 1.4 or later.
+- Before starting, you'd better read the [OAuth2 guide](https://developers.google.com/google-ads/api/docs/oauth/overview).
+- Apply for a [developer token](https://developers.google.com/google-ads/api/docs/first-call/dev-token) if you don't already have one.
 
 ## Installation
 
 ```
-$ go get -d github.com/shenzhencenter/google-ads-pb
+go get -d github.com/shenzhencenter/google-ads-pb
 ```
+    
+## Getting started
 
-## Usage
-
-main.go contains some example functions. It works with environment variables:
-
-```
-export GOOGLE_CLIENT_ID=<your client id>
-export GOOGLE_CLIENT_SECRET=<your client secret>
-export GOOGLE_DEVELOPER_TOKEN=<your developer token>
-export GOOGLE_ACCESS_TOKEN=<your access token>
-export GOOGLE_REFRESH_TOKEN=<your refresh token>
-```
-
-You can run the example functions with:
+1. Set the environment variables.
 
 ```
-$ go run main.go
+export ACCESS_TOKEN=<your access token>
+export DEVELOPER_TOKEN=<your developer token>
+export CUSTOMER_ID=<your customer id>
 ```
 
-It will output the result to stdout:
+2. Create a GRPC connection.
 
 ```
-# output example 1: list accessible Google Ads accounts
-ResourceName: customers/1231231234
+ctx := context.Background()
 
-# output example 2: get a Google Ads account information
-test-google-account-name
+headers := metadata.Pairs(
+  "authorization", "Bearer "+os.Getenv("ACCESS_TOKEN"),
+  "developer-token", os.Getenv("DEVELOPER_TOKEN"),
+  "login-customer-id", os.Getenv("CUSTOMER_ID"),
+)
+ctx = metadata.NewOutgoingContext(ctx, headers)
 
-# output example 3: search all campaigns
-customers/1231234/campaigns/12341234123
+cred := grpc.WithTransportCredentials(credentials.NewClientTLSFromCert(nil, ""))
+conn, err := grpc.Dial("googleads.googleapis.com:443", cred)
+if err != nil { panic(err) }
+defer conn.Close()
 ```
 
-See [main.go](https://github.com/shenzhencenter/google-ads-pb/blob/main/main.go) and [examples](https://github.com/shenzhencenter/google-ads-pb/tree/main/examples) for more details.
+3. Make the first call.
 
-## Documentation
+```
+customerServiceClient := services.NewCustomerServiceClient(conn)
+accessibleCustomers, err := customerServiceClient.ListAccessibleCustomers(
+  ctx, 
+  &services.ListAccessibleCustomersRequest{},
+)
+if err != nil { panic(err) }
 
-Documentation is in progress. Welcome to contribute!
+for _, customer := range accessibleCustomers.ResourceNames {
+  fmt.Println("ResourceName: " + customer)
+}
+```
+
+4. Make HTTP calls with using [protojson](https://google.golang.org/protobuf/encoding/protojson).
+
+```
+// 4.1 Set request
+listAccessibleCustomersRequest, err := protojson.Marshal(
+  &services.ListAccessibleCustomersRequest{},
+)
+if err != nil { panic(err) }
+request, err := http.NewRequest(
+  "GET", "https://googleads.googleapis.com/v10/customers:listAccessibleCustomers",
+  bytes.NewBuffer(listAccessibleCustomersRequest))
+if err != nil { panic(err) }
+
+// 4.2 Set request headers
+header := make(http.Header)
+header.Set("authorization", os.Getenv("ACCESS_TOKEN"))
+header.Set("developer-token", os.Getenv("DEVELOPER_TOKEN"))
+header.Set("login-customer-id", os.Getenv("CUSTOMER_ID"))
+request.Header = header
+
+// 4.3 Send request
+client := &http.Client{}
+response, err := client.Do(request)
+if err != nil { panic(err) }
+defer response.Body.Close()
+
+// 4.4 Read the response
+var responseBody []byte
+if responseBody, err = ioutil.ReadAll(response.Body); err != nil {
+  panic(err)
+}
+
+// 4.5 Print the response
+listAccessibleCustomersResponse := new(services.ListAccessibleCustomersResponse)
+if err := protojson.Unmarshal(responseBody, listAccessibleCustomersResponse); err != nil {
+  panic(err)
+}
+for _, customer := range listAccessibleCustomersResponse.ResourceNames {
+  fmt.Println("ResourceName: " + customer)
+}
+```
+
+
+## Examples
+
+
+### Account management
+
+- ListAccessiableCustomer [[GRPC](https://github.com/shenzhencenter/google-ads-pb/blob/main/examples/account_management/list_accessible_customers.go)] [[HTTP](https://github.com/shenzhencenter/google-ads-pb/blob/main/examples/account_management/http_list_accessible_customers.go)]
+- GetAccountInformation [[GRPC](https://github.com/shenzhencenter/google-ads-pb/blob/main/examples/account_management/get_account_information.go)] [[HTTP](https://github.com/shenzhencenter/google-ads-pb/blob/main/examples/account_management/http_get_account_information.go)]
+
+### Campaign management
+
+- GetCampaignsByLabel [[GRPC](https://github.com/shenzhencenter/google-ads-pb/blob/main/examples/campaign_management/get_campaigns_by_label.go) [HTTP](https://github.com/shenzhencenter/google-ads-pb/blob/main/examples/campaign_management/http_get_campaigns_by_label.go)]
+
+## Related
+
+Here are some related projects
+
+- [Google APIs](https://github.com/googleapis/googleapis)
+- [Google Ads API Client Library for PHP](https://github.com/googleads/google-ads-php)
+
+## Contributing
+
+Welcome to contribute more examples and documentations.
