@@ -14,15 +14,9 @@ func RunHTTPExample_ListAccessibleCustomers() {
 }
 
 func ListAccessibleCustomers_HTTP() {
-	listAccessibleCustomersRequest, err := protojson.Marshal(
-		&services.ListAccessibleCustomersRequest{},
-	)
-	if err != nil {
-		panic(err)
-	}
 	listAccessibleCustomersResponse := new(services.ListAccessibleCustomersResponse)
 
-	response := examples.HttpRequest(listAccessibleCustomersRequest,
+	response := examples.HttpRequest(nil,
 		examples.ListAccessibleCustomersMehtod,
 		examples.ListAccessibleCustomersPath,
 		examples.WithHeader("authorization", os.Getenv("ACCESS_TOKEN")),
