@@ -57,7 +57,7 @@ func NewAdGroupFeedServiceClient(cc grpc.ClientConnInterface) AdGroupFeedService
 
 func (c *adGroupFeedServiceClient) MutateAdGroupFeeds(ctx context.Context, in *MutateAdGroupFeedsRequest, opts ...grpc.CallOption) (*MutateAdGroupFeedsResponse, error) {
 	out := new(MutateAdGroupFeedsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.AdGroupFeedService/MutateAdGroupFeeds", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.AdGroupFeedService/MutateAdGroupFeeds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -128,7 +128,7 @@ func _AdGroupFeedService_MutateAdGroupFeeds_Handler(srv interface{}, ctx context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v10.services.AdGroupFeedService/MutateAdGroupFeeds",
+		FullMethod: "/google.ads.googleads.v11.services.AdGroupFeedService/MutateAdGroupFeeds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AdGroupFeedServiceServer).MutateAdGroupFeeds(ctx, req.(*MutateAdGroupFeedsRequest))
@@ -140,7 +140,7 @@ func _AdGroupFeedService_MutateAdGroupFeeds_Handler(srv interface{}, ctx context
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AdGroupFeedService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v10.services.AdGroupFeedService",
+	ServiceName: "google.ads.googleads.v11.services.AdGroupFeedService",
 	HandlerType: (*AdGroupFeedServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -149,5 +149,5 @@ var AdGroupFeedService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v10/services/ad_group_feed_service.proto",
+	Metadata: "google/ads/googleads/v11/services/ad_group_feed_service.proto",
 }

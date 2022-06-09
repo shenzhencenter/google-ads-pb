@@ -58,7 +58,7 @@ func NewExtensionFeedItemServiceClient(cc grpc.ClientConnInterface) ExtensionFee
 
 func (c *extensionFeedItemServiceClient) MutateExtensionFeedItems(ctx context.Context, in *MutateExtensionFeedItemsRequest, opts ...grpc.CallOption) (*MutateExtensionFeedItemsResponse, error) {
 	out := new(MutateExtensionFeedItemsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.ExtensionFeedItemService/MutateExtensionFeedItems", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.ExtensionFeedItemService/MutateExtensionFeedItems", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -131,7 +131,7 @@ func _ExtensionFeedItemService_MutateExtensionFeedItems_Handler(srv interface{},
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v10.services.ExtensionFeedItemService/MutateExtensionFeedItems",
+		FullMethod: "/google.ads.googleads.v11.services.ExtensionFeedItemService/MutateExtensionFeedItems",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ExtensionFeedItemServiceServer).MutateExtensionFeedItems(ctx, req.(*MutateExtensionFeedItemsRequest))
@@ -143,7 +143,7 @@ func _ExtensionFeedItemService_MutateExtensionFeedItems_Handler(srv interface{},
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ExtensionFeedItemService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v10.services.ExtensionFeedItemService",
+	ServiceName: "google.ads.googleads.v11.services.ExtensionFeedItemService",
 	HandlerType: (*ExtensionFeedItemServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -152,5 +152,5 @@ var ExtensionFeedItemService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v10/services/extension_feed_item_service.proto",
+	Metadata: "google/ads/googleads/v11/services/extension_feed_item_service.proto",
 }

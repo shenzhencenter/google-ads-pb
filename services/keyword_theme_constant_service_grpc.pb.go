@@ -40,7 +40,7 @@ func NewKeywordThemeConstantServiceClient(cc grpc.ClientConnInterface) KeywordTh
 
 func (c *keywordThemeConstantServiceClient) SuggestKeywordThemeConstants(ctx context.Context, in *SuggestKeywordThemeConstantsRequest, opts ...grpc.CallOption) (*SuggestKeywordThemeConstantsResponse, error) {
 	out := new(SuggestKeywordThemeConstantsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.KeywordThemeConstantService/SuggestKeywordThemeConstants", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.KeywordThemeConstantService/SuggestKeywordThemeConstants", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -95,7 +95,7 @@ func _KeywordThemeConstantService_SuggestKeywordThemeConstants_Handler(srv inter
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v10.services.KeywordThemeConstantService/SuggestKeywordThemeConstants",
+		FullMethod: "/google.ads.googleads.v11.services.KeywordThemeConstantService/SuggestKeywordThemeConstants",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(KeywordThemeConstantServiceServer).SuggestKeywordThemeConstants(ctx, req.(*SuggestKeywordThemeConstantsRequest))
@@ -107,7 +107,7 @@ func _KeywordThemeConstantService_SuggestKeywordThemeConstants_Handler(srv inter
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var KeywordThemeConstantService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v10.services.KeywordThemeConstantService",
+	ServiceName: "google.ads.googleads.v11.services.KeywordThemeConstantService",
 	HandlerType: (*KeywordThemeConstantServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -116,5 +116,5 @@ var KeywordThemeConstantService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v10/services/keyword_theme_constant_service.proto",
+	Metadata: "google/ads/googleads/v11/services/keyword_theme_constant_service.proto",
 }

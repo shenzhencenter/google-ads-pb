@@ -14,9 +14,9 @@ import (
 const (
 	EndPoint                      = "googleads.googleapis.com:443"
 	ListAccessibleCustomersMehtod = "GET"
-	ListAccessibleCustomersPath   = "https://googleads.googleapis.com/v10/customers:listAccessibleCustomers"
+	ListAccessibleCustomersPath   = "https://googleads.googleapis.com/v11/customers:listAccessibleCustomers"
 	GoogleAdsSearchMehtod         = "POST"
-	GoogleAdsSearchPath           = "https://googleads.googleapis.com/v10/customers/%s/googleAds:search"
+	GoogleAdsSearchPath           = "https://googleads.googleapis.com/v11/customers/%s/googleAds:search"
 )
 
 type (

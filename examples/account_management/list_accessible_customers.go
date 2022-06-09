@@ -24,7 +24,7 @@ func ListAccessibleCustomers(ctx context.Context, conn *grpc.ClientConn) {
 	customers, err := services.NewCustomerServiceClient(conn).
 		ListAccessibleCustomers(ctx, &services.ListAccessibleCustomersRequest{})
 	if err != nil {
-		fmt.Printf("%+#v", err)
+		fmt.Printf("%+#v", err.Error())
 		return
 	}
 

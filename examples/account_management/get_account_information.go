@@ -32,6 +32,6 @@ func GetAccountInformation(ctx context.Context, conn *grpc.ClientConn, customerI
 	}
 
 	for _, resource := range search.Results {
-		fmt.Println(*resource.Customer.DescriptiveName)
+		fmt.Println(resource.Customer.GetDescriptiveName())
 	}
 }

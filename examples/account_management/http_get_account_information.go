@@ -36,6 +36,6 @@ func GetAccountInformation_HTTP(customerID string) {
 	}
 
 	for _, resource := range searchGoogleAdsResponse.Results {
-		fmt.Println(*resource.Customer.DescriptiveName)
+		fmt.Println(resource.Customer.GetDescriptiveName())
 	}
 }

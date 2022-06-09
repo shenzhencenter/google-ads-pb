@@ -33,7 +33,7 @@ func NewConversionValueRuleSetServiceClient(cc grpc.ClientConnInterface) Convers
 
 func (c *conversionValueRuleSetServiceClient) MutateConversionValueRuleSets(ctx context.Context, in *MutateConversionValueRuleSetsRequest, opts ...grpc.CallOption) (*MutateConversionValueRuleSetsResponse, error) {
 	out := new(MutateConversionValueRuleSetsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.ConversionValueRuleSetService/MutateConversionValueRuleSets", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.ConversionValueRuleSetService/MutateConversionValueRuleSets", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -81,7 +81,7 @@ func _ConversionValueRuleSetService_MutateConversionValueRuleSets_Handler(srv in
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v10.services.ConversionValueRuleSetService/MutateConversionValueRuleSets",
+		FullMethod: "/google.ads.googleads.v11.services.ConversionValueRuleSetService/MutateConversionValueRuleSets",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ConversionValueRuleSetServiceServer).MutateConversionValueRuleSets(ctx, req.(*MutateConversionValueRuleSetsRequest))
@@ -93,7 +93,7 @@ func _ConversionValueRuleSetService_MutateConversionValueRuleSets_Handler(srv in
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ConversionValueRuleSetService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v10.services.ConversionValueRuleSetService",
+	ServiceName: "google.ads.googleads.v11.services.ConversionValueRuleSetService",
 	HandlerType: (*ConversionValueRuleSetServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -102,5 +102,5 @@ var ConversionValueRuleSetService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v10/services/conversion_value_rule_set_service.proto",
+	Metadata: "google/ads/googleads/v11/services/conversion_value_rule_set_service.proto",
 }

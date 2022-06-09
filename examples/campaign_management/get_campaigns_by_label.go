@@ -36,9 +36,9 @@ func GetCampaignsByLabel(ctx context.Context, conn *grpc.ClientConn, customerID 
 	}
 
 	for _, resource := range response.Results {
-		fmt.Printf("Campaign ID: %d\n", *resource.Campaign.Id)
-		fmt.Printf("Campaign name: %s\n", *resource.Campaign.Name)
-		fmt.Printf("Label ID: %d\n", *resource.Label.Id)
-		fmt.Printf("Label name: %s\n", *resource.Label.Name)
+		fmt.Printf("Campaign ID: %d\n", resource.Campaign.GetId())
+		fmt.Printf("Campaign name: %s\n", resource.Campaign.GetName())
+		fmt.Printf("Label ID: %d\n", resource.Label.GetId())
+		fmt.Printf("Label name: %s\n", resource.Label.GetName())
 	}
 }

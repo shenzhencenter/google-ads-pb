@@ -33,7 +33,7 @@ func NewBiddingDataExclusionServiceClient(cc grpc.ClientConnInterface) BiddingDa
 
 func (c *biddingDataExclusionServiceClient) MutateBiddingDataExclusions(ctx context.Context, in *MutateBiddingDataExclusionsRequest, opts ...grpc.CallOption) (*MutateBiddingDataExclusionsResponse, error) {
 	out := new(MutateBiddingDataExclusionsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.BiddingDataExclusionService/MutateBiddingDataExclusions", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.BiddingDataExclusionService/MutateBiddingDataExclusions", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -81,7 +81,7 @@ func _BiddingDataExclusionService_MutateBiddingDataExclusions_Handler(srv interf
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v10.services.BiddingDataExclusionService/MutateBiddingDataExclusions",
+		FullMethod: "/google.ads.googleads.v11.services.BiddingDataExclusionService/MutateBiddingDataExclusions",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(BiddingDataExclusionServiceServer).MutateBiddingDataExclusions(ctx, req.(*MutateBiddingDataExclusionsRequest))
@@ -93,7 +93,7 @@ func _BiddingDataExclusionService_MutateBiddingDataExclusions_Handler(srv interf
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var BiddingDataExclusionService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v10.services.BiddingDataExclusionService",
+	ServiceName: "google.ads.googleads.v11.services.BiddingDataExclusionService",
 	HandlerType: (*BiddingDataExclusionServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -102,5 +102,5 @@ var BiddingDataExclusionService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v10/services/bidding_data_exclusion_service.proto",
+	Metadata: "google/ads/googleads/v11/services/bidding_data_exclusion_service.proto",
 }

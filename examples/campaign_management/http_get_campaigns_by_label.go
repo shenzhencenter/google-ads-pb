@@ -36,9 +36,9 @@ func GetCampaignsByLabel_HTTP(customerID string, labelID string) {
 	}
 
 	for _, resource := range searchGoogleAdsResponse.Results {
-		fmt.Printf("Campaign ID: %d\n", *resource.Campaign.Id)
-		fmt.Printf("Campaign name: %s\n", *resource.Campaign.Name)
-		fmt.Printf("Label ID: %d\n", *resource.Label.Id)
-		fmt.Printf("Label name: %s\n", *resource.Label.Name)
+		fmt.Printf("Campaign ID: %d\n", resource.Campaign.GetId())
+		fmt.Printf("Campaign name: %s\n", resource.Campaign.GetName())
+		fmt.Printf("Label ID: %d\n", resource.Label.GetId())
+		fmt.Printf("Label name: %s\n", resource.Label.GetName())
 	}
 }

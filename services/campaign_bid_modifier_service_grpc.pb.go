@@ -57,7 +57,7 @@ func NewCampaignBidModifierServiceClient(cc grpc.ClientConnInterface) CampaignBi
 
 func (c *campaignBidModifierServiceClient) MutateCampaignBidModifiers(ctx context.Context, in *MutateCampaignBidModifiersRequest, opts ...grpc.CallOption) (*MutateCampaignBidModifiersResponse, error) {
 	out := new(MutateCampaignBidModifiersResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.CampaignBidModifierService/MutateCampaignBidModifiers", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.CampaignBidModifierService/MutateCampaignBidModifiers", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -129,7 +129,7 @@ func _CampaignBidModifierService_MutateCampaignBidModifiers_Handler(srv interfac
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v10.services.CampaignBidModifierService/MutateCampaignBidModifiers",
+		FullMethod: "/google.ads.googleads.v11.services.CampaignBidModifierService/MutateCampaignBidModifiers",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CampaignBidModifierServiceServer).MutateCampaignBidModifiers(ctx, req.(*MutateCampaignBidModifiersRequest))
@@ -141,7 +141,7 @@ func _CampaignBidModifierService_MutateCampaignBidModifiers_Handler(srv interfac
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CampaignBidModifierService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v10.services.CampaignBidModifierService",
+	ServiceName: "google.ads.googleads.v11.services.CampaignBidModifierService",
 	HandlerType: (*CampaignBidModifierServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -150,5 +150,5 @@ var CampaignBidModifierService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v10/services/campaign_bid_modifier_service.proto",
+	Metadata: "google/ads/googleads/v11/services/campaign_bid_modifier_service.proto",
 }

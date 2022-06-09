@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.26.0-devel
 // 	protoc        v3.17.3
-// source: google/ads/googleads/v10/services/conversion_adjustment_upload_service.proto
+// source: google/ads/googleads/v11/services/conversion_adjustment_upload_service.proto
 
 package services
 
@@ -39,7 +39,7 @@ const (
 )
 
 // Request message for
-// [ConversionAdjustmentUploadService.UploadConversionAdjustments][google.ads.googleads.v10.services.ConversionAdjustmentUploadService.UploadConversionAdjustments].
+// [ConversionAdjustmentUploadService.UploadConversionAdjustments][google.ads.googleads.v11.services.ConversionAdjustmentUploadService.UploadConversionAdjustments].
 type UploadConversionAdjustmentsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -65,7 +65,7 @@ type UploadConversionAdjustmentsRequest struct {
 func (x *UploadConversionAdjustmentsRequest) Reset() {
 	*x = UploadConversionAdjustmentsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_msgTypes[0]
+		mi := &file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -78,7 +78,7 @@ func (x *UploadConversionAdjustmentsRequest) String() string {
 func (*UploadConversionAdjustmentsRequest) ProtoMessage() {}
 
 func (x *UploadConversionAdjustmentsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -91,7 +91,7 @@ func (x *UploadConversionAdjustmentsRequest) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use UploadConversionAdjustmentsRequest.ProtoReflect.Descriptor instead.
 func (*UploadConversionAdjustmentsRequest) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *UploadConversionAdjustmentsRequest) GetCustomerId() string {
@@ -123,7 +123,7 @@ func (x *UploadConversionAdjustmentsRequest) GetValidateOnly() bool {
 }
 
 // Response message for
-// [ConversionAdjustmentUploadService.UploadConversionAdjustments][google.ads.googleads.v10.services.ConversionAdjustmentUploadService.UploadConversionAdjustments].
+// [ConversionAdjustmentUploadService.UploadConversionAdjustments][google.ads.googleads.v11.services.ConversionAdjustmentUploadService.UploadConversionAdjustments].
 type UploadConversionAdjustmentsResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -146,7 +146,7 @@ type UploadConversionAdjustmentsResponse struct {
 func (x *UploadConversionAdjustmentsResponse) Reset() {
 	*x = UploadConversionAdjustmentsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_msgTypes[1]
+		mi := &file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -159,7 +159,7 @@ func (x *UploadConversionAdjustmentsResponse) String() string {
 func (*UploadConversionAdjustmentsResponse) ProtoMessage() {}
 
 func (x *UploadConversionAdjustmentsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -172,7 +172,7 @@ func (x *UploadConversionAdjustmentsResponse) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use UploadConversionAdjustmentsResponse.ProtoReflect.Descriptor instead.
 func (*UploadConversionAdjustmentsResponse) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_rawDescGZIP(), []int{1}
+	return file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *UploadConversionAdjustmentsResponse) GetPartialFailureError() *status.Status {
@@ -213,7 +213,7 @@ type ConversionAdjustment struct {
 	// "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
 	AdjustmentDateTime *string `protobuf:"bytes,9,opt,name=adjustment_date_time,json=adjustmentDateTime,proto3,oneof" json:"adjustment_date_time,omitempty"`
 	// The adjustment type.
-	AdjustmentType enums.ConversionAdjustmentTypeEnum_ConversionAdjustmentType `protobuf:"varint,5,opt,name=adjustment_type,json=adjustmentType,proto3,enum=google.ads.googleads.v10.enums.ConversionAdjustmentTypeEnum_ConversionAdjustmentType" json:"adjustment_type,omitempty"`
+	AdjustmentType enums.ConversionAdjustmentTypeEnum_ConversionAdjustmentType `protobuf:"varint,5,opt,name=adjustment_type,json=adjustmentType,proto3,enum=google.ads.googleads.v11.enums.ConversionAdjustmentTypeEnum_ConversionAdjustmentType" json:"adjustment_type,omitempty"`
 	// Information needed to restate the conversion's value.
 	// Required for restatements. Should not be supplied for retractions. An error
 	// will be returned if provided for a retraction.
@@ -240,7 +240,7 @@ type ConversionAdjustment struct {
 func (x *ConversionAdjustment) Reset() {
 	*x = ConversionAdjustment{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_msgTypes[2]
+		mi := &file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -253,7 +253,7 @@ func (x *ConversionAdjustment) String() string {
 func (*ConversionAdjustment) ProtoMessage() {}
 
 func (x *ConversionAdjustment) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_msgTypes[2]
+	mi := &file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -266,7 +266,7 @@ func (x *ConversionAdjustment) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConversionAdjustment.ProtoReflect.Descriptor instead.
 func (*ConversionAdjustment) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_rawDescGZIP(), []int{2}
+	return file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *ConversionAdjustment) GetGclidDateTimePair() *GclidDateTimePair {
@@ -349,7 +349,7 @@ type RestatementValue struct {
 func (x *RestatementValue) Reset() {
 	*x = RestatementValue{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_msgTypes[3]
+		mi := &file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -362,7 +362,7 @@ func (x *RestatementValue) String() string {
 func (*RestatementValue) ProtoMessage() {}
 
 func (x *RestatementValue) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_msgTypes[3]
+	mi := &file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -375,7 +375,7 @@ func (x *RestatementValue) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RestatementValue.ProtoReflect.Descriptor instead.
 func (*RestatementValue) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_rawDescGZIP(), []int{3}
+	return file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *RestatementValue) GetAdjustedValue() float64 {
@@ -411,7 +411,7 @@ type GclidDateTimePair struct {
 func (x *GclidDateTimePair) Reset() {
 	*x = GclidDateTimePair{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_msgTypes[4]
+		mi := &file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -424,7 +424,7 @@ func (x *GclidDateTimePair) String() string {
 func (*GclidDateTimePair) ProtoMessage() {}
 
 func (x *GclidDateTimePair) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_msgTypes[4]
+	mi := &file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -437,7 +437,7 @@ func (x *GclidDateTimePair) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GclidDateTimePair.ProtoReflect.Descriptor instead.
 func (*GclidDateTimePair) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_rawDescGZIP(), []int{4}
+	return file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *GclidDateTimePair) GetGclid() string {
@@ -471,13 +471,13 @@ type ConversionAdjustmentResult struct {
 	// "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
 	AdjustmentDateTime *string `protobuf:"bytes,8,opt,name=adjustment_date_time,json=adjustmentDateTime,proto3,oneof" json:"adjustment_date_time,omitempty"`
 	// The adjustment type.
-	AdjustmentType enums.ConversionAdjustmentTypeEnum_ConversionAdjustmentType `protobuf:"varint,5,opt,name=adjustment_type,json=adjustmentType,proto3,enum=google.ads.googleads.v10.enums.ConversionAdjustmentTypeEnum_ConversionAdjustmentType" json:"adjustment_type,omitempty"`
+	AdjustmentType enums.ConversionAdjustmentTypeEnum_ConversionAdjustmentType `protobuf:"varint,5,opt,name=adjustment_type,json=adjustmentType,proto3,enum=google.ads.googleads.v11.enums.ConversionAdjustmentTypeEnum_ConversionAdjustmentType" json:"adjustment_type,omitempty"`
 }
 
 func (x *ConversionAdjustmentResult) Reset() {
 	*x = ConversionAdjustmentResult{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_msgTypes[5]
+		mi := &file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -490,7 +490,7 @@ func (x *ConversionAdjustmentResult) String() string {
 func (*ConversionAdjustmentResult) ProtoMessage() {}
 
 func (x *ConversionAdjustmentResult) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_msgTypes[5]
+	mi := &file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -503,7 +503,7 @@ func (x *ConversionAdjustmentResult) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConversionAdjustmentResult.ProtoReflect.Descriptor instead.
 func (*ConversionAdjustmentResult) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_rawDescGZIP(), []int{5}
+	return file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *ConversionAdjustmentResult) GetGclidDateTimePair() *GclidDateTimePair {
@@ -541,22 +541,22 @@ func (x *ConversionAdjustmentResult) GetAdjustmentType() enums.ConversionAdjustm
 	return enums.ConversionAdjustmentTypeEnum_UNSPECIFIED
 }
 
-var File_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_rawDesc = []byte{
+var file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_rawDesc = []byte{
 	0x0a, 0x4c, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x30, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x31, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69,
 	0x63, 0x65, 0x73, 0x2f, 0x63, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x5f, 0x61,
 	0x64, 0x6a, 0x75, 0x73, 0x74, 0x6d, 0x65, 0x6e, 0x74, 0x5f, 0x75, 0x70, 0x6c, 0x6f, 0x61, 0x64,
 	0x5f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x21,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x30, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
 	0x73, 0x1a, 0x37, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x30, 0x2f, 0x63, 0x6f, 0x6d, 0x6d,
+	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x31, 0x2f, 0x63, 0x6f, 0x6d, 0x6d,
 	0x6f, 0x6e, 0x2f, 0x6f, 0x66, 0x66, 0x6c, 0x69, 0x6e, 0x65, 0x5f, 0x75, 0x73, 0x65, 0x72, 0x5f,
 	0x64, 0x61, 0x74, 0x61, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x3f, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
-	0x2f, 0x76, 0x31, 0x30, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x63, 0x6f, 0x6e, 0x76, 0x65,
+	0x2f, 0x76, 0x31, 0x31, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x63, 0x6f, 0x6e, 0x76, 0x65,
 	0x72, 0x73, 0x69, 0x6f, 0x6e, 0x5f, 0x61, 0x64, 0x6a, 0x75, 0x73, 0x74, 0x6d, 0x65, 0x6e, 0x74,
 	0x5f, 0x74, 0x79, 0x70, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x1c, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x6e, 0x6e, 0x6f, 0x74, 0x61, 0x74, 0x69,
@@ -574,7 +574,7 @@ var file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_
 	0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x5f, 0x61, 0x64, 0x6a, 0x75, 0x73, 0x74, 0x6d, 0x65,
 	0x6e, 0x74, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x37, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
-	0x2e, 0x76, 0x31, 0x30, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x43, 0x6f,
+	0x2e, 0x76, 0x31, 0x31, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x43, 0x6f,
 	0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x41, 0x64, 0x6a, 0x75, 0x73, 0x74, 0x6d, 0x65,
 	0x6e, 0x74, 0x42, 0x03, 0xe0, 0x41, 0x02, 0x52, 0x15, 0x63, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73,
 	0x69, 0x6f, 0x6e, 0x41, 0x64, 0x6a, 0x75, 0x73, 0x74, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x12, 0x2c,
@@ -592,7 +592,7 @@ var file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_
 	0x72, 0x74, 0x69, 0x61, 0x6c, 0x46, 0x61, 0x69, 0x6c, 0x75, 0x72, 0x65, 0x45, 0x72, 0x72, 0x6f,
 	0x72, 0x12, 0x57, 0x0a, 0x07, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x73, 0x18, 0x02, 0x20, 0x03,
 	0x28, 0x0b, 0x32, 0x3d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x30, 0x2e, 0x73, 0x65,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x73, 0x65,
 	0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f,
 	0x6e, 0x41, 0x64, 0x6a, 0x75, 0x73, 0x74, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x73, 0x75, 0x6c,
 	0x74, 0x52, 0x07, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x73, 0x22, 0xb3, 0x05, 0x0a, 0x14, 0x43,
@@ -600,7 +600,7 @@ var file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_
 	0x65, 0x6e, 0x74, 0x12, 0x65, 0x0a, 0x14, 0x67, 0x63, 0x6c, 0x69, 0x64, 0x5f, 0x64, 0x61, 0x74,
 	0x65, 0x5f, 0x74, 0x69, 0x6d, 0x65, 0x5f, 0x70, 0x61, 0x69, 0x72, 0x18, 0x0c, 0x20, 0x01, 0x28,
 	0x0b, 0x32, 0x34, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x30, 0x2e, 0x73, 0x65, 0x72,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x73, 0x65, 0x72,
 	0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x47, 0x63, 0x6c, 0x69, 0x64, 0x44, 0x61, 0x74, 0x65, 0x54,
 	0x69, 0x6d, 0x65, 0x50, 0x61, 0x69, 0x72, 0x52, 0x11, 0x67, 0x63, 0x6c, 0x69, 0x64, 0x44, 0x61,
 	0x74, 0x65, 0x54, 0x69, 0x6d, 0x65, 0x50, 0x61, 0x69, 0x72, 0x12, 0x1e, 0x0a, 0x08, 0x6f, 0x72,
@@ -615,7 +615,7 @@ var file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_
 	0x88, 0x01, 0x01, 0x12, 0x7e, 0x0a, 0x0f, 0x61, 0x64, 0x6a, 0x75, 0x73, 0x74, 0x6d, 0x65, 0x6e,
 	0x74, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x18, 0x05, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x55, 0x2e, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x30, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x43, 0x6f,
+	0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x43, 0x6f,
 	0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x41, 0x64, 0x6a, 0x75, 0x73, 0x74, 0x6d, 0x65,
 	0x6e, 0x74, 0x54, 0x79, 0x70, 0x65, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x43, 0x6f, 0x6e, 0x76, 0x65,
 	0x72, 0x73, 0x69, 0x6f, 0x6e, 0x41, 0x64, 0x6a, 0x75, 0x73, 0x74, 0x6d, 0x65, 0x6e, 0x74, 0x54,
@@ -623,13 +623,13 @@ var file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_
 	0x79, 0x70, 0x65, 0x12, 0x60, 0x0a, 0x11, 0x72, 0x65, 0x73, 0x74, 0x61, 0x74, 0x65, 0x6d, 0x65,
 	0x6e, 0x74, 0x5f, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x06, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x33,
 	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x30, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
+	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
 	0x65, 0x73, 0x2e, 0x52, 0x65, 0x73, 0x74, 0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x56, 0x61,
 	0x6c, 0x75, 0x65, 0x52, 0x10, 0x72, 0x65, 0x73, 0x74, 0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74,
 	0x56, 0x61, 0x6c, 0x75, 0x65, 0x12, 0x5a, 0x0a, 0x10, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x69, 0x64,
 	0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32,
 	0x2f, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x30, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
 	0x6e, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x49, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x65, 0x72,
 	0x52, 0x0f, 0x75, 0x73, 0x65, 0x72, 0x49, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x65, 0x72,
 	0x73, 0x12, 0x22, 0x0a, 0x0a, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x61, 0x67, 0x65, 0x6e, 0x74, 0x18,
@@ -662,7 +662,7 @@ var file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_
 	0x6c, 0x69, 0x64, 0x5f, 0x64, 0x61, 0x74, 0x65, 0x5f, 0x74, 0x69, 0x6d, 0x65, 0x5f, 0x70, 0x61,
 	0x69, 0x72, 0x18, 0x09, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x34, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e,
-	0x76, 0x31, 0x30, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x47, 0x63, 0x6c,
+	0x76, 0x31, 0x31, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x47, 0x63, 0x6c,
 	0x69, 0x64, 0x44, 0x61, 0x74, 0x65, 0x54, 0x69, 0x6d, 0x65, 0x50, 0x61, 0x69, 0x72, 0x52, 0x11,
 	0x67, 0x63, 0x6c, 0x69, 0x64, 0x44, 0x61, 0x74, 0x65, 0x54, 0x69, 0x6d, 0x65, 0x50, 0x61, 0x69,
 	0x72, 0x12, 0x19, 0x0a, 0x08, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x18, 0x0a, 0x20,
@@ -676,7 +676,7 @@ var file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_
 	0x6d, 0x65, 0x88, 0x01, 0x01, 0x12, 0x7e, 0x0a, 0x0f, 0x61, 0x64, 0x6a, 0x75, 0x73, 0x74, 0x6d,
 	0x65, 0x6e, 0x74, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x18, 0x05, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x55,
 	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x30, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e,
+	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e,
 	0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x41, 0x64, 0x6a, 0x75, 0x73, 0x74,
 	0x6d, 0x65, 0x6e, 0x74, 0x54, 0x79, 0x70, 0x65, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x43, 0x6f, 0x6e,
 	0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x41, 0x64, 0x6a, 0x75, 0x73, 0x74, 0x6d, 0x65, 0x6e,
@@ -690,15 +690,15 @@ var file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_
 	0x70, 0x6c, 0x6f, 0x61, 0x64, 0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x41,
 	0x64, 0x6a, 0x75, 0x73, 0x74, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x12, 0x45, 0x2e, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64,
-	0x73, 0x2e, 0x76, 0x31, 0x30, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x55,
+	0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x55,
 	0x70, 0x6c, 0x6f, 0x61, 0x64, 0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x41,
 	0x64, 0x6a, 0x75, 0x73, 0x74, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
 	0x74, 0x1a, 0x46, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x30, 0x2e, 0x73, 0x65, 0x72,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x73, 0x65, 0x72,
 	0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x55, 0x70, 0x6c, 0x6f, 0x61, 0x64, 0x43, 0x6f, 0x6e, 0x76,
 	0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x41, 0x64, 0x6a, 0x75, 0x73, 0x74, 0x6d, 0x65, 0x6e, 0x74,
 	0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x7a, 0x82, 0xd3, 0xe4, 0x93, 0x02,
-	0x3f, 0x22, 0x3a, 0x2f, 0x76, 0x31, 0x30, 0x2f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72,
+	0x3f, 0x22, 0x3a, 0x2f, 0x76, 0x31, 0x31, 0x2f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72,
 	0x73, 0x2f, 0x7b, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x3d, 0x2a,
 	0x7d, 0x3a, 0x75, 0x70, 0x6c, 0x6f, 0x61, 0x64, 0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69,
 	0x6f, 0x6e, 0x41, 0x64, 0x6a, 0x75, 0x73, 0x74, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x3a, 0x01, 0x2a,
@@ -711,61 +711,61 @@ var file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_
 	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x63, 0x6f, 0x6d, 0x2f,
 	0x61, 0x75, 0x74, 0x68, 0x2f, 0x61, 0x64, 0x77, 0x6f, 0x72, 0x64, 0x73, 0x42, 0x92, 0x02, 0x0a,
 	0x25, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x30, 0x2e, 0x73, 0x65,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x73, 0x65,
 	0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x42, 0x26, 0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69,
 	0x6f, 0x6e, 0x41, 0x64, 0x6a, 0x75, 0x73, 0x74, 0x6d, 0x65, 0x6e, 0x74, 0x55, 0x70, 0x6c, 0x6f,
 	0x61, 0x64, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01,
 	0x5a, 0x49, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x67, 0x6f, 0x6c, 0x61, 0x6e, 0x67, 0x2e,
 	0x6f, 0x72, 0x67, 0x2f, 0x67, 0x65, 0x6e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x61, 0x70, 0x69, 0x73, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x30, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
+	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x31, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
 	0x65, 0x73, 0x3b, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0xa2, 0x02, 0x03, 0x47, 0x41,
 	0x41, 0xaa, 0x02, 0x21, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x41, 0x64, 0x73, 0x2e, 0x47,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e, 0x56, 0x31, 0x30, 0x2e, 0x53, 0x65, 0x72,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e, 0x56, 0x31, 0x31, 0x2e, 0x53, 0x65, 0x72,
 	0x76, 0x69, 0x63, 0x65, 0x73, 0xca, 0x02, 0x21, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x5c, 0x41,
-	0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x31, 0x30,
+	0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x31, 0x31,
 	0x5c, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0xea, 0x02, 0x25, 0x47, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x3a, 0x3a, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41,
-	0x64, 0x73, 0x3a, 0x3a, 0x56, 0x31, 0x30, 0x3a, 0x3a, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+	0x64, 0x73, 0x3a, 0x3a, 0x56, 0x31, 0x31, 0x3a, 0x3a, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
 	0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
-	file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_rawDescData = file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_rawDesc
+	file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_rawDescData = file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_rawDesc
 )
 
-func file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_rawDescData)
+func file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_rawDescData)
 	})
-	return file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_rawDescData
+	return file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_rawDescData
 }
 
-var file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
-var file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_goTypes = []interface{}{
-	(*UploadConversionAdjustmentsRequest)(nil),                       // 0: google.ads.googleads.v10.services.UploadConversionAdjustmentsRequest
-	(*UploadConversionAdjustmentsResponse)(nil),                      // 1: google.ads.googleads.v10.services.UploadConversionAdjustmentsResponse
-	(*ConversionAdjustment)(nil),                                     // 2: google.ads.googleads.v10.services.ConversionAdjustment
-	(*RestatementValue)(nil),                                         // 3: google.ads.googleads.v10.services.RestatementValue
-	(*GclidDateTimePair)(nil),                                        // 4: google.ads.googleads.v10.services.GclidDateTimePair
-	(*ConversionAdjustmentResult)(nil),                               // 5: google.ads.googleads.v10.services.ConversionAdjustmentResult
+var file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
+var file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_goTypes = []interface{}{
+	(*UploadConversionAdjustmentsRequest)(nil),                       // 0: google.ads.googleads.v11.services.UploadConversionAdjustmentsRequest
+	(*UploadConversionAdjustmentsResponse)(nil),                      // 1: google.ads.googleads.v11.services.UploadConversionAdjustmentsResponse
+	(*ConversionAdjustment)(nil),                                     // 2: google.ads.googleads.v11.services.ConversionAdjustment
+	(*RestatementValue)(nil),                                         // 3: google.ads.googleads.v11.services.RestatementValue
+	(*GclidDateTimePair)(nil),                                        // 4: google.ads.googleads.v11.services.GclidDateTimePair
+	(*ConversionAdjustmentResult)(nil),                               // 5: google.ads.googleads.v11.services.ConversionAdjustmentResult
 	(*status.Status)(nil),                                            // 6: google.rpc.Status
-	(enums.ConversionAdjustmentTypeEnum_ConversionAdjustmentType)(0), // 7: google.ads.googleads.v10.enums.ConversionAdjustmentTypeEnum.ConversionAdjustmentType
-	(*common.UserIdentifier)(nil),                                    // 8: google.ads.googleads.v10.common.UserIdentifier
+	(enums.ConversionAdjustmentTypeEnum_ConversionAdjustmentType)(0), // 7: google.ads.googleads.v11.enums.ConversionAdjustmentTypeEnum.ConversionAdjustmentType
+	(*common.UserIdentifier)(nil),                                    // 8: google.ads.googleads.v11.common.UserIdentifier
 }
-var file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_depIdxs = []int32{
-	2,  // 0: google.ads.googleads.v10.services.UploadConversionAdjustmentsRequest.conversion_adjustments:type_name -> google.ads.googleads.v10.services.ConversionAdjustment
-	6,  // 1: google.ads.googleads.v10.services.UploadConversionAdjustmentsResponse.partial_failure_error:type_name -> google.rpc.Status
-	5,  // 2: google.ads.googleads.v10.services.UploadConversionAdjustmentsResponse.results:type_name -> google.ads.googleads.v10.services.ConversionAdjustmentResult
-	4,  // 3: google.ads.googleads.v10.services.ConversionAdjustment.gclid_date_time_pair:type_name -> google.ads.googleads.v10.services.GclidDateTimePair
-	7,  // 4: google.ads.googleads.v10.services.ConversionAdjustment.adjustment_type:type_name -> google.ads.googleads.v10.enums.ConversionAdjustmentTypeEnum.ConversionAdjustmentType
-	3,  // 5: google.ads.googleads.v10.services.ConversionAdjustment.restatement_value:type_name -> google.ads.googleads.v10.services.RestatementValue
-	8,  // 6: google.ads.googleads.v10.services.ConversionAdjustment.user_identifiers:type_name -> google.ads.googleads.v10.common.UserIdentifier
-	4,  // 7: google.ads.googleads.v10.services.ConversionAdjustmentResult.gclid_date_time_pair:type_name -> google.ads.googleads.v10.services.GclidDateTimePair
-	7,  // 8: google.ads.googleads.v10.services.ConversionAdjustmentResult.adjustment_type:type_name -> google.ads.googleads.v10.enums.ConversionAdjustmentTypeEnum.ConversionAdjustmentType
-	0,  // 9: google.ads.googleads.v10.services.ConversionAdjustmentUploadService.UploadConversionAdjustments:input_type -> google.ads.googleads.v10.services.UploadConversionAdjustmentsRequest
-	1,  // 10: google.ads.googleads.v10.services.ConversionAdjustmentUploadService.UploadConversionAdjustments:output_type -> google.ads.googleads.v10.services.UploadConversionAdjustmentsResponse
+var file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_depIdxs = []int32{
+	2,  // 0: google.ads.googleads.v11.services.UploadConversionAdjustmentsRequest.conversion_adjustments:type_name -> google.ads.googleads.v11.services.ConversionAdjustment
+	6,  // 1: google.ads.googleads.v11.services.UploadConversionAdjustmentsResponse.partial_failure_error:type_name -> google.rpc.Status
+	5,  // 2: google.ads.googleads.v11.services.UploadConversionAdjustmentsResponse.results:type_name -> google.ads.googleads.v11.services.ConversionAdjustmentResult
+	4,  // 3: google.ads.googleads.v11.services.ConversionAdjustment.gclid_date_time_pair:type_name -> google.ads.googleads.v11.services.GclidDateTimePair
+	7,  // 4: google.ads.googleads.v11.services.ConversionAdjustment.adjustment_type:type_name -> google.ads.googleads.v11.enums.ConversionAdjustmentTypeEnum.ConversionAdjustmentType
+	3,  // 5: google.ads.googleads.v11.services.ConversionAdjustment.restatement_value:type_name -> google.ads.googleads.v11.services.RestatementValue
+	8,  // 6: google.ads.googleads.v11.services.ConversionAdjustment.user_identifiers:type_name -> google.ads.googleads.v11.common.UserIdentifier
+	4,  // 7: google.ads.googleads.v11.services.ConversionAdjustmentResult.gclid_date_time_pair:type_name -> google.ads.googleads.v11.services.GclidDateTimePair
+	7,  // 8: google.ads.googleads.v11.services.ConversionAdjustmentResult.adjustment_type:type_name -> google.ads.googleads.v11.enums.ConversionAdjustmentTypeEnum.ConversionAdjustmentType
+	0,  // 9: google.ads.googleads.v11.services.ConversionAdjustmentUploadService.UploadConversionAdjustments:input_type -> google.ads.googleads.v11.services.UploadConversionAdjustmentsRequest
+	1,  // 10: google.ads.googleads.v11.services.ConversionAdjustmentUploadService.UploadConversionAdjustments:output_type -> google.ads.googleads.v11.services.UploadConversionAdjustmentsResponse
 	10, // [10:11] is the sub-list for method output_type
 	9,  // [9:10] is the sub-list for method input_type
 	9,  // [9:9] is the sub-list for extension type_name
@@ -773,13 +773,13 @@ var file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_
 	0,  // [0:9] is the sub-list for field type_name
 }
 
-func init() { file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_init() }
-func file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_init() {
-	if File_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto != nil {
+func init() { file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_init() }
+func file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_init() {
+	if File_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UploadConversionAdjustmentsRequest); i {
 			case 0:
 				return &v.state
@@ -791,7 +791,7 @@ func file_google_ads_googleads_v10_services_conversion_adjustment_upload_service
 				return nil
 			}
 		}
-		file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UploadConversionAdjustmentsResponse); i {
 			case 0:
 				return &v.state
@@ -803,7 +803,7 @@ func file_google_ads_googleads_v10_services_conversion_adjustment_upload_service
 				return nil
 			}
 		}
-		file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ConversionAdjustment); i {
 			case 0:
 				return &v.state
@@ -815,7 +815,7 @@ func file_google_ads_googleads_v10_services_conversion_adjustment_upload_service
 				return nil
 			}
 		}
-		file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*RestatementValue); i {
 			case 0:
 				return &v.state
@@ -827,7 +827,7 @@ func file_google_ads_googleads_v10_services_conversion_adjustment_upload_service
 				return nil
 			}
 		}
-		file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GclidDateTimePair); i {
 			case 0:
 				return &v.state
@@ -839,7 +839,7 @@ func file_google_ads_googleads_v10_services_conversion_adjustment_upload_service
 				return nil
 			}
 		}
-		file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ConversionAdjustmentResult); i {
 			case 0:
 				return &v.state
@@ -852,26 +852,26 @@ func file_google_ads_googleads_v10_services_conversion_adjustment_upload_service
 			}
 		}
 	}
-	file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_msgTypes[2].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_msgTypes[3].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_msgTypes[4].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_msgTypes[5].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_msgTypes[2].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_msgTypes[3].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_msgTypes[4].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_msgTypes[5].OneofWrappers = []interface{}{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_rawDesc,
+			RawDescriptor: file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_depIdxs,
-		MessageInfos:      file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_depIdxs,
+		MessageInfos:      file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto = out.File
-	file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_rawDesc = nil
-	file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_goTypes = nil
-	file_google_ads_googleads_v10_services_conversion_adjustment_upload_service_proto_depIdxs = nil
+	File_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto = out.File
+	file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_rawDesc = nil
+	file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_goTypes = nil
+	file_google_ads_googleads_v11_services_conversion_adjustment_upload_service_proto_depIdxs = nil
 }

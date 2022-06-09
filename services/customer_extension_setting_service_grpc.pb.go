@@ -60,7 +60,7 @@ func NewCustomerExtensionSettingServiceClient(cc grpc.ClientConnInterface) Custo
 
 func (c *customerExtensionSettingServiceClient) MutateCustomerExtensionSettings(ctx context.Context, in *MutateCustomerExtensionSettingsRequest, opts ...grpc.CallOption) (*MutateCustomerExtensionSettingsResponse, error) {
 	out := new(MutateCustomerExtensionSettingsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.CustomerExtensionSettingService/MutateCustomerExtensionSettings", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.CustomerExtensionSettingService/MutateCustomerExtensionSettings", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -135,7 +135,7 @@ func _CustomerExtensionSettingService_MutateCustomerExtensionSettings_Handler(sr
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v10.services.CustomerExtensionSettingService/MutateCustomerExtensionSettings",
+		FullMethod: "/google.ads.googleads.v11.services.CustomerExtensionSettingService/MutateCustomerExtensionSettings",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CustomerExtensionSettingServiceServer).MutateCustomerExtensionSettings(ctx, req.(*MutateCustomerExtensionSettingsRequest))
@@ -147,7 +147,7 @@ func _CustomerExtensionSettingService_MutateCustomerExtensionSettings_Handler(sr
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CustomerExtensionSettingService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v10.services.CustomerExtensionSettingService",
+	ServiceName: "google.ads.googleads.v11.services.CustomerExtensionSettingService",
 	HandlerType: (*CustomerExtensionSettingServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -156,5 +156,5 @@ var CustomerExtensionSettingService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v10/services/customer_extension_setting_service.proto",
+	Metadata: "google/ads/googleads/v11/services/customer_extension_setting_service.proto",
 }

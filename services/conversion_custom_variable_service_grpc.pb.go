@@ -43,7 +43,7 @@ func NewConversionCustomVariableServiceClient(cc grpc.ClientConnInterface) Conve
 
 func (c *conversionCustomVariableServiceClient) MutateConversionCustomVariables(ctx context.Context, in *MutateConversionCustomVariablesRequest, opts ...grpc.CallOption) (*MutateConversionCustomVariablesResponse, error) {
 	out := new(MutateConversionCustomVariablesResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.ConversionCustomVariableService/MutateConversionCustomVariables", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.ConversionCustomVariableService/MutateConversionCustomVariables", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -101,7 +101,7 @@ func _ConversionCustomVariableService_MutateConversionCustomVariables_Handler(sr
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v10.services.ConversionCustomVariableService/MutateConversionCustomVariables",
+		FullMethod: "/google.ads.googleads.v11.services.ConversionCustomVariableService/MutateConversionCustomVariables",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ConversionCustomVariableServiceServer).MutateConversionCustomVariables(ctx, req.(*MutateConversionCustomVariablesRequest))
@@ -113,7 +113,7 @@ func _ConversionCustomVariableService_MutateConversionCustomVariables_Handler(sr
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ConversionCustomVariableService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v10.services.ConversionCustomVariableService",
+	ServiceName: "google.ads.googleads.v11.services.ConversionCustomVariableService",
 	HandlerType: (*ConversionCustomVariableServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -122,5 +122,5 @@ var ConversionCustomVariableService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v10/services/conversion_custom_variable_service.proto",
+	Metadata: "google/ads/googleads/v11/services/conversion_custom_variable_service.proto",
 }

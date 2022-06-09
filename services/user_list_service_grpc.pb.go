@@ -54,7 +54,7 @@ func NewUserListServiceClient(cc grpc.ClientConnInterface) UserListServiceClient
 
 func (c *userListServiceClient) MutateUserLists(ctx context.Context, in *MutateUserListsRequest, opts ...grpc.CallOption) (*MutateUserListsResponse, error) {
 	out := new(MutateUserListsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.UserListService/MutateUserLists", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.UserListService/MutateUserLists", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -122,7 +122,7 @@ func _UserListService_MutateUserLists_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v10.services.UserListService/MutateUserLists",
+		FullMethod: "/google.ads.googleads.v11.services.UserListService/MutateUserLists",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(UserListServiceServer).MutateUserLists(ctx, req.(*MutateUserListsRequest))
@@ -134,7 +134,7 @@ func _UserListService_MutateUserLists_Handler(srv interface{}, ctx context.Conte
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var UserListService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v10.services.UserListService",
+	ServiceName: "google.ads.googleads.v11.services.UserListService",
 	HandlerType: (*UserListServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -143,5 +143,5 @@ var UserListService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v10/services/user_list_service.proto",
+	Metadata: "google/ads/googleads/v11/services/user_list_service.proto",
 }

@@ -41,6 +41,18 @@ type KeywordPlanIdeaServiceClient interface {
 	//   [QuotaError]()
 	//   [RequestError]()
 	GenerateKeywordHistoricalMetrics(ctx context.Context, in *GenerateKeywordHistoricalMetricsRequest, opts ...grpc.CallOption) (*GenerateKeywordHistoricalMetricsResponse, error)
+	// Returns a list of suggested AdGroups and suggested modifications
+	// (text, match type) for the given keywords.
+	//
+	// List of thrown errors:
+	//   [AuthenticationError]()
+	//   [AuthorizationError]()
+	//   [CollectionSizeError]()
+	//   [HeaderError]()
+	//   [InternalError]()
+	//   [QuotaError]()
+	//   [RequestError]()
+	GenerateAdGroupThemes(ctx context.Context, in *GenerateAdGroupThemesRequest, opts ...grpc.CallOption) (*GenerateAdGroupThemesResponse, error)
 }
 
 type keywordPlanIdeaServiceClient struct {
@@ -53,7 +65,7 @@ func NewKeywordPlanIdeaServiceClient(cc grpc.ClientConnInterface) KeywordPlanIde
 
 func (c *keywordPlanIdeaServiceClient) GenerateKeywordIdeas(ctx context.Context, in *GenerateKeywordIdeasRequest, opts ...grpc.CallOption) (*GenerateKeywordIdeaResponse, error) {
 	out := new(GenerateKeywordIdeaResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.KeywordPlanIdeaService/GenerateKeywordIdeas", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.KeywordPlanIdeaService/GenerateKeywordIdeas", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -62,7 +74,16 @@ func (c *keywordPlanIdeaServiceClient) GenerateKeywordIdeas(ctx context.Context,
 
 func (c *keywordPlanIdeaServiceClient) GenerateKeywordHistoricalMetrics(ctx context.Context, in *GenerateKeywordHistoricalMetricsRequest, opts ...grpc.CallOption) (*GenerateKeywordHistoricalMetricsResponse, error) {
 	out := new(GenerateKeywordHistoricalMetricsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.KeywordPlanIdeaService/GenerateKeywordHistoricalMetrics", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.KeywordPlanIdeaService/GenerateKeywordHistoricalMetrics", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *keywordPlanIdeaServiceClient) GenerateAdGroupThemes(ctx context.Context, in *GenerateAdGroupThemesRequest, opts ...grpc.CallOption) (*GenerateAdGroupThemesResponse, error) {
+	out := new(GenerateAdGroupThemesResponse)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.KeywordPlanIdeaService/GenerateAdGroupThemes", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -96,6 +117,18 @@ type KeywordPlanIdeaServiceServer interface {
 	//   [QuotaError]()
 	//   [RequestError]()
 	GenerateKeywordHistoricalMetrics(context.Context, *GenerateKeywordHistoricalMetricsRequest) (*GenerateKeywordHistoricalMetricsResponse, error)
+	// Returns a list of suggested AdGroups and suggested modifications
+	// (text, match type) for the given keywords.
+	//
+	// List of thrown errors:
+	//   [AuthenticationError]()
+	//   [AuthorizationError]()
+	//   [CollectionSizeError]()
+	//   [HeaderError]()
+	//   [InternalError]()
+	//   [QuotaError]()
+	//   [RequestError]()
+	GenerateAdGroupThemes(context.Context, *GenerateAdGroupThemesRequest) (*GenerateAdGroupThemesResponse, error)
 	mustEmbedUnimplementedKeywordPlanIdeaServiceServer()
 }
 
@@ -108,6 +141,9 @@ func (UnimplementedKeywordPlanIdeaServiceServer) GenerateKeywordIdeas(context.Co
 }
 func (UnimplementedKeywordPlanIdeaServiceServer) GenerateKeywordHistoricalMetrics(context.Context, *GenerateKeywordHistoricalMetricsRequest) (*GenerateKeywordHistoricalMetricsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GenerateKeywordHistoricalMetrics not implemented")
+}
+func (UnimplementedKeywordPlanIdeaServiceServer) GenerateAdGroupThemes(context.Context, *GenerateAdGroupThemesRequest) (*GenerateAdGroupThemesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GenerateAdGroupThemes not implemented")
 }
 func (UnimplementedKeywordPlanIdeaServiceServer) mustEmbedUnimplementedKeywordPlanIdeaServiceServer() {
 }
@@ -133,7 +169,7 @@ func _KeywordPlanIdeaService_GenerateKeywordIdeas_Handler(srv interface{}, ctx c
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v10.services.KeywordPlanIdeaService/GenerateKeywordIdeas",
+		FullMethod: "/google.ads.googleads.v11.services.KeywordPlanIdeaService/GenerateKeywordIdeas",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(KeywordPlanIdeaServiceServer).GenerateKeywordIdeas(ctx, req.(*GenerateKeywordIdeasRequest))
@@ -151,10 +187,28 @@ func _KeywordPlanIdeaService_GenerateKeywordHistoricalMetrics_Handler(srv interf
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v10.services.KeywordPlanIdeaService/GenerateKeywordHistoricalMetrics",
+		FullMethod: "/google.ads.googleads.v11.services.KeywordPlanIdeaService/GenerateKeywordHistoricalMetrics",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(KeywordPlanIdeaServiceServer).GenerateKeywordHistoricalMetrics(ctx, req.(*GenerateKeywordHistoricalMetricsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _KeywordPlanIdeaService_GenerateAdGroupThemes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenerateAdGroupThemesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(KeywordPlanIdeaServiceServer).GenerateAdGroupThemes(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/google.ads.googleads.v11.services.KeywordPlanIdeaService/GenerateAdGroupThemes",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(KeywordPlanIdeaServiceServer).GenerateAdGroupThemes(ctx, req.(*GenerateAdGroupThemesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -163,7 +217,7 @@ func _KeywordPlanIdeaService_GenerateKeywordHistoricalMetrics_Handler(srv interf
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var KeywordPlanIdeaService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v10.services.KeywordPlanIdeaService",
+	ServiceName: "google.ads.googleads.v11.services.KeywordPlanIdeaService",
 	HandlerType: (*KeywordPlanIdeaServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -174,7 +228,11 @@ var KeywordPlanIdeaService_ServiceDesc = grpc.ServiceDesc{
 			MethodName: "GenerateKeywordHistoricalMetrics",
 			Handler:    _KeywordPlanIdeaService_GenerateKeywordHistoricalMetrics_Handler,
 		},
+		{
+			MethodName: "GenerateAdGroupThemes",
+			Handler:    _KeywordPlanIdeaService_GenerateAdGroupThemes_Handler,
+		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v10/services/keyword_plan_idea_service.proto",
+	Metadata: "google/ads/googleads/v11/services/keyword_plan_idea_service.proto",
 }

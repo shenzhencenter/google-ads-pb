@@ -33,7 +33,7 @@ func NewAdGroupCriterionCustomizerServiceClient(cc grpc.ClientConnInterface) AdG
 
 func (c *adGroupCriterionCustomizerServiceClient) MutateAdGroupCriterionCustomizers(ctx context.Context, in *MutateAdGroupCriterionCustomizersRequest, opts ...grpc.CallOption) (*MutateAdGroupCriterionCustomizersResponse, error) {
 	out := new(MutateAdGroupCriterionCustomizersResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.AdGroupCriterionCustomizerService/MutateAdGroupCriterionCustomizers", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.AdGroupCriterionCustomizerService/MutateAdGroupCriterionCustomizers", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -81,7 +81,7 @@ func _AdGroupCriterionCustomizerService_MutateAdGroupCriterionCustomizers_Handle
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v10.services.AdGroupCriterionCustomizerService/MutateAdGroupCriterionCustomizers",
+		FullMethod: "/google.ads.googleads.v11.services.AdGroupCriterionCustomizerService/MutateAdGroupCriterionCustomizers",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AdGroupCriterionCustomizerServiceServer).MutateAdGroupCriterionCustomizers(ctx, req.(*MutateAdGroupCriterionCustomizersRequest))
@@ -93,7 +93,7 @@ func _AdGroupCriterionCustomizerService_MutateAdGroupCriterionCustomizers_Handle
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AdGroupCriterionCustomizerService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v10.services.AdGroupCriterionCustomizerService",
+	ServiceName: "google.ads.googleads.v11.services.AdGroupCriterionCustomizerService",
 	HandlerType: (*AdGroupCriterionCustomizerServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -102,5 +102,5 @@ var AdGroupCriterionCustomizerService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v10/services/ad_group_criterion_customizer_service.proto",
+	Metadata: "google/ads/googleads/v11/services/ad_group_criterion_customizer_service.proto",
 }
