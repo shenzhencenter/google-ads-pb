@@ -15,7 +15,7 @@ This project is a client library for the [Google Ads API](https://developers.goo
 ## Requirements
 
 - Golang 1.4 or later.
-- Before starting, you'd better read the [OAuth2 guide](https://developers.google.com/google-ads/api/docs/oauth/overview).
+- Before starting, recommend to read the [OAuth2 guide](https://developers.google.com/google-ads/api/docs/oauth/overview).
 - Apply for a [developer token](https://developers.google.com/google-ads/api/docs/first-call/dev-token) if you don't already have one.
 
 ## Installation
@@ -120,7 +120,7 @@ for _, customer := range listAccessibleCustomersResponse.ResourceNames {
 
 ### Campaign management
 
-- GetCampaignsByLabel [[GRPC](https://github.com/shenzhencenter/google-ads-pb/blob/main/examples/campaign_management/get_campaigns_by_label.go) [HTTP](https://github.com/shenzhencenter/google-ads-pb/blob/main/examples/campaign_management/http_get_campaigns_by_label.go)]
+- GetCampaignsByLabel [[GRPC](https://github.com/shenzhencenter/google-ads-pb/blob/main/examples/campaign_management/get_campaigns_by_label.go)] [[HTTP](https://github.com/shenzhencenter/google-ads-pb/blob/main/examples/campaign_management/http_get_campaigns_by_label.go)]
 
 ## Related
 
