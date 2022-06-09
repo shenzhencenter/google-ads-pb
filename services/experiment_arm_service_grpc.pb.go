@@ -42,7 +42,7 @@ func NewExperimentArmServiceClient(cc grpc.ClientConnInterface) ExperimentArmSer
 
 func (c *experimentArmServiceClient) MutateExperimentArms(ctx context.Context, in *MutateExperimentArmsRequest, opts ...grpc.CallOption) (*MutateExperimentArmsResponse, error) {
 	out := new(MutateExperimentArmsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.ExperimentArmService/MutateExperimentArms", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.ExperimentArmService/MutateExperimentArms", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -98,7 +98,7 @@ func _ExperimentArmService_MutateExperimentArms_Handler(srv interface{}, ctx con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v10.services.ExperimentArmService/MutateExperimentArms",
+		FullMethod: "/google.ads.googleads.v11.services.ExperimentArmService/MutateExperimentArms",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ExperimentArmServiceServer).MutateExperimentArms(ctx, req.(*MutateExperimentArmsRequest))
@@ -110,7 +110,7 @@ func _ExperimentArmService_MutateExperimentArms_Handler(srv interface{}, ctx con
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ExperimentArmService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v10.services.ExperimentArmService",
+	ServiceName: "google.ads.googleads.v11.services.ExperimentArmService",
 	HandlerType: (*ExperimentArmServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -119,5 +119,5 @@ var ExperimentArmService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v10/services/experiment_arm_service.proto",
+	Metadata: "google/ads/googleads/v11/services/experiment_arm_service.proto",
 }

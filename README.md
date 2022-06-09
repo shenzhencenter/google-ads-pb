@@ -76,7 +76,7 @@ listAccessibleCustomersRequest, err := protojson.Marshal(
 )
 if err != nil { panic(err) }
 request, err := http.NewRequest(
-  "GET", "https://googleads.googleapis.com/v10/customers:listAccessibleCustomers",
+  "GET", "https://googleads.googleapis.com/v11/customers:listAccessibleCustomers",
   bytes.NewBuffer(listAccessibleCustomersRequest))
 if err != nil { panic(err) }
 

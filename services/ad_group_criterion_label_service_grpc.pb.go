@@ -43,7 +43,7 @@ func NewAdGroupCriterionLabelServiceClient(cc grpc.ClientConnInterface) AdGroupC
 
 func (c *adGroupCriterionLabelServiceClient) MutateAdGroupCriterionLabels(ctx context.Context, in *MutateAdGroupCriterionLabelsRequest, opts ...grpc.CallOption) (*MutateAdGroupCriterionLabelsResponse, error) {
 	out := new(MutateAdGroupCriterionLabelsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.AdGroupCriterionLabelService/MutateAdGroupCriterionLabels", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.AdGroupCriterionLabelService/MutateAdGroupCriterionLabels", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -101,7 +101,7 @@ func _AdGroupCriterionLabelService_MutateAdGroupCriterionLabels_Handler(srv inte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v10.services.AdGroupCriterionLabelService/MutateAdGroupCriterionLabels",
+		FullMethod: "/google.ads.googleads.v11.services.AdGroupCriterionLabelService/MutateAdGroupCriterionLabels",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AdGroupCriterionLabelServiceServer).MutateAdGroupCriterionLabels(ctx, req.(*MutateAdGroupCriterionLabelsRequest))
@@ -113,7 +113,7 @@ func _AdGroupCriterionLabelService_MutateAdGroupCriterionLabels_Handler(srv inte
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AdGroupCriterionLabelService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v10.services.AdGroupCriterionLabelService",
+	ServiceName: "google.ads.googleads.v11.services.AdGroupCriterionLabelService",
 	HandlerType: (*AdGroupCriterionLabelServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -122,5 +122,5 @@ var AdGroupCriterionLabelService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v10/services/ad_group_criterion_label_service.proto",
+	Metadata: "google/ads/googleads/v11/services/ad_group_criterion_label_service.proto",
 }

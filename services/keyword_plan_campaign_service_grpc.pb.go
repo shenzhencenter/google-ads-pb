@@ -50,7 +50,7 @@ func NewKeywordPlanCampaignServiceClient(cc grpc.ClientConnInterface) KeywordPla
 
 func (c *keywordPlanCampaignServiceClient) MutateKeywordPlanCampaigns(ctx context.Context, in *MutateKeywordPlanCampaignsRequest, opts ...grpc.CallOption) (*MutateKeywordPlanCampaignsResponse, error) {
 	out := new(MutateKeywordPlanCampaignsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.KeywordPlanCampaignService/MutateKeywordPlanCampaigns", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.KeywordPlanCampaignService/MutateKeywordPlanCampaigns", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -115,7 +115,7 @@ func _KeywordPlanCampaignService_MutateKeywordPlanCampaigns_Handler(srv interfac
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v10.services.KeywordPlanCampaignService/MutateKeywordPlanCampaigns",
+		FullMethod: "/google.ads.googleads.v11.services.KeywordPlanCampaignService/MutateKeywordPlanCampaigns",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(KeywordPlanCampaignServiceServer).MutateKeywordPlanCampaigns(ctx, req.(*MutateKeywordPlanCampaignsRequest))
@@ -127,7 +127,7 @@ func _KeywordPlanCampaignService_MutateKeywordPlanCampaigns_Handler(srv interfac
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var KeywordPlanCampaignService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v10.services.KeywordPlanCampaignService",
+	ServiceName: "google.ads.googleads.v11.services.KeywordPlanCampaignService",
 	HandlerType: (*KeywordPlanCampaignServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -136,5 +136,5 @@ var KeywordPlanCampaignService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v10/services/keyword_plan_campaign_service.proto",
+	Metadata: "google/ads/googleads/v11/services/keyword_plan_campaign_service.proto",
 }

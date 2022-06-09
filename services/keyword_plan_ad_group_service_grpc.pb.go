@@ -49,7 +49,7 @@ func NewKeywordPlanAdGroupServiceClient(cc grpc.ClientConnInterface) KeywordPlan
 
 func (c *keywordPlanAdGroupServiceClient) MutateKeywordPlanAdGroups(ctx context.Context, in *MutateKeywordPlanAdGroupsRequest, opts ...grpc.CallOption) (*MutateKeywordPlanAdGroupsResponse, error) {
 	out := new(MutateKeywordPlanAdGroupsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.KeywordPlanAdGroupService/MutateKeywordPlanAdGroups", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.KeywordPlanAdGroupService/MutateKeywordPlanAdGroups", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -113,7 +113,7 @@ func _KeywordPlanAdGroupService_MutateKeywordPlanAdGroups_Handler(srv interface{
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v10.services.KeywordPlanAdGroupService/MutateKeywordPlanAdGroups",
+		FullMethod: "/google.ads.googleads.v11.services.KeywordPlanAdGroupService/MutateKeywordPlanAdGroups",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(KeywordPlanAdGroupServiceServer).MutateKeywordPlanAdGroups(ctx, req.(*MutateKeywordPlanAdGroupsRequest))
@@ -125,7 +125,7 @@ func _KeywordPlanAdGroupService_MutateKeywordPlanAdGroups_Handler(srv interface{
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var KeywordPlanAdGroupService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v10.services.KeywordPlanAdGroupService",
+	ServiceName: "google.ads.googleads.v11.services.KeywordPlanAdGroupService",
 	HandlerType: (*KeywordPlanAdGroupServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -134,5 +134,5 @@ var KeywordPlanAdGroupService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v10/services/keyword_plan_ad_group_service.proto",
+	Metadata: "google/ads/googleads/v11/services/keyword_plan_ad_group_service.proto",
 }

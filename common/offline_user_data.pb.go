@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.26.0-devel
 // 	protoc        v3.17.3
-// source: google/ads/googleads/v10/common/offline_user_data.proto
+// source: google/ads/googleads/v11/common/offline_user_data.proto
 
 package common
 
@@ -67,7 +67,7 @@ type OfflineUserAddressInfo struct {
 func (x *OfflineUserAddressInfo) Reset() {
 	*x = OfflineUserAddressInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v10_common_offline_user_data_proto_msgTypes[0]
+		mi := &file_google_ads_googleads_v11_common_offline_user_data_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -80,7 +80,7 @@ func (x *OfflineUserAddressInfo) String() string {
 func (*OfflineUserAddressInfo) ProtoMessage() {}
 
 func (x *OfflineUserAddressInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v10_common_offline_user_data_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v11_common_offline_user_data_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -93,7 +93,7 @@ func (x *OfflineUserAddressInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OfflineUserAddressInfo.ProtoReflect.Descriptor instead.
 func (*OfflineUserAddressInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v10_common_offline_user_data_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v11_common_offline_user_data_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *OfflineUserAddressInfo) GetHashedFirstName() string {
@@ -153,7 +153,7 @@ type UserIdentifier struct {
 
 	// Source of the user identifier when the upload is from Store Sales,
 	// ConversionUploadService, or ConversionAdjustmentUploadService.
-	UserIdentifierSource enums.UserIdentifierSourceEnum_UserIdentifierSource `protobuf:"varint,6,opt,name=user_identifier_source,json=userIdentifierSource,proto3,enum=google.ads.googleads.v10.enums.UserIdentifierSourceEnum_UserIdentifierSource" json:"user_identifier_source,omitempty"`
+	UserIdentifierSource enums.UserIdentifierSourceEnum_UserIdentifierSource `protobuf:"varint,6,opt,name=user_identifier_source,json=userIdentifierSource,proto3,enum=google.ads.googleads.v11.enums.UserIdentifierSourceEnum_UserIdentifierSource" json:"user_identifier_source,omitempty"`
 	// Exactly one must be specified. For OfflineUserDataJobService, Customer
 	// Match accepts hashed_email, hashed_phone_number, mobile_id,
 	// third_party_user_id, and address_info; Store Sales accepts hashed_email,
@@ -174,7 +174,7 @@ type UserIdentifier struct {
 func (x *UserIdentifier) Reset() {
 	*x = UserIdentifier{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v10_common_offline_user_data_proto_msgTypes[1]
+		mi := &file_google_ads_googleads_v11_common_offline_user_data_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -187,7 +187,7 @@ func (x *UserIdentifier) String() string {
 func (*UserIdentifier) ProtoMessage() {}
 
 func (x *UserIdentifier) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v10_common_offline_user_data_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v11_common_offline_user_data_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -200,7 +200,7 @@ func (x *UserIdentifier) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UserIdentifier.ProtoReflect.Descriptor instead.
 func (*UserIdentifier) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v10_common_offline_user_data_proto_rawDescGZIP(), []int{1}
+	return file_google_ads_googleads_v11_common_offline_user_data_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *UserIdentifier) GetUserIdentifierSource() enums.UserIdentifierSourceEnum_UserIdentifierSource {
@@ -337,7 +337,7 @@ type TransactionAttribute struct {
 func (x *TransactionAttribute) Reset() {
 	*x = TransactionAttribute{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v10_common_offline_user_data_proto_msgTypes[2]
+		mi := &file_google_ads_googleads_v11_common_offline_user_data_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -350,7 +350,7 @@ func (x *TransactionAttribute) String() string {
 func (*TransactionAttribute) ProtoMessage() {}
 
 func (x *TransactionAttribute) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v10_common_offline_user_data_proto_msgTypes[2]
+	mi := &file_google_ads_googleads_v11_common_offline_user_data_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -363,7 +363,7 @@ func (x *TransactionAttribute) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TransactionAttribute.ProtoReflect.Descriptor instead.
 func (*TransactionAttribute) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v10_common_offline_user_data_proto_rawDescGZIP(), []int{2}
+	return file_google_ads_googleads_v11_common_offline_user_data_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *TransactionAttribute) GetTransactionDateTime() string {
@@ -436,7 +436,7 @@ type StoreAttribute struct {
 func (x *StoreAttribute) Reset() {
 	*x = StoreAttribute{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v10_common_offline_user_data_proto_msgTypes[3]
+		mi := &file_google_ads_googleads_v11_common_offline_user_data_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -449,7 +449,7 @@ func (x *StoreAttribute) String() string {
 func (*StoreAttribute) ProtoMessage() {}
 
 func (x *StoreAttribute) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v10_common_offline_user_data_proto_msgTypes[3]
+	mi := &file_google_ads_googleads_v11_common_offline_user_data_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -462,7 +462,7 @@ func (x *StoreAttribute) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StoreAttribute.ProtoReflect.Descriptor instead.
 func (*StoreAttribute) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v10_common_offline_user_data_proto_rawDescGZIP(), []int{3}
+	return file_google_ads_googleads_v11_common_offline_user_data_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *StoreAttribute) GetStoreCode() string {
@@ -498,7 +498,7 @@ type ItemAttribute struct {
 func (x *ItemAttribute) Reset() {
 	*x = ItemAttribute{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v10_common_offline_user_data_proto_msgTypes[4]
+		mi := &file_google_ads_googleads_v11_common_offline_user_data_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -511,7 +511,7 @@ func (x *ItemAttribute) String() string {
 func (*ItemAttribute) ProtoMessage() {}
 
 func (x *ItemAttribute) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v10_common_offline_user_data_proto_msgTypes[4]
+	mi := &file_google_ads_googleads_v11_common_offline_user_data_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -524,7 +524,7 @@ func (x *ItemAttribute) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ItemAttribute.ProtoReflect.Descriptor instead.
 func (*ItemAttribute) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v10_common_offline_user_data_proto_rawDescGZIP(), []int{4}
+	return file_google_ads_googleads_v11_common_offline_user_data_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *ItemAttribute) GetItemId() string {
@@ -581,7 +581,7 @@ type UserData struct {
 func (x *UserData) Reset() {
 	*x = UserData{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v10_common_offline_user_data_proto_msgTypes[5]
+		mi := &file_google_ads_googleads_v11_common_offline_user_data_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -594,7 +594,7 @@ func (x *UserData) String() string {
 func (*UserData) ProtoMessage() {}
 
 func (x *UserData) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v10_common_offline_user_data_proto_msgTypes[5]
+	mi := &file_google_ads_googleads_v11_common_offline_user_data_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -607,7 +607,7 @@ func (x *UserData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UserData.ProtoReflect.Descriptor instead.
 func (*UserData) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v10_common_offline_user_data_proto_rawDescGZIP(), []int{5}
+	return file_google_ads_googleads_v11_common_offline_user_data_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *UserData) GetUserIdentifiers() []*UserIdentifier {
@@ -668,7 +668,7 @@ type UserAttribute struct {
 func (x *UserAttribute) Reset() {
 	*x = UserAttribute{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v10_common_offline_user_data_proto_msgTypes[6]
+		mi := &file_google_ads_googleads_v11_common_offline_user_data_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -681,7 +681,7 @@ func (x *UserAttribute) String() string {
 func (*UserAttribute) ProtoMessage() {}
 
 func (x *UserAttribute) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v10_common_offline_user_data_proto_msgTypes[6]
+	mi := &file_google_ads_googleads_v11_common_offline_user_data_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -694,7 +694,7 @@ func (x *UserAttribute) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UserAttribute.ProtoReflect.Descriptor instead.
 func (*UserAttribute) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v10_common_offline_user_data_proto_rawDescGZIP(), []int{6}
+	return file_google_ads_googleads_v11_common_offline_user_data_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *UserAttribute) GetLifetimeValueMicros() int64 {
@@ -763,7 +763,7 @@ type ShoppingLoyalty struct {
 func (x *ShoppingLoyalty) Reset() {
 	*x = ShoppingLoyalty{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v10_common_offline_user_data_proto_msgTypes[7]
+		mi := &file_google_ads_googleads_v11_common_offline_user_data_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -776,7 +776,7 @@ func (x *ShoppingLoyalty) String() string {
 func (*ShoppingLoyalty) ProtoMessage() {}
 
 func (x *ShoppingLoyalty) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v10_common_offline_user_data_proto_msgTypes[7]
+	mi := &file_google_ads_googleads_v11_common_offline_user_data_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -789,7 +789,7 @@ func (x *ShoppingLoyalty) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ShoppingLoyalty.ProtoReflect.Descriptor instead.
 func (*ShoppingLoyalty) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v10_common_offline_user_data_proto_rawDescGZIP(), []int{7}
+	return file_google_ads_googleads_v11_common_offline_user_data_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *ShoppingLoyalty) GetLoyaltyTier() string {
@@ -813,7 +813,7 @@ type CustomerMatchUserListMetadata struct {
 func (x *CustomerMatchUserListMetadata) Reset() {
 	*x = CustomerMatchUserListMetadata{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v10_common_offline_user_data_proto_msgTypes[8]
+		mi := &file_google_ads_googleads_v11_common_offline_user_data_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -826,7 +826,7 @@ func (x *CustomerMatchUserListMetadata) String() string {
 func (*CustomerMatchUserListMetadata) ProtoMessage() {}
 
 func (x *CustomerMatchUserListMetadata) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v10_common_offline_user_data_proto_msgTypes[8]
+	mi := &file_google_ads_googleads_v11_common_offline_user_data_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -839,7 +839,7 @@ func (x *CustomerMatchUserListMetadata) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CustomerMatchUserListMetadata.ProtoReflect.Descriptor instead.
 func (*CustomerMatchUserListMetadata) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v10_common_offline_user_data_proto_rawDescGZIP(), []int{8}
+	return file_google_ads_googleads_v11_common_offline_user_data_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *CustomerMatchUserListMetadata) GetUserList() string {
@@ -878,7 +878,7 @@ type StoreSalesMetadata struct {
 func (x *StoreSalesMetadata) Reset() {
 	*x = StoreSalesMetadata{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v10_common_offline_user_data_proto_msgTypes[9]
+		mi := &file_google_ads_googleads_v11_common_offline_user_data_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -891,7 +891,7 @@ func (x *StoreSalesMetadata) String() string {
 func (*StoreSalesMetadata) ProtoMessage() {}
 
 func (x *StoreSalesMetadata) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v10_common_offline_user_data_proto_msgTypes[9]
+	mi := &file_google_ads_googleads_v11_common_offline_user_data_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -904,7 +904,7 @@ func (x *StoreSalesMetadata) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StoreSalesMetadata.ProtoReflect.Descriptor instead.
 func (*StoreSalesMetadata) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v10_common_offline_user_data_proto_rawDescGZIP(), []int{9}
+	return file_google_ads_googleads_v11_common_offline_user_data_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *StoreSalesMetadata) GetLoyaltyFraction() float64 {
@@ -972,7 +972,7 @@ type StoreSalesThirdPartyMetadata struct {
 func (x *StoreSalesThirdPartyMetadata) Reset() {
 	*x = StoreSalesThirdPartyMetadata{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v10_common_offline_user_data_proto_msgTypes[10]
+		mi := &file_google_ads_googleads_v11_common_offline_user_data_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -985,7 +985,7 @@ func (x *StoreSalesThirdPartyMetadata) String() string {
 func (*StoreSalesThirdPartyMetadata) ProtoMessage() {}
 
 func (x *StoreSalesThirdPartyMetadata) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v10_common_offline_user_data_proto_msgTypes[10]
+	mi := &file_google_ads_googleads_v11_common_offline_user_data_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -998,7 +998,7 @@ func (x *StoreSalesThirdPartyMetadata) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StoreSalesThirdPartyMetadata.ProtoReflect.Descriptor instead.
 func (*StoreSalesThirdPartyMetadata) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v10_common_offline_user_data_proto_rawDescGZIP(), []int{10}
+	return file_google_ads_googleads_v11_common_offline_user_data_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *StoreSalesThirdPartyMetadata) GetAdvertiserUploadDateTime() string {
@@ -1043,17 +1043,17 @@ func (x *StoreSalesThirdPartyMetadata) GetPartnerId() int64 {
 	return 0
 }
 
-var File_google_ads_googleads_v10_common_offline_user_data_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v11_common_offline_user_data_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v10_common_offline_user_data_proto_rawDesc = []byte{
+var file_google_ads_googleads_v11_common_offline_user_data_proto_rawDesc = []byte{
 	0x0a, 0x37, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x30, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x31, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
 	0x6e, 0x2f, 0x6f, 0x66, 0x66, 0x6c, 0x69, 0x6e, 0x65, 0x5f, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x64,
 	0x61, 0x74, 0x61, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x1f, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e,
-	0x76, 0x31, 0x30, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x1a, 0x3b, 0x67, 0x6f, 0x6f, 0x67,
+	0x76, 0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x1a, 0x3b, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
-	0x2f, 0x76, 0x31, 0x30, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x5f,
+	0x2f, 0x76, 0x31, 0x31, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x5f,
 	0x69, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x5f, 0x73, 0x6f, 0x75, 0x72, 0x63,
 	0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0xac, 0x03, 0x0a, 0x16, 0x4f, 0x66, 0x66, 0x6c,
 	0x69, 0x6e, 0x65, 0x55, 0x73, 0x65, 0x72, 0x41, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x49, 0x6e,
@@ -1087,7 +1087,7 @@ var file_google_ads_googleads_v10_common_offline_user_data_proto_rawDesc = []byt
 	0x65, 0x72, 0x5f, 0x69, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x5f, 0x73, 0x6f,
 	0x75, 0x72, 0x63, 0x65, 0x18, 0x06, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x4d, 0x2e, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64,
-	0x73, 0x2e, 0x76, 0x31, 0x30, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x55, 0x73, 0x65, 0x72,
+	0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x55, 0x73, 0x65, 0x72,
 	0x49, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65,
 	0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x49, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66,
 	0x69, 0x65, 0x72, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x52, 0x14, 0x75, 0x73, 0x65, 0x72, 0x49,
@@ -1105,7 +1105,7 @@ var file_google_ads_googleads_v10_common_offline_user_data_proto_rawDesc = []byt
 	0x55, 0x73, 0x65, 0x72, 0x49, 0x64, 0x12, 0x5c, 0x0a, 0x0c, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73,
 	0x73, 0x5f, 0x69, 0x6e, 0x66, 0x6f, 0x18, 0x05, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x37, 0x2e, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x30, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x4f,
+	0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x4f,
 	0x66, 0x66, 0x6c, 0x69, 0x6e, 0x65, 0x55, 0x73, 0x65, 0x72, 0x41, 0x64, 0x64, 0x72, 0x65, 0x73,
 	0x73, 0x49, 0x6e, 0x66, 0x6f, 0x48, 0x00, 0x52, 0x0b, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73,
 	0x49, 0x6e, 0x66, 0x6f, 0x42, 0x0c, 0x0a, 0x0a, 0x69, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69,
@@ -1129,7 +1129,7 @@ var file_google_ads_googleads_v10_common_offline_user_data_proto_rawDesc = []byt
 	0x01, 0x12, 0x58, 0x0a, 0x0f, 0x73, 0x74, 0x6f, 0x72, 0x65, 0x5f, 0x61, 0x74, 0x74, 0x72, 0x69,
 	0x62, 0x75, 0x74, 0x65, 0x18, 0x06, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2f, 0x2e, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64,
-	0x73, 0x2e, 0x76, 0x31, 0x30, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x53, 0x74, 0x6f,
+	0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x53, 0x74, 0x6f,
 	0x72, 0x65, 0x41, 0x74, 0x74, 0x72, 0x69, 0x62, 0x75, 0x74, 0x65, 0x52, 0x0e, 0x73, 0x74, 0x6f,
 	0x72, 0x65, 0x41, 0x74, 0x74, 0x72, 0x69, 0x62, 0x75, 0x74, 0x65, 0x12, 0x26, 0x0a, 0x0c, 0x63,
 	0x75, 0x73, 0x74, 0x6f, 0x6d, 0x5f, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x0d, 0x20, 0x01, 0x28,
@@ -1137,7 +1137,7 @@ var file_google_ads_googleads_v10_common_offline_user_data_proto_rawDesc = []byt
 	0x88, 0x01, 0x01, 0x12, 0x55, 0x0a, 0x0e, 0x69, 0x74, 0x65, 0x6d, 0x5f, 0x61, 0x74, 0x74, 0x72,
 	0x69, 0x62, 0x75, 0x74, 0x65, 0x18, 0x0e, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2e, 0x2e, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x64, 0x73, 0x2e, 0x76, 0x31, 0x30, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x49, 0x74,
+	0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x49, 0x74,
 	0x65, 0x6d, 0x41, 0x74, 0x74, 0x72, 0x69, 0x62, 0x75, 0x74, 0x65, 0x52, 0x0d, 0x69, 0x74, 0x65,
 	0x6d, 0x41, 0x74, 0x74, 0x72, 0x69, 0x62, 0x75, 0x74, 0x65, 0x42, 0x18, 0x0a, 0x16, 0x5f, 0x74,
 	0x72, 0x61, 0x6e, 0x73, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x64, 0x61, 0x74, 0x65, 0x5f,
@@ -1168,19 +1168,19 @@ var file_google_ads_googleads_v10_common_offline_user_data_proto_rawDesc = []byt
 	0x5a, 0x0a, 0x10, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69,
 	0x65, 0x72, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x2f, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
-	0x2e, 0x76, 0x31, 0x30, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x55, 0x73, 0x65, 0x72,
+	0x2e, 0x76, 0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x55, 0x73, 0x65, 0x72,
 	0x49, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x52, 0x0f, 0x75, 0x73, 0x65, 0x72,
 	0x49, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x73, 0x12, 0x6a, 0x0a, 0x15, 0x74,
 	0x72, 0x61, 0x6e, 0x73, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x61, 0x74, 0x74, 0x72, 0x69,
 	0x62, 0x75, 0x74, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x35, 0x2e, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64,
-	0x73, 0x2e, 0x76, 0x31, 0x30, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x54, 0x72, 0x61,
+	0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x54, 0x72, 0x61,
 	0x6e, 0x73, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x41, 0x74, 0x74, 0x72, 0x69, 0x62, 0x75, 0x74,
 	0x65, 0x52, 0x14, 0x74, 0x72, 0x61, 0x6e, 0x73, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x41, 0x74,
 	0x74, 0x72, 0x69, 0x62, 0x75, 0x74, 0x65, 0x12, 0x55, 0x0a, 0x0e, 0x75, 0x73, 0x65, 0x72, 0x5f,
 	0x61, 0x74, 0x74, 0x72, 0x69, 0x62, 0x75, 0x74, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32,
 	0x2e, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x30, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
 	0x6e, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x41, 0x74, 0x74, 0x72, 0x69, 0x62, 0x75, 0x74, 0x65, 0x52,
 	0x0d, 0x75, 0x73, 0x65, 0x72, 0x41, 0x74, 0x74, 0x72, 0x69, 0x62, 0x75, 0x74, 0x65, 0x22, 0x90,
 	0x04, 0x0a, 0x0d, 0x55, 0x73, 0x65, 0x72, 0x41, 0x74, 0x74, 0x72, 0x69, 0x62, 0x75, 0x74, 0x65,
@@ -1208,7 +1208,7 @@ var file_google_ads_googleads_v10_common_offline_user_data_proto_rawDesc = []byt
 	0x74, 0x65, 0x54, 0x69, 0x6d, 0x65, 0x12, 0x60, 0x0a, 0x10, 0x73, 0x68, 0x6f, 0x70, 0x70, 0x69,
 	0x6e, 0x67, 0x5f, 0x6c, 0x6f, 0x79, 0x61, 0x6c, 0x74, 0x79, 0x18, 0x07, 0x20, 0x01, 0x28, 0x0b,
 	0x32, 0x30, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x30, 0x2e, 0x63, 0x6f, 0x6d, 0x6d,
+	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d,
 	0x6f, 0x6e, 0x2e, 0x53, 0x68, 0x6f, 0x70, 0x70, 0x69, 0x6e, 0x67, 0x4c, 0x6f, 0x79, 0x61, 0x6c,
 	0x74, 0x79, 0x48, 0x02, 0x52, 0x0f, 0x73, 0x68, 0x6f, 0x70, 0x70, 0x69, 0x6e, 0x67, 0x4c, 0x6f,
 	0x79, 0x61, 0x6c, 0x74, 0x79, 0x88, 0x01, 0x01, 0x42, 0x18, 0x0a, 0x16, 0x5f, 0x6c, 0x69, 0x66,
@@ -1240,7 +1240,7 @@ var file_google_ads_googleads_v10_common_offline_user_data_proto_rawDesc = []byt
 	0x0a, 0x14, 0x74, 0x68, 0x69, 0x72, 0x64, 0x5f, 0x70, 0x61, 0x72, 0x74, 0x79, 0x5f, 0x6d, 0x65,
 	0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x3d, 0x2e, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x30, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x53,
+	0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x53,
 	0x74, 0x6f, 0x72, 0x65, 0x53, 0x61, 0x6c, 0x65, 0x73, 0x54, 0x68, 0x69, 0x72, 0x64, 0x50, 0x61,
 	0x72, 0x74, 0x79, 0x4d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0x52, 0x12, 0x74, 0x68, 0x69,
 	0x72, 0x64, 0x50, 0x61, 0x72, 0x74, 0x79, 0x4d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0x42,
@@ -1283,60 +1283,60 @@ var file_google_ads_googleads_v10_common_offline_user_data_proto_rawDesc = []byt
 	0x5f, 0x6d, 0x61, 0x70, 0x5f, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x42,
 	0x0d, 0x0a, 0x0b, 0x5f, 0x70, 0x61, 0x72, 0x74, 0x6e, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x42, 0xf4,
 	0x01, 0x0a, 0x23, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64,
-	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x30, 0x2e,
+	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e,
 	0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x42, 0x14, 0x4f, 0x66, 0x66, 0x6c, 0x69, 0x6e, 0x65, 0x55,
 	0x73, 0x65, 0x72, 0x44, 0x61, 0x74, 0x61, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x45,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x67, 0x6f, 0x6c, 0x61, 0x6e, 0x67, 0x2e, 0x6f, 0x72,
 	0x67, 0x2f, 0x67, 0x65, 0x6e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x61, 0x70, 0x69, 0x73, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x30, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x3b, 0x63,
+	0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x31, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x3b, 0x63,
 	0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xa2, 0x02, 0x03, 0x47, 0x41, 0x41, 0xaa, 0x02, 0x1f, 0x47, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x41, 0x64, 0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41,
-	0x64, 0x73, 0x2e, 0x56, 0x31, 0x30, 0x2e, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xca, 0x02, 0x1f,
+	0x64, 0x73, 0x2e, 0x56, 0x31, 0x31, 0x2e, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xca, 0x02, 0x1f,
 	0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x5c, 0x41, 0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x31, 0x30, 0x5c, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xea,
+	0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x31, 0x31, 0x5c, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xea,
 	0x02, 0x23, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x3a, 0x3a, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x47,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x31, 0x30, 0x3a, 0x3a, 0x43,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x31, 0x31, 0x3a, 0x3a, 0x43,
 	0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
-	file_google_ads_googleads_v10_common_offline_user_data_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v10_common_offline_user_data_proto_rawDescData = file_google_ads_googleads_v10_common_offline_user_data_proto_rawDesc
+	file_google_ads_googleads_v11_common_offline_user_data_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v11_common_offline_user_data_proto_rawDescData = file_google_ads_googleads_v11_common_offline_user_data_proto_rawDesc
 )
 
-func file_google_ads_googleads_v10_common_offline_user_data_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v10_common_offline_user_data_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v10_common_offline_user_data_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v10_common_offline_user_data_proto_rawDescData)
+func file_google_ads_googleads_v11_common_offline_user_data_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v11_common_offline_user_data_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v11_common_offline_user_data_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v11_common_offline_user_data_proto_rawDescData)
 	})
-	return file_google_ads_googleads_v10_common_offline_user_data_proto_rawDescData
+	return file_google_ads_googleads_v11_common_offline_user_data_proto_rawDescData
 }
 
-var file_google_ads_googleads_v10_common_offline_user_data_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
-var file_google_ads_googleads_v10_common_offline_user_data_proto_goTypes = []interface{}{
-	(*OfflineUserAddressInfo)(nil),                           // 0: google.ads.googleads.v10.common.OfflineUserAddressInfo
-	(*UserIdentifier)(nil),                                   // 1: google.ads.googleads.v10.common.UserIdentifier
-	(*TransactionAttribute)(nil),                             // 2: google.ads.googleads.v10.common.TransactionAttribute
-	(*StoreAttribute)(nil),                                   // 3: google.ads.googleads.v10.common.StoreAttribute
-	(*ItemAttribute)(nil),                                    // 4: google.ads.googleads.v10.common.ItemAttribute
-	(*UserData)(nil),                                         // 5: google.ads.googleads.v10.common.UserData
-	(*UserAttribute)(nil),                                    // 6: google.ads.googleads.v10.common.UserAttribute
-	(*ShoppingLoyalty)(nil),                                  // 7: google.ads.googleads.v10.common.ShoppingLoyalty
-	(*CustomerMatchUserListMetadata)(nil),                    // 8: google.ads.googleads.v10.common.CustomerMatchUserListMetadata
-	(*StoreSalesMetadata)(nil),                               // 9: google.ads.googleads.v10.common.StoreSalesMetadata
-	(*StoreSalesThirdPartyMetadata)(nil),                     // 10: google.ads.googleads.v10.common.StoreSalesThirdPartyMetadata
-	(enums.UserIdentifierSourceEnum_UserIdentifierSource)(0), // 11: google.ads.googleads.v10.enums.UserIdentifierSourceEnum.UserIdentifierSource
+var file_google_ads_googleads_v11_common_offline_user_data_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
+var file_google_ads_googleads_v11_common_offline_user_data_proto_goTypes = []interface{}{
+	(*OfflineUserAddressInfo)(nil),                           // 0: google.ads.googleads.v11.common.OfflineUserAddressInfo
+	(*UserIdentifier)(nil),                                   // 1: google.ads.googleads.v11.common.UserIdentifier
+	(*TransactionAttribute)(nil),                             // 2: google.ads.googleads.v11.common.TransactionAttribute
+	(*StoreAttribute)(nil),                                   // 3: google.ads.googleads.v11.common.StoreAttribute
+	(*ItemAttribute)(nil),                                    // 4: google.ads.googleads.v11.common.ItemAttribute
+	(*UserData)(nil),                                         // 5: google.ads.googleads.v11.common.UserData
+	(*UserAttribute)(nil),                                    // 6: google.ads.googleads.v11.common.UserAttribute
+	(*ShoppingLoyalty)(nil),                                  // 7: google.ads.googleads.v11.common.ShoppingLoyalty
+	(*CustomerMatchUserListMetadata)(nil),                    // 8: google.ads.googleads.v11.common.CustomerMatchUserListMetadata
+	(*StoreSalesMetadata)(nil),                               // 9: google.ads.googleads.v11.common.StoreSalesMetadata
+	(*StoreSalesThirdPartyMetadata)(nil),                     // 10: google.ads.googleads.v11.common.StoreSalesThirdPartyMetadata
+	(enums.UserIdentifierSourceEnum_UserIdentifierSource)(0), // 11: google.ads.googleads.v11.enums.UserIdentifierSourceEnum.UserIdentifierSource
 }
-var file_google_ads_googleads_v10_common_offline_user_data_proto_depIdxs = []int32{
-	11, // 0: google.ads.googleads.v10.common.UserIdentifier.user_identifier_source:type_name -> google.ads.googleads.v10.enums.UserIdentifierSourceEnum.UserIdentifierSource
-	0,  // 1: google.ads.googleads.v10.common.UserIdentifier.address_info:type_name -> google.ads.googleads.v10.common.OfflineUserAddressInfo
-	3,  // 2: google.ads.googleads.v10.common.TransactionAttribute.store_attribute:type_name -> google.ads.googleads.v10.common.StoreAttribute
-	4,  // 3: google.ads.googleads.v10.common.TransactionAttribute.item_attribute:type_name -> google.ads.googleads.v10.common.ItemAttribute
-	1,  // 4: google.ads.googleads.v10.common.UserData.user_identifiers:type_name -> google.ads.googleads.v10.common.UserIdentifier
-	2,  // 5: google.ads.googleads.v10.common.UserData.transaction_attribute:type_name -> google.ads.googleads.v10.common.TransactionAttribute
-	6,  // 6: google.ads.googleads.v10.common.UserData.user_attribute:type_name -> google.ads.googleads.v10.common.UserAttribute
-	7,  // 7: google.ads.googleads.v10.common.UserAttribute.shopping_loyalty:type_name -> google.ads.googleads.v10.common.ShoppingLoyalty
-	10, // 8: google.ads.googleads.v10.common.StoreSalesMetadata.third_party_metadata:type_name -> google.ads.googleads.v10.common.StoreSalesThirdPartyMetadata
+var file_google_ads_googleads_v11_common_offline_user_data_proto_depIdxs = []int32{
+	11, // 0: google.ads.googleads.v11.common.UserIdentifier.user_identifier_source:type_name -> google.ads.googleads.v11.enums.UserIdentifierSourceEnum.UserIdentifierSource
+	0,  // 1: google.ads.googleads.v11.common.UserIdentifier.address_info:type_name -> google.ads.googleads.v11.common.OfflineUserAddressInfo
+	3,  // 2: google.ads.googleads.v11.common.TransactionAttribute.store_attribute:type_name -> google.ads.googleads.v11.common.StoreAttribute
+	4,  // 3: google.ads.googleads.v11.common.TransactionAttribute.item_attribute:type_name -> google.ads.googleads.v11.common.ItemAttribute
+	1,  // 4: google.ads.googleads.v11.common.UserData.user_identifiers:type_name -> google.ads.googleads.v11.common.UserIdentifier
+	2,  // 5: google.ads.googleads.v11.common.UserData.transaction_attribute:type_name -> google.ads.googleads.v11.common.TransactionAttribute
+	6,  // 6: google.ads.googleads.v11.common.UserData.user_attribute:type_name -> google.ads.googleads.v11.common.UserAttribute
+	7,  // 7: google.ads.googleads.v11.common.UserAttribute.shopping_loyalty:type_name -> google.ads.googleads.v11.common.ShoppingLoyalty
+	10, // 8: google.ads.googleads.v11.common.StoreSalesMetadata.third_party_metadata:type_name -> google.ads.googleads.v11.common.StoreSalesThirdPartyMetadata
 	9,  // [9:9] is the sub-list for method output_type
 	9,  // [9:9] is the sub-list for method input_type
 	9,  // [9:9] is the sub-list for extension type_name
@@ -1344,13 +1344,13 @@ var file_google_ads_googleads_v10_common_offline_user_data_proto_depIdxs = []int
 	0,  // [0:9] is the sub-list for field type_name
 }
 
-func init() { file_google_ads_googleads_v10_common_offline_user_data_proto_init() }
-func file_google_ads_googleads_v10_common_offline_user_data_proto_init() {
-	if File_google_ads_googleads_v10_common_offline_user_data_proto != nil {
+func init() { file_google_ads_googleads_v11_common_offline_user_data_proto_init() }
+func file_google_ads_googleads_v11_common_offline_user_data_proto_init() {
+	if File_google_ads_googleads_v11_common_offline_user_data_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_google_ads_googleads_v10_common_offline_user_data_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v11_common_offline_user_data_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*OfflineUserAddressInfo); i {
 			case 0:
 				return &v.state
@@ -1362,7 +1362,7 @@ func file_google_ads_googleads_v10_common_offline_user_data_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v10_common_offline_user_data_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v11_common_offline_user_data_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UserIdentifier); i {
 			case 0:
 				return &v.state
@@ -1374,7 +1374,7 @@ func file_google_ads_googleads_v10_common_offline_user_data_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v10_common_offline_user_data_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v11_common_offline_user_data_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*TransactionAttribute); i {
 			case 0:
 				return &v.state
@@ -1386,7 +1386,7 @@ func file_google_ads_googleads_v10_common_offline_user_data_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v10_common_offline_user_data_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v11_common_offline_user_data_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*StoreAttribute); i {
 			case 0:
 				return &v.state
@@ -1398,7 +1398,7 @@ func file_google_ads_googleads_v10_common_offline_user_data_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v10_common_offline_user_data_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v11_common_offline_user_data_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ItemAttribute); i {
 			case 0:
 				return &v.state
@@ -1410,7 +1410,7 @@ func file_google_ads_googleads_v10_common_offline_user_data_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v10_common_offline_user_data_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v11_common_offline_user_data_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UserData); i {
 			case 0:
 				return &v.state
@@ -1422,7 +1422,7 @@ func file_google_ads_googleads_v10_common_offline_user_data_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v10_common_offline_user_data_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v11_common_offline_user_data_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UserAttribute); i {
 			case 0:
 				return &v.state
@@ -1434,7 +1434,7 @@ func file_google_ads_googleads_v10_common_offline_user_data_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v10_common_offline_user_data_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v11_common_offline_user_data_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ShoppingLoyalty); i {
 			case 0:
 				return &v.state
@@ -1446,7 +1446,7 @@ func file_google_ads_googleads_v10_common_offline_user_data_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v10_common_offline_user_data_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v11_common_offline_user_data_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CustomerMatchUserListMetadata); i {
 			case 0:
 				return &v.state
@@ -1458,7 +1458,7 @@ func file_google_ads_googleads_v10_common_offline_user_data_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v10_common_offline_user_data_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v11_common_offline_user_data_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*StoreSalesMetadata); i {
 			case 0:
 				return &v.state
@@ -1470,7 +1470,7 @@ func file_google_ads_googleads_v10_common_offline_user_data_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v10_common_offline_user_data_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v11_common_offline_user_data_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*StoreSalesThirdPartyMetadata); i {
 			case 0:
 				return &v.state
@@ -1483,38 +1483,38 @@ func file_google_ads_googleads_v10_common_offline_user_data_proto_init() {
 			}
 		}
 	}
-	file_google_ads_googleads_v10_common_offline_user_data_proto_msgTypes[0].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v10_common_offline_user_data_proto_msgTypes[1].OneofWrappers = []interface{}{
+	file_google_ads_googleads_v11_common_offline_user_data_proto_msgTypes[0].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v11_common_offline_user_data_proto_msgTypes[1].OneofWrappers = []interface{}{
 		(*UserIdentifier_HashedEmail)(nil),
 		(*UserIdentifier_HashedPhoneNumber)(nil),
 		(*UserIdentifier_MobileId)(nil),
 		(*UserIdentifier_ThirdPartyUserId)(nil),
 		(*UserIdentifier_AddressInfo)(nil),
 	}
-	file_google_ads_googleads_v10_common_offline_user_data_proto_msgTypes[2].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v10_common_offline_user_data_proto_msgTypes[3].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v10_common_offline_user_data_proto_msgTypes[4].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v10_common_offline_user_data_proto_msgTypes[6].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v10_common_offline_user_data_proto_msgTypes[7].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v10_common_offline_user_data_proto_msgTypes[8].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v10_common_offline_user_data_proto_msgTypes[9].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v10_common_offline_user_data_proto_msgTypes[10].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v11_common_offline_user_data_proto_msgTypes[2].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v11_common_offline_user_data_proto_msgTypes[3].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v11_common_offline_user_data_proto_msgTypes[4].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v11_common_offline_user_data_proto_msgTypes[6].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v11_common_offline_user_data_proto_msgTypes[7].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v11_common_offline_user_data_proto_msgTypes[8].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v11_common_offline_user_data_proto_msgTypes[9].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v11_common_offline_user_data_proto_msgTypes[10].OneofWrappers = []interface{}{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_google_ads_googleads_v10_common_offline_user_data_proto_rawDesc,
+			RawDescriptor: file_google_ads_googleads_v11_common_offline_user_data_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   11,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_google_ads_googleads_v10_common_offline_user_data_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v10_common_offline_user_data_proto_depIdxs,
-		MessageInfos:      file_google_ads_googleads_v10_common_offline_user_data_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v11_common_offline_user_data_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v11_common_offline_user_data_proto_depIdxs,
+		MessageInfos:      file_google_ads_googleads_v11_common_offline_user_data_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v10_common_offline_user_data_proto = out.File
-	file_google_ads_googleads_v10_common_offline_user_data_proto_rawDesc = nil
-	file_google_ads_googleads_v10_common_offline_user_data_proto_goTypes = nil
-	file_google_ads_googleads_v10_common_offline_user_data_proto_depIdxs = nil
+	File_google_ads_googleads_v11_common_offline_user_data_proto = out.File
+	file_google_ads_googleads_v11_common_offline_user_data_proto_rawDesc = nil
+	file_google_ads_googleads_v11_common_offline_user_data_proto_goTypes = nil
+	file_google_ads_googleads_v11_common_offline_user_data_proto_depIdxs = nil
 }

@@ -35,7 +35,7 @@ func NewAudienceServiceClient(cc grpc.ClientConnInterface) AudienceServiceClient
 
 func (c *audienceServiceClient) MutateAudiences(ctx context.Context, in *MutateAudiencesRequest, opts ...grpc.CallOption) (*MutateAudiencesResponse, error) {
 	out := new(MutateAudiencesResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.AudienceService/MutateAudiences", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.AudienceService/MutateAudiences", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -84,7 +84,7 @@ func _AudienceService_MutateAudiences_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v10.services.AudienceService/MutateAudiences",
+		FullMethod: "/google.ads.googleads.v11.services.AudienceService/MutateAudiences",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AudienceServiceServer).MutateAudiences(ctx, req.(*MutateAudiencesRequest))
@@ -96,7 +96,7 @@ func _AudienceService_MutateAudiences_Handler(srv interface{}, ctx context.Conte
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AudienceService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v10.services.AudienceService",
+	ServiceName: "google.ads.googleads.v11.services.AudienceService",
 	HandlerType: (*AudienceServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -105,5 +105,5 @@ var AudienceService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v10/services/audience_service.proto",
+	Metadata: "google/ads/googleads/v11/services/audience_service.proto",
 }

@@ -33,7 +33,7 @@ func NewAssetSetAssetServiceClient(cc grpc.ClientConnInterface) AssetSetAssetSer
 
 func (c *assetSetAssetServiceClient) MutateAssetSetAssets(ctx context.Context, in *MutateAssetSetAssetsRequest, opts ...grpc.CallOption) (*MutateAssetSetAssetsResponse, error) {
 	out := new(MutateAssetSetAssetsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.AssetSetAssetService/MutateAssetSetAssets", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.AssetSetAssetService/MutateAssetSetAssets", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -80,7 +80,7 @@ func _AssetSetAssetService_MutateAssetSetAssets_Handler(srv interface{}, ctx con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v10.services.AssetSetAssetService/MutateAssetSetAssets",
+		FullMethod: "/google.ads.googleads.v11.services.AssetSetAssetService/MutateAssetSetAssets",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AssetSetAssetServiceServer).MutateAssetSetAssets(ctx, req.(*MutateAssetSetAssetsRequest))
@@ -92,7 +92,7 @@ func _AssetSetAssetService_MutateAssetSetAssets_Handler(srv interface{}, ctx con
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AssetSetAssetService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v10.services.AssetSetAssetService",
+	ServiceName: "google.ads.googleads.v11.services.AssetSetAssetService",
 	HandlerType: (*AssetSetAssetServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -101,5 +101,5 @@ var AssetSetAssetService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v10/services/asset_set_asset_service.proto",
+	Metadata: "google/ads/googleads/v11/services/asset_set_asset_service.proto",
 }

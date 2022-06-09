@@ -81,6 +81,11 @@ type internalUserDataClient interface {
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 //
 // Service to manage user data uploads.
+// Any uploads made to a Customer Match list via this service will be eligible
+// for matching as per the customer matching process. Please see
+// https://support.google.com/google-ads/answer/7474263 (at https://support.google.com/google-ads/answer/7474263). However, the uploads
+// made via this service will not be visible under the ‘Segment members’ section
+// for the Customer Match List in the Google Ads UI.
 type UserDataClient struct {
 	// The internal transport-dependent client.
 	internalClient internalUserDataClient
@@ -154,6 +159,11 @@ type userDataGRPCClient struct {
 // The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
 // Service to manage user data uploads.
+// Any uploads made to a Customer Match list via this service will be eligible
+// for matching as per the customer matching process. Please see
+// https://support.google.com/google-ads/answer/7474263 (at https://support.google.com/google-ads/answer/7474263). However, the uploads
+// made via this service will not be visible under the ‘Segment members’ section
+// for the Customer Match List in the Google Ads UI.
 func NewUserDataClient(ctx context.Context, opts ...option.ClientOption) (*UserDataClient, error) {
 	clientOpts := defaultUserDataGRPCClientOptions()
 	if newUserDataClientHook != nil {

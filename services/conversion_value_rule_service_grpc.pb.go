@@ -33,7 +33,7 @@ func NewConversionValueRuleServiceClient(cc grpc.ClientConnInterface) Conversion
 
 func (c *conversionValueRuleServiceClient) MutateConversionValueRules(ctx context.Context, in *MutateConversionValueRulesRequest, opts ...grpc.CallOption) (*MutateConversionValueRulesResponse, error) {
 	out := new(MutateConversionValueRulesResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.ConversionValueRuleService/MutateConversionValueRules", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.ConversionValueRuleService/MutateConversionValueRules", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -81,7 +81,7 @@ func _ConversionValueRuleService_MutateConversionValueRules_Handler(srv interfac
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v10.services.ConversionValueRuleService/MutateConversionValueRules",
+		FullMethod: "/google.ads.googleads.v11.services.ConversionValueRuleService/MutateConversionValueRules",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ConversionValueRuleServiceServer).MutateConversionValueRules(ctx, req.(*MutateConversionValueRulesRequest))
@@ -93,7 +93,7 @@ func _ConversionValueRuleService_MutateConversionValueRules_Handler(srv interfac
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ConversionValueRuleService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v10.services.ConversionValueRuleService",
+	ServiceName: "google.ads.googleads.v11.services.ConversionValueRuleService",
 	HandlerType: (*ConversionValueRuleServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -102,5 +102,5 @@ var ConversionValueRuleService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v10/services/conversion_value_rule_service.proto",
+	Metadata: "google/ads/googleads/v11/services/conversion_value_rule_service.proto",
 }

@@ -40,7 +40,7 @@ func NewFeedItemSetLinkServiceClient(cc grpc.ClientConnInterface) FeedItemSetLin
 
 func (c *feedItemSetLinkServiceClient) MutateFeedItemSetLinks(ctx context.Context, in *MutateFeedItemSetLinksRequest, opts ...grpc.CallOption) (*MutateFeedItemSetLinksResponse, error) {
 	out := new(MutateFeedItemSetLinksResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.FeedItemSetLinkService/MutateFeedItemSetLinks", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.FeedItemSetLinkService/MutateFeedItemSetLinks", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -95,7 +95,7 @@ func _FeedItemSetLinkService_MutateFeedItemSetLinks_Handler(srv interface{}, ctx
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v10.services.FeedItemSetLinkService/MutateFeedItemSetLinks",
+		FullMethod: "/google.ads.googleads.v11.services.FeedItemSetLinkService/MutateFeedItemSetLinks",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(FeedItemSetLinkServiceServer).MutateFeedItemSetLinks(ctx, req.(*MutateFeedItemSetLinksRequest))
@@ -107,7 +107,7 @@ func _FeedItemSetLinkService_MutateFeedItemSetLinks_Handler(srv interface{}, ctx
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var FeedItemSetLinkService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v10.services.FeedItemSetLinkService",
+	ServiceName: "google.ads.googleads.v11.services.FeedItemSetLinkService",
 	HandlerType: (*FeedItemSetLinkServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -116,5 +116,5 @@ var FeedItemSetLinkService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v10/services/feed_item_set_link_service.proto",
+	Metadata: "google/ads/googleads/v11/services/feed_item_set_link_service.proto",
 }

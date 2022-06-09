@@ -74,7 +74,7 @@ func NewOfflineUserDataJobServiceClient(cc grpc.ClientConnInterface) OfflineUser
 
 func (c *offlineUserDataJobServiceClient) CreateOfflineUserDataJob(ctx context.Context, in *CreateOfflineUserDataJobRequest, opts ...grpc.CallOption) (*CreateOfflineUserDataJobResponse, error) {
 	out := new(CreateOfflineUserDataJobResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.OfflineUserDataJobService/CreateOfflineUserDataJob", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.OfflineUserDataJobService/CreateOfflineUserDataJob", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -83,7 +83,7 @@ func (c *offlineUserDataJobServiceClient) CreateOfflineUserDataJob(ctx context.C
 
 func (c *offlineUserDataJobServiceClient) AddOfflineUserDataJobOperations(ctx context.Context, in *AddOfflineUserDataJobOperationsRequest, opts ...grpc.CallOption) (*AddOfflineUserDataJobOperationsResponse, error) {
 	out := new(AddOfflineUserDataJobOperationsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.OfflineUserDataJobService/AddOfflineUserDataJobOperations", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.OfflineUserDataJobService/AddOfflineUserDataJobOperations", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -92,7 +92,7 @@ func (c *offlineUserDataJobServiceClient) AddOfflineUserDataJobOperations(ctx co
 
 func (c *offlineUserDataJobServiceClient) RunOfflineUserDataJob(ctx context.Context, in *RunOfflineUserDataJobRequest, opts ...grpc.CallOption) (*longrunning.Operation, error) {
 	out := new(longrunning.Operation)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.OfflineUserDataJobService/RunOfflineUserDataJob", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.OfflineUserDataJobService/RunOfflineUserDataJob", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -186,7 +186,7 @@ func _OfflineUserDataJobService_CreateOfflineUserDataJob_Handler(srv interface{}
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v10.services.OfflineUserDataJobService/CreateOfflineUserDataJob",
+		FullMethod: "/google.ads.googleads.v11.services.OfflineUserDataJobService/CreateOfflineUserDataJob",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(OfflineUserDataJobServiceServer).CreateOfflineUserDataJob(ctx, req.(*CreateOfflineUserDataJobRequest))
@@ -204,7 +204,7 @@ func _OfflineUserDataJobService_AddOfflineUserDataJobOperations_Handler(srv inte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v10.services.OfflineUserDataJobService/AddOfflineUserDataJobOperations",
+		FullMethod: "/google.ads.googleads.v11.services.OfflineUserDataJobService/AddOfflineUserDataJobOperations",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(OfflineUserDataJobServiceServer).AddOfflineUserDataJobOperations(ctx, req.(*AddOfflineUserDataJobOperationsRequest))
@@ -222,7 +222,7 @@ func _OfflineUserDataJobService_RunOfflineUserDataJob_Handler(srv interface{}, c
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v10.services.OfflineUserDataJobService/RunOfflineUserDataJob",
+		FullMethod: "/google.ads.googleads.v11.services.OfflineUserDataJobService/RunOfflineUserDataJob",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(OfflineUserDataJobServiceServer).RunOfflineUserDataJob(ctx, req.(*RunOfflineUserDataJobRequest))
@@ -234,7 +234,7 @@ func _OfflineUserDataJobService_RunOfflineUserDataJob_Handler(srv interface{}, c
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var OfflineUserDataJobService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v10.services.OfflineUserDataJobService",
+	ServiceName: "google.ads.googleads.v11.services.OfflineUserDataJobService",
 	HandlerType: (*OfflineUserDataJobServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -251,5 +251,5 @@ var OfflineUserDataJobService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v10/services/offline_user_data_job_service.proto",
+	Metadata: "google/ads/googleads/v11/services/offline_user_data_job_service.proto",
 }

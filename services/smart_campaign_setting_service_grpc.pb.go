@@ -32,7 +32,7 @@ func NewSmartCampaignSettingServiceClient(cc grpc.ClientConnInterface) SmartCamp
 
 func (c *smartCampaignSettingServiceClient) MutateSmartCampaignSettings(ctx context.Context, in *MutateSmartCampaignSettingsRequest, opts ...grpc.CallOption) (*MutateSmartCampaignSettingsResponse, error) {
 	out := new(MutateSmartCampaignSettingsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.SmartCampaignSettingService/MutateSmartCampaignSettings", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.SmartCampaignSettingService/MutateSmartCampaignSettings", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -79,7 +79,7 @@ func _SmartCampaignSettingService_MutateSmartCampaignSettings_Handler(srv interf
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v10.services.SmartCampaignSettingService/MutateSmartCampaignSettings",
+		FullMethod: "/google.ads.googleads.v11.services.SmartCampaignSettingService/MutateSmartCampaignSettings",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SmartCampaignSettingServiceServer).MutateSmartCampaignSettings(ctx, req.(*MutateSmartCampaignSettingsRequest))
@@ -91,7 +91,7 @@ func _SmartCampaignSettingService_MutateSmartCampaignSettings_Handler(srv interf
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var SmartCampaignSettingService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v10.services.SmartCampaignSettingService",
+	ServiceName: "google.ads.googleads.v11.services.SmartCampaignSettingService",
 	HandlerType: (*SmartCampaignSettingServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -100,5 +100,5 @@ var SmartCampaignSettingService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v10/services/smart_campaign_setting_service.proto",
+	Metadata: "google/ads/googleads/v11/services/smart_campaign_setting_service.proto",
 }

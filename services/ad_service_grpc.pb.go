@@ -84,7 +84,7 @@ func NewAdServiceClient(cc grpc.ClientConnInterface) AdServiceClient {
 
 func (c *adServiceClient) GetAd(ctx context.Context, in *GetAdRequest, opts ...grpc.CallOption) (*resources.Ad, error) {
 	out := new(resources.Ad)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.AdService/GetAd", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.AdService/GetAd", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -93,7 +93,7 @@ func (c *adServiceClient) GetAd(ctx context.Context, in *GetAdRequest, opts ...g
 
 func (c *adServiceClient) MutateAds(ctx context.Context, in *MutateAdsRequest, opts ...grpc.CallOption) (*MutateAdsResponse, error) {
 	out := new(MutateAdsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.AdService/MutateAds", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.AdService/MutateAds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -193,7 +193,7 @@ func _AdService_GetAd_Handler(srv interface{}, ctx context.Context, dec func(int
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v10.services.AdService/GetAd",
+		FullMethod: "/google.ads.googleads.v11.services.AdService/GetAd",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AdServiceServer).GetAd(ctx, req.(*GetAdRequest))
@@ -211,7 +211,7 @@ func _AdService_MutateAds_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v10.services.AdService/MutateAds",
+		FullMethod: "/google.ads.googleads.v11.services.AdService/MutateAds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AdServiceServer).MutateAds(ctx, req.(*MutateAdsRequest))
@@ -223,7 +223,7 @@ func _AdService_MutateAds_Handler(srv interface{}, ctx context.Context, dec func
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AdService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v10.services.AdService",
+	ServiceName: "google.ads.googleads.v11.services.AdService",
 	HandlerType: (*AdServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -236,5 +236,5 @@ var AdService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v10/services/ad_service.proto",
+	Metadata: "google/ads/googleads/v11/services/ad_service.proto",
 }

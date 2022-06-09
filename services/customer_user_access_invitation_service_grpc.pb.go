@@ -41,7 +41,7 @@ func NewCustomerUserAccessInvitationServiceClient(cc grpc.ClientConnInterface) C
 
 func (c *customerUserAccessInvitationServiceClient) MutateCustomerUserAccessInvitation(ctx context.Context, in *MutateCustomerUserAccessInvitationRequest, opts ...grpc.CallOption) (*MutateCustomerUserAccessInvitationResponse, error) {
 	out := new(MutateCustomerUserAccessInvitationResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v10.services.CustomerUserAccessInvitationService/MutateCustomerUserAccessInvitation", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.CustomerUserAccessInvitationService/MutateCustomerUserAccessInvitation", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -97,7 +97,7 @@ func _CustomerUserAccessInvitationService_MutateCustomerUserAccessInvitation_Han
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v10.services.CustomerUserAccessInvitationService/MutateCustomerUserAccessInvitation",
+		FullMethod: "/google.ads.googleads.v11.services.CustomerUserAccessInvitationService/MutateCustomerUserAccessInvitation",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CustomerUserAccessInvitationServiceServer).MutateCustomerUserAccessInvitation(ctx, req.(*MutateCustomerUserAccessInvitationRequest))
@@ -109,7 +109,7 @@ func _CustomerUserAccessInvitationService_MutateCustomerUserAccessInvitation_Han
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CustomerUserAccessInvitationService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v10.services.CustomerUserAccessInvitationService",
+	ServiceName: "google.ads.googleads.v11.services.CustomerUserAccessInvitationService",
 	HandlerType: (*CustomerUserAccessInvitationServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -118,5 +118,5 @@ var CustomerUserAccessInvitationService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v10/services/customer_user_access_invitation_service.proto",
+	Metadata: "google/ads/googleads/v11/services/customer_user_access_invitation_service.proto",
 }
