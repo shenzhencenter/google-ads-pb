@@ -69,7 +69,7 @@ func defaultCustomerConversionGoalCallOptions() *CustomerConversionGoalCallOptio
 	}
 }
 
-// internalCustomerConversionGoalClient is an interface that defines the methods availaible from Google Ads API.
+// internalCustomerConversionGoalClient is an interface that defines the methods available from Google Ads API.
 type internalCustomerConversionGoalClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -189,7 +189,7 @@ func (c *customerConversionGoalGRPCClient) Connection() *grpc.ClientConn {
 // use by Google-written clients.
 func (c *customerConversionGoalGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
-	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
+	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
@@ -206,6 +206,7 @@ func (c *customerConversionGoalGRPCClient) MutateCustomerConversionGoals(ctx con
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).MutateCustomerConversionGoals[0:len((*c.CallOptions).MutateCustomerConversionGoals):len((*c.CallOptions).MutateCustomerConversionGoals)], opts...)
 	var resp *servicespb.MutateCustomerConversionGoalsResponse

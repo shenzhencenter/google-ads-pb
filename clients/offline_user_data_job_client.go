@@ -99,7 +99,7 @@ func defaultOfflineUserDataJobCallOptions() *OfflineUserDataJobCallOptions {
 	}
 }
 
-// internalOfflineUserDataJobClient is an interface that defines the methods availaible from Google Ads API.
+// internalOfflineUserDataJobClient is an interface that defines the methods available from Google Ads API.
 type internalOfflineUserDataJobClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -295,7 +295,7 @@ func (c *offlineUserDataJobGRPCClient) Connection() *grpc.ClientConn {
 // use by Google-written clients.
 func (c *offlineUserDataJobGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
-	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
+	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
@@ -312,6 +312,7 @@ func (c *offlineUserDataJobGRPCClient) CreateOfflineUserDataJob(ctx context.Cont
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).CreateOfflineUserDataJob[0:len((*c.CallOptions).CreateOfflineUserDataJob):len((*c.CallOptions).CreateOfflineUserDataJob)], opts...)
 	var resp *servicespb.CreateOfflineUserDataJobResponse
@@ -333,6 +334,7 @@ func (c *offlineUserDataJobGRPCClient) AddOfflineUserDataJobOperations(ctx conte
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).AddOfflineUserDataJobOperations[0:len((*c.CallOptions).AddOfflineUserDataJobOperations):len((*c.CallOptions).AddOfflineUserDataJobOperations)], opts...)
 	var resp *servicespb.AddOfflineUserDataJobOperationsResponse
@@ -354,6 +356,7 @@ func (c *offlineUserDataJobGRPCClient) RunOfflineUserDataJob(ctx context.Context
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).RunOfflineUserDataJob[0:len((*c.CallOptions).RunOfflineUserDataJob):len((*c.CallOptions).RunOfflineUserDataJob)], opts...)
 	var resp *longrunningpb.Operation

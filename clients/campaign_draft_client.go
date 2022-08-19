@@ -102,7 +102,7 @@ func defaultCampaignDraftCallOptions() *CampaignDraftCallOptions {
 	}
 }
 
-// internalCampaignDraftClient is an interface that defines the methods availaible from Google Ads API.
+// internalCampaignDraftClient is an interface that defines the methods available from Google Ads API.
 type internalCampaignDraftClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -301,7 +301,7 @@ func (c *campaignDraftGRPCClient) Connection() *grpc.ClientConn {
 // use by Google-written clients.
 func (c *campaignDraftGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
-	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
+	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
@@ -318,6 +318,7 @@ func (c *campaignDraftGRPCClient) MutateCampaignDrafts(ctx context.Context, req 
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).MutateCampaignDrafts[0:len((*c.CallOptions).MutateCampaignDrafts):len((*c.CallOptions).MutateCampaignDrafts)], opts...)
 	var resp *servicespb.MutateCampaignDraftsResponse
@@ -339,6 +340,7 @@ func (c *campaignDraftGRPCClient) PromoteCampaignDraft(ctx context.Context, req 
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "campaign_draft", url.QueryEscape(req.GetCampaignDraft())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).PromoteCampaignDraft[0:len((*c.CallOptions).PromoteCampaignDraft):len((*c.CallOptions).PromoteCampaignDraft)], opts...)
 	var resp *longrunningpb.Operation
@@ -357,6 +359,7 @@ func (c *campaignDraftGRPCClient) PromoteCampaignDraft(ctx context.Context, req 
 
 func (c *campaignDraftGRPCClient) ListCampaignDraftAsyncErrors(ctx context.Context, req *servicespb.ListCampaignDraftAsyncErrorsRequest, opts ...gax.CallOption) *StatusIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).ListCampaignDraftAsyncErrors[0:len((*c.CallOptions).ListCampaignDraftAsyncErrors):len((*c.CallOptions).ListCampaignDraftAsyncErrors)], opts...)
 	it := &StatusIterator{}

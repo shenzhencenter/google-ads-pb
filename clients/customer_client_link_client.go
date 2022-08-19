@@ -69,7 +69,7 @@ func defaultCustomerClientLinkCallOptions() *CustomerClientLinkCallOptions {
 	}
 }
 
-// internalCustomerClientLinkClient is an interface that defines the methods availaible from Google Ads API.
+// internalCustomerClientLinkClient is an interface that defines the methods available from Google Ads API.
 type internalCustomerClientLinkClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -202,7 +202,7 @@ func (c *customerClientLinkGRPCClient) Connection() *grpc.ClientConn {
 // use by Google-written clients.
 func (c *customerClientLinkGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
-	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
+	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
@@ -219,6 +219,7 @@ func (c *customerClientLinkGRPCClient) MutateCustomerClientLink(ctx context.Cont
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).MutateCustomerClientLink[0:len((*c.CallOptions).MutateCustomerClientLink):len((*c.CallOptions).MutateCustomerClientLink)], opts...)
 	var resp *servicespb.MutateCustomerClientLinkResponse

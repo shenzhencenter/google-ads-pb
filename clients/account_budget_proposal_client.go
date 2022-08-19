@@ -69,7 +69,7 @@ func defaultAccountBudgetProposalCallOptions() *AccountBudgetProposalCallOptions
 	}
 }
 
-// internalAccountBudgetProposalClient is an interface that defines the methods availaible from Google Ads API.
+// internalAccountBudgetProposalClient is an interface that defines the methods available from Google Ads API.
 type internalAccountBudgetProposalClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -80,7 +80,7 @@ type internalAccountBudgetProposalClient interface {
 // AccountBudgetProposalClient is a client for interacting with Google Ads API.
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 //
-// A service for managing account-level budgets via proposals.
+// A service for managing account-level budgets through proposals.
 //
 // A proposal is a request to create a new budget or make changes to an
 // existing one.
@@ -164,7 +164,7 @@ type accountBudgetProposalGRPCClient struct {
 // NewAccountBudgetProposalClient creates a new account budget proposal service client based on gRPC.
 // The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
-// A service for managing account-level budgets via proposals.
+// A service for managing account-level budgets through proposals.
 //
 // A proposal is a request to create a new budget or make changes to an
 // existing one.
@@ -220,7 +220,7 @@ func (c *accountBudgetProposalGRPCClient) Connection() *grpc.ClientConn {
 // use by Google-written clients.
 func (c *accountBudgetProposalGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
-	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
+	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
@@ -237,6 +237,7 @@ func (c *accountBudgetProposalGRPCClient) MutateAccountBudgetProposal(ctx contex
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).MutateAccountBudgetProposal[0:len((*c.CallOptions).MutateAccountBudgetProposal):len((*c.CallOptions).MutateAccountBudgetProposal)], opts...)
 	var resp *servicespb.MutateAccountBudgetProposalResponse

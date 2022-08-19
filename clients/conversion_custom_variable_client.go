@@ -69,7 +69,7 @@ func defaultConversionCustomVariableCallOptions() *ConversionCustomVariableCallO
 	}
 }
 
-// internalConversionCustomVariableClient is an interface that defines the methods availaible from Google Ads API.
+// internalConversionCustomVariableClient is an interface that defines the methods available from Google Ads API.
 type internalConversionCustomVariableClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -199,7 +199,7 @@ func (c *conversionCustomVariableGRPCClient) Connection() *grpc.ClientConn {
 // use by Google-written clients.
 func (c *conversionCustomVariableGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
-	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
+	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
@@ -216,6 +216,7 @@ func (c *conversionCustomVariableGRPCClient) MutateConversionCustomVariables(ctx
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).MutateConversionCustomVariables[0:len((*c.CallOptions).MutateConversionCustomVariables):len((*c.CallOptions).MutateConversionCustomVariables)], opts...)
 	var resp *servicespb.MutateConversionCustomVariablesResponse

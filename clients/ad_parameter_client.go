@@ -69,7 +69,7 @@ func defaultAdParameterCallOptions() *AdParameterCallOptions {
 	}
 }
 
-// internalAdParameterClient is an interface that defines the methods availaible from Google Ads API.
+// internalAdParameterClient is an interface that defines the methods available from Google Ads API.
 type internalAdParameterClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -203,7 +203,7 @@ func (c *adParameterGRPCClient) Connection() *grpc.ClientConn {
 // use by Google-written clients.
 func (c *adParameterGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
-	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
+	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
@@ -220,6 +220,7 @@ func (c *adParameterGRPCClient) MutateAdParameters(ctx context.Context, req *ser
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).MutateAdParameters[0:len((*c.CallOptions).MutateAdParameters):len((*c.CallOptions).MutateAdParameters)], opts...)
 	var resp *servicespb.MutateAdParametersResponse

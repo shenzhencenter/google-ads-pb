@@ -97,7 +97,7 @@ func defaultKeywordPlanIdeaCallOptions() *KeywordPlanIdeaCallOptions {
 	}
 }
 
-// internalKeywordPlanIdeaClient is an interface that defines the methods availaible from Google Ads API.
+// internalKeywordPlanIdeaClient is an interface that defines the methods available from Google Ads API.
 type internalKeywordPlanIdeaClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -257,7 +257,7 @@ func (c *keywordPlanIdeaGRPCClient) Connection() *grpc.ClientConn {
 // use by Google-written clients.
 func (c *keywordPlanIdeaGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
-	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
+	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
@@ -269,6 +269,7 @@ func (c *keywordPlanIdeaGRPCClient) Close() error {
 
 func (c *keywordPlanIdeaGRPCClient) GenerateKeywordIdeas(ctx context.Context, req *servicespb.GenerateKeywordIdeasRequest, opts ...gax.CallOption) *GenerateKeywordIdeaResultIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).GenerateKeywordIdeas[0:len((*c.CallOptions).GenerateKeywordIdeas):len((*c.CallOptions).GenerateKeywordIdeas)], opts...)
 	it := &GenerateKeywordIdeaResultIterator{}
@@ -318,6 +319,7 @@ func (c *keywordPlanIdeaGRPCClient) GenerateKeywordHistoricalMetrics(ctx context
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).GenerateKeywordHistoricalMetrics[0:len((*c.CallOptions).GenerateKeywordHistoricalMetrics):len((*c.CallOptions).GenerateKeywordHistoricalMetrics)], opts...)
 	var resp *servicespb.GenerateKeywordHistoricalMetricsResponse
@@ -339,6 +341,7 @@ func (c *keywordPlanIdeaGRPCClient) GenerateAdGroupThemes(ctx context.Context, r
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).GenerateAdGroupThemes[0:len((*c.CallOptions).GenerateAdGroupThemes):len((*c.CallOptions).GenerateAdGroupThemes)], opts...)
 	var resp *servicespb.GenerateAdGroupThemesResponse

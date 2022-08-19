@@ -69,7 +69,7 @@ func defaultUserListCallOptions() *UserListCallOptions {
 	}
 }
 
-// internalUserListClient is an interface that defines the methods availaible from Google Ads API.
+// internalUserListClient is an interface that defines the methods available from Google Ads API.
 type internalUserListClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -210,7 +210,7 @@ func (c *userListGRPCClient) Connection() *grpc.ClientConn {
 // use by Google-written clients.
 func (c *userListGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
-	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
+	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
@@ -227,6 +227,7 @@ func (c *userListGRPCClient) MutateUserLists(ctx context.Context, req *servicesp
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).MutateUserLists[0:len((*c.CallOptions).MutateUserLists):len((*c.CallOptions).MutateUserLists)], opts...)
 	var resp *servicespb.MutateUserListsResponse

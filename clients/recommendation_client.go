@@ -82,7 +82,7 @@ func defaultRecommendationCallOptions() *RecommendationCallOptions {
 	}
 }
 
-// internalRecommendationClient is an interface that defines the methods availaible from Google Ads API.
+// internalRecommendationClient is an interface that defines the methods available from Google Ads API.
 type internalRecommendationClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -229,7 +229,7 @@ func (c *recommendationGRPCClient) Connection() *grpc.ClientConn {
 // use by Google-written clients.
 func (c *recommendationGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
-	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
+	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
@@ -246,6 +246,7 @@ func (c *recommendationGRPCClient) ApplyRecommendation(ctx context.Context, req 
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).ApplyRecommendation[0:len((*c.CallOptions).ApplyRecommendation):len((*c.CallOptions).ApplyRecommendation)], opts...)
 	var resp *servicespb.ApplyRecommendationResponse
@@ -267,6 +268,7 @@ func (c *recommendationGRPCClient) DismissRecommendation(ctx context.Context, re
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).DismissRecommendation[0:len((*c.CallOptions).DismissRecommendation):len((*c.CallOptions).DismissRecommendation)], opts...)
 	var resp *servicespb.DismissRecommendationResponse

@@ -95,7 +95,7 @@ func defaultCustomerCallOptions() *CustomerCallOptions {
 	}
 }
 
-// internalCustomerClient is an interface that defines the methods availaible from Google Ads API.
+// internalCustomerClient is an interface that defines the methods available from Google Ads API.
 type internalCustomerClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -259,7 +259,7 @@ func (c *customerGRPCClient) Connection() *grpc.ClientConn {
 // use by Google-written clients.
 func (c *customerGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
-	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
+	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
@@ -276,6 +276,7 @@ func (c *customerGRPCClient) MutateCustomer(ctx context.Context, req *servicespb
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).MutateCustomer[0:len((*c.CallOptions).MutateCustomer):len((*c.CallOptions).MutateCustomer)], opts...)
 	var resp *servicespb.MutateCustomerResponse
@@ -317,6 +318,7 @@ func (c *customerGRPCClient) CreateCustomerClient(ctx context.Context, req *serv
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).CreateCustomerClient[0:len((*c.CallOptions).CreateCustomerClient):len((*c.CallOptions).CreateCustomerClient)], opts...)
 	var resp *servicespb.CreateCustomerClientResponse

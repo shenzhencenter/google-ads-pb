@@ -69,7 +69,7 @@ func defaultThirdPartyAppAnalyticsLinkCallOptions() *ThirdPartyAppAnalyticsLinkC
 	}
 }
 
-// internalThirdPartyAppAnalyticsLinkClient is an interface that defines the methods availaible from Google Ads API.
+// internalThirdPartyAppAnalyticsLinkClient is an interface that defines the methods available from Google Ads API.
 type internalThirdPartyAppAnalyticsLinkClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -199,7 +199,7 @@ func (c *thirdPartyAppAnalyticsLinkGRPCClient) Connection() *grpc.ClientConn {
 // use by Google-written clients.
 func (c *thirdPartyAppAnalyticsLinkGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
-	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
+	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
@@ -216,6 +216,7 @@ func (c *thirdPartyAppAnalyticsLinkGRPCClient) RegenerateShareableLinkId(ctx con
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).RegenerateShareableLinkId[0:len((*c.CallOptions).RegenerateShareableLinkId):len((*c.CallOptions).RegenerateShareableLinkId)], opts...)
 	var resp *servicespb.RegenerateShareableLinkIdResponse
