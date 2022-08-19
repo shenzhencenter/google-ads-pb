@@ -82,7 +82,7 @@ func defaultAccountLinkCallOptions() *AccountLinkCallOptions {
 	}
 }
 
-// internalAccountLinkClient is an interface that defines the methods availaible from Google Ads API.
+// internalAccountLinkClient is an interface that defines the methods available from Google Ads API.
 type internalAccountLinkClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -146,7 +146,7 @@ func (c *AccountLinkClient) CreateAccountLink(ctx context.Context, req *services
 
 // MutateAccountLink creates or removes an account link.
 // From V5, create is not supported through
-// AccountLinkService.MutateAccountLink. Please use
+// AccountLinkService.MutateAccountLink. Use
 // AccountLinkService.CreateAccountLink instead.
 //
 // List of thrown errors:
@@ -235,7 +235,7 @@ func (c *accountLinkGRPCClient) Connection() *grpc.ClientConn {
 // use by Google-written clients.
 func (c *accountLinkGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
-	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
+	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
@@ -252,6 +252,7 @@ func (c *accountLinkGRPCClient) CreateAccountLink(ctx context.Context, req *serv
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).CreateAccountLink[0:len((*c.CallOptions).CreateAccountLink):len((*c.CallOptions).CreateAccountLink)], opts...)
 	var resp *servicespb.CreateAccountLinkResponse
@@ -273,6 +274,7 @@ func (c *accountLinkGRPCClient) MutateAccountLink(ctx context.Context, req *serv
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).MutateAccountLink[0:len((*c.CallOptions).MutateAccountLink):len((*c.CallOptions).MutateAccountLink)], opts...)
 	var resp *servicespb.MutateAccountLinkResponse

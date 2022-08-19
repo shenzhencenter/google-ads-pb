@@ -82,7 +82,7 @@ func defaultCustomerManagerLinkCallOptions() *CustomerManagerLinkCallOptions {
 	}
 }
 
-// internalCustomerManagerLinkClient is an interface that defines the methods availaible from Google Ads API.
+// internalCustomerManagerLinkClient is an interface that defines the methods available from Google Ads API.
 type internalCustomerManagerLinkClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -146,7 +146,7 @@ func (c *CustomerManagerLinkClient) MutateCustomerManagerLink(ctx context.Contex
 
 // MoveManagerLink moves a client customer to a new manager customer.
 // This simplifies the complex request that requires two operations to move
-// a client customer to a new manager. i.e:
+// a client customer to a new manager, for example:
 //
 // Update operation with Status INACTIVE (previous manager) and,
 //
@@ -237,7 +237,7 @@ func (c *customerManagerLinkGRPCClient) Connection() *grpc.ClientConn {
 // use by Google-written clients.
 func (c *customerManagerLinkGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
-	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
+	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
@@ -254,6 +254,7 @@ func (c *customerManagerLinkGRPCClient) MutateCustomerManagerLink(ctx context.Co
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).MutateCustomerManagerLink[0:len((*c.CallOptions).MutateCustomerManagerLink):len((*c.CallOptions).MutateCustomerManagerLink)], opts...)
 	var resp *servicespb.MutateCustomerManagerLinkResponse
@@ -275,6 +276,7 @@ func (c *customerManagerLinkGRPCClient) MoveManagerLink(ctx context.Context, req
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).MoveManagerLink[0:len((*c.CallOptions).MoveManagerLink):len((*c.CallOptions).MoveManagerLink)], opts...)
 	var resp *servicespb.MoveManagerLinkResponse

@@ -69,7 +69,7 @@ func defaultUserDataCallOptions() *UserDataCallOptions {
 	}
 }
 
-// internalUserDataClient is an interface that defines the methods availaible from Google Ads API.
+// internalUserDataClient is an interface that defines the methods available from Google Ads API.
 type internalUserDataClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -81,11 +81,11 @@ type internalUserDataClient interface {
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 //
 // Service to manage user data uploads.
-// Any uploads made to a Customer Match list via this service will be eligible
-// for matching as per the customer matching process. Please see
+// Any uploads made to a Customer Match list through this service will be
+// eligible for matching as per the customer matching process. See
 // https://support.google.com/google-ads/answer/7474263 (at https://support.google.com/google-ads/answer/7474263). However, the uploads
-// made via this service will not be visible under the ‘Segment members’ section
-// for the Customer Match List in the Google Ads UI.
+// made through this service will not be visible under the ‘Segment members’
+// section for the Customer Match List in the Google Ads UI.
 type UserDataClient struct {
 	// The internal transport-dependent client.
 	internalClient internalUserDataClient
@@ -159,11 +159,11 @@ type userDataGRPCClient struct {
 // The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
 // Service to manage user data uploads.
-// Any uploads made to a Customer Match list via this service will be eligible
-// for matching as per the customer matching process. Please see
+// Any uploads made to a Customer Match list through this service will be
+// eligible for matching as per the customer matching process. See
 // https://support.google.com/google-ads/answer/7474263 (at https://support.google.com/google-ads/answer/7474263). However, the uploads
-// made via this service will not be visible under the ‘Segment members’ section
-// for the Customer Match List in the Google Ads UI.
+// made through this service will not be visible under the ‘Segment members’
+// section for the Customer Match List in the Google Ads UI.
 func NewUserDataClient(ctx context.Context, opts ...option.ClientOption) (*UserDataClient, error) {
 	clientOpts := defaultUserDataGRPCClientOptions()
 	if newUserDataClientHook != nil {
@@ -211,7 +211,7 @@ func (c *userDataGRPCClient) Connection() *grpc.ClientConn {
 // use by Google-written clients.
 func (c *userDataGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
-	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
+	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
@@ -228,6 +228,7 @@ func (c *userDataGRPCClient) UploadUserData(ctx context.Context, req *servicespb
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).UploadUserData[0:len((*c.CallOptions).UploadUserData):len((*c.CallOptions).UploadUserData)], opts...)
 	var resp *servicespb.UploadUserDataResponse

@@ -95,7 +95,7 @@ func defaultSmartCampaignSuggestCallOptions() *SmartCampaignSuggestCallOptions {
 	}
 }
 
-// internalSmartCampaignSuggestClient is an interface that defines the methods availaible from Google Ads API.
+// internalSmartCampaignSuggestClient is an interface that defines the methods available from Google Ads API.
 type internalSmartCampaignSuggestClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -227,7 +227,7 @@ func (c *smartCampaignSuggestGRPCClient) Connection() *grpc.ClientConn {
 // use by Google-written clients.
 func (c *smartCampaignSuggestGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
-	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
+	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
@@ -244,6 +244,7 @@ func (c *smartCampaignSuggestGRPCClient) SuggestSmartCampaignBudgetOptions(ctx c
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).SuggestSmartCampaignBudgetOptions[0:len((*c.CallOptions).SuggestSmartCampaignBudgetOptions):len((*c.CallOptions).SuggestSmartCampaignBudgetOptions)], opts...)
 	var resp *servicespb.SuggestSmartCampaignBudgetOptionsResponse
@@ -265,6 +266,7 @@ func (c *smartCampaignSuggestGRPCClient) SuggestSmartCampaignAd(ctx context.Cont
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).SuggestSmartCampaignAd[0:len((*c.CallOptions).SuggestSmartCampaignAd):len((*c.CallOptions).SuggestSmartCampaignAd)], opts...)
 	var resp *servicespb.SuggestSmartCampaignAdResponse
@@ -286,6 +288,7 @@ func (c *smartCampaignSuggestGRPCClient) SuggestKeywordThemes(ctx context.Contex
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).SuggestKeywordThemes[0:len((*c.CallOptions).SuggestKeywordThemes):len((*c.CallOptions).SuggestKeywordThemes)], opts...)
 	var resp *servicespb.SuggestKeywordThemesResponse

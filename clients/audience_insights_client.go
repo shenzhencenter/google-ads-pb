@@ -39,6 +39,7 @@ var newAudienceInsightsClientHook clientHook
 type AudienceInsightsCallOptions struct {
 	GenerateInsightsFinderReport []gax.CallOption
 	ListAudienceInsightsAttributes []gax.CallOption
+	GenerateAudienceCompositionInsights []gax.CallOption
 }
 
 func defaultAudienceInsightsGRPCClientOptions() []option.ClientOption {
@@ -79,16 +80,29 @@ func defaultAudienceInsightsCallOptions() *AudienceInsightsCallOptions {
 				})
 			}),
 		},
+		GenerateAudienceCompositionInsights: []gax.CallOption{
+			gax.WithRetry(func() gax.Retryer {
+				return gax.OnCodes([]codes.Code{
+					codes.Unavailable,
+					codes.DeadlineExceeded,
+				}, gax.Backoff{
+					Initial:    5000 * time.Millisecond,
+					Max:        60000 * time.Millisecond,
+					Multiplier: 1.30,
+				})
+			}),
+		},
 	}
 }
 
-// internalAudienceInsightsClient is an interface that defines the methods availaible from Google Ads API.
+// internalAudienceInsightsClient is an interface that defines the methods available from Google Ads API.
 type internalAudienceInsightsClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
 	GenerateInsightsFinderReport(context.Context, *servicespb.GenerateInsightsFinderReportRequest, ...gax.CallOption) (*servicespb.GenerateInsightsFinderReportResponse, error)
 	ListAudienceInsightsAttributes(context.Context, *servicespb.ListAudienceInsightsAttributesRequest, ...gax.CallOption) (*servicespb.ListAudienceInsightsAttributesResponse, error)
+	GenerateAudienceCompositionInsights(context.Context, *servicespb.GenerateAudienceCompositionInsightsRequest, ...gax.CallOption) (*servicespb.GenerateAudienceCompositionInsightsResponse, error)
 }
 
 // AudienceInsightsClient is a client for interacting with Google Ads API.
@@ -155,6 +169,24 @@ func (c *AudienceInsightsClient) GenerateInsightsFinderReport(ctx context.Contex
 // RequestError (at )
 func (c *AudienceInsightsClient) ListAudienceInsightsAttributes(ctx context.Context, req *servicespb.ListAudienceInsightsAttributesRequest, opts ...gax.CallOption) (*servicespb.ListAudienceInsightsAttributesResponse, error) {
 	return c.internalClient.ListAudienceInsightsAttributes(ctx, req, opts...)
+}
+
+// GenerateAudienceCompositionInsights returns a collection of attributes that are represented in an audience of
+// interest, with metrics that compare each attribute’s share of the audience
+// with its share of a baseline audience.
+//
+// List of thrown errors:
+// AudienceInsightsError (at )
+// AuthenticationError (at )
+// AuthorizationError (at )
+// FieldError (at )
+// HeaderError (at )
+// InternalError (at )
+// QuotaError (at )
+// RangeError (at )
+// RequestError (at )
+func (c *AudienceInsightsClient) GenerateAudienceCompositionInsights(ctx context.Context, req *servicespb.GenerateAudienceCompositionInsightsRequest, opts ...gax.CallOption) (*servicespb.GenerateAudienceCompositionInsightsResponse, error) {
+	return c.internalClient.GenerateAudienceCompositionInsights(ctx, req, opts...)
 }
 
 // audienceInsightsGRPCClient is a client for interacting with Google Ads API over gRPC transport.
@@ -229,7 +261,7 @@ func (c *audienceInsightsGRPCClient) Connection() *grpc.ClientConn {
 // use by Google-written clients.
 func (c *audienceInsightsGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
-	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
+	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
@@ -246,6 +278,7 @@ func (c *audienceInsightsGRPCClient) GenerateInsightsFinderReport(ctx context.Co
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).GenerateInsightsFinderReport[0:len((*c.CallOptions).GenerateInsightsFinderReport):len((*c.CallOptions).GenerateInsightsFinderReport)], opts...)
 	var resp *servicespb.GenerateInsightsFinderReportResponse
@@ -267,12 +300,35 @@ func (c *audienceInsightsGRPCClient) ListAudienceInsightsAttributes(ctx context.
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).ListAudienceInsightsAttributes[0:len((*c.CallOptions).ListAudienceInsightsAttributes):len((*c.CallOptions).ListAudienceInsightsAttributes)], opts...)
 	var resp *servicespb.ListAudienceInsightsAttributesResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
 		resp, err = c.audienceInsightsClient.ListAudienceInsightsAttributes(ctx, req, settings.GRPC...)
+		return err
+	}, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return resp, nil
+}
+
+func (c *audienceInsightsGRPCClient) GenerateAudienceCompositionInsights(ctx context.Context, req *servicespb.GenerateAudienceCompositionInsightsRequest, opts ...gax.CallOption) (*servicespb.GenerateAudienceCompositionInsightsResponse, error) {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
+	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+
+	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	opts = append((*c.CallOptions).GenerateAudienceCompositionInsights[0:len((*c.CallOptions).GenerateAudienceCompositionInsights):len((*c.CallOptions).GenerateAudienceCompositionInsights)], opts...)
+	var resp *servicespb.GenerateAudienceCompositionInsightsResponse
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		resp, err = c.audienceInsightsClient.GenerateAudienceCompositionInsights(ctx, req, settings.GRPC...)
 		return err
 	}, opts...)
 	if err != nil {

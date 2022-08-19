@@ -96,7 +96,7 @@ func defaultMerchantCenterLinkCallOptions() *MerchantCenterLinkCallOptions {
 	}
 }
 
-// internalMerchantCenterLinkClient is an interface that defines the methods availaible from Google Ads API.
+// internalMerchantCenterLinkClient is an interface that defines the methods available from Google Ads API.
 type internalMerchantCenterLinkClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -254,7 +254,7 @@ func (c *merchantCenterLinkGRPCClient) Connection() *grpc.ClientConn {
 // use by Google-written clients.
 func (c *merchantCenterLinkGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
-	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
+	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
@@ -271,6 +271,7 @@ func (c *merchantCenterLinkGRPCClient) ListMerchantCenterLinks(ctx context.Conte
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).ListMerchantCenterLinks[0:len((*c.CallOptions).ListMerchantCenterLinks):len((*c.CallOptions).ListMerchantCenterLinks)], opts...)
 	var resp *servicespb.ListMerchantCenterLinksResponse
@@ -292,6 +293,7 @@ func (c *merchantCenterLinkGRPCClient) GetMerchantCenterLink(ctx context.Context
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).GetMerchantCenterLink[0:len((*c.CallOptions).GetMerchantCenterLink):len((*c.CallOptions).GetMerchantCenterLink)], opts...)
 	var resp *resourcespb.MerchantCenterLink
@@ -313,6 +315,7 @@ func (c *merchantCenterLinkGRPCClient) MutateMerchantCenterLink(ctx context.Cont
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).MutateMerchantCenterLink[0:len((*c.CallOptions).MutateMerchantCenterLink):len((*c.CallOptions).MutateMerchantCenterLink)], opts...)
 	var resp *servicespb.MutateMerchantCenterLinkResponse

@@ -83,7 +83,7 @@ func defaultAdCallOptions() *AdCallOptions {
 	}
 }
 
-// internalAdClient is an interface that defines the methods availaible from Google Ads API.
+// internalAdClient is an interface that defines the methods available from Google Ads API.
 type internalAdClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -257,7 +257,7 @@ func (c *adGRPCClient) Connection() *grpc.ClientConn {
 // use by Google-written clients.
 func (c *adGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
-	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
+	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
@@ -274,6 +274,7 @@ func (c *adGRPCClient) GetAd(ctx context.Context, req *servicespb.GetAdRequest, 
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).GetAd[0:len((*c.CallOptions).GetAd):len((*c.CallOptions).GetAd)], opts...)
 	var resp *resourcespb.Ad
@@ -295,6 +296,7 @@ func (c *adGRPCClient) MutateAds(ctx context.Context, req *servicespb.MutateAdsR
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).MutateAds[0:len((*c.CallOptions).MutateAds):len((*c.CallOptions).MutateAds)], opts...)
 	var resp *servicespb.MutateAdsResponse

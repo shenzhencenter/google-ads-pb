@@ -69,7 +69,7 @@ func defaultPaymentsAccountCallOptions() *PaymentsAccountCallOptions {
 	}
 }
 
-// internalPaymentsAccountClient is an interface that defines the methods availaible from Google Ads API.
+// internalPaymentsAccountClient is an interface that defines the methods available from Google Ads API.
 type internalPaymentsAccountClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -201,7 +201,7 @@ func (c *paymentsAccountGRPCClient) Connection() *grpc.ClientConn {
 // use by Google-written clients.
 func (c *paymentsAccountGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
-	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
+	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
@@ -218,6 +218,7 @@ func (c *paymentsAccountGRPCClient) ListPaymentsAccounts(ctx context.Context, re
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).ListPaymentsAccounts[0:len((*c.CallOptions).ListPaymentsAccounts):len((*c.CallOptions).ListPaymentsAccounts)], opts...)
 	var resp *servicespb.ListPaymentsAccountsResponse

@@ -141,7 +141,7 @@ func defaultCampaignExperimentCallOptions() *CampaignExperimentCallOptions {
 	}
 }
 
-// internalCampaignExperimentClient is an interface that defines the methods availaible from Google Ads API.
+// internalCampaignExperimentClient is an interface that defines the methods available from Google Ads API.
 type internalCampaignExperimentClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -420,7 +420,7 @@ func (c *campaignExperimentGRPCClient) Connection() *grpc.ClientConn {
 // use by Google-written clients.
 func (c *campaignExperimentGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
-	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
+	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
@@ -437,6 +437,7 @@ func (c *campaignExperimentGRPCClient) CreateCampaignExperiment(ctx context.Cont
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).CreateCampaignExperiment[0:len((*c.CallOptions).CreateCampaignExperiment):len((*c.CallOptions).CreateCampaignExperiment)], opts...)
 	var resp *longrunningpb.Operation
@@ -460,6 +461,7 @@ func (c *campaignExperimentGRPCClient) MutateCampaignExperiments(ctx context.Con
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).MutateCampaignExperiments[0:len((*c.CallOptions).MutateCampaignExperiments):len((*c.CallOptions).MutateCampaignExperiments)], opts...)
 	var resp *servicespb.MutateCampaignExperimentsResponse
@@ -481,6 +483,7 @@ func (c *campaignExperimentGRPCClient) GraduateCampaignExperiment(ctx context.Co
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "campaign_experiment", url.QueryEscape(req.GetCampaignExperiment())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).GraduateCampaignExperiment[0:len((*c.CallOptions).GraduateCampaignExperiment):len((*c.CallOptions).GraduateCampaignExperiment)], opts...)
 	var resp *servicespb.GraduateCampaignExperimentResponse
@@ -502,6 +505,7 @@ func (c *campaignExperimentGRPCClient) PromoteCampaignExperiment(ctx context.Con
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "campaign_experiment", url.QueryEscape(req.GetCampaignExperiment())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).PromoteCampaignExperiment[0:len((*c.CallOptions).PromoteCampaignExperiment):len((*c.CallOptions).PromoteCampaignExperiment)], opts...)
 	var resp *longrunningpb.Operation
@@ -525,6 +529,7 @@ func (c *campaignExperimentGRPCClient) EndCampaignExperiment(ctx context.Context
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "campaign_experiment", url.QueryEscape(req.GetCampaignExperiment())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).EndCampaignExperiment[0:len((*c.CallOptions).EndCampaignExperiment):len((*c.CallOptions).EndCampaignExperiment)], opts...)
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -537,6 +542,7 @@ func (c *campaignExperimentGRPCClient) EndCampaignExperiment(ctx context.Context
 
 func (c *campaignExperimentGRPCClient) ListCampaignExperimentAsyncErrors(ctx context.Context, req *servicespb.ListCampaignExperimentAsyncErrorsRequest, opts ...gax.CallOption) *StatusIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).ListCampaignExperimentAsyncErrors[0:len((*c.CallOptions).ListCampaignExperimentAsyncErrors):len((*c.CallOptions).ListCampaignExperimentAsyncErrors)], opts...)
 	it := &StatusIterator{}

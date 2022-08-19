@@ -69,7 +69,7 @@ func defaultSharedSetCallOptions() *SharedSetCallOptions {
 	}
 }
 
-// internalSharedSetClient is an interface that defines the methods availaible from Google Ads API.
+// internalSharedSetClient is an interface that defines the methods available from Google Ads API.
 type internalSharedSetClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -213,7 +213,7 @@ func (c *sharedSetGRPCClient) Connection() *grpc.ClientConn {
 // use by Google-written clients.
 func (c *sharedSetGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
-	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
+	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
@@ -230,6 +230,7 @@ func (c *sharedSetGRPCClient) MutateSharedSets(ctx context.Context, req *service
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).MutateSharedSets[0:len((*c.CallOptions).MutateSharedSets):len((*c.CallOptions).MutateSharedSets)], opts...)
 	var resp *servicespb.MutateSharedSetsResponse

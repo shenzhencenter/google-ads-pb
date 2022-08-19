@@ -69,7 +69,7 @@ func defaultAdGroupAdCallOptions() *AdGroupAdCallOptions {
 	}
 }
 
-// internalAdGroupAdClient is an interface that defines the methods availaible from Google Ads API.
+// internalAdGroupAdClient is an interface that defines the methods available from Google Ads API.
 type internalAdGroupAdClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -233,7 +233,7 @@ func (c *adGroupAdGRPCClient) Connection() *grpc.ClientConn {
 // use by Google-written clients.
 func (c *adGroupAdGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
-	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
+	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
@@ -250,6 +250,7 @@ func (c *adGroupAdGRPCClient) MutateAdGroupAds(ctx context.Context, req *service
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).MutateAdGroupAds[0:len((*c.CallOptions).MutateAdGroupAds):len((*c.CallOptions).MutateAdGroupAds)], opts...)
 	var resp *servicespb.MutateAdGroupAdsResponse

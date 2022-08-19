@@ -69,7 +69,7 @@ func defaultFeedItemSetCallOptions() *FeedItemSetCallOptions {
 	}
 }
 
-// internalFeedItemSetClient is an interface that defines the methods availaible from Google Ads API.
+// internalFeedItemSetClient is an interface that defines the methods available from Google Ads API.
 type internalFeedItemSetClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -198,7 +198,7 @@ func (c *feedItemSetGRPCClient) Connection() *grpc.ClientConn {
 // use by Google-written clients.
 func (c *feedItemSetGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
-	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
+	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
@@ -215,6 +215,7 @@ func (c *feedItemSetGRPCClient) MutateFeedItemSets(ctx context.Context, req *ser
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).MutateFeedItemSets[0:len((*c.CallOptions).MutateFeedItemSets):len((*c.CallOptions).MutateFeedItemSets)], opts...)
 	var resp *servicespb.MutateFeedItemSetsResponse

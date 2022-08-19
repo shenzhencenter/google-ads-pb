@@ -85,7 +85,7 @@ func defaultGoogleAdsFieldCallOptions() *GoogleAdsFieldCallOptions {
 	}
 }
 
-// internalGoogleAdsFieldClient is an interface that defines the methods availaible from Google Ads API.
+// internalGoogleAdsFieldClient is an interface that defines the methods available from Google Ads API.
 type internalGoogleAdsFieldClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -227,7 +227,7 @@ func (c *googleAdsFieldGRPCClient) Connection() *grpc.ClientConn {
 // use by Google-written clients.
 func (c *googleAdsFieldGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
-	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
+	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
@@ -244,6 +244,7 @@ func (c *googleAdsFieldGRPCClient) GetGoogleAdsField(ctx context.Context, req *s
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).GetGoogleAdsField[0:len((*c.CallOptions).GetGoogleAdsField):len((*c.CallOptions).GetGoogleAdsField)], opts...)
 	var resp *resourcespb.GoogleAdsField

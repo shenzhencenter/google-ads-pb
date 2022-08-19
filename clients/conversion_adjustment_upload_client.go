@@ -69,7 +69,7 @@ func defaultConversionAdjustmentUploadCallOptions() *ConversionAdjustmentUploadC
 	}
 }
 
-// internalConversionAdjustmentUploadClient is an interface that defines the methods availaible from Google Ads API.
+// internalConversionAdjustmentUploadClient is an interface that defines the methods available from Google Ads API.
 type internalConversionAdjustmentUploadClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -197,7 +197,7 @@ func (c *conversionAdjustmentUploadGRPCClient) Connection() *grpc.ClientConn {
 // use by Google-written clients.
 func (c *conversionAdjustmentUploadGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
-	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
+	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
@@ -214,6 +214,7 @@ func (c *conversionAdjustmentUploadGRPCClient) UploadConversionAdjustments(ctx c
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).UploadConversionAdjustments[0:len((*c.CallOptions).UploadConversionAdjustments):len((*c.CallOptions).UploadConversionAdjustments)], opts...)
 	var resp *servicespb.UploadConversionAdjustmentsResponse

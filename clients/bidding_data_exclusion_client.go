@@ -69,7 +69,7 @@ func defaultBiddingDataExclusionCallOptions() *BiddingDataExclusionCallOptions {
 	}
 }
 
-// internalBiddingDataExclusionClient is an interface that defines the methods availaible from Google Ads API.
+// internalBiddingDataExclusionClient is an interface that defines the methods available from Google Ads API.
 type internalBiddingDataExclusionClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -189,7 +189,7 @@ func (c *biddingDataExclusionGRPCClient) Connection() *grpc.ClientConn {
 // use by Google-written clients.
 func (c *biddingDataExclusionGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
-	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
+	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
@@ -206,6 +206,7 @@ func (c *biddingDataExclusionGRPCClient) MutateBiddingDataExclusions(ctx context
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).MutateBiddingDataExclusions[0:len((*c.CallOptions).MutateBiddingDataExclusions):len((*c.CallOptions).MutateBiddingDataExclusions)], opts...)
 	var resp *servicespb.MutateBiddingDataExclusionsResponse

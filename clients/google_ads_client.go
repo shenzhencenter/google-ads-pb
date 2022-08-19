@@ -97,7 +97,7 @@ func defaultGoogleAdsCallOptions() *GoogleAdsCallOptions {
 	}
 }
 
-// internalGoogleAdsClient is an interface that defines the methods availaible from Google Ads API.
+// internalGoogleAdsClient is an interface that defines the methods available from Google Ads API.
 type internalGoogleAdsClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -195,7 +195,7 @@ func (c *GoogleAdsClient) SearchStream(ctx context.Context, req *servicespb.Sear
 //
 // Atomic Transaction BenefitsAtomicity makes error handling much easier. If you’re making a series of
 // changes and one fails, it can leave your account in an inconsistent state.
-// With atomicity, you either reach the desired state directly, or the request
+// With atomicity, you either reach the chosen state directly, or the request
 // fails and you can retry.
 //
 // Temp Resource NamesTemp resource names are a special type of resource name used to create a
@@ -362,7 +362,7 @@ func (c *googleAdsGRPCClient) Connection() *grpc.ClientConn {
 // use by Google-written clients.
 func (c *googleAdsGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
-	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
+	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
@@ -374,6 +374,7 @@ func (c *googleAdsGRPCClient) Close() error {
 
 func (c *googleAdsGRPCClient) Search(ctx context.Context, req *servicespb.SearchGoogleAdsRequest, opts ...gax.CallOption) *GoogleAdsRowIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).Search[0:len((*c.CallOptions).Search):len((*c.CallOptions).Search)], opts...)
 	it := &GoogleAdsRowIterator{}
@@ -418,6 +419,7 @@ func (c *googleAdsGRPCClient) Search(ctx context.Context, req *servicespb.Search
 
 func (c *googleAdsGRPCClient) SearchStream(ctx context.Context, req *servicespb.SearchGoogleAdsStreamRequest, opts ...gax.CallOption) (servicespb.GoogleAdsService_SearchStreamClient, error) {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	var resp servicespb.GoogleAdsService_SearchStreamClient
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -438,6 +440,7 @@ func (c *googleAdsGRPCClient) Mutate(ctx context.Context, req *servicespb.Mutate
 		ctx = cctx
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).Mutate[0:len((*c.CallOptions).Mutate):len((*c.CallOptions).Mutate)], opts...)
 	var resp *servicespb.MutateGoogleAdsResponse
