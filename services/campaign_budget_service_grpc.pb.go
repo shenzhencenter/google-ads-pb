@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.5
-// source: google/ads/googleads/v11/services/campaign_budget_service.proto
+// source: google/ads/googleads/v12/services/campaign_budget_service.proto
 
 package services
 
@@ -56,7 +56,7 @@ func NewCampaignBudgetServiceClient(cc grpc.ClientConnInterface) CampaignBudgetS
 
 func (c *campaignBudgetServiceClient) MutateCampaignBudgets(ctx context.Context, in *MutateCampaignBudgetsRequest, opts ...grpc.CallOption) (*MutateCampaignBudgetsResponse, error) {
 	out := new(MutateCampaignBudgetsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.CampaignBudgetService/MutateCampaignBudgets", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.CampaignBudgetService/MutateCampaignBudgets", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -122,7 +122,7 @@ func _CampaignBudgetService_MutateCampaignBudgets_Handler(srv interface{}, ctx c
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v11.services.CampaignBudgetService/MutateCampaignBudgets",
+		FullMethod: "/google.ads.googleads.v12.services.CampaignBudgetService/MutateCampaignBudgets",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CampaignBudgetServiceServer).MutateCampaignBudgets(ctx, req.(*MutateCampaignBudgetsRequest))
@@ -134,7 +134,7 @@ func _CampaignBudgetService_MutateCampaignBudgets_Handler(srv interface{}, ctx c
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CampaignBudgetService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v11.services.CampaignBudgetService",
+	ServiceName: "google.ads.googleads.v12.services.CampaignBudgetService",
 	HandlerType: (*CampaignBudgetServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -143,5 +143,5 @@ var CampaignBudgetService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v11/services/campaign_budget_service.proto",
+	Metadata: "google/ads/googleads/v12/services/campaign_budget_service.proto",
 }

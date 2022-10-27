@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.5
-// source: google/ads/googleads/v11/services/customizer_attribute_service.proto
+// source: google/ads/googleads/v12/services/customizer_attribute_service.proto
 
 package services
 
@@ -37,7 +37,7 @@ func NewCustomizerAttributeServiceClient(cc grpc.ClientConnInterface) Customizer
 
 func (c *customizerAttributeServiceClient) MutateCustomizerAttributes(ctx context.Context, in *MutateCustomizerAttributesRequest, opts ...grpc.CallOption) (*MutateCustomizerAttributesResponse, error) {
 	out := new(MutateCustomizerAttributesResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.CustomizerAttributeService/MutateCustomizerAttributes", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.CustomizerAttributeService/MutateCustomizerAttributes", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -85,7 +85,7 @@ func _CustomizerAttributeService_MutateCustomizerAttributes_Handler(srv interfac
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v11.services.CustomizerAttributeService/MutateCustomizerAttributes",
+		FullMethod: "/google.ads.googleads.v12.services.CustomizerAttributeService/MutateCustomizerAttributes",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CustomizerAttributeServiceServer).MutateCustomizerAttributes(ctx, req.(*MutateCustomizerAttributesRequest))
@@ -97,7 +97,7 @@ func _CustomizerAttributeService_MutateCustomizerAttributes_Handler(srv interfac
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CustomizerAttributeService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v11.services.CustomizerAttributeService",
+	ServiceName: "google.ads.googleads.v12.services.CustomizerAttributeService",
 	HandlerType: (*CustomizerAttributeServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -106,5 +106,5 @@ var CustomizerAttributeService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v11/services/customizer_attribute_service.proto",
+	Metadata: "google/ads/googleads/v12/services/customizer_attribute_service.proto",
 }

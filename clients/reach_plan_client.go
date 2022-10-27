@@ -39,7 +39,6 @@ var newReachPlanClientHook clientHook
 type ReachPlanCallOptions struct {
 	ListPlannableLocations []gax.CallOption
 	ListPlannableProducts []gax.CallOption
-	GenerateProductMixIdeas []gax.CallOption
 	GenerateReachForecast []gax.CallOption
 }
 
@@ -81,18 +80,6 @@ func defaultReachPlanCallOptions() *ReachPlanCallOptions {
 				})
 			}),
 		},
-		GenerateProductMixIdeas: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
 		GenerateReachForecast: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -115,7 +102,6 @@ type internalReachPlanClient interface {
 	Connection() *grpc.ClientConn
 	ListPlannableLocations(context.Context, *servicespb.ListPlannableLocationsRequest, ...gax.CallOption) (*servicespb.ListPlannableLocationsResponse, error)
 	ListPlannableProducts(context.Context, *servicespb.ListPlannableProductsRequest, ...gax.CallOption) (*servicespb.ListPlannableProductsResponse, error)
-	GenerateProductMixIdeas(context.Context, *servicespb.GenerateProductMixIdeasRequest, ...gax.CallOption) (*servicespb.GenerateProductMixIdeasResponse, error)
 	GenerateReachForecast(context.Context, *servicespb.GenerateReachForecastRequest, ...gax.CallOption) (*servicespb.GenerateReachForecastResponse, error)
 }
 
@@ -183,22 +169,6 @@ func (c *ReachPlanClient) ListPlannableLocations(ctx context.Context, req *servi
 // RequestError (at )
 func (c *ReachPlanClient) ListPlannableProducts(ctx context.Context, req *servicespb.ListPlannableProductsRequest, opts ...gax.CallOption) (*servicespb.ListPlannableProductsResponse, error) {
 	return c.internalClient.ListPlannableProducts(ctx, req, opts...)
-}
-
-// GenerateProductMixIdeas generates a product mix ideas given a set of preferences. This method
-// helps the advertiser to obtain a good mix of ad formats and budget
-// allocations based on its preferences.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// QuotaError (at )
-// ReachPlanError (at )
-// RequestError (at )
-func (c *ReachPlanClient) GenerateProductMixIdeas(ctx context.Context, req *servicespb.GenerateProductMixIdeasRequest, opts ...gax.CallOption) (*servicespb.GenerateProductMixIdeasResponse, error) {
-	return c.internalClient.GenerateProductMixIdeas(ctx, req, opts...)
 }
 
 // GenerateReachForecast generates a reach forecast for a given targeting / product mix.
@@ -334,28 +304,6 @@ func (c *reachPlanGRPCClient) ListPlannableProducts(ctx context.Context, req *se
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
 		resp, err = c.reachPlanClient.ListPlannableProducts(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
-}
-
-func (c *reachPlanGRPCClient) GenerateProductMixIdeas(ctx context.Context, req *servicespb.GenerateProductMixIdeasRequest, opts ...gax.CallOption) (*servicespb.GenerateProductMixIdeasResponse, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
-
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GenerateProductMixIdeas[0:len((*c.CallOptions).GenerateProductMixIdeas):len((*c.CallOptions).GenerateProductMixIdeas)], opts...)
-	var resp *servicespb.GenerateProductMixIdeasResponse
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.reachPlanClient.GenerateProductMixIdeas(ctx, req, settings.GRPC...)
 		return err
 	}, opts...)
 	if err != nil {

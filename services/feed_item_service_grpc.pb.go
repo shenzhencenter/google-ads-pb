@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.5
-// source: google/ads/googleads/v11/services/feed_item_service.proto
+// source: google/ads/googleads/v12/services/feed_item_service.proto
 
 package services
 
@@ -64,7 +64,7 @@ func NewFeedItemServiceClient(cc grpc.ClientConnInterface) FeedItemServiceClient
 
 func (c *feedItemServiceClient) MutateFeedItems(ctx context.Context, in *MutateFeedItemsRequest, opts ...grpc.CallOption) (*MutateFeedItemsResponse, error) {
 	out := new(MutateFeedItemsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.FeedItemService/MutateFeedItems", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.FeedItemService/MutateFeedItems", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -138,7 +138,7 @@ func _FeedItemService_MutateFeedItems_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v11.services.FeedItemService/MutateFeedItems",
+		FullMethod: "/google.ads.googleads.v12.services.FeedItemService/MutateFeedItems",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(FeedItemServiceServer).MutateFeedItems(ctx, req.(*MutateFeedItemsRequest))
@@ -150,7 +150,7 @@ func _FeedItemService_MutateFeedItems_Handler(srv interface{}, ctx context.Conte
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var FeedItemService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v11.services.FeedItemService",
+	ServiceName: "google.ads.googleads.v12.services.FeedItemService",
 	HandlerType: (*FeedItemServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -159,5 +159,5 @@ var FeedItemService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v11/services/feed_item_service.proto",
+	Metadata: "google/ads/googleads/v12/services/feed_item_service.proto",
 }

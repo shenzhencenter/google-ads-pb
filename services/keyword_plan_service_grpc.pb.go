@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.5
-// source: google/ads/googleads/v11/services/keyword_plan_service.proto
+// source: google/ads/googleads/v12/services/keyword_plan_service.proto
 
 package services
 
@@ -107,7 +107,7 @@ func NewKeywordPlanServiceClient(cc grpc.ClientConnInterface) KeywordPlanService
 
 func (c *keywordPlanServiceClient) MutateKeywordPlans(ctx context.Context, in *MutateKeywordPlansRequest, opts ...grpc.CallOption) (*MutateKeywordPlansResponse, error) {
 	out := new(MutateKeywordPlansResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.KeywordPlanService/MutateKeywordPlans", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.KeywordPlanService/MutateKeywordPlans", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -116,7 +116,7 @@ func (c *keywordPlanServiceClient) MutateKeywordPlans(ctx context.Context, in *M
 
 func (c *keywordPlanServiceClient) GenerateForecastCurve(ctx context.Context, in *GenerateForecastCurveRequest, opts ...grpc.CallOption) (*GenerateForecastCurveResponse, error) {
 	out := new(GenerateForecastCurveResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.KeywordPlanService/GenerateForecastCurve", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.KeywordPlanService/GenerateForecastCurve", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -125,7 +125,7 @@ func (c *keywordPlanServiceClient) GenerateForecastCurve(ctx context.Context, in
 
 func (c *keywordPlanServiceClient) GenerateForecastTimeSeries(ctx context.Context, in *GenerateForecastTimeSeriesRequest, opts ...grpc.CallOption) (*GenerateForecastTimeSeriesResponse, error) {
 	out := new(GenerateForecastTimeSeriesResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.KeywordPlanService/GenerateForecastTimeSeries", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.KeywordPlanService/GenerateForecastTimeSeries", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -134,7 +134,7 @@ func (c *keywordPlanServiceClient) GenerateForecastTimeSeries(ctx context.Contex
 
 func (c *keywordPlanServiceClient) GenerateForecastMetrics(ctx context.Context, in *GenerateForecastMetricsRequest, opts ...grpc.CallOption) (*GenerateForecastMetricsResponse, error) {
 	out := new(GenerateForecastMetricsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.KeywordPlanService/GenerateForecastMetrics", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.KeywordPlanService/GenerateForecastMetrics", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -143,7 +143,7 @@ func (c *keywordPlanServiceClient) GenerateForecastMetrics(ctx context.Context, 
 
 func (c *keywordPlanServiceClient) GenerateHistoricalMetrics(ctx context.Context, in *GenerateHistoricalMetricsRequest, opts ...grpc.CallOption) (*GenerateHistoricalMetricsResponse, error) {
 	out := new(GenerateHistoricalMetricsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.KeywordPlanService/GenerateHistoricalMetrics", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.KeywordPlanService/GenerateHistoricalMetrics", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -272,7 +272,7 @@ func _KeywordPlanService_MutateKeywordPlans_Handler(srv interface{}, ctx context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v11.services.KeywordPlanService/MutateKeywordPlans",
+		FullMethod: "/google.ads.googleads.v12.services.KeywordPlanService/MutateKeywordPlans",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(KeywordPlanServiceServer).MutateKeywordPlans(ctx, req.(*MutateKeywordPlansRequest))
@@ -290,7 +290,7 @@ func _KeywordPlanService_GenerateForecastCurve_Handler(srv interface{}, ctx cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v11.services.KeywordPlanService/GenerateForecastCurve",
+		FullMethod: "/google.ads.googleads.v12.services.KeywordPlanService/GenerateForecastCurve",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(KeywordPlanServiceServer).GenerateForecastCurve(ctx, req.(*GenerateForecastCurveRequest))
@@ -308,7 +308,7 @@ func _KeywordPlanService_GenerateForecastTimeSeries_Handler(srv interface{}, ctx
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v11.services.KeywordPlanService/GenerateForecastTimeSeries",
+		FullMethod: "/google.ads.googleads.v12.services.KeywordPlanService/GenerateForecastTimeSeries",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(KeywordPlanServiceServer).GenerateForecastTimeSeries(ctx, req.(*GenerateForecastTimeSeriesRequest))
@@ -326,7 +326,7 @@ func _KeywordPlanService_GenerateForecastMetrics_Handler(srv interface{}, ctx co
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v11.services.KeywordPlanService/GenerateForecastMetrics",
+		FullMethod: "/google.ads.googleads.v12.services.KeywordPlanService/GenerateForecastMetrics",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(KeywordPlanServiceServer).GenerateForecastMetrics(ctx, req.(*GenerateForecastMetricsRequest))
@@ -344,7 +344,7 @@ func _KeywordPlanService_GenerateHistoricalMetrics_Handler(srv interface{}, ctx 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v11.services.KeywordPlanService/GenerateHistoricalMetrics",
+		FullMethod: "/google.ads.googleads.v12.services.KeywordPlanService/GenerateHistoricalMetrics",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(KeywordPlanServiceServer).GenerateHistoricalMetrics(ctx, req.(*GenerateHistoricalMetricsRequest))
@@ -356,7 +356,7 @@ func _KeywordPlanService_GenerateHistoricalMetrics_Handler(srv interface{}, ctx 
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var KeywordPlanService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v11.services.KeywordPlanService",
+	ServiceName: "google.ads.googleads.v12.services.KeywordPlanService",
 	HandlerType: (*KeywordPlanServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -381,5 +381,5 @@ var KeywordPlanService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v11/services/keyword_plan_service.proto",
+	Metadata: "google/ads/googleads/v12/services/keyword_plan_service.proto",
 }

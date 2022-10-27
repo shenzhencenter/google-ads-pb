@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.5
-// source: google/ads/googleads/v11/services/merchant_center_link_service.proto
+// source: google/ads/googleads/v12/services/merchant_center_link_service.proto
 
 package services
 
@@ -66,7 +66,7 @@ func NewMerchantCenterLinkServiceClient(cc grpc.ClientConnInterface) MerchantCen
 
 func (c *merchantCenterLinkServiceClient) ListMerchantCenterLinks(ctx context.Context, in *ListMerchantCenterLinksRequest, opts ...grpc.CallOption) (*ListMerchantCenterLinksResponse, error) {
 	out := new(ListMerchantCenterLinksResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.MerchantCenterLinkService/ListMerchantCenterLinks", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.MerchantCenterLinkService/ListMerchantCenterLinks", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -75,7 +75,7 @@ func (c *merchantCenterLinkServiceClient) ListMerchantCenterLinks(ctx context.Co
 
 func (c *merchantCenterLinkServiceClient) GetMerchantCenterLink(ctx context.Context, in *GetMerchantCenterLinkRequest, opts ...grpc.CallOption) (*resources.MerchantCenterLink, error) {
 	out := new(resources.MerchantCenterLink)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.MerchantCenterLinkService/GetMerchantCenterLink", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.MerchantCenterLinkService/GetMerchantCenterLink", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -84,7 +84,7 @@ func (c *merchantCenterLinkServiceClient) GetMerchantCenterLink(ctx context.Cont
 
 func (c *merchantCenterLinkServiceClient) MutateMerchantCenterLink(ctx context.Context, in *MutateMerchantCenterLinkRequest, opts ...grpc.CallOption) (*MutateMerchantCenterLinkResponse, error) {
 	out := new(MutateMerchantCenterLinkResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.MerchantCenterLinkService/MutateMerchantCenterLink", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.MerchantCenterLinkService/MutateMerchantCenterLink", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -166,7 +166,7 @@ func _MerchantCenterLinkService_ListMerchantCenterLinks_Handler(srv interface{},
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v11.services.MerchantCenterLinkService/ListMerchantCenterLinks",
+		FullMethod: "/google.ads.googleads.v12.services.MerchantCenterLinkService/ListMerchantCenterLinks",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MerchantCenterLinkServiceServer).ListMerchantCenterLinks(ctx, req.(*ListMerchantCenterLinksRequest))
@@ -184,7 +184,7 @@ func _MerchantCenterLinkService_GetMerchantCenterLink_Handler(srv interface{}, c
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v11.services.MerchantCenterLinkService/GetMerchantCenterLink",
+		FullMethod: "/google.ads.googleads.v12.services.MerchantCenterLinkService/GetMerchantCenterLink",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MerchantCenterLinkServiceServer).GetMerchantCenterLink(ctx, req.(*GetMerchantCenterLinkRequest))
@@ -202,7 +202,7 @@ func _MerchantCenterLinkService_MutateMerchantCenterLink_Handler(srv interface{}
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v11.services.MerchantCenterLinkService/MutateMerchantCenterLink",
+		FullMethod: "/google.ads.googleads.v12.services.MerchantCenterLinkService/MutateMerchantCenterLink",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MerchantCenterLinkServiceServer).MutateMerchantCenterLink(ctx, req.(*MutateMerchantCenterLinkRequest))
@@ -214,7 +214,7 @@ func _MerchantCenterLinkService_MutateMerchantCenterLink_Handler(srv interface{}
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var MerchantCenterLinkService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v11.services.MerchantCenterLinkService",
+	ServiceName: "google.ads.googleads.v12.services.MerchantCenterLinkService",
 	HandlerType: (*MerchantCenterLinkServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -231,5 +231,5 @@ var MerchantCenterLinkService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v11/services/merchant_center_link_service.proto",
+	Metadata: "google/ads/googleads/v12/services/merchant_center_link_service.proto",
 }

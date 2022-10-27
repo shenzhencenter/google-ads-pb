@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.5
-// source: google/ads/googleads/v11/services/campaign_extension_setting_service.proto
+// source: google/ads/googleads/v12/services/campaign_extension_setting_service.proto
 
 package services
 
@@ -66,7 +66,7 @@ func NewCampaignExtensionSettingServiceClient(cc grpc.ClientConnInterface) Campa
 
 func (c *campaignExtensionSettingServiceClient) MutateCampaignExtensionSettings(ctx context.Context, in *MutateCampaignExtensionSettingsRequest, opts ...grpc.CallOption) (*MutateCampaignExtensionSettingsResponse, error) {
 	out := new(MutateCampaignExtensionSettingsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.CampaignExtensionSettingService/MutateCampaignExtensionSettings", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.CampaignExtensionSettingService/MutateCampaignExtensionSettings", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -143,7 +143,7 @@ func _CampaignExtensionSettingService_MutateCampaignExtensionSettings_Handler(sr
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v11.services.CampaignExtensionSettingService/MutateCampaignExtensionSettings",
+		FullMethod: "/google.ads.googleads.v12.services.CampaignExtensionSettingService/MutateCampaignExtensionSettings",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CampaignExtensionSettingServiceServer).MutateCampaignExtensionSettings(ctx, req.(*MutateCampaignExtensionSettingsRequest))
@@ -155,7 +155,7 @@ func _CampaignExtensionSettingService_MutateCampaignExtensionSettings_Handler(sr
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CampaignExtensionSettingService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v11.services.CampaignExtensionSettingService",
+	ServiceName: "google.ads.googleads.v12.services.CampaignExtensionSettingService",
 	HandlerType: (*CampaignExtensionSettingServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -164,5 +164,5 @@ var CampaignExtensionSettingService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v11/services/campaign_extension_setting_service.proto",
+	Metadata: "google/ads/googleads/v12/services/campaign_extension_setting_service.proto",
 }

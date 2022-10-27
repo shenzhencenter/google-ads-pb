@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.5
-// source: google/ads/googleads/v11/services/media_file_service.proto
+// source: google/ads/googleads/v12/services/media_file_service.proto
 
 package services
 
@@ -59,7 +59,7 @@ func NewMediaFileServiceClient(cc grpc.ClientConnInterface) MediaFileServiceClie
 
 func (c *mediaFileServiceClient) MutateMediaFiles(ctx context.Context, in *MutateMediaFilesRequest, opts ...grpc.CallOption) (*MutateMediaFilesResponse, error) {
 	out := new(MutateMediaFilesResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.MediaFileService/MutateMediaFiles", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.MediaFileService/MutateMediaFiles", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -128,7 +128,7 @@ func _MediaFileService_MutateMediaFiles_Handler(srv interface{}, ctx context.Con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v11.services.MediaFileService/MutateMediaFiles",
+		FullMethod: "/google.ads.googleads.v12.services.MediaFileService/MutateMediaFiles",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MediaFileServiceServer).MutateMediaFiles(ctx, req.(*MutateMediaFilesRequest))
@@ -140,7 +140,7 @@ func _MediaFileService_MutateMediaFiles_Handler(srv interface{}, ctx context.Con
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var MediaFileService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v11.services.MediaFileService",
+	ServiceName: "google.ads.googleads.v12.services.MediaFileService",
 	HandlerType: (*MediaFileServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -149,5 +149,5 @@ var MediaFileService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v11/services/media_file_service.proto",
+	Metadata: "google/ads/googleads/v12/services/media_file_service.proto",
 }

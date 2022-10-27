@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.28.1
 // 	protoc        v3.21.5
-// source: google/ads/googleads/v11/common/criteria.proto
+// source: google/ads/googleads/v12/common/criteria.proto
 
 package common
 
@@ -44,13 +44,13 @@ type KeywordInfo struct {
 	// The text of the keyword (at most 80 characters and 10 words).
 	Text *string `protobuf:"bytes,3,opt,name=text,proto3,oneof" json:"text,omitempty"`
 	// The match type of the keyword.
-	MatchType enums.KeywordMatchTypeEnum_KeywordMatchType `protobuf:"varint,2,opt,name=match_type,json=matchType,proto3,enum=google.ads.googleads.v11.enums.KeywordMatchTypeEnum_KeywordMatchType" json:"match_type,omitempty"`
+	MatchType enums.KeywordMatchTypeEnum_KeywordMatchType `protobuf:"varint,2,opt,name=match_type,json=matchType,proto3,enum=google.ads.googleads.v12.enums.KeywordMatchTypeEnum_KeywordMatchType" json:"match_type,omitempty"`
 }
 
 func (x *KeywordInfo) Reset() {
 	*x = KeywordInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[0]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -63,7 +63,7 @@ func (x *KeywordInfo) String() string {
 func (*KeywordInfo) ProtoMessage() {}
 
 func (x *KeywordInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -76,7 +76,7 @@ func (x *KeywordInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use KeywordInfo.ProtoReflect.Descriptor instead.
 func (*KeywordInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *KeywordInfo) GetText() string {
@@ -109,7 +109,7 @@ type PlacementInfo struct {
 func (x *PlacementInfo) Reset() {
 	*x = PlacementInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[1]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -122,7 +122,7 @@ func (x *PlacementInfo) String() string {
 func (*PlacementInfo) ProtoMessage() {}
 
 func (x *PlacementInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -135,7 +135,7 @@ func (x *PlacementInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PlacementInfo.ProtoReflect.Descriptor instead.
 func (*PlacementInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{1}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *PlacementInfo) GetUrl() string {
@@ -158,7 +158,7 @@ type MobileAppCategoryInfo struct {
 func (x *MobileAppCategoryInfo) Reset() {
 	*x = MobileAppCategoryInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[2]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -171,7 +171,7 @@ func (x *MobileAppCategoryInfo) String() string {
 func (*MobileAppCategoryInfo) ProtoMessage() {}
 
 func (x *MobileAppCategoryInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[2]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -184,7 +184,7 @@ func (x *MobileAppCategoryInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MobileAppCategoryInfo.ProtoReflect.Descriptor instead.
 func (*MobileAppCategoryInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{2}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *MobileAppCategoryInfo) GetMobileAppCategoryConstant() string {
@@ -223,7 +223,7 @@ type MobileApplicationInfo struct {
 func (x *MobileApplicationInfo) Reset() {
 	*x = MobileApplicationInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[3]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -236,7 +236,7 @@ func (x *MobileApplicationInfo) String() string {
 func (*MobileApplicationInfo) ProtoMessage() {}
 
 func (x *MobileApplicationInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[3]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -249,7 +249,7 @@ func (x *MobileApplicationInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MobileApplicationInfo.ProtoReflect.Descriptor instead.
 func (*MobileApplicationInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{3}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *MobileApplicationInfo) GetAppId() string {
@@ -279,7 +279,7 @@ type LocationInfo struct {
 func (x *LocationInfo) Reset() {
 	*x = LocationInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[4]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -292,7 +292,7 @@ func (x *LocationInfo) String() string {
 func (*LocationInfo) ProtoMessage() {}
 
 func (x *LocationInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[4]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -305,7 +305,7 @@ func (x *LocationInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LocationInfo.ProtoReflect.Descriptor instead.
 func (*LocationInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{4}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *LocationInfo) GetGeoTargetConstant() string {
@@ -322,13 +322,13 @@ type DeviceInfo struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Type of the device.
-	Type enums.DeviceEnum_Device `protobuf:"varint,1,opt,name=type,proto3,enum=google.ads.googleads.v11.enums.DeviceEnum_Device" json:"type,omitempty"`
+	Type enums.DeviceEnum_Device `protobuf:"varint,1,opt,name=type,proto3,enum=google.ads.googleads.v12.enums.DeviceEnum_Device" json:"type,omitempty"`
 }
 
 func (x *DeviceInfo) Reset() {
 	*x = DeviceInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[5]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -341,7 +341,7 @@ func (x *DeviceInfo) String() string {
 func (*DeviceInfo) ProtoMessage() {}
 
 func (x *DeviceInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[5]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -354,7 +354,7 @@ func (x *DeviceInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeviceInfo.ProtoReflect.Descriptor instead.
 func (*DeviceInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{5}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *DeviceInfo) GetType() enums.DeviceEnum_Device {
@@ -371,13 +371,13 @@ type PreferredContentInfo struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Type of the preferred content.
-	Type enums.PreferredContentTypeEnum_PreferredContentType `protobuf:"varint,2,opt,name=type,proto3,enum=google.ads.googleads.v11.enums.PreferredContentTypeEnum_PreferredContentType" json:"type,omitempty"`
+	Type enums.PreferredContentTypeEnum_PreferredContentType `protobuf:"varint,2,opt,name=type,proto3,enum=google.ads.googleads.v12.enums.PreferredContentTypeEnum_PreferredContentType" json:"type,omitempty"`
 }
 
 func (x *PreferredContentInfo) Reset() {
 	*x = PreferredContentInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[6]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -390,7 +390,7 @@ func (x *PreferredContentInfo) String() string {
 func (*PreferredContentInfo) ProtoMessage() {}
 
 func (x *PreferredContentInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[6]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -403,7 +403,7 @@ func (x *PreferredContentInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PreferredContentInfo.ProtoReflect.Descriptor instead.
 func (*PreferredContentInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{6}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *PreferredContentInfo) GetType() enums.PreferredContentTypeEnum_PreferredContentType {
@@ -420,7 +420,7 @@ type ListingGroupInfo struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Type of the listing group.
-	Type enums.ListingGroupTypeEnum_ListingGroupType `protobuf:"varint,1,opt,name=type,proto3,enum=google.ads.googleads.v11.enums.ListingGroupTypeEnum_ListingGroupType" json:"type,omitempty"`
+	Type enums.ListingGroupTypeEnum_ListingGroupType `protobuf:"varint,1,opt,name=type,proto3,enum=google.ads.googleads.v12.enums.ListingGroupTypeEnum_ListingGroupType" json:"type,omitempty"`
 	// Dimension value with which this listing group is refining its parent.
 	// Undefined for the root group.
 	CaseValue *ListingDimensionInfo `protobuf:"bytes,2,opt,name=case_value,json=caseValue,proto3" json:"case_value,omitempty"`
@@ -432,7 +432,7 @@ type ListingGroupInfo struct {
 func (x *ListingGroupInfo) Reset() {
 	*x = ListingGroupInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[7]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -445,7 +445,7 @@ func (x *ListingGroupInfo) String() string {
 func (*ListingGroupInfo) ProtoMessage() {}
 
 func (x *ListingGroupInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[7]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -458,7 +458,7 @@ func (x *ListingGroupInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListingGroupInfo.ProtoReflect.Descriptor instead.
 func (*ListingGroupInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{7}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *ListingGroupInfo) GetType() enums.ListingGroupTypeEnum_ListingGroupType {
@@ -495,7 +495,7 @@ type ListingScopeInfo struct {
 func (x *ListingScopeInfo) Reset() {
 	*x = ListingScopeInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[8]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -508,7 +508,7 @@ func (x *ListingScopeInfo) String() string {
 func (*ListingScopeInfo) ProtoMessage() {}
 
 func (x *ListingScopeInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[8]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -521,7 +521,7 @@ func (x *ListingScopeInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListingScopeInfo.ProtoReflect.Descriptor instead.
 func (*ListingScopeInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{8}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *ListingScopeInfo) GetDimensions() []*ListingDimensionInfo {
@@ -564,7 +564,7 @@ type ListingDimensionInfo struct {
 func (x *ListingDimensionInfo) Reset() {
 	*x = ListingDimensionInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[9]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -577,7 +577,7 @@ func (x *ListingDimensionInfo) String() string {
 func (*ListingDimensionInfo) ProtoMessage() {}
 
 func (x *ListingDimensionInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[9]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -590,7 +590,7 @@ func (x *ListingDimensionInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListingDimensionInfo.ProtoReflect.Descriptor instead.
 func (*ListingDimensionInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{9}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{9}
 }
 
 func (m *ListingDimensionInfo) GetDimension() isListingDimensionInfo_Dimension {
@@ -869,7 +869,7 @@ type HotelIdInfo struct {
 func (x *HotelIdInfo) Reset() {
 	*x = HotelIdInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[10]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -882,7 +882,7 @@ func (x *HotelIdInfo) String() string {
 func (*HotelIdInfo) ProtoMessage() {}
 
 func (x *HotelIdInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[10]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -895,7 +895,7 @@ func (x *HotelIdInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HotelIdInfo.ProtoReflect.Descriptor instead.
 func (*HotelIdInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{10}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *HotelIdInfo) GetValue() string {
@@ -918,7 +918,7 @@ type HotelClassInfo struct {
 func (x *HotelClassInfo) Reset() {
 	*x = HotelClassInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[11]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -931,7 +931,7 @@ func (x *HotelClassInfo) String() string {
 func (*HotelClassInfo) ProtoMessage() {}
 
 func (x *HotelClassInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[11]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -944,7 +944,7 @@ func (x *HotelClassInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HotelClassInfo.ProtoReflect.Descriptor instead.
 func (*HotelClassInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{11}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *HotelClassInfo) GetValue() int64 {
@@ -967,7 +967,7 @@ type HotelCountryRegionInfo struct {
 func (x *HotelCountryRegionInfo) Reset() {
 	*x = HotelCountryRegionInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[12]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -980,7 +980,7 @@ func (x *HotelCountryRegionInfo) String() string {
 func (*HotelCountryRegionInfo) ProtoMessage() {}
 
 func (x *HotelCountryRegionInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[12]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -993,7 +993,7 @@ func (x *HotelCountryRegionInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HotelCountryRegionInfo.ProtoReflect.Descriptor instead.
 func (*HotelCountryRegionInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{12}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *HotelCountryRegionInfo) GetCountryRegionCriterion() string {
@@ -1016,7 +1016,7 @@ type HotelStateInfo struct {
 func (x *HotelStateInfo) Reset() {
 	*x = HotelStateInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[13]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1029,7 +1029,7 @@ func (x *HotelStateInfo) String() string {
 func (*HotelStateInfo) ProtoMessage() {}
 
 func (x *HotelStateInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[13]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1042,7 +1042,7 @@ func (x *HotelStateInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HotelStateInfo.ProtoReflect.Descriptor instead.
 func (*HotelStateInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{13}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *HotelStateInfo) GetStateCriterion() string {
@@ -1065,7 +1065,7 @@ type HotelCityInfo struct {
 func (x *HotelCityInfo) Reset() {
 	*x = HotelCityInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[14]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1078,7 +1078,7 @@ func (x *HotelCityInfo) String() string {
 func (*HotelCityInfo) ProtoMessage() {}
 
 func (x *HotelCityInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[14]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1091,7 +1091,7 @@ func (x *HotelCityInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HotelCityInfo.ProtoReflect.Descriptor instead.
 func (*HotelCityInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{14}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *HotelCityInfo) GetCityCriterion() string {
@@ -1116,13 +1116,13 @@ type ProductBiddingCategoryInfo struct {
 	// match the campaign.shopping_setting.sales_country field.
 	CountryCode *string `protobuf:"bytes,5,opt,name=country_code,json=countryCode,proto3,oneof" json:"country_code,omitempty"`
 	// Level of the product bidding category.
-	Level enums.ProductBiddingCategoryLevelEnum_ProductBiddingCategoryLevel `protobuf:"varint,3,opt,name=level,proto3,enum=google.ads.googleads.v11.enums.ProductBiddingCategoryLevelEnum_ProductBiddingCategoryLevel" json:"level,omitempty"`
+	Level enums.ProductBiddingCategoryLevelEnum_ProductBiddingCategoryLevel `protobuf:"varint,3,opt,name=level,proto3,enum=google.ads.googleads.v12.enums.ProductBiddingCategoryLevelEnum_ProductBiddingCategoryLevel" json:"level,omitempty"`
 }
 
 func (x *ProductBiddingCategoryInfo) Reset() {
 	*x = ProductBiddingCategoryInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[15]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1135,7 +1135,7 @@ func (x *ProductBiddingCategoryInfo) String() string {
 func (*ProductBiddingCategoryInfo) ProtoMessage() {}
 
 func (x *ProductBiddingCategoryInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[15]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1148,7 +1148,7 @@ func (x *ProductBiddingCategoryInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProductBiddingCategoryInfo.ProtoReflect.Descriptor instead.
 func (*ProductBiddingCategoryInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{15}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *ProductBiddingCategoryInfo) GetId() int64 {
@@ -1185,7 +1185,7 @@ type ProductBrandInfo struct {
 func (x *ProductBrandInfo) Reset() {
 	*x = ProductBrandInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[16]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1198,7 +1198,7 @@ func (x *ProductBrandInfo) String() string {
 func (*ProductBrandInfo) ProtoMessage() {}
 
 func (x *ProductBrandInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[16]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1211,7 +1211,7 @@ func (x *ProductBrandInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProductBrandInfo.ProtoReflect.Descriptor instead.
 func (*ProductBrandInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{16}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *ProductBrandInfo) GetValue() string {
@@ -1228,13 +1228,13 @@ type ProductChannelInfo struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Value of the locality.
-	Channel enums.ProductChannelEnum_ProductChannel `protobuf:"varint,1,opt,name=channel,proto3,enum=google.ads.googleads.v11.enums.ProductChannelEnum_ProductChannel" json:"channel,omitempty"`
+	Channel enums.ProductChannelEnum_ProductChannel `protobuf:"varint,1,opt,name=channel,proto3,enum=google.ads.googleads.v12.enums.ProductChannelEnum_ProductChannel" json:"channel,omitempty"`
 }
 
 func (x *ProductChannelInfo) Reset() {
 	*x = ProductChannelInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[17]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[17]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1247,7 +1247,7 @@ func (x *ProductChannelInfo) String() string {
 func (*ProductChannelInfo) ProtoMessage() {}
 
 func (x *ProductChannelInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[17]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[17]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1260,7 +1260,7 @@ func (x *ProductChannelInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProductChannelInfo.ProtoReflect.Descriptor instead.
 func (*ProductChannelInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{17}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *ProductChannelInfo) GetChannel() enums.ProductChannelEnum_ProductChannel {
@@ -1277,13 +1277,13 @@ type ProductChannelExclusivityInfo struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Value of the availability.
-	ChannelExclusivity enums.ProductChannelExclusivityEnum_ProductChannelExclusivity `protobuf:"varint,1,opt,name=channel_exclusivity,json=channelExclusivity,proto3,enum=google.ads.googleads.v11.enums.ProductChannelExclusivityEnum_ProductChannelExclusivity" json:"channel_exclusivity,omitempty"`
+	ChannelExclusivity enums.ProductChannelExclusivityEnum_ProductChannelExclusivity `protobuf:"varint,1,opt,name=channel_exclusivity,json=channelExclusivity,proto3,enum=google.ads.googleads.v12.enums.ProductChannelExclusivityEnum_ProductChannelExclusivity" json:"channel_exclusivity,omitempty"`
 }
 
 func (x *ProductChannelExclusivityInfo) Reset() {
 	*x = ProductChannelExclusivityInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[18]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[18]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1296,7 +1296,7 @@ func (x *ProductChannelExclusivityInfo) String() string {
 func (*ProductChannelExclusivityInfo) ProtoMessage() {}
 
 func (x *ProductChannelExclusivityInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[18]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[18]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1309,7 +1309,7 @@ func (x *ProductChannelExclusivityInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProductChannelExclusivityInfo.ProtoReflect.Descriptor instead.
 func (*ProductChannelExclusivityInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{18}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *ProductChannelExclusivityInfo) GetChannelExclusivity() enums.ProductChannelExclusivityEnum_ProductChannelExclusivity {
@@ -1326,13 +1326,13 @@ type ProductConditionInfo struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Value of the condition.
-	Condition enums.ProductConditionEnum_ProductCondition `protobuf:"varint,1,opt,name=condition,proto3,enum=google.ads.googleads.v11.enums.ProductConditionEnum_ProductCondition" json:"condition,omitempty"`
+	Condition enums.ProductConditionEnum_ProductCondition `protobuf:"varint,1,opt,name=condition,proto3,enum=google.ads.googleads.v12.enums.ProductConditionEnum_ProductCondition" json:"condition,omitempty"`
 }
 
 func (x *ProductConditionInfo) Reset() {
 	*x = ProductConditionInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[19]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[19]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1345,7 +1345,7 @@ func (x *ProductConditionInfo) String() string {
 func (*ProductConditionInfo) ProtoMessage() {}
 
 func (x *ProductConditionInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[19]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[19]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1358,7 +1358,7 @@ func (x *ProductConditionInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProductConditionInfo.ProtoReflect.Descriptor instead.
 func (*ProductConditionInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{19}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *ProductConditionInfo) GetCondition() enums.ProductConditionEnum_ProductCondition {
@@ -1377,13 +1377,13 @@ type ProductCustomAttributeInfo struct {
 	// String value of the product custom attribute.
 	Value *string `protobuf:"bytes,3,opt,name=value,proto3,oneof" json:"value,omitempty"`
 	// Indicates the index of the custom attribute.
-	Index enums.ProductCustomAttributeIndexEnum_ProductCustomAttributeIndex `protobuf:"varint,2,opt,name=index,proto3,enum=google.ads.googleads.v11.enums.ProductCustomAttributeIndexEnum_ProductCustomAttributeIndex" json:"index,omitempty"`
+	Index enums.ProductCustomAttributeIndexEnum_ProductCustomAttributeIndex `protobuf:"varint,2,opt,name=index,proto3,enum=google.ads.googleads.v12.enums.ProductCustomAttributeIndexEnum_ProductCustomAttributeIndex" json:"index,omitempty"`
 }
 
 func (x *ProductCustomAttributeInfo) Reset() {
 	*x = ProductCustomAttributeInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[20]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[20]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1396,7 +1396,7 @@ func (x *ProductCustomAttributeInfo) String() string {
 func (*ProductCustomAttributeInfo) ProtoMessage() {}
 
 func (x *ProductCustomAttributeInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[20]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[20]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1409,7 +1409,7 @@ func (x *ProductCustomAttributeInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProductCustomAttributeInfo.ProtoReflect.Descriptor instead.
 func (*ProductCustomAttributeInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{20}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *ProductCustomAttributeInfo) GetValue() string {
@@ -1439,7 +1439,7 @@ type ProductItemIdInfo struct {
 func (x *ProductItemIdInfo) Reset() {
 	*x = ProductItemIdInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[21]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[21]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1452,7 +1452,7 @@ func (x *ProductItemIdInfo) String() string {
 func (*ProductItemIdInfo) ProtoMessage() {}
 
 func (x *ProductItemIdInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[21]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[21]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1465,7 +1465,7 @@ func (x *ProductItemIdInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProductItemIdInfo.ProtoReflect.Descriptor instead.
 func (*ProductItemIdInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{21}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{21}
 }
 
 func (x *ProductItemIdInfo) GetValue() string {
@@ -1484,13 +1484,13 @@ type ProductTypeInfo struct {
 	// Value of the type.
 	Value *string `protobuf:"bytes,3,opt,name=value,proto3,oneof" json:"value,omitempty"`
 	// Level of the type.
-	Level enums.ProductTypeLevelEnum_ProductTypeLevel `protobuf:"varint,2,opt,name=level,proto3,enum=google.ads.googleads.v11.enums.ProductTypeLevelEnum_ProductTypeLevel" json:"level,omitempty"`
+	Level enums.ProductTypeLevelEnum_ProductTypeLevel `protobuf:"varint,2,opt,name=level,proto3,enum=google.ads.googleads.v12.enums.ProductTypeLevelEnum_ProductTypeLevel" json:"level,omitempty"`
 }
 
 func (x *ProductTypeInfo) Reset() {
 	*x = ProductTypeInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[22]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[22]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1503,7 +1503,7 @@ func (x *ProductTypeInfo) String() string {
 func (*ProductTypeInfo) ProtoMessage() {}
 
 func (x *ProductTypeInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[22]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[22]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1516,7 +1516,7 @@ func (x *ProductTypeInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProductTypeInfo.ProtoReflect.Descriptor instead.
 func (*ProductTypeInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{22}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *ProductTypeInfo) GetValue() string {
@@ -1547,7 +1547,7 @@ type ProductGroupingInfo struct {
 func (x *ProductGroupingInfo) Reset() {
 	*x = ProductGroupingInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[23]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[23]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1560,7 +1560,7 @@ func (x *ProductGroupingInfo) String() string {
 func (*ProductGroupingInfo) ProtoMessage() {}
 
 func (x *ProductGroupingInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[23]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[23]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1573,7 +1573,7 @@ func (x *ProductGroupingInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProductGroupingInfo.ProtoReflect.Descriptor instead.
 func (*ProductGroupingInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{23}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{23}
 }
 
 func (x *ProductGroupingInfo) GetValue() string {
@@ -1597,7 +1597,7 @@ type ProductLabelsInfo struct {
 func (x *ProductLabelsInfo) Reset() {
 	*x = ProductLabelsInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[24]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[24]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1610,7 +1610,7 @@ func (x *ProductLabelsInfo) String() string {
 func (*ProductLabelsInfo) ProtoMessage() {}
 
 func (x *ProductLabelsInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[24]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[24]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1623,7 +1623,7 @@ func (x *ProductLabelsInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProductLabelsInfo.ProtoReflect.Descriptor instead.
 func (*ProductLabelsInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{24}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{24}
 }
 
 func (x *ProductLabelsInfo) GetValue() string {
@@ -1647,7 +1647,7 @@ type ProductLegacyConditionInfo struct {
 func (x *ProductLegacyConditionInfo) Reset() {
 	*x = ProductLegacyConditionInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[25]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[25]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1660,7 +1660,7 @@ func (x *ProductLegacyConditionInfo) String() string {
 func (*ProductLegacyConditionInfo) ProtoMessage() {}
 
 func (x *ProductLegacyConditionInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[25]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[25]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1673,7 +1673,7 @@ func (x *ProductLegacyConditionInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProductLegacyConditionInfo.ProtoReflect.Descriptor instead.
 func (*ProductLegacyConditionInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{25}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{25}
 }
 
 func (x *ProductLegacyConditionInfo) GetValue() string {
@@ -1697,7 +1697,7 @@ type ProductTypeFullInfo struct {
 func (x *ProductTypeFullInfo) Reset() {
 	*x = ProductTypeFullInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[26]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[26]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1710,7 +1710,7 @@ func (x *ProductTypeFullInfo) String() string {
 func (*ProductTypeFullInfo) ProtoMessage() {}
 
 func (x *ProductTypeFullInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[26]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[26]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1723,7 +1723,7 @@ func (x *ProductTypeFullInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProductTypeFullInfo.ProtoReflect.Descriptor instead.
 func (*ProductTypeFullInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{26}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{26}
 }
 
 func (x *ProductTypeFullInfo) GetValue() string {
@@ -1743,7 +1743,7 @@ type UnknownListingDimensionInfo struct {
 func (x *UnknownListingDimensionInfo) Reset() {
 	*x = UnknownListingDimensionInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[27]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[27]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1756,7 +1756,7 @@ func (x *UnknownListingDimensionInfo) String() string {
 func (*UnknownListingDimensionInfo) ProtoMessage() {}
 
 func (x *UnknownListingDimensionInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[27]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[27]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1769,7 +1769,7 @@ func (x *UnknownListingDimensionInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UnknownListingDimensionInfo.ProtoReflect.Descriptor instead.
 func (*UnknownListingDimensionInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{27}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{27}
 }
 
 // Criterion for hotel date selection (default dates versus user selected).
@@ -1779,13 +1779,13 @@ type HotelDateSelectionTypeInfo struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Type of the hotel date selection
-	Type enums.HotelDateSelectionTypeEnum_HotelDateSelectionType `protobuf:"varint,1,opt,name=type,proto3,enum=google.ads.googleads.v11.enums.HotelDateSelectionTypeEnum_HotelDateSelectionType" json:"type,omitempty"`
+	Type enums.HotelDateSelectionTypeEnum_HotelDateSelectionType `protobuf:"varint,1,opt,name=type,proto3,enum=google.ads.googleads.v12.enums.HotelDateSelectionTypeEnum_HotelDateSelectionType" json:"type,omitempty"`
 }
 
 func (x *HotelDateSelectionTypeInfo) Reset() {
 	*x = HotelDateSelectionTypeInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[28]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[28]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1798,7 +1798,7 @@ func (x *HotelDateSelectionTypeInfo) String() string {
 func (*HotelDateSelectionTypeInfo) ProtoMessage() {}
 
 func (x *HotelDateSelectionTypeInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[28]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[28]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1811,7 +1811,7 @@ func (x *HotelDateSelectionTypeInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HotelDateSelectionTypeInfo.ProtoReflect.Descriptor instead.
 func (*HotelDateSelectionTypeInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{28}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{28}
 }
 
 func (x *HotelDateSelectionTypeInfo) GetType() enums.HotelDateSelectionTypeEnum_HotelDateSelectionType {
@@ -1836,7 +1836,7 @@ type HotelAdvanceBookingWindowInfo struct {
 func (x *HotelAdvanceBookingWindowInfo) Reset() {
 	*x = HotelAdvanceBookingWindowInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[29]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[29]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1849,7 +1849,7 @@ func (x *HotelAdvanceBookingWindowInfo) String() string {
 func (*HotelAdvanceBookingWindowInfo) ProtoMessage() {}
 
 func (x *HotelAdvanceBookingWindowInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[29]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[29]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1862,7 +1862,7 @@ func (x *HotelAdvanceBookingWindowInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HotelAdvanceBookingWindowInfo.ProtoReflect.Descriptor instead.
 func (*HotelAdvanceBookingWindowInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{29}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{29}
 }
 
 func (x *HotelAdvanceBookingWindowInfo) GetMinDays() int64 {
@@ -1894,7 +1894,7 @@ type HotelLengthOfStayInfo struct {
 func (x *HotelLengthOfStayInfo) Reset() {
 	*x = HotelLengthOfStayInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[30]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[30]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1907,7 +1907,7 @@ func (x *HotelLengthOfStayInfo) String() string {
 func (*HotelLengthOfStayInfo) ProtoMessage() {}
 
 func (x *HotelLengthOfStayInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[30]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[30]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1920,7 +1920,7 @@ func (x *HotelLengthOfStayInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HotelLengthOfStayInfo.ProtoReflect.Descriptor instead.
 func (*HotelLengthOfStayInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{30}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{30}
 }
 
 func (x *HotelLengthOfStayInfo) GetMinNights() int64 {
@@ -1952,7 +1952,7 @@ type HotelCheckInDateRangeInfo struct {
 func (x *HotelCheckInDateRangeInfo) Reset() {
 	*x = HotelCheckInDateRangeInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[31]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[31]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1965,7 +1965,7 @@ func (x *HotelCheckInDateRangeInfo) String() string {
 func (*HotelCheckInDateRangeInfo) ProtoMessage() {}
 
 func (x *HotelCheckInDateRangeInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[31]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[31]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1978,7 +1978,7 @@ func (x *HotelCheckInDateRangeInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HotelCheckInDateRangeInfo.ProtoReflect.Descriptor instead.
 func (*HotelCheckInDateRangeInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{31}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{31}
 }
 
 func (x *HotelCheckInDateRangeInfo) GetStartDate() string {
@@ -2002,13 +2002,13 @@ type HotelCheckInDayInfo struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The day of the week.
-	DayOfWeek enums.DayOfWeekEnum_DayOfWeek `protobuf:"varint,1,opt,name=day_of_week,json=dayOfWeek,proto3,enum=google.ads.googleads.v11.enums.DayOfWeekEnum_DayOfWeek" json:"day_of_week,omitempty"`
+	DayOfWeek enums.DayOfWeekEnum_DayOfWeek `protobuf:"varint,1,opt,name=day_of_week,json=dayOfWeek,proto3,enum=google.ads.googleads.v12.enums.DayOfWeekEnum_DayOfWeek" json:"day_of_week,omitempty"`
 }
 
 func (x *HotelCheckInDayInfo) Reset() {
 	*x = HotelCheckInDayInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[32]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[32]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2021,7 +2021,7 @@ func (x *HotelCheckInDayInfo) String() string {
 func (*HotelCheckInDayInfo) ProtoMessage() {}
 
 func (x *HotelCheckInDayInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[32]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[32]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2034,7 +2034,7 @@ func (x *HotelCheckInDayInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HotelCheckInDayInfo.ProtoReflect.Descriptor instead.
 func (*HotelCheckInDayInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{32}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{32}
 }
 
 func (x *HotelCheckInDayInfo) GetDayOfWeek() enums.DayOfWeekEnum_DayOfWeek {
@@ -2051,13 +2051,13 @@ type InteractionTypeInfo struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The interaction type.
-	Type enums.InteractionTypeEnum_InteractionType `protobuf:"varint,1,opt,name=type,proto3,enum=google.ads.googleads.v11.enums.InteractionTypeEnum_InteractionType" json:"type,omitempty"`
+	Type enums.InteractionTypeEnum_InteractionType `protobuf:"varint,1,opt,name=type,proto3,enum=google.ads.googleads.v12.enums.InteractionTypeEnum_InteractionType" json:"type,omitempty"`
 }
 
 func (x *InteractionTypeInfo) Reset() {
 	*x = InteractionTypeInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[33]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[33]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2070,7 +2070,7 @@ func (x *InteractionTypeInfo) String() string {
 func (*InteractionTypeInfo) ProtoMessage() {}
 
 func (x *InteractionTypeInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[33]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[33]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2083,7 +2083,7 @@ func (x *InteractionTypeInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use InteractionTypeInfo.ProtoReflect.Descriptor instead.
 func (*InteractionTypeInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{33}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{33}
 }
 
 func (x *InteractionTypeInfo) GetType() enums.InteractionTypeEnum_InteractionType {
@@ -2108,13 +2108,13 @@ type AdScheduleInfo struct {
 	//
 	// This field is required for CREATE operations and is prohibited on UPDATE
 	// operations.
-	StartMinute enums.MinuteOfHourEnum_MinuteOfHour `protobuf:"varint,1,opt,name=start_minute,json=startMinute,proto3,enum=google.ads.googleads.v11.enums.MinuteOfHourEnum_MinuteOfHour" json:"start_minute,omitempty"`
+	StartMinute enums.MinuteOfHourEnum_MinuteOfHour `protobuf:"varint,1,opt,name=start_minute,json=startMinute,proto3,enum=google.ads.googleads.v12.enums.MinuteOfHourEnum_MinuteOfHour" json:"start_minute,omitempty"`
 	// Minutes after the end hour at which this schedule ends. The schedule is
 	// exclusive of the end minute.
 	//
 	// This field is required for CREATE operations and is prohibited on UPDATE
 	// operations.
-	EndMinute enums.MinuteOfHourEnum_MinuteOfHour `protobuf:"varint,2,opt,name=end_minute,json=endMinute,proto3,enum=google.ads.googleads.v11.enums.MinuteOfHourEnum_MinuteOfHour" json:"end_minute,omitempty"`
+	EndMinute enums.MinuteOfHourEnum_MinuteOfHour `protobuf:"varint,2,opt,name=end_minute,json=endMinute,proto3,enum=google.ads.googleads.v12.enums.MinuteOfHourEnum_MinuteOfHour" json:"end_minute,omitempty"`
 	// Starting hour in 24 hour time.
 	// This field must be between 0 and 23, inclusive.
 	//
@@ -2131,13 +2131,13 @@ type AdScheduleInfo struct {
 	//
 	// This field is required for CREATE operations and is prohibited on UPDATE
 	// operations.
-	DayOfWeek enums.DayOfWeekEnum_DayOfWeek `protobuf:"varint,5,opt,name=day_of_week,json=dayOfWeek,proto3,enum=google.ads.googleads.v11.enums.DayOfWeekEnum_DayOfWeek" json:"day_of_week,omitempty"`
+	DayOfWeek enums.DayOfWeekEnum_DayOfWeek `protobuf:"varint,5,opt,name=day_of_week,json=dayOfWeek,proto3,enum=google.ads.googleads.v12.enums.DayOfWeekEnum_DayOfWeek" json:"day_of_week,omitempty"`
 }
 
 func (x *AdScheduleInfo) Reset() {
 	*x = AdScheduleInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[34]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[34]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2150,7 +2150,7 @@ func (x *AdScheduleInfo) String() string {
 func (*AdScheduleInfo) ProtoMessage() {}
 
 func (x *AdScheduleInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[34]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[34]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2163,7 +2163,7 @@ func (x *AdScheduleInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AdScheduleInfo.ProtoReflect.Descriptor instead.
 func (*AdScheduleInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{34}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{34}
 }
 
 func (x *AdScheduleInfo) GetStartMinute() enums.MinuteOfHourEnum_MinuteOfHour {
@@ -2208,13 +2208,13 @@ type AgeRangeInfo struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Type of the age range.
-	Type enums.AgeRangeTypeEnum_AgeRangeType `protobuf:"varint,1,opt,name=type,proto3,enum=google.ads.googleads.v11.enums.AgeRangeTypeEnum_AgeRangeType" json:"type,omitempty"`
+	Type enums.AgeRangeTypeEnum_AgeRangeType `protobuf:"varint,1,opt,name=type,proto3,enum=google.ads.googleads.v12.enums.AgeRangeTypeEnum_AgeRangeType" json:"type,omitempty"`
 }
 
 func (x *AgeRangeInfo) Reset() {
 	*x = AgeRangeInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[35]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[35]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2227,7 +2227,7 @@ func (x *AgeRangeInfo) String() string {
 func (*AgeRangeInfo) ProtoMessage() {}
 
 func (x *AgeRangeInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[35]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[35]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2240,7 +2240,7 @@ func (x *AgeRangeInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AgeRangeInfo.ProtoReflect.Descriptor instead.
 func (*AgeRangeInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{35}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{35}
 }
 
 func (x *AgeRangeInfo) GetType() enums.AgeRangeTypeEnum_AgeRangeType {
@@ -2257,13 +2257,13 @@ type GenderInfo struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Type of the gender.
-	Type enums.GenderTypeEnum_GenderType `protobuf:"varint,1,opt,name=type,proto3,enum=google.ads.googleads.v11.enums.GenderTypeEnum_GenderType" json:"type,omitempty"`
+	Type enums.GenderTypeEnum_GenderType `protobuf:"varint,1,opt,name=type,proto3,enum=google.ads.googleads.v12.enums.GenderTypeEnum_GenderType" json:"type,omitempty"`
 }
 
 func (x *GenderInfo) Reset() {
 	*x = GenderInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[36]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[36]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2276,7 +2276,7 @@ func (x *GenderInfo) String() string {
 func (*GenderInfo) ProtoMessage() {}
 
 func (x *GenderInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[36]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[36]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2289,7 +2289,7 @@ func (x *GenderInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GenderInfo.ProtoReflect.Descriptor instead.
 func (*GenderInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{36}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{36}
 }
 
 func (x *GenderInfo) GetType() enums.GenderTypeEnum_GenderType {
@@ -2306,13 +2306,13 @@ type IncomeRangeInfo struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Type of the income range.
-	Type enums.IncomeRangeTypeEnum_IncomeRangeType `protobuf:"varint,1,opt,name=type,proto3,enum=google.ads.googleads.v11.enums.IncomeRangeTypeEnum_IncomeRangeType" json:"type,omitempty"`
+	Type enums.IncomeRangeTypeEnum_IncomeRangeType `protobuf:"varint,1,opt,name=type,proto3,enum=google.ads.googleads.v12.enums.IncomeRangeTypeEnum_IncomeRangeType" json:"type,omitempty"`
 }
 
 func (x *IncomeRangeInfo) Reset() {
 	*x = IncomeRangeInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[37]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[37]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2325,7 +2325,7 @@ func (x *IncomeRangeInfo) String() string {
 func (*IncomeRangeInfo) ProtoMessage() {}
 
 func (x *IncomeRangeInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[37]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[37]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2338,7 +2338,7 @@ func (x *IncomeRangeInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use IncomeRangeInfo.ProtoReflect.Descriptor instead.
 func (*IncomeRangeInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{37}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{37}
 }
 
 func (x *IncomeRangeInfo) GetType() enums.IncomeRangeTypeEnum_IncomeRangeType {
@@ -2355,13 +2355,13 @@ type ParentalStatusInfo struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Type of the parental status.
-	Type enums.ParentalStatusTypeEnum_ParentalStatusType `protobuf:"varint,1,opt,name=type,proto3,enum=google.ads.googleads.v11.enums.ParentalStatusTypeEnum_ParentalStatusType" json:"type,omitempty"`
+	Type enums.ParentalStatusTypeEnum_ParentalStatusType `protobuf:"varint,1,opt,name=type,proto3,enum=google.ads.googleads.v12.enums.ParentalStatusTypeEnum_ParentalStatusType" json:"type,omitempty"`
 }
 
 func (x *ParentalStatusInfo) Reset() {
 	*x = ParentalStatusInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[38]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[38]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2374,7 +2374,7 @@ func (x *ParentalStatusInfo) String() string {
 func (*ParentalStatusInfo) ProtoMessage() {}
 
 func (x *ParentalStatusInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[38]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[38]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2387,7 +2387,7 @@ func (x *ParentalStatusInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ParentalStatusInfo.ProtoReflect.Descriptor instead.
 func (*ParentalStatusInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{38}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{38}
 }
 
 func (x *ParentalStatusInfo) GetType() enums.ParentalStatusTypeEnum_ParentalStatusType {
@@ -2410,7 +2410,7 @@ type YouTubeVideoInfo struct {
 func (x *YouTubeVideoInfo) Reset() {
 	*x = YouTubeVideoInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[39]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[39]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2423,7 +2423,7 @@ func (x *YouTubeVideoInfo) String() string {
 func (*YouTubeVideoInfo) ProtoMessage() {}
 
 func (x *YouTubeVideoInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[39]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[39]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2436,7 +2436,7 @@ func (x *YouTubeVideoInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use YouTubeVideoInfo.ProtoReflect.Descriptor instead.
 func (*YouTubeVideoInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{39}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{39}
 }
 
 func (x *YouTubeVideoInfo) GetVideoId() string {
@@ -2459,7 +2459,7 @@ type YouTubeChannelInfo struct {
 func (x *YouTubeChannelInfo) Reset() {
 	*x = YouTubeChannelInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[40]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[40]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2472,7 +2472,7 @@ func (x *YouTubeChannelInfo) String() string {
 func (*YouTubeChannelInfo) ProtoMessage() {}
 
 func (x *YouTubeChannelInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[40]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[40]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2485,7 +2485,7 @@ func (x *YouTubeChannelInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use YouTubeChannelInfo.ProtoReflect.Descriptor instead.
 func (*YouTubeChannelInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{40}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{40}
 }
 
 func (x *YouTubeChannelInfo) GetChannelId() string {
@@ -2509,7 +2509,7 @@ type UserListInfo struct {
 func (x *UserListInfo) Reset() {
 	*x = UserListInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[41]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[41]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2522,7 +2522,7 @@ func (x *UserListInfo) String() string {
 func (*UserListInfo) ProtoMessage() {}
 
 func (x *UserListInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[41]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[41]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2535,7 +2535,7 @@ func (x *UserListInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UserListInfo.ProtoReflect.Descriptor instead.
 func (*UserListInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{41}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{41}
 }
 
 func (x *UserListInfo) GetUserList() string {
@@ -2563,7 +2563,7 @@ type ProximityInfo struct {
 	// The radius of the proximity.
 	Radius *float64 `protobuf:"fixed64,5,opt,name=radius,proto3,oneof" json:"radius,omitempty"`
 	// The unit of measurement of the radius. Default is KILOMETERS.
-	RadiusUnits enums.ProximityRadiusUnitsEnum_ProximityRadiusUnits `protobuf:"varint,3,opt,name=radius_units,json=radiusUnits,proto3,enum=google.ads.googleads.v11.enums.ProximityRadiusUnitsEnum_ProximityRadiusUnits" json:"radius_units,omitempty"`
+	RadiusUnits enums.ProximityRadiusUnitsEnum_ProximityRadiusUnits `protobuf:"varint,3,opt,name=radius_units,json=radiusUnits,proto3,enum=google.ads.googleads.v12.enums.ProximityRadiusUnitsEnum_ProximityRadiusUnits" json:"radius_units,omitempty"`
 	// Full address.
 	Address *AddressInfo `protobuf:"bytes,4,opt,name=address,proto3" json:"address,omitempty"`
 }
@@ -2571,7 +2571,7 @@ type ProximityInfo struct {
 func (x *ProximityInfo) Reset() {
 	*x = ProximityInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[42]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[42]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2584,7 +2584,7 @@ func (x *ProximityInfo) String() string {
 func (*ProximityInfo) ProtoMessage() {}
 
 func (x *ProximityInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[42]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[42]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2597,7 +2597,7 @@ func (x *ProximityInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProximityInfo.ProtoReflect.Descriptor instead.
 func (*ProximityInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{42}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{42}
 }
 
 func (x *ProximityInfo) GetGeoPoint() *GeoPointInfo {
@@ -2643,7 +2643,7 @@ type GeoPointInfo struct {
 func (x *GeoPointInfo) Reset() {
 	*x = GeoPointInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[43]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[43]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2656,7 +2656,7 @@ func (x *GeoPointInfo) String() string {
 func (*GeoPointInfo) ProtoMessage() {}
 
 func (x *GeoPointInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[43]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[43]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2669,7 +2669,7 @@ func (x *GeoPointInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GeoPointInfo.ProtoReflect.Descriptor instead.
 func (*GeoPointInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{43}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{43}
 }
 
 func (x *GeoPointInfo) GetLongitudeInMicroDegrees() int32 {
@@ -2713,7 +2713,7 @@ type AddressInfo struct {
 func (x *AddressInfo) Reset() {
 	*x = AddressInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[44]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[44]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2726,7 +2726,7 @@ func (x *AddressInfo) String() string {
 func (*AddressInfo) ProtoMessage() {}
 
 func (x *AddressInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[44]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[44]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2739,7 +2739,7 @@ func (x *AddressInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddressInfo.ProtoReflect.Descriptor instead.
 func (*AddressInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{44}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{44}
 }
 
 func (x *AddressInfo) GetPostalCode() string {
@@ -2811,7 +2811,7 @@ type TopicInfo struct {
 func (x *TopicInfo) Reset() {
 	*x = TopicInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[45]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[45]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2824,7 +2824,7 @@ func (x *TopicInfo) String() string {
 func (*TopicInfo) ProtoMessage() {}
 
 func (x *TopicInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[45]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[45]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2837,7 +2837,7 @@ func (x *TopicInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TopicInfo.ProtoReflect.Descriptor instead.
 func (*TopicInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{45}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{45}
 }
 
 func (x *TopicInfo) GetTopicConstant() string {
@@ -2867,7 +2867,7 @@ type LanguageInfo struct {
 func (x *LanguageInfo) Reset() {
 	*x = LanguageInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[46]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[46]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2880,7 +2880,7 @@ func (x *LanguageInfo) String() string {
 func (*LanguageInfo) ProtoMessage() {}
 
 func (x *LanguageInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[46]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[46]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2893,7 +2893,7 @@ func (x *LanguageInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LanguageInfo.ProtoReflect.Descriptor instead.
 func (*LanguageInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{46}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{46}
 }
 
 func (x *LanguageInfo) GetLanguageConstant() string {
@@ -2920,7 +2920,7 @@ type IpBlockInfo struct {
 func (x *IpBlockInfo) Reset() {
 	*x = IpBlockInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[47]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[47]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2933,7 +2933,7 @@ func (x *IpBlockInfo) String() string {
 func (*IpBlockInfo) ProtoMessage() {}
 
 func (x *IpBlockInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[47]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[47]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2946,7 +2946,7 @@ func (x *IpBlockInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use IpBlockInfo.ProtoReflect.Descriptor instead.
 func (*IpBlockInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{47}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{47}
 }
 
 func (x *IpBlockInfo) GetIpAddress() string {
@@ -2963,13 +2963,13 @@ type ContentLabelInfo struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Content label type, required for CREATE operations.
-	Type enums.ContentLabelTypeEnum_ContentLabelType `protobuf:"varint,1,opt,name=type,proto3,enum=google.ads.googleads.v11.enums.ContentLabelTypeEnum_ContentLabelType" json:"type,omitempty"`
+	Type enums.ContentLabelTypeEnum_ContentLabelType `protobuf:"varint,1,opt,name=type,proto3,enum=google.ads.googleads.v12.enums.ContentLabelTypeEnum_ContentLabelType" json:"type,omitempty"`
 }
 
 func (x *ContentLabelInfo) Reset() {
 	*x = ContentLabelInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[48]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[48]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2982,7 +2982,7 @@ func (x *ContentLabelInfo) String() string {
 func (*ContentLabelInfo) ProtoMessage() {}
 
 func (x *ContentLabelInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[48]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[48]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2995,7 +2995,7 @@ func (x *ContentLabelInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ContentLabelInfo.ProtoReflect.Descriptor instead.
 func (*ContentLabelInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{48}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{48}
 }
 
 func (x *ContentLabelInfo) GetType() enums.ContentLabelTypeEnum_ContentLabelType {
@@ -3018,7 +3018,7 @@ type CarrierInfo struct {
 func (x *CarrierInfo) Reset() {
 	*x = CarrierInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[49]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[49]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3031,7 +3031,7 @@ func (x *CarrierInfo) String() string {
 func (*CarrierInfo) ProtoMessage() {}
 
 func (x *CarrierInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[49]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[49]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3044,7 +3044,7 @@ func (x *CarrierInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CarrierInfo.ProtoReflect.Descriptor instead.
 func (*CarrierInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{49}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{49}
 }
 
 func (x *CarrierInfo) GetCarrierConstant() string {
@@ -3067,7 +3067,7 @@ type UserInterestInfo struct {
 func (x *UserInterestInfo) Reset() {
 	*x = UserInterestInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[50]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[50]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3080,7 +3080,7 @@ func (x *UserInterestInfo) String() string {
 func (*UserInterestInfo) ProtoMessage() {}
 
 func (x *UserInterestInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[50]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[50]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3093,7 +3093,7 @@ func (x *UserInterestInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UserInterestInfo.ProtoReflect.Descriptor instead.
 func (*UserInterestInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{50}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{50}
 }
 
 func (x *UserInterestInfo) GetUserInterestCategory() string {
@@ -3137,7 +3137,7 @@ type WebpageInfo struct {
 func (x *WebpageInfo) Reset() {
 	*x = WebpageInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[51]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[51]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3150,7 +3150,7 @@ func (x *WebpageInfo) String() string {
 func (*WebpageInfo) ProtoMessage() {}
 
 func (x *WebpageInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[51]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[51]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3163,7 +3163,7 @@ func (x *WebpageInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use WebpageInfo.ProtoReflect.Descriptor instead.
 func (*WebpageInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{51}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{51}
 }
 
 func (x *WebpageInfo) GetCriterionName() string {
@@ -3201,9 +3201,9 @@ type WebpageConditionInfo struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Operand of webpage targeting condition.
-	Operand enums.WebpageConditionOperandEnum_WebpageConditionOperand `protobuf:"varint,1,opt,name=operand,proto3,enum=google.ads.googleads.v11.enums.WebpageConditionOperandEnum_WebpageConditionOperand" json:"operand,omitempty"`
+	Operand enums.WebpageConditionOperandEnum_WebpageConditionOperand `protobuf:"varint,1,opt,name=operand,proto3,enum=google.ads.googleads.v12.enums.WebpageConditionOperandEnum_WebpageConditionOperand" json:"operand,omitempty"`
 	// Operator of webpage targeting condition.
-	Operator enums.WebpageConditionOperatorEnum_WebpageConditionOperator `protobuf:"varint,2,opt,name=operator,proto3,enum=google.ads.googleads.v11.enums.WebpageConditionOperatorEnum_WebpageConditionOperator" json:"operator,omitempty"`
+	Operator enums.WebpageConditionOperatorEnum_WebpageConditionOperator `protobuf:"varint,2,opt,name=operator,proto3,enum=google.ads.googleads.v12.enums.WebpageConditionOperatorEnum_WebpageConditionOperator" json:"operator,omitempty"`
 	// Argument of webpage targeting condition.
 	Argument *string `protobuf:"bytes,4,opt,name=argument,proto3,oneof" json:"argument,omitempty"`
 }
@@ -3211,7 +3211,7 @@ type WebpageConditionInfo struct {
 func (x *WebpageConditionInfo) Reset() {
 	*x = WebpageConditionInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[52]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[52]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3224,7 +3224,7 @@ func (x *WebpageConditionInfo) String() string {
 func (*WebpageConditionInfo) ProtoMessage() {}
 
 func (x *WebpageConditionInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[52]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[52]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3237,7 +3237,7 @@ func (x *WebpageConditionInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use WebpageConditionInfo.ProtoReflect.Descriptor instead.
 func (*WebpageConditionInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{52}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{52}
 }
 
 func (x *WebpageConditionInfo) GetOperand() enums.WebpageConditionOperandEnum_WebpageConditionOperand {
@@ -3274,7 +3274,7 @@ type WebpageSampleInfo struct {
 func (x *WebpageSampleInfo) Reset() {
 	*x = WebpageSampleInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[53]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[53]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3287,7 +3287,7 @@ func (x *WebpageSampleInfo) String() string {
 func (*WebpageSampleInfo) ProtoMessage() {}
 
 func (x *WebpageSampleInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[53]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[53]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3300,7 +3300,7 @@ func (x *WebpageSampleInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use WebpageSampleInfo.ProtoReflect.Descriptor instead.
 func (*WebpageSampleInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{53}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{53}
 }
 
 func (x *WebpageSampleInfo) GetSampleUrls() []string {
@@ -3323,7 +3323,7 @@ type OperatingSystemVersionInfo struct {
 func (x *OperatingSystemVersionInfo) Reset() {
 	*x = OperatingSystemVersionInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[54]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[54]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3336,7 +3336,7 @@ func (x *OperatingSystemVersionInfo) String() string {
 func (*OperatingSystemVersionInfo) ProtoMessage() {}
 
 func (x *OperatingSystemVersionInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[54]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[54]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3349,7 +3349,7 @@ func (x *OperatingSystemVersionInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OperatingSystemVersionInfo.ProtoReflect.Descriptor instead.
 func (*OperatingSystemVersionInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{54}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{54}
 }
 
 func (x *OperatingSystemVersionInfo) GetOperatingSystemVersionConstant() string {
@@ -3366,13 +3366,13 @@ type AppPaymentModelInfo struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Type of the app payment model.
-	Type enums.AppPaymentModelTypeEnum_AppPaymentModelType `protobuf:"varint,1,opt,name=type,proto3,enum=google.ads.googleads.v11.enums.AppPaymentModelTypeEnum_AppPaymentModelType" json:"type,omitempty"`
+	Type enums.AppPaymentModelTypeEnum_AppPaymentModelType `protobuf:"varint,1,opt,name=type,proto3,enum=google.ads.googleads.v12.enums.AppPaymentModelTypeEnum_AppPaymentModelType" json:"type,omitempty"`
 }
 
 func (x *AppPaymentModelInfo) Reset() {
 	*x = AppPaymentModelInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[55]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[55]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3385,7 +3385,7 @@ func (x *AppPaymentModelInfo) String() string {
 func (*AppPaymentModelInfo) ProtoMessage() {}
 
 func (x *AppPaymentModelInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[55]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[55]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3398,7 +3398,7 @@ func (x *AppPaymentModelInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AppPaymentModelInfo.ProtoReflect.Descriptor instead.
 func (*AppPaymentModelInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{55}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{55}
 }
 
 func (x *AppPaymentModelInfo) GetType() enums.AppPaymentModelTypeEnum_AppPaymentModelType {
@@ -3421,7 +3421,7 @@ type MobileDeviceInfo struct {
 func (x *MobileDeviceInfo) Reset() {
 	*x = MobileDeviceInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[56]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[56]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3434,7 +3434,7 @@ func (x *MobileDeviceInfo) String() string {
 func (*MobileDeviceInfo) ProtoMessage() {}
 
 func (x *MobileDeviceInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[56]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[56]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3447,7 +3447,7 @@ func (x *MobileDeviceInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MobileDeviceInfo.ProtoReflect.Descriptor instead.
 func (*MobileDeviceInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{56}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{56}
 }
 
 func (x *MobileDeviceInfo) GetMobileDeviceConstant() string {
@@ -3471,7 +3471,7 @@ type CustomAffinityInfo struct {
 func (x *CustomAffinityInfo) Reset() {
 	*x = CustomAffinityInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[57]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[57]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3484,7 +3484,7 @@ func (x *CustomAffinityInfo) String() string {
 func (*CustomAffinityInfo) ProtoMessage() {}
 
 func (x *CustomAffinityInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[57]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[57]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3497,7 +3497,7 @@ func (x *CustomAffinityInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CustomAffinityInfo.ProtoReflect.Descriptor instead.
 func (*CustomAffinityInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{57}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{57}
 }
 
 func (x *CustomAffinityInfo) GetCustomAffinity() string {
@@ -3521,7 +3521,7 @@ type CustomIntentInfo struct {
 func (x *CustomIntentInfo) Reset() {
 	*x = CustomIntentInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[58]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[58]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3534,7 +3534,7 @@ func (x *CustomIntentInfo) String() string {
 func (*CustomIntentInfo) ProtoMessage() {}
 
 func (x *CustomIntentInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[58]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[58]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3547,7 +3547,7 @@ func (x *CustomIntentInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CustomIntentInfo.ProtoReflect.Descriptor instead.
 func (*CustomIntentInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{58}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{58}
 }
 
 func (x *CustomIntentInfo) GetCustomIntent() string {
@@ -3557,36 +3557,50 @@ func (x *CustomIntentInfo) GetCustomIntent() string {
 	return ""
 }
 
-// A radius around a list of locations specified through a feed.
+// A radius around a list of locations specified through a feed or assetSet.
 type LocationGroupInfo struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// Feed specifying locations for targeting.
-	// This is required and must be set in CREATE operations.
+	// Feed specifying locations for targeting. Cannot be set with AssetSet
+	// fields. This is required and must be set in CREATE operations.
 	Feed *string `protobuf:"bytes,5,opt,name=feed,proto3,oneof" json:"feed,omitempty"`
 	// Geo target constant(s) restricting the scope of the geographic area within
-	// the feed. Currently only one geo target constant is allowed.
+	// the feed. Currently only one geo target constant is allowed. Cannot be set
+	// with AssetSet fields.
 	GeoTargetConstants []string `protobuf:"bytes,6,rep,name=geo_target_constants,json=geoTargetConstants,proto3" json:"geo_target_constants,omitempty"`
 	// Distance in units specifying the radius around targeted locations.
 	// This is required and must be set in CREATE operations.
 	Radius *int64 `protobuf:"varint,7,opt,name=radius,proto3,oneof" json:"radius,omitempty"`
 	// Unit of the radius. Miles and meters are supported for geo target
-	// constants. Milli miles and meters are supported for feed item sets.
-	// This is required and must be set in CREATE operations.
-	RadiusUnits enums.LocationGroupRadiusUnitsEnum_LocationGroupRadiusUnits `protobuf:"varint,4,opt,name=radius_units,json=radiusUnits,proto3,enum=google.ads.googleads.v11.enums.LocationGroupRadiusUnitsEnum_LocationGroupRadiusUnits" json:"radius_units,omitempty"`
+	// constants. Milli miles and meters are supported for feed item sets and
+	// asset sets. This is required and must be set in CREATE operations.
+	RadiusUnits enums.LocationGroupRadiusUnitsEnum_LocationGroupRadiusUnits `protobuf:"varint,4,opt,name=radius_units,json=radiusUnits,proto3,enum=google.ads.googleads.v12.enums.LocationGroupRadiusUnitsEnum_LocationGroupRadiusUnits" json:"radius_units,omitempty"`
 	// FeedItemSets whose FeedItems are targeted. If multiple IDs are specified,
 	// then all items that appear in at least one set are targeted. This field
 	// cannot be used with geo_target_constants. This is optional and can only be
-	// set in CREATE operations.
+	// set in CREATE operations. Cannot be set with AssetSet fields.
 	FeedItemSets []string `protobuf:"bytes,8,rep,name=feed_item_sets,json=feedItemSets,proto3" json:"feed_item_sets,omitempty"`
+	// Denotes that the latest customer level asset set is used for targeting.
+	// Used with radius and radius_units. Cannot be used with
+	// feed, geo target constants or feed item sets. When using asset sets, either
+	// this field or location_group_asset_sets should be specified. Both cannot be
+	// used at the same time. This can only be set in CREATE operations.
+	EnableCustomerLevelLocationAssetSet *bool `protobuf:"varint,9,opt,name=enable_customer_level_location_asset_set,json=enableCustomerLevelLocationAssetSet,proto3,oneof" json:"enable_customer_level_location_asset_set,omitempty"`
+	// AssetSets whose Assets are targeted. If multiple IDs are specified, then
+	// all items that appear in at least one set are targeted. This field cannot
+	// be used with feed, geo target constants or feed item sets. When using asset
+	// sets, either this field or enable_customer_level_location_asset_set should
+	// be specified. Both cannot be used at the same time. This can only be set
+	// in CREATE operations.
+	LocationGroupAssetSets []string `protobuf:"bytes,10,rep,name=location_group_asset_sets,json=locationGroupAssetSets,proto3" json:"location_group_asset_sets,omitempty"`
 }
 
 func (x *LocationGroupInfo) Reset() {
 	*x = LocationGroupInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[59]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[59]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3599,7 +3613,7 @@ func (x *LocationGroupInfo) String() string {
 func (*LocationGroupInfo) ProtoMessage() {}
 
 func (x *LocationGroupInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[59]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[59]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3612,7 +3626,7 @@ func (x *LocationGroupInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LocationGroupInfo.ProtoReflect.Descriptor instead.
 func (*LocationGroupInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{59}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{59}
 }
 
 func (x *LocationGroupInfo) GetFeed() string {
@@ -3650,6 +3664,20 @@ func (x *LocationGroupInfo) GetFeedItemSets() []string {
 	return nil
 }
 
+func (x *LocationGroupInfo) GetEnableCustomerLevelLocationAssetSet() bool {
+	if x != nil && x.EnableCustomerLevelLocationAssetSet != nil {
+		return *x.EnableCustomerLevelLocationAssetSet
+	}
+	return false
+}
+
+func (x *LocationGroupInfo) GetLocationGroupAssetSets() []string {
+	if x != nil {
+		return x.LocationGroupAssetSets
+	}
+	return nil
+}
+
 // A custom audience criterion.
 type CustomAudienceInfo struct {
 	state         protoimpl.MessageState
@@ -3663,7 +3691,7 @@ type CustomAudienceInfo struct {
 func (x *CustomAudienceInfo) Reset() {
 	*x = CustomAudienceInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[60]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[60]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3676,7 +3704,7 @@ func (x *CustomAudienceInfo) String() string {
 func (*CustomAudienceInfo) ProtoMessage() {}
 
 func (x *CustomAudienceInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[60]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[60]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3689,7 +3717,7 @@ func (x *CustomAudienceInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CustomAudienceInfo.ProtoReflect.Descriptor instead.
 func (*CustomAudienceInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{60}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{60}
 }
 
 func (x *CustomAudienceInfo) GetCustomAudience() string {
@@ -3712,7 +3740,7 @@ type CombinedAudienceInfo struct {
 func (x *CombinedAudienceInfo) Reset() {
 	*x = CombinedAudienceInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[61]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[61]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3725,7 +3753,7 @@ func (x *CombinedAudienceInfo) String() string {
 func (*CombinedAudienceInfo) ProtoMessage() {}
 
 func (x *CombinedAudienceInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[61]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[61]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3738,7 +3766,7 @@ func (x *CombinedAudienceInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CombinedAudienceInfo.ProtoReflect.Descriptor instead.
 func (*CombinedAudienceInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{61}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{61}
 }
 
 func (x *CombinedAudienceInfo) GetCombinedAudience() string {
@@ -3761,7 +3789,7 @@ type AudienceInfo struct {
 func (x *AudienceInfo) Reset() {
 	*x = AudienceInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[62]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[62]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3774,7 +3802,7 @@ func (x *AudienceInfo) String() string {
 func (*AudienceInfo) ProtoMessage() {}
 
 func (x *AudienceInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[62]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[62]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3787,7 +3815,7 @@ func (x *AudienceInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AudienceInfo.ProtoReflect.Descriptor instead.
 func (*AudienceInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{62}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{62}
 }
 
 func (x *AudienceInfo) GetAudience() string {
@@ -3815,7 +3843,7 @@ type KeywordThemeInfo struct {
 func (x *KeywordThemeInfo) Reset() {
 	*x = KeywordThemeInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[63]
+		mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[63]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3828,7 +3856,7 @@ func (x *KeywordThemeInfo) String() string {
 func (*KeywordThemeInfo) ProtoMessage() {}
 
 func (x *KeywordThemeInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_criteria_proto_msgTypes[63]
+	mi := &file_google_ads_googleads_v12_common_criteria_proto_msgTypes[63]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3841,7 +3869,7 @@ func (x *KeywordThemeInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use KeywordThemeInfo.ProtoReflect.Descriptor instead.
 func (*KeywordThemeInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP(), []int{63}
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP(), []int{63}
 }
 
 func (m *KeywordThemeInfo) GetKeywordTheme() isKeywordThemeInfo_KeywordTheme {
@@ -3885,100 +3913,100 @@ func (*KeywordThemeInfo_KeywordThemeConstant) isKeywordThemeInfo_KeywordTheme() 
 
 func (*KeywordThemeInfo_FreeFormKeywordTheme) isKeywordThemeInfo_KeywordTheme() {}
 
-var File_google_ads_googleads_v11_common_criteria_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v12_common_criteria_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v11_common_criteria_proto_rawDesc = []byte{
+var file_google_ads_googleads_v12_common_criteria_proto_rawDesc = []byte{
 	0x0a, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x31, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
 	0x6e, 0x2f, 0x63, 0x72, 0x69, 0x74, 0x65, 0x72, 0x69, 0x61, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
 	0x12, 0x1f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
 	0x6e, 0x1a, 0x33, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x31, 0x2f, 0x65, 0x6e, 0x75, 0x6d,
+	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x65, 0x6e, 0x75, 0x6d,
 	0x73, 0x2f, 0x61, 0x67, 0x65, 0x5f, 0x72, 0x61, 0x6e, 0x67, 0x65, 0x5f, 0x74, 0x79, 0x70, 0x65,
 	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x3b, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61,
-	0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x31,
+	0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32,
 	0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x61, 0x70, 0x70, 0x5f, 0x70, 0x61, 0x79, 0x6d, 0x65,
 	0x6e, 0x74, 0x5f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x2e, 0x70, 0x72,
 	0x6f, 0x74, 0x6f, 0x1a, 0x37, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x31, 0x2f, 0x65, 0x6e,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x65, 0x6e,
 	0x75, 0x6d, 0x73, 0x2f, 0x63, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x5f, 0x6c, 0x61, 0x62, 0x65,
 	0x6c, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x30, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x64, 0x73, 0x2f, 0x76, 0x31, 0x31, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x64, 0x61, 0x79,
+	0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x64, 0x61, 0x79,
 	0x5f, 0x6f, 0x66, 0x5f, 0x77, 0x65, 0x65, 0x6b, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x2b,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x31, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x64,
+	0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x64,
 	0x65, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x30, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64,
-	0x73, 0x2f, 0x76, 0x31, 0x31, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x67, 0x65, 0x6e, 0x64,
+	0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x67, 0x65, 0x6e, 0x64,
 	0x65, 0x72, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x3e, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x31, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x68, 0x6f,
+	0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x68, 0x6f,
 	0x74, 0x65, 0x6c, 0x5f, 0x64, 0x61, 0x74, 0x65, 0x5f, 0x73, 0x65, 0x6c, 0x65, 0x63, 0x74, 0x69,
 	0x6f, 0x6e, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x36, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x31, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x69, 0x6e,
+	0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x69, 0x6e,
 	0x63, 0x6f, 0x6d, 0x65, 0x5f, 0x72, 0x61, 0x6e, 0x67, 0x65, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x2e,
 	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x35, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64,
-	0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x31, 0x2f,
+	0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f,
 	0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x61, 0x63, 0x74, 0x69, 0x6f,
 	0x6e, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x37, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x64, 0x73, 0x2f, 0x76, 0x31, 0x31, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x6b, 0x65, 0x79,
+	0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x6b, 0x65, 0x79,
 	0x77, 0x6f, 0x72, 0x64, 0x5f, 0x6d, 0x61, 0x74, 0x63, 0x68, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x2e,
 	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x37, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64,
-	0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x31, 0x2f,
+	0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f,
 	0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x6c, 0x69, 0x73, 0x74, 0x69, 0x6e, 0x67, 0x5f, 0x67, 0x72,
 	0x6f, 0x75, 0x70, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x40,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x31, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x6c,
+	0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x6c,
 	0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x67, 0x72, 0x6f, 0x75, 0x70, 0x5f, 0x72, 0x61,
 	0x64, 0x69, 0x75, 0x73, 0x5f, 0x75, 0x6e, 0x69, 0x74, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
 	0x1a, 0x33, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x31, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73,
 	0x2f, 0x6d, 0x69, 0x6e, 0x75, 0x74, 0x65, 0x5f, 0x6f, 0x66, 0x5f, 0x68, 0x6f, 0x75, 0x72, 0x2e,
 	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x39, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64,
-	0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x31, 0x2f,
+	0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f,
 	0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x70, 0x61, 0x72, 0x65, 0x6e, 0x74, 0x61, 0x6c, 0x5f, 0x73,
 	0x74, 0x61, 0x74, 0x75, 0x73, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
 	0x1a, 0x3b, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x31, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73,
 	0x2f, 0x70, 0x72, 0x65, 0x66, 0x65, 0x72, 0x72, 0x65, 0x64, 0x5f, 0x63, 0x6f, 0x6e, 0x74, 0x65,
 	0x6e, 0x74, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x43, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x31, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x70, 0x72,
+	0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x70, 0x72,
 	0x6f, 0x64, 0x75, 0x63, 0x74, 0x5f, 0x62, 0x69, 0x64, 0x64, 0x69, 0x6e, 0x67, 0x5f, 0x63, 0x61,
 	0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x5f, 0x6c, 0x65, 0x76, 0x65, 0x6c, 0x2e, 0x70, 0x72, 0x6f,
 	0x74, 0x6f, 0x1a, 0x34, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x31, 0x2f, 0x65, 0x6e, 0x75,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x65, 0x6e, 0x75,
 	0x6d, 0x73, 0x2f, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x5f, 0x63, 0x68, 0x61, 0x6e, 0x6e,
 	0x65, 0x6c, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x40, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76,
-	0x31, 0x31, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74,
+	0x31, 0x32, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74,
 	0x5f, 0x63, 0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x5f, 0x65, 0x78, 0x63, 0x6c, 0x75, 0x73, 0x69,
 	0x76, 0x69, 0x74, 0x79, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x36, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
-	0x2f, 0x76, 0x31, 0x31, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x70, 0x72, 0x6f, 0x64, 0x75,
+	0x2f, 0x76, 0x31, 0x32, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x70, 0x72, 0x6f, 0x64, 0x75,
 	0x63, 0x74, 0x5f, 0x63, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x70, 0x72, 0x6f,
 	0x74, 0x6f, 0x1a, 0x43, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x31, 0x2f, 0x65, 0x6e, 0x75,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x65, 0x6e, 0x75,
 	0x6d, 0x73, 0x2f, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x5f, 0x63, 0x75, 0x73, 0x74, 0x6f,
 	0x6d, 0x5f, 0x61, 0x74, 0x74, 0x72, 0x69, 0x62, 0x75, 0x74, 0x65, 0x5f, 0x69, 0x6e, 0x64, 0x65,
 	0x78, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x37, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f,
 	0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31,
-	0x31, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x5f,
+	0x32, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x5f,
 	0x74, 0x79, 0x70, 0x65, 0x5f, 0x6c, 0x65, 0x76, 0x65, 0x6c, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
 	0x1a, 0x3b, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x31, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73,
 	0x2f, 0x70, 0x72, 0x6f, 0x78, 0x69, 0x6d, 0x69, 0x74, 0x79, 0x5f, 0x72, 0x61, 0x64, 0x69, 0x75,
 	0x73, 0x5f, 0x75, 0x6e, 0x69, 0x74, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x3e, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x31, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x77, 0x65,
+	0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x77, 0x65,
 	0x62, 0x70, 0x61, 0x67, 0x65, 0x5f, 0x63, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x5f,
 	0x6f, 0x70, 0x65, 0x72, 0x61, 0x6e, 0x64, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x3f, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x31, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x77, 0x65,
+	0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x77, 0x65,
 	0x62, 0x70, 0x61, 0x67, 0x65, 0x5f, 0x63, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x5f,
 	0x6f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x6f, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x95,
 	0x01, 0x0a, 0x0b, 0x4b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x17,
@@ -3986,7 +4014,7 @@ var file_google_ads_googleads_v11_common_criteria_proto_rawDesc = []byte{
 	0x74, 0x65, 0x78, 0x74, 0x88, 0x01, 0x01, 0x12, 0x64, 0x0a, 0x0a, 0x6d, 0x61, 0x74, 0x63, 0x68,
 	0x5f, 0x74, 0x79, 0x70, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x45, 0x2e, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x4b, 0x65, 0x79,
+	0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x4b, 0x65, 0x79,
 	0x77, 0x6f, 0x72, 0x64, 0x4d, 0x61, 0x74, 0x63, 0x68, 0x54, 0x79, 0x70, 0x65, 0x45, 0x6e, 0x75,
 	0x6d, 0x2e, 0x4b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64, 0x4d, 0x61, 0x74, 0x63, 0x68, 0x54, 0x79,
 	0x70, 0x65, 0x52, 0x09, 0x6d, 0x61, 0x74, 0x63, 0x68, 0x54, 0x79, 0x70, 0x65, 0x42, 0x07, 0x0a,
@@ -4016,13 +4044,13 @@ var file_google_ads_googleads_v11_common_criteria_proto_rawDesc = []byte{
 	0x73, 0x74, 0x61, 0x6e, 0x74, 0x22, 0x53, 0x0a, 0x0a, 0x44, 0x65, 0x76, 0x69, 0x63, 0x65, 0x49,
 	0x6e, 0x66, 0x6f, 0x12, 0x45, 0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28,
 	0x0e, 0x32, 0x31, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x65, 0x6e, 0x75,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x65, 0x6e, 0x75,
 	0x6d, 0x73, 0x2e, 0x44, 0x65, 0x76, 0x69, 0x63, 0x65, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x44, 0x65,
 	0x76, 0x69, 0x63, 0x65, 0x52, 0x04, 0x74, 0x79, 0x70, 0x65, 0x22, 0x79, 0x0a, 0x14, 0x50, 0x72,
 	0x65, 0x66, 0x65, 0x72, 0x72, 0x65, 0x64, 0x43, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x49, 0x6e,
 	0x66, 0x6f, 0x12, 0x61, 0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0e,
 	0x32, 0x4d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d,
+	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d,
 	0x73, 0x2e, 0x50, 0x72, 0x65, 0x66, 0x65, 0x72, 0x72, 0x65, 0x64, 0x43, 0x6f, 0x6e, 0x74, 0x65,
 	0x6e, 0x74, 0x54, 0x79, 0x70, 0x65, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x50, 0x72, 0x65, 0x66, 0x65,
 	0x72, 0x72, 0x65, 0x64, 0x43, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x54, 0x79, 0x70, 0x65, 0x52,
@@ -4030,13 +4058,13 @@ var file_google_ads_googleads_v11_common_criteria_proto_rawDesc = []byte{
 	0x67, 0x47, 0x72, 0x6f, 0x75, 0x70, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x59, 0x0a, 0x04, 0x74, 0x79,
 	0x70, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x45, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e,
-	0x76, 0x31, 0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x69, 0x6e,
+	0x76, 0x31, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x69, 0x6e,
 	0x67, 0x47, 0x72, 0x6f, 0x75, 0x70, 0x54, 0x79, 0x70, 0x65, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x4c,
 	0x69, 0x73, 0x74, 0x69, 0x6e, 0x67, 0x47, 0x72, 0x6f, 0x75, 0x70, 0x54, 0x79, 0x70, 0x65, 0x52,
 	0x04, 0x74, 0x79, 0x70, 0x65, 0x12, 0x54, 0x0a, 0x0a, 0x63, 0x61, 0x73, 0x65, 0x5f, 0x76, 0x61,
 	0x6c, 0x75, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x35, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
-	0x2e, 0x76, 0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x4c, 0x69, 0x73, 0x74,
+	0x2e, 0x76, 0x31, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x4c, 0x69, 0x73, 0x74,
 	0x69, 0x6e, 0x67, 0x44, 0x69, 0x6d, 0x65, 0x6e, 0x73, 0x69, 0x6f, 0x6e, 0x49, 0x6e, 0x66, 0x6f,
 	0x52, 0x09, 0x63, 0x61, 0x73, 0x65, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x12, 0x3e, 0x0a, 0x19, 0x70,
 	0x61, 0x72, 0x65, 0x6e, 0x74, 0x5f, 0x61, 0x64, 0x5f, 0x67, 0x72, 0x6f, 0x75, 0x70, 0x5f, 0x63,
@@ -4048,121 +4076,121 @@ var file_google_ads_googleads_v11_common_criteria_proto_rawDesc = []byte{
 	0x74, 0x69, 0x6e, 0x67, 0x53, 0x63, 0x6f, 0x70, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x55, 0x0a,
 	0x0a, 0x64, 0x69, 0x6d, 0x65, 0x6e, 0x73, 0x69, 0x6f, 0x6e, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28,
 	0x0b, 0x32, 0x35, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x63, 0x6f, 0x6d,
 	0x6d, 0x6f, 0x6e, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x69, 0x6e, 0x67, 0x44, 0x69, 0x6d, 0x65, 0x6e,
 	0x73, 0x69, 0x6f, 0x6e, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x0a, 0x64, 0x69, 0x6d, 0x65, 0x6e, 0x73,
 	0x69, 0x6f, 0x6e, 0x73, 0x22, 0xb7, 0x0e, 0x0a, 0x14, 0x4c, 0x69, 0x73, 0x74, 0x69, 0x6e, 0x67,
 	0x44, 0x69, 0x6d, 0x65, 0x6e, 0x73, 0x69, 0x6f, 0x6e, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x49, 0x0a,
 	0x08, 0x68, 0x6f, 0x74, 0x65, 0x6c, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32,
 	0x2c, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
 	0x6e, 0x2e, 0x48, 0x6f, 0x74, 0x65, 0x6c, 0x49, 0x64, 0x49, 0x6e, 0x66, 0x6f, 0x48, 0x00, 0x52,
 	0x07, 0x68, 0x6f, 0x74, 0x65, 0x6c, 0x49, 0x64, 0x12, 0x52, 0x0a, 0x0b, 0x68, 0x6f, 0x74, 0x65,
 	0x6c, 0x5f, 0x63, 0x6c, 0x61, 0x73, 0x73, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2f, 0x2e,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e,
+	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e,
 	0x48, 0x6f, 0x74, 0x65, 0x6c, 0x43, 0x6c, 0x61, 0x73, 0x73, 0x49, 0x6e, 0x66, 0x6f, 0x48, 0x00,
 	0x52, 0x0a, 0x68, 0x6f, 0x74, 0x65, 0x6c, 0x43, 0x6c, 0x61, 0x73, 0x73, 0x12, 0x6b, 0x0a, 0x14,
 	0x68, 0x6f, 0x74, 0x65, 0x6c, 0x5f, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x72, 0x79, 0x5f, 0x72, 0x65,
 	0x67, 0x69, 0x6f, 0x6e, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x37, 0x2e, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64,
-	0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x48, 0x6f, 0x74,
+	0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x48, 0x6f, 0x74,
 	0x65, 0x6c, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x72, 0x79, 0x52, 0x65, 0x67, 0x69, 0x6f, 0x6e, 0x49,
 	0x6e, 0x66, 0x6f, 0x48, 0x00, 0x52, 0x12, 0x68, 0x6f, 0x74, 0x65, 0x6c, 0x43, 0x6f, 0x75, 0x6e,
 	0x74, 0x72, 0x79, 0x52, 0x65, 0x67, 0x69, 0x6f, 0x6e, 0x12, 0x52, 0x0a, 0x0b, 0x68, 0x6f, 0x74,
 	0x65, 0x6c, 0x5f, 0x73, 0x74, 0x61, 0x74, 0x65, 0x18, 0x05, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2f,
 	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e,
+	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e,
 	0x2e, 0x48, 0x6f, 0x74, 0x65, 0x6c, 0x53, 0x74, 0x61, 0x74, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x48,
 	0x00, 0x52, 0x0a, 0x68, 0x6f, 0x74, 0x65, 0x6c, 0x53, 0x74, 0x61, 0x74, 0x65, 0x12, 0x4f, 0x0a,
 	0x0a, 0x68, 0x6f, 0x74, 0x65, 0x6c, 0x5f, 0x63, 0x69, 0x74, 0x79, 0x18, 0x06, 0x20, 0x01, 0x28,
 	0x0b, 0x32, 0x2e, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x63, 0x6f, 0x6d,
 	0x6d, 0x6f, 0x6e, 0x2e, 0x48, 0x6f, 0x74, 0x65, 0x6c, 0x43, 0x69, 0x74, 0x79, 0x49, 0x6e, 0x66,
 	0x6f, 0x48, 0x00, 0x52, 0x09, 0x68, 0x6f, 0x74, 0x65, 0x6c, 0x43, 0x69, 0x74, 0x79, 0x12, 0x77,
 	0x0a, 0x18, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x5f, 0x62, 0x69, 0x64, 0x64, 0x69, 0x6e,
 	0x67, 0x5f, 0x63, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x18, 0x0d, 0x20, 0x01, 0x28, 0x0b,
 	0x32, 0x3b, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d,
+	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d,
 	0x6f, 0x6e, 0x2e, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x42, 0x69, 0x64, 0x64, 0x69, 0x6e,
 	0x67, 0x43, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x49, 0x6e, 0x66, 0x6f, 0x48, 0x00, 0x52,
 	0x16, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x42, 0x69, 0x64, 0x64, 0x69, 0x6e, 0x67, 0x43,
 	0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x12, 0x58, 0x0a, 0x0d, 0x70, 0x72, 0x6f, 0x64, 0x75,
 	0x63, 0x74, 0x5f, 0x62, 0x72, 0x61, 0x6e, 0x64, 0x18, 0x0f, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x31,
 	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e,
+	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e,
 	0x2e, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x42, 0x72, 0x61, 0x6e, 0x64, 0x49, 0x6e, 0x66,
 	0x6f, 0x48, 0x00, 0x52, 0x0c, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x42, 0x72, 0x61, 0x6e,
 	0x64, 0x12, 0x5e, 0x0a, 0x0f, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x5f, 0x63, 0x68, 0x61,
 	0x6e, 0x6e, 0x65, 0x6c, 0x18, 0x08, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x33, 0x2e, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64,
-	0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x50, 0x72, 0x6f,
+	0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x50, 0x72, 0x6f,
 	0x64, 0x75, 0x63, 0x74, 0x43, 0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x49, 0x6e, 0x66, 0x6f, 0x48,
 	0x00, 0x52, 0x0e, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x43, 0x68, 0x61, 0x6e, 0x6e, 0x65,
 	0x6c, 0x12, 0x80, 0x01, 0x0a, 0x1b, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x5f, 0x63, 0x68,
 	0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x5f, 0x65, 0x78, 0x63, 0x6c, 0x75, 0x73, 0x69, 0x76, 0x69, 0x74,
 	0x79, 0x18, 0x09, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x3e, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76,
-	0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63,
+	0x31, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63,
 	0x74, 0x43, 0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x45, 0x78, 0x63, 0x6c, 0x75, 0x73, 0x69, 0x76,
 	0x69, 0x74, 0x79, 0x49, 0x6e, 0x66, 0x6f, 0x48, 0x00, 0x52, 0x19, 0x70, 0x72, 0x6f, 0x64, 0x75,
 	0x63, 0x74, 0x43, 0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x45, 0x78, 0x63, 0x6c, 0x75, 0x73, 0x69,
 	0x76, 0x69, 0x74, 0x79, 0x12, 0x64, 0x0a, 0x11, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x5f,
 	0x63, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32,
 	0x35, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
 	0x6e, 0x2e, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x43, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69,
 	0x6f, 0x6e, 0x49, 0x6e, 0x66, 0x6f, 0x48, 0x00, 0x52, 0x10, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63,
 	0x74, 0x43, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x77, 0x0a, 0x18, 0x70, 0x72,
 	0x6f, 0x64, 0x75, 0x63, 0x74, 0x5f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x5f, 0x61, 0x74, 0x74,
 	0x72, 0x69, 0x62, 0x75, 0x74, 0x65, 0x18, 0x10, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x3b, 0x2e, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x50,
+	0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x50,
 	0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x41, 0x74, 0x74, 0x72,
 	0x69, 0x62, 0x75, 0x74, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x48, 0x00, 0x52, 0x16, 0x70, 0x72, 0x6f,
 	0x64, 0x75, 0x63, 0x74, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x41, 0x74, 0x74, 0x72, 0x69, 0x62,
 	0x75, 0x74, 0x65, 0x12, 0x5c, 0x0a, 0x0f, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x5f, 0x69,
 	0x74, 0x65, 0x6d, 0x5f, 0x69, 0x64, 0x18, 0x0b, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x32, 0x2e, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x50,
+	0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x50,
 	0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x49, 0x74, 0x65, 0x6d, 0x49, 0x64, 0x49, 0x6e, 0x66, 0x6f,
 	0x48, 0x00, 0x52, 0x0d, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x49, 0x74, 0x65, 0x6d, 0x49,
 	0x64, 0x12, 0x55, 0x0a, 0x0c, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x5f, 0x74, 0x79, 0x70,
 	0x65, 0x18, 0x0c, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x30, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76,
-	0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63,
+	0x31, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63,
 	0x74, 0x54, 0x79, 0x70, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x48, 0x00, 0x52, 0x0b, 0x70, 0x72, 0x6f,
 	0x64, 0x75, 0x63, 0x74, 0x54, 0x79, 0x70, 0x65, 0x12, 0x61, 0x0a, 0x10, 0x70, 0x72, 0x6f, 0x64,
 	0x75, 0x63, 0x74, 0x5f, 0x67, 0x72, 0x6f, 0x75, 0x70, 0x69, 0x6e, 0x67, 0x18, 0x11, 0x20, 0x01,
 	0x28, 0x0b, 0x32, 0x34, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x63, 0x6f,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x63, 0x6f,
 	0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x47, 0x72, 0x6f, 0x75,
 	0x70, 0x69, 0x6e, 0x67, 0x49, 0x6e, 0x66, 0x6f, 0x48, 0x00, 0x52, 0x0f, 0x70, 0x72, 0x6f, 0x64,
 	0x75, 0x63, 0x74, 0x47, 0x72, 0x6f, 0x75, 0x70, 0x69, 0x6e, 0x67, 0x12, 0x5b, 0x0a, 0x0e, 0x70,
 	0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x5f, 0x6c, 0x61, 0x62, 0x65, 0x6c, 0x73, 0x18, 0x12, 0x20,
 	0x01, 0x28, 0x0b, 0x32, 0x32, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73,
-	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x63,
+	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x63,
 	0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x4c, 0x61, 0x62,
 	0x65, 0x6c, 0x73, 0x49, 0x6e, 0x66, 0x6f, 0x48, 0x00, 0x52, 0x0d, 0x70, 0x72, 0x6f, 0x64, 0x75,
 	0x63, 0x74, 0x4c, 0x61, 0x62, 0x65, 0x6c, 0x73, 0x12, 0x77, 0x0a, 0x18, 0x70, 0x72, 0x6f, 0x64,
 	0x75, 0x63, 0x74, 0x5f, 0x6c, 0x65, 0x67, 0x61, 0x63, 0x79, 0x5f, 0x63, 0x6f, 0x6e, 0x64, 0x69,
 	0x74, 0x69, 0x6f, 0x6e, 0x18, 0x13, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x3b, 0x2e, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64,
-	0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x50, 0x72, 0x6f,
+	0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x50, 0x72, 0x6f,
 	0x64, 0x75, 0x63, 0x74, 0x4c, 0x65, 0x67, 0x61, 0x63, 0x79, 0x43, 0x6f, 0x6e, 0x64, 0x69, 0x74,
 	0x69, 0x6f, 0x6e, 0x49, 0x6e, 0x66, 0x6f, 0x48, 0x00, 0x52, 0x16, 0x70, 0x72, 0x6f, 0x64, 0x75,
 	0x63, 0x74, 0x4c, 0x65, 0x67, 0x61, 0x63, 0x79, 0x43, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f,
 	0x6e, 0x12, 0x62, 0x0a, 0x11, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x5f, 0x74, 0x79, 0x70,
 	0x65, 0x5f, 0x66, 0x75, 0x6c, 0x6c, 0x18, 0x14, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x34, 0x2e, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x50,
+	0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x50,
 	0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x54, 0x79, 0x70, 0x65, 0x46, 0x75, 0x6c, 0x6c, 0x49, 0x6e,
 	0x66, 0x6f, 0x48, 0x00, 0x52, 0x0f, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x54, 0x79, 0x70,
 	0x65, 0x46, 0x75, 0x6c, 0x6c, 0x12, 0x7a, 0x0a, 0x19, 0x75, 0x6e, 0x6b, 0x6e, 0x6f, 0x77, 0x6e,
 	0x5f, 0x6c, 0x69, 0x73, 0x74, 0x69, 0x6e, 0x67, 0x5f, 0x64, 0x69, 0x6d, 0x65, 0x6e, 0x73, 0x69,
 	0x6f, 0x6e, 0x18, 0x0e, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x3c, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e,
-	0x76, 0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x55, 0x6e, 0x6b, 0x6e, 0x6f,
+	0x76, 0x31, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x55, 0x6e, 0x6b, 0x6e, 0x6f,
 	0x77, 0x6e, 0x4c, 0x69, 0x73, 0x74, 0x69, 0x6e, 0x67, 0x44, 0x69, 0x6d, 0x65, 0x6e, 0x73, 0x69,
 	0x6f, 0x6e, 0x49, 0x6e, 0x66, 0x6f, 0x48, 0x00, 0x52, 0x17, 0x75, 0x6e, 0x6b, 0x6e, 0x6f, 0x77,
 	0x6e, 0x4c, 0x69, 0x73, 0x74, 0x69, 0x6e, 0x67, 0x44, 0x69, 0x6d, 0x65, 0x6e, 0x73, 0x69, 0x6f,
@@ -4199,7 +4227,7 @@ var file_google_ads_googleads_v11_common_criteria_proto_rawDesc = []byte{
 	0x0b, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x72, 0x79, 0x43, 0x6f, 0x64, 0x65, 0x88, 0x01, 0x01, 0x12,
 	0x71, 0x0a, 0x05, 0x6c, 0x65, 0x76, 0x65, 0x6c, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x5b,
 	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e,
+	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e,
 	0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x42, 0x69, 0x64, 0x64, 0x69, 0x6e, 0x67, 0x43, 0x61,
 	0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x4c, 0x65, 0x76, 0x65, 0x6c, 0x45, 0x6e, 0x75, 0x6d, 0x2e,
 	0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x42, 0x69, 0x64, 0x64, 0x69, 0x6e, 0x67, 0x43, 0x61,
@@ -4213,7 +4241,7 @@ var file_google_ads_googleads_v11_common_criteria_proto_rawDesc = []byte{
 	0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x5b, 0x0a, 0x07, 0x63, 0x68, 0x61,
 	0x6e, 0x6e, 0x65, 0x6c, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x41, 0x2e, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64,
-	0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x50, 0x72, 0x6f, 0x64,
+	0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x50, 0x72, 0x6f, 0x64,
 	0x75, 0x63, 0x74, 0x43, 0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x50,
 	0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x43, 0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x52, 0x07, 0x63,
 	0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x22, 0xaa, 0x01, 0x0a, 0x1d, 0x50, 0x72, 0x6f, 0x64, 0x75,
@@ -4222,7 +4250,7 @@ var file_google_ads_googleads_v11_common_criteria_proto_rawDesc = []byte{
 	0x6e, 0x6e, 0x65, 0x6c, 0x5f, 0x65, 0x78, 0x63, 0x6c, 0x75, 0x73, 0x69, 0x76, 0x69, 0x74, 0x79,
 	0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x57, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
 	0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31,
-	0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x43,
+	0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x43,
 	0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x45, 0x78, 0x63, 0x6c, 0x75, 0x73, 0x69, 0x76, 0x69, 0x74,
 	0x79, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x43, 0x68, 0x61,
 	0x6e, 0x6e, 0x65, 0x6c, 0x45, 0x78, 0x63, 0x6c, 0x75, 0x73, 0x69, 0x76, 0x69, 0x74, 0x79, 0x52,
@@ -4231,7 +4259,7 @@ var file_google_ads_googleads_v11_common_criteria_proto_rawDesc = []byte{
 	0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x63, 0x0a, 0x09, 0x63,
 	0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x45,
 	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e,
+	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e,
 	0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x43, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e,
 	0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x43, 0x6f, 0x6e, 0x64,
 	0x69, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x09, 0x63, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e,
@@ -4241,7 +4269,7 @@ var file_google_ads_googleads_v11_common_criteria_proto_rawDesc = []byte{
 	0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x88, 0x01, 0x01, 0x12, 0x71, 0x0a, 0x05, 0x69, 0x6e,
 	0x64, 0x65, 0x78, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x5b, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
-	0x2e, 0x76, 0x31, 0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x50, 0x72, 0x6f, 0x64, 0x75,
+	0x2e, 0x76, 0x31, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x50, 0x72, 0x6f, 0x64, 0x75,
 	0x63, 0x74, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x41, 0x74, 0x74, 0x72, 0x69, 0x62, 0x75, 0x74,
 	0x65, 0x49, 0x6e, 0x64, 0x65, 0x78, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x50, 0x72, 0x6f, 0x64, 0x75,
 	0x63, 0x74, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x41, 0x74, 0x74, 0x72, 0x69, 0x62, 0x75, 0x74,
@@ -4255,7 +4283,7 @@ var file_google_ads_googleads_v11_common_criteria_proto_rawDesc = []byte{
 	0x20, 0x01, 0x28, 0x09, 0x48, 0x00, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x88, 0x01, 0x01,
 	0x12, 0x5b, 0x0a, 0x05, 0x6c, 0x65, 0x76, 0x65, 0x6c, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0e, 0x32,
 	0x45, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73,
 	0x2e, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x54, 0x79, 0x70, 0x65, 0x4c, 0x65, 0x76, 0x65,
 	0x6c, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x54, 0x79, 0x70,
 	0x65, 0x4c, 0x65, 0x76, 0x65, 0x6c, 0x52, 0x05, 0x6c, 0x65, 0x76, 0x65, 0x6c, 0x42, 0x08, 0x0a,
@@ -4281,7 +4309,7 @@ var file_google_ads_googleads_v11_common_criteria_proto_rawDesc = []byte{
 	0x6f, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x65, 0x0a, 0x04, 0x74, 0x79,
 	0x70, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x51, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e,
-	0x76, 0x31, 0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x48, 0x6f, 0x74, 0x65, 0x6c, 0x44,
+	0x76, 0x31, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x48, 0x6f, 0x74, 0x65, 0x6c, 0x44,
 	0x61, 0x74, 0x65, 0x53, 0x65, 0x6c, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x54, 0x79, 0x70, 0x65,
 	0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x48, 0x6f, 0x74, 0x65, 0x6c, 0x44, 0x61, 0x74, 0x65, 0x53, 0x65,
 	0x6c, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x52, 0x04, 0x74, 0x79, 0x70,
@@ -4310,27 +4338,27 @@ var file_google_ads_googleads_v11_common_criteria_proto_rawDesc = []byte{
 	0x49, 0x6e, 0x44, 0x61, 0x79, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x57, 0x0a, 0x0b, 0x64, 0x61, 0x79,
 	0x5f, 0x6f, 0x66, 0x5f, 0x77, 0x65, 0x65, 0x6b, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x37,
 	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e,
+	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e,
 	0x44, 0x61, 0x79, 0x4f, 0x66, 0x57, 0x65, 0x65, 0x6b, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x44, 0x61,
 	0x79, 0x4f, 0x66, 0x57, 0x65, 0x65, 0x6b, 0x52, 0x09, 0x64, 0x61, 0x79, 0x4f, 0x66, 0x57, 0x65,
 	0x65, 0x6b, 0x22, 0x6e, 0x0a, 0x13, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x61, 0x63, 0x74, 0x69, 0x6f,
 	0x6e, 0x54, 0x79, 0x70, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x57, 0x0a, 0x04, 0x74, 0x79, 0x70,
 	0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x43, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76,
-	0x31, 0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x61, 0x63,
+	0x31, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x61, 0x63,
 	0x74, 0x69, 0x6f, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x49, 0x6e, 0x74,
 	0x65, 0x72, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x52, 0x04, 0x74, 0x79,
 	0x70, 0x65, 0x22, 0x89, 0x03, 0x0a, 0x0e, 0x41, 0x64, 0x53, 0x63, 0x68, 0x65, 0x64, 0x75, 0x6c,
 	0x65, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x60, 0x0a, 0x0c, 0x73, 0x74, 0x61, 0x72, 0x74, 0x5f, 0x6d,
 	0x69, 0x6e, 0x75, 0x74, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x3d, 0x2e, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x4d, 0x69, 0x6e,
+	0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x4d, 0x69, 0x6e,
 	0x75, 0x74, 0x65, 0x4f, 0x66, 0x48, 0x6f, 0x75, 0x72, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x4d, 0x69,
 	0x6e, 0x75, 0x74, 0x65, 0x4f, 0x66, 0x48, 0x6f, 0x75, 0x72, 0x52, 0x0b, 0x73, 0x74, 0x61, 0x72,
 	0x74, 0x4d, 0x69, 0x6e, 0x75, 0x74, 0x65, 0x12, 0x5c, 0x0a, 0x0a, 0x65, 0x6e, 0x64, 0x5f, 0x6d,
 	0x69, 0x6e, 0x75, 0x74, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x3d, 0x2e, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x4d, 0x69, 0x6e,
+	0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x4d, 0x69, 0x6e,
 	0x75, 0x74, 0x65, 0x4f, 0x66, 0x48, 0x6f, 0x75, 0x72, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x4d, 0x69,
 	0x6e, 0x75, 0x74, 0x65, 0x4f, 0x66, 0x48, 0x6f, 0x75, 0x72, 0x52, 0x09, 0x65, 0x6e, 0x64, 0x4d,
 	0x69, 0x6e, 0x75, 0x74, 0x65, 0x12, 0x22, 0x0a, 0x0a, 0x73, 0x74, 0x61, 0x72, 0x74, 0x5f, 0x68,
@@ -4340,7 +4368,7 @@ var file_google_ads_googleads_v11_common_criteria_proto_rawDesc = []byte{
 	0x6e, 0x64, 0x48, 0x6f, 0x75, 0x72, 0x88, 0x01, 0x01, 0x12, 0x57, 0x0a, 0x0b, 0x64, 0x61, 0x79,
 	0x5f, 0x6f, 0x66, 0x5f, 0x77, 0x65, 0x65, 0x6b, 0x18, 0x05, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x37,
 	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e,
+	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e,
 	0x44, 0x61, 0x79, 0x4f, 0x66, 0x57, 0x65, 0x65, 0x6b, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x44, 0x61,
 	0x79, 0x4f, 0x66, 0x57, 0x65, 0x65, 0x6b, 0x52, 0x09, 0x64, 0x61, 0x79, 0x4f, 0x66, 0x57, 0x65,
 	0x65, 0x6b, 0x42, 0x0d, 0x0a, 0x0b, 0x5f, 0x73, 0x74, 0x61, 0x72, 0x74, 0x5f, 0x68, 0x6f, 0x75,
@@ -4348,26 +4376,26 @@ var file_google_ads_googleads_v11_common_criteria_proto_rawDesc = []byte{
 	0x0a, 0x0c, 0x41, 0x67, 0x65, 0x52, 0x61, 0x6e, 0x67, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x51,
 	0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x3d, 0x2e, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x41, 0x67,
+	0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x41, 0x67,
 	0x65, 0x52, 0x61, 0x6e, 0x67, 0x65, 0x54, 0x79, 0x70, 0x65, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x41,
 	0x67, 0x65, 0x52, 0x61, 0x6e, 0x67, 0x65, 0x54, 0x79, 0x70, 0x65, 0x52, 0x04, 0x74, 0x79, 0x70,
 	0x65, 0x22, 0x5b, 0x0a, 0x0a, 0x47, 0x65, 0x6e, 0x64, 0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f, 0x12,
 	0x4d, 0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x39, 0x2e,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x47,
+	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x47,
 	0x65, 0x6e, 0x64, 0x65, 0x72, 0x54, 0x79, 0x70, 0x65, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x47, 0x65,
 	0x6e, 0x64, 0x65, 0x72, 0x54, 0x79, 0x70, 0x65, 0x52, 0x04, 0x74, 0x79, 0x70, 0x65, 0x22, 0x6a,
 	0x0a, 0x0f, 0x49, 0x6e, 0x63, 0x6f, 0x6d, 0x65, 0x52, 0x61, 0x6e, 0x67, 0x65, 0x49, 0x6e, 0x66,
 	0x6f, 0x12, 0x57, 0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32,
 	0x43, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73,
 	0x2e, 0x49, 0x6e, 0x63, 0x6f, 0x6d, 0x65, 0x52, 0x61, 0x6e, 0x67, 0x65, 0x54, 0x79, 0x70, 0x65,
 	0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x49, 0x6e, 0x63, 0x6f, 0x6d, 0x65, 0x52, 0x61, 0x6e, 0x67, 0x65,
 	0x54, 0x79, 0x70, 0x65, 0x52, 0x04, 0x74, 0x79, 0x70, 0x65, 0x22, 0x73, 0x0a, 0x12, 0x50, 0x61,
 	0x72, 0x65, 0x6e, 0x74, 0x61, 0x6c, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x49, 0x6e, 0x66, 0x6f,
 	0x12, 0x5d, 0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x49,
 	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e,
+	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e,
 	0x50, 0x61, 0x72, 0x65, 0x6e, 0x74, 0x61, 0x6c, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x54, 0x79,
 	0x70, 0x65, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x50, 0x61, 0x72, 0x65, 0x6e, 0x74, 0x61, 0x6c, 0x53,
 	0x74, 0x61, 0x74, 0x75, 0x73, 0x54, 0x79, 0x70, 0x65, 0x52, 0x04, 0x74, 0x79, 0x70, 0x65, 0x22,
@@ -4387,21 +4415,21 @@ var file_google_ads_googleads_v11_common_criteria_proto_rawDesc = []byte{
 	0x6f, 0x78, 0x69, 0x6d, 0x69, 0x74, 0x79, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x4a, 0x0a, 0x09, 0x67,
 	0x65, 0x6f, 0x5f, 0x70, 0x6f, 0x69, 0x6e, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2d,
 	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e,
+	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e,
 	0x2e, 0x47, 0x65, 0x6f, 0x50, 0x6f, 0x69, 0x6e, 0x74, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x08, 0x67,
 	0x65, 0x6f, 0x50, 0x6f, 0x69, 0x6e, 0x74, 0x12, 0x1b, 0x0a, 0x06, 0x72, 0x61, 0x64, 0x69, 0x75,
 	0x73, 0x18, 0x05, 0x20, 0x01, 0x28, 0x01, 0x48, 0x00, 0x52, 0x06, 0x72, 0x61, 0x64, 0x69, 0x75,
 	0x73, 0x88, 0x01, 0x01, 0x12, 0x70, 0x0a, 0x0c, 0x72, 0x61, 0x64, 0x69, 0x75, 0x73, 0x5f, 0x75,
 	0x6e, 0x69, 0x74, 0x73, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x4d, 0x2e, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64,
-	0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x50, 0x72, 0x6f, 0x78,
+	0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x50, 0x72, 0x6f, 0x78,
 	0x69, 0x6d, 0x69, 0x74, 0x79, 0x52, 0x61, 0x64, 0x69, 0x75, 0x73, 0x55, 0x6e, 0x69, 0x74, 0x73,
 	0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x50, 0x72, 0x6f, 0x78, 0x69, 0x6d, 0x69, 0x74, 0x79, 0x52, 0x61,
 	0x64, 0x69, 0x75, 0x73, 0x55, 0x6e, 0x69, 0x74, 0x73, 0x52, 0x0b, 0x72, 0x61, 0x64, 0x69, 0x75,
 	0x73, 0x55, 0x6e, 0x69, 0x74, 0x73, 0x12, 0x46, 0x0a, 0x07, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73,
 	0x73, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2c, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76,
-	0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x41, 0x64, 0x64, 0x72, 0x65, 0x73,
+	0x31, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x41, 0x64, 0x64, 0x72, 0x65, 0x73,
 	0x73, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x07, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x42, 0x09,
 	0x0a, 0x07, 0x5f, 0x72, 0x61, 0x64, 0x69, 0x75, 0x73, 0x22, 0xcd, 0x01, 0x0a, 0x0c, 0x47, 0x65,
 	0x6f, 0x50, 0x6f, 0x69, 0x6e, 0x74, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x40, 0x0a, 0x1a, 0x6c, 0x6f,
@@ -4462,7 +4490,7 @@ var file_google_ads_googleads_v11_common_criteria_proto_rawDesc = []byte{
 	0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x4c, 0x61, 0x62, 0x65, 0x6c, 0x49, 0x6e, 0x66, 0x6f, 0x12,
 	0x59, 0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x45, 0x2e,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x43,
+	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x43,
 	0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x4c, 0x61, 0x62, 0x65, 0x6c, 0x54, 0x79, 0x70, 0x65, 0x45,
 	0x6e, 0x75, 0x6d, 0x2e, 0x43, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x4c, 0x61, 0x62, 0x65, 0x6c,
 	0x54, 0x79, 0x70, 0x65, 0x52, 0x04, 0x74, 0x79, 0x70, 0x65, 0x22, 0x52, 0x0a, 0x0b, 0x43, 0x61,
@@ -4484,7 +4512,7 @@ var file_google_ads_googleads_v11_common_criteria_proto_rawDesc = []byte{
 	0x65, 0x88, 0x01, 0x01, 0x12, 0x55, 0x0a, 0x0a, 0x63, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f,
 	0x6e, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x35, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e,
-	0x76, 0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x57, 0x65, 0x62, 0x70, 0x61,
+	0x76, 0x31, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x57, 0x65, 0x62, 0x70, 0x61,
 	0x67, 0x65, 0x43, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x6e, 0x66, 0x6f, 0x52,
 	0x0a, 0x63, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x12, 0x2f, 0x0a, 0x13, 0x63,
 	0x6f, 0x76, 0x65, 0x72, 0x61, 0x67, 0x65, 0x5f, 0x70, 0x65, 0x72, 0x63, 0x65, 0x6e, 0x74, 0x61,
@@ -4492,21 +4520,21 @@ var file_google_ads_googleads_v11_common_criteria_proto_rawDesc = []byte{
 	0x67, 0x65, 0x50, 0x65, 0x72, 0x63, 0x65, 0x6e, 0x74, 0x61, 0x67, 0x65, 0x12, 0x4a, 0x0a, 0x06,
 	0x73, 0x61, 0x6d, 0x70, 0x6c, 0x65, 0x18, 0x05, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x32, 0x2e, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x57,
+	0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x57,
 	0x65, 0x62, 0x70, 0x61, 0x67, 0x65, 0x53, 0x61, 0x6d, 0x70, 0x6c, 0x65, 0x49, 0x6e, 0x66, 0x6f,
 	0x52, 0x06, 0x73, 0x61, 0x6d, 0x70, 0x6c, 0x65, 0x42, 0x11, 0x0a, 0x0f, 0x5f, 0x63, 0x72, 0x69,
 	0x74, 0x65, 0x72, 0x69, 0x6f, 0x6e, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x22, 0xa6, 0x02, 0x0a, 0x14,
 	0x57, 0x65, 0x62, 0x70, 0x61, 0x67, 0x65, 0x43, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e,
 	0x49, 0x6e, 0x66, 0x6f, 0x12, 0x6d, 0x0a, 0x07, 0x6f, 0x70, 0x65, 0x72, 0x61, 0x6e, 0x64, 0x18,
 	0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x53, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61,
-	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31,
+	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32,
 	0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x57, 0x65, 0x62, 0x70, 0x61, 0x67, 0x65, 0x43, 0x6f,
 	0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x6e, 0x64, 0x45, 0x6e,
 	0x75, 0x6d, 0x2e, 0x57, 0x65, 0x62, 0x70, 0x61, 0x67, 0x65, 0x43, 0x6f, 0x6e, 0x64, 0x69, 0x74,
 	0x69, 0x6f, 0x6e, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x6e, 0x64, 0x52, 0x07, 0x6f, 0x70, 0x65, 0x72,
 	0x61, 0x6e, 0x64, 0x12, 0x71, 0x0a, 0x08, 0x6f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x6f, 0x72, 0x18,
 	0x02, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x55, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61,
-	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31,
+	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32,
 	0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x57, 0x65, 0x62, 0x70, 0x61, 0x67, 0x65, 0x43, 0x6f,
 	0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x6f, 0x72, 0x45,
 	0x6e, 0x75, 0x6d, 0x2e, 0x57, 0x65, 0x62, 0x70, 0x61, 0x67, 0x65, 0x43, 0x6f, 0x6e, 0x64, 0x69,
@@ -4530,7 +4558,7 @@ var file_google_ads_googleads_v11_common_criteria_proto_rawDesc = []byte{
 	0x76, 0x0a, 0x13, 0x41, 0x70, 0x70, 0x50, 0x61, 0x79, 0x6d, 0x65, 0x6e, 0x74, 0x4d, 0x6f, 0x64,
 	0x65, 0x6c, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x5f, 0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x01,
 	0x20, 0x01, 0x28, 0x0e, 0x32, 0x4b, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64,
-	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e,
+	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e,
 	0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x41, 0x70, 0x70, 0x50, 0x61, 0x79, 0x6d, 0x65, 0x6e, 0x74,
 	0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x54, 0x79, 0x70, 0x65, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x41, 0x70,
 	0x70, 0x50, 0x61, 0x79, 0x6d, 0x65, 0x6e, 0x74, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x54, 0x79, 0x70,
@@ -4551,7 +4579,7 @@ var file_google_ads_googleads_v11_common_criteria_proto_rawDesc = []byte{
 	0x0d, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x5f, 0x69, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x18, 0x02,
 	0x20, 0x01, 0x28, 0x09, 0x48, 0x00, 0x52, 0x0c, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x49, 0x6e,
 	0x74, 0x65, 0x6e, 0x74, 0x88, 0x01, 0x01, 0x42, 0x10, 0x0a, 0x0e, 0x5f, 0x63, 0x75, 0x73, 0x74,
-	0x6f, 0x6d, 0x5f, 0x69, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x22, 0xaf, 0x02, 0x0a, 0x11, 0x4c, 0x6f,
+	0x6f, 0x6d, 0x5f, 0x69, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x22, 0xf3, 0x03, 0x0a, 0x11, 0x4c, 0x6f,
 	0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x47, 0x72, 0x6f, 0x75, 0x70, 0x49, 0x6e, 0x66, 0x6f, 0x12,
 	0x17, 0x0a, 0x04, 0x66, 0x65, 0x65, 0x64, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x48, 0x00, 0x52,
 	0x04, 0x66, 0x65, 0x65, 0x64, 0x88, 0x01, 0x01, 0x12, 0x30, 0x0a, 0x14, 0x67, 0x65, 0x6f, 0x5f,
@@ -4562,207 +4590,219 @@ var file_google_ads_googleads_v11_common_criteria_proto_rawDesc = []byte{
 	0x64, 0x69, 0x75, 0x73, 0x88, 0x01, 0x01, 0x12, 0x78, 0x0a, 0x0c, 0x72, 0x61, 0x64, 0x69, 0x75,
 	0x73, 0x5f, 0x75, 0x6e, 0x69, 0x74, 0x73, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x55, 0x2e,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x4c,
+	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x4c,
 	0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x47, 0x72, 0x6f, 0x75, 0x70, 0x52, 0x61, 0x64, 0x69,
 	0x75, 0x73, 0x55, 0x6e, 0x69, 0x74, 0x73, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x4c, 0x6f, 0x63, 0x61,
 	0x74, 0x69, 0x6f, 0x6e, 0x47, 0x72, 0x6f, 0x75, 0x70, 0x52, 0x61, 0x64, 0x69, 0x75, 0x73, 0x55,
 	0x6e, 0x69, 0x74, 0x73, 0x52, 0x0b, 0x72, 0x61, 0x64, 0x69, 0x75, 0x73, 0x55, 0x6e, 0x69, 0x74,
 	0x73, 0x12, 0x24, 0x0a, 0x0e, 0x66, 0x65, 0x65, 0x64, 0x5f, 0x69, 0x74, 0x65, 0x6d, 0x5f, 0x73,
 	0x65, 0x74, 0x73, 0x18, 0x08, 0x20, 0x03, 0x28, 0x09, 0x52, 0x0c, 0x66, 0x65, 0x65, 0x64, 0x49,
-	0x74, 0x65, 0x6d, 0x53, 0x65, 0x74, 0x73, 0x42, 0x07, 0x0a, 0x05, 0x5f, 0x66, 0x65, 0x65, 0x64,
-	0x42, 0x09, 0x0a, 0x07, 0x5f, 0x72, 0x61, 0x64, 0x69, 0x75, 0x73, 0x22, 0x3d, 0x0a, 0x12, 0x43,
-	0x75, 0x73, 0x74, 0x6f, 0x6d, 0x41, 0x75, 0x64, 0x69, 0x65, 0x6e, 0x63, 0x65, 0x49, 0x6e, 0x66,
-	0x6f, 0x12, 0x27, 0x0a, 0x0f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x5f, 0x61, 0x75, 0x64, 0x69,
-	0x65, 0x6e, 0x63, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0e, 0x63, 0x75, 0x73, 0x74,
-	0x6f, 0x6d, 0x41, 0x75, 0x64, 0x69, 0x65, 0x6e, 0x63, 0x65, 0x22, 0x43, 0x0a, 0x14, 0x43, 0x6f,
-	0x6d, 0x62, 0x69, 0x6e, 0x65, 0x64, 0x41, 0x75, 0x64, 0x69, 0x65, 0x6e, 0x63, 0x65, 0x49, 0x6e,
-	0x66, 0x6f, 0x12, 0x2b, 0x0a, 0x11, 0x63, 0x6f, 0x6d, 0x62, 0x69, 0x6e, 0x65, 0x64, 0x5f, 0x61,
-	0x75, 0x64, 0x69, 0x65, 0x6e, 0x63, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x10, 0x63,
-	0x6f, 0x6d, 0x62, 0x69, 0x6e, 0x65, 0x64, 0x41, 0x75, 0x64, 0x69, 0x65, 0x6e, 0x63, 0x65, 0x22,
-	0x2a, 0x0a, 0x0c, 0x41, 0x75, 0x64, 0x69, 0x65, 0x6e, 0x63, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x12,
-	0x1a, 0x0a, 0x08, 0x61, 0x75, 0x64, 0x69, 0x65, 0x6e, 0x63, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28,
-	0x09, 0x52, 0x08, 0x61, 0x75, 0x64, 0x69, 0x65, 0x6e, 0x63, 0x65, 0x22, 0x94, 0x01, 0x0a, 0x10,
-	0x4b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64, 0x54, 0x68, 0x65, 0x6d, 0x65, 0x49, 0x6e, 0x66, 0x6f,
-	0x12, 0x36, 0x0a, 0x16, 0x6b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64, 0x5f, 0x74, 0x68, 0x65, 0x6d,
-	0x65, 0x5f, 0x63, 0x6f, 0x6e, 0x73, 0x74, 0x61, 0x6e, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
-	0x48, 0x00, 0x52, 0x14, 0x6b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64, 0x54, 0x68, 0x65, 0x6d, 0x65,
-	0x43, 0x6f, 0x6e, 0x73, 0x74, 0x61, 0x6e, 0x74, 0x12, 0x37, 0x0a, 0x17, 0x66, 0x72, 0x65, 0x65,
-	0x5f, 0x66, 0x6f, 0x72, 0x6d, 0x5f, 0x6b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64, 0x5f, 0x74, 0x68,
-	0x65, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x48, 0x00, 0x52, 0x14, 0x66, 0x72, 0x65,
-	0x65, 0x46, 0x6f, 0x72, 0x6d, 0x4b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64, 0x54, 0x68, 0x65, 0x6d,
-	0x65, 0x42, 0x0f, 0x0a, 0x0d, 0x6b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64, 0x5f, 0x74, 0x68, 0x65,
-	0x6d, 0x65, 0x42, 0xed, 0x01, 0x0a, 0x23, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e,
-	0x76, 0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x42, 0x0d, 0x43, 0x72, 0x69, 0x74,
-	0x65, 0x72, 0x69, 0x61, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x45, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x2e, 0x67, 0x6f, 0x6c, 0x61, 0x6e, 0x67, 0x2e, 0x6f, 0x72, 0x67, 0x2f, 0x67,
-	0x65, 0x6e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x70,
-	0x69, 0x73, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
-	0x2f, 0x76, 0x31, 0x31, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x3b, 0x63, 0x6f, 0x6d, 0x6d,
-	0x6f, 0x6e, 0xa2, 0x02, 0x03, 0x47, 0x41, 0x41, 0xaa, 0x02, 0x1f, 0x47, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x2e, 0x41, 0x64, 0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e,
-	0x56, 0x31, 0x31, 0x2e, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xca, 0x02, 0x1f, 0x47, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x5c, 0x41, 0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64,
-	0x73, 0x5c, 0x56, 0x31, 0x31, 0x5c, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xea, 0x02, 0x23, 0x47,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x3a, 0x3a, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x47, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x31, 0x31, 0x3a, 0x3a, 0x43, 0x6f, 0x6d, 0x6d,
-	0x6f, 0x6e, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x74, 0x65, 0x6d, 0x53, 0x65, 0x74, 0x73, 0x12, 0x5a, 0x0a, 0x28, 0x65, 0x6e, 0x61, 0x62, 0x6c,
+	0x65, 0x5f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x5f, 0x6c, 0x65, 0x76, 0x65, 0x6c,
+	0x5f, 0x6c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x61, 0x73, 0x73, 0x65, 0x74, 0x5f,
+	0x73, 0x65, 0x74, 0x18, 0x09, 0x20, 0x01, 0x28, 0x08, 0x48, 0x02, 0x52, 0x23, 0x65, 0x6e, 0x61,
+	0x62, 0x6c, 0x65, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x4c, 0x65, 0x76, 0x65, 0x6c,
+	0x4c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x41, 0x73, 0x73, 0x65, 0x74, 0x53, 0x65, 0x74,
+	0x88, 0x01, 0x01, 0x12, 0x39, 0x0a, 0x19, 0x6c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f,
+	0x67, 0x72, 0x6f, 0x75, 0x70, 0x5f, 0x61, 0x73, 0x73, 0x65, 0x74, 0x5f, 0x73, 0x65, 0x74, 0x73,
+	0x18, 0x0a, 0x20, 0x03, 0x28, 0x09, 0x52, 0x16, 0x6c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x47, 0x72, 0x6f, 0x75, 0x70, 0x41, 0x73, 0x73, 0x65, 0x74, 0x53, 0x65, 0x74, 0x73, 0x42, 0x07,
+	0x0a, 0x05, 0x5f, 0x66, 0x65, 0x65, 0x64, 0x42, 0x09, 0x0a, 0x07, 0x5f, 0x72, 0x61, 0x64, 0x69,
+	0x75, 0x73, 0x42, 0x2b, 0x0a, 0x29, 0x5f, 0x65, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x5f, 0x63, 0x75,
+	0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x5f, 0x6c, 0x65, 0x76, 0x65, 0x6c, 0x5f, 0x6c, 0x6f, 0x63,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x61, 0x73, 0x73, 0x65, 0x74, 0x5f, 0x73, 0x65, 0x74, 0x22,
+	0x3d, 0x0a, 0x12, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x41, 0x75, 0x64, 0x69, 0x65, 0x6e, 0x63,
+	0x65, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x27, 0x0a, 0x0f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x5f,
+	0x61, 0x75, 0x64, 0x69, 0x65, 0x6e, 0x63, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0e,
+	0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x41, 0x75, 0x64, 0x69, 0x65, 0x6e, 0x63, 0x65, 0x22, 0x43,
+	0x0a, 0x14, 0x43, 0x6f, 0x6d, 0x62, 0x69, 0x6e, 0x65, 0x64, 0x41, 0x75, 0x64, 0x69, 0x65, 0x6e,
+	0x63, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x2b, 0x0a, 0x11, 0x63, 0x6f, 0x6d, 0x62, 0x69, 0x6e,
+	0x65, 0x64, 0x5f, 0x61, 0x75, 0x64, 0x69, 0x65, 0x6e, 0x63, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x10, 0x63, 0x6f, 0x6d, 0x62, 0x69, 0x6e, 0x65, 0x64, 0x41, 0x75, 0x64, 0x69, 0x65,
+	0x6e, 0x63, 0x65, 0x22, 0x2a, 0x0a, 0x0c, 0x41, 0x75, 0x64, 0x69, 0x65, 0x6e, 0x63, 0x65, 0x49,
+	0x6e, 0x66, 0x6f, 0x12, 0x1a, 0x0a, 0x08, 0x61, 0x75, 0x64, 0x69, 0x65, 0x6e, 0x63, 0x65, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x61, 0x75, 0x64, 0x69, 0x65, 0x6e, 0x63, 0x65, 0x22,
+	0x94, 0x01, 0x0a, 0x10, 0x4b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64, 0x54, 0x68, 0x65, 0x6d, 0x65,
+	0x49, 0x6e, 0x66, 0x6f, 0x12, 0x36, 0x0a, 0x16, 0x6b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64, 0x5f,
+	0x74, 0x68, 0x65, 0x6d, 0x65, 0x5f, 0x63, 0x6f, 0x6e, 0x73, 0x74, 0x61, 0x6e, 0x74, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x09, 0x48, 0x00, 0x52, 0x14, 0x6b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64, 0x54,
+	0x68, 0x65, 0x6d, 0x65, 0x43, 0x6f, 0x6e, 0x73, 0x74, 0x61, 0x6e, 0x74, 0x12, 0x37, 0x0a, 0x17,
+	0x66, 0x72, 0x65, 0x65, 0x5f, 0x66, 0x6f, 0x72, 0x6d, 0x5f, 0x6b, 0x65, 0x79, 0x77, 0x6f, 0x72,
+	0x64, 0x5f, 0x74, 0x68, 0x65, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x48, 0x00, 0x52,
+	0x14, 0x66, 0x72, 0x65, 0x65, 0x46, 0x6f, 0x72, 0x6d, 0x4b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64,
+	0x54, 0x68, 0x65, 0x6d, 0x65, 0x42, 0x0f, 0x0a, 0x0d, 0x6b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64,
+	0x5f, 0x74, 0x68, 0x65, 0x6d, 0x65, 0x42, 0xed, 0x01, 0x0a, 0x23, 0x63, 0x6f, 0x6d, 0x2e, 0x67,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
+	0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x42, 0x0d,
+	0x43, 0x72, 0x69, 0x74, 0x65, 0x72, 0x69, 0x61, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a,
+	0x45, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x67, 0x6f, 0x6c, 0x61, 0x6e, 0x67, 0x2e, 0x6f,
+	0x72, 0x67, 0x2f, 0x67, 0x65, 0x6e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x6f, 0x6f, 0x67,
+	0x6c, 0x65, 0x61, 0x70, 0x69, 0x73, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
+	0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x3b,
+	0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xa2, 0x02, 0x03, 0x47, 0x41, 0x41, 0xaa, 0x02, 0x1f, 0x47,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x41, 0x64, 0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
+	0x41, 0x64, 0x73, 0x2e, 0x56, 0x31, 0x32, 0x2e, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xca, 0x02,
+	0x1f, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x5c, 0x41, 0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f, 0x67,
+	0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x31, 0x32, 0x5c, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e,
+	0xea, 0x02, 0x23, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x3a, 0x3a, 0x41, 0x64, 0x73, 0x3a, 0x3a,
+	0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x31, 0x32, 0x3a, 0x3a,
+	0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
-	file_google_ads_googleads_v11_common_criteria_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v11_common_criteria_proto_rawDescData = file_google_ads_googleads_v11_common_criteria_proto_rawDesc
+	file_google_ads_googleads_v12_common_criteria_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v12_common_criteria_proto_rawDescData = file_google_ads_googleads_v12_common_criteria_proto_rawDesc
 )
 
-func file_google_ads_googleads_v11_common_criteria_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v11_common_criteria_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v11_common_criteria_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v11_common_criteria_proto_rawDescData)
+func file_google_ads_googleads_v12_common_criteria_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v12_common_criteria_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v12_common_criteria_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v12_common_criteria_proto_rawDescData)
 	})
-	return file_google_ads_googleads_v11_common_criteria_proto_rawDescData
+	return file_google_ads_googleads_v12_common_criteria_proto_rawDescData
 }
 
-var file_google_ads_googleads_v11_common_criteria_proto_msgTypes = make([]protoimpl.MessageInfo, 64)
-var file_google_ads_googleads_v11_common_criteria_proto_goTypes = []interface{}{
-	(*KeywordInfo)(nil),                                      // 0: google.ads.googleads.v11.common.KeywordInfo
-	(*PlacementInfo)(nil),                                    // 1: google.ads.googleads.v11.common.PlacementInfo
-	(*MobileAppCategoryInfo)(nil),                            // 2: google.ads.googleads.v11.common.MobileAppCategoryInfo
-	(*MobileApplicationInfo)(nil),                            // 3: google.ads.googleads.v11.common.MobileApplicationInfo
-	(*LocationInfo)(nil),                                     // 4: google.ads.googleads.v11.common.LocationInfo
-	(*DeviceInfo)(nil),                                       // 5: google.ads.googleads.v11.common.DeviceInfo
-	(*PreferredContentInfo)(nil),                             // 6: google.ads.googleads.v11.common.PreferredContentInfo
-	(*ListingGroupInfo)(nil),                                 // 7: google.ads.googleads.v11.common.ListingGroupInfo
-	(*ListingScopeInfo)(nil),                                 // 8: google.ads.googleads.v11.common.ListingScopeInfo
-	(*ListingDimensionInfo)(nil),                             // 9: google.ads.googleads.v11.common.ListingDimensionInfo
-	(*HotelIdInfo)(nil),                                      // 10: google.ads.googleads.v11.common.HotelIdInfo
-	(*HotelClassInfo)(nil),                                   // 11: google.ads.googleads.v11.common.HotelClassInfo
-	(*HotelCountryRegionInfo)(nil),                           // 12: google.ads.googleads.v11.common.HotelCountryRegionInfo
-	(*HotelStateInfo)(nil),                                   // 13: google.ads.googleads.v11.common.HotelStateInfo
-	(*HotelCityInfo)(nil),                                    // 14: google.ads.googleads.v11.common.HotelCityInfo
-	(*ProductBiddingCategoryInfo)(nil),                       // 15: google.ads.googleads.v11.common.ProductBiddingCategoryInfo
-	(*ProductBrandInfo)(nil),                                 // 16: google.ads.googleads.v11.common.ProductBrandInfo
-	(*ProductChannelInfo)(nil),                               // 17: google.ads.googleads.v11.common.ProductChannelInfo
-	(*ProductChannelExclusivityInfo)(nil),                    // 18: google.ads.googleads.v11.common.ProductChannelExclusivityInfo
-	(*ProductConditionInfo)(nil),                             // 19: google.ads.googleads.v11.common.ProductConditionInfo
-	(*ProductCustomAttributeInfo)(nil),                       // 20: google.ads.googleads.v11.common.ProductCustomAttributeInfo
-	(*ProductItemIdInfo)(nil),                                // 21: google.ads.googleads.v11.common.ProductItemIdInfo
-	(*ProductTypeInfo)(nil),                                  // 22: google.ads.googleads.v11.common.ProductTypeInfo
-	(*ProductGroupingInfo)(nil),                              // 23: google.ads.googleads.v11.common.ProductGroupingInfo
-	(*ProductLabelsInfo)(nil),                                // 24: google.ads.googleads.v11.common.ProductLabelsInfo
-	(*ProductLegacyConditionInfo)(nil),                       // 25: google.ads.googleads.v11.common.ProductLegacyConditionInfo
-	(*ProductTypeFullInfo)(nil),                              // 26: google.ads.googleads.v11.common.ProductTypeFullInfo
-	(*UnknownListingDimensionInfo)(nil),                      // 27: google.ads.googleads.v11.common.UnknownListingDimensionInfo
-	(*HotelDateSelectionTypeInfo)(nil),                       // 28: google.ads.googleads.v11.common.HotelDateSelectionTypeInfo
-	(*HotelAdvanceBookingWindowInfo)(nil),                    // 29: google.ads.googleads.v11.common.HotelAdvanceBookingWindowInfo
-	(*HotelLengthOfStayInfo)(nil),                            // 30: google.ads.googleads.v11.common.HotelLengthOfStayInfo
-	(*HotelCheckInDateRangeInfo)(nil),                        // 31: google.ads.googleads.v11.common.HotelCheckInDateRangeInfo
-	(*HotelCheckInDayInfo)(nil),                              // 32: google.ads.googleads.v11.common.HotelCheckInDayInfo
-	(*InteractionTypeInfo)(nil),                              // 33: google.ads.googleads.v11.common.InteractionTypeInfo
-	(*AdScheduleInfo)(nil),                                   // 34: google.ads.googleads.v11.common.AdScheduleInfo
-	(*AgeRangeInfo)(nil),                                     // 35: google.ads.googleads.v11.common.AgeRangeInfo
-	(*GenderInfo)(nil),                                       // 36: google.ads.googleads.v11.common.GenderInfo
-	(*IncomeRangeInfo)(nil),                                  // 37: google.ads.googleads.v11.common.IncomeRangeInfo
-	(*ParentalStatusInfo)(nil),                               // 38: google.ads.googleads.v11.common.ParentalStatusInfo
-	(*YouTubeVideoInfo)(nil),                                 // 39: google.ads.googleads.v11.common.YouTubeVideoInfo
-	(*YouTubeChannelInfo)(nil),                               // 40: google.ads.googleads.v11.common.YouTubeChannelInfo
-	(*UserListInfo)(nil),                                     // 41: google.ads.googleads.v11.common.UserListInfo
-	(*ProximityInfo)(nil),                                    // 42: google.ads.googleads.v11.common.ProximityInfo
-	(*GeoPointInfo)(nil),                                     // 43: google.ads.googleads.v11.common.GeoPointInfo
-	(*AddressInfo)(nil),                                      // 44: google.ads.googleads.v11.common.AddressInfo
-	(*TopicInfo)(nil),                                        // 45: google.ads.googleads.v11.common.TopicInfo
-	(*LanguageInfo)(nil),                                     // 46: google.ads.googleads.v11.common.LanguageInfo
-	(*IpBlockInfo)(nil),                                      // 47: google.ads.googleads.v11.common.IpBlockInfo
-	(*ContentLabelInfo)(nil),                                 // 48: google.ads.googleads.v11.common.ContentLabelInfo
-	(*CarrierInfo)(nil),                                      // 49: google.ads.googleads.v11.common.CarrierInfo
-	(*UserInterestInfo)(nil),                                 // 50: google.ads.googleads.v11.common.UserInterestInfo
-	(*WebpageInfo)(nil),                                      // 51: google.ads.googleads.v11.common.WebpageInfo
-	(*WebpageConditionInfo)(nil),                             // 52: google.ads.googleads.v11.common.WebpageConditionInfo
-	(*WebpageSampleInfo)(nil),                                // 53: google.ads.googleads.v11.common.WebpageSampleInfo
-	(*OperatingSystemVersionInfo)(nil),                       // 54: google.ads.googleads.v11.common.OperatingSystemVersionInfo
-	(*AppPaymentModelInfo)(nil),                              // 55: google.ads.googleads.v11.common.AppPaymentModelInfo
-	(*MobileDeviceInfo)(nil),                                 // 56: google.ads.googleads.v11.common.MobileDeviceInfo
-	(*CustomAffinityInfo)(nil),                               // 57: google.ads.googleads.v11.common.CustomAffinityInfo
-	(*CustomIntentInfo)(nil),                                 // 58: google.ads.googleads.v11.common.CustomIntentInfo
-	(*LocationGroupInfo)(nil),                                // 59: google.ads.googleads.v11.common.LocationGroupInfo
-	(*CustomAudienceInfo)(nil),                               // 60: google.ads.googleads.v11.common.CustomAudienceInfo
-	(*CombinedAudienceInfo)(nil),                             // 61: google.ads.googleads.v11.common.CombinedAudienceInfo
-	(*AudienceInfo)(nil),                                     // 62: google.ads.googleads.v11.common.AudienceInfo
-	(*KeywordThemeInfo)(nil),                                 // 63: google.ads.googleads.v11.common.KeywordThemeInfo
-	(enums.KeywordMatchTypeEnum_KeywordMatchType)(0),         // 64: google.ads.googleads.v11.enums.KeywordMatchTypeEnum.KeywordMatchType
-	(enums.DeviceEnum_Device)(0),                             // 65: google.ads.googleads.v11.enums.DeviceEnum.Device
-	(enums.PreferredContentTypeEnum_PreferredContentType)(0), // 66: google.ads.googleads.v11.enums.PreferredContentTypeEnum.PreferredContentType
-	(enums.ListingGroupTypeEnum_ListingGroupType)(0),         // 67: google.ads.googleads.v11.enums.ListingGroupTypeEnum.ListingGroupType
-	(enums.ProductBiddingCategoryLevelEnum_ProductBiddingCategoryLevel)(0), // 68: google.ads.googleads.v11.enums.ProductBiddingCategoryLevelEnum.ProductBiddingCategoryLevel
-	(enums.ProductChannelEnum_ProductChannel)(0),                           // 69: google.ads.googleads.v11.enums.ProductChannelEnum.ProductChannel
-	(enums.ProductChannelExclusivityEnum_ProductChannelExclusivity)(0),     // 70: google.ads.googleads.v11.enums.ProductChannelExclusivityEnum.ProductChannelExclusivity
-	(enums.ProductConditionEnum_ProductCondition)(0),                       // 71: google.ads.googleads.v11.enums.ProductConditionEnum.ProductCondition
-	(enums.ProductCustomAttributeIndexEnum_ProductCustomAttributeIndex)(0), // 72: google.ads.googleads.v11.enums.ProductCustomAttributeIndexEnum.ProductCustomAttributeIndex
-	(enums.ProductTypeLevelEnum_ProductTypeLevel)(0),                       // 73: google.ads.googleads.v11.enums.ProductTypeLevelEnum.ProductTypeLevel
-	(enums.HotelDateSelectionTypeEnum_HotelDateSelectionType)(0),           // 74: google.ads.googleads.v11.enums.HotelDateSelectionTypeEnum.HotelDateSelectionType
-	(enums.DayOfWeekEnum_DayOfWeek)(0),                                     // 75: google.ads.googleads.v11.enums.DayOfWeekEnum.DayOfWeek
-	(enums.InteractionTypeEnum_InteractionType)(0),                         // 76: google.ads.googleads.v11.enums.InteractionTypeEnum.InteractionType
-	(enums.MinuteOfHourEnum_MinuteOfHour)(0),                               // 77: google.ads.googleads.v11.enums.MinuteOfHourEnum.MinuteOfHour
-	(enums.AgeRangeTypeEnum_AgeRangeType)(0),                               // 78: google.ads.googleads.v11.enums.AgeRangeTypeEnum.AgeRangeType
-	(enums.GenderTypeEnum_GenderType)(0),                                   // 79: google.ads.googleads.v11.enums.GenderTypeEnum.GenderType
-	(enums.IncomeRangeTypeEnum_IncomeRangeType)(0),                         // 80: google.ads.googleads.v11.enums.IncomeRangeTypeEnum.IncomeRangeType
-	(enums.ParentalStatusTypeEnum_ParentalStatusType)(0),                   // 81: google.ads.googleads.v11.enums.ParentalStatusTypeEnum.ParentalStatusType
-	(enums.ProximityRadiusUnitsEnum_ProximityRadiusUnits)(0),               // 82: google.ads.googleads.v11.enums.ProximityRadiusUnitsEnum.ProximityRadiusUnits
-	(enums.ContentLabelTypeEnum_ContentLabelType)(0),                       // 83: google.ads.googleads.v11.enums.ContentLabelTypeEnum.ContentLabelType
-	(enums.WebpageConditionOperandEnum_WebpageConditionOperand)(0),         // 84: google.ads.googleads.v11.enums.WebpageConditionOperandEnum.WebpageConditionOperand
-	(enums.WebpageConditionOperatorEnum_WebpageConditionOperator)(0),       // 85: google.ads.googleads.v11.enums.WebpageConditionOperatorEnum.WebpageConditionOperator
-	(enums.AppPaymentModelTypeEnum_AppPaymentModelType)(0),                 // 86: google.ads.googleads.v11.enums.AppPaymentModelTypeEnum.AppPaymentModelType
-	(enums.LocationGroupRadiusUnitsEnum_LocationGroupRadiusUnits)(0),       // 87: google.ads.googleads.v11.enums.LocationGroupRadiusUnitsEnum.LocationGroupRadiusUnits
+var file_google_ads_googleads_v12_common_criteria_proto_msgTypes = make([]protoimpl.MessageInfo, 64)
+var file_google_ads_googleads_v12_common_criteria_proto_goTypes = []interface{}{
+	(*KeywordInfo)(nil),                                      // 0: google.ads.googleads.v12.common.KeywordInfo
+	(*PlacementInfo)(nil),                                    // 1: google.ads.googleads.v12.common.PlacementInfo
+	(*MobileAppCategoryInfo)(nil),                            // 2: google.ads.googleads.v12.common.MobileAppCategoryInfo
+	(*MobileApplicationInfo)(nil),                            // 3: google.ads.googleads.v12.common.MobileApplicationInfo
+	(*LocationInfo)(nil),                                     // 4: google.ads.googleads.v12.common.LocationInfo
+	(*DeviceInfo)(nil),                                       // 5: google.ads.googleads.v12.common.DeviceInfo
+	(*PreferredContentInfo)(nil),                             // 6: google.ads.googleads.v12.common.PreferredContentInfo
+	(*ListingGroupInfo)(nil),                                 // 7: google.ads.googleads.v12.common.ListingGroupInfo
+	(*ListingScopeInfo)(nil),                                 // 8: google.ads.googleads.v12.common.ListingScopeInfo
+	(*ListingDimensionInfo)(nil),                             // 9: google.ads.googleads.v12.common.ListingDimensionInfo
+	(*HotelIdInfo)(nil),                                      // 10: google.ads.googleads.v12.common.HotelIdInfo
+	(*HotelClassInfo)(nil),                                   // 11: google.ads.googleads.v12.common.HotelClassInfo
+	(*HotelCountryRegionInfo)(nil),                           // 12: google.ads.googleads.v12.common.HotelCountryRegionInfo
+	(*HotelStateInfo)(nil),                                   // 13: google.ads.googleads.v12.common.HotelStateInfo
+	(*HotelCityInfo)(nil),                                    // 14: google.ads.googleads.v12.common.HotelCityInfo
+	(*ProductBiddingCategoryInfo)(nil),                       // 15: google.ads.googleads.v12.common.ProductBiddingCategoryInfo
+	(*ProductBrandInfo)(nil),                                 // 16: google.ads.googleads.v12.common.ProductBrandInfo
+	(*ProductChannelInfo)(nil),                               // 17: google.ads.googleads.v12.common.ProductChannelInfo
+	(*ProductChannelExclusivityInfo)(nil),                    // 18: google.ads.googleads.v12.common.ProductChannelExclusivityInfo
+	(*ProductConditionInfo)(nil),                             // 19: google.ads.googleads.v12.common.ProductConditionInfo
+	(*ProductCustomAttributeInfo)(nil),                       // 20: google.ads.googleads.v12.common.ProductCustomAttributeInfo
+	(*ProductItemIdInfo)(nil),                                // 21: google.ads.googleads.v12.common.ProductItemIdInfo
+	(*ProductTypeInfo)(nil),                                  // 22: google.ads.googleads.v12.common.ProductTypeInfo
+	(*ProductGroupingInfo)(nil),                              // 23: google.ads.googleads.v12.common.ProductGroupingInfo
+	(*ProductLabelsInfo)(nil),                                // 24: google.ads.googleads.v12.common.ProductLabelsInfo
+	(*ProductLegacyConditionInfo)(nil),                       // 25: google.ads.googleads.v12.common.ProductLegacyConditionInfo
+	(*ProductTypeFullInfo)(nil),                              // 26: google.ads.googleads.v12.common.ProductTypeFullInfo
+	(*UnknownListingDimensionInfo)(nil),                      // 27: google.ads.googleads.v12.common.UnknownListingDimensionInfo
+	(*HotelDateSelectionTypeInfo)(nil),                       // 28: google.ads.googleads.v12.common.HotelDateSelectionTypeInfo
+	(*HotelAdvanceBookingWindowInfo)(nil),                    // 29: google.ads.googleads.v12.common.HotelAdvanceBookingWindowInfo
+	(*HotelLengthOfStayInfo)(nil),                            // 30: google.ads.googleads.v12.common.HotelLengthOfStayInfo
+	(*HotelCheckInDateRangeInfo)(nil),                        // 31: google.ads.googleads.v12.common.HotelCheckInDateRangeInfo
+	(*HotelCheckInDayInfo)(nil),                              // 32: google.ads.googleads.v12.common.HotelCheckInDayInfo
+	(*InteractionTypeInfo)(nil),                              // 33: google.ads.googleads.v12.common.InteractionTypeInfo
+	(*AdScheduleInfo)(nil),                                   // 34: google.ads.googleads.v12.common.AdScheduleInfo
+	(*AgeRangeInfo)(nil),                                     // 35: google.ads.googleads.v12.common.AgeRangeInfo
+	(*GenderInfo)(nil),                                       // 36: google.ads.googleads.v12.common.GenderInfo
+	(*IncomeRangeInfo)(nil),                                  // 37: google.ads.googleads.v12.common.IncomeRangeInfo
+	(*ParentalStatusInfo)(nil),                               // 38: google.ads.googleads.v12.common.ParentalStatusInfo
+	(*YouTubeVideoInfo)(nil),                                 // 39: google.ads.googleads.v12.common.YouTubeVideoInfo
+	(*YouTubeChannelInfo)(nil),                               // 40: google.ads.googleads.v12.common.YouTubeChannelInfo
+	(*UserListInfo)(nil),                                     // 41: google.ads.googleads.v12.common.UserListInfo
+	(*ProximityInfo)(nil),                                    // 42: google.ads.googleads.v12.common.ProximityInfo
+	(*GeoPointInfo)(nil),                                     // 43: google.ads.googleads.v12.common.GeoPointInfo
+	(*AddressInfo)(nil),                                      // 44: google.ads.googleads.v12.common.AddressInfo
+	(*TopicInfo)(nil),                                        // 45: google.ads.googleads.v12.common.TopicInfo
+	(*LanguageInfo)(nil),                                     // 46: google.ads.googleads.v12.common.LanguageInfo
+	(*IpBlockInfo)(nil),                                      // 47: google.ads.googleads.v12.common.IpBlockInfo
+	(*ContentLabelInfo)(nil),                                 // 48: google.ads.googleads.v12.common.ContentLabelInfo
+	(*CarrierInfo)(nil),                                      // 49: google.ads.googleads.v12.common.CarrierInfo
+	(*UserInterestInfo)(nil),                                 // 50: google.ads.googleads.v12.common.UserInterestInfo
+	(*WebpageInfo)(nil),                                      // 51: google.ads.googleads.v12.common.WebpageInfo
+	(*WebpageConditionInfo)(nil),                             // 52: google.ads.googleads.v12.common.WebpageConditionInfo
+	(*WebpageSampleInfo)(nil),                                // 53: google.ads.googleads.v12.common.WebpageSampleInfo
+	(*OperatingSystemVersionInfo)(nil),                       // 54: google.ads.googleads.v12.common.OperatingSystemVersionInfo
+	(*AppPaymentModelInfo)(nil),                              // 55: google.ads.googleads.v12.common.AppPaymentModelInfo
+	(*MobileDeviceInfo)(nil),                                 // 56: google.ads.googleads.v12.common.MobileDeviceInfo
+	(*CustomAffinityInfo)(nil),                               // 57: google.ads.googleads.v12.common.CustomAffinityInfo
+	(*CustomIntentInfo)(nil),                                 // 58: google.ads.googleads.v12.common.CustomIntentInfo
+	(*LocationGroupInfo)(nil),                                // 59: google.ads.googleads.v12.common.LocationGroupInfo
+	(*CustomAudienceInfo)(nil),                               // 60: google.ads.googleads.v12.common.CustomAudienceInfo
+	(*CombinedAudienceInfo)(nil),                             // 61: google.ads.googleads.v12.common.CombinedAudienceInfo
+	(*AudienceInfo)(nil),                                     // 62: google.ads.googleads.v12.common.AudienceInfo
+	(*KeywordThemeInfo)(nil),                                 // 63: google.ads.googleads.v12.common.KeywordThemeInfo
+	(enums.KeywordMatchTypeEnum_KeywordMatchType)(0),         // 64: google.ads.googleads.v12.enums.KeywordMatchTypeEnum.KeywordMatchType
+	(enums.DeviceEnum_Device)(0),                             // 65: google.ads.googleads.v12.enums.DeviceEnum.Device
+	(enums.PreferredContentTypeEnum_PreferredContentType)(0), // 66: google.ads.googleads.v12.enums.PreferredContentTypeEnum.PreferredContentType
+	(enums.ListingGroupTypeEnum_ListingGroupType)(0),         // 67: google.ads.googleads.v12.enums.ListingGroupTypeEnum.ListingGroupType
+	(enums.ProductBiddingCategoryLevelEnum_ProductBiddingCategoryLevel)(0), // 68: google.ads.googleads.v12.enums.ProductBiddingCategoryLevelEnum.ProductBiddingCategoryLevel
+	(enums.ProductChannelEnum_ProductChannel)(0),                           // 69: google.ads.googleads.v12.enums.ProductChannelEnum.ProductChannel
+	(enums.ProductChannelExclusivityEnum_ProductChannelExclusivity)(0),     // 70: google.ads.googleads.v12.enums.ProductChannelExclusivityEnum.ProductChannelExclusivity
+	(enums.ProductConditionEnum_ProductCondition)(0),                       // 71: google.ads.googleads.v12.enums.ProductConditionEnum.ProductCondition
+	(enums.ProductCustomAttributeIndexEnum_ProductCustomAttributeIndex)(0), // 72: google.ads.googleads.v12.enums.ProductCustomAttributeIndexEnum.ProductCustomAttributeIndex
+	(enums.ProductTypeLevelEnum_ProductTypeLevel)(0),                       // 73: google.ads.googleads.v12.enums.ProductTypeLevelEnum.ProductTypeLevel
+	(enums.HotelDateSelectionTypeEnum_HotelDateSelectionType)(0),           // 74: google.ads.googleads.v12.enums.HotelDateSelectionTypeEnum.HotelDateSelectionType
+	(enums.DayOfWeekEnum_DayOfWeek)(0),                                     // 75: google.ads.googleads.v12.enums.DayOfWeekEnum.DayOfWeek
+	(enums.InteractionTypeEnum_InteractionType)(0),                         // 76: google.ads.googleads.v12.enums.InteractionTypeEnum.InteractionType
+	(enums.MinuteOfHourEnum_MinuteOfHour)(0),                               // 77: google.ads.googleads.v12.enums.MinuteOfHourEnum.MinuteOfHour
+	(enums.AgeRangeTypeEnum_AgeRangeType)(0),                               // 78: google.ads.googleads.v12.enums.AgeRangeTypeEnum.AgeRangeType
+	(enums.GenderTypeEnum_GenderType)(0),                                   // 79: google.ads.googleads.v12.enums.GenderTypeEnum.GenderType
+	(enums.IncomeRangeTypeEnum_IncomeRangeType)(0),                         // 80: google.ads.googleads.v12.enums.IncomeRangeTypeEnum.IncomeRangeType
+	(enums.ParentalStatusTypeEnum_ParentalStatusType)(0),                   // 81: google.ads.googleads.v12.enums.ParentalStatusTypeEnum.ParentalStatusType
+	(enums.ProximityRadiusUnitsEnum_ProximityRadiusUnits)(0),               // 82: google.ads.googleads.v12.enums.ProximityRadiusUnitsEnum.ProximityRadiusUnits
+	(enums.ContentLabelTypeEnum_ContentLabelType)(0),                       // 83: google.ads.googleads.v12.enums.ContentLabelTypeEnum.ContentLabelType
+	(enums.WebpageConditionOperandEnum_WebpageConditionOperand)(0),         // 84: google.ads.googleads.v12.enums.WebpageConditionOperandEnum.WebpageConditionOperand
+	(enums.WebpageConditionOperatorEnum_WebpageConditionOperator)(0),       // 85: google.ads.googleads.v12.enums.WebpageConditionOperatorEnum.WebpageConditionOperator
+	(enums.AppPaymentModelTypeEnum_AppPaymentModelType)(0),                 // 86: google.ads.googleads.v12.enums.AppPaymentModelTypeEnum.AppPaymentModelType
+	(enums.LocationGroupRadiusUnitsEnum_LocationGroupRadiusUnits)(0),       // 87: google.ads.googleads.v12.enums.LocationGroupRadiusUnitsEnum.LocationGroupRadiusUnits
 }
-var file_google_ads_googleads_v11_common_criteria_proto_depIdxs = []int32{
-	64, // 0: google.ads.googleads.v11.common.KeywordInfo.match_type:type_name -> google.ads.googleads.v11.enums.KeywordMatchTypeEnum.KeywordMatchType
-	65, // 1: google.ads.googleads.v11.common.DeviceInfo.type:type_name -> google.ads.googleads.v11.enums.DeviceEnum.Device
-	66, // 2: google.ads.googleads.v11.common.PreferredContentInfo.type:type_name -> google.ads.googleads.v11.enums.PreferredContentTypeEnum.PreferredContentType
-	67, // 3: google.ads.googleads.v11.common.ListingGroupInfo.type:type_name -> google.ads.googleads.v11.enums.ListingGroupTypeEnum.ListingGroupType
-	9,  // 4: google.ads.googleads.v11.common.ListingGroupInfo.case_value:type_name -> google.ads.googleads.v11.common.ListingDimensionInfo
-	9,  // 5: google.ads.googleads.v11.common.ListingScopeInfo.dimensions:type_name -> google.ads.googleads.v11.common.ListingDimensionInfo
-	10, // 6: google.ads.googleads.v11.common.ListingDimensionInfo.hotel_id:type_name -> google.ads.googleads.v11.common.HotelIdInfo
-	11, // 7: google.ads.googleads.v11.common.ListingDimensionInfo.hotel_class:type_name -> google.ads.googleads.v11.common.HotelClassInfo
-	12, // 8: google.ads.googleads.v11.common.ListingDimensionInfo.hotel_country_region:type_name -> google.ads.googleads.v11.common.HotelCountryRegionInfo
-	13, // 9: google.ads.googleads.v11.common.ListingDimensionInfo.hotel_state:type_name -> google.ads.googleads.v11.common.HotelStateInfo
-	14, // 10: google.ads.googleads.v11.common.ListingDimensionInfo.hotel_city:type_name -> google.ads.googleads.v11.common.HotelCityInfo
-	15, // 11: google.ads.googleads.v11.common.ListingDimensionInfo.product_bidding_category:type_name -> google.ads.googleads.v11.common.ProductBiddingCategoryInfo
-	16, // 12: google.ads.googleads.v11.common.ListingDimensionInfo.product_brand:type_name -> google.ads.googleads.v11.common.ProductBrandInfo
-	17, // 13: google.ads.googleads.v11.common.ListingDimensionInfo.product_channel:type_name -> google.ads.googleads.v11.common.ProductChannelInfo
-	18, // 14: google.ads.googleads.v11.common.ListingDimensionInfo.product_channel_exclusivity:type_name -> google.ads.googleads.v11.common.ProductChannelExclusivityInfo
-	19, // 15: google.ads.googleads.v11.common.ListingDimensionInfo.product_condition:type_name -> google.ads.googleads.v11.common.ProductConditionInfo
-	20, // 16: google.ads.googleads.v11.common.ListingDimensionInfo.product_custom_attribute:type_name -> google.ads.googleads.v11.common.ProductCustomAttributeInfo
-	21, // 17: google.ads.googleads.v11.common.ListingDimensionInfo.product_item_id:type_name -> google.ads.googleads.v11.common.ProductItemIdInfo
-	22, // 18: google.ads.googleads.v11.common.ListingDimensionInfo.product_type:type_name -> google.ads.googleads.v11.common.ProductTypeInfo
-	23, // 19: google.ads.googleads.v11.common.ListingDimensionInfo.product_grouping:type_name -> google.ads.googleads.v11.common.ProductGroupingInfo
-	24, // 20: google.ads.googleads.v11.common.ListingDimensionInfo.product_labels:type_name -> google.ads.googleads.v11.common.ProductLabelsInfo
-	25, // 21: google.ads.googleads.v11.common.ListingDimensionInfo.product_legacy_condition:type_name -> google.ads.googleads.v11.common.ProductLegacyConditionInfo
-	26, // 22: google.ads.googleads.v11.common.ListingDimensionInfo.product_type_full:type_name -> google.ads.googleads.v11.common.ProductTypeFullInfo
-	27, // 23: google.ads.googleads.v11.common.ListingDimensionInfo.unknown_listing_dimension:type_name -> google.ads.googleads.v11.common.UnknownListingDimensionInfo
-	68, // 24: google.ads.googleads.v11.common.ProductBiddingCategoryInfo.level:type_name -> google.ads.googleads.v11.enums.ProductBiddingCategoryLevelEnum.ProductBiddingCategoryLevel
-	69, // 25: google.ads.googleads.v11.common.ProductChannelInfo.channel:type_name -> google.ads.googleads.v11.enums.ProductChannelEnum.ProductChannel
-	70, // 26: google.ads.googleads.v11.common.ProductChannelExclusivityInfo.channel_exclusivity:type_name -> google.ads.googleads.v11.enums.ProductChannelExclusivityEnum.ProductChannelExclusivity
-	71, // 27: google.ads.googleads.v11.common.ProductConditionInfo.condition:type_name -> google.ads.googleads.v11.enums.ProductConditionEnum.ProductCondition
-	72, // 28: google.ads.googleads.v11.common.ProductCustomAttributeInfo.index:type_name -> google.ads.googleads.v11.enums.ProductCustomAttributeIndexEnum.ProductCustomAttributeIndex
-	73, // 29: google.ads.googleads.v11.common.ProductTypeInfo.level:type_name -> google.ads.googleads.v11.enums.ProductTypeLevelEnum.ProductTypeLevel
-	74, // 30: google.ads.googleads.v11.common.HotelDateSelectionTypeInfo.type:type_name -> google.ads.googleads.v11.enums.HotelDateSelectionTypeEnum.HotelDateSelectionType
-	75, // 31: google.ads.googleads.v11.common.HotelCheckInDayInfo.day_of_week:type_name -> google.ads.googleads.v11.enums.DayOfWeekEnum.DayOfWeek
-	76, // 32: google.ads.googleads.v11.common.InteractionTypeInfo.type:type_name -> google.ads.googleads.v11.enums.InteractionTypeEnum.InteractionType
-	77, // 33: google.ads.googleads.v11.common.AdScheduleInfo.start_minute:type_name -> google.ads.googleads.v11.enums.MinuteOfHourEnum.MinuteOfHour
-	77, // 34: google.ads.googleads.v11.common.AdScheduleInfo.end_minute:type_name -> google.ads.googleads.v11.enums.MinuteOfHourEnum.MinuteOfHour
-	75, // 35: google.ads.googleads.v11.common.AdScheduleInfo.day_of_week:type_name -> google.ads.googleads.v11.enums.DayOfWeekEnum.DayOfWeek
-	78, // 36: google.ads.googleads.v11.common.AgeRangeInfo.type:type_name -> google.ads.googleads.v11.enums.AgeRangeTypeEnum.AgeRangeType
-	79, // 37: google.ads.googleads.v11.common.GenderInfo.type:type_name -> google.ads.googleads.v11.enums.GenderTypeEnum.GenderType
-	80, // 38: google.ads.googleads.v11.common.IncomeRangeInfo.type:type_name -> google.ads.googleads.v11.enums.IncomeRangeTypeEnum.IncomeRangeType
-	81, // 39: google.ads.googleads.v11.common.ParentalStatusInfo.type:type_name -> google.ads.googleads.v11.enums.ParentalStatusTypeEnum.ParentalStatusType
-	43, // 40: google.ads.googleads.v11.common.ProximityInfo.geo_point:type_name -> google.ads.googleads.v11.common.GeoPointInfo
-	82, // 41: google.ads.googleads.v11.common.ProximityInfo.radius_units:type_name -> google.ads.googleads.v11.enums.ProximityRadiusUnitsEnum.ProximityRadiusUnits
-	44, // 42: google.ads.googleads.v11.common.ProximityInfo.address:type_name -> google.ads.googleads.v11.common.AddressInfo
-	83, // 43: google.ads.googleads.v11.common.ContentLabelInfo.type:type_name -> google.ads.googleads.v11.enums.ContentLabelTypeEnum.ContentLabelType
-	52, // 44: google.ads.googleads.v11.common.WebpageInfo.conditions:type_name -> google.ads.googleads.v11.common.WebpageConditionInfo
-	53, // 45: google.ads.googleads.v11.common.WebpageInfo.sample:type_name -> google.ads.googleads.v11.common.WebpageSampleInfo
-	84, // 46: google.ads.googleads.v11.common.WebpageConditionInfo.operand:type_name -> google.ads.googleads.v11.enums.WebpageConditionOperandEnum.WebpageConditionOperand
-	85, // 47: google.ads.googleads.v11.common.WebpageConditionInfo.operator:type_name -> google.ads.googleads.v11.enums.WebpageConditionOperatorEnum.WebpageConditionOperator
-	86, // 48: google.ads.googleads.v11.common.AppPaymentModelInfo.type:type_name -> google.ads.googleads.v11.enums.AppPaymentModelTypeEnum.AppPaymentModelType
-	87, // 49: google.ads.googleads.v11.common.LocationGroupInfo.radius_units:type_name -> google.ads.googleads.v11.enums.LocationGroupRadiusUnitsEnum.LocationGroupRadiusUnits
+var file_google_ads_googleads_v12_common_criteria_proto_depIdxs = []int32{
+	64, // 0: google.ads.googleads.v12.common.KeywordInfo.match_type:type_name -> google.ads.googleads.v12.enums.KeywordMatchTypeEnum.KeywordMatchType
+	65, // 1: google.ads.googleads.v12.common.DeviceInfo.type:type_name -> google.ads.googleads.v12.enums.DeviceEnum.Device
+	66, // 2: google.ads.googleads.v12.common.PreferredContentInfo.type:type_name -> google.ads.googleads.v12.enums.PreferredContentTypeEnum.PreferredContentType
+	67, // 3: google.ads.googleads.v12.common.ListingGroupInfo.type:type_name -> google.ads.googleads.v12.enums.ListingGroupTypeEnum.ListingGroupType
+	9,  // 4: google.ads.googleads.v12.common.ListingGroupInfo.case_value:type_name -> google.ads.googleads.v12.common.ListingDimensionInfo
+	9,  // 5: google.ads.googleads.v12.common.ListingScopeInfo.dimensions:type_name -> google.ads.googleads.v12.common.ListingDimensionInfo
+	10, // 6: google.ads.googleads.v12.common.ListingDimensionInfo.hotel_id:type_name -> google.ads.googleads.v12.common.HotelIdInfo
+	11, // 7: google.ads.googleads.v12.common.ListingDimensionInfo.hotel_class:type_name -> google.ads.googleads.v12.common.HotelClassInfo
+	12, // 8: google.ads.googleads.v12.common.ListingDimensionInfo.hotel_country_region:type_name -> google.ads.googleads.v12.common.HotelCountryRegionInfo
+	13, // 9: google.ads.googleads.v12.common.ListingDimensionInfo.hotel_state:type_name -> google.ads.googleads.v12.common.HotelStateInfo
+	14, // 10: google.ads.googleads.v12.common.ListingDimensionInfo.hotel_city:type_name -> google.ads.googleads.v12.common.HotelCityInfo
+	15, // 11: google.ads.googleads.v12.common.ListingDimensionInfo.product_bidding_category:type_name -> google.ads.googleads.v12.common.ProductBiddingCategoryInfo
+	16, // 12: google.ads.googleads.v12.common.ListingDimensionInfo.product_brand:type_name -> google.ads.googleads.v12.common.ProductBrandInfo
+	17, // 13: google.ads.googleads.v12.common.ListingDimensionInfo.product_channel:type_name -> google.ads.googleads.v12.common.ProductChannelInfo
+	18, // 14: google.ads.googleads.v12.common.ListingDimensionInfo.product_channel_exclusivity:type_name -> google.ads.googleads.v12.common.ProductChannelExclusivityInfo
+	19, // 15: google.ads.googleads.v12.common.ListingDimensionInfo.product_condition:type_name -> google.ads.googleads.v12.common.ProductConditionInfo
+	20, // 16: google.ads.googleads.v12.common.ListingDimensionInfo.product_custom_attribute:type_name -> google.ads.googleads.v12.common.ProductCustomAttributeInfo
+	21, // 17: google.ads.googleads.v12.common.ListingDimensionInfo.product_item_id:type_name -> google.ads.googleads.v12.common.ProductItemIdInfo
+	22, // 18: google.ads.googleads.v12.common.ListingDimensionInfo.product_type:type_name -> google.ads.googleads.v12.common.ProductTypeInfo
+	23, // 19: google.ads.googleads.v12.common.ListingDimensionInfo.product_grouping:type_name -> google.ads.googleads.v12.common.ProductGroupingInfo
+	24, // 20: google.ads.googleads.v12.common.ListingDimensionInfo.product_labels:type_name -> google.ads.googleads.v12.common.ProductLabelsInfo
+	25, // 21: google.ads.googleads.v12.common.ListingDimensionInfo.product_legacy_condition:type_name -> google.ads.googleads.v12.common.ProductLegacyConditionInfo
+	26, // 22: google.ads.googleads.v12.common.ListingDimensionInfo.product_type_full:type_name -> google.ads.googleads.v12.common.ProductTypeFullInfo
+	27, // 23: google.ads.googleads.v12.common.ListingDimensionInfo.unknown_listing_dimension:type_name -> google.ads.googleads.v12.common.UnknownListingDimensionInfo
+	68, // 24: google.ads.googleads.v12.common.ProductBiddingCategoryInfo.level:type_name -> google.ads.googleads.v12.enums.ProductBiddingCategoryLevelEnum.ProductBiddingCategoryLevel
+	69, // 25: google.ads.googleads.v12.common.ProductChannelInfo.channel:type_name -> google.ads.googleads.v12.enums.ProductChannelEnum.ProductChannel
+	70, // 26: google.ads.googleads.v12.common.ProductChannelExclusivityInfo.channel_exclusivity:type_name -> google.ads.googleads.v12.enums.ProductChannelExclusivityEnum.ProductChannelExclusivity
+	71, // 27: google.ads.googleads.v12.common.ProductConditionInfo.condition:type_name -> google.ads.googleads.v12.enums.ProductConditionEnum.ProductCondition
+	72, // 28: google.ads.googleads.v12.common.ProductCustomAttributeInfo.index:type_name -> google.ads.googleads.v12.enums.ProductCustomAttributeIndexEnum.ProductCustomAttributeIndex
+	73, // 29: google.ads.googleads.v12.common.ProductTypeInfo.level:type_name -> google.ads.googleads.v12.enums.ProductTypeLevelEnum.ProductTypeLevel
+	74, // 30: google.ads.googleads.v12.common.HotelDateSelectionTypeInfo.type:type_name -> google.ads.googleads.v12.enums.HotelDateSelectionTypeEnum.HotelDateSelectionType
+	75, // 31: google.ads.googleads.v12.common.HotelCheckInDayInfo.day_of_week:type_name -> google.ads.googleads.v12.enums.DayOfWeekEnum.DayOfWeek
+	76, // 32: google.ads.googleads.v12.common.InteractionTypeInfo.type:type_name -> google.ads.googleads.v12.enums.InteractionTypeEnum.InteractionType
+	77, // 33: google.ads.googleads.v12.common.AdScheduleInfo.start_minute:type_name -> google.ads.googleads.v12.enums.MinuteOfHourEnum.MinuteOfHour
+	77, // 34: google.ads.googleads.v12.common.AdScheduleInfo.end_minute:type_name -> google.ads.googleads.v12.enums.MinuteOfHourEnum.MinuteOfHour
+	75, // 35: google.ads.googleads.v12.common.AdScheduleInfo.day_of_week:type_name -> google.ads.googleads.v12.enums.DayOfWeekEnum.DayOfWeek
+	78, // 36: google.ads.googleads.v12.common.AgeRangeInfo.type:type_name -> google.ads.googleads.v12.enums.AgeRangeTypeEnum.AgeRangeType
+	79, // 37: google.ads.googleads.v12.common.GenderInfo.type:type_name -> google.ads.googleads.v12.enums.GenderTypeEnum.GenderType
+	80, // 38: google.ads.googleads.v12.common.IncomeRangeInfo.type:type_name -> google.ads.googleads.v12.enums.IncomeRangeTypeEnum.IncomeRangeType
+	81, // 39: google.ads.googleads.v12.common.ParentalStatusInfo.type:type_name -> google.ads.googleads.v12.enums.ParentalStatusTypeEnum.ParentalStatusType
+	43, // 40: google.ads.googleads.v12.common.ProximityInfo.geo_point:type_name -> google.ads.googleads.v12.common.GeoPointInfo
+	82, // 41: google.ads.googleads.v12.common.ProximityInfo.radius_units:type_name -> google.ads.googleads.v12.enums.ProximityRadiusUnitsEnum.ProximityRadiusUnits
+	44, // 42: google.ads.googleads.v12.common.ProximityInfo.address:type_name -> google.ads.googleads.v12.common.AddressInfo
+	83, // 43: google.ads.googleads.v12.common.ContentLabelInfo.type:type_name -> google.ads.googleads.v12.enums.ContentLabelTypeEnum.ContentLabelType
+	52, // 44: google.ads.googleads.v12.common.WebpageInfo.conditions:type_name -> google.ads.googleads.v12.common.WebpageConditionInfo
+	53, // 45: google.ads.googleads.v12.common.WebpageInfo.sample:type_name -> google.ads.googleads.v12.common.WebpageSampleInfo
+	84, // 46: google.ads.googleads.v12.common.WebpageConditionInfo.operand:type_name -> google.ads.googleads.v12.enums.WebpageConditionOperandEnum.WebpageConditionOperand
+	85, // 47: google.ads.googleads.v12.common.WebpageConditionInfo.operator:type_name -> google.ads.googleads.v12.enums.WebpageConditionOperatorEnum.WebpageConditionOperator
+	86, // 48: google.ads.googleads.v12.common.AppPaymentModelInfo.type:type_name -> google.ads.googleads.v12.enums.AppPaymentModelTypeEnum.AppPaymentModelType
+	87, // 49: google.ads.googleads.v12.common.LocationGroupInfo.radius_units:type_name -> google.ads.googleads.v12.enums.LocationGroupRadiusUnitsEnum.LocationGroupRadiusUnits
 	50, // [50:50] is the sub-list for method output_type
 	50, // [50:50] is the sub-list for method input_type
 	50, // [50:50] is the sub-list for extension type_name
@@ -4770,13 +4810,13 @@ var file_google_ads_googleads_v11_common_criteria_proto_depIdxs = []int32{
 	0,  // [0:50] is the sub-list for field type_name
 }
 
-func init() { file_google_ads_googleads_v11_common_criteria_proto_init() }
-func file_google_ads_googleads_v11_common_criteria_proto_init() {
-	if File_google_ads_googleads_v11_common_criteria_proto != nil {
+func init() { file_google_ads_googleads_v12_common_criteria_proto_init() }
+func file_google_ads_googleads_v12_common_criteria_proto_init() {
+	if File_google_ads_googleads_v12_common_criteria_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*KeywordInfo); i {
 			case 0:
 				return &v.state
@@ -4788,7 +4828,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PlacementInfo); i {
 			case 0:
 				return &v.state
@@ -4800,7 +4840,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*MobileAppCategoryInfo); i {
 			case 0:
 				return &v.state
@@ -4812,7 +4852,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*MobileApplicationInfo); i {
 			case 0:
 				return &v.state
@@ -4824,7 +4864,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*LocationInfo); i {
 			case 0:
 				return &v.state
@@ -4836,7 +4876,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeviceInfo); i {
 			case 0:
 				return &v.state
@@ -4848,7 +4888,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PreferredContentInfo); i {
 			case 0:
 				return &v.state
@@ -4860,7 +4900,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListingGroupInfo); i {
 			case 0:
 				return &v.state
@@ -4872,7 +4912,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListingScopeInfo); i {
 			case 0:
 				return &v.state
@@ -4884,7 +4924,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListingDimensionInfo); i {
 			case 0:
 				return &v.state
@@ -4896,7 +4936,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*HotelIdInfo); i {
 			case 0:
 				return &v.state
@@ -4908,7 +4948,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*HotelClassInfo); i {
 			case 0:
 				return &v.state
@@ -4920,7 +4960,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*HotelCountryRegionInfo); i {
 			case 0:
 				return &v.state
@@ -4932,7 +4972,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*HotelStateInfo); i {
 			case 0:
 				return &v.state
@@ -4944,7 +4984,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*HotelCityInfo); i {
 			case 0:
 				return &v.state
@@ -4956,7 +4996,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ProductBiddingCategoryInfo); i {
 			case 0:
 				return &v.state
@@ -4968,7 +5008,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ProductBrandInfo); i {
 			case 0:
 				return &v.state
@@ -4980,7 +5020,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ProductChannelInfo); i {
 			case 0:
 				return &v.state
@@ -4992,7 +5032,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ProductChannelExclusivityInfo); i {
 			case 0:
 				return &v.state
@@ -5004,7 +5044,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ProductConditionInfo); i {
 			case 0:
 				return &v.state
@@ -5016,7 +5056,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ProductCustomAttributeInfo); i {
 			case 0:
 				return &v.state
@@ -5028,7 +5068,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ProductItemIdInfo); i {
 			case 0:
 				return &v.state
@@ -5040,7 +5080,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ProductTypeInfo); i {
 			case 0:
 				return &v.state
@@ -5052,7 +5092,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ProductGroupingInfo); i {
 			case 0:
 				return &v.state
@@ -5064,7 +5104,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ProductLabelsInfo); i {
 			case 0:
 				return &v.state
@@ -5076,7 +5116,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[25].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[25].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ProductLegacyConditionInfo); i {
 			case 0:
 				return &v.state
@@ -5088,7 +5128,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[26].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[26].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ProductTypeFullInfo); i {
 			case 0:
 				return &v.state
@@ -5100,7 +5140,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[27].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[27].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UnknownListingDimensionInfo); i {
 			case 0:
 				return &v.state
@@ -5112,7 +5152,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[28].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[28].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*HotelDateSelectionTypeInfo); i {
 			case 0:
 				return &v.state
@@ -5124,7 +5164,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[29].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[29].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*HotelAdvanceBookingWindowInfo); i {
 			case 0:
 				return &v.state
@@ -5136,7 +5176,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[30].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[30].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*HotelLengthOfStayInfo); i {
 			case 0:
 				return &v.state
@@ -5148,7 +5188,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[31].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[31].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*HotelCheckInDateRangeInfo); i {
 			case 0:
 				return &v.state
@@ -5160,7 +5200,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[32].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[32].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*HotelCheckInDayInfo); i {
 			case 0:
 				return &v.state
@@ -5172,7 +5212,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[33].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[33].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*InteractionTypeInfo); i {
 			case 0:
 				return &v.state
@@ -5184,7 +5224,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[34].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[34].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AdScheduleInfo); i {
 			case 0:
 				return &v.state
@@ -5196,7 +5236,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[35].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[35].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AgeRangeInfo); i {
 			case 0:
 				return &v.state
@@ -5208,7 +5248,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[36].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[36].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GenderInfo); i {
 			case 0:
 				return &v.state
@@ -5220,7 +5260,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[37].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[37].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*IncomeRangeInfo); i {
 			case 0:
 				return &v.state
@@ -5232,7 +5272,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[38].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[38].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ParentalStatusInfo); i {
 			case 0:
 				return &v.state
@@ -5244,7 +5284,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[39].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[39].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*YouTubeVideoInfo); i {
 			case 0:
 				return &v.state
@@ -5256,7 +5296,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[40].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[40].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*YouTubeChannelInfo); i {
 			case 0:
 				return &v.state
@@ -5268,7 +5308,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[41].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[41].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UserListInfo); i {
 			case 0:
 				return &v.state
@@ -5280,7 +5320,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[42].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[42].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ProximityInfo); i {
 			case 0:
 				return &v.state
@@ -5292,7 +5332,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[43].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[43].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GeoPointInfo); i {
 			case 0:
 				return &v.state
@@ -5304,7 +5344,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[44].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[44].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AddressInfo); i {
 			case 0:
 				return &v.state
@@ -5316,7 +5356,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[45].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[45].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*TopicInfo); i {
 			case 0:
 				return &v.state
@@ -5328,7 +5368,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[46].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[46].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*LanguageInfo); i {
 			case 0:
 				return &v.state
@@ -5340,7 +5380,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[47].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[47].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*IpBlockInfo); i {
 			case 0:
 				return &v.state
@@ -5352,7 +5392,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[48].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[48].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ContentLabelInfo); i {
 			case 0:
 				return &v.state
@@ -5364,7 +5404,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[49].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[49].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CarrierInfo); i {
 			case 0:
 				return &v.state
@@ -5376,7 +5416,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[50].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[50].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UserInterestInfo); i {
 			case 0:
 				return &v.state
@@ -5388,7 +5428,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[51].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[51].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*WebpageInfo); i {
 			case 0:
 				return &v.state
@@ -5400,7 +5440,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[52].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[52].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*WebpageConditionInfo); i {
 			case 0:
 				return &v.state
@@ -5412,7 +5452,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[53].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[53].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*WebpageSampleInfo); i {
 			case 0:
 				return &v.state
@@ -5424,7 +5464,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[54].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[54].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*OperatingSystemVersionInfo); i {
 			case 0:
 				return &v.state
@@ -5436,7 +5476,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[55].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[55].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AppPaymentModelInfo); i {
 			case 0:
 				return &v.state
@@ -5448,7 +5488,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[56].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[56].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*MobileDeviceInfo); i {
 			case 0:
 				return &v.state
@@ -5460,7 +5500,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[57].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[57].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CustomAffinityInfo); i {
 			case 0:
 				return &v.state
@@ -5472,7 +5512,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[58].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[58].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CustomIntentInfo); i {
 			case 0:
 				return &v.state
@@ -5484,7 +5524,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[59].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[59].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*LocationGroupInfo); i {
 			case 0:
 				return &v.state
@@ -5496,7 +5536,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[60].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[60].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CustomAudienceInfo); i {
 			case 0:
 				return &v.state
@@ -5508,7 +5548,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[61].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[61].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CombinedAudienceInfo); i {
 			case 0:
 				return &v.state
@@ -5520,7 +5560,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[62].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[62].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AudienceInfo); i {
 			case 0:
 				return &v.state
@@ -5532,7 +5572,7 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_criteria_proto_msgTypes[63].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_criteria_proto_msgTypes[63].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*KeywordThemeInfo); i {
 			case 0:
 				return &v.state
@@ -5545,13 +5585,13 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 			}
 		}
 	}
-	file_google_ads_googleads_v11_common_criteria_proto_msgTypes[0].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_criteria_proto_msgTypes[1].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_criteria_proto_msgTypes[2].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_criteria_proto_msgTypes[3].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_criteria_proto_msgTypes[4].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_criteria_proto_msgTypes[7].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_criteria_proto_msgTypes[9].OneofWrappers = []interface{}{
+	file_google_ads_googleads_v12_common_criteria_proto_msgTypes[0].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_criteria_proto_msgTypes[1].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_criteria_proto_msgTypes[2].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_criteria_proto_msgTypes[3].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_criteria_proto_msgTypes[4].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_criteria_proto_msgTypes[7].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_criteria_proto_msgTypes[9].OneofWrappers = []interface{}{
 		(*ListingDimensionInfo_HotelId)(nil),
 		(*ListingDimensionInfo_HotelClass)(nil),
 		(*ListingDimensionInfo_HotelCountryRegion)(nil),
@@ -5571,42 +5611,42 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 		(*ListingDimensionInfo_ProductTypeFull)(nil),
 		(*ListingDimensionInfo_UnknownListingDimension)(nil),
 	}
-	file_google_ads_googleads_v11_common_criteria_proto_msgTypes[10].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_criteria_proto_msgTypes[11].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_criteria_proto_msgTypes[12].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_criteria_proto_msgTypes[13].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_criteria_proto_msgTypes[14].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_criteria_proto_msgTypes[15].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_criteria_proto_msgTypes[16].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_criteria_proto_msgTypes[20].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_criteria_proto_msgTypes[21].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_criteria_proto_msgTypes[22].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_criteria_proto_msgTypes[23].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_criteria_proto_msgTypes[24].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_criteria_proto_msgTypes[25].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_criteria_proto_msgTypes[26].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_criteria_proto_msgTypes[29].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_criteria_proto_msgTypes[30].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_criteria_proto_msgTypes[34].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_criteria_proto_msgTypes[39].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_criteria_proto_msgTypes[40].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_criteria_proto_msgTypes[41].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_criteria_proto_msgTypes[42].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_criteria_proto_msgTypes[43].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_criteria_proto_msgTypes[44].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_criteria_proto_msgTypes[45].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_criteria_proto_msgTypes[46].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_criteria_proto_msgTypes[47].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_criteria_proto_msgTypes[49].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_criteria_proto_msgTypes[50].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_criteria_proto_msgTypes[51].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_criteria_proto_msgTypes[52].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_criteria_proto_msgTypes[54].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_criteria_proto_msgTypes[56].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_criteria_proto_msgTypes[57].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_criteria_proto_msgTypes[58].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_criteria_proto_msgTypes[59].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_criteria_proto_msgTypes[63].OneofWrappers = []interface{}{
+	file_google_ads_googleads_v12_common_criteria_proto_msgTypes[10].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_criteria_proto_msgTypes[11].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_criteria_proto_msgTypes[12].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_criteria_proto_msgTypes[13].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_criteria_proto_msgTypes[14].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_criteria_proto_msgTypes[15].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_criteria_proto_msgTypes[16].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_criteria_proto_msgTypes[20].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_criteria_proto_msgTypes[21].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_criteria_proto_msgTypes[22].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_criteria_proto_msgTypes[23].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_criteria_proto_msgTypes[24].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_criteria_proto_msgTypes[25].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_criteria_proto_msgTypes[26].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_criteria_proto_msgTypes[29].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_criteria_proto_msgTypes[30].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_criteria_proto_msgTypes[34].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_criteria_proto_msgTypes[39].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_criteria_proto_msgTypes[40].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_criteria_proto_msgTypes[41].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_criteria_proto_msgTypes[42].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_criteria_proto_msgTypes[43].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_criteria_proto_msgTypes[44].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_criteria_proto_msgTypes[45].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_criteria_proto_msgTypes[46].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_criteria_proto_msgTypes[47].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_criteria_proto_msgTypes[49].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_criteria_proto_msgTypes[50].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_criteria_proto_msgTypes[51].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_criteria_proto_msgTypes[52].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_criteria_proto_msgTypes[54].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_criteria_proto_msgTypes[56].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_criteria_proto_msgTypes[57].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_criteria_proto_msgTypes[58].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_criteria_proto_msgTypes[59].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_criteria_proto_msgTypes[63].OneofWrappers = []interface{}{
 		(*KeywordThemeInfo_KeywordThemeConstant)(nil),
 		(*KeywordThemeInfo_FreeFormKeywordTheme)(nil),
 	}
@@ -5614,18 +5654,18 @@ func file_google_ads_googleads_v11_common_criteria_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_google_ads_googleads_v11_common_criteria_proto_rawDesc,
+			RawDescriptor: file_google_ads_googleads_v12_common_criteria_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   64,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_google_ads_googleads_v11_common_criteria_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v11_common_criteria_proto_depIdxs,
-		MessageInfos:      file_google_ads_googleads_v11_common_criteria_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v12_common_criteria_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v12_common_criteria_proto_depIdxs,
+		MessageInfos:      file_google_ads_googleads_v12_common_criteria_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v11_common_criteria_proto = out.File
-	file_google_ads_googleads_v11_common_criteria_proto_rawDesc = nil
-	file_google_ads_googleads_v11_common_criteria_proto_goTypes = nil
-	file_google_ads_googleads_v11_common_criteria_proto_depIdxs = nil
+	File_google_ads_googleads_v12_common_criteria_proto = out.File
+	file_google_ads_googleads_v12_common_criteria_proto_rawDesc = nil
+	file_google_ads_googleads_v12_common_criteria_proto_goTypes = nil
+	file_google_ads_googleads_v12_common_criteria_proto_depIdxs = nil
 }

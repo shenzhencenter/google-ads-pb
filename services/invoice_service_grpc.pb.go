@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.5
-// source: google/ads/googleads/v11/services/invoice_service.proto
+// source: google/ads/googleads/v12/services/invoice_service.proto
 
 package services
 
@@ -46,7 +46,7 @@ func NewInvoiceServiceClient(cc grpc.ClientConnInterface) InvoiceServiceClient {
 
 func (c *invoiceServiceClient) ListInvoices(ctx context.Context, in *ListInvoicesRequest, opts ...grpc.CallOption) (*ListInvoicesResponse, error) {
 	out := new(ListInvoicesResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.InvoiceService/ListInvoices", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.InvoiceService/ListInvoices", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -102,7 +102,7 @@ func _InvoiceService_ListInvoices_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v11.services.InvoiceService/ListInvoices",
+		FullMethod: "/google.ads.googleads.v12.services.InvoiceService/ListInvoices",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(InvoiceServiceServer).ListInvoices(ctx, req.(*ListInvoicesRequest))
@@ -114,7 +114,7 @@ func _InvoiceService_ListInvoices_Handler(srv interface{}, ctx context.Context, 
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var InvoiceService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v11.services.InvoiceService",
+	ServiceName: "google.ads.googleads.v12.services.InvoiceService",
 	HandlerType: (*InvoiceServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -123,5 +123,5 @@ var InvoiceService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v11/services/invoice_service.proto",
+	Metadata: "google/ads/googleads/v12/services/invoice_service.proto",
 }

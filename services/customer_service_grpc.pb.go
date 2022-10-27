@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.5
-// source: google/ads/googleads/v11/services/customer_service.proto
+// source: google/ads/googleads/v12/services/customer_service.proto
 
 package services
 
@@ -73,7 +73,7 @@ func NewCustomerServiceClient(cc grpc.ClientConnInterface) CustomerServiceClient
 
 func (c *customerServiceClient) MutateCustomer(ctx context.Context, in *MutateCustomerRequest, opts ...grpc.CallOption) (*MutateCustomerResponse, error) {
 	out := new(MutateCustomerResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.CustomerService/MutateCustomer", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.CustomerService/MutateCustomer", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -82,7 +82,7 @@ func (c *customerServiceClient) MutateCustomer(ctx context.Context, in *MutateCu
 
 func (c *customerServiceClient) ListAccessibleCustomers(ctx context.Context, in *ListAccessibleCustomersRequest, opts ...grpc.CallOption) (*ListAccessibleCustomersResponse, error) {
 	out := new(ListAccessibleCustomersResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.CustomerService/ListAccessibleCustomers", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.CustomerService/ListAccessibleCustomers", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -91,7 +91,7 @@ func (c *customerServiceClient) ListAccessibleCustomers(ctx context.Context, in 
 
 func (c *customerServiceClient) CreateCustomerClient(ctx context.Context, in *CreateCustomerClientRequest, opts ...grpc.CallOption) (*CreateCustomerClientResponse, error) {
 	out := new(CreateCustomerClientResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.CustomerService/CreateCustomerClient", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.CustomerService/CreateCustomerClient", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -180,7 +180,7 @@ func _CustomerService_MutateCustomer_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v11.services.CustomerService/MutateCustomer",
+		FullMethod: "/google.ads.googleads.v12.services.CustomerService/MutateCustomer",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CustomerServiceServer).MutateCustomer(ctx, req.(*MutateCustomerRequest))
@@ -198,7 +198,7 @@ func _CustomerService_ListAccessibleCustomers_Handler(srv interface{}, ctx conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v11.services.CustomerService/ListAccessibleCustomers",
+		FullMethod: "/google.ads.googleads.v12.services.CustomerService/ListAccessibleCustomers",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CustomerServiceServer).ListAccessibleCustomers(ctx, req.(*ListAccessibleCustomersRequest))
@@ -216,7 +216,7 @@ func _CustomerService_CreateCustomerClient_Handler(srv interface{}, ctx context.
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v11.services.CustomerService/CreateCustomerClient",
+		FullMethod: "/google.ads.googleads.v12.services.CustomerService/CreateCustomerClient",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CustomerServiceServer).CreateCustomerClient(ctx, req.(*CreateCustomerClientRequest))
@@ -228,7 +228,7 @@ func _CustomerService_CreateCustomerClient_Handler(srv interface{}, ctx context.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CustomerService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v11.services.CustomerService",
+	ServiceName: "google.ads.googleads.v12.services.CustomerService",
 	HandlerType: (*CustomerServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -245,5 +245,5 @@ var CustomerService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v11/services/customer_service.proto",
+	Metadata: "google/ads/googleads/v12/services/customer_service.proto",
 }

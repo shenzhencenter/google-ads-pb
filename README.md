@@ -67,47 +67,7 @@ for _, customer := range accessibleCustomers.ResourceNames {
 }
 ```
 
-4. Make HTTP calls with using [protojson](https://google.golang.org/protobuf/encoding/protojson).
-
-```
-// 4.1 Set request
-listAccessibleCustomersRequest, err := protojson.Marshal(
-  &services.ListAccessibleCustomersRequest{},
-)
-if err != nil { panic(err) }
-request, err := http.NewRequest(
-  "GET", "https://googleads.googleapis.com/v11/customers:listAccessibleCustomers",
-  bytes.NewBuffer(listAccessibleCustomersRequest))
-if err != nil { panic(err) }
-
-// 4.2 Set request headers
-header := make(http.Header)
-header.Set("authorization", os.Getenv("ACCESS_TOKEN"))
-header.Set("developer-token", os.Getenv("DEVELOPER_TOKEN"))
-header.Set("login-customer-id", os.Getenv("CUSTOMER_ID"))
-request.Header = header
-
-// 4.3 Send request
-client := &http.Client{}
-response, err := client.Do(request)
-if err != nil { panic(err) }
-defer response.Body.Close()
-
-// 4.4 Read the response
-var responseBody []byte
-if responseBody, err = ioutil.ReadAll(response.Body); err != nil {
-  panic(err)
-}
-
-// 4.5 Print the response
-listAccessibleCustomersResponse := new(services.ListAccessibleCustomersResponse)
-if err := protojson.Unmarshal(responseBody, listAccessibleCustomersResponse); err != nil {
-  panic(err)
-}
-for _, customer := range listAccessibleCustomersResponse.ResourceNames {
-  fmt.Println("ResourceName: " + customer)
-}
-```
+4. Make HTTP calls with using [protojson](https://google.golang.org/protobuf/encoding/protojson) is not recommended now. But it is available yet, for more information please refer to the code in examples.
 
 
 ## Examples

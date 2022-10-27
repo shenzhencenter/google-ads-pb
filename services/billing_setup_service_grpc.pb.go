@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.5
-// source: google/ads/googleads/v11/services/billing_setup_service.proto
+// source: google/ads/googleads/v12/services/billing_setup_service.proto
 
 package services
 
@@ -48,7 +48,7 @@ func NewBillingSetupServiceClient(cc grpc.ClientConnInterface) BillingSetupServi
 
 func (c *billingSetupServiceClient) MutateBillingSetup(ctx context.Context, in *MutateBillingSetupRequest, opts ...grpc.CallOption) (*MutateBillingSetupResponse, error) {
 	out := new(MutateBillingSetupResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.BillingSetupService/MutateBillingSetup", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.BillingSetupService/MutateBillingSetup", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -106,7 +106,7 @@ func _BillingSetupService_MutateBillingSetup_Handler(srv interface{}, ctx contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v11.services.BillingSetupService/MutateBillingSetup",
+		FullMethod: "/google.ads.googleads.v12.services.BillingSetupService/MutateBillingSetup",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(BillingSetupServiceServer).MutateBillingSetup(ctx, req.(*MutateBillingSetupRequest))
@@ -118,7 +118,7 @@ func _BillingSetupService_MutateBillingSetup_Handler(srv interface{}, ctx contex
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var BillingSetupService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v11.services.BillingSetupService",
+	ServiceName: "google.ads.googleads.v12.services.BillingSetupService",
 	HandlerType: (*BillingSetupServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -127,5 +127,5 @@ var BillingSetupService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v11/services/billing_setup_service.proto",
+	Metadata: "google/ads/googleads/v12/services/billing_setup_service.proto",
 }
