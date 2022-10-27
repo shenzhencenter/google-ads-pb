@@ -11,6 +11,14 @@ This project is a client library for the [Google Ads API](https://developers.goo
 - Support for HTTP calls by using [protojson](https://google.golang.org/protobuf/encoding/protojson).
 - Frequent updates based on [official repository](https://github.com/googleapis/googleapis).
 
+## Version support
+
+| google-ads-pb | Google Ads API |
+|---|---|
+| v1.1.1 | v10 |
+| v1.2.0 | v11 |
+| v1.2.1 | v11.1 |
+| v1.3.0 | v12 |
 
 ## Requirements
 
