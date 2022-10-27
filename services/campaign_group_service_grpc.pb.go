@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.5
-// source: google/ads/googleads/v11/services/campaign_group_service.proto
+// source: google/ads/googleads/v12/services/campaign_group_service.proto
 
 package services
 
@@ -37,7 +37,7 @@ func NewCampaignGroupServiceClient(cc grpc.ClientConnInterface) CampaignGroupSer
 
 func (c *campaignGroupServiceClient) MutateCampaignGroups(ctx context.Context, in *MutateCampaignGroupsRequest, opts ...grpc.CallOption) (*MutateCampaignGroupsResponse, error) {
 	out := new(MutateCampaignGroupsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.CampaignGroupService/MutateCampaignGroups", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.CampaignGroupService/MutateCampaignGroups", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -84,7 +84,7 @@ func _CampaignGroupService_MutateCampaignGroups_Handler(srv interface{}, ctx con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v11.services.CampaignGroupService/MutateCampaignGroups",
+		FullMethod: "/google.ads.googleads.v12.services.CampaignGroupService/MutateCampaignGroups",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CampaignGroupServiceServer).MutateCampaignGroups(ctx, req.(*MutateCampaignGroupsRequest))
@@ -96,7 +96,7 @@ func _CampaignGroupService_MutateCampaignGroups_Handler(srv interface{}, ctx con
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CampaignGroupService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v11.services.CampaignGroupService",
+	ServiceName: "google.ads.googleads.v12.services.CampaignGroupService",
 	HandlerType: (*CampaignGroupServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -105,5 +105,5 @@ var CampaignGroupService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v11/services/campaign_group_service.proto",
+	Metadata: "google/ads/googleads/v12/services/campaign_group_service.proto",
 }

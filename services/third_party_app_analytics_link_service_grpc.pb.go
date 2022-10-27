@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.5
-// source: google/ads/googleads/v11/services/third_party_app_analytics_link_service.proto
+// source: google/ads/googleads/v12/services/third_party_app_analytics_link_service.proto
 
 package services
 
@@ -45,7 +45,7 @@ func NewThirdPartyAppAnalyticsLinkServiceClient(cc grpc.ClientConnInterface) Thi
 
 func (c *thirdPartyAppAnalyticsLinkServiceClient) RegenerateShareableLinkId(ctx context.Context, in *RegenerateShareableLinkIdRequest, opts ...grpc.CallOption) (*RegenerateShareableLinkIdResponse, error) {
 	out := new(RegenerateShareableLinkIdResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.ThirdPartyAppAnalyticsLinkService/RegenerateShareableLinkId", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.ThirdPartyAppAnalyticsLinkService/RegenerateShareableLinkId", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -101,7 +101,7 @@ func _ThirdPartyAppAnalyticsLinkService_RegenerateShareableLinkId_Handler(srv in
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v11.services.ThirdPartyAppAnalyticsLinkService/RegenerateShareableLinkId",
+		FullMethod: "/google.ads.googleads.v12.services.ThirdPartyAppAnalyticsLinkService/RegenerateShareableLinkId",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ThirdPartyAppAnalyticsLinkServiceServer).RegenerateShareableLinkId(ctx, req.(*RegenerateShareableLinkIdRequest))
@@ -113,7 +113,7 @@ func _ThirdPartyAppAnalyticsLinkService_RegenerateShareableLinkId_Handler(srv in
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ThirdPartyAppAnalyticsLinkService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v11.services.ThirdPartyAppAnalyticsLinkService",
+	ServiceName: "google.ads.googleads.v12.services.ThirdPartyAppAnalyticsLinkService",
 	HandlerType: (*ThirdPartyAppAnalyticsLinkServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -122,5 +122,5 @@ var ThirdPartyAppAnalyticsLinkService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v11/services/third_party_app_analytics_link_service.proto",
+	Metadata: "google/ads/googleads/v12/services/third_party_app_analytics_link_service.proto",
 }

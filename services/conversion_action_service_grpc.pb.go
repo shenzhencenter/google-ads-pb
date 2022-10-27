@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.5
-// source: google/ads/googleads/v11/services/conversion_action_service.proto
+// source: google/ads/googleads/v12/services/conversion_action_service.proto
 
 package services
 
@@ -55,7 +55,7 @@ func NewConversionActionServiceClient(cc grpc.ClientConnInterface) ConversionAct
 
 func (c *conversionActionServiceClient) MutateConversionActions(ctx context.Context, in *MutateConversionActionsRequest, opts ...grpc.CallOption) (*MutateConversionActionsResponse, error) {
 	out := new(MutateConversionActionsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.ConversionActionService/MutateConversionActions", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.ConversionActionService/MutateConversionActions", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -121,7 +121,7 @@ func _ConversionActionService_MutateConversionActions_Handler(srv interface{}, c
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v11.services.ConversionActionService/MutateConversionActions",
+		FullMethod: "/google.ads.googleads.v12.services.ConversionActionService/MutateConversionActions",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ConversionActionServiceServer).MutateConversionActions(ctx, req.(*MutateConversionActionsRequest))
@@ -133,7 +133,7 @@ func _ConversionActionService_MutateConversionActions_Handler(srv interface{}, c
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ConversionActionService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v11.services.ConversionActionService",
+	ServiceName: "google.ads.googleads.v12.services.ConversionActionService",
 	HandlerType: (*ConversionActionServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -142,5 +142,5 @@ var ConversionActionService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v11/services/conversion_action_service.proto",
+	Metadata: "google/ads/googleads/v12/services/conversion_action_service.proto",
 }

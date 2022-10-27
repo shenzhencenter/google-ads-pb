@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.5
-// source: google/ads/googleads/v11/services/custom_conversion_goal_service.proto
+// source: google/ads/googleads/v12/services/custom_conversion_goal_service.proto
 
 package services
 
@@ -37,7 +37,7 @@ func NewCustomConversionGoalServiceClient(cc grpc.ClientConnInterface) CustomCon
 
 func (c *customConversionGoalServiceClient) MutateCustomConversionGoals(ctx context.Context, in *MutateCustomConversionGoalsRequest, opts ...grpc.CallOption) (*MutateCustomConversionGoalsResponse, error) {
 	out := new(MutateCustomConversionGoalsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.CustomConversionGoalService/MutateCustomConversionGoals", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.CustomConversionGoalService/MutateCustomConversionGoals", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -85,7 +85,7 @@ func _CustomConversionGoalService_MutateCustomConversionGoals_Handler(srv interf
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v11.services.CustomConversionGoalService/MutateCustomConversionGoals",
+		FullMethod: "/google.ads.googleads.v12.services.CustomConversionGoalService/MutateCustomConversionGoals",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CustomConversionGoalServiceServer).MutateCustomConversionGoals(ctx, req.(*MutateCustomConversionGoalsRequest))
@@ -97,7 +97,7 @@ func _CustomConversionGoalService_MutateCustomConversionGoals_Handler(srv interf
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CustomConversionGoalService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v11.services.CustomConversionGoalService",
+	ServiceName: "google.ads.googleads.v12.services.CustomConversionGoalService",
 	HandlerType: (*CustomConversionGoalServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -106,5 +106,5 @@ var CustomConversionGoalService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v11/services/custom_conversion_goal_service.proto",
+	Metadata: "google/ads/googleads/v12/services/custom_conversion_goal_service.proto",
 }

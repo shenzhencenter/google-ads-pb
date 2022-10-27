@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.5
-// source: google/ads/googleads/v11/services/asset_set_service.proto
+// source: google/ads/googleads/v12/services/asset_set_service.proto
 
 package services
 
@@ -37,7 +37,7 @@ func NewAssetSetServiceClient(cc grpc.ClientConnInterface) AssetSetServiceClient
 
 func (c *assetSetServiceClient) MutateAssetSets(ctx context.Context, in *MutateAssetSetsRequest, opts ...grpc.CallOption) (*MutateAssetSetsResponse, error) {
 	out := new(MutateAssetSetsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.AssetSetService/MutateAssetSets", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.AssetSetService/MutateAssetSets", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -84,7 +84,7 @@ func _AssetSetService_MutateAssetSets_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v11.services.AssetSetService/MutateAssetSets",
+		FullMethod: "/google.ads.googleads.v12.services.AssetSetService/MutateAssetSets",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AssetSetServiceServer).MutateAssetSets(ctx, req.(*MutateAssetSetsRequest))
@@ -96,7 +96,7 @@ func _AssetSetService_MutateAssetSets_Handler(srv interface{}, ctx context.Conte
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AssetSetService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v11.services.AssetSetService",
+	ServiceName: "google.ads.googleads.v12.services.AssetSetService",
 	HandlerType: (*AssetSetServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -105,5 +105,5 @@ var AssetSetService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v11/services/asset_set_service.proto",
+	Metadata: "google/ads/googleads/v12/services/asset_set_service.proto",
 }

@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.5
-// source: google/ads/googleads/v11/services/customer_negative_criterion_service.proto
+// source: google/ads/googleads/v12/services/customer_negative_criterion_service.proto
 
 package services
 
@@ -48,7 +48,7 @@ func NewCustomerNegativeCriterionServiceClient(cc grpc.ClientConnInterface) Cust
 
 func (c *customerNegativeCriterionServiceClient) MutateCustomerNegativeCriteria(ctx context.Context, in *MutateCustomerNegativeCriteriaRequest, opts ...grpc.CallOption) (*MutateCustomerNegativeCriteriaResponse, error) {
 	out := new(MutateCustomerNegativeCriteriaResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.CustomerNegativeCriterionService/MutateCustomerNegativeCriteria", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.CustomerNegativeCriterionService/MutateCustomerNegativeCriteria", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -107,7 +107,7 @@ func _CustomerNegativeCriterionService_MutateCustomerNegativeCriteria_Handler(sr
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v11.services.CustomerNegativeCriterionService/MutateCustomerNegativeCriteria",
+		FullMethod: "/google.ads.googleads.v12.services.CustomerNegativeCriterionService/MutateCustomerNegativeCriteria",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CustomerNegativeCriterionServiceServer).MutateCustomerNegativeCriteria(ctx, req.(*MutateCustomerNegativeCriteriaRequest))
@@ -119,7 +119,7 @@ func _CustomerNegativeCriterionService_MutateCustomerNegativeCriteria_Handler(sr
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CustomerNegativeCriterionService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v11.services.CustomerNegativeCriterionService",
+	ServiceName: "google.ads.googleads.v12.services.CustomerNegativeCriterionService",
 	HandlerType: (*CustomerNegativeCriterionServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -128,5 +128,5 @@ var CustomerNegativeCriterionService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v11/services/customer_negative_criterion_service.proto",
+	Metadata: "google/ads/googleads/v12/services/customer_negative_criterion_service.proto",
 }

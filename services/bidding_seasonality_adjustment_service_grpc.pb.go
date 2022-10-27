@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.5
-// source: google/ads/googleads/v11/services/bidding_seasonality_adjustment_service.proto
+// source: google/ads/googleads/v12/services/bidding_seasonality_adjustment_service.proto
 
 package services
 
@@ -37,7 +37,7 @@ func NewBiddingSeasonalityAdjustmentServiceClient(cc grpc.ClientConnInterface) B
 
 func (c *biddingSeasonalityAdjustmentServiceClient) MutateBiddingSeasonalityAdjustments(ctx context.Context, in *MutateBiddingSeasonalityAdjustmentsRequest, opts ...grpc.CallOption) (*MutateBiddingSeasonalityAdjustmentsResponse, error) {
 	out := new(MutateBiddingSeasonalityAdjustmentsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.BiddingSeasonalityAdjustmentService/MutateBiddingSeasonalityAdjustments", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.BiddingSeasonalityAdjustmentService/MutateBiddingSeasonalityAdjustments", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -85,7 +85,7 @@ func _BiddingSeasonalityAdjustmentService_MutateBiddingSeasonalityAdjustments_Ha
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v11.services.BiddingSeasonalityAdjustmentService/MutateBiddingSeasonalityAdjustments",
+		FullMethod: "/google.ads.googleads.v12.services.BiddingSeasonalityAdjustmentService/MutateBiddingSeasonalityAdjustments",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(BiddingSeasonalityAdjustmentServiceServer).MutateBiddingSeasonalityAdjustments(ctx, req.(*MutateBiddingSeasonalityAdjustmentsRequest))
@@ -97,7 +97,7 @@ func _BiddingSeasonalityAdjustmentService_MutateBiddingSeasonalityAdjustments_Ha
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var BiddingSeasonalityAdjustmentService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v11.services.BiddingSeasonalityAdjustmentService",
+	ServiceName: "google.ads.googleads.v12.services.BiddingSeasonalityAdjustmentService",
 	HandlerType: (*BiddingSeasonalityAdjustmentServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -106,5 +106,5 @@ var BiddingSeasonalityAdjustmentService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v11/services/bidding_seasonality_adjustment_service.proto",
+	Metadata: "google/ads/googleads/v12/services/bidding_seasonality_adjustment_service.proto",
 }

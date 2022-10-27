@@ -39,6 +39,7 @@ var newAudienceInsightsClientHook clientHook
 type AudienceInsightsCallOptions struct {
 	GenerateInsightsFinderReport []gax.CallOption
 	ListAudienceInsightsAttributes []gax.CallOption
+	ListInsightsEligibleDates []gax.CallOption
 	GenerateAudienceCompositionInsights []gax.CallOption
 }
 
@@ -80,6 +81,18 @@ func defaultAudienceInsightsCallOptions() *AudienceInsightsCallOptions {
 				})
 			}),
 		},
+		ListInsightsEligibleDates: []gax.CallOption{
+			gax.WithRetry(func() gax.Retryer {
+				return gax.OnCodes([]codes.Code{
+					codes.Unavailable,
+					codes.DeadlineExceeded,
+				}, gax.Backoff{
+					Initial:    5000 * time.Millisecond,
+					Max:        60000 * time.Millisecond,
+					Multiplier: 1.30,
+				})
+			}),
+		},
 		GenerateAudienceCompositionInsights: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -102,6 +115,7 @@ type internalAudienceInsightsClient interface {
 	Connection() *grpc.ClientConn
 	GenerateInsightsFinderReport(context.Context, *servicespb.GenerateInsightsFinderReportRequest, ...gax.CallOption) (*servicespb.GenerateInsightsFinderReportResponse, error)
 	ListAudienceInsightsAttributes(context.Context, *servicespb.ListAudienceInsightsAttributesRequest, ...gax.CallOption) (*servicespb.ListAudienceInsightsAttributesResponse, error)
+	ListInsightsEligibleDates(context.Context, *servicespb.ListInsightsEligibleDatesRequest, ...gax.CallOption) (*servicespb.ListInsightsEligibleDatesResponse, error)
 	GenerateAudienceCompositionInsights(context.Context, *servicespb.GenerateAudienceCompositionInsightsRequest, ...gax.CallOption) (*servicespb.GenerateAudienceCompositionInsightsResponse, error)
 }
 
@@ -169,6 +183,21 @@ func (c *AudienceInsightsClient) GenerateInsightsFinderReport(ctx context.Contex
 // RequestError (at )
 func (c *AudienceInsightsClient) ListAudienceInsightsAttributes(ctx context.Context, req *servicespb.ListAudienceInsightsAttributesRequest, opts ...gax.CallOption) (*servicespb.ListAudienceInsightsAttributesResponse, error) {
 	return c.internalClient.ListAudienceInsightsAttributes(ctx, req, opts...)
+}
+
+// ListInsightsEligibleDates lists date ranges for which audience insights data can be requested.
+//
+// List of thrown errors:
+// AuthenticationError (at )
+// AuthorizationError (at )
+// FieldError (at )
+// HeaderError (at )
+// InternalError (at )
+// QuotaError (at )
+// RangeError (at )
+// RequestError (at )
+func (c *AudienceInsightsClient) ListInsightsEligibleDates(ctx context.Context, req *servicespb.ListInsightsEligibleDatesRequest, opts ...gax.CallOption) (*servicespb.ListInsightsEligibleDatesResponse, error) {
+	return c.internalClient.ListInsightsEligibleDates(ctx, req, opts...)
 }
 
 // GenerateAudienceCompositionInsights returns a collection of attributes that are represented in an audience of
@@ -307,6 +336,26 @@ func (c *audienceInsightsGRPCClient) ListAudienceInsightsAttributes(ctx context.
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
 		resp, err = c.audienceInsightsClient.ListAudienceInsightsAttributes(ctx, req, settings.GRPC...)
+		return err
+	}, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return resp, nil
+}
+
+func (c *audienceInsightsGRPCClient) ListInsightsEligibleDates(ctx context.Context, req *servicespb.ListInsightsEligibleDatesRequest, opts ...gax.CallOption) (*servicespb.ListInsightsEligibleDatesResponse, error) {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
+	ctx = insertMetadata(ctx, c.xGoogMetadata)
+	opts = append((*c.CallOptions).ListInsightsEligibleDates[0:len((*c.CallOptions).ListInsightsEligibleDates):len((*c.CallOptions).ListInsightsEligibleDates)], opts...)
+	var resp *servicespb.ListInsightsEligibleDatesResponse
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		resp, err = c.audienceInsightsClient.ListInsightsEligibleDates(ctx, req, settings.GRPC...)
 		return err
 	}, opts...)
 	if err != nil {

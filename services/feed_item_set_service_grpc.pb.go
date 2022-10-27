@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.5
-// source: google/ads/googleads/v11/services/feed_item_set_service.proto
+// source: google/ads/googleads/v12/services/feed_item_set_service.proto
 
 package services
 
@@ -46,7 +46,7 @@ func NewFeedItemSetServiceClient(cc grpc.ClientConnInterface) FeedItemSetService
 
 func (c *feedItemSetServiceClient) MutateFeedItemSets(ctx context.Context, in *MutateFeedItemSetsRequest, opts ...grpc.CallOption) (*MutateFeedItemSetsResponse, error) {
 	out := new(MutateFeedItemSetsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.FeedItemSetService/MutateFeedItemSets", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.FeedItemSetService/MutateFeedItemSets", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -102,7 +102,7 @@ func _FeedItemSetService_MutateFeedItemSets_Handler(srv interface{}, ctx context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v11.services.FeedItemSetService/MutateFeedItemSets",
+		FullMethod: "/google.ads.googleads.v12.services.FeedItemSetService/MutateFeedItemSets",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(FeedItemSetServiceServer).MutateFeedItemSets(ctx, req.(*MutateFeedItemSetsRequest))
@@ -114,7 +114,7 @@ func _FeedItemSetService_MutateFeedItemSets_Handler(srv interface{}, ctx context
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var FeedItemSetService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v11.services.FeedItemSetService",
+	ServiceName: "google.ads.googleads.v12.services.FeedItemSetService",
 	HandlerType: (*FeedItemSetServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -123,5 +123,5 @@ var FeedItemSetService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v11/services/feed_item_set_service.proto",
+	Metadata: "google/ads/googleads/v12/services/feed_item_set_service.proto",
 }

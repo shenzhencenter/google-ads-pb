@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.5
-// source: google/ads/googleads/v11/services/campaign_label_service.proto
+// source: google/ads/googleads/v12/services/campaign_label_service.proto
 
 package services
 
@@ -50,7 +50,7 @@ func NewCampaignLabelServiceClient(cc grpc.ClientConnInterface) CampaignLabelSer
 
 func (c *campaignLabelServiceClient) MutateCampaignLabels(ctx context.Context, in *MutateCampaignLabelsRequest, opts ...grpc.CallOption) (*MutateCampaignLabelsResponse, error) {
 	out := new(MutateCampaignLabelsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.CampaignLabelService/MutateCampaignLabels", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.CampaignLabelService/MutateCampaignLabels", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -110,7 +110,7 @@ func _CampaignLabelService_MutateCampaignLabels_Handler(srv interface{}, ctx con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v11.services.CampaignLabelService/MutateCampaignLabels",
+		FullMethod: "/google.ads.googleads.v12.services.CampaignLabelService/MutateCampaignLabels",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CampaignLabelServiceServer).MutateCampaignLabels(ctx, req.(*MutateCampaignLabelsRequest))
@@ -122,7 +122,7 @@ func _CampaignLabelService_MutateCampaignLabels_Handler(srv interface{}, ctx con
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CampaignLabelService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v11.services.CampaignLabelService",
+	ServiceName: "google.ads.googleads.v12.services.CampaignLabelService",
 	HandlerType: (*CampaignLabelServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -131,5 +131,5 @@ var CampaignLabelService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v11/services/campaign_label_service.proto",
+	Metadata: "google/ads/googleads/v12/services/campaign_label_service.proto",
 }

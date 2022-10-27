@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.28.1
 // 	protoc        v3.21.5
-// source: google/ads/googleads/v11/services/customer_user_access_service.proto
+// source: google/ads/googleads/v12/services/customer_user_access_service.proto
 
 package services
 
@@ -38,7 +38,7 @@ const (
 )
 
 // Mutate Request for
-// [CustomerUserAccessService.MutateCustomerUserAccess][google.ads.googleads.v11.services.CustomerUserAccessService.MutateCustomerUserAccess].
+// [CustomerUserAccessService.MutateCustomerUserAccess][google.ads.googleads.v12.services.CustomerUserAccessService.MutateCustomerUserAccess].
 type MutateCustomerUserAccessRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -53,7 +53,7 @@ type MutateCustomerUserAccessRequest struct {
 func (x *MutateCustomerUserAccessRequest) Reset() {
 	*x = MutateCustomerUserAccessRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_services_customer_user_access_service_proto_msgTypes[0]
+		mi := &file_google_ads_googleads_v12_services_customer_user_access_service_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -66,7 +66,7 @@ func (x *MutateCustomerUserAccessRequest) String() string {
 func (*MutateCustomerUserAccessRequest) ProtoMessage() {}
 
 func (x *MutateCustomerUserAccessRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_services_customer_user_access_service_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v12_services_customer_user_access_service_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -79,7 +79,7 @@ func (x *MutateCustomerUserAccessRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MutateCustomerUserAccessRequest.ProtoReflect.Descriptor instead.
 func (*MutateCustomerUserAccessRequest) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_services_customer_user_access_service_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v12_services_customer_user_access_service_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *MutateCustomerUserAccessRequest) GetCustomerId() string {
@@ -115,7 +115,7 @@ type CustomerUserAccessOperation struct {
 func (x *CustomerUserAccessOperation) Reset() {
 	*x = CustomerUserAccessOperation{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_services_customer_user_access_service_proto_msgTypes[1]
+		mi := &file_google_ads_googleads_v12_services_customer_user_access_service_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -128,7 +128,7 @@ func (x *CustomerUserAccessOperation) String() string {
 func (*CustomerUserAccessOperation) ProtoMessage() {}
 
 func (x *CustomerUserAccessOperation) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_services_customer_user_access_service_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v12_services_customer_user_access_service_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -141,7 +141,7 @@ func (x *CustomerUserAccessOperation) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CustomerUserAccessOperation.ProtoReflect.Descriptor instead.
 func (*CustomerUserAccessOperation) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_services_customer_user_access_service_proto_rawDescGZIP(), []int{1}
+	return file_google_ads_googleads_v12_services_customer_user_access_service_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *CustomerUserAccessOperation) GetUpdateMask() *fieldmaskpb.FieldMask {
@@ -207,7 +207,7 @@ type MutateCustomerUserAccessResponse struct {
 func (x *MutateCustomerUserAccessResponse) Reset() {
 	*x = MutateCustomerUserAccessResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_services_customer_user_access_service_proto_msgTypes[2]
+		mi := &file_google_ads_googleads_v12_services_customer_user_access_service_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -220,7 +220,7 @@ func (x *MutateCustomerUserAccessResponse) String() string {
 func (*MutateCustomerUserAccessResponse) ProtoMessage() {}
 
 func (x *MutateCustomerUserAccessResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_services_customer_user_access_service_proto_msgTypes[2]
+	mi := &file_google_ads_googleads_v12_services_customer_user_access_service_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -233,7 +233,7 @@ func (x *MutateCustomerUserAccessResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MutateCustomerUserAccessResponse.ProtoReflect.Descriptor instead.
 func (*MutateCustomerUserAccessResponse) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_services_customer_user_access_service_proto_rawDescGZIP(), []int{2}
+	return file_google_ads_googleads_v12_services_customer_user_access_service_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *MutateCustomerUserAccessResponse) GetResult() *MutateCustomerUserAccessResult {
@@ -256,7 +256,7 @@ type MutateCustomerUserAccessResult struct {
 func (x *MutateCustomerUserAccessResult) Reset() {
 	*x = MutateCustomerUserAccessResult{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_services_customer_user_access_service_proto_msgTypes[3]
+		mi := &file_google_ads_googleads_v12_services_customer_user_access_service_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -269,7 +269,7 @@ func (x *MutateCustomerUserAccessResult) String() string {
 func (*MutateCustomerUserAccessResult) ProtoMessage() {}
 
 func (x *MutateCustomerUserAccessResult) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_services_customer_user_access_service_proto_msgTypes[3]
+	mi := &file_google_ads_googleads_v12_services_customer_user_access_service_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -282,7 +282,7 @@ func (x *MutateCustomerUserAccessResult) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MutateCustomerUserAccessResult.ProtoReflect.Descriptor instead.
 func (*MutateCustomerUserAccessResult) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_services_customer_user_access_service_proto_rawDescGZIP(), []int{3}
+	return file_google_ads_googleads_v12_services_customer_user_access_service_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *MutateCustomerUserAccessResult) GetResourceName() string {
@@ -292,18 +292,18 @@ func (x *MutateCustomerUserAccessResult) GetResourceName() string {
 	return ""
 }
 
-var File_google_ads_googleads_v11_services_customer_user_access_service_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v12_services_customer_user_access_service_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v11_services_customer_user_access_service_proto_rawDesc = []byte{
+var file_google_ads_googleads_v12_services_customer_user_access_service_proto_rawDesc = []byte{
 	0x0a, 0x44, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x31, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69,
 	0x63, 0x65, 0x73, 0x2f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x5f, 0x75, 0x73, 0x65,
 	0x72, 0x5f, 0x61, 0x63, 0x63, 0x65, 0x73, 0x73, 0x5f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
 	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x21, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61,
-	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31,
+	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32,
 	0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x1a, 0x3d, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f,
-	0x76, 0x31, 0x31, 0x2f, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2f, 0x63, 0x75,
+	0x76, 0x31, 0x32, 0x2f, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2f, 0x63, 0x75,
 	0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x5f, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x61, 0x63, 0x63, 0x65,
 	0x73, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x1c, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x6e, 0x6e, 0x6f, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73,
@@ -322,7 +322,7 @@ var file_google_ads_googleads_v11_services_customer_user_access_service_proto_ra
 	0x74, 0x6f, 0x6d, 0x65, 0x72, 0x49, 0x64, 0x12, 0x61, 0x0a, 0x09, 0x6f, 0x70, 0x65, 0x72, 0x61,
 	0x74, 0x69, 0x6f, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x3e, 0x2e, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64,
-	0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x43,
+	0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x43,
 	0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x55, 0x73, 0x65, 0x72, 0x41, 0x63, 0x63, 0x65, 0x73,
 	0x73, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x42, 0x03, 0xe0, 0x41, 0x02, 0x52,
 	0x09, 0x6f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x85, 0x02, 0x0a, 0x1b, 0x43,
@@ -334,7 +334,7 @@ var file_google_ads_googleads_v11_services_customer_user_access_service_proto_ra
 	0x61, 0x74, 0x65, 0x4d, 0x61, 0x73, 0x6b, 0x12, 0x50, 0x0a, 0x06, 0x75, 0x70, 0x64, 0x61, 0x74,
 	0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x36, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76,
-	0x31, 0x31, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e, 0x43, 0x75, 0x73,
+	0x31, 0x32, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e, 0x43, 0x75, 0x73,
 	0x74, 0x6f, 0x6d, 0x65, 0x72, 0x55, 0x73, 0x65, 0x72, 0x41, 0x63, 0x63, 0x65, 0x73, 0x73, 0x48,
 	0x00, 0x52, 0x06, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x12, 0x4a, 0x0a, 0x06, 0x72, 0x65, 0x6d,
 	0x6f, 0x76, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x42, 0x30, 0xfa, 0x41, 0x2d, 0x0a, 0x2b,
@@ -347,7 +347,7 @@ var file_google_ads_googleads_v11_services_customer_user_access_service_proto_ra
 	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x59, 0x0a, 0x06, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74,
 	0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x41, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
 	0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31,
-	0x31, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x4d, 0x75, 0x74, 0x61, 0x74,
+	0x32, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x4d, 0x75, 0x74, 0x61, 0x74,
 	0x65, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x55, 0x73, 0x65, 0x72, 0x41, 0x63, 0x63,
 	0x65, 0x73, 0x73, 0x52, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x52, 0x06, 0x72, 0x65, 0x73, 0x75, 0x6c,
 	0x74, 0x22, 0x77, 0x0a, 0x1e, 0x4d, 0x75, 0x74, 0x61, 0x74, 0x65, 0x43, 0x75, 0x73, 0x74, 0x6f,
@@ -362,15 +362,15 @@ var file_google_ads_googleads_v11_services_customer_user_access_service_proto_ra
 	0x73, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x82, 0x02, 0x0a, 0x18, 0x4d, 0x75, 0x74,
 	0x61, 0x74, 0x65, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x55, 0x73, 0x65, 0x72, 0x41,
 	0x63, 0x63, 0x65, 0x73, 0x73, 0x12, 0x42, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61,
-	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31,
+	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32,
 	0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x4d, 0x75, 0x74, 0x61, 0x74, 0x65,
 	0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x55, 0x73, 0x65, 0x72, 0x41, 0x63, 0x63, 0x65,
 	0x73, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x43, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
-	0x2e, 0x76, 0x31, 0x31, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x4d, 0x75,
+	0x2e, 0x76, 0x31, 0x32, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x4d, 0x75,
 	0x74, 0x61, 0x74, 0x65, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x55, 0x73, 0x65, 0x72,
 	0x41, 0x63, 0x63, 0x65, 0x73, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x5d,
-	0x82, 0xd3, 0xe4, 0x93, 0x02, 0x3f, 0x22, 0x3a, 0x2f, 0x76, 0x31, 0x31, 0x2f, 0x63, 0x75, 0x73,
+	0x82, 0xd3, 0xe4, 0x93, 0x02, 0x3f, 0x22, 0x3a, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x63, 0x75, 0x73,
 	0x74, 0x6f, 0x6d, 0x65, 0x72, 0x73, 0x2f, 0x7b, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72,
 	0x5f, 0x69, 0x64, 0x3d, 0x2a, 0x7d, 0x2f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x55,
 	0x73, 0x65, 0x72, 0x41, 0x63, 0x63, 0x65, 0x73, 0x73, 0x65, 0x73, 0x3a, 0x6d, 0x75, 0x74, 0x61,
@@ -382,52 +382,52 @@ var file_google_ads_googleads_v11_services_customer_user_access_service_proto_ra
 	0x70, 0x69, 0x73, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x61, 0x75, 0x74, 0x68, 0x2f, 0x61, 0x64, 0x77,
 	0x6f, 0x72, 0x64, 0x73, 0x42, 0x8a, 0x02, 0x0a, 0x25, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64,
-	0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x42, 0x1e,
+	0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x42, 0x1e,
 	0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x55, 0x73, 0x65, 0x72, 0x41, 0x63, 0x63, 0x65,
 	0x73, 0x73, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01,
 	0x5a, 0x49, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x67, 0x6f, 0x6c, 0x61, 0x6e, 0x67, 0x2e,
 	0x6f, 0x72, 0x67, 0x2f, 0x67, 0x65, 0x6e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x61, 0x70, 0x69, 0x73, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x31, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
+	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
 	0x65, 0x73, 0x3b, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0xa2, 0x02, 0x03, 0x47, 0x41,
 	0x41, 0xaa, 0x02, 0x21, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x41, 0x64, 0x73, 0x2e, 0x47,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e, 0x56, 0x31, 0x31, 0x2e, 0x53, 0x65, 0x72,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e, 0x56, 0x31, 0x32, 0x2e, 0x53, 0x65, 0x72,
 	0x76, 0x69, 0x63, 0x65, 0x73, 0xca, 0x02, 0x21, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x5c, 0x41,
-	0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x31, 0x31,
+	0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x31, 0x32,
 	0x5c, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0xea, 0x02, 0x25, 0x47, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x3a, 0x3a, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41,
-	0x64, 0x73, 0x3a, 0x3a, 0x56, 0x31, 0x31, 0x3a, 0x3a, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+	0x64, 0x73, 0x3a, 0x3a, 0x56, 0x31, 0x32, 0x3a, 0x3a, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
 	0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
-	file_google_ads_googleads_v11_services_customer_user_access_service_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v11_services_customer_user_access_service_proto_rawDescData = file_google_ads_googleads_v11_services_customer_user_access_service_proto_rawDesc
+	file_google_ads_googleads_v12_services_customer_user_access_service_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v12_services_customer_user_access_service_proto_rawDescData = file_google_ads_googleads_v12_services_customer_user_access_service_proto_rawDesc
 )
 
-func file_google_ads_googleads_v11_services_customer_user_access_service_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v11_services_customer_user_access_service_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v11_services_customer_user_access_service_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v11_services_customer_user_access_service_proto_rawDescData)
+func file_google_ads_googleads_v12_services_customer_user_access_service_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v12_services_customer_user_access_service_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v12_services_customer_user_access_service_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v12_services_customer_user_access_service_proto_rawDescData)
 	})
-	return file_google_ads_googleads_v11_services_customer_user_access_service_proto_rawDescData
+	return file_google_ads_googleads_v12_services_customer_user_access_service_proto_rawDescData
 }
 
-var file_google_ads_googleads_v11_services_customer_user_access_service_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
-var file_google_ads_googleads_v11_services_customer_user_access_service_proto_goTypes = []interface{}{
-	(*MutateCustomerUserAccessRequest)(nil),  // 0: google.ads.googleads.v11.services.MutateCustomerUserAccessRequest
-	(*CustomerUserAccessOperation)(nil),      // 1: google.ads.googleads.v11.services.CustomerUserAccessOperation
-	(*MutateCustomerUserAccessResponse)(nil), // 2: google.ads.googleads.v11.services.MutateCustomerUserAccessResponse
-	(*MutateCustomerUserAccessResult)(nil),   // 3: google.ads.googleads.v11.services.MutateCustomerUserAccessResult
+var file_google_ads_googleads_v12_services_customer_user_access_service_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_google_ads_googleads_v12_services_customer_user_access_service_proto_goTypes = []interface{}{
+	(*MutateCustomerUserAccessRequest)(nil),  // 0: google.ads.googleads.v12.services.MutateCustomerUserAccessRequest
+	(*CustomerUserAccessOperation)(nil),      // 1: google.ads.googleads.v12.services.CustomerUserAccessOperation
+	(*MutateCustomerUserAccessResponse)(nil), // 2: google.ads.googleads.v12.services.MutateCustomerUserAccessResponse
+	(*MutateCustomerUserAccessResult)(nil),   // 3: google.ads.googleads.v12.services.MutateCustomerUserAccessResult
 	(*fieldmaskpb.FieldMask)(nil),            // 4: google.protobuf.FieldMask
-	(*resources.CustomerUserAccess)(nil),     // 5: google.ads.googleads.v11.resources.CustomerUserAccess
+	(*resources.CustomerUserAccess)(nil),     // 5: google.ads.googleads.v12.resources.CustomerUserAccess
 }
-var file_google_ads_googleads_v11_services_customer_user_access_service_proto_depIdxs = []int32{
-	1, // 0: google.ads.googleads.v11.services.MutateCustomerUserAccessRequest.operation:type_name -> google.ads.googleads.v11.services.CustomerUserAccessOperation
-	4, // 1: google.ads.googleads.v11.services.CustomerUserAccessOperation.update_mask:type_name -> google.protobuf.FieldMask
-	5, // 2: google.ads.googleads.v11.services.CustomerUserAccessOperation.update:type_name -> google.ads.googleads.v11.resources.CustomerUserAccess
-	3, // 3: google.ads.googleads.v11.services.MutateCustomerUserAccessResponse.result:type_name -> google.ads.googleads.v11.services.MutateCustomerUserAccessResult
-	0, // 4: google.ads.googleads.v11.services.CustomerUserAccessService.MutateCustomerUserAccess:input_type -> google.ads.googleads.v11.services.MutateCustomerUserAccessRequest
-	2, // 5: google.ads.googleads.v11.services.CustomerUserAccessService.MutateCustomerUserAccess:output_type -> google.ads.googleads.v11.services.MutateCustomerUserAccessResponse
+var file_google_ads_googleads_v12_services_customer_user_access_service_proto_depIdxs = []int32{
+	1, // 0: google.ads.googleads.v12.services.MutateCustomerUserAccessRequest.operation:type_name -> google.ads.googleads.v12.services.CustomerUserAccessOperation
+	4, // 1: google.ads.googleads.v12.services.CustomerUserAccessOperation.update_mask:type_name -> google.protobuf.FieldMask
+	5, // 2: google.ads.googleads.v12.services.CustomerUserAccessOperation.update:type_name -> google.ads.googleads.v12.resources.CustomerUserAccess
+	3, // 3: google.ads.googleads.v12.services.MutateCustomerUserAccessResponse.result:type_name -> google.ads.googleads.v12.services.MutateCustomerUserAccessResult
+	0, // 4: google.ads.googleads.v12.services.CustomerUserAccessService.MutateCustomerUserAccess:input_type -> google.ads.googleads.v12.services.MutateCustomerUserAccessRequest
+	2, // 5: google.ads.googleads.v12.services.CustomerUserAccessService.MutateCustomerUserAccess:output_type -> google.ads.googleads.v12.services.MutateCustomerUserAccessResponse
 	5, // [5:6] is the sub-list for method output_type
 	4, // [4:5] is the sub-list for method input_type
 	4, // [4:4] is the sub-list for extension type_name
@@ -435,13 +435,13 @@ var file_google_ads_googleads_v11_services_customer_user_access_service_proto_de
 	0, // [0:4] is the sub-list for field type_name
 }
 
-func init() { file_google_ads_googleads_v11_services_customer_user_access_service_proto_init() }
-func file_google_ads_googleads_v11_services_customer_user_access_service_proto_init() {
-	if File_google_ads_googleads_v11_services_customer_user_access_service_proto != nil {
+func init() { file_google_ads_googleads_v12_services_customer_user_access_service_proto_init() }
+func file_google_ads_googleads_v12_services_customer_user_access_service_proto_init() {
+	if File_google_ads_googleads_v12_services_customer_user_access_service_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_google_ads_googleads_v11_services_customer_user_access_service_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_services_customer_user_access_service_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*MutateCustomerUserAccessRequest); i {
 			case 0:
 				return &v.state
@@ -453,7 +453,7 @@ func file_google_ads_googleads_v11_services_customer_user_access_service_proto_i
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_services_customer_user_access_service_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_services_customer_user_access_service_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CustomerUserAccessOperation); i {
 			case 0:
 				return &v.state
@@ -465,7 +465,7 @@ func file_google_ads_googleads_v11_services_customer_user_access_service_proto_i
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_services_customer_user_access_service_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_services_customer_user_access_service_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*MutateCustomerUserAccessResponse); i {
 			case 0:
 				return &v.state
@@ -477,7 +477,7 @@ func file_google_ads_googleads_v11_services_customer_user_access_service_proto_i
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_services_customer_user_access_service_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_services_customer_user_access_service_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*MutateCustomerUserAccessResult); i {
 			case 0:
 				return &v.state
@@ -490,7 +490,7 @@ func file_google_ads_googleads_v11_services_customer_user_access_service_proto_i
 			}
 		}
 	}
-	file_google_ads_googleads_v11_services_customer_user_access_service_proto_msgTypes[1].OneofWrappers = []interface{}{
+	file_google_ads_googleads_v12_services_customer_user_access_service_proto_msgTypes[1].OneofWrappers = []interface{}{
 		(*CustomerUserAccessOperation_Update)(nil),
 		(*CustomerUserAccessOperation_Remove)(nil),
 	}
@@ -498,18 +498,18 @@ func file_google_ads_googleads_v11_services_customer_user_access_service_proto_i
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_google_ads_googleads_v11_services_customer_user_access_service_proto_rawDesc,
+			RawDescriptor: file_google_ads_googleads_v12_services_customer_user_access_service_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_google_ads_googleads_v11_services_customer_user_access_service_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v11_services_customer_user_access_service_proto_depIdxs,
-		MessageInfos:      file_google_ads_googleads_v11_services_customer_user_access_service_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v12_services_customer_user_access_service_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v12_services_customer_user_access_service_proto_depIdxs,
+		MessageInfos:      file_google_ads_googleads_v12_services_customer_user_access_service_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v11_services_customer_user_access_service_proto = out.File
-	file_google_ads_googleads_v11_services_customer_user_access_service_proto_rawDesc = nil
-	file_google_ads_googleads_v11_services_customer_user_access_service_proto_goTypes = nil
-	file_google_ads_googleads_v11_services_customer_user_access_service_proto_depIdxs = nil
+	File_google_ads_googleads_v12_services_customer_user_access_service_proto = out.File
+	file_google_ads_googleads_v12_services_customer_user_access_service_proto_rawDesc = nil
+	file_google_ads_googleads_v12_services_customer_user_access_service_proto_goTypes = nil
+	file_google_ads_googleads_v12_services_customer_user_access_service_proto_depIdxs = nil
 }

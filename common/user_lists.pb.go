@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.28.1
 // 	protoc        v3.21.5
-// source: google/ads/googleads/v11/common/user_lists.proto
+// source: google/ads/googleads/v12/common/user_lists.proto
 
 package common
 
@@ -49,7 +49,7 @@ type SimilarUserListInfo struct {
 func (x *SimilarUserListInfo) Reset() {
 	*x = SimilarUserListInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[0]
+		mi := &file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -62,7 +62,7 @@ func (x *SimilarUserListInfo) String() string {
 func (*SimilarUserListInfo) ProtoMessage() {}
 
 func (x *SimilarUserListInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -75,7 +75,7 @@ func (x *SimilarUserListInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SimilarUserListInfo.ProtoReflect.Descriptor instead.
 func (*SimilarUserListInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_user_lists_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v12_common_user_lists_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *SimilarUserListInfo) GetSeedUserList() string {
@@ -105,16 +105,16 @@ type CrmBasedUserListInfo struct {
 	// Matching key type of the list.
 	// Mixed data types are not allowed on the same list.
 	// This field is required for an ADD operation.
-	UploadKeyType enums.CustomerMatchUploadKeyTypeEnum_CustomerMatchUploadKeyType `protobuf:"varint,2,opt,name=upload_key_type,json=uploadKeyType,proto3,enum=google.ads.googleads.v11.enums.CustomerMatchUploadKeyTypeEnum_CustomerMatchUploadKeyType" json:"upload_key_type,omitempty"`
+	UploadKeyType enums.CustomerMatchUploadKeyTypeEnum_CustomerMatchUploadKeyType `protobuf:"varint,2,opt,name=upload_key_type,json=uploadKeyType,proto3,enum=google.ads.googleads.v12.enums.CustomerMatchUploadKeyTypeEnum_CustomerMatchUploadKeyType" json:"upload_key_type,omitempty"`
 	// Data source of the list. Default value is FIRST_PARTY.
 	// Only customers on the allow-list can create third-party sourced CRM lists.
-	DataSourceType enums.UserListCrmDataSourceTypeEnum_UserListCrmDataSourceType `protobuf:"varint,3,opt,name=data_source_type,json=dataSourceType,proto3,enum=google.ads.googleads.v11.enums.UserListCrmDataSourceTypeEnum_UserListCrmDataSourceType" json:"data_source_type,omitempty"`
+	DataSourceType enums.UserListCrmDataSourceTypeEnum_UserListCrmDataSourceType `protobuf:"varint,3,opt,name=data_source_type,json=dataSourceType,proto3,enum=google.ads.googleads.v12.enums.UserListCrmDataSourceTypeEnum_UserListCrmDataSourceType" json:"data_source_type,omitempty"`
 }
 
 func (x *CrmBasedUserListInfo) Reset() {
 	*x = CrmBasedUserListInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[1]
+		mi := &file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -127,7 +127,7 @@ func (x *CrmBasedUserListInfo) String() string {
 func (*CrmBasedUserListInfo) ProtoMessage() {}
 
 func (x *CrmBasedUserListInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -140,7 +140,7 @@ func (x *CrmBasedUserListInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CrmBasedUserListInfo.ProtoReflect.Descriptor instead.
 func (*CrmBasedUserListInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_user_lists_proto_rawDescGZIP(), []int{1}
+	return file_google_ads_googleads_v12_common_user_lists_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *CrmBasedUserListInfo) GetAppId() string {
@@ -179,7 +179,7 @@ type UserListRuleInfo struct {
 	//
 	// Currently AND of ORs (conjunctive normal form) is only supported for
 	// ExpressionRuleUserList.
-	RuleType enums.UserListRuleTypeEnum_UserListRuleType `protobuf:"varint,1,opt,name=rule_type,json=ruleType,proto3,enum=google.ads.googleads.v11.enums.UserListRuleTypeEnum_UserListRuleType" json:"rule_type,omitempty"`
+	RuleType enums.UserListRuleTypeEnum_UserListRuleType `protobuf:"varint,1,opt,name=rule_type,json=ruleType,proto3,enum=google.ads.googleads.v12.enums.UserListRuleTypeEnum_UserListRuleType" json:"rule_type,omitempty"`
 	// List of rule item groups that defines this rule.
 	// Rule item groups are grouped together based on rule_type.
 	RuleItemGroups []*UserListRuleItemGroupInfo `protobuf:"bytes,2,rep,name=rule_item_groups,json=ruleItemGroups,proto3" json:"rule_item_groups,omitempty"`
@@ -188,7 +188,7 @@ type UserListRuleInfo struct {
 func (x *UserListRuleInfo) Reset() {
 	*x = UserListRuleInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[2]
+		mi := &file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -201,7 +201,7 @@ func (x *UserListRuleInfo) String() string {
 func (*UserListRuleInfo) ProtoMessage() {}
 
 func (x *UserListRuleInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[2]
+	mi := &file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -214,7 +214,7 @@ func (x *UserListRuleInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UserListRuleInfo.ProtoReflect.Descriptor instead.
 func (*UserListRuleInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_user_lists_proto_rawDescGZIP(), []int{2}
+	return file_google_ads_googleads_v12_common_user_lists_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *UserListRuleInfo) GetRuleType() enums.UserListRuleTypeEnum_UserListRuleType {
@@ -244,7 +244,7 @@ type UserListRuleItemGroupInfo struct {
 func (x *UserListRuleItemGroupInfo) Reset() {
 	*x = UserListRuleItemGroupInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[3]
+		mi := &file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -257,7 +257,7 @@ func (x *UserListRuleItemGroupInfo) String() string {
 func (*UserListRuleItemGroupInfo) ProtoMessage() {}
 
 func (x *UserListRuleItemGroupInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[3]
+	mi := &file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -270,7 +270,7 @@ func (x *UserListRuleItemGroupInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UserListRuleItemGroupInfo.ProtoReflect.Descriptor instead.
 func (*UserListRuleItemGroupInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_user_lists_proto_rawDescGZIP(), []int{3}
+	return file_google_ads_googleads_v12_common_user_lists_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *UserListRuleItemGroupInfo) GetRuleItems() []*UserListRuleItemInfo {
@@ -307,7 +307,7 @@ type UserListRuleItemInfo struct {
 func (x *UserListRuleItemInfo) Reset() {
 	*x = UserListRuleItemInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[4]
+		mi := &file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -320,7 +320,7 @@ func (x *UserListRuleItemInfo) String() string {
 func (*UserListRuleItemInfo) ProtoMessage() {}
 
 func (x *UserListRuleItemInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[4]
+	mi := &file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -333,7 +333,7 @@ func (x *UserListRuleItemInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UserListRuleItemInfo.ProtoReflect.Descriptor instead.
 func (*UserListRuleItemInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_user_lists_proto_rawDescGZIP(), []int{4}
+	return file_google_ads_googleads_v12_common_user_lists_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *UserListRuleItemInfo) GetName() string {
@@ -405,7 +405,7 @@ type UserListDateRuleItemInfo struct {
 	// Date comparison operator.
 	// This field is required and must be populated when creating new date
 	// rule item.
-	Operator enums.UserListDateRuleItemOperatorEnum_UserListDateRuleItemOperator `protobuf:"varint,1,opt,name=operator,proto3,enum=google.ads.googleads.v11.enums.UserListDateRuleItemOperatorEnum_UserListDateRuleItemOperator" json:"operator,omitempty"`
+	Operator enums.UserListDateRuleItemOperatorEnum_UserListDateRuleItemOperator `protobuf:"varint,1,opt,name=operator,proto3,enum=google.ads.googleads.v12.enums.UserListDateRuleItemOperatorEnum_UserListDateRuleItemOperator" json:"operator,omitempty"`
 	// String representing date value to be compared with the rule variable.
 	// Supported date format is YYYY-MM-DD.
 	// Times are reported in the customer's time zone.
@@ -419,7 +419,7 @@ type UserListDateRuleItemInfo struct {
 func (x *UserListDateRuleItemInfo) Reset() {
 	*x = UserListDateRuleItemInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[5]
+		mi := &file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -432,7 +432,7 @@ func (x *UserListDateRuleItemInfo) String() string {
 func (*UserListDateRuleItemInfo) ProtoMessage() {}
 
 func (x *UserListDateRuleItemInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[5]
+	mi := &file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -445,7 +445,7 @@ func (x *UserListDateRuleItemInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UserListDateRuleItemInfo.ProtoReflect.Descriptor instead.
 func (*UserListDateRuleItemInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_user_lists_proto_rawDescGZIP(), []int{5}
+	return file_google_ads_googleads_v12_common_user_lists_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *UserListDateRuleItemInfo) GetOperator() enums.UserListDateRuleItemOperatorEnum_UserListDateRuleItemOperator {
@@ -478,7 +478,7 @@ type UserListNumberRuleItemInfo struct {
 	// Number comparison operator.
 	// This field is required and must be populated when creating a new number
 	// rule item.
-	Operator enums.UserListNumberRuleItemOperatorEnum_UserListNumberRuleItemOperator `protobuf:"varint,1,opt,name=operator,proto3,enum=google.ads.googleads.v11.enums.UserListNumberRuleItemOperatorEnum_UserListNumberRuleItemOperator" json:"operator,omitempty"`
+	Operator enums.UserListNumberRuleItemOperatorEnum_UserListNumberRuleItemOperator `protobuf:"varint,1,opt,name=operator,proto3,enum=google.ads.googleads.v12.enums.UserListNumberRuleItemOperatorEnum_UserListNumberRuleItemOperator" json:"operator,omitempty"`
 	// Number value to be compared with the variable.
 	// This field is required and must be populated when creating a new number
 	// rule item.
@@ -488,7 +488,7 @@ type UserListNumberRuleItemInfo struct {
 func (x *UserListNumberRuleItemInfo) Reset() {
 	*x = UserListNumberRuleItemInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[6]
+		mi := &file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -501,7 +501,7 @@ func (x *UserListNumberRuleItemInfo) String() string {
 func (*UserListNumberRuleItemInfo) ProtoMessage() {}
 
 func (x *UserListNumberRuleItemInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[6]
+	mi := &file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -514,7 +514,7 @@ func (x *UserListNumberRuleItemInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UserListNumberRuleItemInfo.ProtoReflect.Descriptor instead.
 func (*UserListNumberRuleItemInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_user_lists_proto_rawDescGZIP(), []int{6}
+	return file_google_ads_googleads_v12_common_user_lists_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *UserListNumberRuleItemInfo) GetOperator() enums.UserListNumberRuleItemOperatorEnum_UserListNumberRuleItemOperator {
@@ -540,7 +540,7 @@ type UserListStringRuleItemInfo struct {
 	// String comparison operator.
 	// This field is required and must be populated when creating a new string
 	// rule item.
-	Operator enums.UserListStringRuleItemOperatorEnum_UserListStringRuleItemOperator `protobuf:"varint,1,opt,name=operator,proto3,enum=google.ads.googleads.v11.enums.UserListStringRuleItemOperatorEnum_UserListStringRuleItemOperator" json:"operator,omitempty"`
+	Operator enums.UserListStringRuleItemOperatorEnum_UserListStringRuleItemOperator `protobuf:"varint,1,opt,name=operator,proto3,enum=google.ads.googleads.v12.enums.UserListStringRuleItemOperatorEnum_UserListStringRuleItemOperator" json:"operator,omitempty"`
 	// The right hand side of the string rule item. For URLs or referrer URLs,
 	// the value can not contain illegal URL chars such as newlines, quotes,
 	// tabs, or parentheses. This field is required and must be populated when
@@ -551,7 +551,7 @@ type UserListStringRuleItemInfo struct {
 func (x *UserListStringRuleItemInfo) Reset() {
 	*x = UserListStringRuleItemInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[7]
+		mi := &file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -564,7 +564,7 @@ func (x *UserListStringRuleItemInfo) String() string {
 func (*UserListStringRuleItemInfo) ProtoMessage() {}
 
 func (x *UserListStringRuleItemInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[7]
+	mi := &file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -577,7 +577,7 @@ func (x *UserListStringRuleItemInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UserListStringRuleItemInfo.ProtoReflect.Descriptor instead.
 func (*UserListStringRuleItemInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_user_lists_proto_rawDescGZIP(), []int{7}
+	return file_google_ads_googleads_v12_common_user_lists_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *UserListStringRuleItemInfo) GetOperator() enums.UserListStringRuleItemOperatorEnum_UserListStringRuleItemOperator {
@@ -613,13 +613,13 @@ type CombinedRuleUserListInfo struct {
 	// Operator to connect the two operands.
 	//
 	// Required for creating a combined rule user list.
-	RuleOperator enums.UserListCombinedRuleOperatorEnum_UserListCombinedRuleOperator `protobuf:"varint,3,opt,name=rule_operator,json=ruleOperator,proto3,enum=google.ads.googleads.v11.enums.UserListCombinedRuleOperatorEnum_UserListCombinedRuleOperator" json:"rule_operator,omitempty"`
+	RuleOperator enums.UserListCombinedRuleOperatorEnum_UserListCombinedRuleOperator `protobuf:"varint,3,opt,name=rule_operator,json=ruleOperator,proto3,enum=google.ads.googleads.v12.enums.UserListCombinedRuleOperatorEnum_UserListCombinedRuleOperator" json:"rule_operator,omitempty"`
 }
 
 func (x *CombinedRuleUserListInfo) Reset() {
 	*x = CombinedRuleUserListInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[8]
+		mi := &file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -632,7 +632,7 @@ func (x *CombinedRuleUserListInfo) String() string {
 func (*CombinedRuleUserListInfo) ProtoMessage() {}
 
 func (x *CombinedRuleUserListInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[8]
+	mi := &file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -645,7 +645,7 @@ func (x *CombinedRuleUserListInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CombinedRuleUserListInfo.ProtoReflect.Descriptor instead.
 func (*CombinedRuleUserListInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_user_lists_proto_rawDescGZIP(), []int{8}
+	return file_google_ads_googleads_v12_common_user_lists_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *CombinedRuleUserListInfo) GetLeftOperand() *UserListRuleInfo {
@@ -687,7 +687,7 @@ type ExpressionRuleUserListInfo struct {
 func (x *ExpressionRuleUserListInfo) Reset() {
 	*x = ExpressionRuleUserListInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[9]
+		mi := &file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -700,7 +700,7 @@ func (x *ExpressionRuleUserListInfo) String() string {
 func (*ExpressionRuleUserListInfo) ProtoMessage() {}
 
 func (x *ExpressionRuleUserListInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[9]
+	mi := &file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -713,7 +713,7 @@ func (x *ExpressionRuleUserListInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExpressionRuleUserListInfo.ProtoReflect.Descriptor instead.
 func (*ExpressionRuleUserListInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_user_lists_proto_rawDescGZIP(), []int{9}
+	return file_google_ads_googleads_v12_common_user_lists_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *ExpressionRuleUserListInfo) GetRule() *UserListRuleInfo {
@@ -739,7 +739,7 @@ type FlexibleRuleOperandInfo struct {
 func (x *FlexibleRuleOperandInfo) Reset() {
 	*x = FlexibleRuleOperandInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[10]
+		mi := &file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -752,7 +752,7 @@ func (x *FlexibleRuleOperandInfo) String() string {
 func (*FlexibleRuleOperandInfo) ProtoMessage() {}
 
 func (x *FlexibleRuleOperandInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[10]
+	mi := &file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -765,7 +765,7 @@ func (x *FlexibleRuleOperandInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FlexibleRuleOperandInfo.ProtoReflect.Descriptor instead.
 func (*FlexibleRuleOperandInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_user_lists_proto_rawDescGZIP(), []int{10}
+	return file_google_ads_googleads_v12_common_user_lists_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *FlexibleRuleOperandInfo) GetRule() *UserListRuleInfo {
@@ -789,7 +789,7 @@ type FlexibleRuleUserListInfo struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Operator that defines how the inclusive operands are combined.
-	InclusiveRuleOperator enums.UserListFlexibleRuleOperatorEnum_UserListFlexibleRuleOperator `protobuf:"varint,1,opt,name=inclusive_rule_operator,json=inclusiveRuleOperator,proto3,enum=google.ads.googleads.v11.enums.UserListFlexibleRuleOperatorEnum_UserListFlexibleRuleOperator" json:"inclusive_rule_operator,omitempty"`
+	InclusiveRuleOperator enums.UserListFlexibleRuleOperatorEnum_UserListFlexibleRuleOperator `protobuf:"varint,1,opt,name=inclusive_rule_operator,json=inclusiveRuleOperator,proto3,enum=google.ads.googleads.v12.enums.UserListFlexibleRuleOperatorEnum_UserListFlexibleRuleOperator" json:"inclusive_rule_operator,omitempty"`
 	// Actions that are located on the inclusive side.
 	// These are joined together by either AND/OR as specified by the
 	// inclusive_rule_operator.
@@ -802,7 +802,7 @@ type FlexibleRuleUserListInfo struct {
 func (x *FlexibleRuleUserListInfo) Reset() {
 	*x = FlexibleRuleUserListInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[11]
+		mi := &file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -815,7 +815,7 @@ func (x *FlexibleRuleUserListInfo) String() string {
 func (*FlexibleRuleUserListInfo) ProtoMessage() {}
 
 func (x *FlexibleRuleUserListInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[11]
+	mi := &file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -828,7 +828,7 @@ func (x *FlexibleRuleUserListInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FlexibleRuleUserListInfo.ProtoReflect.Descriptor instead.
 func (*FlexibleRuleUserListInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_user_lists_proto_rawDescGZIP(), []int{11}
+	return file_google_ads_googleads_v12_common_user_lists_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *FlexibleRuleUserListInfo) GetInclusiveRuleOperator() enums.UserListFlexibleRuleOperatorEnum_UserListFlexibleRuleOperator {
@@ -866,7 +866,7 @@ type RuleBasedUserListInfo struct {
 	// list's membership duration and the date when the remarketing tag is added.
 	// The status will be updated to FINISHED once request is processed, or FAILED
 	// if the request fails.
-	PrepopulationStatus enums.UserListPrepopulationStatusEnum_UserListPrepopulationStatus `protobuf:"varint,1,opt,name=prepopulation_status,json=prepopulationStatus,proto3,enum=google.ads.googleads.v11.enums.UserListPrepopulationStatusEnum_UserListPrepopulationStatus" json:"prepopulation_status,omitempty"`
+	PrepopulationStatus enums.UserListPrepopulationStatusEnum_UserListPrepopulationStatus `protobuf:"varint,1,opt,name=prepopulation_status,json=prepopulationStatus,proto3,enum=google.ads.googleads.v12.enums.UserListPrepopulationStatusEnum_UserListPrepopulationStatus" json:"prepopulation_status,omitempty"`
 	// Flexible rule representation of visitors with one or multiple actions.
 	FlexibleRuleUserList *FlexibleRuleUserListInfo `protobuf:"bytes,5,opt,name=flexible_rule_user_list,json=flexibleRuleUserList,proto3" json:"flexible_rule_user_list,omitempty"`
 	// Subtypes of rule based user lists.
@@ -880,7 +880,7 @@ type RuleBasedUserListInfo struct {
 func (x *RuleBasedUserListInfo) Reset() {
 	*x = RuleBasedUserListInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[12]
+		mi := &file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -893,7 +893,7 @@ func (x *RuleBasedUserListInfo) String() string {
 func (*RuleBasedUserListInfo) ProtoMessage() {}
 
 func (x *RuleBasedUserListInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[12]
+	mi := &file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -906,7 +906,7 @@ func (x *RuleBasedUserListInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RuleBasedUserListInfo.ProtoReflect.Descriptor instead.
 func (*RuleBasedUserListInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_user_lists_proto_rawDescGZIP(), []int{12}
+	return file_google_ads_googleads_v12_common_user_lists_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *RuleBasedUserListInfo) GetPrepopulationStatus() enums.UserListPrepopulationStatusEnum_UserListPrepopulationStatus {
@@ -982,7 +982,7 @@ type LogicalUserListInfo struct {
 func (x *LogicalUserListInfo) Reset() {
 	*x = LogicalUserListInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[13]
+		mi := &file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -995,7 +995,7 @@ func (x *LogicalUserListInfo) String() string {
 func (*LogicalUserListInfo) ProtoMessage() {}
 
 func (x *LogicalUserListInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[13]
+	mi := &file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1008,7 +1008,7 @@ func (x *LogicalUserListInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LogicalUserListInfo.ProtoReflect.Descriptor instead.
 func (*LogicalUserListInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_user_lists_proto_rawDescGZIP(), []int{13}
+	return file_google_ads_googleads_v12_common_user_lists_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *LogicalUserListInfo) GetRules() []*UserListLogicalRuleInfo {
@@ -1026,7 +1026,7 @@ type UserListLogicalRuleInfo struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The logical operator of the rule.
-	Operator enums.UserListLogicalRuleOperatorEnum_UserListLogicalRuleOperator `protobuf:"varint,1,opt,name=operator,proto3,enum=google.ads.googleads.v11.enums.UserListLogicalRuleOperatorEnum_UserListLogicalRuleOperator" json:"operator,omitempty"`
+	Operator enums.UserListLogicalRuleOperatorEnum_UserListLogicalRuleOperator `protobuf:"varint,1,opt,name=operator,proto3,enum=google.ads.googleads.v12.enums.UserListLogicalRuleOperatorEnum_UserListLogicalRuleOperator" json:"operator,omitempty"`
 	// The list of operands of the rule.
 	RuleOperands []*LogicalUserListOperandInfo `protobuf:"bytes,2,rep,name=rule_operands,json=ruleOperands,proto3" json:"rule_operands,omitempty"`
 }
@@ -1034,7 +1034,7 @@ type UserListLogicalRuleInfo struct {
 func (x *UserListLogicalRuleInfo) Reset() {
 	*x = UserListLogicalRuleInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[14]
+		mi := &file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1047,7 +1047,7 @@ func (x *UserListLogicalRuleInfo) String() string {
 func (*UserListLogicalRuleInfo) ProtoMessage() {}
 
 func (x *UserListLogicalRuleInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[14]
+	mi := &file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1060,7 +1060,7 @@ func (x *UserListLogicalRuleInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UserListLogicalRuleInfo.ProtoReflect.Descriptor instead.
 func (*UserListLogicalRuleInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_user_lists_proto_rawDescGZIP(), []int{14}
+	return file_google_ads_googleads_v12_common_user_lists_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *UserListLogicalRuleInfo) GetOperator() enums.UserListLogicalRuleOperatorEnum_UserListLogicalRuleOperator {
@@ -1090,7 +1090,7 @@ type LogicalUserListOperandInfo struct {
 func (x *LogicalUserListOperandInfo) Reset() {
 	*x = LogicalUserListOperandInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[15]
+		mi := &file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1103,7 +1103,7 @@ func (x *LogicalUserListOperandInfo) String() string {
 func (*LogicalUserListOperandInfo) ProtoMessage() {}
 
 func (x *LogicalUserListOperandInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[15]
+	mi := &file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1116,7 +1116,7 @@ func (x *LogicalUserListOperandInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LogicalUserListOperandInfo.ProtoReflect.Descriptor instead.
 func (*LogicalUserListOperandInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_user_lists_proto_rawDescGZIP(), []int{15}
+	return file_google_ads_googleads_v12_common_user_lists_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *LogicalUserListOperandInfo) GetUserList() string {
@@ -1139,7 +1139,7 @@ type BasicUserListInfo struct {
 func (x *BasicUserListInfo) Reset() {
 	*x = BasicUserListInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[16]
+		mi := &file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1152,7 +1152,7 @@ func (x *BasicUserListInfo) String() string {
 func (*BasicUserListInfo) ProtoMessage() {}
 
 func (x *BasicUserListInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[16]
+	mi := &file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1165,7 +1165,7 @@ func (x *BasicUserListInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BasicUserListInfo.ProtoReflect.Descriptor instead.
 func (*BasicUserListInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_user_lists_proto_rawDescGZIP(), []int{16}
+	return file_google_ads_googleads_v12_common_user_lists_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *BasicUserListInfo) GetActions() []*UserListActionInfo {
@@ -1192,7 +1192,7 @@ type UserListActionInfo struct {
 func (x *UserListActionInfo) Reset() {
 	*x = UserListActionInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[17]
+		mi := &file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[17]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1205,7 +1205,7 @@ func (x *UserListActionInfo) String() string {
 func (*UserListActionInfo) ProtoMessage() {}
 
 func (x *UserListActionInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[17]
+	mi := &file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[17]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1218,7 +1218,7 @@ func (x *UserListActionInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UserListActionInfo.ProtoReflect.Descriptor instead.
 func (*UserListActionInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v11_common_user_lists_proto_rawDescGZIP(), []int{17}
+	return file_google_ads_googleads_v12_common_user_lists_proto_rawDescGZIP(), []int{17}
 }
 
 func (m *UserListActionInfo) GetUserListAction() isUserListActionInfo_UserListAction {
@@ -1260,55 +1260,55 @@ func (*UserListActionInfo_ConversionAction) isUserListActionInfo_UserListAction(
 
 func (*UserListActionInfo_RemarketingAction) isUserListActionInfo_UserListAction() {}
 
-var File_google_ads_googleads_v11_common_user_lists_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v12_common_user_lists_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v11_common_user_lists_proto_rawDesc = []byte{
+var file_google_ads_googleads_v12_common_user_lists_proto_rawDesc = []byte{
 	0x0a, 0x30, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x31, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
 	0x6e, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x6c, 0x69, 0x73, 0x74, 0x73, 0x2e, 0x70, 0x72, 0x6f,
 	0x74, 0x6f, 0x12, 0x1f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x63, 0x6f, 0x6d,
 	0x6d, 0x6f, 0x6e, 0x1a, 0x43, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x31, 0x2f, 0x65, 0x6e,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x65, 0x6e,
 	0x75, 0x6d, 0x73, 0x2f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x5f, 0x6d, 0x61, 0x74,
 	0x63, 0x68, 0x5f, 0x75, 0x70, 0x6c, 0x6f, 0x61, 0x64, 0x5f, 0x6b, 0x65, 0x79, 0x5f, 0x74, 0x79,
 	0x70, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x45, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76,
-	0x31, 0x31, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x6c, 0x69,
+	0x31, 0x32, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x6c, 0x69,
 	0x73, 0x74, 0x5f, 0x63, 0x6f, 0x6d, 0x62, 0x69, 0x6e, 0x65, 0x64, 0x5f, 0x72, 0x75, 0x6c, 0x65,
 	0x5f, 0x6f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x6f, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a,
 	0x43, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x31, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f,
+	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f,
 	0x75, 0x73, 0x65, 0x72, 0x5f, 0x6c, 0x69, 0x73, 0x74, 0x5f, 0x63, 0x72, 0x6d, 0x5f, 0x64, 0x61,
 	0x74, 0x61, 0x5f, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x2e, 0x70,
 	0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x46, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73,
-	0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x31, 0x2f, 0x65,
+	0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x65,
 	0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x6c, 0x69, 0x73, 0x74, 0x5f, 0x64,
 	0x61, 0x74, 0x65, 0x5f, 0x72, 0x75, 0x6c, 0x65, 0x5f, 0x69, 0x74, 0x65, 0x6d, 0x5f, 0x6f, 0x70,
 	0x65, 0x72, 0x61, 0x74, 0x6f, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x45, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x64, 0x73, 0x2f, 0x76, 0x31, 0x31, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x75, 0x73, 0x65,
+	0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x75, 0x73, 0x65,
 	0x72, 0x5f, 0x6c, 0x69, 0x73, 0x74, 0x5f, 0x66, 0x6c, 0x65, 0x78, 0x69, 0x62, 0x6c, 0x65, 0x5f,
 	0x72, 0x75, 0x6c, 0x65, 0x5f, 0x6f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x6f, 0x72, 0x2e, 0x70, 0x72,
 	0x6f, 0x74, 0x6f, 0x1a, 0x44, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x31, 0x2f, 0x65, 0x6e,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x65, 0x6e,
 	0x75, 0x6d, 0x73, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x6c, 0x69, 0x73, 0x74, 0x5f, 0x6c, 0x6f,
 	0x67, 0x69, 0x63, 0x61, 0x6c, 0x5f, 0x72, 0x75, 0x6c, 0x65, 0x5f, 0x6f, 0x70, 0x65, 0x72, 0x61,
 	0x74, 0x6f, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x48, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f,
-	0x76, 0x31, 0x31, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x6c,
+	0x76, 0x31, 0x32, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x6c,
 	0x69, 0x73, 0x74, 0x5f, 0x6e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x5f, 0x72, 0x75, 0x6c, 0x65, 0x5f,
 	0x69, 0x74, 0x65, 0x6d, 0x5f, 0x6f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x6f, 0x72, 0x2e, 0x70, 0x72,
 	0x6f, 0x74, 0x6f, 0x1a, 0x43, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x31, 0x2f, 0x65, 0x6e,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x65, 0x6e,
 	0x75, 0x6d, 0x73, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x6c, 0x69, 0x73, 0x74, 0x5f, 0x70, 0x72,
 	0x65, 0x70, 0x6f, 0x70, 0x75, 0x6c, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x73, 0x74, 0x61, 0x74,
 	0x75, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x38, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76,
-	0x31, 0x31, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x6c, 0x69,
+	0x31, 0x32, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x6c, 0x69,
 	0x73, 0x74, 0x5f, 0x72, 0x75, 0x6c, 0x65, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x2e, 0x70, 0x72, 0x6f,
 	0x74, 0x6f, 0x1a, 0x48, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x31, 0x2f, 0x65, 0x6e, 0x75,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x65, 0x6e, 0x75,
 	0x6d, 0x73, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x6c, 0x69, 0x73, 0x74, 0x5f, 0x73, 0x74, 0x72,
 	0x69, 0x6e, 0x67, 0x5f, 0x72, 0x75, 0x6c, 0x65, 0x5f, 0x69, 0x74, 0x65, 0x6d, 0x5f, 0x6f, 0x70,
 	0x65, 0x72, 0x61, 0x74, 0x6f, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x53, 0x0a, 0x13,
@@ -1323,7 +1323,7 @@ var file_google_ads_googleads_v11_common_user_lists_proto_rawDesc = []byte{
 	0x70, 0x49, 0x64, 0x88, 0x01, 0x01, 0x12, 0x81, 0x01, 0x0a, 0x0f, 0x75, 0x70, 0x6c, 0x6f, 0x61,
 	0x64, 0x5f, 0x6b, 0x65, 0x79, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0e,
 	0x32, 0x59, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d,
+	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d,
 	0x73, 0x2e, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x4d, 0x61, 0x74, 0x63, 0x68, 0x55,
 	0x70, 0x6c, 0x6f, 0x61, 0x64, 0x4b, 0x65, 0x79, 0x54, 0x79, 0x70, 0x65, 0x45, 0x6e, 0x75, 0x6d,
 	0x2e, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x4d, 0x61, 0x74, 0x63, 0x68, 0x55, 0x70,
@@ -1331,7 +1331,7 @@ var file_google_ads_googleads_v11_common_user_lists_proto_rawDesc = []byte{
 	0x6f, 0x61, 0x64, 0x4b, 0x65, 0x79, 0x54, 0x79, 0x70, 0x65, 0x12, 0x81, 0x01, 0x0a, 0x10, 0x64,
 	0x61, 0x74, 0x61, 0x5f, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x18,
 	0x03, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x57, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61,
-	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31,
+	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32,
 	0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x43,
 	0x72, 0x6d, 0x44, 0x61, 0x74, 0x61, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x54, 0x79, 0x70, 0x65,
 	0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x43, 0x72, 0x6d,
@@ -1341,14 +1341,14 @@ var file_google_ads_googleads_v11_common_user_lists_proto_rawDesc = []byte{
 	0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x75, 0x6c, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x62,
 	0x0a, 0x09, 0x72, 0x75, 0x6c, 0x65, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28,
 	0x0e, 0x32, 0x45, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x65, 0x6e, 0x75,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x65, 0x6e, 0x75,
 	0x6d, 0x73, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x75, 0x6c, 0x65, 0x54,
 	0x79, 0x70, 0x65, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74,
 	0x52, 0x75, 0x6c, 0x65, 0x54, 0x79, 0x70, 0x65, 0x52, 0x08, 0x72, 0x75, 0x6c, 0x65, 0x54, 0x79,
 	0x70, 0x65, 0x12, 0x64, 0x0a, 0x10, 0x72, 0x75, 0x6c, 0x65, 0x5f, 0x69, 0x74, 0x65, 0x6d, 0x5f,
 	0x67, 0x72, 0x6f, 0x75, 0x70, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x3a, 0x2e, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x55,
+	0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x55,
 	0x73, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x75, 0x6c, 0x65, 0x49, 0x74, 0x65, 0x6d, 0x47,
 	0x72, 0x6f, 0x75, 0x70, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x0e, 0x72, 0x75, 0x6c, 0x65, 0x49, 0x74,
 	0x65, 0x6d, 0x47, 0x72, 0x6f, 0x75, 0x70, 0x73, 0x22, 0x71, 0x0a, 0x19, 0x55, 0x73, 0x65, 0x72,
@@ -1356,7 +1356,7 @@ var file_google_ads_googleads_v11_common_user_lists_proto_rawDesc = []byte{
 	0x70, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x54, 0x0a, 0x0a, 0x72, 0x75, 0x6c, 0x65, 0x5f, 0x69, 0x74,
 	0x65, 0x6d, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x35, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
-	0x2e, 0x76, 0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x55, 0x73, 0x65, 0x72,
+	0x2e, 0x76, 0x31, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x55, 0x73, 0x65, 0x72,
 	0x4c, 0x69, 0x73, 0x74, 0x52, 0x75, 0x6c, 0x65, 0x49, 0x74, 0x65, 0x6d, 0x49, 0x6e, 0x66, 0x6f,
 	0x52, 0x09, 0x72, 0x75, 0x6c, 0x65, 0x49, 0x74, 0x65, 0x6d, 0x73, 0x22, 0xfa, 0x02, 0x0a, 0x14,
 	0x55, 0x73, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x75, 0x6c, 0x65, 0x49, 0x74, 0x65, 0x6d,
@@ -1365,20 +1365,20 @@ var file_google_ads_googleads_v11_common_user_lists_proto_rawDesc = []byte{
 	0x10, 0x6e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x5f, 0x72, 0x75, 0x6c, 0x65, 0x5f, 0x69, 0x74, 0x65,
 	0x6d, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x3b, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76,
-	0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x4c, 0x69,
+	0x31, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x4c, 0x69,
 	0x73, 0x74, 0x4e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x52, 0x75, 0x6c, 0x65, 0x49, 0x74, 0x65, 0x6d,
 	0x49, 0x6e, 0x66, 0x6f, 0x48, 0x00, 0x52, 0x0e, 0x6e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x52, 0x75,
 	0x6c, 0x65, 0x49, 0x74, 0x65, 0x6d, 0x12, 0x67, 0x0a, 0x10, 0x73, 0x74, 0x72, 0x69, 0x6e, 0x67,
 	0x5f, 0x72, 0x75, 0x6c, 0x65, 0x5f, 0x69, 0x74, 0x65, 0x6d, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b,
 	0x32, 0x3b, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d,
+	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d,
 	0x6f, 0x6e, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x53, 0x74, 0x72, 0x69, 0x6e,
 	0x67, 0x52, 0x75, 0x6c, 0x65, 0x49, 0x74, 0x65, 0x6d, 0x49, 0x6e, 0x66, 0x6f, 0x48, 0x00, 0x52,
 	0x0e, 0x73, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x52, 0x75, 0x6c, 0x65, 0x49, 0x74, 0x65, 0x6d, 0x12,
 	0x61, 0x0a, 0x0e, 0x64, 0x61, 0x74, 0x65, 0x5f, 0x72, 0x75, 0x6c, 0x65, 0x5f, 0x69, 0x74, 0x65,
 	0x6d, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x39, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76,
-	0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x4c, 0x69,
+	0x31, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x4c, 0x69,
 	0x73, 0x74, 0x44, 0x61, 0x74, 0x65, 0x52, 0x75, 0x6c, 0x65, 0x49, 0x74, 0x65, 0x6d, 0x49, 0x6e,
 	0x66, 0x6f, 0x48, 0x00, 0x52, 0x0c, 0x64, 0x61, 0x74, 0x65, 0x52, 0x75, 0x6c, 0x65, 0x49, 0x74,
 	0x65, 0x6d, 0x42, 0x0b, 0x0a, 0x09, 0x72, 0x75, 0x6c, 0x65, 0x5f, 0x69, 0x74, 0x65, 0x6d, 0x42,
@@ -1387,7 +1387,7 @@ var file_google_ads_googleads_v11_common_user_lists_proto_rawDesc = []byte{
 	0x6d, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x79, 0x0a, 0x08, 0x6f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x6f,
 	0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x5d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76,
-	0x31, 0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x4c, 0x69, 0x73,
+	0x31, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x4c, 0x69, 0x73,
 	0x74, 0x44, 0x61, 0x74, 0x65, 0x52, 0x75, 0x6c, 0x65, 0x49, 0x74, 0x65, 0x6d, 0x4f, 0x70, 0x65,
 	0x72, 0x61, 0x74, 0x6f, 0x72, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x4c, 0x69,
 	0x73, 0x74, 0x44, 0x61, 0x74, 0x65, 0x52, 0x75, 0x6c, 0x65, 0x49, 0x74, 0x65, 0x6d, 0x4f, 0x70,
@@ -1402,7 +1402,7 @@ var file_google_ads_googleads_v11_common_user_lists_proto_rawDesc = []byte{
 	0x4e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x52, 0x75, 0x6c, 0x65, 0x49, 0x74, 0x65, 0x6d, 0x49, 0x6e,
 	0x66, 0x6f, 0x12, 0x7d, 0x0a, 0x08, 0x6f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x6f, 0x72, 0x18, 0x01,
 	0x20, 0x01, 0x28, 0x0e, 0x32, 0x61, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64,
-	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e,
+	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e,
 	0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x4e, 0x75,
 	0x6d, 0x62, 0x65, 0x72, 0x52, 0x75, 0x6c, 0x65, 0x49, 0x74, 0x65, 0x6d, 0x4f, 0x70, 0x65, 0x72,
 	0x61, 0x74, 0x6f, 0x72, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x4c, 0x69, 0x73,
@@ -1415,7 +1415,7 @@ var file_google_ads_googleads_v11_common_user_lists_proto_rawDesc = []byte{
 	0x6d, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x7d, 0x0a, 0x08, 0x6f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x6f,
 	0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x61, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76,
-	0x31, 0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x4c, 0x69, 0x73,
+	0x31, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x4c, 0x69, 0x73,
 	0x74, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x52, 0x75, 0x6c, 0x65, 0x49, 0x74, 0x65, 0x6d, 0x4f,
 	0x70, 0x65, 0x72, 0x61, 0x74, 0x6f, 0x72, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x55, 0x73, 0x65, 0x72,
 	0x4c, 0x69, 0x73, 0x74, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x52, 0x75, 0x6c, 0x65, 0x49, 0x74,
@@ -1427,18 +1427,18 @@ var file_google_ads_googleads_v11_common_user_lists_proto_rawDesc = []byte{
 	0x73, 0x74, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x54, 0x0a, 0x0c, 0x6c, 0x65, 0x66, 0x74, 0x5f, 0x6f,
 	0x70, 0x65, 0x72, 0x61, 0x6e, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x31, 0x2e, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x55,
+	0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x55,
 	0x73, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x75, 0x6c, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x52,
 	0x0b, 0x6c, 0x65, 0x66, 0x74, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x6e, 0x64, 0x12, 0x56, 0x0a, 0x0d,
 	0x72, 0x69, 0x67, 0x68, 0x74, 0x5f, 0x6f, 0x70, 0x65, 0x72, 0x61, 0x6e, 0x64, 0x18, 0x02, 0x20,
 	0x01, 0x28, 0x0b, 0x32, 0x31, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73,
-	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x63,
+	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x63,
 	0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x75,
 	0x6c, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x0c, 0x72, 0x69, 0x67, 0x68, 0x74, 0x4f, 0x70, 0x65,
 	0x72, 0x61, 0x6e, 0x64, 0x12, 0x82, 0x01, 0x0a, 0x0d, 0x72, 0x75, 0x6c, 0x65, 0x5f, 0x6f, 0x70,
 	0x65, 0x72, 0x61, 0x74, 0x6f, 0x72, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x5d, 0x2e, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x55, 0x73,
+	0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x55, 0x73,
 	0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x43, 0x6f, 0x6d, 0x62, 0x69, 0x6e, 0x65, 0x64, 0x52, 0x75,
 	0x6c, 0x65, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x6f, 0x72, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x55,
 	0x73, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x43, 0x6f, 0x6d, 0x62, 0x69, 0x6e, 0x65, 0x64, 0x52,
@@ -1447,14 +1447,14 @@ var file_google_ads_googleads_v11_common_user_lists_proto_rawDesc = []byte{
 	0x72, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x52, 0x75, 0x6c, 0x65, 0x55, 0x73, 0x65, 0x72, 0x4c,
 	0x69, 0x73, 0x74, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x45, 0x0a, 0x04, 0x72, 0x75, 0x6c, 0x65, 0x18,
 	0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x31, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61,
-	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31,
+	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32,
 	0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74,
 	0x52, 0x75, 0x6c, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x04, 0x72, 0x75, 0x6c, 0x65, 0x22, 0xb0,
 	0x01, 0x0a, 0x17, 0x46, 0x6c, 0x65, 0x78, 0x69, 0x62, 0x6c, 0x65, 0x52, 0x75, 0x6c, 0x65, 0x4f,
 	0x70, 0x65, 0x72, 0x61, 0x6e, 0x64, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x45, 0x0a, 0x04, 0x72, 0x75,
 	0x6c, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x31, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e,
-	0x76, 0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x4c,
+	0x76, 0x31, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x4c,
 	0x69, 0x73, 0x74, 0x52, 0x75, 0x6c, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x04, 0x72, 0x75, 0x6c,
 	0x65, 0x12, 0x35, 0x0a, 0x14, 0x6c, 0x6f, 0x6f, 0x6b, 0x62, 0x61, 0x63, 0x6b, 0x5f, 0x77, 0x69,
 	0x6e, 0x64, 0x6f, 0x77, 0x5f, 0x64, 0x61, 0x79, 0x73, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x48,
@@ -1466,7 +1466,7 @@ var file_google_ads_googleads_v11_common_user_lists_proto_rawDesc = []byte{
 	0x01, 0x0a, 0x17, 0x69, 0x6e, 0x63, 0x6c, 0x75, 0x73, 0x69, 0x76, 0x65, 0x5f, 0x72, 0x75, 0x6c,
 	0x65, 0x5f, 0x6f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x6f, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e,
 	0x32, 0x5d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d,
+	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d,
 	0x73, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x46, 0x6c, 0x65, 0x78, 0x69, 0x62,
 	0x6c, 0x65, 0x52, 0x75, 0x6c, 0x65, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x6f, 0x72, 0x45, 0x6e,
 	0x75, 0x6d, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x46, 0x6c, 0x65, 0x78, 0x69,
@@ -1475,14 +1475,14 @@ var file_google_ads_googleads_v11_common_user_lists_proto_rawDesc = []byte{
 	0x65, 0x72, 0x61, 0x74, 0x6f, 0x72, 0x12, 0x67, 0x0a, 0x12, 0x69, 0x6e, 0x63, 0x6c, 0x75, 0x73,
 	0x69, 0x76, 0x65, 0x5f, 0x6f, 0x70, 0x65, 0x72, 0x61, 0x6e, 0x64, 0x73, 0x18, 0x02, 0x20, 0x03,
 	0x28, 0x0b, 0x32, 0x38, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x63, 0x6f,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x63, 0x6f,
 	0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x46, 0x6c, 0x65, 0x78, 0x69, 0x62, 0x6c, 0x65, 0x52, 0x75, 0x6c,
 	0x65, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x6e, 0x64, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x11, 0x69, 0x6e,
 	0x63, 0x6c, 0x75, 0x73, 0x69, 0x76, 0x65, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x6e, 0x64, 0x73, 0x12,
 	0x67, 0x0a, 0x12, 0x65, 0x78, 0x63, 0x6c, 0x75, 0x73, 0x69, 0x76, 0x65, 0x5f, 0x6f, 0x70, 0x65,
 	0x72, 0x61, 0x6e, 0x64, 0x73, 0x18, 0x03, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x38, 0x2e, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x46, 0x6c,
+	0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x46, 0x6c,
 	0x65, 0x78, 0x69, 0x62, 0x6c, 0x65, 0x52, 0x75, 0x6c, 0x65, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x6e,
 	0x64, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x11, 0x65, 0x78, 0x63, 0x6c, 0x75, 0x73, 0x69, 0x76, 0x65,
 	0x4f, 0x70, 0x65, 0x72, 0x61, 0x6e, 0x64, 0x73, 0x22, 0xa0, 0x04, 0x0a, 0x15, 0x52, 0x75, 0x6c,
@@ -1490,7 +1490,7 @@ var file_google_ads_googleads_v11_common_user_lists_proto_rawDesc = []byte{
 	0x66, 0x6f, 0x12, 0x8e, 0x01, 0x0a, 0x14, 0x70, 0x72, 0x65, 0x70, 0x6f, 0x70, 0x75, 0x6c, 0x61,
 	0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28,
 	0x0e, 0x32, 0x5b, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x65, 0x6e, 0x75,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x65, 0x6e, 0x75,
 	0x6d, 0x73, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x50, 0x72, 0x65, 0x70, 0x6f,
 	0x70, 0x75, 0x6c, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x45, 0x6e,
 	0x75, 0x6d, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x50, 0x72, 0x65, 0x70, 0x6f,
@@ -1499,7 +1499,7 @@ var file_google_ads_googleads_v11_common_user_lists_proto_rawDesc = []byte{
 	0x74, 0x75, 0x73, 0x12, 0x70, 0x0a, 0x17, 0x66, 0x6c, 0x65, 0x78, 0x69, 0x62, 0x6c, 0x65, 0x5f,
 	0x72, 0x75, 0x6c, 0x65, 0x5f, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x6c, 0x69, 0x73, 0x74, 0x18, 0x05,
 	0x20, 0x01, 0x28, 0x0b, 0x32, 0x39, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64,
-	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e,
+	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e,
 	0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x46, 0x6c, 0x65, 0x78, 0x69, 0x62, 0x6c, 0x65, 0x52,
 	0x75, 0x6c, 0x65, 0x55, 0x73, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x49, 0x6e, 0x66, 0x6f, 0x52,
 	0x14, 0x66, 0x6c, 0x65, 0x78, 0x69, 0x62, 0x6c, 0x65, 0x52, 0x75, 0x6c, 0x65, 0x55, 0x73, 0x65,
@@ -1507,14 +1507,14 @@ var file_google_ads_googleads_v11_common_user_lists_proto_rawDesc = []byte{
 	0x64, 0x5f, 0x72, 0x75, 0x6c, 0x65, 0x5f, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x6c, 0x69, 0x73, 0x74,
 	0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x39, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
 	0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31,
-	0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x43, 0x6f, 0x6d, 0x62, 0x69, 0x6e, 0x65,
+	0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x43, 0x6f, 0x6d, 0x62, 0x69, 0x6e, 0x65,
 	0x64, 0x52, 0x75, 0x6c, 0x65, 0x55, 0x73, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x49, 0x6e, 0x66,
 	0x6f, 0x48, 0x00, 0x52, 0x14, 0x63, 0x6f, 0x6d, 0x62, 0x69, 0x6e, 0x65, 0x64, 0x52, 0x75, 0x6c,
 	0x65, 0x55, 0x73, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x78, 0x0a, 0x19, 0x65, 0x78, 0x70,
 	0x72, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x5f, 0x72, 0x75, 0x6c, 0x65, 0x5f, 0x75, 0x73, 0x65,
 	0x72, 0x5f, 0x6c, 0x69, 0x73, 0x74, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x3b, 0x2e, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x45,
+	0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x45,
 	0x78, 0x70, 0x72, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x52, 0x75, 0x6c, 0x65, 0x55, 0x73, 0x65,
 	0x72, 0x4c, 0x69, 0x73, 0x74, 0x49, 0x6e, 0x66, 0x6f, 0x48, 0x00, 0x52, 0x16, 0x65, 0x78, 0x70,
 	0x72, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x52, 0x75, 0x6c, 0x65, 0x55, 0x73, 0x65, 0x72, 0x4c,
@@ -1523,14 +1523,14 @@ var file_google_ads_googleads_v11_common_user_lists_proto_rawDesc = []byte{
 	0x6f, 0x67, 0x69, 0x63, 0x61, 0x6c, 0x55, 0x73, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x49, 0x6e,
 	0x66, 0x6f, 0x12, 0x4e, 0x0a, 0x05, 0x72, 0x75, 0x6c, 0x65, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28,
 	0x0b, 0x32, 0x38, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x63, 0x6f, 0x6d,
 	0x6d, 0x6f, 0x6e, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x4c, 0x6f, 0x67, 0x69,
 	0x63, 0x61, 0x6c, 0x52, 0x75, 0x6c, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x05, 0x72, 0x75, 0x6c,
 	0x65, 0x73, 0x22, 0xf4, 0x01, 0x0a, 0x17, 0x55, 0x73, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x4c,
 	0x6f, 0x67, 0x69, 0x63, 0x61, 0x6c, 0x52, 0x75, 0x6c, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x77,
 	0x0a, 0x08, 0x6f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x6f, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e,
 	0x32, 0x5b, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d,
+	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d,
 	0x73, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x4c, 0x6f, 0x67, 0x69, 0x63, 0x61,
 	0x6c, 0x52, 0x75, 0x6c, 0x65, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x6f, 0x72, 0x45, 0x6e, 0x75,
 	0x6d, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x4c, 0x6f, 0x67, 0x69, 0x63, 0x61,
@@ -1538,7 +1538,7 @@ var file_google_ads_googleads_v11_common_user_lists_proto_rawDesc = []byte{
 	0x70, 0x65, 0x72, 0x61, 0x74, 0x6f, 0x72, 0x12, 0x60, 0x0a, 0x0d, 0x72, 0x75, 0x6c, 0x65, 0x5f,
 	0x6f, 0x70, 0x65, 0x72, 0x61, 0x6e, 0x64, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x3b,
 	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e,
+	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e,
 	0x2e, 0x4c, 0x6f, 0x67, 0x69, 0x63, 0x61, 0x6c, 0x55, 0x73, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74,
 	0x4f, 0x70, 0x65, 0x72, 0x61, 0x6e, 0x64, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x0c, 0x72, 0x75, 0x6c,
 	0x65, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x6e, 0x64, 0x73, 0x22, 0x4c, 0x0a, 0x1a, 0x4c, 0x6f, 0x67,
@@ -1550,7 +1550,7 @@ var file_google_ads_googleads_v11_common_user_lists_proto_rawDesc = []byte{
 	0x55, 0x73, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x4d, 0x0a, 0x07,
 	0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x33, 0x2e,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e,
+	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e,
 	0x55, 0x73, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x41, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x6e,
 	0x66, 0x6f, 0x52, 0x07, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x22, 0x88, 0x01, 0x0a, 0x12,
 	0x55, 0x73, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x41, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x6e,
@@ -1563,93 +1563,93 @@ var file_google_ads_googleads_v11_common_user_lists_proto_rawDesc = []byte{
 	0x6f, 0x6e, 0x42, 0x12, 0x0a, 0x10, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x6c, 0x69, 0x73, 0x74, 0x5f,
 	0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x42, 0xee, 0x01, 0x0a, 0x23, 0x63, 0x6f, 0x6d, 0x2e, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x42, 0x0e,
+	0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x42, 0x0e,
 	0x55, 0x73, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x73, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01,
 	0x5a, 0x45, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x67, 0x6f, 0x6c, 0x61, 0x6e, 0x67, 0x2e,
 	0x6f, 0x72, 0x67, 0x2f, 0x67, 0x65, 0x6e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x61, 0x70, 0x69, 0x73, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x31, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e,
+	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e,
 	0x3b, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xa2, 0x02, 0x03, 0x47, 0x41, 0x41, 0xaa, 0x02, 0x1f,
 	0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x41, 0x64, 0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x41, 0x64, 0x73, 0x2e, 0x56, 0x31, 0x31, 0x2e, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xca,
+	0x65, 0x41, 0x64, 0x73, 0x2e, 0x56, 0x31, 0x32, 0x2e, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xca,
 	0x02, 0x1f, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x5c, 0x41, 0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x31, 0x31, 0x5c, 0x43, 0x6f, 0x6d, 0x6d, 0x6f,
+	0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x31, 0x32, 0x5c, 0x43, 0x6f, 0x6d, 0x6d, 0x6f,
 	0x6e, 0xea, 0x02, 0x23, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x3a, 0x3a, 0x41, 0x64, 0x73, 0x3a,
-	0x3a, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x31, 0x31, 0x3a,
+	0x3a, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x31, 0x32, 0x3a,
 	0x3a, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
-	file_google_ads_googleads_v11_common_user_lists_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v11_common_user_lists_proto_rawDescData = file_google_ads_googleads_v11_common_user_lists_proto_rawDesc
+	file_google_ads_googleads_v12_common_user_lists_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v12_common_user_lists_proto_rawDescData = file_google_ads_googleads_v12_common_user_lists_proto_rawDesc
 )
 
-func file_google_ads_googleads_v11_common_user_lists_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v11_common_user_lists_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v11_common_user_lists_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v11_common_user_lists_proto_rawDescData)
+func file_google_ads_googleads_v12_common_user_lists_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v12_common_user_lists_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v12_common_user_lists_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v12_common_user_lists_proto_rawDescData)
 	})
-	return file_google_ads_googleads_v11_common_user_lists_proto_rawDescData
+	return file_google_ads_googleads_v12_common_user_lists_proto_rawDescData
 }
 
-var file_google_ads_googleads_v11_common_user_lists_proto_msgTypes = make([]protoimpl.MessageInfo, 18)
-var file_google_ads_googleads_v11_common_user_lists_proto_goTypes = []interface{}{
-	(*SimilarUserListInfo)(nil),                                                  // 0: google.ads.googleads.v11.common.SimilarUserListInfo
-	(*CrmBasedUserListInfo)(nil),                                                 // 1: google.ads.googleads.v11.common.CrmBasedUserListInfo
-	(*UserListRuleInfo)(nil),                                                     // 2: google.ads.googleads.v11.common.UserListRuleInfo
-	(*UserListRuleItemGroupInfo)(nil),                                            // 3: google.ads.googleads.v11.common.UserListRuleItemGroupInfo
-	(*UserListRuleItemInfo)(nil),                                                 // 4: google.ads.googleads.v11.common.UserListRuleItemInfo
-	(*UserListDateRuleItemInfo)(nil),                                             // 5: google.ads.googleads.v11.common.UserListDateRuleItemInfo
-	(*UserListNumberRuleItemInfo)(nil),                                           // 6: google.ads.googleads.v11.common.UserListNumberRuleItemInfo
-	(*UserListStringRuleItemInfo)(nil),                                           // 7: google.ads.googleads.v11.common.UserListStringRuleItemInfo
-	(*CombinedRuleUserListInfo)(nil),                                             // 8: google.ads.googleads.v11.common.CombinedRuleUserListInfo
-	(*ExpressionRuleUserListInfo)(nil),                                           // 9: google.ads.googleads.v11.common.ExpressionRuleUserListInfo
-	(*FlexibleRuleOperandInfo)(nil),                                              // 10: google.ads.googleads.v11.common.FlexibleRuleOperandInfo
-	(*FlexibleRuleUserListInfo)(nil),                                             // 11: google.ads.googleads.v11.common.FlexibleRuleUserListInfo
-	(*RuleBasedUserListInfo)(nil),                                                // 12: google.ads.googleads.v11.common.RuleBasedUserListInfo
-	(*LogicalUserListInfo)(nil),                                                  // 13: google.ads.googleads.v11.common.LogicalUserListInfo
-	(*UserListLogicalRuleInfo)(nil),                                              // 14: google.ads.googleads.v11.common.UserListLogicalRuleInfo
-	(*LogicalUserListOperandInfo)(nil),                                           // 15: google.ads.googleads.v11.common.LogicalUserListOperandInfo
-	(*BasicUserListInfo)(nil),                                                    // 16: google.ads.googleads.v11.common.BasicUserListInfo
-	(*UserListActionInfo)(nil),                                                   // 17: google.ads.googleads.v11.common.UserListActionInfo
-	(enums.CustomerMatchUploadKeyTypeEnum_CustomerMatchUploadKeyType)(0),         // 18: google.ads.googleads.v11.enums.CustomerMatchUploadKeyTypeEnum.CustomerMatchUploadKeyType
-	(enums.UserListCrmDataSourceTypeEnum_UserListCrmDataSourceType)(0),           // 19: google.ads.googleads.v11.enums.UserListCrmDataSourceTypeEnum.UserListCrmDataSourceType
-	(enums.UserListRuleTypeEnum_UserListRuleType)(0),                             // 20: google.ads.googleads.v11.enums.UserListRuleTypeEnum.UserListRuleType
-	(enums.UserListDateRuleItemOperatorEnum_UserListDateRuleItemOperator)(0),     // 21: google.ads.googleads.v11.enums.UserListDateRuleItemOperatorEnum.UserListDateRuleItemOperator
-	(enums.UserListNumberRuleItemOperatorEnum_UserListNumberRuleItemOperator)(0), // 22: google.ads.googleads.v11.enums.UserListNumberRuleItemOperatorEnum.UserListNumberRuleItemOperator
-	(enums.UserListStringRuleItemOperatorEnum_UserListStringRuleItemOperator)(0), // 23: google.ads.googleads.v11.enums.UserListStringRuleItemOperatorEnum.UserListStringRuleItemOperator
-	(enums.UserListCombinedRuleOperatorEnum_UserListCombinedRuleOperator)(0),     // 24: google.ads.googleads.v11.enums.UserListCombinedRuleOperatorEnum.UserListCombinedRuleOperator
-	(enums.UserListFlexibleRuleOperatorEnum_UserListFlexibleRuleOperator)(0),     // 25: google.ads.googleads.v11.enums.UserListFlexibleRuleOperatorEnum.UserListFlexibleRuleOperator
-	(enums.UserListPrepopulationStatusEnum_UserListPrepopulationStatus)(0),       // 26: google.ads.googleads.v11.enums.UserListPrepopulationStatusEnum.UserListPrepopulationStatus
-	(enums.UserListLogicalRuleOperatorEnum_UserListLogicalRuleOperator)(0),       // 27: google.ads.googleads.v11.enums.UserListLogicalRuleOperatorEnum.UserListLogicalRuleOperator
+var file_google_ads_googleads_v12_common_user_lists_proto_msgTypes = make([]protoimpl.MessageInfo, 18)
+var file_google_ads_googleads_v12_common_user_lists_proto_goTypes = []interface{}{
+	(*SimilarUserListInfo)(nil),                                                  // 0: google.ads.googleads.v12.common.SimilarUserListInfo
+	(*CrmBasedUserListInfo)(nil),                                                 // 1: google.ads.googleads.v12.common.CrmBasedUserListInfo
+	(*UserListRuleInfo)(nil),                                                     // 2: google.ads.googleads.v12.common.UserListRuleInfo
+	(*UserListRuleItemGroupInfo)(nil),                                            // 3: google.ads.googleads.v12.common.UserListRuleItemGroupInfo
+	(*UserListRuleItemInfo)(nil),                                                 // 4: google.ads.googleads.v12.common.UserListRuleItemInfo
+	(*UserListDateRuleItemInfo)(nil),                                             // 5: google.ads.googleads.v12.common.UserListDateRuleItemInfo
+	(*UserListNumberRuleItemInfo)(nil),                                           // 6: google.ads.googleads.v12.common.UserListNumberRuleItemInfo
+	(*UserListStringRuleItemInfo)(nil),                                           // 7: google.ads.googleads.v12.common.UserListStringRuleItemInfo
+	(*CombinedRuleUserListInfo)(nil),                                             // 8: google.ads.googleads.v12.common.CombinedRuleUserListInfo
+	(*ExpressionRuleUserListInfo)(nil),                                           // 9: google.ads.googleads.v12.common.ExpressionRuleUserListInfo
+	(*FlexibleRuleOperandInfo)(nil),                                              // 10: google.ads.googleads.v12.common.FlexibleRuleOperandInfo
+	(*FlexibleRuleUserListInfo)(nil),                                             // 11: google.ads.googleads.v12.common.FlexibleRuleUserListInfo
+	(*RuleBasedUserListInfo)(nil),                                                // 12: google.ads.googleads.v12.common.RuleBasedUserListInfo
+	(*LogicalUserListInfo)(nil),                                                  // 13: google.ads.googleads.v12.common.LogicalUserListInfo
+	(*UserListLogicalRuleInfo)(nil),                                              // 14: google.ads.googleads.v12.common.UserListLogicalRuleInfo
+	(*LogicalUserListOperandInfo)(nil),                                           // 15: google.ads.googleads.v12.common.LogicalUserListOperandInfo
+	(*BasicUserListInfo)(nil),                                                    // 16: google.ads.googleads.v12.common.BasicUserListInfo
+	(*UserListActionInfo)(nil),                                                   // 17: google.ads.googleads.v12.common.UserListActionInfo
+	(enums.CustomerMatchUploadKeyTypeEnum_CustomerMatchUploadKeyType)(0),         // 18: google.ads.googleads.v12.enums.CustomerMatchUploadKeyTypeEnum.CustomerMatchUploadKeyType
+	(enums.UserListCrmDataSourceTypeEnum_UserListCrmDataSourceType)(0),           // 19: google.ads.googleads.v12.enums.UserListCrmDataSourceTypeEnum.UserListCrmDataSourceType
+	(enums.UserListRuleTypeEnum_UserListRuleType)(0),                             // 20: google.ads.googleads.v12.enums.UserListRuleTypeEnum.UserListRuleType
+	(enums.UserListDateRuleItemOperatorEnum_UserListDateRuleItemOperator)(0),     // 21: google.ads.googleads.v12.enums.UserListDateRuleItemOperatorEnum.UserListDateRuleItemOperator
+	(enums.UserListNumberRuleItemOperatorEnum_UserListNumberRuleItemOperator)(0), // 22: google.ads.googleads.v12.enums.UserListNumberRuleItemOperatorEnum.UserListNumberRuleItemOperator
+	(enums.UserListStringRuleItemOperatorEnum_UserListStringRuleItemOperator)(0), // 23: google.ads.googleads.v12.enums.UserListStringRuleItemOperatorEnum.UserListStringRuleItemOperator
+	(enums.UserListCombinedRuleOperatorEnum_UserListCombinedRuleOperator)(0),     // 24: google.ads.googleads.v12.enums.UserListCombinedRuleOperatorEnum.UserListCombinedRuleOperator
+	(enums.UserListFlexibleRuleOperatorEnum_UserListFlexibleRuleOperator)(0),     // 25: google.ads.googleads.v12.enums.UserListFlexibleRuleOperatorEnum.UserListFlexibleRuleOperator
+	(enums.UserListPrepopulationStatusEnum_UserListPrepopulationStatus)(0),       // 26: google.ads.googleads.v12.enums.UserListPrepopulationStatusEnum.UserListPrepopulationStatus
+	(enums.UserListLogicalRuleOperatorEnum_UserListLogicalRuleOperator)(0),       // 27: google.ads.googleads.v12.enums.UserListLogicalRuleOperatorEnum.UserListLogicalRuleOperator
 }
-var file_google_ads_googleads_v11_common_user_lists_proto_depIdxs = []int32{
-	18, // 0: google.ads.googleads.v11.common.CrmBasedUserListInfo.upload_key_type:type_name -> google.ads.googleads.v11.enums.CustomerMatchUploadKeyTypeEnum.CustomerMatchUploadKeyType
-	19, // 1: google.ads.googleads.v11.common.CrmBasedUserListInfo.data_source_type:type_name -> google.ads.googleads.v11.enums.UserListCrmDataSourceTypeEnum.UserListCrmDataSourceType
-	20, // 2: google.ads.googleads.v11.common.UserListRuleInfo.rule_type:type_name -> google.ads.googleads.v11.enums.UserListRuleTypeEnum.UserListRuleType
-	3,  // 3: google.ads.googleads.v11.common.UserListRuleInfo.rule_item_groups:type_name -> google.ads.googleads.v11.common.UserListRuleItemGroupInfo
-	4,  // 4: google.ads.googleads.v11.common.UserListRuleItemGroupInfo.rule_items:type_name -> google.ads.googleads.v11.common.UserListRuleItemInfo
-	6,  // 5: google.ads.googleads.v11.common.UserListRuleItemInfo.number_rule_item:type_name -> google.ads.googleads.v11.common.UserListNumberRuleItemInfo
-	7,  // 6: google.ads.googleads.v11.common.UserListRuleItemInfo.string_rule_item:type_name -> google.ads.googleads.v11.common.UserListStringRuleItemInfo
-	5,  // 7: google.ads.googleads.v11.common.UserListRuleItemInfo.date_rule_item:type_name -> google.ads.googleads.v11.common.UserListDateRuleItemInfo
-	21, // 8: google.ads.googleads.v11.common.UserListDateRuleItemInfo.operator:type_name -> google.ads.googleads.v11.enums.UserListDateRuleItemOperatorEnum.UserListDateRuleItemOperator
-	22, // 9: google.ads.googleads.v11.common.UserListNumberRuleItemInfo.operator:type_name -> google.ads.googleads.v11.enums.UserListNumberRuleItemOperatorEnum.UserListNumberRuleItemOperator
-	23, // 10: google.ads.googleads.v11.common.UserListStringRuleItemInfo.operator:type_name -> google.ads.googleads.v11.enums.UserListStringRuleItemOperatorEnum.UserListStringRuleItemOperator
-	2,  // 11: google.ads.googleads.v11.common.CombinedRuleUserListInfo.left_operand:type_name -> google.ads.googleads.v11.common.UserListRuleInfo
-	2,  // 12: google.ads.googleads.v11.common.CombinedRuleUserListInfo.right_operand:type_name -> google.ads.googleads.v11.common.UserListRuleInfo
-	24, // 13: google.ads.googleads.v11.common.CombinedRuleUserListInfo.rule_operator:type_name -> google.ads.googleads.v11.enums.UserListCombinedRuleOperatorEnum.UserListCombinedRuleOperator
-	2,  // 14: google.ads.googleads.v11.common.ExpressionRuleUserListInfo.rule:type_name -> google.ads.googleads.v11.common.UserListRuleInfo
-	2,  // 15: google.ads.googleads.v11.common.FlexibleRuleOperandInfo.rule:type_name -> google.ads.googleads.v11.common.UserListRuleInfo
-	25, // 16: google.ads.googleads.v11.common.FlexibleRuleUserListInfo.inclusive_rule_operator:type_name -> google.ads.googleads.v11.enums.UserListFlexibleRuleOperatorEnum.UserListFlexibleRuleOperator
-	10, // 17: google.ads.googleads.v11.common.FlexibleRuleUserListInfo.inclusive_operands:type_name -> google.ads.googleads.v11.common.FlexibleRuleOperandInfo
-	10, // 18: google.ads.googleads.v11.common.FlexibleRuleUserListInfo.exclusive_operands:type_name -> google.ads.googleads.v11.common.FlexibleRuleOperandInfo
-	26, // 19: google.ads.googleads.v11.common.RuleBasedUserListInfo.prepopulation_status:type_name -> google.ads.googleads.v11.enums.UserListPrepopulationStatusEnum.UserListPrepopulationStatus
-	11, // 20: google.ads.googleads.v11.common.RuleBasedUserListInfo.flexible_rule_user_list:type_name -> google.ads.googleads.v11.common.FlexibleRuleUserListInfo
-	8,  // 21: google.ads.googleads.v11.common.RuleBasedUserListInfo.combined_rule_user_list:type_name -> google.ads.googleads.v11.common.CombinedRuleUserListInfo
-	9,  // 22: google.ads.googleads.v11.common.RuleBasedUserListInfo.expression_rule_user_list:type_name -> google.ads.googleads.v11.common.ExpressionRuleUserListInfo
-	14, // 23: google.ads.googleads.v11.common.LogicalUserListInfo.rules:type_name -> google.ads.googleads.v11.common.UserListLogicalRuleInfo
-	27, // 24: google.ads.googleads.v11.common.UserListLogicalRuleInfo.operator:type_name -> google.ads.googleads.v11.enums.UserListLogicalRuleOperatorEnum.UserListLogicalRuleOperator
-	15, // 25: google.ads.googleads.v11.common.UserListLogicalRuleInfo.rule_operands:type_name -> google.ads.googleads.v11.common.LogicalUserListOperandInfo
-	17, // 26: google.ads.googleads.v11.common.BasicUserListInfo.actions:type_name -> google.ads.googleads.v11.common.UserListActionInfo
+var file_google_ads_googleads_v12_common_user_lists_proto_depIdxs = []int32{
+	18, // 0: google.ads.googleads.v12.common.CrmBasedUserListInfo.upload_key_type:type_name -> google.ads.googleads.v12.enums.CustomerMatchUploadKeyTypeEnum.CustomerMatchUploadKeyType
+	19, // 1: google.ads.googleads.v12.common.CrmBasedUserListInfo.data_source_type:type_name -> google.ads.googleads.v12.enums.UserListCrmDataSourceTypeEnum.UserListCrmDataSourceType
+	20, // 2: google.ads.googleads.v12.common.UserListRuleInfo.rule_type:type_name -> google.ads.googleads.v12.enums.UserListRuleTypeEnum.UserListRuleType
+	3,  // 3: google.ads.googleads.v12.common.UserListRuleInfo.rule_item_groups:type_name -> google.ads.googleads.v12.common.UserListRuleItemGroupInfo
+	4,  // 4: google.ads.googleads.v12.common.UserListRuleItemGroupInfo.rule_items:type_name -> google.ads.googleads.v12.common.UserListRuleItemInfo
+	6,  // 5: google.ads.googleads.v12.common.UserListRuleItemInfo.number_rule_item:type_name -> google.ads.googleads.v12.common.UserListNumberRuleItemInfo
+	7,  // 6: google.ads.googleads.v12.common.UserListRuleItemInfo.string_rule_item:type_name -> google.ads.googleads.v12.common.UserListStringRuleItemInfo
+	5,  // 7: google.ads.googleads.v12.common.UserListRuleItemInfo.date_rule_item:type_name -> google.ads.googleads.v12.common.UserListDateRuleItemInfo
+	21, // 8: google.ads.googleads.v12.common.UserListDateRuleItemInfo.operator:type_name -> google.ads.googleads.v12.enums.UserListDateRuleItemOperatorEnum.UserListDateRuleItemOperator
+	22, // 9: google.ads.googleads.v12.common.UserListNumberRuleItemInfo.operator:type_name -> google.ads.googleads.v12.enums.UserListNumberRuleItemOperatorEnum.UserListNumberRuleItemOperator
+	23, // 10: google.ads.googleads.v12.common.UserListStringRuleItemInfo.operator:type_name -> google.ads.googleads.v12.enums.UserListStringRuleItemOperatorEnum.UserListStringRuleItemOperator
+	2,  // 11: google.ads.googleads.v12.common.CombinedRuleUserListInfo.left_operand:type_name -> google.ads.googleads.v12.common.UserListRuleInfo
+	2,  // 12: google.ads.googleads.v12.common.CombinedRuleUserListInfo.right_operand:type_name -> google.ads.googleads.v12.common.UserListRuleInfo
+	24, // 13: google.ads.googleads.v12.common.CombinedRuleUserListInfo.rule_operator:type_name -> google.ads.googleads.v12.enums.UserListCombinedRuleOperatorEnum.UserListCombinedRuleOperator
+	2,  // 14: google.ads.googleads.v12.common.ExpressionRuleUserListInfo.rule:type_name -> google.ads.googleads.v12.common.UserListRuleInfo
+	2,  // 15: google.ads.googleads.v12.common.FlexibleRuleOperandInfo.rule:type_name -> google.ads.googleads.v12.common.UserListRuleInfo
+	25, // 16: google.ads.googleads.v12.common.FlexibleRuleUserListInfo.inclusive_rule_operator:type_name -> google.ads.googleads.v12.enums.UserListFlexibleRuleOperatorEnum.UserListFlexibleRuleOperator
+	10, // 17: google.ads.googleads.v12.common.FlexibleRuleUserListInfo.inclusive_operands:type_name -> google.ads.googleads.v12.common.FlexibleRuleOperandInfo
+	10, // 18: google.ads.googleads.v12.common.FlexibleRuleUserListInfo.exclusive_operands:type_name -> google.ads.googleads.v12.common.FlexibleRuleOperandInfo
+	26, // 19: google.ads.googleads.v12.common.RuleBasedUserListInfo.prepopulation_status:type_name -> google.ads.googleads.v12.enums.UserListPrepopulationStatusEnum.UserListPrepopulationStatus
+	11, // 20: google.ads.googleads.v12.common.RuleBasedUserListInfo.flexible_rule_user_list:type_name -> google.ads.googleads.v12.common.FlexibleRuleUserListInfo
+	8,  // 21: google.ads.googleads.v12.common.RuleBasedUserListInfo.combined_rule_user_list:type_name -> google.ads.googleads.v12.common.CombinedRuleUserListInfo
+	9,  // 22: google.ads.googleads.v12.common.RuleBasedUserListInfo.expression_rule_user_list:type_name -> google.ads.googleads.v12.common.ExpressionRuleUserListInfo
+	14, // 23: google.ads.googleads.v12.common.LogicalUserListInfo.rules:type_name -> google.ads.googleads.v12.common.UserListLogicalRuleInfo
+	27, // 24: google.ads.googleads.v12.common.UserListLogicalRuleInfo.operator:type_name -> google.ads.googleads.v12.enums.UserListLogicalRuleOperatorEnum.UserListLogicalRuleOperator
+	15, // 25: google.ads.googleads.v12.common.UserListLogicalRuleInfo.rule_operands:type_name -> google.ads.googleads.v12.common.LogicalUserListOperandInfo
+	17, // 26: google.ads.googleads.v12.common.BasicUserListInfo.actions:type_name -> google.ads.googleads.v12.common.UserListActionInfo
 	27, // [27:27] is the sub-list for method output_type
 	27, // [27:27] is the sub-list for method input_type
 	27, // [27:27] is the sub-list for extension type_name
@@ -1657,13 +1657,13 @@ var file_google_ads_googleads_v11_common_user_lists_proto_depIdxs = []int32{
 	0,  // [0:27] is the sub-list for field type_name
 }
 
-func init() { file_google_ads_googleads_v11_common_user_lists_proto_init() }
-func file_google_ads_googleads_v11_common_user_lists_proto_init() {
-	if File_google_ads_googleads_v11_common_user_lists_proto != nil {
+func init() { file_google_ads_googleads_v12_common_user_lists_proto_init() }
+func file_google_ads_googleads_v12_common_user_lists_proto_init() {
+	if File_google_ads_googleads_v12_common_user_lists_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SimilarUserListInfo); i {
 			case 0:
 				return &v.state
@@ -1675,7 +1675,7 @@ func file_google_ads_googleads_v11_common_user_lists_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CrmBasedUserListInfo); i {
 			case 0:
 				return &v.state
@@ -1687,7 +1687,7 @@ func file_google_ads_googleads_v11_common_user_lists_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UserListRuleInfo); i {
 			case 0:
 				return &v.state
@@ -1699,7 +1699,7 @@ func file_google_ads_googleads_v11_common_user_lists_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UserListRuleItemGroupInfo); i {
 			case 0:
 				return &v.state
@@ -1711,7 +1711,7 @@ func file_google_ads_googleads_v11_common_user_lists_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UserListRuleItemInfo); i {
 			case 0:
 				return &v.state
@@ -1723,7 +1723,7 @@ func file_google_ads_googleads_v11_common_user_lists_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UserListDateRuleItemInfo); i {
 			case 0:
 				return &v.state
@@ -1735,7 +1735,7 @@ func file_google_ads_googleads_v11_common_user_lists_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UserListNumberRuleItemInfo); i {
 			case 0:
 				return &v.state
@@ -1747,7 +1747,7 @@ func file_google_ads_googleads_v11_common_user_lists_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UserListStringRuleItemInfo); i {
 			case 0:
 				return &v.state
@@ -1759,7 +1759,7 @@ func file_google_ads_googleads_v11_common_user_lists_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CombinedRuleUserListInfo); i {
 			case 0:
 				return &v.state
@@ -1771,7 +1771,7 @@ func file_google_ads_googleads_v11_common_user_lists_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ExpressionRuleUserListInfo); i {
 			case 0:
 				return &v.state
@@ -1783,7 +1783,7 @@ func file_google_ads_googleads_v11_common_user_lists_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*FlexibleRuleOperandInfo); i {
 			case 0:
 				return &v.state
@@ -1795,7 +1795,7 @@ func file_google_ads_googleads_v11_common_user_lists_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*FlexibleRuleUserListInfo); i {
 			case 0:
 				return &v.state
@@ -1807,7 +1807,7 @@ func file_google_ads_googleads_v11_common_user_lists_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*RuleBasedUserListInfo); i {
 			case 0:
 				return &v.state
@@ -1819,7 +1819,7 @@ func file_google_ads_googleads_v11_common_user_lists_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*LogicalUserListInfo); i {
 			case 0:
 				return &v.state
@@ -1831,7 +1831,7 @@ func file_google_ads_googleads_v11_common_user_lists_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UserListLogicalRuleInfo); i {
 			case 0:
 				return &v.state
@@ -1843,7 +1843,7 @@ func file_google_ads_googleads_v11_common_user_lists_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*LogicalUserListOperandInfo); i {
 			case 0:
 				return &v.state
@@ -1855,7 +1855,7 @@ func file_google_ads_googleads_v11_common_user_lists_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*BasicUserListInfo); i {
 			case 0:
 				return &v.state
@@ -1867,7 +1867,7 @@ func file_google_ads_googleads_v11_common_user_lists_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UserListActionInfo); i {
 			case 0:
 				return &v.state
@@ -1880,23 +1880,23 @@ func file_google_ads_googleads_v11_common_user_lists_proto_init() {
 			}
 		}
 	}
-	file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[0].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[1].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[4].OneofWrappers = []interface{}{
+	file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[0].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[1].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[4].OneofWrappers = []interface{}{
 		(*UserListRuleItemInfo_NumberRuleItem)(nil),
 		(*UserListRuleItemInfo_StringRuleItem)(nil),
 		(*UserListRuleItemInfo_DateRuleItem)(nil),
 	}
-	file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[5].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[6].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[7].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[10].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[12].OneofWrappers = []interface{}{
+	file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[5].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[6].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[7].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[10].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[12].OneofWrappers = []interface{}{
 		(*RuleBasedUserListInfo_CombinedRuleUserList)(nil),
 		(*RuleBasedUserListInfo_ExpressionRuleUserList)(nil),
 	}
-	file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[15].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v11_common_user_lists_proto_msgTypes[17].OneofWrappers = []interface{}{
+	file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[15].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v12_common_user_lists_proto_msgTypes[17].OneofWrappers = []interface{}{
 		(*UserListActionInfo_ConversionAction)(nil),
 		(*UserListActionInfo_RemarketingAction)(nil),
 	}
@@ -1904,18 +1904,18 @@ func file_google_ads_googleads_v11_common_user_lists_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_google_ads_googleads_v11_common_user_lists_proto_rawDesc,
+			RawDescriptor: file_google_ads_googleads_v12_common_user_lists_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   18,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_google_ads_googleads_v11_common_user_lists_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v11_common_user_lists_proto_depIdxs,
-		MessageInfos:      file_google_ads_googleads_v11_common_user_lists_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v12_common_user_lists_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v12_common_user_lists_proto_depIdxs,
+		MessageInfos:      file_google_ads_googleads_v12_common_user_lists_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v11_common_user_lists_proto = out.File
-	file_google_ads_googleads_v11_common_user_lists_proto_rawDesc = nil
-	file_google_ads_googleads_v11_common_user_lists_proto_goTypes = nil
-	file_google_ads_googleads_v11_common_user_lists_proto_depIdxs = nil
+	File_google_ads_googleads_v12_common_user_lists_proto = out.File
+	file_google_ads_googleads_v12_common_user_lists_proto_rawDesc = nil
+	file_google_ads_googleads_v12_common_user_lists_proto_goTypes = nil
+	file_google_ads_googleads_v12_common_user_lists_proto_depIdxs = nil
 }

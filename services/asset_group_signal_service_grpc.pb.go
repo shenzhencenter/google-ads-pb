@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.5
-// source: google/ads/googleads/v11/services/asset_group_signal_service.proto
+// source: google/ads/googleads/v12/services/asset_group_signal_service.proto
 
 package services
 
@@ -37,7 +37,7 @@ func NewAssetGroupSignalServiceClient(cc grpc.ClientConnInterface) AssetGroupSig
 
 func (c *assetGroupSignalServiceClient) MutateAssetGroupSignals(ctx context.Context, in *MutateAssetGroupSignalsRequest, opts ...grpc.CallOption) (*MutateAssetGroupSignalsResponse, error) {
 	out := new(MutateAssetGroupSignalsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.AssetGroupSignalService/MutateAssetGroupSignals", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.AssetGroupSignalService/MutateAssetGroupSignals", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -85,7 +85,7 @@ func _AssetGroupSignalService_MutateAssetGroupSignals_Handler(srv interface{}, c
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v11.services.AssetGroupSignalService/MutateAssetGroupSignals",
+		FullMethod: "/google.ads.googleads.v12.services.AssetGroupSignalService/MutateAssetGroupSignals",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AssetGroupSignalServiceServer).MutateAssetGroupSignals(ctx, req.(*MutateAssetGroupSignalsRequest))
@@ -97,7 +97,7 @@ func _AssetGroupSignalService_MutateAssetGroupSignals_Handler(srv interface{}, c
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AssetGroupSignalService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v11.services.AssetGroupSignalService",
+	ServiceName: "google.ads.googleads.v12.services.AssetGroupSignalService",
 	HandlerType: (*AssetGroupSignalServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -106,5 +106,5 @@ var AssetGroupSignalService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v11/services/asset_group_signal_service.proto",
+	Metadata: "google/ads/googleads/v12/services/asset_group_signal_service.proto",
 }

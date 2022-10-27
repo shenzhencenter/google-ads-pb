@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.5
-// source: google/ads/googleads/v11/services/remarketing_action_service.proto
+// source: google/ads/googleads/v12/services/remarketing_action_service.proto
 
 package services
 
@@ -45,7 +45,7 @@ func NewRemarketingActionServiceClient(cc grpc.ClientConnInterface) RemarketingA
 
 func (c *remarketingActionServiceClient) MutateRemarketingActions(ctx context.Context, in *MutateRemarketingActionsRequest, opts ...grpc.CallOption) (*MutateRemarketingActionsResponse, error) {
 	out := new(MutateRemarketingActionsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v11.services.RemarketingActionService/MutateRemarketingActions", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.RemarketingActionService/MutateRemarketingActions", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -101,7 +101,7 @@ func _RemarketingActionService_MutateRemarketingActions_Handler(srv interface{},
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v11.services.RemarketingActionService/MutateRemarketingActions",
+		FullMethod: "/google.ads.googleads.v12.services.RemarketingActionService/MutateRemarketingActions",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(RemarketingActionServiceServer).MutateRemarketingActions(ctx, req.(*MutateRemarketingActionsRequest))
@@ -113,7 +113,7 @@ func _RemarketingActionService_MutateRemarketingActions_Handler(srv interface{},
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var RemarketingActionService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v11.services.RemarketingActionService",
+	ServiceName: "google.ads.googleads.v12.services.RemarketingActionService",
 	HandlerType: (*RemarketingActionServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -122,5 +122,5 @@ var RemarketingActionService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v11/services/remarketing_action_service.proto",
+	Metadata: "google/ads/googleads/v12/services/remarketing_action_service.proto",
 }
