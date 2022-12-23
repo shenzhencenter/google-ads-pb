@@ -24,10 +24,10 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -48,7 +48,7 @@ func defaultCustomerLabelGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -87,7 +87,6 @@ type CustomerLabelClient struct {
 
 	// The call options for this service.
 	CallOptions *CustomerLabelCallOptions
-
 }
 
 // Wrapper methods routed to the internal client.
@@ -107,7 +106,8 @@ func (c *CustomerLabelClient) setGoogleClientInfo(keyval ...string) {
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *CustomerLabelClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
 }
@@ -175,11 +175,10 @@ func NewCustomerLabelClient(ctx context.Context, opts ...option.ClientOption) (*
 	client := CustomerLabelClient{CallOptions: defaultCustomerLabelCallOptions()}
 
 	c := &customerLabelGRPCClient{
-		connPool:    connPool,
-		disableDeadlines: disableDeadlines,
+		connPool:            connPool,
+		disableDeadlines:    disableDeadlines,
 		customerLabelClient: servicespb.NewCustomerLabelServiceClient(connPool),
-		CallOptions: &client.CallOptions,
-
+		CallOptions:         &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
@@ -190,7 +189,8 @@ func NewCustomerLabelClient(ctx context.Context, opts ...option.ClientOption) (*
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *customerLabelGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
 }
@@ -212,7 +212,7 @@ func (c *customerLabelGRPCClient) Close() error {
 
 func (c *customerLabelGRPCClient) MutateCustomerLabels(ctx context.Context, req *servicespb.MutateCustomerLabelsRequest, opts ...gax.CallOption) (*servicespb.MutateCustomerLabelsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

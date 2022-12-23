@@ -24,10 +24,10 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -48,7 +48,7 @@ func defaultAdParameterGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -87,7 +87,6 @@ type AdParameterClient struct {
 
 	// The call options for this service.
 	CallOptions *AdParameterCallOptions
-
 }
 
 // Wrapper methods routed to the internal client.
@@ -107,7 +106,8 @@ func (c *AdParameterClient) setGoogleClientInfo(keyval ...string) {
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *AdParameterClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
 }
@@ -178,11 +178,10 @@ func NewAdParameterClient(ctx context.Context, opts ...option.ClientOption) (*Ad
 	client := AdParameterClient{CallOptions: defaultAdParameterCallOptions()}
 
 	c := &adParameterGRPCClient{
-		connPool:    connPool,
-		disableDeadlines: disableDeadlines,
+		connPool:          connPool,
+		disableDeadlines:  disableDeadlines,
 		adParameterClient: servicespb.NewAdParameterServiceClient(connPool),
-		CallOptions: &client.CallOptions,
-
+		CallOptions:       &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
@@ -193,7 +192,8 @@ func NewAdParameterClient(ctx context.Context, opts ...option.ClientOption) (*Ad
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *adParameterGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
 }
@@ -215,7 +215,7 @@ func (c *adParameterGRPCClient) Close() error {
 
 func (c *adParameterGRPCClient) MutateAdParameters(ctx context.Context, req *servicespb.MutateAdParametersRequest, opts ...gax.CallOption) (*servicespb.MutateAdParametersResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

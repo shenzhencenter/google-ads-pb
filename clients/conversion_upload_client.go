@@ -24,10 +24,10 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -38,7 +38,7 @@ var newConversionUploadClientHook clientHook
 // ConversionUploadCallOptions contains the retry settings for each method of ConversionUploadClient.
 type ConversionUploadCallOptions struct {
 	UploadClickConversions []gax.CallOption
-	UploadCallConversions []gax.CallOption
+	UploadCallConversions  []gax.CallOption
 }
 
 func defaultConversionUploadGRPCClientOptions() []option.ClientOption {
@@ -49,7 +49,7 @@ func defaultConversionUploadGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -101,7 +101,6 @@ type ConversionUploadClient struct {
 
 	// The call options for this service.
 	CallOptions *ConversionUploadCallOptions
-
 }
 
 // Wrapper methods routed to the internal client.
@@ -121,7 +120,8 @@ func (c *ConversionUploadClient) setGoogleClientInfo(keyval ...string) {
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *ConversionUploadClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
 }
@@ -201,11 +201,10 @@ func NewConversionUploadClient(ctx context.Context, opts ...option.ClientOption)
 	client := ConversionUploadClient{CallOptions: defaultConversionUploadCallOptions()}
 
 	c := &conversionUploadGRPCClient{
-		connPool:    connPool,
-		disableDeadlines: disableDeadlines,
+		connPool:               connPool,
+		disableDeadlines:       disableDeadlines,
 		conversionUploadClient: servicespb.NewConversionUploadServiceClient(connPool),
-		CallOptions: &client.CallOptions,
-
+		CallOptions:            &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
@@ -216,7 +215,8 @@ func NewConversionUploadClient(ctx context.Context, opts ...option.ClientOption)
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *conversionUploadGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
 }
@@ -238,7 +238,7 @@ func (c *conversionUploadGRPCClient) Close() error {
 
 func (c *conversionUploadGRPCClient) UploadClickConversions(ctx context.Context, req *servicespb.UploadClickConversionsRequest, opts ...gax.CallOption) (*servicespb.UploadClickConversionsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -260,7 +260,7 @@ func (c *conversionUploadGRPCClient) UploadClickConversions(ctx context.Context,
 
 func (c *conversionUploadGRPCClient) UploadCallConversions(ctx context.Context, req *servicespb.UploadCallConversionsRequest, opts ...gax.CallOption) (*servicespb.UploadCallConversionsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

@@ -24,11 +24,11 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
+	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -38,8 +38,8 @@ var newMerchantCenterLinkClientHook clientHook
 
 // MerchantCenterLinkCallOptions contains the retry settings for each method of MerchantCenterLinkClient.
 type MerchantCenterLinkCallOptions struct {
-	ListMerchantCenterLinks []gax.CallOption
-	GetMerchantCenterLink []gax.CallOption
+	ListMerchantCenterLinks  []gax.CallOption
+	GetMerchantCenterLink    []gax.CallOption
 	MutateMerchantCenterLink []gax.CallOption
 }
 
@@ -51,7 +51,7 @@ func defaultMerchantCenterLinkGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -117,7 +117,6 @@ type MerchantCenterLinkClient struct {
 
 	// The call options for this service.
 	CallOptions *MerchantCenterLinkCallOptions
-
 }
 
 // Wrapper methods routed to the internal client.
@@ -137,7 +136,8 @@ func (c *MerchantCenterLinkClient) setGoogleClientInfo(keyval ...string) {
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *MerchantCenterLinkClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
 }
@@ -229,11 +229,10 @@ func NewMerchantCenterLinkClient(ctx context.Context, opts ...option.ClientOptio
 	client := MerchantCenterLinkClient{CallOptions: defaultMerchantCenterLinkCallOptions()}
 
 	c := &merchantCenterLinkGRPCClient{
-		connPool:    connPool,
-		disableDeadlines: disableDeadlines,
+		connPool:                 connPool,
+		disableDeadlines:         disableDeadlines,
 		merchantCenterLinkClient: servicespb.NewMerchantCenterLinkServiceClient(connPool),
-		CallOptions: &client.CallOptions,
-
+		CallOptions:              &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
@@ -244,7 +243,8 @@ func NewMerchantCenterLinkClient(ctx context.Context, opts ...option.ClientOptio
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *merchantCenterLinkGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
 }
@@ -266,7 +266,7 @@ func (c *merchantCenterLinkGRPCClient) Close() error {
 
 func (c *merchantCenterLinkGRPCClient) ListMerchantCenterLinks(ctx context.Context, req *servicespb.ListMerchantCenterLinksRequest, opts ...gax.CallOption) (*servicespb.ListMerchantCenterLinksResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -288,7 +288,7 @@ func (c *merchantCenterLinkGRPCClient) ListMerchantCenterLinks(ctx context.Conte
 
 func (c *merchantCenterLinkGRPCClient) GetMerchantCenterLink(ctx context.Context, req *servicespb.GetMerchantCenterLinkRequest, opts ...gax.CallOption) (*resourcespb.MerchantCenterLink, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -310,7 +310,7 @@ func (c *merchantCenterLinkGRPCClient) GetMerchantCenterLink(ctx context.Context
 
 func (c *merchantCenterLinkGRPCClient) MutateMerchantCenterLink(ctx context.Context, req *servicespb.MutateMerchantCenterLinkRequest, opts ...gax.CallOption) (*servicespb.MutateMerchantCenterLinkResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

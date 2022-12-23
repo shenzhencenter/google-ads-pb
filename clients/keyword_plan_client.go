@@ -24,10 +24,10 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -37,11 +37,11 @@ var newKeywordPlanClientHook clientHook
 
 // KeywordPlanCallOptions contains the retry settings for each method of KeywordPlanClient.
 type KeywordPlanCallOptions struct {
-	MutateKeywordPlans []gax.CallOption
-	GenerateForecastCurve []gax.CallOption
+	MutateKeywordPlans         []gax.CallOption
+	GenerateForecastCurve      []gax.CallOption
 	GenerateForecastTimeSeries []gax.CallOption
-	GenerateForecastMetrics []gax.CallOption
-	GenerateHistoricalMetrics []gax.CallOption
+	GenerateForecastMetrics    []gax.CallOption
+	GenerateHistoricalMetrics  []gax.CallOption
 }
 
 func defaultKeywordPlanGRPCClientOptions() []option.ClientOption {
@@ -52,7 +52,7 @@ func defaultKeywordPlanGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -143,7 +143,6 @@ type KeywordPlanClient struct {
 
 	// The call options for this service.
 	CallOptions *KeywordPlanCallOptions
-
 }
 
 // Wrapper methods routed to the internal client.
@@ -163,7 +162,8 @@ func (c *KeywordPlanClient) setGoogleClientInfo(keyval ...string) {
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *KeywordPlanClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
 }
@@ -302,11 +302,10 @@ func NewKeywordPlanClient(ctx context.Context, opts ...option.ClientOption) (*Ke
 	client := KeywordPlanClient{CallOptions: defaultKeywordPlanCallOptions()}
 
 	c := &keywordPlanGRPCClient{
-		connPool:    connPool,
-		disableDeadlines: disableDeadlines,
+		connPool:          connPool,
+		disableDeadlines:  disableDeadlines,
 		keywordPlanClient: servicespb.NewKeywordPlanServiceClient(connPool),
-		CallOptions: &client.CallOptions,
-
+		CallOptions:       &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
@@ -317,7 +316,8 @@ func NewKeywordPlanClient(ctx context.Context, opts ...option.ClientOption) (*Ke
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *keywordPlanGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
 }
@@ -339,7 +339,7 @@ func (c *keywordPlanGRPCClient) Close() error {
 
 func (c *keywordPlanGRPCClient) MutateKeywordPlans(ctx context.Context, req *servicespb.MutateKeywordPlansRequest, opts ...gax.CallOption) (*servicespb.MutateKeywordPlansResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -361,7 +361,7 @@ func (c *keywordPlanGRPCClient) MutateKeywordPlans(ctx context.Context, req *ser
 
 func (c *keywordPlanGRPCClient) GenerateForecastCurve(ctx context.Context, req *servicespb.GenerateForecastCurveRequest, opts ...gax.CallOption) (*servicespb.GenerateForecastCurveResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -383,7 +383,7 @@ func (c *keywordPlanGRPCClient) GenerateForecastCurve(ctx context.Context, req *
 
 func (c *keywordPlanGRPCClient) GenerateForecastTimeSeries(ctx context.Context, req *servicespb.GenerateForecastTimeSeriesRequest, opts ...gax.CallOption) (*servicespb.GenerateForecastTimeSeriesResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -405,7 +405,7 @@ func (c *keywordPlanGRPCClient) GenerateForecastTimeSeries(ctx context.Context, 
 
 func (c *keywordPlanGRPCClient) GenerateForecastMetrics(ctx context.Context, req *servicespb.GenerateForecastMetricsRequest, opts ...gax.CallOption) (*servicespb.GenerateForecastMetricsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -427,7 +427,7 @@ func (c *keywordPlanGRPCClient) GenerateForecastMetrics(ctx context.Context, req
 
 func (c *keywordPlanGRPCClient) GenerateHistoricalMetrics(ctx context.Context, req *servicespb.GenerateHistoricalMetricsRequest, opts ...gax.CallOption) (*servicespb.GenerateHistoricalMetricsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

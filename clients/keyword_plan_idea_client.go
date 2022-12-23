@@ -24,11 +24,11 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/iterator"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -39,9 +39,9 @@ var newKeywordPlanIdeaClientHook clientHook
 
 // KeywordPlanIdeaCallOptions contains the retry settings for each method of KeywordPlanIdeaClient.
 type KeywordPlanIdeaCallOptions struct {
-	GenerateKeywordIdeas []gax.CallOption
+	GenerateKeywordIdeas             []gax.CallOption
 	GenerateKeywordHistoricalMetrics []gax.CallOption
-	GenerateAdGroupThemes []gax.CallOption
+	GenerateAdGroupThemes            []gax.CallOption
 }
 
 func defaultKeywordPlanIdeaGRPCClientOptions() []option.ClientOption {
@@ -52,7 +52,7 @@ func defaultKeywordPlanIdeaGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -117,7 +117,6 @@ type KeywordPlanIdeaClient struct {
 
 	// The call options for this service.
 	CallOptions *KeywordPlanIdeaCallOptions
-
 }
 
 // Wrapper methods routed to the internal client.
@@ -137,7 +136,8 @@ func (c *KeywordPlanIdeaClient) setGoogleClientInfo(keyval ...string) {
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *KeywordPlanIdeaClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
 }
@@ -232,11 +232,10 @@ func NewKeywordPlanIdeaClient(ctx context.Context, opts ...option.ClientOption) 
 	client := KeywordPlanIdeaClient{CallOptions: defaultKeywordPlanIdeaCallOptions()}
 
 	c := &keywordPlanIdeaGRPCClient{
-		connPool:    connPool,
-		disableDeadlines: disableDeadlines,
+		connPool:              connPool,
+		disableDeadlines:      disableDeadlines,
 		keywordPlanIdeaClient: servicespb.NewKeywordPlanIdeaServiceClient(connPool),
-		CallOptions: &client.CallOptions,
-
+		CallOptions:           &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
@@ -247,7 +246,8 @@ func NewKeywordPlanIdeaClient(ctx context.Context, opts ...option.ClientOption) 
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *keywordPlanIdeaGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
 }
@@ -314,7 +314,7 @@ func (c *keywordPlanIdeaGRPCClient) GenerateKeywordIdeas(ctx context.Context, re
 
 func (c *keywordPlanIdeaGRPCClient) GenerateKeywordHistoricalMetrics(ctx context.Context, req *servicespb.GenerateKeywordHistoricalMetricsRequest, opts ...gax.CallOption) (*servicespb.GenerateKeywordHistoricalMetricsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -336,7 +336,7 @@ func (c *keywordPlanIdeaGRPCClient) GenerateKeywordHistoricalMetrics(ctx context
 
 func (c *keywordPlanIdeaGRPCClient) GenerateAdGroupThemes(ctx context.Context, req *servicespb.GenerateAdGroupThemesRequest, opts ...gax.CallOption) (*servicespb.GenerateAdGroupThemesResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

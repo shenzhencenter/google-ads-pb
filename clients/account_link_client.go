@@ -24,10 +24,10 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -49,7 +49,7 @@ func defaultAccountLinkGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -102,7 +102,6 @@ type AccountLinkClient struct {
 
 	// The call options for this service.
 	CallOptions *AccountLinkCallOptions
-
 }
 
 // Wrapper methods routed to the internal client.
@@ -122,7 +121,8 @@ func (c *AccountLinkClient) setGoogleClientInfo(keyval ...string) {
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *AccountLinkClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
 }
@@ -210,11 +210,10 @@ func NewAccountLinkClient(ctx context.Context, opts ...option.ClientOption) (*Ac
 	client := AccountLinkClient{CallOptions: defaultAccountLinkCallOptions()}
 
 	c := &accountLinkGRPCClient{
-		connPool:    connPool,
-		disableDeadlines: disableDeadlines,
+		connPool:          connPool,
+		disableDeadlines:  disableDeadlines,
 		accountLinkClient: servicespb.NewAccountLinkServiceClient(connPool),
-		CallOptions: &client.CallOptions,
-
+		CallOptions:       &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
@@ -225,7 +224,8 @@ func NewAccountLinkClient(ctx context.Context, opts ...option.ClientOption) (*Ac
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *accountLinkGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
 }
@@ -247,7 +247,7 @@ func (c *accountLinkGRPCClient) Close() error {
 
 func (c *accountLinkGRPCClient) CreateAccountLink(ctx context.Context, req *servicespb.CreateAccountLinkRequest, opts ...gax.CallOption) (*servicespb.CreateAccountLinkResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -269,7 +269,7 @@ func (c *accountLinkGRPCClient) CreateAccountLink(ctx context.Context, req *serv
 
 func (c *accountLinkGRPCClient) MutateAccountLink(ctx context.Context, req *servicespb.MutateAccountLinkRequest, opts ...gax.CallOption) (*servicespb.MutateAccountLinkResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

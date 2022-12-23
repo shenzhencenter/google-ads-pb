@@ -24,10 +24,10 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -48,7 +48,7 @@ func defaultExperimentArmGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -87,7 +87,6 @@ type ExperimentArmClient struct {
 
 	// The call options for this service.
 	CallOptions *ExperimentArmCallOptions
-
 }
 
 // Wrapper methods routed to the internal client.
@@ -107,7 +106,8 @@ func (c *ExperimentArmClient) setGoogleClientInfo(keyval ...string) {
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *ExperimentArmClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
 }
@@ -173,11 +173,10 @@ func NewExperimentArmClient(ctx context.Context, opts ...option.ClientOption) (*
 	client := ExperimentArmClient{CallOptions: defaultExperimentArmCallOptions()}
 
 	c := &experimentArmGRPCClient{
-		connPool:    connPool,
-		disableDeadlines: disableDeadlines,
+		connPool:            connPool,
+		disableDeadlines:    disableDeadlines,
 		experimentArmClient: servicespb.NewExperimentArmServiceClient(connPool),
-		CallOptions: &client.CallOptions,
-
+		CallOptions:         &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
@@ -188,7 +187,8 @@ func NewExperimentArmClient(ctx context.Context, opts ...option.ClientOption) (*
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *experimentArmGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
 }
@@ -210,7 +210,7 @@ func (c *experimentArmGRPCClient) Close() error {
 
 func (c *experimentArmGRPCClient) MutateExperimentArms(ctx context.Context, req *servicespb.MutateExperimentArmsRequest, opts ...gax.CallOption) (*servicespb.MutateExperimentArmsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

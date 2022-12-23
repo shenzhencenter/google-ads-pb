@@ -24,11 +24,11 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
+	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -49,7 +49,7 @@ func defaultLanguageConstantGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -70,7 +70,7 @@ func defaultLanguageConstantCallOptions() *LanguageConstantCallOptions {
 	}
 }
 
-// internalLanguageConstantClient is an interface that defines the methods availaible from Google Ads API.
+// internalLanguageConstantClient is an interface that defines the methods available from Google Ads API.
 type internalLanguageConstantClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -88,7 +88,6 @@ type LanguageConstantClient struct {
 
 	// The call options for this service.
 	CallOptions *LanguageConstantCallOptions
-
 }
 
 // Wrapper methods routed to the internal client.
@@ -172,11 +171,10 @@ func NewLanguageConstantClient(ctx context.Context, opts ...option.ClientOption)
 	client := LanguageConstantClient{CallOptions: defaultLanguageConstantCallOptions()}
 
 	c := &languageConstantGRPCClient{
-		connPool:    connPool,
-		disableDeadlines: disableDeadlines,
+		connPool:               connPool,
+		disableDeadlines:       disableDeadlines,
 		languageConstantClient: servicespb.NewLanguageConstantServiceClient(connPool),
-		CallOptions: &client.CallOptions,
-
+		CallOptions:            &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
@@ -209,7 +207,7 @@ func (c *languageConstantGRPCClient) Close() error {
 
 func (c *languageConstantGRPCClient) GetLanguageConstant(ctx context.Context, req *servicespb.GetLanguageConstantRequest, opts ...gax.CallOption) (*resourcespb.LanguageConstant, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

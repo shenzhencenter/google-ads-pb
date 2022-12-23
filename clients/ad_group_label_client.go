@@ -24,10 +24,10 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -48,7 +48,7 @@ func defaultAdGroupLabelGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -87,7 +87,6 @@ type AdGroupLabelClient struct {
 
 	// The call options for this service.
 	CallOptions *AdGroupLabelCallOptions
-
 }
 
 // Wrapper methods routed to the internal client.
@@ -107,7 +106,8 @@ func (c *AdGroupLabelClient) setGoogleClientInfo(keyval ...string) {
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *AdGroupLabelClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
 }
@@ -177,11 +177,10 @@ func NewAdGroupLabelClient(ctx context.Context, opts ...option.ClientOption) (*A
 	client := AdGroupLabelClient{CallOptions: defaultAdGroupLabelCallOptions()}
 
 	c := &adGroupLabelGRPCClient{
-		connPool:    connPool,
-		disableDeadlines: disableDeadlines,
+		connPool:           connPool,
+		disableDeadlines:   disableDeadlines,
 		adGroupLabelClient: servicespb.NewAdGroupLabelServiceClient(connPool),
-		CallOptions: &client.CallOptions,
-
+		CallOptions:        &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
@@ -192,7 +191,8 @@ func NewAdGroupLabelClient(ctx context.Context, opts ...option.ClientOption) (*A
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *adGroupLabelGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
 }
@@ -214,7 +214,7 @@ func (c *adGroupLabelGRPCClient) Close() error {
 
 func (c *adGroupLabelGRPCClient) MutateAdGroupLabels(ctx context.Context, req *servicespb.MutateAdGroupLabelsRequest, opts ...gax.CallOption) (*servicespb.MutateAdGroupLabelsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

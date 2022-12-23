@@ -24,10 +24,10 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -37,9 +37,9 @@ var newAudienceInsightsClientHook clientHook
 
 // AudienceInsightsCallOptions contains the retry settings for each method of AudienceInsightsClient.
 type AudienceInsightsCallOptions struct {
-	GenerateInsightsFinderReport []gax.CallOption
-	ListAudienceInsightsAttributes []gax.CallOption
-	ListInsightsEligibleDates []gax.CallOption
+	GenerateInsightsFinderReport        []gax.CallOption
+	ListAudienceInsightsAttributes      []gax.CallOption
+	ListInsightsEligibleDates           []gax.CallOption
 	GenerateAudienceCompositionInsights []gax.CallOption
 }
 
@@ -51,7 +51,7 @@ func defaultAudienceInsightsGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -130,7 +130,6 @@ type AudienceInsightsClient struct {
 
 	// The call options for this service.
 	CallOptions *AudienceInsightsCallOptions
-
 }
 
 // Wrapper methods routed to the internal client.
@@ -150,7 +149,8 @@ func (c *AudienceInsightsClient) setGoogleClientInfo(keyval ...string) {
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *AudienceInsightsClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
 }
@@ -265,11 +265,10 @@ func NewAudienceInsightsClient(ctx context.Context, opts ...option.ClientOption)
 	client := AudienceInsightsClient{CallOptions: defaultAudienceInsightsCallOptions()}
 
 	c := &audienceInsightsGRPCClient{
-		connPool:    connPool,
-		disableDeadlines: disableDeadlines,
+		connPool:               connPool,
+		disableDeadlines:       disableDeadlines,
 		audienceInsightsClient: servicespb.NewAudienceInsightsServiceClient(connPool),
-		CallOptions: &client.CallOptions,
-
+		CallOptions:            &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
@@ -280,7 +279,8 @@ func NewAudienceInsightsClient(ctx context.Context, opts ...option.ClientOption)
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *audienceInsightsGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
 }
@@ -302,7 +302,7 @@ func (c *audienceInsightsGRPCClient) Close() error {
 
 func (c *audienceInsightsGRPCClient) GenerateInsightsFinderReport(ctx context.Context, req *servicespb.GenerateInsightsFinderReportRequest, opts ...gax.CallOption) (*servicespb.GenerateInsightsFinderReportResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -324,7 +324,7 @@ func (c *audienceInsightsGRPCClient) GenerateInsightsFinderReport(ctx context.Co
 
 func (c *audienceInsightsGRPCClient) ListAudienceInsightsAttributes(ctx context.Context, req *servicespb.ListAudienceInsightsAttributesRequest, opts ...gax.CallOption) (*servicespb.ListAudienceInsightsAttributesResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -346,7 +346,7 @@ func (c *audienceInsightsGRPCClient) ListAudienceInsightsAttributes(ctx context.
 
 func (c *audienceInsightsGRPCClient) ListInsightsEligibleDates(ctx context.Context, req *servicespb.ListInsightsEligibleDatesRequest, opts ...gax.CallOption) (*servicespb.ListInsightsEligibleDatesResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -366,7 +366,7 @@ func (c *audienceInsightsGRPCClient) ListInsightsEligibleDates(ctx context.Conte
 
 func (c *audienceInsightsGRPCClient) GenerateAudienceCompositionInsights(ctx context.Context, req *servicespb.GenerateAudienceCompositionInsightsRequest, opts ...gax.CallOption) (*servicespb.GenerateAudienceCompositionInsightsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

@@ -24,10 +24,10 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -48,7 +48,7 @@ func defaultCampaignExtensionSettingGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -87,7 +87,6 @@ type CampaignExtensionSettingClient struct {
 
 	// The call options for this service.
 	CallOptions *CampaignExtensionSettingCallOptions
-
 }
 
 // Wrapper methods routed to the internal client.
@@ -107,7 +106,8 @@ func (c *CampaignExtensionSettingClient) setGoogleClientInfo(keyval ...string) {
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *CampaignExtensionSettingClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
 }
@@ -193,11 +193,10 @@ func NewCampaignExtensionSettingClient(ctx context.Context, opts ...option.Clien
 	client := CampaignExtensionSettingClient{CallOptions: defaultCampaignExtensionSettingCallOptions()}
 
 	c := &campaignExtensionSettingGRPCClient{
-		connPool:    connPool,
-		disableDeadlines: disableDeadlines,
+		connPool:                       connPool,
+		disableDeadlines:               disableDeadlines,
 		campaignExtensionSettingClient: servicespb.NewCampaignExtensionSettingServiceClient(connPool),
-		CallOptions: &client.CallOptions,
-
+		CallOptions:                    &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
@@ -208,7 +207,8 @@ func NewCampaignExtensionSettingClient(ctx context.Context, opts ...option.Clien
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *campaignExtensionSettingGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
 }
@@ -230,7 +230,7 @@ func (c *campaignExtensionSettingGRPCClient) Close() error {
 
 func (c *campaignExtensionSettingGRPCClient) MutateCampaignExtensionSettings(ctx context.Context, req *servicespb.MutateCampaignExtensionSettingsRequest, opts ...gax.CallOption) (*servicespb.MutateCampaignExtensionSettingsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

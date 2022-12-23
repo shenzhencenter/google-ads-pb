@@ -26,11 +26,11 @@ import (
 	"cloud.google.com/go/longrunning"
 	lroauto "cloud.google.com/go/longrunning/autogen"
 	gax "github.com/googleapis/gax-go/v2"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/iterator"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	longrunningpb "google.golang.org/genproto/googleapis/longrunning"
 	statuspb "google.golang.org/genproto/googleapis/rpc/status"
 	"google.golang.org/grpc"
@@ -44,8 +44,8 @@ var newCampaignDraftClientHook clientHook
 
 // CampaignDraftCallOptions contains the retry settings for each method of CampaignDraftClient.
 type CampaignDraftCallOptions struct {
-	MutateCampaignDrafts []gax.CallOption
-	PromoteCampaignDraft []gax.CallOption
+	MutateCampaignDrafts         []gax.CallOption
+	PromoteCampaignDraft         []gax.CallOption
 	ListCampaignDraftAsyncErrors []gax.CallOption
 }
 
@@ -57,7 +57,7 @@ func defaultCampaignDraftGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -128,7 +128,6 @@ type CampaignDraftClient struct {
 	// It is exposed so that its CallOptions can be modified if required.
 	// Users should not Close this client.
 	LROClient *lroauto.OperationsClient
-
 }
 
 // Wrapper methods routed to the internal client.
@@ -148,7 +147,8 @@ func (c *CampaignDraftClient) setGoogleClientInfo(keyval ...string) {
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *CampaignDraftClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
 }
@@ -265,11 +265,10 @@ func NewCampaignDraftClient(ctx context.Context, opts ...option.ClientOption) (*
 	client := CampaignDraftClient{CallOptions: defaultCampaignDraftCallOptions()}
 
 	c := &campaignDraftGRPCClient{
-		connPool:    connPool,
-		disableDeadlines: disableDeadlines,
+		connPool:            connPool,
+		disableDeadlines:    disableDeadlines,
 		campaignDraftClient: servicespb.NewCampaignDraftServiceClient(connPool),
-		CallOptions: &client.CallOptions,
-
+		CallOptions:         &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
@@ -291,7 +290,8 @@ func NewCampaignDraftClient(ctx context.Context, opts ...option.ClientOption) (*
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *campaignDraftGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
 }
@@ -313,7 +313,7 @@ func (c *campaignDraftGRPCClient) Close() error {
 
 func (c *campaignDraftGRPCClient) MutateCampaignDrafts(ctx context.Context, req *servicespb.MutateCampaignDraftsRequest, opts ...gax.CallOption) (*servicespb.MutateCampaignDraftsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -335,7 +335,7 @@ func (c *campaignDraftGRPCClient) MutateCampaignDrafts(ctx context.Context, req 
 
 func (c *campaignDraftGRPCClient) PromoteCampaignDraft(ctx context.Context, req *servicespb.PromoteCampaignDraftRequest, opts ...gax.CallOption) (*PromoteCampaignDraftOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

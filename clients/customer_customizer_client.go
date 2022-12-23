@@ -24,10 +24,10 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -48,7 +48,7 @@ func defaultCustomerCustomizerGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -87,7 +87,6 @@ type CustomerCustomizerClient struct {
 
 	// The call options for this service.
 	CallOptions *CustomerCustomizerCallOptions
-
 }
 
 // Wrapper methods routed to the internal client.
@@ -107,7 +106,8 @@ func (c *CustomerCustomizerClient) setGoogleClientInfo(keyval ...string) {
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *CustomerCustomizerClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
 }
@@ -164,11 +164,10 @@ func NewCustomerCustomizerClient(ctx context.Context, opts ...option.ClientOptio
 	client := CustomerCustomizerClient{CallOptions: defaultCustomerCustomizerCallOptions()}
 
 	c := &customerCustomizerGRPCClient{
-		connPool:    connPool,
-		disableDeadlines: disableDeadlines,
+		connPool:                 connPool,
+		disableDeadlines:         disableDeadlines,
 		customerCustomizerClient: servicespb.NewCustomerCustomizerServiceClient(connPool),
-		CallOptions: &client.CallOptions,
-
+		CallOptions:              &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
@@ -179,7 +178,8 @@ func NewCustomerCustomizerClient(ctx context.Context, opts ...option.ClientOptio
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *customerCustomizerGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
 }
@@ -201,7 +201,7 @@ func (c *customerCustomizerGRPCClient) Close() error {
 
 func (c *customerCustomizerGRPCClient) MutateCustomerCustomizers(ctx context.Context, req *servicespb.MutateCustomerCustomizersRequest, opts ...gax.CallOption) (*servicespb.MutateCustomerCustomizersResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

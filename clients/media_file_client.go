@@ -24,10 +24,10 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -48,7 +48,7 @@ func defaultMediaFileGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -87,7 +87,6 @@ type MediaFileClient struct {
 
 	// The call options for this service.
 	CallOptions *MediaFileCallOptions
-
 }
 
 // Wrapper methods routed to the internal client.
@@ -107,7 +106,8 @@ func (c *MediaFileClient) setGoogleClientInfo(keyval ...string) {
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *MediaFileClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
 }
@@ -186,11 +186,10 @@ func NewMediaFileClient(ctx context.Context, opts ...option.ClientOption) (*Medi
 	client := MediaFileClient{CallOptions: defaultMediaFileCallOptions()}
 
 	c := &mediaFileGRPCClient{
-		connPool:    connPool,
+		connPool:         connPool,
 		disableDeadlines: disableDeadlines,
-		mediaFileClient: servicespb.NewMediaFileServiceClient(connPool),
-		CallOptions: &client.CallOptions,
-
+		mediaFileClient:  servicespb.NewMediaFileServiceClient(connPool),
+		CallOptions:      &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
@@ -201,7 +200,8 @@ func NewMediaFileClient(ctx context.Context, opts ...option.ClientOption) (*Medi
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *mediaFileGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
 }
@@ -223,7 +223,7 @@ func (c *mediaFileGRPCClient) Close() error {
 
 func (c *mediaFileGRPCClient) MutateMediaFiles(ctx context.Context, req *servicespb.MutateMediaFilesRequest, opts ...gax.CallOption) (*servicespb.MutateMediaFilesResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

@@ -24,10 +24,10 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -48,7 +48,7 @@ func defaultCampaignAssetGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -87,7 +87,6 @@ type CampaignAssetClient struct {
 
 	// The call options for this service.
 	CallOptions *CampaignAssetCallOptions
-
 }
 
 // Wrapper methods routed to the internal client.
@@ -107,7 +106,8 @@ func (c *CampaignAssetClient) setGoogleClientInfo(keyval ...string) {
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *CampaignAssetClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
 }
@@ -178,11 +178,10 @@ func NewCampaignAssetClient(ctx context.Context, opts ...option.ClientOption) (*
 	client := CampaignAssetClient{CallOptions: defaultCampaignAssetCallOptions()}
 
 	c := &campaignAssetGRPCClient{
-		connPool:    connPool,
-		disableDeadlines: disableDeadlines,
+		connPool:            connPool,
+		disableDeadlines:    disableDeadlines,
 		campaignAssetClient: servicespb.NewCampaignAssetServiceClient(connPool),
-		CallOptions: &client.CallOptions,
-
+		CallOptions:         &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
@@ -193,7 +192,8 @@ func NewCampaignAssetClient(ctx context.Context, opts ...option.ClientOption) (*
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *campaignAssetGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
 }
@@ -215,7 +215,7 @@ func (c *campaignAssetGRPCClient) Close() error {
 
 func (c *campaignAssetGRPCClient) MutateCampaignAssets(ctx context.Context, req *servicespb.MutateCampaignAssetsRequest, opts ...gax.CallOption) (*servicespb.MutateCampaignAssetsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

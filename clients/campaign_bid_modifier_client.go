@@ -24,10 +24,10 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -48,7 +48,7 @@ func defaultCampaignBidModifierGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -87,7 +87,6 @@ type CampaignBidModifierClient struct {
 
 	// The call options for this service.
 	CallOptions *CampaignBidModifierCallOptions
-
 }
 
 // Wrapper methods routed to the internal client.
@@ -107,7 +106,8 @@ func (c *CampaignBidModifierClient) setGoogleClientInfo(keyval ...string) {
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *CampaignBidModifierClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
 }
@@ -188,11 +188,10 @@ func NewCampaignBidModifierClient(ctx context.Context, opts ...option.ClientOpti
 	client := CampaignBidModifierClient{CallOptions: defaultCampaignBidModifierCallOptions()}
 
 	c := &campaignBidModifierGRPCClient{
-		connPool:    connPool,
-		disableDeadlines: disableDeadlines,
+		connPool:                  connPool,
+		disableDeadlines:          disableDeadlines,
 		campaignBidModifierClient: servicespb.NewCampaignBidModifierServiceClient(connPool),
-		CallOptions: &client.CallOptions,
-
+		CallOptions:               &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
@@ -203,7 +202,8 @@ func NewCampaignBidModifierClient(ctx context.Context, opts ...option.ClientOpti
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *campaignBidModifierGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
 }
@@ -225,7 +225,7 @@ func (c *campaignBidModifierGRPCClient) Close() error {
 
 func (c *campaignBidModifierGRPCClient) MutateCampaignBidModifiers(ctx context.Context, req *servicespb.MutateCampaignBidModifiersRequest, opts ...gax.CallOption) (*servicespb.MutateCampaignBidModifiersResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

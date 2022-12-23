@@ -24,10 +24,10 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -48,7 +48,7 @@ func defaultKeywordPlanAdGroupGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -87,7 +87,6 @@ type KeywordPlanAdGroupClient struct {
 
 	// The call options for this service.
 	CallOptions *KeywordPlanAdGroupCallOptions
-
 }
 
 // Wrapper methods routed to the internal client.
@@ -107,7 +106,8 @@ func (c *KeywordPlanAdGroupClient) setGoogleClientInfo(keyval ...string) {
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *KeywordPlanAdGroupClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
 }
@@ -180,11 +180,10 @@ func NewKeywordPlanAdGroupClient(ctx context.Context, opts ...option.ClientOptio
 	client := KeywordPlanAdGroupClient{CallOptions: defaultKeywordPlanAdGroupCallOptions()}
 
 	c := &keywordPlanAdGroupGRPCClient{
-		connPool:    connPool,
-		disableDeadlines: disableDeadlines,
+		connPool:                 connPool,
+		disableDeadlines:         disableDeadlines,
 		keywordPlanAdGroupClient: servicespb.NewKeywordPlanAdGroupServiceClient(connPool),
-		CallOptions: &client.CallOptions,
-
+		CallOptions:              &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
@@ -195,7 +194,8 @@ func NewKeywordPlanAdGroupClient(ctx context.Context, opts ...option.ClientOptio
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *keywordPlanAdGroupGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
 }
@@ -217,7 +217,7 @@ func (c *keywordPlanAdGroupGRPCClient) Close() error {
 
 func (c *keywordPlanAdGroupGRPCClient) MutateKeywordPlanAdGroups(ctx context.Context, req *servicespb.MutateKeywordPlanAdGroupsRequest, opts ...gax.CallOption) (*servicespb.MutateKeywordPlanAdGroupsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
