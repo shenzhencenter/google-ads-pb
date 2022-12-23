@@ -23,7 +23,12 @@
 //
 // To get started with this package, create a client.
 //  ctx := context.Background()
-//  c, err := clients.NewCustomConversionGoalClient(ctx)
+//  // This snippet has been automatically generated and should be regarded as a code template only.
+//  // It will require modifications to work:
+//  // - It may require correct/in-range values for request initialization.
+//  // - It may require specifying regional endpoints when creating the service client as shown in:
+//  //   https://pkg.go.dev/cloud.google.com/go#hdr-Client_Options
+//  c, err := clients.NewAccountBudgetProposalClient(ctx)
 //  if err != nil {
 //  	// TODO: Handle error.
 //  }
@@ -38,17 +43,22 @@
 // The following is an example of making an API call with the newly created client.
 //
 //  ctx := context.Background()
-//  c, err := clients.NewCustomConversionGoalClient(ctx)
+//  // This snippet has been automatically generated and should be regarded as a code template only.
+//  // It will require modifications to work:
+//  // - It may require correct/in-range values for request initialization.
+//  // - It may require specifying regional endpoints when creating the service client as shown in:
+//  //   https://pkg.go.dev/cloud.google.com/go#hdr-Client_Options
+//  c, err := clients.NewAccountBudgetProposalClient(ctx)
 //  if err != nil {
 //  	// TODO: Handle error.
 //  }
 //  defer c.Close()
 //
-//  req := &servicespb.MutateCustomConversionGoalsRequest{
+//  req := &servicespb.MutateAccountBudgetProposalRequest{
 //  	// TODO: Fill request struct fields.
-//  	// See https://pkg.go.dev/github.com/shenzhencenter/google-ads-pb/services#MutateCustomConversionGoalsRequest.
+//  	// See https://pkg.go.dev/github.com/shenzhencenter/google-ads-pb/services#MutateAccountBudgetProposalRequest.
 //  }
-//  resp, err := c.MutateCustomConversionGoals(ctx, req)
+//  resp, err := c.MutateAccountBudgetProposal(ctx, req)
 //  if err != nil {
 //  	// TODO: Handle error.
 //  }
@@ -57,7 +67,7 @@
 //
 // Use of Context
 //
-// The ctx passed to NewCustomConversionGoalClient is used for authentication requests and
+// The ctx passed to NewAccountBudgetProposalClient is used for authentication requests and
 // for creating the underlying connection, but is not used for subsequent calls.
 // Individual methods on the client use the ctx given to them.
 //
@@ -157,4 +167,3 @@ func versionGo() string {
 	}
 	return "UNKNOWN"
 }
-

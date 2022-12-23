@@ -1,8 +1,13 @@
 
 # Google Ads API Client Library for Golang
 
-This project is a client library for the [Google Ads API](https://developers.google.com/google-ads/api/docs/start). Most of the code is generated from [googleapis](https://github.com/googleapis/googleapis/tree/master/google/ads/googleads). And this project only adds some examples and minor adjustments. Please note this is an unofficial project.
+[![GoDoc](https://godoc.org/github.com/shenzhencenter/google-ads-pb?status.svg)](https://pkg.go.dev/github.com/shenzhencenter/google-ads-pb)
+[![Go Report Card](https://goreportcard.com/badge/github.com/shenzhencenter/google-ads-pb)](https://goreportcard.com/report/github.com/shenzhencenter/google-ads-pb)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
+This is a Golang client library for accessing the [Google Ads API](https://developers.google.com/google-ads/api/docs/start). Most of the code is generated from the [googleapis](https://github.com/googleapis/googleapis/tree/master/google/ads/googleads) repository. We only make some modifications and examples.
+
+Please note that this is not an official project. But we think it is very low risk because it is a very mature project, and we have been using it in production for more than two years. The only thing to note is the [sunset schedule](https://developers.google.com/google-ads/api/docs/sunset-dates) of the Google Ads API.
 
 ## Features
 
@@ -28,23 +33,23 @@ This project is a client library for the [Google Ads API](https://developers.goo
 
 ## Installation
 
-```
-go get -d github.com/shenzhencenter/google-ads-pb
+```bash
+$ go get -d github.com/shenzhencenter/google-ads-pb
 ```
     
 ## Getting started
 
 1. Set the environment variables.
 
-```
-export ACCESS_TOKEN=<your access token>
-export DEVELOPER_TOKEN=<your developer token>
-export CUSTOMER_ID=<your customer id>
+```bash
+$ export ACCESS_TOKEN=<your access token>
+$ export DEVELOPER_TOKEN=<your developer token>
+$ export CUSTOMER_ID=<your customer id>
 ```
 
 2. Create a GRPC connection.
 
-```
+```go
 ctx := context.Background()
 
 headers := metadata.Pairs(
@@ -62,7 +67,7 @@ defer conn.Close()
 
 3. Make the first call.
 
-```
+```go
 customerServiceClient := services.NewCustomerServiceClient(conn)
 accessibleCustomers, err := customerServiceClient.ListAccessibleCustomers(
   ctx, 

@@ -24,11 +24,11 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
+	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -49,7 +49,7 @@ func defaultMobileDeviceConstantGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -70,7 +70,7 @@ func defaultMobileDeviceConstantCallOptions() *MobileDeviceConstantCallOptions {
 	}
 }
 
-// internalMobileDeviceConstantClient is an interface that defines the methods availaible from Google Ads API.
+// internalMobileDeviceConstantClient is an interface that defines the methods available from Google Ads API.
 type internalMobileDeviceConstantClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -88,7 +88,6 @@ type MobileDeviceConstantClient struct {
 
 	// The call options for this service.
 	CallOptions *MobileDeviceConstantCallOptions
-
 }
 
 // Wrapper methods routed to the internal client.
@@ -172,11 +171,10 @@ func NewMobileDeviceConstantClient(ctx context.Context, opts ...option.ClientOpt
 	client := MobileDeviceConstantClient{CallOptions: defaultMobileDeviceConstantCallOptions()}
 
 	c := &mobileDeviceConstantGRPCClient{
-		connPool:    connPool,
-		disableDeadlines: disableDeadlines,
+		connPool:                   connPool,
+		disableDeadlines:           disableDeadlines,
 		mobileDeviceConstantClient: servicespb.NewMobileDeviceConstantServiceClient(connPool),
-		CallOptions: &client.CallOptions,
-
+		CallOptions:                &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
@@ -209,7 +207,7 @@ func (c *mobileDeviceConstantGRPCClient) Close() error {
 
 func (c *mobileDeviceConstantGRPCClient) GetMobileDeviceConstant(ctx context.Context, req *servicespb.GetMobileDeviceConstantRequest, opts ...gax.CallOption) (*resourcespb.MobileDeviceConstant, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

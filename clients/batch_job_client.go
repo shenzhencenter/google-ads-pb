@@ -26,12 +26,12 @@ import (
 	"cloud.google.com/go/longrunning"
 	lroauto "cloud.google.com/go/longrunning/autogen"
 	gax "github.com/googleapis/gax-go/v2"
+	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/iterator"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	longrunningpb "google.golang.org/genproto/googleapis/longrunning"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -43,9 +43,9 @@ var newBatchJobClientHook clientHook
 
 // BatchJobCallOptions contains the retry settings for each method of BatchJobClient.
 type BatchJobCallOptions struct {
-	MutateBatchJob []gax.CallOption
-	ListBatchJobResults []gax.CallOption
-	RunBatchJob []gax.CallOption
+	MutateBatchJob        []gax.CallOption
+	ListBatchJobResults   []gax.CallOption
+	RunBatchJob           []gax.CallOption
 	AddBatchJobOperations []gax.CallOption
 }
 
@@ -57,7 +57,7 @@ func defaultBatchJobGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -141,7 +141,6 @@ type BatchJobClient struct {
 	// It is exposed so that its CallOptions can be modified if required.
 	// Users should not Close this client.
 	LROClient *lroauto.OperationsClient
-
 }
 
 // Wrapper methods routed to the internal client.
@@ -161,7 +160,8 @@ func (c *BatchJobClient) setGoogleClientInfo(keyval ...string) {
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *BatchJobClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
 }
@@ -285,11 +285,10 @@ func NewBatchJobClient(ctx context.Context, opts ...option.ClientOption) (*Batch
 	client := BatchJobClient{CallOptions: defaultBatchJobCallOptions()}
 
 	c := &batchJobGRPCClient{
-		connPool:    connPool,
+		connPool:         connPool,
 		disableDeadlines: disableDeadlines,
-		batchJobClient: servicespb.NewBatchJobServiceClient(connPool),
-		CallOptions: &client.CallOptions,
-
+		batchJobClient:   servicespb.NewBatchJobServiceClient(connPool),
+		CallOptions:      &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
@@ -311,7 +310,8 @@ func NewBatchJobClient(ctx context.Context, opts ...option.ClientOption) (*Batch
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *batchJobGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
 }
@@ -333,7 +333,7 @@ func (c *batchJobGRPCClient) Close() error {
 
 func (c *batchJobGRPCClient) MutateBatchJob(ctx context.Context, req *servicespb.MutateBatchJobRequest, opts ...gax.CallOption) (*servicespb.MutateBatchJobResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -400,7 +400,7 @@ func (c *batchJobGRPCClient) ListBatchJobResults(ctx context.Context, req *servi
 
 func (c *batchJobGRPCClient) RunBatchJob(ctx context.Context, req *servicespb.RunBatchJobRequest, opts ...gax.CallOption) (*RunBatchJobOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -424,7 +424,7 @@ func (c *batchJobGRPCClient) RunBatchJob(ctx context.Context, req *servicespb.Ru
 
 func (c *batchJobGRPCClient) AddBatchJobOperations(ctx context.Context, req *servicespb.AddBatchJobOperationsRequest, opts ...gax.CallOption) (*servicespb.AddBatchJobOperationsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

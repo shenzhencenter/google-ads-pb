@@ -24,10 +24,10 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -48,7 +48,7 @@ func defaultAdGroupExtensionSettingGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -87,7 +87,6 @@ type AdGroupExtensionSettingClient struct {
 
 	// The call options for this service.
 	CallOptions *AdGroupExtensionSettingCallOptions
-
 }
 
 // Wrapper methods routed to the internal client.
@@ -107,7 +106,8 @@ func (c *AdGroupExtensionSettingClient) setGoogleClientInfo(keyval ...string) {
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *AdGroupExtensionSettingClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
 }
@@ -194,11 +194,10 @@ func NewAdGroupExtensionSettingClient(ctx context.Context, opts ...option.Client
 	client := AdGroupExtensionSettingClient{CallOptions: defaultAdGroupExtensionSettingCallOptions()}
 
 	c := &adGroupExtensionSettingGRPCClient{
-		connPool:    connPool,
-		disableDeadlines: disableDeadlines,
+		connPool:                      connPool,
+		disableDeadlines:              disableDeadlines,
 		adGroupExtensionSettingClient: servicespb.NewAdGroupExtensionSettingServiceClient(connPool),
-		CallOptions: &client.CallOptions,
-
+		CallOptions:                   &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
@@ -209,7 +208,8 @@ func NewAdGroupExtensionSettingClient(ctx context.Context, opts ...option.Client
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *adGroupExtensionSettingGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
 }
@@ -231,7 +231,7 @@ func (c *adGroupExtensionSettingGRPCClient) Close() error {
 
 func (c *adGroupExtensionSettingGRPCClient) MutateAdGroupExtensionSettings(ctx context.Context, req *servicespb.MutateAdGroupExtensionSettingsRequest, opts ...gax.CallOption) (*servicespb.MutateAdGroupExtensionSettingsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

@@ -24,10 +24,10 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -48,7 +48,7 @@ func defaultAssetGroupSignalGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -87,7 +87,6 @@ type AssetGroupSignalClient struct {
 
 	// The call options for this service.
 	CallOptions *AssetGroupSignalCallOptions
-
 }
 
 // Wrapper methods routed to the internal client.
@@ -107,7 +106,8 @@ func (c *AssetGroupSignalClient) setGoogleClientInfo(keyval ...string) {
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *AssetGroupSignalClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
 }
@@ -164,11 +164,10 @@ func NewAssetGroupSignalClient(ctx context.Context, opts ...option.ClientOption)
 	client := AssetGroupSignalClient{CallOptions: defaultAssetGroupSignalCallOptions()}
 
 	c := &assetGroupSignalGRPCClient{
-		connPool:    connPool,
-		disableDeadlines: disableDeadlines,
+		connPool:               connPool,
+		disableDeadlines:       disableDeadlines,
 		assetGroupSignalClient: servicespb.NewAssetGroupSignalServiceClient(connPool),
-		CallOptions: &client.CallOptions,
-
+		CallOptions:            &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
@@ -179,7 +178,8 @@ func NewAssetGroupSignalClient(ctx context.Context, opts ...option.ClientOption)
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *assetGroupSignalGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
 }
@@ -201,7 +201,7 @@ func (c *assetGroupSignalGRPCClient) Close() error {
 
 func (c *assetGroupSignalGRPCClient) MutateAssetGroupSignals(ctx context.Context, req *servicespb.MutateAssetGroupSignalsRequest, opts ...gax.CallOption) (*servicespb.MutateAssetGroupSignalsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

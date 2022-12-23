@@ -24,11 +24,11 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
+	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -49,7 +49,7 @@ func defaultIncomeRangeViewGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -70,7 +70,7 @@ func defaultIncomeRangeViewCallOptions() *IncomeRangeViewCallOptions {
 	}
 }
 
-// internalIncomeRangeViewClient is an interface that defines the methods availaible from Google Ads API.
+// internalIncomeRangeViewClient is an interface that defines the methods available from Google Ads API.
 type internalIncomeRangeViewClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -88,7 +88,6 @@ type IncomeRangeViewClient struct {
 
 	// The call options for this service.
 	CallOptions *IncomeRangeViewCallOptions
-
 }
 
 // Wrapper methods routed to the internal client.
@@ -172,11 +171,10 @@ func NewIncomeRangeViewClient(ctx context.Context, opts ...option.ClientOption) 
 	client := IncomeRangeViewClient{CallOptions: defaultIncomeRangeViewCallOptions()}
 
 	c := &incomeRangeViewGRPCClient{
-		connPool:    connPool,
-		disableDeadlines: disableDeadlines,
+		connPool:              connPool,
+		disableDeadlines:      disableDeadlines,
 		incomeRangeViewClient: servicespb.NewIncomeRangeViewServiceClient(connPool),
-		CallOptions: &client.CallOptions,
-
+		CallOptions:           &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
@@ -209,7 +207,7 @@ func (c *incomeRangeViewGRPCClient) Close() error {
 
 func (c *incomeRangeViewGRPCClient) GetIncomeRangeView(ctx context.Context, req *servicespb.GetIncomeRangeViewRequest, opts ...gax.CallOption) (*resourcespb.IncomeRangeView, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

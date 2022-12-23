@@ -24,10 +24,10 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -48,7 +48,7 @@ func defaultConversionCustomVariableGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -87,7 +87,6 @@ type ConversionCustomVariableClient struct {
 
 	// The call options for this service.
 	CallOptions *ConversionCustomVariableCallOptions
-
 }
 
 // Wrapper methods routed to the internal client.
@@ -107,7 +106,8 @@ func (c *ConversionCustomVariableClient) setGoogleClientInfo(keyval ...string) {
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *ConversionCustomVariableClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
 }
@@ -174,11 +174,10 @@ func NewConversionCustomVariableClient(ctx context.Context, opts ...option.Clien
 	client := ConversionCustomVariableClient{CallOptions: defaultConversionCustomVariableCallOptions()}
 
 	c := &conversionCustomVariableGRPCClient{
-		connPool:    connPool,
-		disableDeadlines: disableDeadlines,
+		connPool:                       connPool,
+		disableDeadlines:               disableDeadlines,
 		conversionCustomVariableClient: servicespb.NewConversionCustomVariableServiceClient(connPool),
-		CallOptions: &client.CallOptions,
-
+		CallOptions:                    &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
@@ -189,7 +188,8 @@ func NewConversionCustomVariableClient(ctx context.Context, opts ...option.Clien
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *conversionCustomVariableGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
 }
@@ -211,7 +211,7 @@ func (c *conversionCustomVariableGRPCClient) Close() error {
 
 func (c *conversionCustomVariableGRPCClient) MutateConversionCustomVariables(ctx context.Context, req *servicespb.MutateConversionCustomVariablesRequest, opts ...gax.CallOption) (*servicespb.MutateConversionCustomVariablesResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

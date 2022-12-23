@@ -24,10 +24,10 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -48,7 +48,7 @@ func defaultFeedMappingGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -87,7 +87,6 @@ type FeedMappingClient struct {
 
 	// The call options for this service.
 	CallOptions *FeedMappingCallOptions
-
 }
 
 // Wrapper methods routed to the internal client.
@@ -107,7 +106,8 @@ func (c *FeedMappingClient) setGoogleClientInfo(keyval ...string) {
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *FeedMappingClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
 }
@@ -185,11 +185,10 @@ func NewFeedMappingClient(ctx context.Context, opts ...option.ClientOption) (*Fe
 	client := FeedMappingClient{CallOptions: defaultFeedMappingCallOptions()}
 
 	c := &feedMappingGRPCClient{
-		connPool:    connPool,
-		disableDeadlines: disableDeadlines,
+		connPool:          connPool,
+		disableDeadlines:  disableDeadlines,
 		feedMappingClient: servicespb.NewFeedMappingServiceClient(connPool),
-		CallOptions: &client.CallOptions,
-
+		CallOptions:       &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
@@ -200,7 +199,8 @@ func NewFeedMappingClient(ctx context.Context, opts ...option.ClientOption) (*Fe
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *feedMappingGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
 }
@@ -222,7 +222,7 @@ func (c *feedMappingGRPCClient) Close() error {
 
 func (c *feedMappingGRPCClient) MutateFeedMappings(ctx context.Context, req *servicespb.MutateFeedMappingsRequest, opts ...gax.CallOption) (*servicespb.MutateFeedMappingsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

@@ -24,10 +24,10 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -48,7 +48,7 @@ func defaultInvoiceGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -87,7 +87,6 @@ type InvoiceClient struct {
 
 	// The call options for this service.
 	CallOptions *InvoiceCallOptions
-
 }
 
 // Wrapper methods routed to the internal client.
@@ -107,7 +106,8 @@ func (c *InvoiceClient) setGoogleClientInfo(keyval ...string) {
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *InvoiceClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
 }
@@ -173,11 +173,10 @@ func NewInvoiceClient(ctx context.Context, opts ...option.ClientOption) (*Invoic
 	client := InvoiceClient{CallOptions: defaultInvoiceCallOptions()}
 
 	c := &invoiceGRPCClient{
-		connPool:    connPool,
+		connPool:         connPool,
 		disableDeadlines: disableDeadlines,
-		invoiceClient: servicespb.NewInvoiceServiceClient(connPool),
-		CallOptions: &client.CallOptions,
-
+		invoiceClient:    servicespb.NewInvoiceServiceClient(connPool),
+		CallOptions:      &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
@@ -188,7 +187,8 @@ func NewInvoiceClient(ctx context.Context, opts ...option.ClientOption) (*Invoic
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *invoiceGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
 }
@@ -210,7 +210,7 @@ func (c *invoiceGRPCClient) Close() error {
 
 func (c *invoiceGRPCClient) ListInvoices(ctx context.Context, req *servicespb.ListInvoicesRequest, opts ...gax.CallOption) (*servicespb.ListInvoicesResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

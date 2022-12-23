@@ -26,11 +26,11 @@ import (
 	"cloud.google.com/go/longrunning"
 	lroauto "cloud.google.com/go/longrunning/autogen"
 	gax "github.com/googleapis/gax-go/v2"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/iterator"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	longrunningpb "google.golang.org/genproto/googleapis/longrunning"
 	statuspb "google.golang.org/genproto/googleapis/rpc/status"
 	"google.golang.org/grpc"
@@ -43,12 +43,12 @@ var newExperimentClientHook clientHook
 
 // ExperimentCallOptions contains the retry settings for each method of ExperimentClient.
 type ExperimentCallOptions struct {
-	MutateExperiments []gax.CallOption
-	EndExperiment []gax.CallOption
+	MutateExperiments         []gax.CallOption
+	EndExperiment             []gax.CallOption
 	ListExperimentAsyncErrors []gax.CallOption
-	GraduateExperiment []gax.CallOption
-	ScheduleExperiment []gax.CallOption
-	PromoteExperiment []gax.CallOption
+	GraduateExperiment        []gax.CallOption
+	ScheduleExperiment        []gax.CallOption
+	PromoteExperiment         []gax.CallOption
 }
 
 func defaultExperimentGRPCClientOptions() []option.ClientOption {
@@ -59,7 +59,7 @@ func defaultExperimentGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -170,7 +170,6 @@ type ExperimentClient struct {
 	// It is exposed so that its CallOptions can be modified if required.
 	// Users should not Close this client.
 	LROClient *lroauto.OperationsClient
-
 }
 
 // Wrapper methods routed to the internal client.
@@ -190,7 +189,8 @@ func (c *ExperimentClient) setGoogleClientInfo(keyval ...string) {
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *ExperimentClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
 }
@@ -366,11 +366,10 @@ func NewExperimentClient(ctx context.Context, opts ...option.ClientOption) (*Exp
 	client := ExperimentClient{CallOptions: defaultExperimentCallOptions()}
 
 	c := &experimentGRPCClient{
-		connPool:    connPool,
+		connPool:         connPool,
 		disableDeadlines: disableDeadlines,
 		experimentClient: servicespb.NewExperimentServiceClient(connPool),
-		CallOptions: &client.CallOptions,
-
+		CallOptions:      &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
@@ -392,7 +391,8 @@ func NewExperimentClient(ctx context.Context, opts ...option.ClientOption) (*Exp
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *experimentGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
 }
@@ -414,7 +414,7 @@ func (c *experimentGRPCClient) Close() error {
 
 func (c *experimentGRPCClient) MutateExperiments(ctx context.Context, req *servicespb.MutateExperimentsRequest, opts ...gax.CallOption) (*servicespb.MutateExperimentsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -436,7 +436,7 @@ func (c *experimentGRPCClient) MutateExperiments(ctx context.Context, req *servi
 
 func (c *experimentGRPCClient) EndExperiment(ctx context.Context, req *servicespb.EndExperimentRequest, opts ...gax.CallOption) error {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -499,7 +499,7 @@ func (c *experimentGRPCClient) ListExperimentAsyncErrors(ctx context.Context, re
 
 func (c *experimentGRPCClient) GraduateExperiment(ctx context.Context, req *servicespb.GraduateExperimentRequest, opts ...gax.CallOption) error {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -517,7 +517,7 @@ func (c *experimentGRPCClient) GraduateExperiment(ctx context.Context, req *serv
 
 func (c *experimentGRPCClient) ScheduleExperiment(ctx context.Context, req *servicespb.ScheduleExperimentRequest, opts ...gax.CallOption) (*ScheduleExperimentOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
@@ -541,7 +541,7 @@ func (c *experimentGRPCClient) ScheduleExperiment(ctx context.Context, req *serv
 
 func (c *experimentGRPCClient) PromoteExperiment(ctx context.Context, req *servicespb.PromoteExperimentRequest, opts ...gax.CallOption) (*PromoteExperimentOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

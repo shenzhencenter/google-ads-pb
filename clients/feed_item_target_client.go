@@ -24,10 +24,10 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -48,7 +48,7 @@ func defaultFeedItemTargetGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -87,7 +87,6 @@ type FeedItemTargetClient struct {
 
 	// The call options for this service.
 	CallOptions *FeedItemTargetCallOptions
-
 }
 
 // Wrapper methods routed to the internal client.
@@ -107,7 +106,8 @@ func (c *FeedItemTargetClient) setGoogleClientInfo(keyval ...string) {
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *FeedItemTargetClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
 }
@@ -184,11 +184,10 @@ func NewFeedItemTargetClient(ctx context.Context, opts ...option.ClientOption) (
 	client := FeedItemTargetClient{CallOptions: defaultFeedItemTargetCallOptions()}
 
 	c := &feedItemTargetGRPCClient{
-		connPool:    connPool,
-		disableDeadlines: disableDeadlines,
+		connPool:             connPool,
+		disableDeadlines:     disableDeadlines,
 		feedItemTargetClient: servicespb.NewFeedItemTargetServiceClient(connPool),
-		CallOptions: &client.CallOptions,
-
+		CallOptions:          &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
@@ -199,7 +198,8 @@ func NewFeedItemTargetClient(ctx context.Context, opts ...option.ClientOption) (
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *feedItemTargetGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
 }
@@ -221,7 +221,7 @@ func (c *feedItemTargetGRPCClient) Close() error {
 
 func (c *feedItemTargetGRPCClient) MutateFeedItemTargets(ctx context.Context, req *servicespb.MutateFeedItemTargetsRequest, opts ...gax.CallOption) (*servicespb.MutateFeedItemTargetsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

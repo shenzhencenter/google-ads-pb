@@ -24,10 +24,10 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -48,7 +48,7 @@ func defaultAudienceGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -87,7 +87,6 @@ type AudienceClient struct {
 
 	// The call options for this service.
 	CallOptions *AudienceCallOptions
-
 }
 
 // Wrapper methods routed to the internal client.
@@ -107,7 +106,8 @@ func (c *AudienceClient) setGoogleClientInfo(keyval ...string) {
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *AudienceClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
 }
@@ -166,11 +166,10 @@ func NewAudienceClient(ctx context.Context, opts ...option.ClientOption) (*Audie
 	client := AudienceClient{CallOptions: defaultAudienceCallOptions()}
 
 	c := &audienceGRPCClient{
-		connPool:    connPool,
+		connPool:         connPool,
 		disableDeadlines: disableDeadlines,
-		audienceClient: servicespb.NewAudienceServiceClient(connPool),
-		CallOptions: &client.CallOptions,
-
+		audienceClient:   servicespb.NewAudienceServiceClient(connPool),
+		CallOptions:      &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
@@ -181,7 +180,8 @@ func NewAudienceClient(ctx context.Context, opts ...option.ClientOption) (*Audie
 
 // Connection returns a connection to the API service.
 //
-// Deprecated.
+// Deprecated: Connections are now pooled so this method does not always
+// return the same resource.
 func (c *audienceGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
 }
@@ -203,7 +203,7 @@ func (c *audienceGRPCClient) Close() error {
 
 func (c *audienceGRPCClient) MutateAudiences(ctx context.Context, req *servicespb.MutateAudiencesRequest, opts ...gax.CallOption) (*servicespb.MutateAudiencesResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}

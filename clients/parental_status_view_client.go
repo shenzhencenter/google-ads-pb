@@ -24,11 +24,11 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
+	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
+	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
-	resourcespb "github.com/shenzhencenter/google-ads-pb/resources"
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -49,7 +49,7 @@ func defaultParentalStatusViewGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
-		grpc.MaxCallRecvMsgSize(math.MaxInt32))),
+			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
 }
 
@@ -70,7 +70,7 @@ func defaultParentalStatusViewCallOptions() *ParentalStatusViewCallOptions {
 	}
 }
 
-// internalParentalStatusViewClient is an interface that defines the methods availaible from Google Ads API.
+// internalParentalStatusViewClient is an interface that defines the methods available from Google Ads API.
 type internalParentalStatusViewClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -88,7 +88,6 @@ type ParentalStatusViewClient struct {
 
 	// The call options for this service.
 	CallOptions *ParentalStatusViewCallOptions
-
 }
 
 // Wrapper methods routed to the internal client.
@@ -172,11 +171,10 @@ func NewParentalStatusViewClient(ctx context.Context, opts ...option.ClientOptio
 	client := ParentalStatusViewClient{CallOptions: defaultParentalStatusViewCallOptions()}
 
 	c := &parentalStatusViewGRPCClient{
-		connPool:    connPool,
-		disableDeadlines: disableDeadlines,
+		connPool:                 connPool,
+		disableDeadlines:         disableDeadlines,
 		parentalStatusViewClient: servicespb.NewParentalStatusViewServiceClient(connPool),
-		CallOptions: &client.CallOptions,
-
+		CallOptions:              &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
@@ -209,7 +207,7 @@ func (c *parentalStatusViewGRPCClient) Close() error {
 
 func (c *parentalStatusViewGRPCClient) GetParentalStatusView(ctx context.Context, req *servicespb.GetParentalStatusViewRequest, opts ...gax.CallOption) (*resourcespb.ParentalStatusView, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 3600000 * time.Millisecond)
+		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
