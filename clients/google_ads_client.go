@@ -1,4 +1,4 @@
-// Copyright 2022 Google LLC
+// Copyright 2023 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -184,11 +184,11 @@ func (c *GoogleAdsClient) SearchStream(ctx context.Context, req *servicespb.Sear
 // This method is essentially a wrapper around a series of mutate methods. The
 // only features it offers over calling those methods directly are:
 //
-//   Atomic transactions
+//	Atomic transactions
 //
-//   Temp resource names (described below)
+//	Temp resource names (described below)
 //
-//   Somewhat reduced latency over making a series of mutate calls
+//	Somewhat reduced latency over making a series of mutate calls
 //
 // Note: Only resources that support atomic transactions are included, so this
 // method can’t replace all calls to individual services.
@@ -210,16 +210,16 @@ func (c *GoogleAdsClient) SearchStream(ctx context.Context, req *servicespb.Sear
 //
 // Note:
 //
-//   Resources must be created with a temp name before the name can be reused.
-//   For example, the previous CampaignBudget+Campaign example would fail if
-//   the mutate order was reversed.
+//	Resources must be created with a temp name before the name can be reused.
+//	For example, the previous CampaignBudget+Campaign example would fail if
+//	the mutate order was reversed.
 //
-//   Temp names are not remembered across requests.
+//	Temp names are not remembered across requests.
 //
-//   There’s no limit to the number of temp names in a request.
+//	There’s no limit to the number of temp names in a request.
 //
-//   Each temp name must use a unique negative number, even if the resource
-//   types differ.
+//	Each temp name must use a unique negative number, even if the resource
+//	types differ.
 //
 // LatencyIt’s important to group mutates by resource type or the request may time
 // out and fail. Latency is roughly equal to a series of calls to individual
@@ -421,6 +421,7 @@ func (c *googleAdsGRPCClient) SearchStream(ctx context.Context, req *servicespb.
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
 
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	opts = append((*c.CallOptions).SearchStream[0:len((*c.CallOptions).SearchStream):len((*c.CallOptions).SearchStream)], opts...)
 	var resp servicespb.GoogleAdsService_SearchStreamClient
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
