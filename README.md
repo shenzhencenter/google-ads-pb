@@ -1,11 +1,12 @@
 
 # Google Ads API Client Library for Golang
 
+[![Go](https://github.com/shenzhencenter/google-ads-pb/actions/workflows/go.yml/badge.svg?branch=main)](https://github.com/shenzhencenter/google-ads-pb/actions/workflows/go.yml)
 [![GoDoc](https://godoc.org/github.com/shenzhencenter/google-ads-pb?status.svg)](https://pkg.go.dev/github.com/shenzhencenter/google-ads-pb)
 [![Go Report Card](https://goreportcard.com/badge/github.com/shenzhencenter/google-ads-pb)](https://goreportcard.com/report/github.com/shenzhencenter/google-ads-pb)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-This is a Golang client library for accessing the [Google Ads API](https://developers.google.com/google-ads/api/docs/start). Most of the code is generated from the [googleapis](https://github.com/googleapis/googleapis/tree/master/google/ads/googleads) repository. We only make some modifications and examples.
+This is a Golang client library for accessing the [Google Ads API](https://developers.google.com/google-ads/api/docs/start). Most of the code is generated from the [googleapis](https://github.com/googleapis/googleapis/tree/master/google/ads/googleads) repository. We only make some modifications and examples. Detailed informations can be found on [workflows/generator](https://github.com/shenzhencenter/google-ads-pb/blob/main/.github/workflows/generator.yml).
 
 Please note that this is not an official project. But we think it is very low risk because it is a very mature project, and we have been using it in production for more than two years. The only thing to note is the [sunset schedule](https://developers.google.com/google-ads/api/docs/sunset-dates) of the Google Ads API.
 
