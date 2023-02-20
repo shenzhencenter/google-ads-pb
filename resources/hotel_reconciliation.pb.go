@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.28.1
 // 	protoc        v3.21.9
-// source: google/ads/googleads/v12/resources/hotel_reconciliation.proto
+// source: google/ads/googleads/v13/resources/hotel_reconciliation.proto
 
 package resources
 
@@ -49,51 +49,54 @@ type HotelReconciliation struct {
 	//
 	// `customers/{customer_id}/hotelReconciliations/{commission_id}`
 	ResourceName string `protobuf:"bytes,1,opt,name=resource_name,json=resourceName,proto3" json:"resource_name,omitempty"`
-	// Required. Output only. The commission ID is Google's ID for this booking. Every booking event is
-	// assigned a Commission ID to help you match it to a guest stay.
+	// Required. Output only. The commission ID is Google's ID for this booking.
+	// Every booking event is assigned a Commission ID to help you match it to a
+	// guest stay.
 	CommissionId string `protobuf:"bytes,2,opt,name=commission_id,json=commissionId,proto3" json:"commission_id,omitempty"`
-	// Output only. The order ID is the identifier for this booking as provided in the
-	// 'transaction_id' parameter of the conversion tracking tag.
+	// Output only. The order ID is the identifier for this booking as provided in
+	// the 'transaction_id' parameter of the conversion tracking tag.
 	OrderId string `protobuf:"bytes,3,opt,name=order_id,json=orderId,proto3" json:"order_id,omitempty"`
-	// Output only. The resource name for the Campaign associated with the conversion.
+	// Output only. The resource name for the Campaign associated with the
+	// conversion.
 	Campaign string `protobuf:"bytes,11,opt,name=campaign,proto3" json:"campaign,omitempty"`
-	// Output only. Identifier for the Hotel Center account which provides the rates for the
-	// Hotel campaign.
+	// Output only. Identifier for the Hotel Center account which provides the
+	// rates for the Hotel campaign.
 	HotelCenterId int64 `protobuf:"varint,4,opt,name=hotel_center_id,json=hotelCenterId,proto3" json:"hotel_center_id,omitempty"`
-	// Output only. Unique identifier for the booked property, as provided in the Hotel Center
-	// feed. The hotel ID comes from the 'ID' parameter of the conversion tracking
-	// tag.
+	// Output only. Unique identifier for the booked property, as provided in the
+	// Hotel Center feed. The hotel ID comes from the 'ID' parameter of the
+	// conversion tracking tag.
 	HotelId string `protobuf:"bytes,5,opt,name=hotel_id,json=hotelId,proto3" json:"hotel_id,omitempty"`
-	// Output only. Check-in date recorded when the booking is made. If the check-in date is
-	// modified at reconciliation, the revised date will then take the place of
-	// the original date in this column. Format is YYYY-MM-DD.
+	// Output only. Check-in date recorded when the booking is made. If the
+	// check-in date is modified at reconciliation, the revised date will then
+	// take the place of the original date in this column. Format is YYYY-MM-DD.
 	CheckInDate string `protobuf:"bytes,6,opt,name=check_in_date,json=checkInDate,proto3" json:"check_in_date,omitempty"`
-	// Output only. Check-out date recorded when the booking is made. If the check-in date is
-	// modified at reconciliation, the revised date will then take the place of
-	// the original date in this column. Format is YYYY-MM-DD.
+	// Output only. Check-out date recorded when the booking is made. If the
+	// check-in date is modified at reconciliation, the revised date will then
+	// take the place of the original date in this column. Format is YYYY-MM-DD.
 	CheckOutDate string `protobuf:"bytes,7,opt,name=check_out_date,json=checkOutDate,proto3" json:"check_out_date,omitempty"`
-	// Required. Output only. Reconciled value is the final value of a booking as paid by the guest. If
-	// original booking value changes for any reason, such as itinerary changes or
-	// room upsells, the reconciled value should be the full final amount
-	// collected. If a booking is canceled, the reconciled value should include
-	// the value of any cancellation fees or non-refundable nights charged. Value
-	// is in millionths of the base unit currency. For example, $12.35 would be
-	// represented as 12350000. Currency unit is in the default customer currency.
+	// Required. Output only. Reconciled value is the final value of a booking as
+	// paid by the guest. If original booking value changes for any reason, such
+	// as itinerary changes or room upsells, the reconciled value should be the
+	// full final amount collected. If a booking is canceled, the reconciled value
+	// should include the value of any cancellation fees or non-refundable nights
+	// charged. Value is in millionths of the base unit currency. For example,
+	// $12.35 would be represented as 12350000. Currency unit is in the default
+	// customer currency.
 	ReconciledValueMicros int64 `protobuf:"varint,8,opt,name=reconciled_value_micros,json=reconciledValueMicros,proto3" json:"reconciled_value_micros,omitempty"`
-	// Output only. Whether a given booking has been billed. Once billed, a booking can't be
-	// modified.
+	// Output only. Whether a given booking has been billed. Once billed, a
+	// booking can't be modified.
 	Billed bool `protobuf:"varint,9,opt,name=billed,proto3" json:"billed,omitempty"`
-	// Required. Output only. Current status of a booking with regards to reconciliation and billing.
-	// Bookings should be reconciled within 45 days after the check-out date.
-	// Any booking not reconciled within 45 days will be billed at its original
-	// value.
-	Status enums.HotelReconciliationStatusEnum_HotelReconciliationStatus `protobuf:"varint,10,opt,name=status,proto3,enum=google.ads.googleads.v12.enums.HotelReconciliationStatusEnum_HotelReconciliationStatus" json:"status,omitempty"`
+	// Required. Output only. Current status of a booking with regards to
+	// reconciliation and billing. Bookings should be reconciled within 45 days
+	// after the check-out date. Any booking not reconciled within 45 days will be
+	// billed at its original value.
+	Status enums.HotelReconciliationStatusEnum_HotelReconciliationStatus `protobuf:"varint,10,opt,name=status,proto3,enum=google.ads.googleads.v13.enums.HotelReconciliationStatusEnum_HotelReconciliationStatus" json:"status,omitempty"`
 }
 
 func (x *HotelReconciliation) Reset() {
 	*x = HotelReconciliation{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v12_resources_hotel_reconciliation_proto_msgTypes[0]
+		mi := &file_google_ads_googleads_v13_resources_hotel_reconciliation_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -106,7 +109,7 @@ func (x *HotelReconciliation) String() string {
 func (*HotelReconciliation) ProtoMessage() {}
 
 func (x *HotelReconciliation) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v12_resources_hotel_reconciliation_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v13_resources_hotel_reconciliation_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -119,7 +122,7 @@ func (x *HotelReconciliation) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HotelReconciliation.ProtoReflect.Descriptor instead.
 func (*HotelReconciliation) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v12_resources_hotel_reconciliation_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v13_resources_hotel_reconciliation_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *HotelReconciliation) GetResourceName() string {
@@ -199,17 +202,17 @@ func (x *HotelReconciliation) GetStatus() enums.HotelReconciliationStatusEnum_Ho
 	return enums.HotelReconciliationStatusEnum_HotelReconciliationStatus(0)
 }
 
-var File_google_ads_googleads_v12_resources_hotel_reconciliation_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v13_resources_hotel_reconciliation_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v12_resources_hotel_reconciliation_proto_rawDesc = []byte{
+var file_google_ads_googleads_v13_resources_hotel_reconciliation_proto_rawDesc = []byte{
 	0x0a, 0x3d, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x72, 0x65, 0x73, 0x6f, 0x75,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x33, 0x2f, 0x72, 0x65, 0x73, 0x6f, 0x75,
 	0x72, 0x63, 0x65, 0x73, 0x2f, 0x68, 0x6f, 0x74, 0x65, 0x6c, 0x5f, 0x72, 0x65, 0x63, 0x6f, 0x6e,
 	0x63, 0x69, 0x6c, 0x69, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12,
 	0x22, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72,
+	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x33, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72,
 	0x63, 0x65, 0x73, 0x1a, 0x40, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x65, 0x6e,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x33, 0x2f, 0x65, 0x6e,
 	0x75, 0x6d, 0x73, 0x2f, 0x68, 0x6f, 0x74, 0x65, 0x6c, 0x5f, 0x72, 0x65, 0x63, 0x6f, 0x6e, 0x63,
 	0x69, 0x6c, 0x69, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x2e,
 	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x1f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x70,
@@ -251,7 +254,7 @@ var file_google_ads_googleads_v12_resources_hotel_reconciliation_proto_rawDesc =
 	0x62, 0x69, 0x6c, 0x6c, 0x65, 0x64, 0x12, 0x77, 0x0a, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73,
 	0x18, 0x0a, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x57, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
 	0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31,
-	0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x48, 0x6f, 0x74, 0x65, 0x6c, 0x52, 0x65, 0x63,
+	0x33, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x48, 0x6f, 0x74, 0x65, 0x6c, 0x52, 0x65, 0x63,
 	0x6f, 0x6e, 0x63, 0x69, 0x6c, 0x69, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x53, 0x74, 0x61, 0x74, 0x75,
 	0x73, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x48, 0x6f, 0x74, 0x65, 0x6c, 0x52, 0x65, 0x63, 0x6f, 0x6e,
 	0x63, 0x69, 0x6c, 0x69, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x42,
@@ -265,43 +268,43 @@ var file_google_ads_googleads_v12_resources_hotel_reconciliation_proto_rawDesc =
 	0x2f, 0x7b, 0x63, 0x6f, 0x6d, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x7d,
 	0x42, 0x8a, 0x02, 0x0a, 0x26, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
 	0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31,
-	0x32, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x42, 0x18, 0x48, 0x6f, 0x74,
+	0x33, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x42, 0x18, 0x48, 0x6f, 0x74,
 	0x65, 0x6c, 0x52, 0x65, 0x63, 0x6f, 0x6e, 0x63, 0x69, 0x6c, 0x69, 0x61, 0x74, 0x69, 0x6f, 0x6e,
 	0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x4b, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
 	0x67, 0x6f, 0x6c, 0x61, 0x6e, 0x67, 0x2e, 0x6f, 0x72, 0x67, 0x2f, 0x67, 0x65, 0x6e, 0x70, 0x72,
 	0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x70, 0x69, 0x73, 0x2f, 0x61,
-	0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32,
+	0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x33,
 	0x2f, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x3b, 0x72, 0x65, 0x73, 0x6f, 0x75,
 	0x72, 0x63, 0x65, 0x73, 0xa2, 0x02, 0x03, 0x47, 0x41, 0x41, 0xaa, 0x02, 0x22, 0x47, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2e, 0x41, 0x64, 0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64,
-	0x73, 0x2e, 0x56, 0x31, 0x32, 0x2e, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0xca,
+	0x73, 0x2e, 0x56, 0x31, 0x33, 0x2e, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0xca,
 	0x02, 0x22, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x5c, 0x41, 0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x31, 0x32, 0x5c, 0x52, 0x65, 0x73, 0x6f, 0x75,
+	0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x31, 0x33, 0x5c, 0x52, 0x65, 0x73, 0x6f, 0x75,
 	0x72, 0x63, 0x65, 0x73, 0xea, 0x02, 0x26, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x3a, 0x3a, 0x41,
 	0x64, 0x73, 0x3a, 0x3a, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56,
-	0x31, 0x32, 0x3a, 0x3a, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x62, 0x06, 0x70,
+	0x31, 0x33, 0x3a, 0x3a, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x62, 0x06, 0x70,
 	0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
-	file_google_ads_googleads_v12_resources_hotel_reconciliation_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v12_resources_hotel_reconciliation_proto_rawDescData = file_google_ads_googleads_v12_resources_hotel_reconciliation_proto_rawDesc
+	file_google_ads_googleads_v13_resources_hotel_reconciliation_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v13_resources_hotel_reconciliation_proto_rawDescData = file_google_ads_googleads_v13_resources_hotel_reconciliation_proto_rawDesc
 )
 
-func file_google_ads_googleads_v12_resources_hotel_reconciliation_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v12_resources_hotel_reconciliation_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v12_resources_hotel_reconciliation_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v12_resources_hotel_reconciliation_proto_rawDescData)
+func file_google_ads_googleads_v13_resources_hotel_reconciliation_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v13_resources_hotel_reconciliation_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v13_resources_hotel_reconciliation_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v13_resources_hotel_reconciliation_proto_rawDescData)
 	})
-	return file_google_ads_googleads_v12_resources_hotel_reconciliation_proto_rawDescData
+	return file_google_ads_googleads_v13_resources_hotel_reconciliation_proto_rawDescData
 }
 
-var file_google_ads_googleads_v12_resources_hotel_reconciliation_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
-var file_google_ads_googleads_v12_resources_hotel_reconciliation_proto_goTypes = []interface{}{
-	(*HotelReconciliation)(nil),                                        // 0: google.ads.googleads.v12.resources.HotelReconciliation
-	(enums.HotelReconciliationStatusEnum_HotelReconciliationStatus)(0), // 1: google.ads.googleads.v12.enums.HotelReconciliationStatusEnum.HotelReconciliationStatus
+var file_google_ads_googleads_v13_resources_hotel_reconciliation_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_google_ads_googleads_v13_resources_hotel_reconciliation_proto_goTypes = []interface{}{
+	(*HotelReconciliation)(nil),                                        // 0: google.ads.googleads.v13.resources.HotelReconciliation
+	(enums.HotelReconciliationStatusEnum_HotelReconciliationStatus)(0), // 1: google.ads.googleads.v13.enums.HotelReconciliationStatusEnum.HotelReconciliationStatus
 }
-var file_google_ads_googleads_v12_resources_hotel_reconciliation_proto_depIdxs = []int32{
-	1, // 0: google.ads.googleads.v12.resources.HotelReconciliation.status:type_name -> google.ads.googleads.v12.enums.HotelReconciliationStatusEnum.HotelReconciliationStatus
+var file_google_ads_googleads_v13_resources_hotel_reconciliation_proto_depIdxs = []int32{
+	1, // 0: google.ads.googleads.v13.resources.HotelReconciliation.status:type_name -> google.ads.googleads.v13.enums.HotelReconciliationStatusEnum.HotelReconciliationStatus
 	1, // [1:1] is the sub-list for method output_type
 	1, // [1:1] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name
@@ -309,13 +312,13 @@ var file_google_ads_googleads_v12_resources_hotel_reconciliation_proto_depIdxs =
 	0, // [0:1] is the sub-list for field type_name
 }
 
-func init() { file_google_ads_googleads_v12_resources_hotel_reconciliation_proto_init() }
-func file_google_ads_googleads_v12_resources_hotel_reconciliation_proto_init() {
-	if File_google_ads_googleads_v12_resources_hotel_reconciliation_proto != nil {
+func init() { file_google_ads_googleads_v13_resources_hotel_reconciliation_proto_init() }
+func file_google_ads_googleads_v13_resources_hotel_reconciliation_proto_init() {
+	if File_google_ads_googleads_v13_resources_hotel_reconciliation_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_google_ads_googleads_v12_resources_hotel_reconciliation_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v13_resources_hotel_reconciliation_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*HotelReconciliation); i {
 			case 0:
 				return &v.state
@@ -332,18 +335,18 @@ func file_google_ads_googleads_v12_resources_hotel_reconciliation_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_google_ads_googleads_v12_resources_hotel_reconciliation_proto_rawDesc,
+			RawDescriptor: file_google_ads_googleads_v13_resources_hotel_reconciliation_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   1,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_google_ads_googleads_v12_resources_hotel_reconciliation_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v12_resources_hotel_reconciliation_proto_depIdxs,
-		MessageInfos:      file_google_ads_googleads_v12_resources_hotel_reconciliation_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v13_resources_hotel_reconciliation_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v13_resources_hotel_reconciliation_proto_depIdxs,
+		MessageInfos:      file_google_ads_googleads_v13_resources_hotel_reconciliation_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v12_resources_hotel_reconciliation_proto = out.File
-	file_google_ads_googleads_v12_resources_hotel_reconciliation_proto_rawDesc = nil
-	file_google_ads_googleads_v12_resources_hotel_reconciliation_proto_goTypes = nil
-	file_google_ads_googleads_v12_resources_hotel_reconciliation_proto_depIdxs = nil
+	File_google_ads_googleads_v13_resources_hotel_reconciliation_proto = out.File
+	file_google_ads_googleads_v13_resources_hotel_reconciliation_proto_rawDesc = nil
+	file_google_ads_googleads_v13_resources_hotel_reconciliation_proto_goTypes = nil
+	file_google_ads_googleads_v13_resources_hotel_reconciliation_proto_depIdxs = nil
 }

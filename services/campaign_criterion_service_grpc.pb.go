@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.9
-// source: google/ads/googleads/v12/services/campaign_criterion_service.proto
+// source: google/ads/googleads/v13/services/campaign_criterion_service.proto
 
 package services
 
@@ -68,7 +68,7 @@ func NewCampaignCriterionServiceClient(cc grpc.ClientConnInterface) CampaignCrit
 
 func (c *campaignCriterionServiceClient) MutateCampaignCriteria(ctx context.Context, in *MutateCampaignCriteriaRequest, opts ...grpc.CallOption) (*MutateCampaignCriteriaResponse, error) {
 	out := new(MutateCampaignCriteriaResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.CampaignCriterionService/MutateCampaignCriteria", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v13.services.CampaignCriterionService/MutateCampaignCriteria", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -147,7 +147,7 @@ func _CampaignCriterionService_MutateCampaignCriteria_Handler(srv interface{}, c
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v12.services.CampaignCriterionService/MutateCampaignCriteria",
+		FullMethod: "/google.ads.googleads.v13.services.CampaignCriterionService/MutateCampaignCriteria",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CampaignCriterionServiceServer).MutateCampaignCriteria(ctx, req.(*MutateCampaignCriteriaRequest))
@@ -159,7 +159,7 @@ func _CampaignCriterionService_MutateCampaignCriteria_Handler(srv interface{}, c
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CampaignCriterionService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v12.services.CampaignCriterionService",
+	ServiceName: "google.ads.googleads.v13.services.CampaignCriterionService",
 	HandlerType: (*CampaignCriterionServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -168,5 +168,5 @@ var CampaignCriterionService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v12/services/campaign_criterion_service.proto",
+	Metadata: "google/ads/googleads/v13/services/campaign_criterion_service.proto",
 }

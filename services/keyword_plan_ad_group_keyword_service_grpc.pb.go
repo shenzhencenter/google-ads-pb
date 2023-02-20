@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.9
-// source: google/ads/googleads/v12/services/keyword_plan_ad_group_keyword_service.proto
+// source: google/ads/googleads/v13/services/keyword_plan_ad_group_keyword_service.proto
 
 package services
 
@@ -52,7 +52,7 @@ func NewKeywordPlanAdGroupKeywordServiceClient(cc grpc.ClientConnInterface) Keyw
 
 func (c *keywordPlanAdGroupKeywordServiceClient) MutateKeywordPlanAdGroupKeywords(ctx context.Context, in *MutateKeywordPlanAdGroupKeywordsRequest, opts ...grpc.CallOption) (*MutateKeywordPlanAdGroupKeywordsResponse, error) {
 	out := new(MutateKeywordPlanAdGroupKeywordsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.KeywordPlanAdGroupKeywordService/MutateKeywordPlanAdGroupKeywords", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v13.services.KeywordPlanAdGroupKeywordService/MutateKeywordPlanAdGroupKeywords", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -115,7 +115,7 @@ func _KeywordPlanAdGroupKeywordService_MutateKeywordPlanAdGroupKeywords_Handler(
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v12.services.KeywordPlanAdGroupKeywordService/MutateKeywordPlanAdGroupKeywords",
+		FullMethod: "/google.ads.googleads.v13.services.KeywordPlanAdGroupKeywordService/MutateKeywordPlanAdGroupKeywords",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(KeywordPlanAdGroupKeywordServiceServer).MutateKeywordPlanAdGroupKeywords(ctx, req.(*MutateKeywordPlanAdGroupKeywordsRequest))
@@ -127,7 +127,7 @@ func _KeywordPlanAdGroupKeywordService_MutateKeywordPlanAdGroupKeywords_Handler(
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var KeywordPlanAdGroupKeywordService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v12.services.KeywordPlanAdGroupKeywordService",
+	ServiceName: "google.ads.googleads.v13.services.KeywordPlanAdGroupKeywordService",
 	HandlerType: (*KeywordPlanAdGroupKeywordServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -136,5 +136,5 @@ var KeywordPlanAdGroupKeywordService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v12/services/keyword_plan_ad_group_keyword_service.proto",
+	Metadata: "google/ads/googleads/v13/services/keyword_plan_ad_group_keyword_service.proto",
 }

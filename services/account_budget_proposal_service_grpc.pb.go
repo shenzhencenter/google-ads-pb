@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.9
-// source: google/ads/googleads/v12/services/account_budget_proposal_service.proto
+// source: google/ads/googleads/v13/services/account_budget_proposal_service.proto
 
 package services
 
@@ -53,7 +53,7 @@ func NewAccountBudgetProposalServiceClient(cc grpc.ClientConnInterface) AccountB
 
 func (c *accountBudgetProposalServiceClient) MutateAccountBudgetProposal(ctx context.Context, in *MutateAccountBudgetProposalRequest, opts ...grpc.CallOption) (*MutateAccountBudgetProposalResponse, error) {
 	out := new(MutateAccountBudgetProposalResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.AccountBudgetProposalService/MutateAccountBudgetProposal", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v13.services.AccountBudgetProposalService/MutateAccountBudgetProposal", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -117,7 +117,7 @@ func _AccountBudgetProposalService_MutateAccountBudgetProposal_Handler(srv inter
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v12.services.AccountBudgetProposalService/MutateAccountBudgetProposal",
+		FullMethod: "/google.ads.googleads.v13.services.AccountBudgetProposalService/MutateAccountBudgetProposal",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AccountBudgetProposalServiceServer).MutateAccountBudgetProposal(ctx, req.(*MutateAccountBudgetProposalRequest))
@@ -129,7 +129,7 @@ func _AccountBudgetProposalService_MutateAccountBudgetProposal_Handler(srv inter
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AccountBudgetProposalService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v12.services.AccountBudgetProposalService",
+	ServiceName: "google.ads.googleads.v13.services.AccountBudgetProposalService",
 	HandlerType: (*AccountBudgetProposalServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -138,5 +138,5 @@ var AccountBudgetProposalService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v12/services/account_budget_proposal_service.proto",
+	Metadata: "google/ads/googleads/v13/services/account_budget_proposal_service.proto",
 }

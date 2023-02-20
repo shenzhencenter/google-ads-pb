@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.9
-// source: google/ads/googleads/v12/services/campaign_feed_service.proto
+// source: google/ads/googleads/v13/services/campaign_feed_service.proto
 
 package services
 
@@ -63,7 +63,7 @@ func NewCampaignFeedServiceClient(cc grpc.ClientConnInterface) CampaignFeedServi
 
 func (c *campaignFeedServiceClient) MutateCampaignFeeds(ctx context.Context, in *MutateCampaignFeedsRequest, opts ...grpc.CallOption) (*MutateCampaignFeedsResponse, error) {
 	out := new(MutateCampaignFeedsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.CampaignFeedService/MutateCampaignFeeds", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v13.services.CampaignFeedService/MutateCampaignFeeds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -136,7 +136,7 @@ func _CampaignFeedService_MutateCampaignFeeds_Handler(srv interface{}, ctx conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v12.services.CampaignFeedService/MutateCampaignFeeds",
+		FullMethod: "/google.ads.googleads.v13.services.CampaignFeedService/MutateCampaignFeeds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CampaignFeedServiceServer).MutateCampaignFeeds(ctx, req.(*MutateCampaignFeedsRequest))
@@ -148,7 +148,7 @@ func _CampaignFeedService_MutateCampaignFeeds_Handler(srv interface{}, ctx conte
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CampaignFeedService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v12.services.CampaignFeedService",
+	ServiceName: "google.ads.googleads.v13.services.CampaignFeedService",
 	HandlerType: (*CampaignFeedServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -157,5 +157,5 @@ var CampaignFeedService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v12/services/campaign_feed_service.proto",
+	Metadata: "google/ads/googleads/v13/services/campaign_feed_service.proto",
 }

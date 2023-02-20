@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.9
-// source: google/ads/googleads/v12/services/customer_label_service.proto
+// source: google/ads/googleads/v13/services/customer_label_service.proto
 
 package services
 
@@ -49,7 +49,7 @@ func NewCustomerLabelServiceClient(cc grpc.ClientConnInterface) CustomerLabelSer
 
 func (c *customerLabelServiceClient) MutateCustomerLabels(ctx context.Context, in *MutateCustomerLabelsRequest, opts ...grpc.CallOption) (*MutateCustomerLabelsResponse, error) {
 	out := new(MutateCustomerLabelsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.CustomerLabelService/MutateCustomerLabels", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v13.services.CustomerLabelService/MutateCustomerLabels", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -108,7 +108,7 @@ func _CustomerLabelService_MutateCustomerLabels_Handler(srv interface{}, ctx con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v12.services.CustomerLabelService/MutateCustomerLabels",
+		FullMethod: "/google.ads.googleads.v13.services.CustomerLabelService/MutateCustomerLabels",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CustomerLabelServiceServer).MutateCustomerLabels(ctx, req.(*MutateCustomerLabelsRequest))
@@ -120,7 +120,7 @@ func _CustomerLabelService_MutateCustomerLabels_Handler(srv interface{}, ctx con
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CustomerLabelService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v12.services.CustomerLabelService",
+	ServiceName: "google.ads.googleads.v13.services.CustomerLabelService",
 	HandlerType: (*CustomerLabelServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -129,5 +129,5 @@ var CustomerLabelService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v12/services/customer_label_service.proto",
+	Metadata: "google/ads/googleads/v13/services/customer_label_service.proto",
 }

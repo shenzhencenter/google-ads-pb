@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.9
-// source: google/ads/googleads/v12/services/payments_account_service.proto
+// source: google/ads/googleads/v13/services/payments_account_service.proto
 
 package services
 
@@ -48,7 +48,7 @@ func NewPaymentsAccountServiceClient(cc grpc.ClientConnInterface) PaymentsAccoun
 
 func (c *paymentsAccountServiceClient) ListPaymentsAccounts(ctx context.Context, in *ListPaymentsAccountsRequest, opts ...grpc.CallOption) (*ListPaymentsAccountsResponse, error) {
 	out := new(ListPaymentsAccountsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.PaymentsAccountService/ListPaymentsAccounts", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v13.services.PaymentsAccountService/ListPaymentsAccounts", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -107,7 +107,7 @@ func _PaymentsAccountService_ListPaymentsAccounts_Handler(srv interface{}, ctx c
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v12.services.PaymentsAccountService/ListPaymentsAccounts",
+		FullMethod: "/google.ads.googleads.v13.services.PaymentsAccountService/ListPaymentsAccounts",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(PaymentsAccountServiceServer).ListPaymentsAccounts(ctx, req.(*ListPaymentsAccountsRequest))
@@ -119,7 +119,7 @@ func _PaymentsAccountService_ListPaymentsAccounts_Handler(srv interface{}, ctx c
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var PaymentsAccountService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v12.services.PaymentsAccountService",
+	ServiceName: "google.ads.googleads.v13.services.PaymentsAccountService",
 	HandlerType: (*PaymentsAccountServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -128,5 +128,5 @@ var PaymentsAccountService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v12/services/payments_account_service.proto",
+	Metadata: "google/ads/googleads/v13/services/payments_account_service.proto",
 }

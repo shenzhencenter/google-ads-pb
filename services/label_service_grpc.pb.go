@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.9
-// source: google/ads/googleads/v12/services/label_service.proto
+// source: google/ads/googleads/v13/services/label_service.proto
 
 package services
 
@@ -62,7 +62,7 @@ func NewLabelServiceClient(cc grpc.ClientConnInterface) LabelServiceClient {
 
 func (c *labelServiceClient) MutateLabels(ctx context.Context, in *MutateLabelsRequest, opts ...grpc.CallOption) (*MutateLabelsResponse, error) {
 	out := new(MutateLabelsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.LabelService/MutateLabels", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v13.services.LabelService/MutateLabels", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -134,7 +134,7 @@ func _LabelService_MutateLabels_Handler(srv interface{}, ctx context.Context, de
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v12.services.LabelService/MutateLabels",
+		FullMethod: "/google.ads.googleads.v13.services.LabelService/MutateLabels",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(LabelServiceServer).MutateLabels(ctx, req.(*MutateLabelsRequest))
@@ -146,7 +146,7 @@ func _LabelService_MutateLabels_Handler(srv interface{}, ctx context.Context, de
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var LabelService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v12.services.LabelService",
+	ServiceName: "google.ads.googleads.v13.services.LabelService",
 	HandlerType: (*LabelServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -155,5 +155,5 @@ var LabelService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v12/services/label_service.proto",
+	Metadata: "google/ads/googleads/v13/services/label_service.proto",
 }

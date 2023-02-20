@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.9
-// source: google/ads/googleads/v12/services/customer_client_link_service.proto
+// source: google/ads/googleads/v13/services/customer_client_link_service.proto
 
 package services
 
@@ -51,7 +51,7 @@ func NewCustomerClientLinkServiceClient(cc grpc.ClientConnInterface) CustomerCli
 
 func (c *customerClientLinkServiceClient) MutateCustomerClientLink(ctx context.Context, in *MutateCustomerClientLinkRequest, opts ...grpc.CallOption) (*MutateCustomerClientLinkResponse, error) {
 	out := new(MutateCustomerClientLinkResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.CustomerClientLinkService/MutateCustomerClientLink", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v13.services.CustomerClientLinkService/MutateCustomerClientLink", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -113,7 +113,7 @@ func _CustomerClientLinkService_MutateCustomerClientLink_Handler(srv interface{}
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v12.services.CustomerClientLinkService/MutateCustomerClientLink",
+		FullMethod: "/google.ads.googleads.v13.services.CustomerClientLinkService/MutateCustomerClientLink",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CustomerClientLinkServiceServer).MutateCustomerClientLink(ctx, req.(*MutateCustomerClientLinkRequest))
@@ -125,7 +125,7 @@ func _CustomerClientLinkService_MutateCustomerClientLink_Handler(srv interface{}
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CustomerClientLinkService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v12.services.CustomerClientLinkService",
+	ServiceName: "google.ads.googleads.v13.services.CustomerClientLinkService",
 	HandlerType: (*CustomerClientLinkServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -134,5 +134,5 @@ var CustomerClientLinkService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v12/services/customer_client_link_service.proto",
+	Metadata: "google/ads/googleads/v13/services/customer_client_link_service.proto",
 }

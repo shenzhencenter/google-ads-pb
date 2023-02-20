@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.9
-// source: google/ads/googleads/v12/services/feed_item_target_service.proto
+// source: google/ads/googleads/v13/services/feed_item_target_service.proto
 
 package services
 
@@ -58,7 +58,7 @@ func NewFeedItemTargetServiceClient(cc grpc.ClientConnInterface) FeedItemTargetS
 
 func (c *feedItemTargetServiceClient) MutateFeedItemTargets(ctx context.Context, in *MutateFeedItemTargetsRequest, opts ...grpc.CallOption) (*MutateFeedItemTargetsResponse, error) {
 	out := new(MutateFeedItemTargetsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.FeedItemTargetService/MutateFeedItemTargets", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v13.services.FeedItemTargetService/MutateFeedItemTargets", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -126,7 +126,7 @@ func _FeedItemTargetService_MutateFeedItemTargets_Handler(srv interface{}, ctx c
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v12.services.FeedItemTargetService/MutateFeedItemTargets",
+		FullMethod: "/google.ads.googleads.v13.services.FeedItemTargetService/MutateFeedItemTargets",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(FeedItemTargetServiceServer).MutateFeedItemTargets(ctx, req.(*MutateFeedItemTargetsRequest))
@@ -138,7 +138,7 @@ func _FeedItemTargetService_MutateFeedItemTargets_Handler(srv interface{}, ctx c
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var FeedItemTargetService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v12.services.FeedItemTargetService",
+	ServiceName: "google.ads.googleads.v13.services.FeedItemTargetService",
 	HandlerType: (*FeedItemTargetServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -147,5 +147,5 @@ var FeedItemTargetService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v12/services/feed_item_target_service.proto",
+	Metadata: "google/ads/googleads/v13/services/feed_item_target_service.proto",
 }

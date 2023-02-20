@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.9
-// source: google/ads/googleads/v12/services/ad_group_service.proto
+// source: google/ads/googleads/v13/services/ad_group_service.proto
 
 package services
 
@@ -70,7 +70,7 @@ func NewAdGroupServiceClient(cc grpc.ClientConnInterface) AdGroupServiceClient {
 
 func (c *adGroupServiceClient) MutateAdGroups(ctx context.Context, in *MutateAdGroupsRequest, opts ...grpc.CallOption) (*MutateAdGroupsResponse, error) {
 	out := new(MutateAdGroupsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.AdGroupService/MutateAdGroups", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v13.services.AdGroupService/MutateAdGroups", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -150,7 +150,7 @@ func _AdGroupService_MutateAdGroups_Handler(srv interface{}, ctx context.Context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v12.services.AdGroupService/MutateAdGroups",
+		FullMethod: "/google.ads.googleads.v13.services.AdGroupService/MutateAdGroups",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AdGroupServiceServer).MutateAdGroups(ctx, req.(*MutateAdGroupsRequest))
@@ -162,7 +162,7 @@ func _AdGroupService_MutateAdGroups_Handler(srv interface{}, ctx context.Context
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AdGroupService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v12.services.AdGroupService",
+	ServiceName: "google.ads.googleads.v13.services.AdGroupService",
 	HandlerType: (*AdGroupServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -171,5 +171,5 @@ var AdGroupService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v12/services/ad_group_service.proto",
+	Metadata: "google/ads/googleads/v13/services/ad_group_service.proto",
 }
