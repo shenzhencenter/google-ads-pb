@@ -21,10 +21,11 @@ Please note that this is not an official project. But we think it is very low ri
 
 | google-ads-pb | Google Ads API |
 |---|---|
-| v1.1.1 | v10 |
-| v1.2.0 | v11 |
+| v1.4.0 | v13 |
+| v1.3.1 | v12 |
 | v1.2.1 | v11.1 |
-| v1.3.0 | v12 |
+| v1.2.0 | v11 |
+| v1.1.1 | v10 |
 
 ## Requirements
 
