@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.9
-// source: google/ads/googleads/v12/services/reach_plan_service.proto
+// source: google/ads/googleads/v13/services/reach_plan_service.proto
 
 package services
 
@@ -71,7 +71,7 @@ func NewReachPlanServiceClient(cc grpc.ClientConnInterface) ReachPlanServiceClie
 
 func (c *reachPlanServiceClient) ListPlannableLocations(ctx context.Context, in *ListPlannableLocationsRequest, opts ...grpc.CallOption) (*ListPlannableLocationsResponse, error) {
 	out := new(ListPlannableLocationsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.ReachPlanService/ListPlannableLocations", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v13.services.ReachPlanService/ListPlannableLocations", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -80,7 +80,7 @@ func (c *reachPlanServiceClient) ListPlannableLocations(ctx context.Context, in 
 
 func (c *reachPlanServiceClient) ListPlannableProducts(ctx context.Context, in *ListPlannableProductsRequest, opts ...grpc.CallOption) (*ListPlannableProductsResponse, error) {
 	out := new(ListPlannableProductsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.ReachPlanService/ListPlannableProducts", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v13.services.ReachPlanService/ListPlannableProducts", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -89,7 +89,7 @@ func (c *reachPlanServiceClient) ListPlannableProducts(ctx context.Context, in *
 
 func (c *reachPlanServiceClient) GenerateReachForecast(ctx context.Context, in *GenerateReachForecastRequest, opts ...grpc.CallOption) (*GenerateReachForecastResponse, error) {
 	out := new(GenerateReachForecastResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.ReachPlanService/GenerateReachForecast", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v13.services.ReachPlanService/GenerateReachForecast", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -176,7 +176,7 @@ func _ReachPlanService_ListPlannableLocations_Handler(srv interface{}, ctx conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v12.services.ReachPlanService/ListPlannableLocations",
+		FullMethod: "/google.ads.googleads.v13.services.ReachPlanService/ListPlannableLocations",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ReachPlanServiceServer).ListPlannableLocations(ctx, req.(*ListPlannableLocationsRequest))
@@ -194,7 +194,7 @@ func _ReachPlanService_ListPlannableProducts_Handler(srv interface{}, ctx contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v12.services.ReachPlanService/ListPlannableProducts",
+		FullMethod: "/google.ads.googleads.v13.services.ReachPlanService/ListPlannableProducts",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ReachPlanServiceServer).ListPlannableProducts(ctx, req.(*ListPlannableProductsRequest))
@@ -212,7 +212,7 @@ func _ReachPlanService_GenerateReachForecast_Handler(srv interface{}, ctx contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v12.services.ReachPlanService/GenerateReachForecast",
+		FullMethod: "/google.ads.googleads.v13.services.ReachPlanService/GenerateReachForecast",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ReachPlanServiceServer).GenerateReachForecast(ctx, req.(*GenerateReachForecastRequest))
@@ -224,7 +224,7 @@ func _ReachPlanService_GenerateReachForecast_Handler(srv interface{}, ctx contex
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ReachPlanService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v12.services.ReachPlanService",
+	ServiceName: "google.ads.googleads.v13.services.ReachPlanService",
 	HandlerType: (*ReachPlanServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -241,5 +241,5 @@ var ReachPlanService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v12/services/reach_plan_service.proto",
+	Metadata: "google/ads/googleads/v13/services/reach_plan_service.proto",
 }

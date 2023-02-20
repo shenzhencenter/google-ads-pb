@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.9
-// source: google/ads/googleads/v12/services/smart_campaign_suggest_service.proto
+// source: google/ads/googleads/v13/services/smart_campaign_suggest_service.proto
 
 package services
 
@@ -41,7 +41,7 @@ func NewSmartCampaignSuggestServiceClient(cc grpc.ClientConnInterface) SmartCamp
 
 func (c *smartCampaignSuggestServiceClient) SuggestSmartCampaignBudgetOptions(ctx context.Context, in *SuggestSmartCampaignBudgetOptionsRequest, opts ...grpc.CallOption) (*SuggestSmartCampaignBudgetOptionsResponse, error) {
 	out := new(SuggestSmartCampaignBudgetOptionsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.SmartCampaignSuggestService/SuggestSmartCampaignBudgetOptions", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v13.services.SmartCampaignSuggestService/SuggestSmartCampaignBudgetOptions", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -50,7 +50,7 @@ func (c *smartCampaignSuggestServiceClient) SuggestSmartCampaignBudgetOptions(ct
 
 func (c *smartCampaignSuggestServiceClient) SuggestSmartCampaignAd(ctx context.Context, in *SuggestSmartCampaignAdRequest, opts ...grpc.CallOption) (*SuggestSmartCampaignAdResponse, error) {
 	out := new(SuggestSmartCampaignAdResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.SmartCampaignSuggestService/SuggestSmartCampaignAd", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v13.services.SmartCampaignSuggestService/SuggestSmartCampaignAd", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -59,7 +59,7 @@ func (c *smartCampaignSuggestServiceClient) SuggestSmartCampaignAd(ctx context.C
 
 func (c *smartCampaignSuggestServiceClient) SuggestKeywordThemes(ctx context.Context, in *SuggestKeywordThemesRequest, opts ...grpc.CallOption) (*SuggestKeywordThemesResponse, error) {
 	out := new(SuggestKeywordThemesResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.SmartCampaignSuggestService/SuggestKeywordThemes", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v13.services.SmartCampaignSuggestService/SuggestKeywordThemes", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -117,7 +117,7 @@ func _SmartCampaignSuggestService_SuggestSmartCampaignBudgetOptions_Handler(srv 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v12.services.SmartCampaignSuggestService/SuggestSmartCampaignBudgetOptions",
+		FullMethod: "/google.ads.googleads.v13.services.SmartCampaignSuggestService/SuggestSmartCampaignBudgetOptions",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SmartCampaignSuggestServiceServer).SuggestSmartCampaignBudgetOptions(ctx, req.(*SuggestSmartCampaignBudgetOptionsRequest))
@@ -135,7 +135,7 @@ func _SmartCampaignSuggestService_SuggestSmartCampaignAd_Handler(srv interface{}
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v12.services.SmartCampaignSuggestService/SuggestSmartCampaignAd",
+		FullMethod: "/google.ads.googleads.v13.services.SmartCampaignSuggestService/SuggestSmartCampaignAd",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SmartCampaignSuggestServiceServer).SuggestSmartCampaignAd(ctx, req.(*SuggestSmartCampaignAdRequest))
@@ -153,7 +153,7 @@ func _SmartCampaignSuggestService_SuggestKeywordThemes_Handler(srv interface{}, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v12.services.SmartCampaignSuggestService/SuggestKeywordThemes",
+		FullMethod: "/google.ads.googleads.v13.services.SmartCampaignSuggestService/SuggestKeywordThemes",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SmartCampaignSuggestServiceServer).SuggestKeywordThemes(ctx, req.(*SuggestKeywordThemesRequest))
@@ -165,7 +165,7 @@ func _SmartCampaignSuggestService_SuggestKeywordThemes_Handler(srv interface{}, 
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var SmartCampaignSuggestService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v12.services.SmartCampaignSuggestService",
+	ServiceName: "google.ads.googleads.v13.services.SmartCampaignSuggestService",
 	HandlerType: (*SmartCampaignSuggestServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -182,5 +182,5 @@ var SmartCampaignSuggestService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v12/services/smart_campaign_suggest_service.proto",
+	Metadata: "google/ads/googleads/v13/services/smart_campaign_suggest_service.proto",
 }

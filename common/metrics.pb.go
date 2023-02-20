@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.28.1
 // 	protoc        v3.21.9
-// source: google/ads/googleads/v12/common/metrics.proto
+// source: google/ads/googleads/v13/common/metrics.proto
 
 package common
 
@@ -47,7 +47,8 @@ type Metrics struct {
 	// Average cost of viewable impressions (`active_view_impressions`).
 	ActiveViewCpm *float64 `protobuf:"fixed64,184,opt,name=active_view_cpm,json=activeViewCpm,proto3,oneof" json:"active_view_cpm,omitempty"`
 	// Active view measurable clicks divided by active view viewable impressions.
-	// This metric is reported only for display network.
+	//
+	// This metric is reported only for the Display Network.
 	ActiveViewCtr *float64 `protobuf:"fixed64,185,opt,name=active_view_ctr,json=activeViewCtr,proto3,oneof" json:"active_view_ctr,omitempty"`
 	// A measurement of how often your ad has become viewable on a Display
 	// Network site.
@@ -89,10 +90,12 @@ type Metrics struct {
 	// The number of times people clicked the "Call" button to call a store during
 	// or after clicking an ad. This number doesn't include whether or not calls
 	// were connected, or the duration of any calls.
+	//
 	// This metric applies to feed items only.
 	AllConversionsFromClickToCall *float64 `protobuf:"fixed64,195,opt,name=all_conversions_from_click_to_call,json=allConversionsFromClickToCall,proto3,oneof" json:"all_conversions_from_click_to_call,omitempty"`
 	// The number of times people clicked a "Get directions" button to navigate to
 	// a store after clicking an ad.
+	//
 	// This metric applies to feed items only.
 	AllConversionsFromDirections *float64 `protobuf:"fixed64,196,opt,name=all_conversions_from_directions,json=allConversionsFromDirections,proto3,oneof" json:"all_conversions_from_directions,omitempty"`
 	// The value of all conversions from interactions divided by the total number
@@ -100,20 +103,25 @@ type Metrics struct {
 	AllConversionsFromInteractionsValuePerInteraction *float64 `protobuf:"fixed64,197,opt,name=all_conversions_from_interactions_value_per_interaction,json=allConversionsFromInteractionsValuePerInteraction,proto3,oneof" json:"all_conversions_from_interactions_value_per_interaction,omitempty"`
 	// The number of times people clicked a link to view a store's menu after
 	// clicking an ad.
+	//
 	// This metric applies to feed items only.
 	AllConversionsFromMenu *float64 `protobuf:"fixed64,198,opt,name=all_conversions_from_menu,json=allConversionsFromMenu,proto3,oneof" json:"all_conversions_from_menu,omitempty"`
 	// The number of times people placed an order at a store after clicking an ad.
+	//
 	// This metric applies to feed items only.
 	AllConversionsFromOrder *float64 `protobuf:"fixed64,199,opt,name=all_conversions_from_order,json=allConversionsFromOrder,proto3,oneof" json:"all_conversions_from_order,omitempty"`
 	// The number of other conversions (for example, posting a review or saving a
 	// location for a store) that occurred after people clicked an ad.
+	//
 	// This metric applies to feed items only.
 	AllConversionsFromOtherEngagement *float64 `protobuf:"fixed64,200,opt,name=all_conversions_from_other_engagement,json=allConversionsFromOtherEngagement,proto3,oneof" json:"all_conversions_from_other_engagement,omitempty"`
 	// Estimated number of times people visited a store after clicking an ad.
+	//
 	// This metric applies to feed items only.
 	AllConversionsFromStoreVisit *float64 `protobuf:"fixed64,201,opt,name=all_conversions_from_store_visit,json=allConversionsFromStoreVisit,proto3,oneof" json:"all_conversions_from_store_visit,omitempty"`
 	// The number of times that people were taken to a store's URL after clicking
 	// an ad.
+	//
 	// This metric applies to feed items only.
 	AllConversionsFromStoreWebsite *float64 `protobuf:"fixed64,202,opt,name=all_conversions_from_store_website,json=allConversionsFromStoreWebsite,proto3,oneof" json:"all_conversions_from_store_website,omitempty"`
 	// This metric is part of the Auction Insights report, and tells how often
@@ -121,12 +129,14 @@ type Metrics struct {
 	// organic search results.
 	// This percentage is computed only over the auctions that you appeared in
 	// the page.
+	//
 	// This metric is not publicly available.
 	AuctionInsightSearchAbsoluteTopImpressionPercentage *float64 `protobuf:"fixed64,258,opt,name=auction_insight_search_absolute_top_impression_percentage,json=auctionInsightSearchAbsoluteTopImpressionPercentage,proto3,oneof" json:"auction_insight_search_absolute_top_impression_percentage,omitempty"`
 	// This metric is part of the Auction Insights report, and tells the
 	// percentage of impressions that another participant obtained, over the total
 	// number of impressions that your ads were eligible for.
 	// Any value below 0.1 is reported as 0.0999.
+	//
 	// This metric is not publicly available.
 	AuctionInsightSearchImpressionShare *float64 `protobuf:"fixed64,259,opt,name=auction_insight_search_impression_share,json=auctionInsightSearchImpressionShare,proto3,oneof" json:"auction_insight_search_impression_share,omitempty"`
 	// This metric is part of the Auction Insights report, and tells the
@@ -134,22 +144,26 @@ type Metrics struct {
 	// another participant in the auction, compared to the total number of
 	// impressions that your ads were eligible for.
 	// Any value below 0.1 is reported as 0.0999.
+	//
 	// This metric is not publicly available.
 	AuctionInsightSearchOutrankingShare *float64 `protobuf:"fixed64,260,opt,name=auction_insight_search_outranking_share,json=auctionInsightSearchOutrankingShare,proto3,oneof" json:"auction_insight_search_outranking_share,omitempty"`
 	// This metric is part of the Auction Insights report, and tells how often
 	// another participant's ad received an impression when your ad also received
 	// an impression.
+	//
 	// This metric is not publicly available.
 	AuctionInsightSearchOverlapRate *float64 `protobuf:"fixed64,261,opt,name=auction_insight_search_overlap_rate,json=auctionInsightSearchOverlapRate,proto3,oneof" json:"auction_insight_search_overlap_rate,omitempty"`
 	// This metric is part of the Auction Insights report, and tells how often
 	// another participant's ad was shown in a higher position than yours, when
 	// both of your ads were shown at the same page.
+	//
 	// This metric is not publicly available.
 	AuctionInsightSearchPositionAboveRate *float64 `protobuf:"fixed64,262,opt,name=auction_insight_search_position_above_rate,json=auctionInsightSearchPositionAboveRate,proto3,oneof" json:"auction_insight_search_position_above_rate,omitempty"`
 	// This metric is part of the Auction Insights report, and tells how often
 	// the ads of another participant showed above the organic search results.
 	// This percentage is computed only over the auctions that you appeared in
 	// the page.
+	//
 	// This metric is not publicly available.
 	AuctionInsightSearchTopImpressionPercentage *float64 `protobuf:"fixed64,263,opt,name=auction_insight_search_top_impression_percentage,json=auctionInsightSearchTopImpressionPercentage,proto3,oneof" json:"auction_insight_search_top_impression_percentage,omitempty"`
 	// The average amount you pay per interaction. This amount is the total cost
@@ -342,13 +356,13 @@ type Metrics struct {
 	// feed performance.
 	HotelEligibleImpressions *int64 `protobuf:"varint,215,opt,name=hotel_eligible_impressions,json=hotelEligibleImpressions,proto3,oneof" json:"hotel_eligible_impressions,omitempty"`
 	// The creative historical quality score.
-	HistoricalCreativeQualityScore enums.QualityScoreBucketEnum_QualityScoreBucket `protobuf:"varint,80,opt,name=historical_creative_quality_score,json=historicalCreativeQualityScore,proto3,enum=google.ads.googleads.v12.enums.QualityScoreBucketEnum_QualityScoreBucket" json:"historical_creative_quality_score,omitempty"`
+	HistoricalCreativeQualityScore enums.QualityScoreBucketEnum_QualityScoreBucket `protobuf:"varint,80,opt,name=historical_creative_quality_score,json=historicalCreativeQualityScore,proto3,enum=google.ads.googleads.v13.enums.QualityScoreBucketEnum_QualityScoreBucket" json:"historical_creative_quality_score,omitempty"`
 	// The quality of historical landing page experience.
-	HistoricalLandingPageQualityScore enums.QualityScoreBucketEnum_QualityScoreBucket `protobuf:"varint,81,opt,name=historical_landing_page_quality_score,json=historicalLandingPageQualityScore,proto3,enum=google.ads.googleads.v12.enums.QualityScoreBucketEnum_QualityScoreBucket" json:"historical_landing_page_quality_score,omitempty"`
+	HistoricalLandingPageQualityScore enums.QualityScoreBucketEnum_QualityScoreBucket `protobuf:"varint,81,opt,name=historical_landing_page_quality_score,json=historicalLandingPageQualityScore,proto3,enum=google.ads.googleads.v13.enums.QualityScoreBucketEnum_QualityScoreBucket" json:"historical_landing_page_quality_score,omitempty"`
 	// The historical quality score.
 	HistoricalQualityScore *int64 `protobuf:"varint,216,opt,name=historical_quality_score,json=historicalQualityScore,proto3,oneof" json:"historical_quality_score,omitempty"`
 	// The historical search predicted click through rate (CTR).
-	HistoricalSearchPredictedCtr enums.QualityScoreBucketEnum_QualityScoreBucket `protobuf:"varint,83,opt,name=historical_search_predicted_ctr,json=historicalSearchPredictedCtr,proto3,enum=google.ads.googleads.v12.enums.QualityScoreBucketEnum_QualityScoreBucket" json:"historical_search_predicted_ctr,omitempty"`
+	HistoricalSearchPredictedCtr enums.QualityScoreBucketEnum_QualityScoreBucket `protobuf:"varint,83,opt,name=historical_search_predicted_ctr,json=historicalSearchPredictedCtr,proto3,enum=google.ads.googleads.v13.enums.QualityScoreBucketEnum_QualityScoreBucket" json:"historical_search_predicted_ctr,omitempty"`
 	// The number of times the ad was forwarded to someone else as a message.
 	GmailForwards *int64 `protobuf:"varint,217,opt,name=gmail_forwards,json=gmailForwards,proto3,oneof" json:"gmail_forwards,omitempty"`
 	// The number of times someone has saved your Gmail ad to their inbox as a
@@ -358,6 +372,7 @@ type Metrics struct {
 	// ads.
 	GmailSecondaryClicks *int64 `protobuf:"varint,219,opt,name=gmail_secondary_clicks,json=gmailSecondaryClicks,proto3,oneof" json:"gmail_secondary_clicks,omitempty"`
 	// The number of times a store's location-based ad was shown.
+	//
 	// This metric applies to feed items only.
 	ImpressionsFromStoreReach *int64 `protobuf:"varint,220,opt,name=impressions_from_store_reach,json=impressionsFromStoreReach,proto3,oneof" json:"impressions_from_store_reach,omitempty"`
 	// Count of how often your ad has appeared on a search results page or
@@ -372,7 +387,7 @@ type Metrics struct {
 	// for text and shopping ads, views for video ads, and so on.
 	Interactions *int64 `protobuf:"varint,223,opt,name=interactions,proto3,oneof" json:"interactions,omitempty"`
 	// The types of payable and free interactions.
-	InteractionEventTypes []enums.InteractionEventTypeEnum_InteractionEventType `protobuf:"varint,100,rep,packed,name=interaction_event_types,json=interactionEventTypes,proto3,enum=google.ads.googleads.v12.enums.InteractionEventTypeEnum_InteractionEventType" json:"interaction_event_types,omitempty"`
+	InteractionEventTypes []enums.InteractionEventTypeEnum_InteractionEventType `protobuf:"varint,100,rep,packed,name=interaction_event_types,json=interactionEventTypes,proto3,enum=google.ads.googleads.v13.enums.InteractionEventTypeEnum_InteractionEventType" json:"interaction_event_types,omitempty"`
 	// The percentage of clicks filtered out of your total number of clicks
 	// (filtered + non-filtered clicks) during the reporting period.
 	InvalidClickRate *float64 `protobuf:"fixed64,224,opt,name=invalid_click_rate,json=invalidClickRate,proto3,oneof" json:"invalid_click_rate,omitempty"`
@@ -617,7 +632,7 @@ type Metrics struct {
 func (x *Metrics) Reset() {
 	*x = Metrics{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v12_common_metrics_proto_msgTypes[0]
+		mi := &file_google_ads_googleads_v13_common_metrics_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -630,7 +645,7 @@ func (x *Metrics) String() string {
 func (*Metrics) ProtoMessage() {}
 
 func (x *Metrics) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v12_common_metrics_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v13_common_metrics_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -643,7 +658,7 @@ func (x *Metrics) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Metrics.ProtoReflect.Descriptor instead.
 func (*Metrics) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v12_common_metrics_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v13_common_metrics_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *Metrics) GetAbsoluteTopImpressionPercentage() float64 {
@@ -1689,20 +1704,20 @@ func (x *Metrics) GetViewThroughConversionsFromLocationAssetWebsite() float64 {
 	return 0
 }
 
-var File_google_ads_googleads_v12_common_metrics_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v13_common_metrics_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v12_common_metrics_proto_rawDesc = []byte{
+var file_google_ads_googleads_v13_common_metrics_proto_rawDesc = []byte{
 	0x0a, 0x2d, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x33, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
 	0x6e, 0x2f, 0x6d, 0x65, 0x74, 0x72, 0x69, 0x63, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12,
 	0x1f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e,
+	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x33, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e,
 	0x1a, 0x3b, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x33, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73,
 	0x2f, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x65, 0x76, 0x65,
 	0x6e, 0x74, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x39, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x71, 0x75,
+	0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x33, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x71, 0x75,
 	0x61, 0x6c, 0x69, 0x74, 0x79, 0x5f, 0x73, 0x63, 0x6f, 0x72, 0x65, 0x5f, 0x62, 0x75, 0x63, 0x6b,
 	0x65, 0x74, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x82, 0x7c, 0x0a, 0x07, 0x4d, 0x65, 0x74,
 	0x72, 0x69, 0x63, 0x73, 0x12, 0x51, 0x0a, 0x22, 0x61, 0x62, 0x73, 0x6f, 0x6c, 0x75, 0x74, 0x65,
@@ -2043,7 +2058,7 @@ var file_google_ads_googleads_v12_common_metrics_proto_rawDesc = []byte{
 	0x6c, 0x5f, 0x63, 0x72, 0x65, 0x61, 0x74, 0x69, 0x76, 0x65, 0x5f, 0x71, 0x75, 0x61, 0x6c, 0x69,
 	0x74, 0x79, 0x5f, 0x73, 0x63, 0x6f, 0x72, 0x65, 0x18, 0x50, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x49,
 	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e,
+	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x33, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e,
 	0x51, 0x75, 0x61, 0x6c, 0x69, 0x74, 0x79, 0x53, 0x63, 0x6f, 0x72, 0x65, 0x42, 0x75, 0x63, 0x6b,
 	0x65, 0x74, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x51, 0x75, 0x61, 0x6c, 0x69, 0x74, 0x79, 0x53, 0x63,
 	0x6f, 0x72, 0x65, 0x42, 0x75, 0x63, 0x6b, 0x65, 0x74, 0x52, 0x1e, 0x68, 0x69, 0x73, 0x74, 0x6f,
@@ -2053,7 +2068,7 @@ var file_google_ads_googleads_v12_common_metrics_proto_rawDesc = []byte{
 	0x5f, 0x70, 0x61, 0x67, 0x65, 0x5f, 0x71, 0x75, 0x61, 0x6c, 0x69, 0x74, 0x79, 0x5f, 0x73, 0x63,
 	0x6f, 0x72, 0x65, 0x18, 0x51, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x49, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
-	0x2e, 0x76, 0x31, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x51, 0x75, 0x61, 0x6c, 0x69,
+	0x2e, 0x76, 0x31, 0x33, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x51, 0x75, 0x61, 0x6c, 0x69,
 	0x74, 0x79, 0x53, 0x63, 0x6f, 0x72, 0x65, 0x42, 0x75, 0x63, 0x6b, 0x65, 0x74, 0x45, 0x6e, 0x75,
 	0x6d, 0x2e, 0x51, 0x75, 0x61, 0x6c, 0x69, 0x74, 0x79, 0x53, 0x63, 0x6f, 0x72, 0x65, 0x42, 0x75,
 	0x63, 0x6b, 0x65, 0x74, 0x52, 0x21, 0x68, 0x69, 0x73, 0x74, 0x6f, 0x72, 0x69, 0x63, 0x61, 0x6c,
@@ -2066,7 +2081,7 @@ var file_google_ads_googleads_v12_common_metrics_proto_rawDesc = []byte{
 	0x6f, 0x72, 0x69, 0x63, 0x61, 0x6c, 0x5f, 0x73, 0x65, 0x61, 0x72, 0x63, 0x68, 0x5f, 0x70, 0x72,
 	0x65, 0x64, 0x69, 0x63, 0x74, 0x65, 0x64, 0x5f, 0x63, 0x74, 0x72, 0x18, 0x53, 0x20, 0x01, 0x28,
 	0x0e, 0x32, 0x49, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x65, 0x6e, 0x75,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x33, 0x2e, 0x65, 0x6e, 0x75,
 	0x6d, 0x73, 0x2e, 0x51, 0x75, 0x61, 0x6c, 0x69, 0x74, 0x79, 0x53, 0x63, 0x6f, 0x72, 0x65, 0x42,
 	0x75, 0x63, 0x6b, 0x65, 0x74, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x51, 0x75, 0x61, 0x6c, 0x69, 0x74,
 	0x79, 0x53, 0x63, 0x6f, 0x72, 0x65, 0x42, 0x75, 0x63, 0x6b, 0x65, 0x74, 0x52, 0x1c, 0x68, 0x69,
@@ -2097,7 +2112,7 @@ var file_google_ads_googleads_v12_common_metrics_proto_rawDesc = []byte{
 	0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x65, 0x76, 0x65, 0x6e, 0x74, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x73,
 	0x18, 0x64, 0x20, 0x03, 0x28, 0x0e, 0x32, 0x4d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
 	0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31,
-	0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x61, 0x63, 0x74,
+	0x33, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x61, 0x63, 0x74,
 	0x69, 0x6f, 0x6e, 0x45, 0x76, 0x65, 0x6e, 0x74, 0x54, 0x79, 0x70, 0x65, 0x45, 0x6e, 0x75, 0x6d,
 	0x2e, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x45, 0x76, 0x65, 0x6e,
 	0x74, 0x54, 0x79, 0x70, 0x65, 0x52, 0x15, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x61, 0x63, 0x74, 0x69,
@@ -2698,46 +2713,46 @@ var file_google_ads_googleads_v12_common_metrics_proto_rawDesc = []byte{
 	0x73, 0x5f, 0x66, 0x72, 0x6f, 0x6d, 0x5f, 0x6c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f,
 	0x61, 0x73, 0x73, 0x65, 0x74, 0x5f, 0x77, 0x65, 0x62, 0x73, 0x69, 0x74, 0x65, 0x42, 0xec, 0x01,
 	0x0a, 0x23, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73,
-	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x63,
+	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x33, 0x2e, 0x63,
 	0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x42, 0x0c, 0x4d, 0x65, 0x74, 0x72, 0x69, 0x63, 0x73, 0x50, 0x72,
 	0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x45, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x67, 0x6f,
 	0x6c, 0x61, 0x6e, 0x67, 0x2e, 0x6f, 0x72, 0x67, 0x2f, 0x67, 0x65, 0x6e, 0x70, 0x72, 0x6f, 0x74,
 	0x6f, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x70, 0x69, 0x73, 0x2f, 0x61, 0x64, 0x73,
-	0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x63,
+	0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x33, 0x2f, 0x63,
 	0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x3b, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xa2, 0x02, 0x03, 0x47,
 	0x41, 0x41, 0xaa, 0x02, 0x1f, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x41, 0x64, 0x73, 0x2e,
-	0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e, 0x56, 0x31, 0x32, 0x2e, 0x43, 0x6f,
+	0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e, 0x56, 0x31, 0x33, 0x2e, 0x43, 0x6f,
 	0x6d, 0x6d, 0x6f, 0x6e, 0xca, 0x02, 0x1f, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x5c, 0x41, 0x64,
-	0x73, 0x5c, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x31, 0x32, 0x5c,
+	0x73, 0x5c, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x31, 0x33, 0x5c,
 	0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xea, 0x02, 0x23, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x3a,
 	0x3a, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a,
-	0x3a, 0x56, 0x31, 0x32, 0x3a, 0x3a, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x62, 0x06, 0x70, 0x72,
+	0x3a, 0x56, 0x31, 0x33, 0x3a, 0x3a, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x62, 0x06, 0x70, 0x72,
 	0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
-	file_google_ads_googleads_v12_common_metrics_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v12_common_metrics_proto_rawDescData = file_google_ads_googleads_v12_common_metrics_proto_rawDesc
+	file_google_ads_googleads_v13_common_metrics_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v13_common_metrics_proto_rawDescData = file_google_ads_googleads_v13_common_metrics_proto_rawDesc
 )
 
-func file_google_ads_googleads_v12_common_metrics_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v12_common_metrics_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v12_common_metrics_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v12_common_metrics_proto_rawDescData)
+func file_google_ads_googleads_v13_common_metrics_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v13_common_metrics_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v13_common_metrics_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v13_common_metrics_proto_rawDescData)
 	})
-	return file_google_ads_googleads_v12_common_metrics_proto_rawDescData
+	return file_google_ads_googleads_v13_common_metrics_proto_rawDescData
 }
 
-var file_google_ads_googleads_v12_common_metrics_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
-var file_google_ads_googleads_v12_common_metrics_proto_goTypes = []interface{}{
-	(*Metrics)(nil), // 0: google.ads.googleads.v12.common.Metrics
-	(enums.QualityScoreBucketEnum_QualityScoreBucket)(0),     // 1: google.ads.googleads.v12.enums.QualityScoreBucketEnum.QualityScoreBucket
-	(enums.InteractionEventTypeEnum_InteractionEventType)(0), // 2: google.ads.googleads.v12.enums.InteractionEventTypeEnum.InteractionEventType
+var file_google_ads_googleads_v13_common_metrics_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_google_ads_googleads_v13_common_metrics_proto_goTypes = []interface{}{
+	(*Metrics)(nil), // 0: google.ads.googleads.v13.common.Metrics
+	(enums.QualityScoreBucketEnum_QualityScoreBucket)(0),     // 1: google.ads.googleads.v13.enums.QualityScoreBucketEnum.QualityScoreBucket
+	(enums.InteractionEventTypeEnum_InteractionEventType)(0), // 2: google.ads.googleads.v13.enums.InteractionEventTypeEnum.InteractionEventType
 }
-var file_google_ads_googleads_v12_common_metrics_proto_depIdxs = []int32{
-	1, // 0: google.ads.googleads.v12.common.Metrics.historical_creative_quality_score:type_name -> google.ads.googleads.v12.enums.QualityScoreBucketEnum.QualityScoreBucket
-	1, // 1: google.ads.googleads.v12.common.Metrics.historical_landing_page_quality_score:type_name -> google.ads.googleads.v12.enums.QualityScoreBucketEnum.QualityScoreBucket
-	1, // 2: google.ads.googleads.v12.common.Metrics.historical_search_predicted_ctr:type_name -> google.ads.googleads.v12.enums.QualityScoreBucketEnum.QualityScoreBucket
-	2, // 3: google.ads.googleads.v12.common.Metrics.interaction_event_types:type_name -> google.ads.googleads.v12.enums.InteractionEventTypeEnum.InteractionEventType
+var file_google_ads_googleads_v13_common_metrics_proto_depIdxs = []int32{
+	1, // 0: google.ads.googleads.v13.common.Metrics.historical_creative_quality_score:type_name -> google.ads.googleads.v13.enums.QualityScoreBucketEnum.QualityScoreBucket
+	1, // 1: google.ads.googleads.v13.common.Metrics.historical_landing_page_quality_score:type_name -> google.ads.googleads.v13.enums.QualityScoreBucketEnum.QualityScoreBucket
+	1, // 2: google.ads.googleads.v13.common.Metrics.historical_search_predicted_ctr:type_name -> google.ads.googleads.v13.enums.QualityScoreBucketEnum.QualityScoreBucket
+	2, // 3: google.ads.googleads.v13.common.Metrics.interaction_event_types:type_name -> google.ads.googleads.v13.enums.InteractionEventTypeEnum.InteractionEventType
 	4, // [4:4] is the sub-list for method output_type
 	4, // [4:4] is the sub-list for method input_type
 	4, // [4:4] is the sub-list for extension type_name
@@ -2745,13 +2760,13 @@ var file_google_ads_googleads_v12_common_metrics_proto_depIdxs = []int32{
 	0, // [0:4] is the sub-list for field type_name
 }
 
-func init() { file_google_ads_googleads_v12_common_metrics_proto_init() }
-func file_google_ads_googleads_v12_common_metrics_proto_init() {
-	if File_google_ads_googleads_v12_common_metrics_proto != nil {
+func init() { file_google_ads_googleads_v13_common_metrics_proto_init() }
+func file_google_ads_googleads_v13_common_metrics_proto_init() {
+	if File_google_ads_googleads_v13_common_metrics_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_google_ads_googleads_v12_common_metrics_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v13_common_metrics_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Metrics); i {
 			case 0:
 				return &v.state
@@ -2764,23 +2779,23 @@ func file_google_ads_googleads_v12_common_metrics_proto_init() {
 			}
 		}
 	}
-	file_google_ads_googleads_v12_common_metrics_proto_msgTypes[0].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v13_common_metrics_proto_msgTypes[0].OneofWrappers = []interface{}{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_google_ads_googleads_v12_common_metrics_proto_rawDesc,
+			RawDescriptor: file_google_ads_googleads_v13_common_metrics_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   1,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_google_ads_googleads_v12_common_metrics_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v12_common_metrics_proto_depIdxs,
-		MessageInfos:      file_google_ads_googleads_v12_common_metrics_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v13_common_metrics_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v13_common_metrics_proto_depIdxs,
+		MessageInfos:      file_google_ads_googleads_v13_common_metrics_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v12_common_metrics_proto = out.File
-	file_google_ads_googleads_v12_common_metrics_proto_rawDesc = nil
-	file_google_ads_googleads_v12_common_metrics_proto_goTypes = nil
-	file_google_ads_googleads_v12_common_metrics_proto_depIdxs = nil
+	File_google_ads_googleads_v13_common_metrics_proto = out.File
+	file_google_ads_googleads_v13_common_metrics_proto_rawDesc = nil
+	file_google_ads_googleads_v13_common_metrics_proto_goTypes = nil
+	file_google_ads_googleads_v13_common_metrics_proto_depIdxs = nil
 }

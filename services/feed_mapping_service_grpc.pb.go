@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.9
-// source: google/ads/googleads/v12/services/feed_mapping_service.proto
+// source: google/ads/googleads/v13/services/feed_mapping_service.proto
 
 package services
 
@@ -59,7 +59,7 @@ func NewFeedMappingServiceClient(cc grpc.ClientConnInterface) FeedMappingService
 
 func (c *feedMappingServiceClient) MutateFeedMappings(ctx context.Context, in *MutateFeedMappingsRequest, opts ...grpc.CallOption) (*MutateFeedMappingsResponse, error) {
 	out := new(MutateFeedMappingsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.FeedMappingService/MutateFeedMappings", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v13.services.FeedMappingService/MutateFeedMappings", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -128,7 +128,7 @@ func _FeedMappingService_MutateFeedMappings_Handler(srv interface{}, ctx context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v12.services.FeedMappingService/MutateFeedMappings",
+		FullMethod: "/google.ads.googleads.v13.services.FeedMappingService/MutateFeedMappings",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(FeedMappingServiceServer).MutateFeedMappings(ctx, req.(*MutateFeedMappingsRequest))
@@ -140,7 +140,7 @@ func _FeedMappingService_MutateFeedMappings_Handler(srv interface{}, ctx context
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var FeedMappingService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v12.services.FeedMappingService",
+	ServiceName: "google.ads.googleads.v13.services.FeedMappingService",
 	HandlerType: (*FeedMappingServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -149,5 +149,5 @@ var FeedMappingService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v12/services/feed_mapping_service.proto",
+	Metadata: "google/ads/googleads/v13/services/feed_mapping_service.proto",
 }

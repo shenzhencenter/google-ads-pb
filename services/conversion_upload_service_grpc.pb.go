@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.9
-// source: google/ads/googleads/v12/services/conversion_upload_service.proto
+// source: google/ads/googleads/v13/services/conversion_upload_service.proto
 
 package services
 
@@ -59,7 +59,7 @@ func NewConversionUploadServiceClient(cc grpc.ClientConnInterface) ConversionUpl
 
 func (c *conversionUploadServiceClient) UploadClickConversions(ctx context.Context, in *UploadClickConversionsRequest, opts ...grpc.CallOption) (*UploadClickConversionsResponse, error) {
 	out := new(UploadClickConversionsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.ConversionUploadService/UploadClickConversions", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v13.services.ConversionUploadService/UploadClickConversions", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -68,7 +68,7 @@ func (c *conversionUploadServiceClient) UploadClickConversions(ctx context.Conte
 
 func (c *conversionUploadServiceClient) UploadCallConversions(ctx context.Context, in *UploadCallConversionsRequest, opts ...grpc.CallOption) (*UploadCallConversionsResponse, error) {
 	out := new(UploadCallConversionsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.ConversionUploadService/UploadCallConversions", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v13.services.ConversionUploadService/UploadCallConversions", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -141,7 +141,7 @@ func _ConversionUploadService_UploadClickConversions_Handler(srv interface{}, ct
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v12.services.ConversionUploadService/UploadClickConversions",
+		FullMethod: "/google.ads.googleads.v13.services.ConversionUploadService/UploadClickConversions",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ConversionUploadServiceServer).UploadClickConversions(ctx, req.(*UploadClickConversionsRequest))
@@ -159,7 +159,7 @@ func _ConversionUploadService_UploadCallConversions_Handler(srv interface{}, ctx
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v12.services.ConversionUploadService/UploadCallConversions",
+		FullMethod: "/google.ads.googleads.v13.services.ConversionUploadService/UploadCallConversions",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ConversionUploadServiceServer).UploadCallConversions(ctx, req.(*UploadCallConversionsRequest))
@@ -171,7 +171,7 @@ func _ConversionUploadService_UploadCallConversions_Handler(srv interface{}, ctx
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ConversionUploadService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v12.services.ConversionUploadService",
+	ServiceName: "google.ads.googleads.v13.services.ConversionUploadService",
 	HandlerType: (*ConversionUploadServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -184,5 +184,5 @@ var ConversionUploadService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v12/services/conversion_upload_service.proto",
+	Metadata: "google/ads/googleads/v13/services/conversion_upload_service.proto",
 }

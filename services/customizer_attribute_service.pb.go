@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.28.1
 // 	protoc        v3.21.9
-// source: google/ads/googleads/v12/services/customizer_attribute_service.proto
+// source: google/ads/googleads/v13/services/customizer_attribute_service.proto
 
 package services
 
@@ -40,15 +40,17 @@ const (
 )
 
 // Request message for
-// [CustomizerAttributeService.MutateCustomizerAttributes][google.ads.googleads.v12.services.CustomizerAttributeService.MutateCustomizerAttributes].
+// [CustomizerAttributeService.MutateCustomizerAttributes][google.ads.googleads.v13.services.CustomizerAttributeService.MutateCustomizerAttributes].
 type MutateCustomizerAttributesRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// Required. The ID of the customer whose customizer attributes are being modified.
+	// Required. The ID of the customer whose customizer attributes are being
+	// modified.
 	CustomerId string `protobuf:"bytes,1,opt,name=customer_id,json=customerId,proto3" json:"customer_id,omitempty"`
-	// Required. The list of operations to perform on individual customizer attributes.
+	// Required. The list of operations to perform on individual customizer
+	// attributes.
 	Operations []*CustomizerAttributeOperation `protobuf:"bytes,2,rep,name=operations,proto3" json:"operations,omitempty"`
 	// If true, successful operations will be carried out and invalid
 	// operations will return errors. If false, all operations will be carried
@@ -60,13 +62,13 @@ type MutateCustomizerAttributesRequest struct {
 	ValidateOnly bool `protobuf:"varint,4,opt,name=validate_only,json=validateOnly,proto3" json:"validate_only,omitempty"`
 	// The response content type setting. Determines whether the mutable resource
 	// or just the resource name should be returned post mutation.
-	ResponseContentType enums.ResponseContentTypeEnum_ResponseContentType `protobuf:"varint,5,opt,name=response_content_type,json=responseContentType,proto3,enum=google.ads.googleads.v12.enums.ResponseContentTypeEnum_ResponseContentType" json:"response_content_type,omitempty"`
+	ResponseContentType enums.ResponseContentTypeEnum_ResponseContentType `protobuf:"varint,5,opt,name=response_content_type,json=responseContentType,proto3,enum=google.ads.googleads.v13.enums.ResponseContentTypeEnum_ResponseContentType" json:"response_content_type,omitempty"`
 }
 
 func (x *MutateCustomizerAttributesRequest) Reset() {
 	*x = MutateCustomizerAttributesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v12_services_customizer_attribute_service_proto_msgTypes[0]
+		mi := &file_google_ads_googleads_v13_services_customizer_attribute_service_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -79,7 +81,7 @@ func (x *MutateCustomizerAttributesRequest) String() string {
 func (*MutateCustomizerAttributesRequest) ProtoMessage() {}
 
 func (x *MutateCustomizerAttributesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v12_services_customizer_attribute_service_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v13_services_customizer_attribute_service_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -92,7 +94,7 @@ func (x *MutateCustomizerAttributesRequest) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use MutateCustomizerAttributesRequest.ProtoReflect.Descriptor instead.
 func (*MutateCustomizerAttributesRequest) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v12_services_customizer_attribute_service_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v13_services_customizer_attribute_service_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *MutateCustomizerAttributesRequest) GetCustomerId() string {
@@ -130,7 +132,7 @@ func (x *MutateCustomizerAttributesRequest) GetResponseContentType() enums.Respo
 	return enums.ResponseContentTypeEnum_ResponseContentType(0)
 }
 
-// A single operation (create, remove) on an customizer attribute.
+// A single operation (create, remove) on a customizer attribute.
 type CustomizerAttributeOperation struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -150,7 +152,7 @@ type CustomizerAttributeOperation struct {
 func (x *CustomizerAttributeOperation) Reset() {
 	*x = CustomizerAttributeOperation{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v12_services_customizer_attribute_service_proto_msgTypes[1]
+		mi := &file_google_ads_googleads_v13_services_customizer_attribute_service_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -163,7 +165,7 @@ func (x *CustomizerAttributeOperation) String() string {
 func (*CustomizerAttributeOperation) ProtoMessage() {}
 
 func (x *CustomizerAttributeOperation) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v12_services_customizer_attribute_service_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v13_services_customizer_attribute_service_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -176,7 +178,7 @@ func (x *CustomizerAttributeOperation) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CustomizerAttributeOperation.ProtoReflect.Descriptor instead.
 func (*CustomizerAttributeOperation) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v12_services_customizer_attribute_service_proto_rawDescGZIP(), []int{1}
+	return file_google_ads_googleads_v13_services_customizer_attribute_service_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *CustomizerAttributeOperation) GetUpdateMask() *fieldmaskpb.FieldMask {
@@ -228,7 +230,7 @@ func (*CustomizerAttributeOperation_Create) isCustomizerAttributeOperation_Opera
 
 func (*CustomizerAttributeOperation_Remove) isCustomizerAttributeOperation_Operation() {}
 
-// Response message for an customizer attribute mutate.
+// Response message for a customizer attribute mutate.
 type MutateCustomizerAttributesResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -246,7 +248,7 @@ type MutateCustomizerAttributesResponse struct {
 func (x *MutateCustomizerAttributesResponse) Reset() {
 	*x = MutateCustomizerAttributesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v12_services_customizer_attribute_service_proto_msgTypes[2]
+		mi := &file_google_ads_googleads_v13_services_customizer_attribute_service_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -259,7 +261,7 @@ func (x *MutateCustomizerAttributesResponse) String() string {
 func (*MutateCustomizerAttributesResponse) ProtoMessage() {}
 
 func (x *MutateCustomizerAttributesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v12_services_customizer_attribute_service_proto_msgTypes[2]
+	mi := &file_google_ads_googleads_v13_services_customizer_attribute_service_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -272,7 +274,7 @@ func (x *MutateCustomizerAttributesResponse) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use MutateCustomizerAttributesResponse.ProtoReflect.Descriptor instead.
 func (*MutateCustomizerAttributesResponse) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v12_services_customizer_attribute_service_proto_rawDescGZIP(), []int{2}
+	return file_google_ads_googleads_v13_services_customizer_attribute_service_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *MutateCustomizerAttributesResponse) GetResults() []*MutateCustomizerAttributeResult {
@@ -306,7 +308,7 @@ type MutateCustomizerAttributeResult struct {
 func (x *MutateCustomizerAttributeResult) Reset() {
 	*x = MutateCustomizerAttributeResult{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v12_services_customizer_attribute_service_proto_msgTypes[3]
+		mi := &file_google_ads_googleads_v13_services_customizer_attribute_service_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -319,7 +321,7 @@ func (x *MutateCustomizerAttributeResult) String() string {
 func (*MutateCustomizerAttributeResult) ProtoMessage() {}
 
 func (x *MutateCustomizerAttributeResult) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v12_services_customizer_attribute_service_proto_msgTypes[3]
+	mi := &file_google_ads_googleads_v13_services_customizer_attribute_service_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -332,7 +334,7 @@ func (x *MutateCustomizerAttributeResult) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MutateCustomizerAttributeResult.ProtoReflect.Descriptor instead.
 func (*MutateCustomizerAttributeResult) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v12_services_customizer_attribute_service_proto_rawDescGZIP(), []int{3}
+	return file_google_ads_googleads_v13_services_customizer_attribute_service_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *MutateCustomizerAttributeResult) GetResourceName() string {
@@ -349,21 +351,21 @@ func (x *MutateCustomizerAttributeResult) GetCustomizerAttribute() *resources.Cu
 	return nil
 }
 
-var File_google_ads_googleads_v12_services_customizer_attribute_service_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v13_services_customizer_attribute_service_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v12_services_customizer_attribute_service_proto_rawDesc = []byte{
+var file_google_ads_googleads_v13_services_customizer_attribute_service_proto_rawDesc = []byte{
 	0x0a, 0x44, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x33, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69,
 	0x63, 0x65, 0x73, 0x2f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x69, 0x7a, 0x65, 0x72, 0x5f, 0x61,
 	0x74, 0x74, 0x72, 0x69, 0x62, 0x75, 0x74, 0x65, 0x5f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
 	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x21, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61,
-	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32,
+	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x33,
 	0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x1a, 0x3a, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f,
-	0x76, 0x31, 0x32, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x76, 0x31, 0x33, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e,
 	0x73, 0x65, 0x5f, 0x63, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x2e,
 	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x3d, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64,
-	0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f,
+	0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x33, 0x2f,
 	0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d,
 	0x69, 0x7a, 0x65, 0x72, 0x5f, 0x61, 0x74, 0x74, 0x72, 0x69, 0x62, 0x75, 0x74, 0x65, 0x2e, 0x70,
 	0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x1c, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x70, 0x69,
@@ -384,7 +386,7 @@ var file_google_ads_googleads_v12_services_customizer_attribute_service_proto_ra
 	0x41, 0x02, 0x52, 0x0a, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x49, 0x64, 0x12, 0x64,
 	0x0a, 0x0a, 0x6f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x18, 0x02, 0x20, 0x03,
 	0x28, 0x0b, 0x32, 0x3f, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x73, 0x65,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x33, 0x2e, 0x73, 0x65,
 	0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x69, 0x7a, 0x65,
 	0x72, 0x41, 0x74, 0x74, 0x72, 0x69, 0x62, 0x75, 0x74, 0x65, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x74,
 	0x69, 0x6f, 0x6e, 0x42, 0x03, 0xe0, 0x41, 0x02, 0x52, 0x0a, 0x6f, 0x70, 0x65, 0x72, 0x61, 0x74,
@@ -396,7 +398,7 @@ var file_google_ads_googleads_v12_services_customizer_attribute_service_proto_ra
 	0x6c, 0x79, 0x12, 0x7f, 0x0a, 0x15, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x5f, 0x63,
 	0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x18, 0x05, 0x20, 0x01, 0x28,
 	0x0e, 0x32, 0x4b, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x65, 0x6e, 0x75,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x33, 0x2e, 0x65, 0x6e, 0x75,
 	0x6d, 0x73, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x65,
 	0x6e, 0x74, 0x54, 0x79, 0x70, 0x65, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f,
 	0x6e, 0x73, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x54, 0x79, 0x70, 0x65, 0x52, 0x13,
@@ -409,7 +411,7 @@ var file_google_ads_googleads_v12_services_customizer_attribute_service_proto_ra
 	0x64, 0x4d, 0x61, 0x73, 0x6b, 0x52, 0x0a, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4d, 0x61, 0x73,
 	0x6b, 0x12, 0x51, 0x0a, 0x06, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28,
 	0x0b, 0x32, 0x37, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x72, 0x65, 0x73,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x33, 0x2e, 0x72, 0x65, 0x73,
 	0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x69, 0x7a, 0x65,
 	0x72, 0x41, 0x74, 0x74, 0x72, 0x69, 0x62, 0x75, 0x74, 0x65, 0x48, 0x00, 0x52, 0x06, 0x63, 0x72,
 	0x65, 0x61, 0x74, 0x65, 0x12, 0x4b, 0x0a, 0x06, 0x72, 0x65, 0x6d, 0x6f, 0x76, 0x65, 0x18, 0x02,
@@ -423,7 +425,7 @@ var file_google_ads_googleads_v12_services_customizer_attribute_service_proto_ra
 	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x5c, 0x0a, 0x07, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x73,
 	0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x42, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
 	0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31,
-	0x32, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x4d, 0x75, 0x74, 0x61, 0x74,
+	0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x4d, 0x75, 0x74, 0x61, 0x74,
 	0x65, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x69, 0x7a, 0x65, 0x72, 0x41, 0x74, 0x74, 0x72, 0x69,
 	0x62, 0x75, 0x74, 0x65, 0x52, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x52, 0x07, 0x72, 0x65, 0x73, 0x75,
 	0x6c, 0x74, 0x73, 0x12, 0x46, 0x0a, 0x15, 0x70, 0x61, 0x72, 0x74, 0x69, 0x61, 0x6c, 0x5f, 0x66,
@@ -441,7 +443,7 @@ var file_google_ads_googleads_v12_services_customizer_attribute_service_proto_ra
 	0x72, 0x63, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x6a, 0x0a, 0x14, 0x63, 0x75, 0x73, 0x74, 0x6f,
 	0x6d, 0x69, 0x7a, 0x65, 0x72, 0x5f, 0x61, 0x74, 0x74, 0x72, 0x69, 0x62, 0x75, 0x74, 0x65, 0x18,
 	0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x37, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61,
-	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32,
+	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x33,
 	0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e, 0x43, 0x75, 0x73, 0x74, 0x6f,
 	0x6d, 0x69, 0x7a, 0x65, 0x72, 0x41, 0x74, 0x74, 0x72, 0x69, 0x62, 0x75, 0x74, 0x65, 0x52, 0x13,
 	0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x69, 0x7a, 0x65, 0x72, 0x41, 0x74, 0x74, 0x72, 0x69, 0x62,
@@ -450,15 +452,15 @@ var file_google_ads_googleads_v12_services_customizer_attribute_service_proto_ra
 	0x63, 0x65, 0x12, 0x89, 0x02, 0x0a, 0x1a, 0x4d, 0x75, 0x74, 0x61, 0x74, 0x65, 0x43, 0x75, 0x73,
 	0x74, 0x6f, 0x6d, 0x69, 0x7a, 0x65, 0x72, 0x41, 0x74, 0x74, 0x72, 0x69, 0x62, 0x75, 0x74, 0x65,
 	0x73, 0x12, 0x44, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x73, 0x65, 0x72,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x33, 0x2e, 0x73, 0x65, 0x72,
 	0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x4d, 0x75, 0x74, 0x61, 0x74, 0x65, 0x43, 0x75, 0x73, 0x74,
 	0x6f, 0x6d, 0x69, 0x7a, 0x65, 0x72, 0x41, 0x74, 0x74, 0x72, 0x69, 0x62, 0x75, 0x74, 0x65, 0x73,
 	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x45, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76,
-	0x31, 0x32, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x4d, 0x75, 0x74, 0x61,
+	0x31, 0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x4d, 0x75, 0x74, 0x61,
 	0x74, 0x65, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x69, 0x7a, 0x65, 0x72, 0x41, 0x74, 0x74, 0x72,
 	0x69, 0x62, 0x75, 0x74, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x5e,
-	0x82, 0xd3, 0xe4, 0x93, 0x02, 0x3f, 0x22, 0x3a, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x63, 0x75, 0x73,
+	0x82, 0xd3, 0xe4, 0x93, 0x02, 0x3f, 0x22, 0x3a, 0x2f, 0x76, 0x31, 0x33, 0x2f, 0x63, 0x75, 0x73,
 	0x74, 0x6f, 0x6d, 0x65, 0x72, 0x73, 0x2f, 0x7b, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72,
 	0x5f, 0x69, 0x64, 0x3d, 0x2a, 0x7d, 0x2f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x69, 0x7a, 0x65,
 	0x72, 0x41, 0x74, 0x74, 0x72, 0x69, 0x62, 0x75, 0x74, 0x65, 0x73, 0x3a, 0x6d, 0x75, 0x74, 0x61,
@@ -470,57 +472,57 @@ var file_google_ads_googleads_v12_services_customizer_attribute_service_proto_ra
 	0x61, 0x70, 0x69, 0x73, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x61, 0x75, 0x74, 0x68, 0x2f, 0x61, 0x64,
 	0x77, 0x6f, 0x72, 0x64, 0x73, 0x42, 0x8b, 0x02, 0x0a, 0x25, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x42,
+	0x64, 0x73, 0x2e, 0x76, 0x31, 0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x42,
 	0x1f, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x69, 0x7a, 0x65, 0x72, 0x41, 0x74, 0x74, 0x72, 0x69,
 	0x62, 0x75, 0x74, 0x65, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x50, 0x72, 0x6f, 0x74, 0x6f,
 	0x50, 0x01, 0x5a, 0x49, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x67, 0x6f, 0x6c, 0x61, 0x6e,
 	0x67, 0x2e, 0x6f, 0x72, 0x67, 0x2f, 0x67, 0x65, 0x6e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x70, 0x69, 0x73, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x73, 0x65, 0x72, 0x76,
+	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x33, 0x2f, 0x73, 0x65, 0x72, 0x76,
 	0x69, 0x63, 0x65, 0x73, 0x3b, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0xa2, 0x02, 0x03,
 	0x47, 0x41, 0x41, 0xaa, 0x02, 0x21, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x41, 0x64, 0x73,
-	0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e, 0x56, 0x31, 0x32, 0x2e, 0x53,
+	0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e, 0x56, 0x31, 0x33, 0x2e, 0x53,
 	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0xca, 0x02, 0x21, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x5c, 0x41, 0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56,
-	0x31, 0x32, 0x5c, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0xea, 0x02, 0x25, 0x47, 0x6f,
+	0x31, 0x33, 0x5c, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0xea, 0x02, 0x25, 0x47, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x3a, 0x3a, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x47, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x31, 0x32, 0x3a, 0x3a, 0x53, 0x65, 0x72, 0x76, 0x69,
+	0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x31, 0x33, 0x3a, 0x3a, 0x53, 0x65, 0x72, 0x76, 0x69,
 	0x63, 0x65, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
-	file_google_ads_googleads_v12_services_customizer_attribute_service_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v12_services_customizer_attribute_service_proto_rawDescData = file_google_ads_googleads_v12_services_customizer_attribute_service_proto_rawDesc
+	file_google_ads_googleads_v13_services_customizer_attribute_service_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v13_services_customizer_attribute_service_proto_rawDescData = file_google_ads_googleads_v13_services_customizer_attribute_service_proto_rawDesc
 )
 
-func file_google_ads_googleads_v12_services_customizer_attribute_service_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v12_services_customizer_attribute_service_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v12_services_customizer_attribute_service_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v12_services_customizer_attribute_service_proto_rawDescData)
+func file_google_ads_googleads_v13_services_customizer_attribute_service_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v13_services_customizer_attribute_service_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v13_services_customizer_attribute_service_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v13_services_customizer_attribute_service_proto_rawDescData)
 	})
-	return file_google_ads_googleads_v12_services_customizer_attribute_service_proto_rawDescData
+	return file_google_ads_googleads_v13_services_customizer_attribute_service_proto_rawDescData
 }
 
-var file_google_ads_googleads_v12_services_customizer_attribute_service_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
-var file_google_ads_googleads_v12_services_customizer_attribute_service_proto_goTypes = []interface{}{
-	(*MutateCustomizerAttributesRequest)(nil),              // 0: google.ads.googleads.v12.services.MutateCustomizerAttributesRequest
-	(*CustomizerAttributeOperation)(nil),                   // 1: google.ads.googleads.v12.services.CustomizerAttributeOperation
-	(*MutateCustomizerAttributesResponse)(nil),             // 2: google.ads.googleads.v12.services.MutateCustomizerAttributesResponse
-	(*MutateCustomizerAttributeResult)(nil),                // 3: google.ads.googleads.v12.services.MutateCustomizerAttributeResult
-	(enums.ResponseContentTypeEnum_ResponseContentType)(0), // 4: google.ads.googleads.v12.enums.ResponseContentTypeEnum.ResponseContentType
+var file_google_ads_googleads_v13_services_customizer_attribute_service_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_google_ads_googleads_v13_services_customizer_attribute_service_proto_goTypes = []interface{}{
+	(*MutateCustomizerAttributesRequest)(nil),              // 0: google.ads.googleads.v13.services.MutateCustomizerAttributesRequest
+	(*CustomizerAttributeOperation)(nil),                   // 1: google.ads.googleads.v13.services.CustomizerAttributeOperation
+	(*MutateCustomizerAttributesResponse)(nil),             // 2: google.ads.googleads.v13.services.MutateCustomizerAttributesResponse
+	(*MutateCustomizerAttributeResult)(nil),                // 3: google.ads.googleads.v13.services.MutateCustomizerAttributeResult
+	(enums.ResponseContentTypeEnum_ResponseContentType)(0), // 4: google.ads.googleads.v13.enums.ResponseContentTypeEnum.ResponseContentType
 	(*fieldmaskpb.FieldMask)(nil),                          // 5: google.protobuf.FieldMask
-	(*resources.CustomizerAttribute)(nil),                  // 6: google.ads.googleads.v12.resources.CustomizerAttribute
+	(*resources.CustomizerAttribute)(nil),                  // 6: google.ads.googleads.v13.resources.CustomizerAttribute
 	(*status.Status)(nil),                                  // 7: google.rpc.Status
 }
-var file_google_ads_googleads_v12_services_customizer_attribute_service_proto_depIdxs = []int32{
-	1, // 0: google.ads.googleads.v12.services.MutateCustomizerAttributesRequest.operations:type_name -> google.ads.googleads.v12.services.CustomizerAttributeOperation
-	4, // 1: google.ads.googleads.v12.services.MutateCustomizerAttributesRequest.response_content_type:type_name -> google.ads.googleads.v12.enums.ResponseContentTypeEnum.ResponseContentType
-	5, // 2: google.ads.googleads.v12.services.CustomizerAttributeOperation.update_mask:type_name -> google.protobuf.FieldMask
-	6, // 3: google.ads.googleads.v12.services.CustomizerAttributeOperation.create:type_name -> google.ads.googleads.v12.resources.CustomizerAttribute
-	3, // 4: google.ads.googleads.v12.services.MutateCustomizerAttributesResponse.results:type_name -> google.ads.googleads.v12.services.MutateCustomizerAttributeResult
-	7, // 5: google.ads.googleads.v12.services.MutateCustomizerAttributesResponse.partial_failure_error:type_name -> google.rpc.Status
-	6, // 6: google.ads.googleads.v12.services.MutateCustomizerAttributeResult.customizer_attribute:type_name -> google.ads.googleads.v12.resources.CustomizerAttribute
-	0, // 7: google.ads.googleads.v12.services.CustomizerAttributeService.MutateCustomizerAttributes:input_type -> google.ads.googleads.v12.services.MutateCustomizerAttributesRequest
-	2, // 8: google.ads.googleads.v12.services.CustomizerAttributeService.MutateCustomizerAttributes:output_type -> google.ads.googleads.v12.services.MutateCustomizerAttributesResponse
+var file_google_ads_googleads_v13_services_customizer_attribute_service_proto_depIdxs = []int32{
+	1, // 0: google.ads.googleads.v13.services.MutateCustomizerAttributesRequest.operations:type_name -> google.ads.googleads.v13.services.CustomizerAttributeOperation
+	4, // 1: google.ads.googleads.v13.services.MutateCustomizerAttributesRequest.response_content_type:type_name -> google.ads.googleads.v13.enums.ResponseContentTypeEnum.ResponseContentType
+	5, // 2: google.ads.googleads.v13.services.CustomizerAttributeOperation.update_mask:type_name -> google.protobuf.FieldMask
+	6, // 3: google.ads.googleads.v13.services.CustomizerAttributeOperation.create:type_name -> google.ads.googleads.v13.resources.CustomizerAttribute
+	3, // 4: google.ads.googleads.v13.services.MutateCustomizerAttributesResponse.results:type_name -> google.ads.googleads.v13.services.MutateCustomizerAttributeResult
+	7, // 5: google.ads.googleads.v13.services.MutateCustomizerAttributesResponse.partial_failure_error:type_name -> google.rpc.Status
+	6, // 6: google.ads.googleads.v13.services.MutateCustomizerAttributeResult.customizer_attribute:type_name -> google.ads.googleads.v13.resources.CustomizerAttribute
+	0, // 7: google.ads.googleads.v13.services.CustomizerAttributeService.MutateCustomizerAttributes:input_type -> google.ads.googleads.v13.services.MutateCustomizerAttributesRequest
+	2, // 8: google.ads.googleads.v13.services.CustomizerAttributeService.MutateCustomizerAttributes:output_type -> google.ads.googleads.v13.services.MutateCustomizerAttributesResponse
 	8, // [8:9] is the sub-list for method output_type
 	7, // [7:8] is the sub-list for method input_type
 	7, // [7:7] is the sub-list for extension type_name
@@ -528,13 +530,13 @@ var file_google_ads_googleads_v12_services_customizer_attribute_service_proto_de
 	0, // [0:7] is the sub-list for field type_name
 }
 
-func init() { file_google_ads_googleads_v12_services_customizer_attribute_service_proto_init() }
-func file_google_ads_googleads_v12_services_customizer_attribute_service_proto_init() {
-	if File_google_ads_googleads_v12_services_customizer_attribute_service_proto != nil {
+func init() { file_google_ads_googleads_v13_services_customizer_attribute_service_proto_init() }
+func file_google_ads_googleads_v13_services_customizer_attribute_service_proto_init() {
+	if File_google_ads_googleads_v13_services_customizer_attribute_service_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_google_ads_googleads_v12_services_customizer_attribute_service_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v13_services_customizer_attribute_service_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*MutateCustomizerAttributesRequest); i {
 			case 0:
 				return &v.state
@@ -546,7 +548,7 @@ func file_google_ads_googleads_v12_services_customizer_attribute_service_proto_i
 				return nil
 			}
 		}
-		file_google_ads_googleads_v12_services_customizer_attribute_service_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v13_services_customizer_attribute_service_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CustomizerAttributeOperation); i {
 			case 0:
 				return &v.state
@@ -558,7 +560,7 @@ func file_google_ads_googleads_v12_services_customizer_attribute_service_proto_i
 				return nil
 			}
 		}
-		file_google_ads_googleads_v12_services_customizer_attribute_service_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v13_services_customizer_attribute_service_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*MutateCustomizerAttributesResponse); i {
 			case 0:
 				return &v.state
@@ -570,7 +572,7 @@ func file_google_ads_googleads_v12_services_customizer_attribute_service_proto_i
 				return nil
 			}
 		}
-		file_google_ads_googleads_v12_services_customizer_attribute_service_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v13_services_customizer_attribute_service_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*MutateCustomizerAttributeResult); i {
 			case 0:
 				return &v.state
@@ -583,7 +585,7 @@ func file_google_ads_googleads_v12_services_customizer_attribute_service_proto_i
 			}
 		}
 	}
-	file_google_ads_googleads_v12_services_customizer_attribute_service_proto_msgTypes[1].OneofWrappers = []interface{}{
+	file_google_ads_googleads_v13_services_customizer_attribute_service_proto_msgTypes[1].OneofWrappers = []interface{}{
 		(*CustomizerAttributeOperation_Create)(nil),
 		(*CustomizerAttributeOperation_Remove)(nil),
 	}
@@ -591,18 +593,18 @@ func file_google_ads_googleads_v12_services_customizer_attribute_service_proto_i
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_google_ads_googleads_v12_services_customizer_attribute_service_proto_rawDesc,
+			RawDescriptor: file_google_ads_googleads_v13_services_customizer_attribute_service_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_google_ads_googleads_v12_services_customizer_attribute_service_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v12_services_customizer_attribute_service_proto_depIdxs,
-		MessageInfos:      file_google_ads_googleads_v12_services_customizer_attribute_service_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v13_services_customizer_attribute_service_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v13_services_customizer_attribute_service_proto_depIdxs,
+		MessageInfos:      file_google_ads_googleads_v13_services_customizer_attribute_service_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v12_services_customizer_attribute_service_proto = out.File
-	file_google_ads_googleads_v12_services_customizer_attribute_service_proto_rawDesc = nil
-	file_google_ads_googleads_v12_services_customizer_attribute_service_proto_goTypes = nil
-	file_google_ads_googleads_v12_services_customizer_attribute_service_proto_depIdxs = nil
+	File_google_ads_googleads_v13_services_customizer_attribute_service_proto = out.File
+	file_google_ads_googleads_v13_services_customizer_attribute_service_proto_rawDesc = nil
+	file_google_ads_googleads_v13_services_customizer_attribute_service_proto_goTypes = nil
+	file_google_ads_googleads_v13_services_customizer_attribute_service_proto_depIdxs = nil
 }

@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.9
-// source: google/ads/googleads/v12/services/ad_group_bid_modifier_service.proto
+// source: google/ads/googleads/v13/services/ad_group_bid_modifier_service.proto
 
 package services
 
@@ -63,7 +63,7 @@ func NewAdGroupBidModifierServiceClient(cc grpc.ClientConnInterface) AdGroupBidM
 
 func (c *adGroupBidModifierServiceClient) MutateAdGroupBidModifiers(ctx context.Context, in *MutateAdGroupBidModifiersRequest, opts ...grpc.CallOption) (*MutateAdGroupBidModifiersResponse, error) {
 	out := new(MutateAdGroupBidModifiersResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.AdGroupBidModifierService/MutateAdGroupBidModifiers", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v13.services.AdGroupBidModifierService/MutateAdGroupBidModifiers", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -137,7 +137,7 @@ func _AdGroupBidModifierService_MutateAdGroupBidModifiers_Handler(srv interface{
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v12.services.AdGroupBidModifierService/MutateAdGroupBidModifiers",
+		FullMethod: "/google.ads.googleads.v13.services.AdGroupBidModifierService/MutateAdGroupBidModifiers",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AdGroupBidModifierServiceServer).MutateAdGroupBidModifiers(ctx, req.(*MutateAdGroupBidModifiersRequest))
@@ -149,7 +149,7 @@ func _AdGroupBidModifierService_MutateAdGroupBidModifiers_Handler(srv interface{
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AdGroupBidModifierService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v12.services.AdGroupBidModifierService",
+	ServiceName: "google.ads.googleads.v13.services.AdGroupBidModifierService",
 	HandlerType: (*AdGroupBidModifierServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -158,5 +158,5 @@ var AdGroupBidModifierService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v12/services/ad_group_bid_modifier_service.proto",
+	Metadata: "google/ads/googleads/v13/services/ad_group_bid_modifier_service.proto",
 }

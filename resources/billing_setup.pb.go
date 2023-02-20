@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.28.1
 // 	protoc        v3.21.9
-// source: google/ads/googleads/v12/resources/billing_setup.proto
+// source: google/ads/googleads/v13/resources/billing_setup.proto
 
 package resources
 
@@ -51,9 +51,9 @@ type BillingSetup struct {
 	// Output only. The ID of the billing setup.
 	Id *int64 `protobuf:"varint,15,opt,name=id,proto3,oneof" json:"id,omitempty"`
 	// Output only. The status of the billing setup.
-	Status enums.BillingSetupStatusEnum_BillingSetupStatus `protobuf:"varint,3,opt,name=status,proto3,enum=google.ads.googleads.v12.enums.BillingSetupStatusEnum_BillingSetupStatus" json:"status,omitempty"`
-	// Immutable. The resource name of the payments account associated with this billing
-	// setup. Payments resource names have the form:
+	Status enums.BillingSetupStatusEnum_BillingSetupStatus `protobuf:"varint,3,opt,name=status,proto3,enum=google.ads.googleads.v13.enums.BillingSetupStatusEnum_BillingSetupStatus" json:"status,omitempty"`
+	// Immutable. The resource name of the payments account associated with this
+	// billing setup. Payments resource names have the form:
 	//
 	// `customers/{customer_id}/paymentsAccounts/{payments_account_id}`
 	// When setting up billing, this is used to signup with an existing payments
@@ -61,11 +61,10 @@ type BillingSetup struct {
 	// When getting a billing setup, this and payments_account_info will be
 	// populated.
 	PaymentsAccount *string `protobuf:"bytes,18,opt,name=payments_account,json=paymentsAccount,proto3,oneof" json:"payments_account,omitempty"`
-	// Immutable. The payments account information associated with this billing setup.
-	// When setting up billing, this is used to signup with a new payments account
-	// (and then payments_account should not be set).
-	// When getting a billing setup, this and payments_account will be
-	// populated.
+	// Immutable. The payments account information associated with this billing
+	// setup. When setting up billing, this is used to signup with a new payments
+	// account (and then payments_account should not be set). When getting a
+	// billing setup, this and payments_account will be populated.
 	PaymentsAccountInfo *BillingSetup_PaymentsAccountInfo `protobuf:"bytes,12,opt,name=payments_account_info,json=paymentsAccountInfo,proto3" json:"payments_account_info,omitempty"`
 	// When creating a new billing setup, this is when the setup should take
 	// effect. NOW is the only acceptable start time if the customer doesn't have
@@ -93,7 +92,7 @@ type BillingSetup struct {
 func (x *BillingSetup) Reset() {
 	*x = BillingSetup{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v12_resources_billing_setup_proto_msgTypes[0]
+		mi := &file_google_ads_googleads_v13_resources_billing_setup_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -106,7 +105,7 @@ func (x *BillingSetup) String() string {
 func (*BillingSetup) ProtoMessage() {}
 
 func (x *BillingSetup) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v12_resources_billing_setup_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v13_resources_billing_setup_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -119,7 +118,7 @@ func (x *BillingSetup) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BillingSetup.ProtoReflect.Descriptor instead.
 func (*BillingSetup) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v12_resources_billing_setup_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v13_resources_billing_setup_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *BillingSetup) GetResourceName() string {
@@ -204,14 +203,14 @@ type isBillingSetup_StartTime interface {
 }
 
 type BillingSetup_StartDateTime struct {
-	// Immutable. The start date time in yyyy-MM-dd or yyyy-MM-dd HH:mm:ss format. Only a
-	// future time is allowed.
+	// Immutable. The start date time in yyyy-MM-dd or yyyy-MM-dd HH:mm:ss
+	// format. Only a future time is allowed.
 	StartDateTime string `protobuf:"bytes,16,opt,name=start_date_time,json=startDateTime,proto3,oneof"`
 }
 
 type BillingSetup_StartTimeType struct {
 	// Immutable. The start time as a type. Only NOW is allowed.
-	StartTimeType enums.TimeTypeEnum_TimeType `protobuf:"varint,10,opt,name=start_time_type,json=startTimeType,proto3,enum=google.ads.googleads.v12.enums.TimeTypeEnum_TimeType,oneof"`
+	StartTimeType enums.TimeTypeEnum_TimeType `protobuf:"varint,10,opt,name=start_time_type,json=startTimeType,proto3,enum=google.ads.googleads.v13.enums.TimeTypeEnum_TimeType,oneof"`
 }
 
 func (*BillingSetup_StartDateTime) isBillingSetup_StartTime() {}
@@ -223,13 +222,14 @@ type isBillingSetup_EndTime interface {
 }
 
 type BillingSetup_EndDateTime struct {
-	// Output only. The end date time in yyyy-MM-dd or yyyy-MM-dd HH:mm:ss format.
+	// Output only. The end date time in yyyy-MM-dd or yyyy-MM-dd HH:mm:ss
+	// format.
 	EndDateTime string `protobuf:"bytes,17,opt,name=end_date_time,json=endDateTime,proto3,oneof"`
 }
 
 type BillingSetup_EndTimeType struct {
 	// Output only. The end time as a type.  The only possible value is FOREVER.
-	EndTimeType enums.TimeTypeEnum_TimeType `protobuf:"varint,14,opt,name=end_time_type,json=endTimeType,proto3,enum=google.ads.googleads.v12.enums.TimeTypeEnum_TimeType,oneof"`
+	EndTimeType enums.TimeTypeEnum_TimeType `protobuf:"varint,14,opt,name=end_time_type,json=endTimeType,proto3,enum=google.ads.googleads.v13.enums.TimeTypeEnum_TimeType,oneof"`
 }
 
 func (*BillingSetup_EndDateTime) isBillingSetup_EndTime() {}
@@ -242,36 +242,39 @@ type BillingSetup_PaymentsAccountInfo struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// Output only. A 16 digit id used to identify the payments account associated with the
-	// billing setup.
+	// Output only. A 16 digit id used to identify the payments account
+	// associated with the billing setup.
 	//
 	// This must be passed as a string with dashes, for example,
 	// "1234-5678-9012-3456".
 	PaymentsAccountId *string `protobuf:"bytes,6,opt,name=payments_account_id,json=paymentsAccountId,proto3,oneof" json:"payments_account_id,omitempty"`
-	// Immutable. The name of the payments account associated with the billing setup.
+	// Immutable. The name of the payments account associated with the billing
+	// setup.
 	//
 	// This enables the user to specify a meaningful name for a payments account
 	// to aid in reconciling monthly invoices.
 	//
 	// This name will be printed in the monthly invoices.
 	PaymentsAccountName *string `protobuf:"bytes,7,opt,name=payments_account_name,json=paymentsAccountName,proto3,oneof" json:"payments_account_name,omitempty"`
-	// Immutable. A 12 digit id used to identify the payments profile associated with the
-	// billing setup.
+	// Immutable. A 12 digit id used to identify the payments profile associated
+	// with the billing setup.
 	//
 	// This must be passed in as a string with dashes, for example,
 	// "1234-5678-9012".
 	PaymentsProfileId *string `protobuf:"bytes,8,opt,name=payments_profile_id,json=paymentsProfileId,proto3,oneof" json:"payments_profile_id,omitempty"`
-	// Output only. The name of the payments profile associated with the billing setup.
+	// Output only. The name of the payments profile associated with the billing
+	// setup.
 	PaymentsProfileName *string `protobuf:"bytes,9,opt,name=payments_profile_name,json=paymentsProfileName,proto3,oneof" json:"payments_profile_name,omitempty"`
-	// Output only. A secondary payments profile id present in uncommon situations, for
-	// example, when a sequential liability agreement has been arranged.
+	// Output only. A secondary payments profile id present in uncommon
+	// situations, for example, when a sequential liability agreement has been
+	// arranged.
 	SecondaryPaymentsProfileId *string `protobuf:"bytes,10,opt,name=secondary_payments_profile_id,json=secondaryPaymentsProfileId,proto3,oneof" json:"secondary_payments_profile_id,omitempty"`
 }
 
 func (x *BillingSetup_PaymentsAccountInfo) Reset() {
 	*x = BillingSetup_PaymentsAccountInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v12_resources_billing_setup_proto_msgTypes[1]
+		mi := &file_google_ads_googleads_v13_resources_billing_setup_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -284,7 +287,7 @@ func (x *BillingSetup_PaymentsAccountInfo) String() string {
 func (*BillingSetup_PaymentsAccountInfo) ProtoMessage() {}
 
 func (x *BillingSetup_PaymentsAccountInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v12_resources_billing_setup_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v13_resources_billing_setup_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -297,7 +300,7 @@ func (x *BillingSetup_PaymentsAccountInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BillingSetup_PaymentsAccountInfo.ProtoReflect.Descriptor instead.
 func (*BillingSetup_PaymentsAccountInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v12_resources_billing_setup_proto_rawDescGZIP(), []int{0, 0}
+	return file_google_ads_googleads_v13_resources_billing_setup_proto_rawDescGZIP(), []int{0, 0}
 }
 
 func (x *BillingSetup_PaymentsAccountInfo) GetPaymentsAccountId() string {
@@ -335,21 +338,21 @@ func (x *BillingSetup_PaymentsAccountInfo) GetSecondaryPaymentsProfileId() strin
 	return ""
 }
 
-var File_google_ads_googleads_v12_resources_billing_setup_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v13_resources_billing_setup_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v12_resources_billing_setup_proto_rawDesc = []byte{
+var file_google_ads_googleads_v13_resources_billing_setup_proto_rawDesc = []byte{
 	0x0a, 0x36, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x72, 0x65, 0x73, 0x6f, 0x75,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x33, 0x2f, 0x72, 0x65, 0x73, 0x6f, 0x75,
 	0x72, 0x63, 0x65, 0x73, 0x2f, 0x62, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x5f, 0x73, 0x65, 0x74,
 	0x75, 0x70, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x22, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76,
-	0x31, 0x32, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x1a, 0x39, 0x67, 0x6f,
+	0x31, 0x33, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x1a, 0x39, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x62, 0x69, 0x6c,
+	0x64, 0x73, 0x2f, 0x76, 0x31, 0x33, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x62, 0x69, 0x6c,
 	0x6c, 0x69, 0x6e, 0x67, 0x5f, 0x73, 0x65, 0x74, 0x75, 0x70, 0x5f, 0x73, 0x74, 0x61, 0x74, 0x75,
 	0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f,
 	0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31,
-	0x32, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x74, 0x69, 0x6d, 0x65, 0x5f, 0x74, 0x79, 0x70,
+	0x33, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x74, 0x69, 0x6d, 0x65, 0x5f, 0x74, 0x79, 0x70,
 	0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x1f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f,
 	0x61, 0x70, 0x69, 0x2f, 0x66, 0x69, 0x65, 0x6c, 0x64, 0x5f, 0x62, 0x65, 0x68, 0x61, 0x76, 0x69,
 	0x6f, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x19, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
@@ -364,7 +367,7 @@ var file_google_ads_googleads_v12_resources_billing_setup_proto_rawDesc = []byte
 	0x20, 0x01, 0x28, 0x03, 0x42, 0x03, 0xe0, 0x41, 0x03, 0x48, 0x02, 0x52, 0x02, 0x69, 0x64, 0x88,
 	0x01, 0x01, 0x12, 0x66, 0x0a, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x18, 0x03, 0x20, 0x01,
 	0x28, 0x0e, 0x32, 0x49, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x65, 0x6e,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x33, 0x2e, 0x65, 0x6e,
 	0x75, 0x6d, 0x73, 0x2e, 0x42, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x53, 0x65, 0x74, 0x75, 0x70,
 	0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x42, 0x69, 0x6c, 0x6c, 0x69,
 	0x6e, 0x67, 0x53, 0x65, 0x74, 0x75, 0x70, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x42, 0x03, 0xe0,
@@ -378,7 +381,7 @@ var file_google_ads_googleads_v12_resources_billing_setup_proto_rawDesc = []byte
 	0x70, 0x61, 0x79, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x5f, 0x61, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74,
 	0x5f, 0x69, 0x6e, 0x66, 0x6f, 0x18, 0x0c, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x44, 0x2e, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73,
+	0x64, 0x73, 0x2e, 0x76, 0x31, 0x33, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73,
 	0x2e, 0x42, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x53, 0x65, 0x74, 0x75, 0x70, 0x2e, 0x50, 0x61,
 	0x79, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x49, 0x6e, 0x66,
 	0x6f, 0x42, 0x03, 0xe0, 0x41, 0x05, 0x52, 0x13, 0x70, 0x61, 0x79, 0x6d, 0x65, 0x6e, 0x74, 0x73,
@@ -388,7 +391,7 @@ var file_google_ads_googleads_v12_resources_billing_setup_proto_rawDesc = []byte
 	0x72, 0x74, 0x44, 0x61, 0x74, 0x65, 0x54, 0x69, 0x6d, 0x65, 0x12, 0x64, 0x0a, 0x0f, 0x73, 0x74,
 	0x61, 0x72, 0x74, 0x5f, 0x74, 0x69, 0x6d, 0x65, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x18, 0x0a, 0x20,
 	0x01, 0x28, 0x0e, 0x32, 0x35, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73,
-	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x65,
+	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x33, 0x2e, 0x65,
 	0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x54, 0x69, 0x6d, 0x65, 0x54, 0x79, 0x70, 0x65, 0x45, 0x6e, 0x75,
 	0x6d, 0x2e, 0x54, 0x69, 0x6d, 0x65, 0x54, 0x79, 0x70, 0x65, 0x42, 0x03, 0xe0, 0x41, 0x05, 0x48,
 	0x00, 0x52, 0x0d, 0x73, 0x74, 0x61, 0x72, 0x74, 0x54, 0x69, 0x6d, 0x65, 0x54, 0x79, 0x70, 0x65,
@@ -397,7 +400,7 @@ var file_google_ads_googleads_v12_resources_billing_setup_proto_rawDesc = []byte
 	0x65, 0x6e, 0x64, 0x44, 0x61, 0x74, 0x65, 0x54, 0x69, 0x6d, 0x65, 0x12, 0x60, 0x0a, 0x0d, 0x65,
 	0x6e, 0x64, 0x5f, 0x74, 0x69, 0x6d, 0x65, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x18, 0x0e, 0x20, 0x01,
 	0x28, 0x0e, 0x32, 0x35, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x65, 0x6e,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x33, 0x2e, 0x65, 0x6e,
 	0x75, 0x6d, 0x73, 0x2e, 0x54, 0x69, 0x6d, 0x65, 0x54, 0x79, 0x70, 0x65, 0x45, 0x6e, 0x75, 0x6d,
 	0x2e, 0x54, 0x69, 0x6d, 0x65, 0x54, 0x79, 0x70, 0x65, 0x42, 0x03, 0xe0, 0x41, 0x03, 0x48, 0x01,
 	0x52, 0x0b, 0x65, 0x6e, 0x64, 0x54, 0x69, 0x6d, 0x65, 0x54, 0x79, 0x70, 0x65, 0x1a, 0xd8, 0x03,
@@ -442,48 +445,48 @@ var file_google_ads_googleads_v12_resources_billing_setup_proto_rawDesc = []byte
 	0x13, 0x0a, 0x11, 0x5f, 0x70, 0x61, 0x79, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x5f, 0x61, 0x63, 0x63,
 	0x6f, 0x75, 0x6e, 0x74, 0x42, 0x83, 0x02, 0x0a, 0x26, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64,
-	0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x42,
+	0x73, 0x2e, 0x76, 0x31, 0x33, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x42,
 	0x11, 0x42, 0x69, 0x6c, 0x6c, 0x69, 0x6e, 0x67, 0x53, 0x65, 0x74, 0x75, 0x70, 0x50, 0x72, 0x6f,
 	0x74, 0x6f, 0x50, 0x01, 0x5a, 0x4b, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x67, 0x6f, 0x6c,
 	0x61, 0x6e, 0x67, 0x2e, 0x6f, 0x72, 0x67, 0x2f, 0x67, 0x65, 0x6e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
 	0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x70, 0x69, 0x73, 0x2f, 0x61, 0x64, 0x73, 0x2f,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x72, 0x65,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x33, 0x2f, 0x72, 0x65,
 	0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x3b, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65,
 	0x73, 0xa2, 0x02, 0x03, 0x47, 0x41, 0x41, 0xaa, 0x02, 0x22, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x41, 0x64, 0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e, 0x56,
-	0x31, 0x32, 0x2e, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0xca, 0x02, 0x22, 0x47,
+	0x31, 0x33, 0x2e, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0xca, 0x02, 0x22, 0x47,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x5c, 0x41, 0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x41, 0x64, 0x73, 0x5c, 0x56, 0x31, 0x32, 0x5c, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65,
+	0x41, 0x64, 0x73, 0x5c, 0x56, 0x31, 0x33, 0x5c, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65,
 	0x73, 0xea, 0x02, 0x26, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x3a, 0x3a, 0x41, 0x64, 0x73, 0x3a,
-	0x3a, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x31, 0x32, 0x3a,
+	0x3a, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x31, 0x33, 0x3a,
 	0x3a, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
 	0x6f, 0x33,
 }
 
 var (
-	file_google_ads_googleads_v12_resources_billing_setup_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v12_resources_billing_setup_proto_rawDescData = file_google_ads_googleads_v12_resources_billing_setup_proto_rawDesc
+	file_google_ads_googleads_v13_resources_billing_setup_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v13_resources_billing_setup_proto_rawDescData = file_google_ads_googleads_v13_resources_billing_setup_proto_rawDesc
 )
 
-func file_google_ads_googleads_v12_resources_billing_setup_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v12_resources_billing_setup_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v12_resources_billing_setup_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v12_resources_billing_setup_proto_rawDescData)
+func file_google_ads_googleads_v13_resources_billing_setup_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v13_resources_billing_setup_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v13_resources_billing_setup_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v13_resources_billing_setup_proto_rawDescData)
 	})
-	return file_google_ads_googleads_v12_resources_billing_setup_proto_rawDescData
+	return file_google_ads_googleads_v13_resources_billing_setup_proto_rawDescData
 }
 
-var file_google_ads_googleads_v12_resources_billing_setup_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
-var file_google_ads_googleads_v12_resources_billing_setup_proto_goTypes = []interface{}{
-	(*BillingSetup)(nil),                                 // 0: google.ads.googleads.v12.resources.BillingSetup
-	(*BillingSetup_PaymentsAccountInfo)(nil),             // 1: google.ads.googleads.v12.resources.BillingSetup.PaymentsAccountInfo
-	(enums.BillingSetupStatusEnum_BillingSetupStatus)(0), // 2: google.ads.googleads.v12.enums.BillingSetupStatusEnum.BillingSetupStatus
-	(enums.TimeTypeEnum_TimeType)(0),                     // 3: google.ads.googleads.v12.enums.TimeTypeEnum.TimeType
+var file_google_ads_googleads_v13_resources_billing_setup_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_google_ads_googleads_v13_resources_billing_setup_proto_goTypes = []interface{}{
+	(*BillingSetup)(nil),                                 // 0: google.ads.googleads.v13.resources.BillingSetup
+	(*BillingSetup_PaymentsAccountInfo)(nil),             // 1: google.ads.googleads.v13.resources.BillingSetup.PaymentsAccountInfo
+	(enums.BillingSetupStatusEnum_BillingSetupStatus)(0), // 2: google.ads.googleads.v13.enums.BillingSetupStatusEnum.BillingSetupStatus
+	(enums.TimeTypeEnum_TimeType)(0),                     // 3: google.ads.googleads.v13.enums.TimeTypeEnum.TimeType
 }
-var file_google_ads_googleads_v12_resources_billing_setup_proto_depIdxs = []int32{
-	2, // 0: google.ads.googleads.v12.resources.BillingSetup.status:type_name -> google.ads.googleads.v12.enums.BillingSetupStatusEnum.BillingSetupStatus
-	1, // 1: google.ads.googleads.v12.resources.BillingSetup.payments_account_info:type_name -> google.ads.googleads.v12.resources.BillingSetup.PaymentsAccountInfo
-	3, // 2: google.ads.googleads.v12.resources.BillingSetup.start_time_type:type_name -> google.ads.googleads.v12.enums.TimeTypeEnum.TimeType
-	3, // 3: google.ads.googleads.v12.resources.BillingSetup.end_time_type:type_name -> google.ads.googleads.v12.enums.TimeTypeEnum.TimeType
+var file_google_ads_googleads_v13_resources_billing_setup_proto_depIdxs = []int32{
+	2, // 0: google.ads.googleads.v13.resources.BillingSetup.status:type_name -> google.ads.googleads.v13.enums.BillingSetupStatusEnum.BillingSetupStatus
+	1, // 1: google.ads.googleads.v13.resources.BillingSetup.payments_account_info:type_name -> google.ads.googleads.v13.resources.BillingSetup.PaymentsAccountInfo
+	3, // 2: google.ads.googleads.v13.resources.BillingSetup.start_time_type:type_name -> google.ads.googleads.v13.enums.TimeTypeEnum.TimeType
+	3, // 3: google.ads.googleads.v13.resources.BillingSetup.end_time_type:type_name -> google.ads.googleads.v13.enums.TimeTypeEnum.TimeType
 	4, // [4:4] is the sub-list for method output_type
 	4, // [4:4] is the sub-list for method input_type
 	4, // [4:4] is the sub-list for extension type_name
@@ -491,13 +494,13 @@ var file_google_ads_googleads_v12_resources_billing_setup_proto_depIdxs = []int3
 	0, // [0:4] is the sub-list for field type_name
 }
 
-func init() { file_google_ads_googleads_v12_resources_billing_setup_proto_init() }
-func file_google_ads_googleads_v12_resources_billing_setup_proto_init() {
-	if File_google_ads_googleads_v12_resources_billing_setup_proto != nil {
+func init() { file_google_ads_googleads_v13_resources_billing_setup_proto_init() }
+func file_google_ads_googleads_v13_resources_billing_setup_proto_init() {
+	if File_google_ads_googleads_v13_resources_billing_setup_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_google_ads_googleads_v12_resources_billing_setup_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v13_resources_billing_setup_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*BillingSetup); i {
 			case 0:
 				return &v.state
@@ -509,7 +512,7 @@ func file_google_ads_googleads_v12_resources_billing_setup_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v12_resources_billing_setup_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v13_resources_billing_setup_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*BillingSetup_PaymentsAccountInfo); i {
 			case 0:
 				return &v.state
@@ -522,29 +525,29 @@ func file_google_ads_googleads_v12_resources_billing_setup_proto_init() {
 			}
 		}
 	}
-	file_google_ads_googleads_v12_resources_billing_setup_proto_msgTypes[0].OneofWrappers = []interface{}{
+	file_google_ads_googleads_v13_resources_billing_setup_proto_msgTypes[0].OneofWrappers = []interface{}{
 		(*BillingSetup_StartDateTime)(nil),
 		(*BillingSetup_StartTimeType)(nil),
 		(*BillingSetup_EndDateTime)(nil),
 		(*BillingSetup_EndTimeType)(nil),
 	}
-	file_google_ads_googleads_v12_resources_billing_setup_proto_msgTypes[1].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v13_resources_billing_setup_proto_msgTypes[1].OneofWrappers = []interface{}{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_google_ads_googleads_v12_resources_billing_setup_proto_rawDesc,
+			RawDescriptor: file_google_ads_googleads_v13_resources_billing_setup_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_google_ads_googleads_v12_resources_billing_setup_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v12_resources_billing_setup_proto_depIdxs,
-		MessageInfos:      file_google_ads_googleads_v12_resources_billing_setup_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v13_resources_billing_setup_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v13_resources_billing_setup_proto_depIdxs,
+		MessageInfos:      file_google_ads_googleads_v13_resources_billing_setup_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v12_resources_billing_setup_proto = out.File
-	file_google_ads_googleads_v12_resources_billing_setup_proto_rawDesc = nil
-	file_google_ads_googleads_v12_resources_billing_setup_proto_goTypes = nil
-	file_google_ads_googleads_v12_resources_billing_setup_proto_depIdxs = nil
+	File_google_ads_googleads_v13_resources_billing_setup_proto = out.File
+	file_google_ads_googleads_v13_resources_billing_setup_proto_rawDesc = nil
+	file_google_ads_googleads_v13_resources_billing_setup_proto_goTypes = nil
+	file_google_ads_googleads_v13_resources_billing_setup_proto_depIdxs = nil
 }

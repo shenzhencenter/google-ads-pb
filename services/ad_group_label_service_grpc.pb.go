@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.9
-// source: google/ads/googleads/v12/services/ad_group_label_service.proto
+// source: google/ads/googleads/v13/services/ad_group_label_service.proto
 
 package services
 
@@ -51,7 +51,7 @@ func NewAdGroupLabelServiceClient(cc grpc.ClientConnInterface) AdGroupLabelServi
 
 func (c *adGroupLabelServiceClient) MutateAdGroupLabels(ctx context.Context, in *MutateAdGroupLabelsRequest, opts ...grpc.CallOption) (*MutateAdGroupLabelsResponse, error) {
 	out := new(MutateAdGroupLabelsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.AdGroupLabelService/MutateAdGroupLabels", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v13.services.AdGroupLabelService/MutateAdGroupLabels", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -112,7 +112,7 @@ func _AdGroupLabelService_MutateAdGroupLabels_Handler(srv interface{}, ctx conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v12.services.AdGroupLabelService/MutateAdGroupLabels",
+		FullMethod: "/google.ads.googleads.v13.services.AdGroupLabelService/MutateAdGroupLabels",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AdGroupLabelServiceServer).MutateAdGroupLabels(ctx, req.(*MutateAdGroupLabelsRequest))
@@ -124,7 +124,7 @@ func _AdGroupLabelService_MutateAdGroupLabels_Handler(srv interface{}, ctx conte
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AdGroupLabelService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v12.services.AdGroupLabelService",
+	ServiceName: "google.ads.googleads.v13.services.AdGroupLabelService",
 	HandlerType: (*AdGroupLabelServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -133,5 +133,5 @@ var AdGroupLabelService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v12/services/ad_group_label_service.proto",
+	Metadata: "google/ads/googleads/v13/services/ad_group_label_service.proto",
 }

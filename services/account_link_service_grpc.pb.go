@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.9
-// source: google/ads/googleads/v12/services/account_link_service.proto
+// source: google/ads/googleads/v13/services/account_link_service.proto
 
 package services
 
@@ -66,7 +66,7 @@ func NewAccountLinkServiceClient(cc grpc.ClientConnInterface) AccountLinkService
 
 func (c *accountLinkServiceClient) CreateAccountLink(ctx context.Context, in *CreateAccountLinkRequest, opts ...grpc.CallOption) (*CreateAccountLinkResponse, error) {
 	out := new(CreateAccountLinkResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.AccountLinkService/CreateAccountLink", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v13.services.AccountLinkService/CreateAccountLink", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -75,7 +75,7 @@ func (c *accountLinkServiceClient) CreateAccountLink(ctx context.Context, in *Cr
 
 func (c *accountLinkServiceClient) MutateAccountLink(ctx context.Context, in *MutateAccountLinkRequest, opts ...grpc.CallOption) (*MutateAccountLinkResponse, error) {
 	out := new(MutateAccountLinkResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.AccountLinkService/MutateAccountLink", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v13.services.AccountLinkService/MutateAccountLink", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -154,7 +154,7 @@ func _AccountLinkService_CreateAccountLink_Handler(srv interface{}, ctx context.
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v12.services.AccountLinkService/CreateAccountLink",
+		FullMethod: "/google.ads.googleads.v13.services.AccountLinkService/CreateAccountLink",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AccountLinkServiceServer).CreateAccountLink(ctx, req.(*CreateAccountLinkRequest))
@@ -172,7 +172,7 @@ func _AccountLinkService_MutateAccountLink_Handler(srv interface{}, ctx context.
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v12.services.AccountLinkService/MutateAccountLink",
+		FullMethod: "/google.ads.googleads.v13.services.AccountLinkService/MutateAccountLink",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AccountLinkServiceServer).MutateAccountLink(ctx, req.(*MutateAccountLinkRequest))
@@ -184,7 +184,7 @@ func _AccountLinkService_MutateAccountLink_Handler(srv interface{}, ctx context.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AccountLinkService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v12.services.AccountLinkService",
+	ServiceName: "google.ads.googleads.v13.services.AccountLinkService",
 	HandlerType: (*AccountLinkServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -197,5 +197,5 @@ var AccountLinkService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v12/services/account_link_service.proto",
+	Metadata: "google/ads/googleads/v13/services/account_link_service.proto",
 }

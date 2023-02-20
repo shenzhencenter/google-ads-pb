@@ -123,7 +123,8 @@ type internalAudienceInsightsClient interface {
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 //
 // Audience Insights Service helps users find information about groups of
-// people and how they can be reached with Google Ads.
+// people and how they can be reached with Google Ads. Accessible to
+// allowlisted customers only.
 type AudienceInsightsClient struct {
 	// The internal transport-dependent client.
 	internalClient internalAudienceInsightsClient
@@ -242,7 +243,8 @@ type audienceInsightsGRPCClient struct {
 // The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
 // Audience Insights Service helps users find information about groups of
-// people and how they can be reached with Google Ads.
+// people and how they can be reached with Google Ads. Accessible to
+// allowlisted customers only.
 func NewAudienceInsightsClient(ctx context.Context, opts ...option.ClientOption) (*AudienceInsightsClient, error) {
 	clientOpts := defaultAudienceInsightsGRPCClientOptions()
 	if newAudienceInsightsClientHook != nil {

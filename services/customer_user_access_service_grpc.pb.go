@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.9
-// source: google/ads/googleads/v12/services/customer_user_access_service.proto
+// source: google/ads/googleads/v13/services/customer_user_access_service.proto
 
 package services
 
@@ -49,7 +49,7 @@ func NewCustomerUserAccessServiceClient(cc grpc.ClientConnInterface) CustomerUse
 
 func (c *customerUserAccessServiceClient) MutateCustomerUserAccess(ctx context.Context, in *MutateCustomerUserAccessRequest, opts ...grpc.CallOption) (*MutateCustomerUserAccessResponse, error) {
 	out := new(MutateCustomerUserAccessResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.CustomerUserAccessService/MutateCustomerUserAccess", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v13.services.CustomerUserAccessService/MutateCustomerUserAccess", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -109,7 +109,7 @@ func _CustomerUserAccessService_MutateCustomerUserAccess_Handler(srv interface{}
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v12.services.CustomerUserAccessService/MutateCustomerUserAccess",
+		FullMethod: "/google.ads.googleads.v13.services.CustomerUserAccessService/MutateCustomerUserAccess",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CustomerUserAccessServiceServer).MutateCustomerUserAccess(ctx, req.(*MutateCustomerUserAccessRequest))
@@ -121,7 +121,7 @@ func _CustomerUserAccessService_MutateCustomerUserAccess_Handler(srv interface{}
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CustomerUserAccessService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v12.services.CustomerUserAccessService",
+	ServiceName: "google.ads.googleads.v13.services.CustomerUserAccessService",
 	HandlerType: (*CustomerUserAccessServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -130,5 +130,5 @@ var CustomerUserAccessService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v12/services/customer_user_access_service.proto",
+	Metadata: "google/ads/googleads/v13/services/customer_user_access_service.proto",
 }

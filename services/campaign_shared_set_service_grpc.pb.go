@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.9
-// source: google/ads/googleads/v12/services/campaign_shared_set_service.proto
+// source: google/ads/googleads/v13/services/campaign_shared_set_service.proto
 
 package services
 
@@ -61,7 +61,7 @@ func NewCampaignSharedSetServiceClient(cc grpc.ClientConnInterface) CampaignShar
 
 func (c *campaignSharedSetServiceClient) MutateCampaignSharedSets(ctx context.Context, in *MutateCampaignSharedSetsRequest, opts ...grpc.CallOption) (*MutateCampaignSharedSetsResponse, error) {
 	out := new(MutateCampaignSharedSetsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.CampaignSharedSetService/MutateCampaignSharedSets", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v13.services.CampaignSharedSetService/MutateCampaignSharedSets", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -133,7 +133,7 @@ func _CampaignSharedSetService_MutateCampaignSharedSets_Handler(srv interface{},
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v12.services.CampaignSharedSetService/MutateCampaignSharedSets",
+		FullMethod: "/google.ads.googleads.v13.services.CampaignSharedSetService/MutateCampaignSharedSets",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CampaignSharedSetServiceServer).MutateCampaignSharedSets(ctx, req.(*MutateCampaignSharedSetsRequest))
@@ -145,7 +145,7 @@ func _CampaignSharedSetService_MutateCampaignSharedSets_Handler(srv interface{},
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CampaignSharedSetService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v12.services.CampaignSharedSetService",
+	ServiceName: "google.ads.googleads.v13.services.CampaignSharedSetService",
 	HandlerType: (*CampaignSharedSetServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -154,5 +154,5 @@ var CampaignSharedSetService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v12/services/campaign_shared_set_service.proto",
+	Metadata: "google/ads/googleads/v13/services/campaign_shared_set_service.proto",
 }

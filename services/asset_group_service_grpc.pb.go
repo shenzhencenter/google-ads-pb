@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.9
-// source: google/ads/googleads/v12/services/asset_group_service.proto
+// source: google/ads/googleads/v13/services/asset_group_service.proto
 
 package services
 
@@ -37,7 +37,7 @@ func NewAssetGroupServiceClient(cc grpc.ClientConnInterface) AssetGroupServiceCl
 
 func (c *assetGroupServiceClient) MutateAssetGroups(ctx context.Context, in *MutateAssetGroupsRequest, opts ...grpc.CallOption) (*MutateAssetGroupsResponse, error) {
 	out := new(MutateAssetGroupsResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.AssetGroupService/MutateAssetGroups", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v13.services.AssetGroupService/MutateAssetGroups", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -84,7 +84,7 @@ func _AssetGroupService_MutateAssetGroups_Handler(srv interface{}, ctx context.C
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v12.services.AssetGroupService/MutateAssetGroups",
+		FullMethod: "/google.ads.googleads.v13.services.AssetGroupService/MutateAssetGroups",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AssetGroupServiceServer).MutateAssetGroups(ctx, req.(*MutateAssetGroupsRequest))
@@ -96,7 +96,7 @@ func _AssetGroupService_MutateAssetGroups_Handler(srv interface{}, ctx context.C
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AssetGroupService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v12.services.AssetGroupService",
+	ServiceName: "google.ads.googleads.v13.services.AssetGroupService",
 	HandlerType: (*AssetGroupServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -105,5 +105,5 @@ var AssetGroupService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v12/services/asset_group_service.proto",
+	Metadata: "google/ads/googleads/v13/services/asset_group_service.proto",
 }

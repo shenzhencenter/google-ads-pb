@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.28.1
 // 	protoc        v3.21.9
-// source: google/ads/googleads/v12/resources/detail_placement_view.proto
+// source: google/ads/googleads/v13/resources/detail_placement_view.proto
 
 package resources
 
@@ -47,27 +47,27 @@ type DetailPlacementView struct {
 	//
 	// `customers/{customer_id}/detailPlacementViews/{ad_group_id}~{base64_placement}`
 	ResourceName string `protobuf:"bytes,1,opt,name=resource_name,json=resourceName,proto3" json:"resource_name,omitempty"`
-	// Output only. The automatic placement string at detail level, e. g. website URL, mobile
-	// application ID, or a YouTube video ID.
+	// Output only. The automatic placement string at detail level, e. g. website
+	// URL, mobile application ID, or a YouTube video ID.
 	Placement *string `protobuf:"bytes,7,opt,name=placement,proto3,oneof" json:"placement,omitempty"`
-	// Output only. The display name is URL name for websites, YouTube video name for YouTube
-	// videos, and translated mobile app name for mobile apps.
+	// Output only. The display name is URL name for websites, YouTube video name
+	// for YouTube videos, and translated mobile app name for mobile apps.
 	DisplayName *string `protobuf:"bytes,8,opt,name=display_name,json=displayName,proto3,oneof" json:"display_name,omitempty"`
-	// Output only. URL of the group placement, for example, domain, link to the mobile
-	// application in app store, or a YouTube channel URL.
+	// Output only. URL of the group placement, for example, domain, link to the
+	// mobile application in app store, or a YouTube channel URL.
 	GroupPlacementTargetUrl *string `protobuf:"bytes,9,opt,name=group_placement_target_url,json=groupPlacementTargetUrl,proto3,oneof" json:"group_placement_target_url,omitempty"`
-	// Output only. URL of the placement, for example, website, link to the mobile application
-	// in app store, or a YouTube video URL.
+	// Output only. URL of the placement, for example, website, link to the mobile
+	// application in app store, or a YouTube video URL.
 	TargetUrl *string `protobuf:"bytes,10,opt,name=target_url,json=targetUrl,proto3,oneof" json:"target_url,omitempty"`
-	// Output only. Type of the placement, for example, Website, YouTube Video, and Mobile
-	// Application.
-	PlacementType enums.PlacementTypeEnum_PlacementType `protobuf:"varint,6,opt,name=placement_type,json=placementType,proto3,enum=google.ads.googleads.v12.enums.PlacementTypeEnum_PlacementType" json:"placement_type,omitempty"`
+	// Output only. Type of the placement, for example, Website, YouTube Video,
+	// and Mobile Application.
+	PlacementType enums.PlacementTypeEnum_PlacementType `protobuf:"varint,6,opt,name=placement_type,json=placementType,proto3,enum=google.ads.googleads.v13.enums.PlacementTypeEnum_PlacementType" json:"placement_type,omitempty"`
 }
 
 func (x *DetailPlacementView) Reset() {
 	*x = DetailPlacementView{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v12_resources_detail_placement_view_proto_msgTypes[0]
+		mi := &file_google_ads_googleads_v13_resources_detail_placement_view_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -80,7 +80,7 @@ func (x *DetailPlacementView) String() string {
 func (*DetailPlacementView) ProtoMessage() {}
 
 func (x *DetailPlacementView) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v12_resources_detail_placement_view_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v13_resources_detail_placement_view_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -93,7 +93,7 @@ func (x *DetailPlacementView) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DetailPlacementView.ProtoReflect.Descriptor instead.
 func (*DetailPlacementView) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v12_resources_detail_placement_view_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v13_resources_detail_placement_view_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *DetailPlacementView) GetResourceName() string {
@@ -138,17 +138,17 @@ func (x *DetailPlacementView) GetPlacementType() enums.PlacementTypeEnum_Placeme
 	return enums.PlacementTypeEnum_PlacementType(0)
 }
 
-var File_google_ads_googleads_v12_resources_detail_placement_view_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v13_resources_detail_placement_view_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v12_resources_detail_placement_view_proto_rawDesc = []byte{
+var file_google_ads_googleads_v13_resources_detail_placement_view_proto_rawDesc = []byte{
 	0x0a, 0x3e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x72, 0x65, 0x73, 0x6f, 0x75,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x33, 0x2f, 0x72, 0x65, 0x73, 0x6f, 0x75,
 	0x72, 0x63, 0x65, 0x73, 0x2f, 0x64, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x5f, 0x70, 0x6c, 0x61, 0x63,
 	0x65, 0x6d, 0x65, 0x6e, 0x74, 0x5f, 0x76, 0x69, 0x65, 0x77, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
 	0x12, 0x22, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x33, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75,
 	0x72, 0x63, 0x65, 0x73, 0x1a, 0x33, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73,
-	0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x65,
+	0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x33, 0x2f, 0x65,
 	0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x70, 0x6c, 0x61, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x5f, 0x74,
 	0x79, 0x70, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x1f, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x66, 0x69, 0x65, 0x6c, 0x64, 0x5f, 0x62, 0x65, 0x68, 0x61,
@@ -176,7 +176,7 @@ var file_google_ads_googleads_v12_resources_detail_placement_view_proto_rawDesc 
 	0x09, 0x74, 0x61, 0x72, 0x67, 0x65, 0x74, 0x55, 0x72, 0x6c, 0x88, 0x01, 0x01, 0x12, 0x6b, 0x0a,
 	0x0e, 0x70, 0x6c, 0x61, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x18,
 	0x06, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x3f, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61,
-	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32,
+	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x33,
 	0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x50, 0x6c, 0x61, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74,
 	0x54, 0x79, 0x70, 0x65, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x50, 0x6c, 0x61, 0x63, 0x65, 0x6d, 0x65,
 	0x6e, 0x74, 0x54, 0x79, 0x70, 0x65, 0x42, 0x03, 0xe0, 0x41, 0x03, 0x52, 0x0d, 0x70, 0x6c, 0x61,
@@ -195,43 +195,43 @@ var file_google_ads_googleads_v12_resources_detail_placement_view_proto_rawDesc 
 	0x5f, 0x74, 0x61, 0x72, 0x67, 0x65, 0x74, 0x5f, 0x75, 0x72, 0x6c, 0x42, 0x0d, 0x0a, 0x0b, 0x5f,
 	0x74, 0x61, 0x72, 0x67, 0x65, 0x74, 0x5f, 0x75, 0x72, 0x6c, 0x42, 0x8a, 0x02, 0x0a, 0x26, 0x63,
 	0x6f, 0x6d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x72, 0x65, 0x73, 0x6f,
+	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x33, 0x2e, 0x72, 0x65, 0x73, 0x6f,
 	0x75, 0x72, 0x63, 0x65, 0x73, 0x42, 0x18, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x50, 0x6c, 0x61,
 	0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x56, 0x69, 0x65, 0x77, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50,
 	0x01, 0x5a, 0x4b, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x67, 0x6f, 0x6c, 0x61, 0x6e, 0x67,
 	0x2e, 0x6f, 0x72, 0x67, 0x2f, 0x67, 0x65, 0x6e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x70, 0x69, 0x73, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x72, 0x65, 0x73, 0x6f, 0x75,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x33, 0x2f, 0x72, 0x65, 0x73, 0x6f, 0x75,
 	0x72, 0x63, 0x65, 0x73, 0x3b, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0xa2, 0x02,
 	0x03, 0x47, 0x41, 0x41, 0xaa, 0x02, 0x22, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x41, 0x64,
-	0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e, 0x56, 0x31, 0x32, 0x2e,
+	0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e, 0x56, 0x31, 0x33, 0x2e,
 	0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0xca, 0x02, 0x22, 0x47, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x5c, 0x41, 0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73,
-	0x5c, 0x56, 0x31, 0x32, 0x5c, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0xea, 0x02,
+	0x5c, 0x56, 0x31, 0x33, 0x5c, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0xea, 0x02,
 	0x26, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x3a, 0x3a, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x47, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x31, 0x32, 0x3a, 0x3a, 0x52, 0x65,
+	0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x31, 0x33, 0x3a, 0x3a, 0x52, 0x65,
 	0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
-	file_google_ads_googleads_v12_resources_detail_placement_view_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v12_resources_detail_placement_view_proto_rawDescData = file_google_ads_googleads_v12_resources_detail_placement_view_proto_rawDesc
+	file_google_ads_googleads_v13_resources_detail_placement_view_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v13_resources_detail_placement_view_proto_rawDescData = file_google_ads_googleads_v13_resources_detail_placement_view_proto_rawDesc
 )
 
-func file_google_ads_googleads_v12_resources_detail_placement_view_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v12_resources_detail_placement_view_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v12_resources_detail_placement_view_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v12_resources_detail_placement_view_proto_rawDescData)
+func file_google_ads_googleads_v13_resources_detail_placement_view_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v13_resources_detail_placement_view_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v13_resources_detail_placement_view_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v13_resources_detail_placement_view_proto_rawDescData)
 	})
-	return file_google_ads_googleads_v12_resources_detail_placement_view_proto_rawDescData
+	return file_google_ads_googleads_v13_resources_detail_placement_view_proto_rawDescData
 }
 
-var file_google_ads_googleads_v12_resources_detail_placement_view_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
-var file_google_ads_googleads_v12_resources_detail_placement_view_proto_goTypes = []interface{}{
-	(*DetailPlacementView)(nil),                // 0: google.ads.googleads.v12.resources.DetailPlacementView
-	(enums.PlacementTypeEnum_PlacementType)(0), // 1: google.ads.googleads.v12.enums.PlacementTypeEnum.PlacementType
+var file_google_ads_googleads_v13_resources_detail_placement_view_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_google_ads_googleads_v13_resources_detail_placement_view_proto_goTypes = []interface{}{
+	(*DetailPlacementView)(nil),                // 0: google.ads.googleads.v13.resources.DetailPlacementView
+	(enums.PlacementTypeEnum_PlacementType)(0), // 1: google.ads.googleads.v13.enums.PlacementTypeEnum.PlacementType
 }
-var file_google_ads_googleads_v12_resources_detail_placement_view_proto_depIdxs = []int32{
-	1, // 0: google.ads.googleads.v12.resources.DetailPlacementView.placement_type:type_name -> google.ads.googleads.v12.enums.PlacementTypeEnum.PlacementType
+var file_google_ads_googleads_v13_resources_detail_placement_view_proto_depIdxs = []int32{
+	1, // 0: google.ads.googleads.v13.resources.DetailPlacementView.placement_type:type_name -> google.ads.googleads.v13.enums.PlacementTypeEnum.PlacementType
 	1, // [1:1] is the sub-list for method output_type
 	1, // [1:1] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name
@@ -239,13 +239,13 @@ var file_google_ads_googleads_v12_resources_detail_placement_view_proto_depIdxs 
 	0, // [0:1] is the sub-list for field type_name
 }
 
-func init() { file_google_ads_googleads_v12_resources_detail_placement_view_proto_init() }
-func file_google_ads_googleads_v12_resources_detail_placement_view_proto_init() {
-	if File_google_ads_googleads_v12_resources_detail_placement_view_proto != nil {
+func init() { file_google_ads_googleads_v13_resources_detail_placement_view_proto_init() }
+func file_google_ads_googleads_v13_resources_detail_placement_view_proto_init() {
+	if File_google_ads_googleads_v13_resources_detail_placement_view_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_google_ads_googleads_v12_resources_detail_placement_view_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v13_resources_detail_placement_view_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DetailPlacementView); i {
 			case 0:
 				return &v.state
@@ -258,23 +258,23 @@ func file_google_ads_googleads_v12_resources_detail_placement_view_proto_init() 
 			}
 		}
 	}
-	file_google_ads_googleads_v12_resources_detail_placement_view_proto_msgTypes[0].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v13_resources_detail_placement_view_proto_msgTypes[0].OneofWrappers = []interface{}{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_google_ads_googleads_v12_resources_detail_placement_view_proto_rawDesc,
+			RawDescriptor: file_google_ads_googleads_v13_resources_detail_placement_view_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   1,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_google_ads_googleads_v12_resources_detail_placement_view_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v12_resources_detail_placement_view_proto_depIdxs,
-		MessageInfos:      file_google_ads_googleads_v12_resources_detail_placement_view_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v13_resources_detail_placement_view_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v13_resources_detail_placement_view_proto_depIdxs,
+		MessageInfos:      file_google_ads_googleads_v13_resources_detail_placement_view_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v12_resources_detail_placement_view_proto = out.File
-	file_google_ads_googleads_v12_resources_detail_placement_view_proto_rawDesc = nil
-	file_google_ads_googleads_v12_resources_detail_placement_view_proto_goTypes = nil
-	file_google_ads_googleads_v12_resources_detail_placement_view_proto_depIdxs = nil
+	File_google_ads_googleads_v13_resources_detail_placement_view_proto = out.File
+	file_google_ads_googleads_v13_resources_detail_placement_view_proto_rawDesc = nil
+	file_google_ads_googleads_v13_resources_detail_placement_view_proto_goTypes = nil
+	file_google_ads_googleads_v13_resources_detail_placement_view_proto_depIdxs = nil
 }

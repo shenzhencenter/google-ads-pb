@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.28.1
 // 	protoc        v3.21.9
-// source: google/ads/googleads/v12/enums/lead_form_field_user_input_type.proto
+// source: google/ads/googleads/v13/enums/lead_form_field_user_input_type.proto
 
 package enums
 
@@ -90,288 +90,478 @@ const (
 	LeadFormFieldUserInputTypeEnum_LAST_NAME LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 24
 	// Question: "Which model are you interested in?"
 	// Category: "Auto"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_VEHICLE_MODEL LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1001
 	// Question: "Which type of vehicle are you interested in?"
 	// Category: "Auto"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_VEHICLE_TYPE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1002
 	// Question: "What is your preferred dealership?"
 	// Category: "Auto"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_PREFERRED_DEALERSHIP LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1003
 	// Question: "When do you plan on purchasing a vehicle?"
 	// Category: "Auto"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_VEHICLE_PURCHASE_TIMELINE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1004
 	// Question: "Do you own a vehicle?"
 	// Category: "Auto"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_VEHICLE_OWNERSHIP LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1005
 	// Question: "What vehicle ownership option are you interested in?"
 	// Category: "Auto"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_VEHICLE_PAYMENT_TYPE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1009
 	// Question: "What type of vehicle condition are you interested in?"
 	// Category: "Auto"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_VEHICLE_CONDITION LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1010
 	// Question: "What size is your company?"
 	// Category: "Business"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_COMPANY_SIZE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1006
 	// Question: "What is your annual sales volume?"
 	// Category: "Business"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_ANNUAL_SALES LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1007
 	// Question: "How many years have you been in business?"
 	// Category: "Business"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_YEARS_IN_BUSINESS LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1008
 	// Question: "What is your job department?"
 	// Category: "Business"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_JOB_DEPARTMENT LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1011
 	// Question: "What is your job role?"
 	// Category: "Business"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_JOB_ROLE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1012
 	// Question: "Are you over 18 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_18_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1078
 	// Question: "Are you over 19 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_19_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1079
 	// Question: "Are you over 20 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_20_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1080
 	// Question: "Are you over 21 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_21_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1081
 	// Question: "Are you over 22 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_22_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1082
 	// Question: "Are you over 23 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_23_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1083
 	// Question: "Are you over 24 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_24_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1084
 	// Question: "Are you over 25 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_25_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1085
 	// Question: "Are you over 26 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_26_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1086
 	// Question: "Are you over 27 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_27_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1087
 	// Question: "Are you over 28 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_28_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1088
 	// Question: "Are you over 29 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_29_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1089
 	// Question: "Are you over 30 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_30_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1090
 	// Question: "Are you over 31 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_31_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1091
 	// Question: "Are you over 32 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_32_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1092
 	// Question: "Are you over 33 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_33_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1093
 	// Question: "Are you over 34 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_34_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1094
 	// Question: "Are you over 35 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_35_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1095
 	// Question: "Are you over 36 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_36_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1096
 	// Question: "Are you over 37 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_37_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1097
 	// Question: "Are you over 38 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_38_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1098
 	// Question: "Are you over 39 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_39_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1099
 	// Question: "Are you over 40 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_40_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1100
 	// Question: "Are you over 41 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_41_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1101
 	// Question: "Are you over 42 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_42_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1102
 	// Question: "Are you over 43 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_43_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1103
 	// Question: "Are you over 44 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_44_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1104
 	// Question: "Are you over 45 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_45_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1105
 	// Question: "Are you over 46 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_46_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1106
 	// Question: "Are you over 47 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_47_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1107
 	// Question: "Are you over 48 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_48_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1108
 	// Question: "Are you over 49 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_49_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1109
 	// Question: "Are you over 50 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_50_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1110
 	// Question: "Are you over 51 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_51_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1111
 	// Question: "Are you over 52 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_52_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1112
 	// Question: "Are you over 53 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_53_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1113
 	// Question: "Are you over 54 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_54_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1114
 	// Question: "Are you over 55 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_55_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1115
 	// Question: "Are you over 56 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_56_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1116
 	// Question: "Are you over 57 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_57_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1117
 	// Question: "Are you over 58 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_58_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1118
 	// Question: "Are you over 59 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_59_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1119
 	// Question: "Are you over 60 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_60_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1120
 	// Question: "Are you over 61 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_61_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1121
 	// Question: "Are you over 62 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_62_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1122
 	// Question: "Are you over 63 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_63_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1123
 	// Question: "Are you over 64 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_64_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1124
 	// Question: "Are you over 65 years of age?"
 	// Category: "Demographics"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OVER_65_AGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1125
 	// Question: "Which program are you interested in?"
 	// Category: "Education"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_EDUCATION_PROGRAM LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1013
 	// Question: "Which course are you interested in?"
 	// Category: "Education"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_EDUCATION_COURSE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1014
 	// Question: "Which product are you interested in?"
 	// Category: "General"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_PRODUCT LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1016
 	// Question: "Which service are you interested in?"
 	// Category: "General"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_SERVICE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1017
 	// Question: "Which offer are you interested in?"
 	// Category: "General"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_OFFER LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1018
 	// Question: "Which category are you interested in?"
 	// Category: "General"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_CATEGORY LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1019
 	// Question: "What is your preferred method of contact?"
 	// Category: "General"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_PREFERRED_CONTACT_METHOD LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1020
 	// Question: "What is your preferred location?"
 	// Category: "General"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_PREFERRED_LOCATION LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1021
 	// Question: "What is the best time to contact you?"
 	// Category: "General"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_PREFERRED_CONTACT_TIME LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1022
 	// Question: "When are you looking to make a purchase?"
 	// Category: "General"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_PURCHASE_TIMELINE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1023
 	// Question: "How many years of work experience do you have?"
 	// Category: "Jobs"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_YEARS_OF_EXPERIENCE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1048
 	// Question: "What industry do you work in?"
 	// Category: "Jobs"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_JOB_INDUSTRY LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1049
 	// Question: "What is your highest level of education?"
 	// Category: "Jobs"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_LEVEL_OF_EDUCATION LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1050
 	// Question: "What type of property are you looking for?"
 	// Category: "Real Estate"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_PROPERTY_TYPE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1024
 	// Question: "What do you need a realtor's help with?"
 	// Category: "Real Estate"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_REALTOR_HELP_GOAL LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1025
 	// Question: "What neighborhood are you interested in?"
 	// Category: "Real Estate"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_PROPERTY_COMMUNITY LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1026
 	// Question: "What price range are you looking for?"
 	// Category: "Real Estate"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_PRICE_RANGE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1027
 	// Question: "How many bedrooms are you looking for?"
 	// Category: "Real Estate"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_NUMBER_OF_BEDROOMS LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1028
 	// Question: "Are you looking for a fully furnished property?"
 	// Category: "Real Estate"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_FURNISHED_PROPERTY LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1029
 	// Question: "Are you looking for properties that allow pets?"
 	// Category: "Real Estate"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_PETS_ALLOWED_PROPERTY LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1030
 	// Question: "What is the next product you plan to purchase?"
 	// Category: "Retail"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_NEXT_PLANNED_PURCHASE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1031
 	// Question: "Would you like to sign up for an event?"
 	// Category: "Retail"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_EVENT_SIGNUP_INTEREST LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1033
 	// Question: "Where are you interested in shopping?"
 	// Category: "Retail"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_PREFERRED_SHOPPING_PLACES LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1034
 	// Question: "What is your favorite brand?"
 	// Category: "Retail"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_FAVORITE_BRAND LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1035
 	// Question: "Which type of valid commercial license do you have?"
 	// Category: "Transportation"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_TRANSPORTATION_COMMERCIAL_LICENSE_TYPE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1036
 	// Question: "Interested in booking an event?"
 	// Category: "Travel"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_EVENT_BOOKING_INTEREST LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1038
 	// Question: "What is your destination country?"
 	// Category: "Travel"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_DESTINATION_COUNTRY LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1039
 	// Question: "What is your destination city?"
 	// Category: "Travel"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_DESTINATION_CITY LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1040
 	// Question: "What is your departure country?"
 	// Category: "Travel"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_DEPARTURE_COUNTRY LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1041
 	// Question: "What is your departure city?"
 	// Category: "Travel"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_DEPARTURE_CITY LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1042
 	// Question: "What is your departure date?"
 	// Category: "Travel"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_DEPARTURE_DATE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1043
 	// Question: "What is your return date?"
 	// Category: "Travel"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_RETURN_DATE LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1044
 	// Question: "How many people are you traveling with?"
 	// Category: "Travel"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_NUMBER_OF_TRAVELERS LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1045
 	// Question: "What is your travel budget?"
 	// Category: "Travel"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_TRAVEL_BUDGET LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1046
 	// Question: "Where do you want to stay during your travel?"
 	// Category: "Travel"
+	// This field is subject to a limit of 5 qualifying questions per form and
+	// cannot be used if values are set using custom_question_fields.
 	LeadFormFieldUserInputTypeEnum_TRAVEL_ACCOMMODATION LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType = 1047
 )
 
@@ -630,11 +820,11 @@ func (x LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType) String() stri
 }
 
 func (LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType) Descriptor() protoreflect.EnumDescriptor {
-	return file_google_ads_googleads_v12_enums_lead_form_field_user_input_type_proto_enumTypes[0].Descriptor()
+	return file_google_ads_googleads_v13_enums_lead_form_field_user_input_type_proto_enumTypes[0].Descriptor()
 }
 
 func (LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType) Type() protoreflect.EnumType {
-	return &file_google_ads_googleads_v12_enums_lead_form_field_user_input_type_proto_enumTypes[0]
+	return &file_google_ads_googleads_v13_enums_lead_form_field_user_input_type_proto_enumTypes[0]
 }
 
 func (x LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType) Number() protoreflect.EnumNumber {
@@ -643,7 +833,7 @@ func (x LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType) Number() prot
 
 // Deprecated: Use LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType.Descriptor instead.
 func (LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType) EnumDescriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v12_enums_lead_form_field_user_input_type_proto_rawDescGZIP(), []int{0, 0}
+	return file_google_ads_googleads_v13_enums_lead_form_field_user_input_type_proto_rawDescGZIP(), []int{0, 0}
 }
 
 // Describes the input type of a lead form field.
@@ -656,7 +846,7 @@ type LeadFormFieldUserInputTypeEnum struct {
 func (x *LeadFormFieldUserInputTypeEnum) Reset() {
 	*x = LeadFormFieldUserInputTypeEnum{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v12_enums_lead_form_field_user_input_type_proto_msgTypes[0]
+		mi := &file_google_ads_googleads_v13_enums_lead_form_field_user_input_type_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -669,7 +859,7 @@ func (x *LeadFormFieldUserInputTypeEnum) String() string {
 func (*LeadFormFieldUserInputTypeEnum) ProtoMessage() {}
 
 func (x *LeadFormFieldUserInputTypeEnum) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v12_enums_lead_form_field_user_input_type_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v13_enums_lead_form_field_user_input_type_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -682,18 +872,18 @@ func (x *LeadFormFieldUserInputTypeEnum) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LeadFormFieldUserInputTypeEnum.ProtoReflect.Descriptor instead.
 func (*LeadFormFieldUserInputTypeEnum) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v12_enums_lead_form_field_user_input_type_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v13_enums_lead_form_field_user_input_type_proto_rawDescGZIP(), []int{0}
 }
 
-var File_google_ads_googleads_v12_enums_lead_form_field_user_input_type_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v13_enums_lead_form_field_user_input_type_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v12_enums_lead_form_field_user_input_type_proto_rawDesc = []byte{
+var file_google_ads_googleads_v13_enums_lead_form_field_user_input_type_proto_rawDesc = []byte{
 	0x0a, 0x44, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x33, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73,
 	0x2f, 0x6c, 0x65, 0x61, 0x64, 0x5f, 0x66, 0x6f, 0x72, 0x6d, 0x5f, 0x66, 0x69, 0x65, 0x6c, 0x64,
 	0x5f, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x69, 0x6e, 0x70, 0x75, 0x74, 0x5f, 0x74, 0x79, 0x70, 0x65,
 	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x1e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61,
-	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32,
+	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x33,
 	0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x22, 0xc8, 0x13, 0x0a, 0x1e, 0x4c, 0x65, 0x61, 0x64, 0x46,
 	0x6f, 0x72, 0x6d, 0x46, 0x69, 0x65, 0x6c, 0x64, 0x55, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x70, 0x75,
 	0x74, 0x54, 0x79, 0x70, 0x65, 0x45, 0x6e, 0x75, 0x6d, 0x22, 0xa5, 0x13, 0x0a, 0x1a, 0x4c, 0x65,
@@ -853,42 +1043,42 @@ var file_google_ads_googleads_v12_enums_lead_form_field_user_input_type_proto_ra
 	0x5f, 0x41, 0x43, 0x43, 0x4f, 0x4d, 0x4d, 0x4f, 0x44, 0x41, 0x54, 0x49, 0x4f, 0x4e, 0x10, 0x97,
 	0x08, 0x42, 0xf9, 0x01, 0x0a, 0x22, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76,
-	0x31, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x42, 0x1f, 0x4c, 0x65, 0x61, 0x64, 0x46, 0x6f,
+	0x31, 0x33, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x42, 0x1f, 0x4c, 0x65, 0x61, 0x64, 0x46, 0x6f,
 	0x72, 0x6d, 0x46, 0x69, 0x65, 0x6c, 0x64, 0x55, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x70, 0x75, 0x74,
 	0x54, 0x79, 0x70, 0x65, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x43, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2e, 0x67, 0x6f, 0x6c, 0x61, 0x6e, 0x67, 0x2e, 0x6f, 0x72, 0x67, 0x2f, 0x67,
 	0x65, 0x6e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x70,
 	0x69, 0x73, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
-	0x2f, 0x76, 0x31, 0x32, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x3b, 0x65, 0x6e, 0x75, 0x6d, 0x73,
+	0x2f, 0x76, 0x31, 0x33, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x3b, 0x65, 0x6e, 0x75, 0x6d, 0x73,
 	0xa2, 0x02, 0x03, 0x47, 0x41, 0x41, 0xaa, 0x02, 0x1e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
 	0x41, 0x64, 0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e, 0x56, 0x31,
-	0x32, 0x2e, 0x45, 0x6e, 0x75, 0x6d, 0x73, 0xca, 0x02, 0x1e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
+	0x33, 0x2e, 0x45, 0x6e, 0x75, 0x6d, 0x73, 0xca, 0x02, 0x1e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x5c, 0x41, 0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56,
-	0x31, 0x32, 0x5c, 0x45, 0x6e, 0x75, 0x6d, 0x73, 0xea, 0x02, 0x22, 0x47, 0x6f, 0x6f, 0x67, 0x6c,
+	0x31, 0x33, 0x5c, 0x45, 0x6e, 0x75, 0x6d, 0x73, 0xea, 0x02, 0x22, 0x47, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x3a, 0x3a, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64,
-	0x73, 0x3a, 0x3a, 0x56, 0x31, 0x32, 0x3a, 0x3a, 0x45, 0x6e, 0x75, 0x6d, 0x73, 0x62, 0x06, 0x70,
+	0x73, 0x3a, 0x3a, 0x56, 0x31, 0x33, 0x3a, 0x3a, 0x45, 0x6e, 0x75, 0x6d, 0x73, 0x62, 0x06, 0x70,
 	0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
-	file_google_ads_googleads_v12_enums_lead_form_field_user_input_type_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v12_enums_lead_form_field_user_input_type_proto_rawDescData = file_google_ads_googleads_v12_enums_lead_form_field_user_input_type_proto_rawDesc
+	file_google_ads_googleads_v13_enums_lead_form_field_user_input_type_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v13_enums_lead_form_field_user_input_type_proto_rawDescData = file_google_ads_googleads_v13_enums_lead_form_field_user_input_type_proto_rawDesc
 )
 
-func file_google_ads_googleads_v12_enums_lead_form_field_user_input_type_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v12_enums_lead_form_field_user_input_type_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v12_enums_lead_form_field_user_input_type_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v12_enums_lead_form_field_user_input_type_proto_rawDescData)
+func file_google_ads_googleads_v13_enums_lead_form_field_user_input_type_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v13_enums_lead_form_field_user_input_type_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v13_enums_lead_form_field_user_input_type_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v13_enums_lead_form_field_user_input_type_proto_rawDescData)
 	})
-	return file_google_ads_googleads_v12_enums_lead_form_field_user_input_type_proto_rawDescData
+	return file_google_ads_googleads_v13_enums_lead_form_field_user_input_type_proto_rawDescData
 }
 
-var file_google_ads_googleads_v12_enums_lead_form_field_user_input_type_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_google_ads_googleads_v12_enums_lead_form_field_user_input_type_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
-var file_google_ads_googleads_v12_enums_lead_form_field_user_input_type_proto_goTypes = []interface{}{
-	(LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType)(0), // 0: google.ads.googleads.v12.enums.LeadFormFieldUserInputTypeEnum.LeadFormFieldUserInputType
-	(*LeadFormFieldUserInputTypeEnum)(nil),                         // 1: google.ads.googleads.v12.enums.LeadFormFieldUserInputTypeEnum
+var file_google_ads_googleads_v13_enums_lead_form_field_user_input_type_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_google_ads_googleads_v13_enums_lead_form_field_user_input_type_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_google_ads_googleads_v13_enums_lead_form_field_user_input_type_proto_goTypes = []interface{}{
+	(LeadFormFieldUserInputTypeEnum_LeadFormFieldUserInputType)(0), // 0: google.ads.googleads.v13.enums.LeadFormFieldUserInputTypeEnum.LeadFormFieldUserInputType
+	(*LeadFormFieldUserInputTypeEnum)(nil),                         // 1: google.ads.googleads.v13.enums.LeadFormFieldUserInputTypeEnum
 }
-var file_google_ads_googleads_v12_enums_lead_form_field_user_input_type_proto_depIdxs = []int32{
+var file_google_ads_googleads_v13_enums_lead_form_field_user_input_type_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type
 	0, // [0:0] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
@@ -896,13 +1086,13 @@ var file_google_ads_googleads_v12_enums_lead_form_field_user_input_type_proto_de
 	0, // [0:0] is the sub-list for field type_name
 }
 
-func init() { file_google_ads_googleads_v12_enums_lead_form_field_user_input_type_proto_init() }
-func file_google_ads_googleads_v12_enums_lead_form_field_user_input_type_proto_init() {
-	if File_google_ads_googleads_v12_enums_lead_form_field_user_input_type_proto != nil {
+func init() { file_google_ads_googleads_v13_enums_lead_form_field_user_input_type_proto_init() }
+func file_google_ads_googleads_v13_enums_lead_form_field_user_input_type_proto_init() {
+	if File_google_ads_googleads_v13_enums_lead_form_field_user_input_type_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_google_ads_googleads_v12_enums_lead_form_field_user_input_type_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v13_enums_lead_form_field_user_input_type_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*LeadFormFieldUserInputTypeEnum); i {
 			case 0:
 				return &v.state
@@ -919,19 +1109,19 @@ func file_google_ads_googleads_v12_enums_lead_form_field_user_input_type_proto_i
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_google_ads_googleads_v12_enums_lead_form_field_user_input_type_proto_rawDesc,
+			RawDescriptor: file_google_ads_googleads_v13_enums_lead_form_field_user_input_type_proto_rawDesc,
 			NumEnums:      1,
 			NumMessages:   1,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_google_ads_googleads_v12_enums_lead_form_field_user_input_type_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v12_enums_lead_form_field_user_input_type_proto_depIdxs,
-		EnumInfos:         file_google_ads_googleads_v12_enums_lead_form_field_user_input_type_proto_enumTypes,
-		MessageInfos:      file_google_ads_googleads_v12_enums_lead_form_field_user_input_type_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v13_enums_lead_form_field_user_input_type_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v13_enums_lead_form_field_user_input_type_proto_depIdxs,
+		EnumInfos:         file_google_ads_googleads_v13_enums_lead_form_field_user_input_type_proto_enumTypes,
+		MessageInfos:      file_google_ads_googleads_v13_enums_lead_form_field_user_input_type_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v12_enums_lead_form_field_user_input_type_proto = out.File
-	file_google_ads_googleads_v12_enums_lead_form_field_user_input_type_proto_rawDesc = nil
-	file_google_ads_googleads_v12_enums_lead_form_field_user_input_type_proto_goTypes = nil
-	file_google_ads_googleads_v12_enums_lead_form_field_user_input_type_proto_depIdxs = nil
+	File_google_ads_googleads_v13_enums_lead_form_field_user_input_type_proto = out.File
+	file_google_ads_googleads_v13_enums_lead_form_field_user_input_type_proto_rawDesc = nil
+	file_google_ads_googleads_v13_enums_lead_form_field_user_input_type_proto_goTypes = nil
+	file_google_ads_googleads_v13_enums_lead_form_field_user_input_type_proto_depIdxs = nil
 }

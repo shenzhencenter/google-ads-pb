@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.28.1
 // 	protoc        v3.21.9
-// source: google/ads/googleads/v12/services/reach_plan_service.proto
+// source: google/ads/googleads/v13/services/reach_plan_service.proto
 
 package services
 
@@ -37,7 +37,8 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-// Request message for [ReachPlanService.ListPlannableLocations][google.ads.googleads.v12.services.ReachPlanService.ListPlannableLocations].
+// Request message for
+// [ReachPlanService.ListPlannableLocations][google.ads.googleads.v13.services.ReachPlanService.ListPlannableLocations].
 type ListPlannableLocationsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -47,7 +48,7 @@ type ListPlannableLocationsRequest struct {
 func (x *ListPlannableLocationsRequest) Reset() {
 	*x = ListPlannableLocationsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[0]
+		mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -60,7 +61,7 @@ func (x *ListPlannableLocationsRequest) String() string {
 func (*ListPlannableLocationsRequest) ProtoMessage() {}
 
 func (x *ListPlannableLocationsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -73,7 +74,7 @@ func (x *ListPlannableLocationsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListPlannableLocationsRequest.ProtoReflect.Descriptor instead.
 func (*ListPlannableLocationsRequest) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v13_services_reach_plan_service_proto_rawDescGZIP(), []int{0}
 }
 
 // The list of plannable locations.
@@ -92,7 +93,7 @@ type ListPlannableLocationsResponse struct {
 func (x *ListPlannableLocationsResponse) Reset() {
 	*x = ListPlannableLocationsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[1]
+		mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -105,7 +106,7 @@ func (x *ListPlannableLocationsResponse) String() string {
 func (*ListPlannableLocationsResponse) ProtoMessage() {}
 
 func (x *ListPlannableLocationsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -118,7 +119,7 @@ func (x *ListPlannableLocationsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListPlannableLocationsResponse.ProtoReflect.Descriptor instead.
 func (*ListPlannableLocationsResponse) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDescGZIP(), []int{1}
+	return file_google_ads_googleads_v13_services_reach_plan_service_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ListPlannableLocationsResponse) GetPlannableLocations() []*PlannableLocation {
@@ -141,8 +142,8 @@ type PlannableLocation struct {
 	// The parent country (not present if location is a country).
 	// If present, will always be a GeoTargetConstant ID. Additional information
 	// such as country name is provided by
-	// [ReachPlanService.ListPlannableLocations][google.ads.googleads.v12.services.ReachPlanService.ListPlannableLocations] or
-	// [GoogleAdsService.Search/SearchStream][].
+	// [ReachPlanService.ListPlannableLocations][google.ads.googleads.v13.services.ReachPlanService.ListPlannableLocations]
+	// or [GoogleAdsService.Search/SearchStream][].
 	ParentCountryId *int64 `protobuf:"varint,6,opt,name=parent_country_id,json=parentCountryId,proto3,oneof" json:"parent_country_id,omitempty"`
 	// The ISO-3166-1 alpha-2 country code that is associated with the location.
 	CountryCode *string `protobuf:"bytes,7,opt,name=country_code,json=countryCode,proto3,oneof" json:"country_code,omitempty"`
@@ -154,7 +155,7 @@ type PlannableLocation struct {
 func (x *PlannableLocation) Reset() {
 	*x = PlannableLocation{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[2]
+		mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -167,7 +168,7 @@ func (x *PlannableLocation) String() string {
 func (*PlannableLocation) ProtoMessage() {}
 
 func (x *PlannableLocation) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[2]
+	mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -180,7 +181,7 @@ func (x *PlannableLocation) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PlannableLocation.ProtoReflect.Descriptor instead.
 func (*PlannableLocation) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDescGZIP(), []int{2}
+	return file_google_ads_googleads_v13_services_reach_plan_service_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *PlannableLocation) GetId() string {
@@ -224,15 +225,16 @@ type ListPlannableProductsRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// Required. The ID of the selected location for planning. To list the available
-	// plannable location IDs use [ReachPlanService.ListPlannableLocations][google.ads.googleads.v12.services.ReachPlanService.ListPlannableLocations].
+	// Required. The ID of the selected location for planning. To list the
+	// available plannable location IDs use
+	// [ReachPlanService.ListPlannableLocations][google.ads.googleads.v13.services.ReachPlanService.ListPlannableLocations].
 	PlannableLocationId string `protobuf:"bytes,2,opt,name=plannable_location_id,json=plannableLocationId,proto3" json:"plannable_location_id,omitempty"`
 }
 
 func (x *ListPlannableProductsRequest) Reset() {
 	*x = ListPlannableProductsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[3]
+		mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -245,7 +247,7 @@ func (x *ListPlannableProductsRequest) String() string {
 func (*ListPlannableProductsRequest) ProtoMessage() {}
 
 func (x *ListPlannableProductsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[3]
+	mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -258,7 +260,7 @@ func (x *ListPlannableProductsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListPlannableProductsRequest.ProtoReflect.Descriptor instead.
 func (*ListPlannableProductsRequest) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDescGZIP(), []int{3}
+	return file_google_ads_googleads_v13_services_reach_plan_service_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *ListPlannableProductsRequest) GetPlannableLocationId() string {
@@ -281,7 +283,7 @@ type ListPlannableProductsResponse struct {
 func (x *ListPlannableProductsResponse) Reset() {
 	*x = ListPlannableProductsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[4]
+		mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -294,7 +296,7 @@ func (x *ListPlannableProductsResponse) String() string {
 func (*ListPlannableProductsResponse) ProtoMessage() {}
 
 func (x *ListPlannableProductsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[4]
+	mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -307,7 +309,7 @@ func (x *ListPlannableProductsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListPlannableProductsResponse.ProtoReflect.Descriptor instead.
 func (*ListPlannableProductsResponse) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDescGZIP(), []int{4}
+	return file_google_ads_googleads_v13_services_reach_plan_service_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *ListPlannableProductsResponse) GetProductMetadata() []*ProductMetadata {
@@ -326,7 +328,7 @@ type ProductMetadata struct {
 	// The code associated with the ad product (for example: BUMPER,
 	// TRUEVIEW_IN_STREAM).
 	// To list the available plannable product codes use
-	// [ReachPlanService.ListPlannableProducts][google.ads.googleads.v12.services.ReachPlanService.ListPlannableProducts].
+	// [ReachPlanService.ListPlannableProducts][google.ads.googleads.v13.services.ReachPlanService.ListPlannableProducts].
 	PlannableProductCode *string `protobuf:"bytes,4,opt,name=plannable_product_code,json=plannableProductCode,proto3,oneof" json:"plannable_product_code,omitempty"`
 	// The name associated with the ad product.
 	PlannableProductName string `protobuf:"bytes,3,opt,name=plannable_product_name,json=plannableProductName,proto3" json:"plannable_product_name,omitempty"`
@@ -337,7 +339,7 @@ type ProductMetadata struct {
 func (x *ProductMetadata) Reset() {
 	*x = ProductMetadata{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[5]
+		mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -350,7 +352,7 @@ func (x *ProductMetadata) String() string {
 func (*ProductMetadata) ProtoMessage() {}
 
 func (x *ProductMetadata) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[5]
+	mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -363,7 +365,7 @@ func (x *ProductMetadata) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProductMetadata.ProtoReflect.Descriptor instead.
 func (*ProductMetadata) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDescGZIP(), []int{5}
+	return file_google_ads_googleads_v13_services_reach_plan_service_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *ProductMetadata) GetPlannableProductCode() string {
@@ -396,7 +398,7 @@ type PlannableTargeting struct {
 	// Allowed plannable age ranges for the product for which metrics will be
 	// reported. Actual targeting is computed by mapping this age range onto
 	// standard Google common.AgeRangeInfo values.
-	AgeRanges []enums.ReachPlanAgeRangeEnum_ReachPlanAgeRange `protobuf:"varint,1,rep,packed,name=age_ranges,json=ageRanges,proto3,enum=google.ads.googleads.v12.enums.ReachPlanAgeRangeEnum_ReachPlanAgeRange" json:"age_ranges,omitempty"`
+	AgeRanges []enums.ReachPlanAgeRangeEnum_ReachPlanAgeRange `protobuf:"varint,1,rep,packed,name=age_ranges,json=ageRanges,proto3,enum=google.ads.googleads.v13.enums.ReachPlanAgeRangeEnum_ReachPlanAgeRange" json:"age_ranges,omitempty"`
 	// Targetable genders for the ad product.
 	Genders []*common.GenderInfo `protobuf:"bytes,2,rep,name=genders,proto3" json:"genders,omitempty"`
 	// Targetable devices for the ad product.
@@ -405,7 +407,7 @@ type PlannableTargeting struct {
 	// GOOGLE_PREFERRED_BUMPER, and GOOGLE_PREFERRED_SHORT products.
 	Devices []*common.DeviceInfo `protobuf:"bytes,3,rep,name=devices,proto3" json:"devices,omitempty"`
 	// Targetable networks for the ad product.
-	Networks []enums.ReachPlanNetworkEnum_ReachPlanNetwork `protobuf:"varint,4,rep,packed,name=networks,proto3,enum=google.ads.googleads.v12.enums.ReachPlanNetworkEnum_ReachPlanNetwork" json:"networks,omitempty"`
+	Networks []enums.ReachPlanNetworkEnum_ReachPlanNetwork `protobuf:"varint,4,rep,packed,name=networks,proto3,enum=google.ads.googleads.v13.enums.ReachPlanNetworkEnum_ReachPlanNetwork" json:"networks,omitempty"`
 	// Targetable YouTube Select Lineups for the ad product.
 	YoutubeSelectLineups []*YouTubeSelectLineUp `protobuf:"bytes,5,rep,name=youtube_select_lineups,json=youtubeSelectLineups,proto3" json:"youtube_select_lineups,omitempty"`
 }
@@ -413,7 +415,7 @@ type PlannableTargeting struct {
 func (x *PlannableTargeting) Reset() {
 	*x = PlannableTargeting{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[6]
+		mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -426,7 +428,7 @@ func (x *PlannableTargeting) String() string {
 func (*PlannableTargeting) ProtoMessage() {}
 
 func (x *PlannableTargeting) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[6]
+	mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -439,7 +441,7 @@ func (x *PlannableTargeting) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PlannableTargeting.ProtoReflect.Descriptor instead.
 func (*PlannableTargeting) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDescGZIP(), []int{6}
+	return file_google_ads_googleads_v13_services_reach_plan_service_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *PlannableTargeting) GetAgeRanges() []enums.ReachPlanAgeRangeEnum_ReachPlanAgeRange {
@@ -477,7 +479,8 @@ func (x *PlannableTargeting) GetYoutubeSelectLineups() []*YouTubeSelectLineUp {
 	return nil
 }
 
-// Request message for [ReachPlanService.GenerateReachForecast][google.ads.googleads.v12.services.ReachPlanService.GenerateReachForecast].
+// Request message for
+// [ReachPlanService.GenerateReachForecast][google.ads.googleads.v13.services.ReachPlanService.GenerateReachForecast].
 type GenerateReachForecastRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -545,7 +548,7 @@ type GenerateReachForecastRequest struct {
 func (x *GenerateReachForecastRequest) Reset() {
 	*x = GenerateReachForecastRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[7]
+		mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -558,7 +561,7 @@ func (x *GenerateReachForecastRequest) String() string {
 func (*GenerateReachForecastRequest) ProtoMessage() {}
 
 func (x *GenerateReachForecastRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[7]
+	mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -571,7 +574,7 @@ func (x *GenerateReachForecastRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GenerateReachForecastRequest.ProtoReflect.Descriptor instead.
 func (*GenerateReachForecastRequest) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDescGZIP(), []int{7}
+	return file_google_ads_googleads_v13_services_reach_plan_service_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GenerateReachForecastRequest) GetCustomerId() string {
@@ -666,7 +669,7 @@ type EffectiveFrequencyLimit struct {
 func (x *EffectiveFrequencyLimit) Reset() {
 	*x = EffectiveFrequencyLimit{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[8]
+		mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -679,7 +682,7 @@ func (x *EffectiveFrequencyLimit) String() string {
 func (*EffectiveFrequencyLimit) ProtoMessage() {}
 
 func (x *EffectiveFrequencyLimit) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[8]
+	mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -692,7 +695,7 @@ func (x *EffectiveFrequencyLimit) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EffectiveFrequencyLimit.ProtoReflect.Descriptor instead.
 func (*EffectiveFrequencyLimit) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDescGZIP(), []int{8}
+	return file_google_ads_googleads_v13_services_reach_plan_service_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *EffectiveFrequencyLimit) GetEffectiveFrequencyBreakdownLimit() int32 {
@@ -712,13 +715,13 @@ type FrequencyCap struct {
 	// Required. The number of impressions, inclusive.
 	Impressions int32 `protobuf:"varint,3,opt,name=impressions,proto3" json:"impressions,omitempty"`
 	// Required. The type of time unit.
-	TimeUnit enums.FrequencyCapTimeUnitEnum_FrequencyCapTimeUnit `protobuf:"varint,2,opt,name=time_unit,json=timeUnit,proto3,enum=google.ads.googleads.v12.enums.FrequencyCapTimeUnitEnum_FrequencyCapTimeUnit" json:"time_unit,omitempty"`
+	TimeUnit enums.FrequencyCapTimeUnitEnum_FrequencyCapTimeUnit `protobuf:"varint,2,opt,name=time_unit,json=timeUnit,proto3,enum=google.ads.googleads.v13.enums.FrequencyCapTimeUnitEnum_FrequencyCapTimeUnit" json:"time_unit,omitempty"`
 }
 
 func (x *FrequencyCap) Reset() {
 	*x = FrequencyCap{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[9]
+		mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -731,7 +734,7 @@ func (x *FrequencyCap) String() string {
 func (*FrequencyCap) ProtoMessage() {}
 
 func (x *FrequencyCap) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[9]
+	mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -744,7 +747,7 @@ func (x *FrequencyCap) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FrequencyCap.ProtoReflect.Descriptor instead.
 func (*FrequencyCap) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDescGZIP(), []int{9}
+	return file_google_ads_googleads_v13_services_reach_plan_service_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *FrequencyCap) GetImpressions() int32 {
@@ -768,7 +771,8 @@ type Targeting struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The ID of the selected location. Plannable location IDs can be
-	// obtained from [ReachPlanService.ListPlannableLocations][google.ads.googleads.v12.services.ReachPlanService.ListPlannableLocations].
+	// obtained from
+	// [ReachPlanService.ListPlannableLocations][google.ads.googleads.v13.services.ReachPlanService.ListPlannableLocations].
 	//
 	// Requests must set either this field or `plannable_location_ids`.
 	//
@@ -780,26 +784,27 @@ type Targeting struct {
 	// If more than one ID is provided, all IDs must have the same
 	// `parent_country_id`. Planning for more than `parent_county` is not
 	// supported. Plannable location IDs and their `parent_country_id` can be
-	// obtained from [ReachPlanService.ListPlannableLocations][google.ads.googleads.v12.services.ReachPlanService.ListPlannableLocations].
+	// obtained from
+	// [ReachPlanService.ListPlannableLocations][google.ads.googleads.v13.services.ReachPlanService.ListPlannableLocations].
 	//
 	// Requests must set either this field or `plannable_location_id`.
 	PlannableLocationIds []string `protobuf:"bytes,8,rep,name=plannable_location_ids,json=plannableLocationIds,proto3" json:"plannable_location_ids,omitempty"`
 	// Targeted age range.
 	// An unset value is equivalent to targeting all ages.
-	AgeRange enums.ReachPlanAgeRangeEnum_ReachPlanAgeRange `protobuf:"varint,2,opt,name=age_range,json=ageRange,proto3,enum=google.ads.googleads.v12.enums.ReachPlanAgeRangeEnum_ReachPlanAgeRange" json:"age_range,omitempty"`
+	AgeRange enums.ReachPlanAgeRangeEnum_ReachPlanAgeRange `protobuf:"varint,2,opt,name=age_range,json=ageRange,proto3,enum=google.ads.googleads.v13.enums.ReachPlanAgeRangeEnum_ReachPlanAgeRange" json:"age_range,omitempty"`
 	// Targeted genders.
 	// An unset value is equivalent to targeting MALE and FEMALE.
 	Genders []*common.GenderInfo `protobuf:"bytes,3,rep,name=genders,proto3" json:"genders,omitempty"`
 	// Targeted devices.
 	// If not specified, targets all applicable devices. Applicable devices vary
 	// by product and region and can be obtained from
-	// [ReachPlanService.ListPlannableProducts][google.ads.googleads.v12.services.ReachPlanService.ListPlannableProducts].
+	// [ReachPlanService.ListPlannableProducts][google.ads.googleads.v13.services.ReachPlanService.ListPlannableProducts].
 	Devices []*common.DeviceInfo `protobuf:"bytes,4,rep,name=devices,proto3" json:"devices,omitempty"`
 	// Targetable network for the ad product.
 	// If not specified, targets all applicable networks. Applicable networks vary
 	// by product and region and can be obtained from
-	// [ReachPlanService.ListPlannableProducts][google.ads.googleads.v12.services.ReachPlanService.ListPlannableProducts].
-	Network enums.ReachPlanNetworkEnum_ReachPlanNetwork `protobuf:"varint,5,opt,name=network,proto3,enum=google.ads.googleads.v12.enums.ReachPlanNetworkEnum_ReachPlanNetwork" json:"network,omitempty"`
+	// [ReachPlanService.ListPlannableProducts][google.ads.googleads.v13.services.ReachPlanService.ListPlannableProducts].
+	Network enums.ReachPlanNetworkEnum_ReachPlanNetwork `protobuf:"varint,5,opt,name=network,proto3,enum=google.ads.googleads.v13.enums.ReachPlanNetworkEnum_ReachPlanNetwork" json:"network,omitempty"`
 	// Targeted audiences.
 	// If not specified, does not target any specific audience.
 	AudienceTargeting *AudienceTargeting `protobuf:"bytes,7,opt,name=audience_targeting,json=audienceTargeting,proto3" json:"audience_targeting,omitempty"`
@@ -808,7 +813,7 @@ type Targeting struct {
 func (x *Targeting) Reset() {
 	*x = Targeting{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[10]
+		mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -821,7 +826,7 @@ func (x *Targeting) String() string {
 func (*Targeting) ProtoMessage() {}
 
 func (x *Targeting) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[10]
+	mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -834,7 +839,7 @@ func (x *Targeting) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Targeting.ProtoReflect.Descriptor instead.
 func (*Targeting) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDescGZIP(), []int{10}
+	return file_google_ads_googleads_v13_services_reach_plan_service_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *Targeting) GetPlannableLocationId() string {
@@ -908,7 +913,7 @@ type CampaignDuration struct {
 func (x *CampaignDuration) Reset() {
 	*x = CampaignDuration{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[11]
+		mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -921,7 +926,7 @@ func (x *CampaignDuration) String() string {
 func (*CampaignDuration) ProtoMessage() {}
 
 func (x *CampaignDuration) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[11]
+	mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -934,7 +939,7 @@ func (x *CampaignDuration) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CampaignDuration.ProtoReflect.Descriptor instead.
 func (*CampaignDuration) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDescGZIP(), []int{11}
+	return file_google_ads_googleads_v13_services_reach_plan_service_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *CampaignDuration) GetDurationInDays() int32 {
@@ -960,7 +965,7 @@ type PlannedProduct struct {
 	// Required. Selected product for planning.
 	// The code associated with the ad product (for example: Trueview, Bumper).
 	// To list the available plannable product codes use
-	// [ReachPlanService.ListPlannableProducts][google.ads.googleads.v12.services.ReachPlanService.ListPlannableProducts].
+	// [ReachPlanService.ListPlannableProducts][google.ads.googleads.v13.services.ReachPlanService.ListPlannableProducts].
 	PlannableProductCode *string `protobuf:"bytes,3,opt,name=plannable_product_code,json=plannableProductCode,proto3,oneof" json:"plannable_product_code,omitempty"`
 	// Required. Maximum budget allocation in micros for the selected product.
 	// The value is specified in the selected planning currency_code.
@@ -968,14 +973,14 @@ type PlannedProduct struct {
 	BudgetMicros *int64 `protobuf:"varint,4,opt,name=budget_micros,json=budgetMicros,proto3,oneof" json:"budget_micros,omitempty"`
 	// Targeting settings for the selected product.
 	// To list the available targeting for each product use
-	// [ReachPlanService.ListPlannableProducts][google.ads.googleads.v12.services.ReachPlanService.ListPlannableProducts].
+	// [ReachPlanService.ListPlannableProducts][google.ads.googleads.v13.services.ReachPlanService.ListPlannableProducts].
 	AdvancedProductTargeting *AdvancedProductTargeting `protobuf:"bytes,5,opt,name=advanced_product_targeting,json=advancedProductTargeting,proto3" json:"advanced_product_targeting,omitempty"`
 }
 
 func (x *PlannedProduct) Reset() {
 	*x = PlannedProduct{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[12]
+		mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -988,7 +993,7 @@ func (x *PlannedProduct) String() string {
 func (*PlannedProduct) ProtoMessage() {}
 
 func (x *PlannedProduct) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[12]
+	mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1001,7 +1006,7 @@ func (x *PlannedProduct) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PlannedProduct.ProtoReflect.Descriptor instead.
 func (*PlannedProduct) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDescGZIP(), []int{12}
+	return file_google_ads_googleads_v13_services_reach_plan_service_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *PlannedProduct) GetPlannableProductCode() string {
@@ -1040,7 +1045,7 @@ type GenerateReachForecastResponse struct {
 func (x *GenerateReachForecastResponse) Reset() {
 	*x = GenerateReachForecastResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[13]
+		mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1053,7 +1058,7 @@ func (x *GenerateReachForecastResponse) String() string {
 func (*GenerateReachForecastResponse) ProtoMessage() {}
 
 func (x *GenerateReachForecastResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[13]
+	mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1066,7 +1071,7 @@ func (x *GenerateReachForecastResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GenerateReachForecastResponse.ProtoReflect.Descriptor instead.
 func (*GenerateReachForecastResponse) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDescGZIP(), []int{13}
+	return file_google_ads_googleads_v13_services_reach_plan_service_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *GenerateReachForecastResponse) GetOnTargetAudienceMetrics() *OnTargetAudienceMetrics {
@@ -1096,7 +1101,7 @@ type ReachCurve struct {
 func (x *ReachCurve) Reset() {
 	*x = ReachCurve{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[14]
+		mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1109,7 +1114,7 @@ func (x *ReachCurve) String() string {
 func (*ReachCurve) ProtoMessage() {}
 
 func (x *ReachCurve) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[14]
+	mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1122,7 +1127,7 @@ func (x *ReachCurve) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReachCurve.ProtoReflect.Descriptor instead.
 func (*ReachCurve) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDescGZIP(), []int{14}
+	return file_google_ads_googleads_v13_services_reach_plan_service_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *ReachCurve) GetReachForecasts() []*ReachForecast {
@@ -1150,7 +1155,7 @@ type ReachForecast struct {
 func (x *ReachForecast) Reset() {
 	*x = ReachForecast{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[15]
+		mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1163,7 +1168,7 @@ func (x *ReachForecast) String() string {
 func (*ReachForecast) ProtoMessage() {}
 
 func (x *ReachForecast) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[15]
+	mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1176,7 +1181,7 @@ func (x *ReachForecast) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReachForecast.ProtoReflect.Descriptor instead.
 func (*ReachForecast) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDescGZIP(), []int{15}
+	return file_google_ads_googleads_v13_services_reach_plan_service_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *ReachForecast) GetCostMicros() int64 {
@@ -1258,7 +1263,7 @@ type Forecast struct {
 func (x *Forecast) Reset() {
 	*x = Forecast{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[16]
+		mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1271,7 +1276,7 @@ func (x *Forecast) String() string {
 func (*Forecast) ProtoMessage() {}
 
 func (x *Forecast) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[16]
+	mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1284,7 +1289,7 @@ func (x *Forecast) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Forecast.ProtoReflect.Descriptor instead.
 func (*Forecast) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDescGZIP(), []int{16}
+	return file_google_ads_googleads_v13_services_reach_plan_service_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *Forecast) GetOnTargetReach() int64 {
@@ -1379,7 +1384,7 @@ type PlannedProductReachForecast struct {
 func (x *PlannedProductReachForecast) Reset() {
 	*x = PlannedProductReachForecast{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[17]
+		mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[17]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1392,7 +1397,7 @@ func (x *PlannedProductReachForecast) String() string {
 func (*PlannedProductReachForecast) ProtoMessage() {}
 
 func (x *PlannedProductReachForecast) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[17]
+	mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[17]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1405,7 +1410,7 @@ func (x *PlannedProductReachForecast) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PlannedProductReachForecast.ProtoReflect.Descriptor instead.
 func (*PlannedProductReachForecast) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDescGZIP(), []int{17}
+	return file_google_ads_googleads_v13_services_reach_plan_service_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *PlannedProductReachForecast) GetPlannableProductCode() string {
@@ -1477,7 +1482,7 @@ type PlannedProductForecast struct {
 func (x *PlannedProductForecast) Reset() {
 	*x = PlannedProductForecast{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[18]
+		mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[18]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1490,7 +1495,7 @@ func (x *PlannedProductForecast) String() string {
 func (*PlannedProductForecast) ProtoMessage() {}
 
 func (x *PlannedProductForecast) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[18]
+	mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[18]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1503,7 +1508,7 @@ func (x *PlannedProductForecast) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PlannedProductForecast.ProtoReflect.Descriptor instead.
 func (*PlannedProductForecast) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDescGZIP(), []int{18}
+	return file_google_ads_googleads_v13_services_reach_plan_service_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *PlannedProductForecast) GetOnTargetReach() int64 {
@@ -1589,7 +1594,7 @@ type OnTargetAudienceMetrics struct {
 func (x *OnTargetAudienceMetrics) Reset() {
 	*x = OnTargetAudienceMetrics{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[19]
+		mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[19]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1602,7 +1607,7 @@ func (x *OnTargetAudienceMetrics) String() string {
 func (*OnTargetAudienceMetrics) ProtoMessage() {}
 
 func (x *OnTargetAudienceMetrics) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[19]
+	mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[19]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1615,7 +1620,7 @@ func (x *OnTargetAudienceMetrics) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OnTargetAudienceMetrics.ProtoReflect.Descriptor instead.
 func (*OnTargetAudienceMetrics) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDescGZIP(), []int{19}
+	return file_google_ads_googleads_v13_services_reach_plan_service_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *OnTargetAudienceMetrics) GetYoutubeAudienceSize() int64 {
@@ -1666,7 +1671,7 @@ type EffectiveFrequencyBreakdown struct {
 func (x *EffectiveFrequencyBreakdown) Reset() {
 	*x = EffectiveFrequencyBreakdown{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[20]
+		mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[20]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1679,7 +1684,7 @@ func (x *EffectiveFrequencyBreakdown) String() string {
 func (*EffectiveFrequencyBreakdown) ProtoMessage() {}
 
 func (x *EffectiveFrequencyBreakdown) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[20]
+	mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[20]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1692,7 +1697,7 @@ func (x *EffectiveFrequencyBreakdown) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EffectiveFrequencyBreakdown.ProtoReflect.Descriptor instead.
 func (*EffectiveFrequencyBreakdown) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDescGZIP(), []int{20}
+	return file_google_ads_googleads_v13_services_reach_plan_service_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *EffectiveFrequencyBreakdown) GetEffectiveFrequency() int32 {
@@ -1743,7 +1748,7 @@ type ForecastMetricOptions struct {
 func (x *ForecastMetricOptions) Reset() {
 	*x = ForecastMetricOptions{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[21]
+		mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[21]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1756,7 +1761,7 @@ func (x *ForecastMetricOptions) String() string {
 func (*ForecastMetricOptions) ProtoMessage() {}
 
 func (x *ForecastMetricOptions) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[21]
+	mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[21]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1769,7 +1774,7 @@ func (x *ForecastMetricOptions) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ForecastMetricOptions.ProtoReflect.Descriptor instead.
 func (*ForecastMetricOptions) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDescGZIP(), []int{21}
+	return file_google_ads_googleads_v13_services_reach_plan_service_proto_rawDescGZIP(), []int{21}
 }
 
 func (x *ForecastMetricOptions) GetIncludeCoview() bool {
@@ -1792,7 +1797,7 @@ type AudienceTargeting struct {
 func (x *AudienceTargeting) Reset() {
 	*x = AudienceTargeting{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[22]
+		mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[22]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1805,7 +1810,7 @@ func (x *AudienceTargeting) String() string {
 func (*AudienceTargeting) ProtoMessage() {}
 
 func (x *AudienceTargeting) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[22]
+	mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[22]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1818,7 +1823,7 @@ func (x *AudienceTargeting) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AudienceTargeting.ProtoReflect.Descriptor instead.
 func (*AudienceTargeting) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDescGZIP(), []int{22}
+	return file_google_ads_googleads_v13_services_reach_plan_service_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *AudienceTargeting) GetUserInterest() []*common.UserInterestInfo {
@@ -1845,7 +1850,7 @@ type AdvancedProductTargeting struct {
 func (x *AdvancedProductTargeting) Reset() {
 	*x = AdvancedProductTargeting{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[23]
+		mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[23]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1858,7 +1863,7 @@ func (x *AdvancedProductTargeting) String() string {
 func (*AdvancedProductTargeting) ProtoMessage() {}
 
 func (x *AdvancedProductTargeting) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[23]
+	mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[23]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1871,7 +1876,7 @@ func (x *AdvancedProductTargeting) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AdvancedProductTargeting.ProtoReflect.Descriptor instead.
 func (*AdvancedProductTargeting) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDescGZIP(), []int{23}
+	return file_google_ads_googleads_v13_services_reach_plan_service_proto_rawDescGZIP(), []int{23}
 }
 
 func (m *AdvancedProductTargeting) GetAdvancedTargeting() isAdvancedProductTargeting_AdvancedTargeting {
@@ -1913,7 +1918,7 @@ type YouTubeSelectSettings struct {
 func (x *YouTubeSelectSettings) Reset() {
 	*x = YouTubeSelectSettings{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[24]
+		mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[24]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1926,7 +1931,7 @@ func (x *YouTubeSelectSettings) String() string {
 func (*YouTubeSelectSettings) ProtoMessage() {}
 
 func (x *YouTubeSelectSettings) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[24]
+	mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[24]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1939,7 +1944,7 @@ func (x *YouTubeSelectSettings) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use YouTubeSelectSettings.ProtoReflect.Descriptor instead.
 func (*YouTubeSelectSettings) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDescGZIP(), []int{24}
+	return file_google_ads_googleads_v13_services_reach_plan_service_proto_rawDescGZIP(), []int{24}
 }
 
 func (x *YouTubeSelectSettings) GetLineupId() int64 {
@@ -1964,7 +1969,7 @@ type YouTubeSelectLineUp struct {
 func (x *YouTubeSelectLineUp) Reset() {
 	*x = YouTubeSelectLineUp{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[25]
+		mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[25]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1977,7 +1982,7 @@ func (x *YouTubeSelectLineUp) String() string {
 func (*YouTubeSelectLineUp) ProtoMessage() {}
 
 func (x *YouTubeSelectLineUp) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[25]
+	mi := &file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[25]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1990,7 +1995,7 @@ func (x *YouTubeSelectLineUp) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use YouTubeSelectLineUp.ProtoReflect.Descriptor instead.
 func (*YouTubeSelectLineUp) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDescGZIP(), []int{25}
+	return file_google_ads_googleads_v13_services_reach_plan_service_proto_rawDescGZIP(), []int{25}
 }
 
 func (x *YouTubeSelectLineUp) GetLineupId() int64 {
@@ -2007,30 +2012,30 @@ func (x *YouTubeSelectLineUp) GetLineupName() string {
 	return ""
 }
 
-var File_google_ads_googleads_v12_services_reach_plan_service_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v13_services_reach_plan_service_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDesc = []byte{
+var file_google_ads_googleads_v13_services_reach_plan_service_proto_rawDesc = []byte{
 	0x0a, 0x3a, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x33, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69,
 	0x63, 0x65, 0x73, 0x2f, 0x72, 0x65, 0x61, 0x63, 0x68, 0x5f, 0x70, 0x6c, 0x61, 0x6e, 0x5f, 0x73,
 	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x21, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x1a,
+	0x64, 0x73, 0x2e, 0x76, 0x31, 0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x1a,
 	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e,
+	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x33, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e,
 	0x2f, 0x63, 0x72, 0x69, 0x74, 0x65, 0x72, 0x69, 0x61, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a,
 	0x2b, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e,
+	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x33, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e,
 	0x2f, 0x64, 0x61, 0x74, 0x65, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x3c, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x66, 0x72, 0x65,
+	0x64, 0x73, 0x2f, 0x76, 0x31, 0x33, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x66, 0x72, 0x65,
 	0x71, 0x75, 0x65, 0x6e, 0x63, 0x79, 0x5f, 0x63, 0x61, 0x70, 0x5f, 0x74, 0x69, 0x6d, 0x65, 0x5f,
 	0x75, 0x6e, 0x69, 0x74, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x39, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
-	0x2f, 0x76, 0x31, 0x32, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x72, 0x65, 0x61, 0x63, 0x68,
+	0x2f, 0x76, 0x31, 0x33, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x72, 0x65, 0x61, 0x63, 0x68,
 	0x5f, 0x70, 0x6c, 0x61, 0x6e, 0x5f, 0x61, 0x67, 0x65, 0x5f, 0x72, 0x61, 0x6e, 0x67, 0x65, 0x2e,
 	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x37, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64,
-	0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f,
+	0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x33, 0x2f,
 	0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x72, 0x65, 0x61, 0x63, 0x68, 0x5f, 0x70, 0x6c, 0x61, 0x6e,
 	0x5f, 0x6e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x1c,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x6e, 0x6e, 0x6f, 0x74,
@@ -2046,7 +2051,7 @@ var file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDesc = []
 	0x61, 0x6e, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x5f, 0x6c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e,
 	0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x34, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76,
-	0x31, 0x32, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x50, 0x6c, 0x61, 0x6e,
+	0x31, 0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x50, 0x6c, 0x61, 0x6e,
 	0x6e, 0x61, 0x62, 0x6c, 0x65, 0x4c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x12, 0x70,
 	0x6c, 0x61, 0x6e, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x4c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e,
 	0x73, 0x22, 0x8d, 0x02, 0x0a, 0x11, 0x50, 0x6c, 0x61, 0x6e, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x4c,
@@ -2076,7 +2081,7 @@ var file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDesc = []
 	0x63, 0x74, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x5d, 0x0a, 0x10, 0x70,
 	0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x5f, 0x6d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0x18,
 	0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x32, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61,
-	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32,
+	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x33,
 	0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63,
 	0x74, 0x4d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0x52, 0x0f, 0x70, 0x72, 0x6f, 0x64, 0x75,
 	0x63, 0x74, 0x4d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0x22, 0x85, 0x02, 0x0a, 0x0f, 0x50,
@@ -2091,7 +2096,7 @@ var file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDesc = []
 	0x66, 0x0a, 0x13, 0x70, 0x6c, 0x61, 0x6e, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x5f, 0x74, 0x61, 0x72,
 	0x67, 0x65, 0x74, 0x69, 0x6e, 0x67, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x35, 0x2e, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73,
+	0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73,
 	0x2e, 0x50, 0x6c, 0x61, 0x6e, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74,
 	0x69, 0x6e, 0x67, 0x52, 0x12, 0x70, 0x6c, 0x61, 0x6e, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x54, 0x61,
 	0x72, 0x67, 0x65, 0x74, 0x69, 0x6e, 0x67, 0x42, 0x19, 0x0a, 0x17, 0x5f, 0x70, 0x6c, 0x61, 0x6e,
@@ -2100,29 +2105,29 @@ var file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDesc = []
 	0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x69, 0x6e, 0x67, 0x12, 0x66, 0x0a, 0x0a, 0x61, 0x67, 0x65,
 	0x5f, 0x72, 0x61, 0x6e, 0x67, 0x65, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0e, 0x32, 0x47, 0x2e,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x52,
+	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x33, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x52,
 	0x65, 0x61, 0x63, 0x68, 0x50, 0x6c, 0x61, 0x6e, 0x41, 0x67, 0x65, 0x52, 0x61, 0x6e, 0x67, 0x65,
 	0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x52, 0x65, 0x61, 0x63, 0x68, 0x50, 0x6c, 0x61, 0x6e, 0x41, 0x67,
 	0x65, 0x52, 0x61, 0x6e, 0x67, 0x65, 0x52, 0x09, 0x61, 0x67, 0x65, 0x52, 0x61, 0x6e, 0x67, 0x65,
 	0x73, 0x12, 0x45, 0x0a, 0x07, 0x67, 0x65, 0x6e, 0x64, 0x65, 0x72, 0x73, 0x18, 0x02, 0x20, 0x03,
 	0x28, 0x0b, 0x32, 0x2b, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x63, 0x6f,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x33, 0x2e, 0x63, 0x6f,
 	0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x47, 0x65, 0x6e, 0x64, 0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f, 0x52,
 	0x07, 0x67, 0x65, 0x6e, 0x64, 0x65, 0x72, 0x73, 0x12, 0x45, 0x0a, 0x07, 0x64, 0x65, 0x76, 0x69,
 	0x63, 0x65, 0x73, 0x18, 0x03, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x2b, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
-	0x2e, 0x76, 0x31, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x44, 0x65, 0x76, 0x69,
+	0x2e, 0x76, 0x31, 0x33, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x44, 0x65, 0x76, 0x69,
 	0x63, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x07, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x73, 0x12,
 	0x61, 0x0a, 0x08, 0x6e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x73, 0x18, 0x04, 0x20, 0x03, 0x28,
 	0x0e, 0x32, 0x45, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x65, 0x6e, 0x75,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x33, 0x2e, 0x65, 0x6e, 0x75,
 	0x6d, 0x73, 0x2e, 0x52, 0x65, 0x61, 0x63, 0x68, 0x50, 0x6c, 0x61, 0x6e, 0x4e, 0x65, 0x74, 0x77,
 	0x6f, 0x72, 0x6b, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x52, 0x65, 0x61, 0x63, 0x68, 0x50, 0x6c, 0x61,
 	0x6e, 0x4e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x52, 0x08, 0x6e, 0x65, 0x74, 0x77, 0x6f, 0x72,
 	0x6b, 0x73, 0x12, 0x6c, 0x0a, 0x16, 0x79, 0x6f, 0x75, 0x74, 0x75, 0x62, 0x65, 0x5f, 0x73, 0x65,
 	0x6c, 0x65, 0x63, 0x74, 0x5f, 0x6c, 0x69, 0x6e, 0x65, 0x75, 0x70, 0x73, 0x18, 0x05, 0x20, 0x03,
 	0x28, 0x0b, 0x32, 0x36, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x73, 0x65,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x33, 0x2e, 0x73, 0x65,
 	0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x59, 0x6f, 0x75, 0x54, 0x75, 0x62, 0x65, 0x53, 0x65,
 	0x6c, 0x65, 0x63, 0x74, 0x4c, 0x69, 0x6e, 0x65, 0x55, 0x70, 0x52, 0x14, 0x79, 0x6f, 0x75, 0x74,
 	0x75, 0x62, 0x65, 0x53, 0x65, 0x6c, 0x65, 0x63, 0x74, 0x4c, 0x69, 0x6e, 0x65, 0x75, 0x70, 0x73,
@@ -2136,7 +2141,7 @@ var file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDesc = []
 	0x01, 0x12, 0x65, 0x0a, 0x11, 0x63, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x5f, 0x64, 0x75,
 	0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x33, 0x2e, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73,
+	0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73,
 	0x2e, 0x43, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x44, 0x75, 0x72, 0x61, 0x74, 0x69, 0x6f,
 	0x6e, 0x42, 0x03, 0xe0, 0x41, 0x02, 0x52, 0x10, 0x63, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e,
 	0x44, 0x75, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x35, 0x0a, 0x14, 0x63, 0x6f, 0x6f, 0x6b,
@@ -2146,7 +2151,7 @@ var file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDesc = []
 	0x70, 0x0a, 0x1c, 0x63, 0x6f, 0x6f, 0x6b, 0x69, 0x65, 0x5f, 0x66, 0x72, 0x65, 0x71, 0x75, 0x65,
 	0x6e, 0x63, 0x79, 0x5f, 0x63, 0x61, 0x70, 0x5f, 0x73, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x18,
 	0x08, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2f, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61,
-	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32,
+	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x33,
 	0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x46, 0x72, 0x65, 0x71, 0x75, 0x65,
 	0x6e, 0x63, 0x79, 0x43, 0x61, 0x70, 0x52, 0x19, 0x63, 0x6f, 0x6f, 0x6b, 0x69, 0x65, 0x46, 0x72,
 	0x65, 0x71, 0x75, 0x65, 0x6e, 0x63, 0x79, 0x43, 0x61, 0x70, 0x53, 0x65, 0x74, 0x74, 0x69, 0x6e,
@@ -2157,26 +2162,26 @@ var file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDesc = []
 	0x0a, 0x19, 0x65, 0x66, 0x66, 0x65, 0x63, 0x74, 0x69, 0x76, 0x65, 0x5f, 0x66, 0x72, 0x65, 0x71,
 	0x75, 0x65, 0x6e, 0x63, 0x79, 0x5f, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x18, 0x0c, 0x20, 0x01, 0x28,
 	0x0b, 0x32, 0x3a, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x73, 0x65, 0x72,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x33, 0x2e, 0x73, 0x65, 0x72,
 	0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x45, 0x66, 0x66, 0x65, 0x63, 0x74, 0x69, 0x76, 0x65, 0x46,
 	0x72, 0x65, 0x71, 0x75, 0x65, 0x6e, 0x63, 0x79, 0x4c, 0x69, 0x6d, 0x69, 0x74, 0x48, 0x03, 0x52,
 	0x17, 0x65, 0x66, 0x66, 0x65, 0x63, 0x74, 0x69, 0x76, 0x65, 0x46, 0x72, 0x65, 0x71, 0x75, 0x65,
 	0x6e, 0x63, 0x79, 0x4c, 0x69, 0x6d, 0x69, 0x74, 0x88, 0x01, 0x01, 0x12, 0x4a, 0x0a, 0x09, 0x74,
 	0x61, 0x72, 0x67, 0x65, 0x74, 0x69, 0x6e, 0x67, 0x18, 0x06, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2c,
 	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
+	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
 	0x65, 0x73, 0x2e, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x69, 0x6e, 0x67, 0x52, 0x09, 0x74, 0x61,
 	0x72, 0x67, 0x65, 0x74, 0x69, 0x6e, 0x67, 0x12, 0x61, 0x0a, 0x10, 0x70, 0x6c, 0x61, 0x6e, 0x6e,
 	0x65, 0x64, 0x5f, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x73, 0x18, 0x07, 0x20, 0x03, 0x28,
 	0x0b, 0x32, 0x31, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x73, 0x65, 0x72,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x33, 0x2e, 0x73, 0x65, 0x72,
 	0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x50, 0x6c, 0x61, 0x6e, 0x6e, 0x65, 0x64, 0x50, 0x72, 0x6f,
 	0x64, 0x75, 0x63, 0x74, 0x42, 0x03, 0xe0, 0x41, 0x02, 0x52, 0x0f, 0x70, 0x6c, 0x61, 0x6e, 0x6e,
 	0x65, 0x64, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x73, 0x12, 0x70, 0x0a, 0x17, 0x66, 0x6f,
 	0x72, 0x65, 0x63, 0x61, 0x73, 0x74, 0x5f, 0x6d, 0x65, 0x74, 0x72, 0x69, 0x63, 0x5f, 0x6f, 0x70,
 	0x74, 0x69, 0x6f, 0x6e, 0x73, 0x18, 0x0d, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x38, 0x2e, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e,
+	0x64, 0x73, 0x2e, 0x76, 0x31, 0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e,
 	0x46, 0x6f, 0x72, 0x65, 0x63, 0x61, 0x73, 0x74, 0x4d, 0x65, 0x74, 0x72, 0x69, 0x63, 0x4f, 0x70,
 	0x74, 0x69, 0x6f, 0x6e, 0x73, 0x52, 0x15, 0x66, 0x6f, 0x72, 0x65, 0x63, 0x61, 0x73, 0x74, 0x4d,
 	0x65, 0x74, 0x72, 0x69, 0x63, 0x4f, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x12, 0x35, 0x0a, 0x14,
@@ -2204,7 +2209,7 @@ var file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDesc = []
 	0x6f, 0x6e, 0x73, 0x12, 0x6f, 0x0a, 0x09, 0x74, 0x69, 0x6d, 0x65, 0x5f, 0x75, 0x6e, 0x69, 0x74,
 	0x18, 0x02, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x4d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
 	0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31,
-	0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x46, 0x72, 0x65, 0x71, 0x75, 0x65, 0x6e, 0x63,
+	0x33, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x46, 0x72, 0x65, 0x71, 0x75, 0x65, 0x6e, 0x63,
 	0x79, 0x43, 0x61, 0x70, 0x54, 0x69, 0x6d, 0x65, 0x55, 0x6e, 0x69, 0x74, 0x45, 0x6e, 0x75, 0x6d,
 	0x2e, 0x46, 0x72, 0x65, 0x71, 0x75, 0x65, 0x6e, 0x63, 0x79, 0x43, 0x61, 0x70, 0x54, 0x69, 0x6d,
 	0x65, 0x55, 0x6e, 0x69, 0x74, 0x42, 0x03, 0xe0, 0x41, 0x02, 0x52, 0x08, 0x74, 0x69, 0x6d, 0x65,
@@ -2218,29 +2223,29 @@ var file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDesc = []
 	0x6e, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x4c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x64,
 	0x73, 0x12, 0x64, 0x0a, 0x09, 0x61, 0x67, 0x65, 0x5f, 0x72, 0x61, 0x6e, 0x67, 0x65, 0x18, 0x02,
 	0x20, 0x01, 0x28, 0x0e, 0x32, 0x47, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64,
-	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e,
+	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x33, 0x2e,
 	0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x52, 0x65, 0x61, 0x63, 0x68, 0x50, 0x6c, 0x61, 0x6e, 0x41,
 	0x67, 0x65, 0x52, 0x61, 0x6e, 0x67, 0x65, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x52, 0x65, 0x61, 0x63,
 	0x68, 0x50, 0x6c, 0x61, 0x6e, 0x41, 0x67, 0x65, 0x52, 0x61, 0x6e, 0x67, 0x65, 0x52, 0x08, 0x61,
 	0x67, 0x65, 0x52, 0x61, 0x6e, 0x67, 0x65, 0x12, 0x45, 0x0a, 0x07, 0x67, 0x65, 0x6e, 0x64, 0x65,
 	0x72, 0x73, 0x18, 0x03, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x2b, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e,
-	0x76, 0x31, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x47, 0x65, 0x6e, 0x64, 0x65,
+	0x76, 0x31, 0x33, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x47, 0x65, 0x6e, 0x64, 0x65,
 	0x72, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x07, 0x67, 0x65, 0x6e, 0x64, 0x65, 0x72, 0x73, 0x12, 0x45,
 	0x0a, 0x07, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x73, 0x18, 0x04, 0x20, 0x03, 0x28, 0x0b, 0x32,
 	0x2b, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x33, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
 	0x6e, 0x2e, 0x44, 0x65, 0x76, 0x69, 0x63, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x07, 0x64, 0x65,
 	0x76, 0x69, 0x63, 0x65, 0x73, 0x12, 0x5f, 0x0a, 0x07, 0x6e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b,
 	0x18, 0x05, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x45, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
 	0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31,
-	0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x52, 0x65, 0x61, 0x63, 0x68, 0x50, 0x6c, 0x61,
+	0x33, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x52, 0x65, 0x61, 0x63, 0x68, 0x50, 0x6c, 0x61,
 	0x6e, 0x4e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x52, 0x65, 0x61,
 	0x63, 0x68, 0x50, 0x6c, 0x61, 0x6e, 0x4e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x52, 0x07, 0x6e,
 	0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x12, 0x63, 0x0a, 0x12, 0x61, 0x75, 0x64, 0x69, 0x65, 0x6e,
 	0x63, 0x65, 0x5f, 0x74, 0x61, 0x72, 0x67, 0x65, 0x74, 0x69, 0x6e, 0x67, 0x18, 0x07, 0x20, 0x01,
 	0x28, 0x0b, 0x32, 0x34, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x73, 0x65,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x33, 0x2e, 0x73, 0x65,
 	0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x41, 0x75, 0x64, 0x69, 0x65, 0x6e, 0x63, 0x65, 0x54,
 	0x61, 0x72, 0x67, 0x65, 0x74, 0x69, 0x6e, 0x67, 0x52, 0x11, 0x61, 0x75, 0x64, 0x69, 0x65, 0x6e,
 	0x63, 0x65, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x69, 0x6e, 0x67, 0x42, 0x18, 0x0a, 0x16, 0x5f,
@@ -2252,7 +2257,7 @@ var file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDesc = []
 	0x49, 0x6e, 0x44, 0x61, 0x79, 0x73, 0x88, 0x01, 0x01, 0x12, 0x49, 0x0a, 0x0a, 0x64, 0x61, 0x74,
 	0x65, 0x5f, 0x72, 0x61, 0x6e, 0x67, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2a, 0x2e,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e,
+	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x33, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e,
 	0x44, 0x61, 0x74, 0x65, 0x52, 0x61, 0x6e, 0x67, 0x65, 0x52, 0x09, 0x64, 0x61, 0x74, 0x65, 0x52,
 	0x61, 0x6e, 0x67, 0x65, 0x42, 0x13, 0x0a, 0x11, 0x5f, 0x64, 0x75, 0x72, 0x61, 0x74, 0x69, 0x6f,
 	0x6e, 0x5f, 0x69, 0x6e, 0x5f, 0x64, 0x61, 0x79, 0x73, 0x22, 0x9d, 0x02, 0x0a, 0x0e, 0x50, 0x6c,
@@ -2266,7 +2271,7 @@ var file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDesc = []
 	0x01, 0x12, 0x79, 0x0a, 0x1a, 0x61, 0x64, 0x76, 0x61, 0x6e, 0x63, 0x65, 0x64, 0x5f, 0x70, 0x72,
 	0x6f, 0x64, 0x75, 0x63, 0x74, 0x5f, 0x74, 0x61, 0x72, 0x67, 0x65, 0x74, 0x69, 0x6e, 0x67, 0x18,
 	0x05, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x3b, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61,
-	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32,
+	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x33,
 	0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x41, 0x64, 0x76, 0x61, 0x6e, 0x63,
 	0x65, 0x64, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x69,
 	0x6e, 0x67, 0x52, 0x18, 0x61, 0x64, 0x76, 0x61, 0x6e, 0x63, 0x65, 0x64, 0x50, 0x72, 0x6f, 0x64,
@@ -2279,20 +2284,20 @@ var file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDesc = []
 	0x6e, 0x5f, 0x74, 0x61, 0x72, 0x67, 0x65, 0x74, 0x5f, 0x61, 0x75, 0x64, 0x69, 0x65, 0x6e, 0x63,
 	0x65, 0x5f, 0x6d, 0x65, 0x74, 0x72, 0x69, 0x63, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32,
 	0x3a, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
 	0x63, 0x65, 0x73, 0x2e, 0x4f, 0x6e, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x41, 0x75, 0x64, 0x69,
 	0x65, 0x6e, 0x63, 0x65, 0x4d, 0x65, 0x74, 0x72, 0x69, 0x63, 0x73, 0x52, 0x17, 0x6f, 0x6e, 0x54,
 	0x61, 0x72, 0x67, 0x65, 0x74, 0x41, 0x75, 0x64, 0x69, 0x65, 0x6e, 0x63, 0x65, 0x4d, 0x65, 0x74,
 	0x72, 0x69, 0x63, 0x73, 0x12, 0x4e, 0x0a, 0x0b, 0x72, 0x65, 0x61, 0x63, 0x68, 0x5f, 0x63, 0x75,
 	0x72, 0x76, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2d, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
-	0x2e, 0x76, 0x31, 0x32, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x52, 0x65,
+	0x2e, 0x76, 0x31, 0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x52, 0x65,
 	0x61, 0x63, 0x68, 0x43, 0x75, 0x72, 0x76, 0x65, 0x52, 0x0a, 0x72, 0x65, 0x61, 0x63, 0x68, 0x43,
 	0x75, 0x72, 0x76, 0x65, 0x22, 0x67, 0x0a, 0x0a, 0x52, 0x65, 0x61, 0x63, 0x68, 0x43, 0x75, 0x72,
 	0x76, 0x65, 0x12, 0x59, 0x0a, 0x0f, 0x72, 0x65, 0x61, 0x63, 0x68, 0x5f, 0x66, 0x6f, 0x72, 0x65,
 	0x63, 0x61, 0x73, 0x74, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x30, 0x2e, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e,
+	0x64, 0x73, 0x2e, 0x76, 0x31, 0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e,
 	0x52, 0x65, 0x61, 0x63, 0x68, 0x46, 0x6f, 0x72, 0x65, 0x63, 0x61, 0x73, 0x74, 0x52, 0x0e, 0x72,
 	0x65, 0x61, 0x63, 0x68, 0x46, 0x6f, 0x72, 0x65, 0x63, 0x61, 0x73, 0x74, 0x73, 0x22, 0x81, 0x02,
 	0x0a, 0x0d, 0x52, 0x65, 0x61, 0x63, 0x68, 0x46, 0x6f, 0x72, 0x65, 0x63, 0x61, 0x73, 0x74, 0x12,
@@ -2300,13 +2305,13 @@ var file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDesc = []
 	0x20, 0x01, 0x28, 0x03, 0x52, 0x0a, 0x63, 0x6f, 0x73, 0x74, 0x4d, 0x69, 0x63, 0x72, 0x6f, 0x73,
 	0x12, 0x47, 0x0a, 0x08, 0x66, 0x6f, 0x72, 0x65, 0x63, 0x61, 0x73, 0x74, 0x18, 0x02, 0x20, 0x01,
 	0x28, 0x0b, 0x32, 0x2b, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x73, 0x65,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x33, 0x2e, 0x73, 0x65,
 	0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x46, 0x6f, 0x72, 0x65, 0x63, 0x61, 0x73, 0x74, 0x52,
 	0x08, 0x66, 0x6f, 0x72, 0x65, 0x63, 0x61, 0x73, 0x74, 0x12, 0x85, 0x01, 0x0a, 0x1f, 0x70, 0x6c,
 	0x61, 0x6e, 0x6e, 0x65, 0x64, 0x5f, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x5f, 0x72, 0x65,
 	0x61, 0x63, 0x68, 0x5f, 0x66, 0x6f, 0x72, 0x65, 0x63, 0x61, 0x73, 0x74, 0x73, 0x18, 0x04, 0x20,
 	0x03, 0x28, 0x0b, 0x32, 0x3e, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73,
-	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x73,
+	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x33, 0x2e, 0x73,
 	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x50, 0x6c, 0x61, 0x6e, 0x6e, 0x65, 0x64, 0x50,
 	0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x52, 0x65, 0x61, 0x63, 0x68, 0x46, 0x6f, 0x72, 0x65, 0x63,
 	0x61, 0x73, 0x74, 0x52, 0x1c, 0x70, 0x6c, 0x61, 0x6e, 0x6e, 0x65, 0x64, 0x50, 0x72, 0x6f, 0x64,
@@ -2331,7 +2336,7 @@ var file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDesc = []
 	0x76, 0x65, 0x5f, 0x66, 0x72, 0x65, 0x71, 0x75, 0x65, 0x6e, 0x63, 0x79, 0x5f, 0x62, 0x72, 0x65,
 	0x61, 0x6b, 0x64, 0x6f, 0x77, 0x6e, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x3e, 0x2e,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
 	0x73, 0x2e, 0x45, 0x66, 0x66, 0x65, 0x63, 0x74, 0x69, 0x76, 0x65, 0x46, 0x72, 0x65, 0x71, 0x75,
 	0x65, 0x6e, 0x63, 0x79, 0x42, 0x72, 0x65, 0x61, 0x6b, 0x64, 0x6f, 0x77, 0x6e, 0x52, 0x1c, 0x65,
 	0x66, 0x66, 0x65, 0x63, 0x74, 0x69, 0x76, 0x65, 0x46, 0x72, 0x65, 0x71, 0x75, 0x65, 0x6e, 0x63,
@@ -2375,7 +2380,7 @@ var file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDesc = []
 	0x73, 0x12, 0x73, 0x0a, 0x18, 0x70, 0x6c, 0x61, 0x6e, 0x6e, 0x65, 0x64, 0x5f, 0x70, 0x72, 0x6f,
 	0x64, 0x75, 0x63, 0x74, 0x5f, 0x66, 0x6f, 0x72, 0x65, 0x63, 0x61, 0x73, 0x74, 0x18, 0x03, 0x20,
 	0x01, 0x28, 0x0b, 0x32, 0x39, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73,
-	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x73,
+	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x33, 0x2e, 0x73,
 	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x50, 0x6c, 0x61, 0x6e, 0x6e, 0x65, 0x64, 0x50,
 	0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x46, 0x6f, 0x72, 0x65, 0x63, 0x61, 0x73, 0x74, 0x52, 0x16,
 	0x70, 0x6c, 0x61, 0x6e, 0x6e, 0x65, 0x64, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x46, 0x6f,
@@ -2461,7 +2466,7 @@ var file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDesc = []
 	0x74, 0x69, 0x6e, 0x67, 0x12, 0x56, 0x0a, 0x0d, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x69, 0x6e, 0x74,
 	0x65, 0x72, 0x65, 0x73, 0x74, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x31, 0x2e, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x55, 0x73,
+	0x64, 0x73, 0x2e, 0x76, 0x31, 0x33, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x55, 0x73,
 	0x65, 0x72, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x65, 0x73, 0x74, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x0c,
 	0x75, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x65, 0x73, 0x74, 0x22, 0xa4, 0x01, 0x0a,
 	0x18, 0x41, 0x64, 0x76, 0x61, 0x6e, 0x63, 0x65, 0x64, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74,
@@ -2469,7 +2474,7 @@ var file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDesc = []
 	0x74, 0x75, 0x62, 0x65, 0x5f, 0x73, 0x65, 0x6c, 0x65, 0x63, 0x74, 0x5f, 0x73, 0x65, 0x74, 0x74,
 	0x69, 0x6e, 0x67, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x38, 0x2e, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64,
-	0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x59,
+	0x73, 0x2e, 0x76, 0x31, 0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x59,
 	0x6f, 0x75, 0x54, 0x75, 0x62, 0x65, 0x53, 0x65, 0x6c, 0x65, 0x63, 0x74, 0x53, 0x65, 0x74, 0x74,
 	0x69, 0x6e, 0x67, 0x73, 0x48, 0x00, 0x52, 0x15, 0x79, 0x6f, 0x75, 0x74, 0x75, 0x62, 0x65, 0x53,
 	0x65, 0x6c, 0x65, 0x63, 0x74, 0x53, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x73, 0x42, 0x14, 0x0a,
@@ -2487,41 +2492,41 @@ var file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDesc = []
 	0x69, 0x63, 0x65, 0x12, 0xc5, 0x01, 0x0a, 0x16, 0x4c, 0x69, 0x73, 0x74, 0x50, 0x6c, 0x61, 0x6e,
 	0x6e, 0x61, 0x62, 0x6c, 0x65, 0x4c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x12, 0x40,
 	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
+	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
 	0x65, 0x73, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x50, 0x6c, 0x61, 0x6e, 0x6e, 0x61, 0x62, 0x6c, 0x65,
 	0x4c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
 	0x1a, 0x41, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x73, 0x65, 0x72, 0x76,
+	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x33, 0x2e, 0x73, 0x65, 0x72, 0x76,
 	0x69, 0x63, 0x65, 0x73, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x50, 0x6c, 0x61, 0x6e, 0x6e, 0x61, 0x62,
 	0x6c, 0x65, 0x4c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f,
 	0x6e, 0x73, 0x65, 0x22, 0x26, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x20, 0x22, 0x1b, 0x2f, 0x76, 0x31,
-	0x32, 0x3a, 0x6c, 0x69, 0x73, 0x74, 0x50, 0x6c, 0x61, 0x6e, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x4c,
+	0x33, 0x3a, 0x6c, 0x69, 0x73, 0x74, 0x50, 0x6c, 0x61, 0x6e, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x4c,
 	0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x3a, 0x01, 0x2a, 0x12, 0xd9, 0x01, 0x0a, 0x15,
 	0x4c, 0x69, 0x73, 0x74, 0x50, 0x6c, 0x61, 0x6e, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x50, 0x72, 0x6f,
 	0x64, 0x75, 0x63, 0x74, 0x73, 0x12, 0x3f, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61,
-	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32,
+	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x33,
 	0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x50, 0x6c,
 	0x61, 0x6e, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x73, 0x52,
 	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x40, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
 	0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31,
-	0x32, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x50,
+	0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x50,
 	0x6c, 0x61, 0x6e, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x73,
 	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x3d, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1f,
-	0x22, 0x1a, 0x2f, 0x76, 0x31, 0x32, 0x3a, 0x6c, 0x69, 0x73, 0x74, 0x50, 0x6c, 0x61, 0x6e, 0x6e,
+	0x22, 0x1a, 0x2f, 0x76, 0x31, 0x33, 0x3a, 0x6c, 0x69, 0x73, 0x74, 0x50, 0x6c, 0x61, 0x6e, 0x6e,
 	0x61, 0x62, 0x6c, 0x65, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x73, 0x3a, 0x01, 0x2a, 0xda,
 	0x41, 0x15, 0x70, 0x6c, 0x61, 0x6e, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x5f, 0x6c, 0x6f, 0x63, 0x61,
 	0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x12, 0x8c, 0x02, 0x0a, 0x15, 0x47, 0x65, 0x6e, 0x65,
 	0x72, 0x61, 0x74, 0x65, 0x52, 0x65, 0x61, 0x63, 0x68, 0x46, 0x6f, 0x72, 0x65, 0x63, 0x61, 0x73,
 	0x74, 0x12, 0x3f, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x73, 0x65, 0x72,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x33, 0x2e, 0x73, 0x65, 0x72,
 	0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x74, 0x65, 0x52, 0x65,
 	0x61, 0x63, 0x68, 0x46, 0x6f, 0x72, 0x65, 0x63, 0x61, 0x73, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65,
 	0x73, 0x74, 0x1a, 0x40, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x73, 0x65,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x33, 0x2e, 0x73, 0x65,
 	0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x74, 0x65, 0x52,
 	0x65, 0x61, 0x63, 0x68, 0x46, 0x6f, 0x72, 0x65, 0x63, 0x61, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70,
 	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x70, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x39, 0x22, 0x34, 0x2f, 0x76,
-	0x31, 0x32, 0x2f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x73, 0x2f, 0x7b, 0x63, 0x75,
+	0x31, 0x33, 0x2f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x73, 0x2f, 0x7b, 0x63, 0x75,
 	0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x3d, 0x2a, 0x7d, 0x3a, 0x67, 0x65, 0x6e,
 	0x65, 0x72, 0x61, 0x74, 0x65, 0x52, 0x65, 0x61, 0x63, 0x68, 0x46, 0x6f, 0x72, 0x65, 0x63, 0x61,
 	0x73, 0x74, 0x3a, 0x01, 0x2a, 0xda, 0x41, 0x2e, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72,
@@ -2533,110 +2538,110 @@ var file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDesc = []
 	0x77, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x63, 0x6f, 0x6d,
 	0x2f, 0x61, 0x75, 0x74, 0x68, 0x2f, 0x61, 0x64, 0x77, 0x6f, 0x72, 0x64, 0x73, 0x42, 0x81, 0x02,
 	0x0a, 0x25, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73,
-	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x32, 0x2e, 0x73,
+	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x33, 0x2e, 0x73,
 	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x42, 0x15, 0x52, 0x65, 0x61, 0x63, 0x68, 0x50, 0x6c,
 	0x61, 0x6e, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01,
 	0x5a, 0x49, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x67, 0x6f, 0x6c, 0x61, 0x6e, 0x67, 0x2e,
 	0x6f, 0x72, 0x67, 0x2f, 0x67, 0x65, 0x6e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x61, 0x70, 0x69, 0x73, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x32, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
+	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x33, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
 	0x65, 0x73, 0x3b, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0xa2, 0x02, 0x03, 0x47, 0x41,
 	0x41, 0xaa, 0x02, 0x21, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x41, 0x64, 0x73, 0x2e, 0x47,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e, 0x56, 0x31, 0x32, 0x2e, 0x53, 0x65, 0x72,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e, 0x56, 0x31, 0x33, 0x2e, 0x53, 0x65, 0x72,
 	0x76, 0x69, 0x63, 0x65, 0x73, 0xca, 0x02, 0x21, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x5c, 0x41,
-	0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x31, 0x32,
+	0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x31, 0x33,
 	0x5c, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0xea, 0x02, 0x25, 0x47, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x3a, 0x3a, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41,
-	0x64, 0x73, 0x3a, 0x3a, 0x56, 0x31, 0x32, 0x3a, 0x3a, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+	0x64, 0x73, 0x3a, 0x3a, 0x56, 0x31, 0x33, 0x3a, 0x3a, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
 	0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
-	file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDescData = file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDesc
+	file_google_ads_googleads_v13_services_reach_plan_service_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v13_services_reach_plan_service_proto_rawDescData = file_google_ads_googleads_v13_services_reach_plan_service_proto_rawDesc
 )
 
-func file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDescData)
+func file_google_ads_googleads_v13_services_reach_plan_service_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v13_services_reach_plan_service_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v13_services_reach_plan_service_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v13_services_reach_plan_service_proto_rawDescData)
 	})
-	return file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDescData
+	return file_google_ads_googleads_v13_services_reach_plan_service_proto_rawDescData
 }
 
-var file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes = make([]protoimpl.MessageInfo, 26)
-var file_google_ads_googleads_v12_services_reach_plan_service_proto_goTypes = []interface{}{
-	(*ListPlannableLocationsRequest)(nil),                    // 0: google.ads.googleads.v12.services.ListPlannableLocationsRequest
-	(*ListPlannableLocationsResponse)(nil),                   // 1: google.ads.googleads.v12.services.ListPlannableLocationsResponse
-	(*PlannableLocation)(nil),                                // 2: google.ads.googleads.v12.services.PlannableLocation
-	(*ListPlannableProductsRequest)(nil),                     // 3: google.ads.googleads.v12.services.ListPlannableProductsRequest
-	(*ListPlannableProductsResponse)(nil),                    // 4: google.ads.googleads.v12.services.ListPlannableProductsResponse
-	(*ProductMetadata)(nil),                                  // 5: google.ads.googleads.v12.services.ProductMetadata
-	(*PlannableTargeting)(nil),                               // 6: google.ads.googleads.v12.services.PlannableTargeting
-	(*GenerateReachForecastRequest)(nil),                     // 7: google.ads.googleads.v12.services.GenerateReachForecastRequest
-	(*EffectiveFrequencyLimit)(nil),                          // 8: google.ads.googleads.v12.services.EffectiveFrequencyLimit
-	(*FrequencyCap)(nil),                                     // 9: google.ads.googleads.v12.services.FrequencyCap
-	(*Targeting)(nil),                                        // 10: google.ads.googleads.v12.services.Targeting
-	(*CampaignDuration)(nil),                                 // 11: google.ads.googleads.v12.services.CampaignDuration
-	(*PlannedProduct)(nil),                                   // 12: google.ads.googleads.v12.services.PlannedProduct
-	(*GenerateReachForecastResponse)(nil),                    // 13: google.ads.googleads.v12.services.GenerateReachForecastResponse
-	(*ReachCurve)(nil),                                       // 14: google.ads.googleads.v12.services.ReachCurve
-	(*ReachForecast)(nil),                                    // 15: google.ads.googleads.v12.services.ReachForecast
-	(*Forecast)(nil),                                         // 16: google.ads.googleads.v12.services.Forecast
-	(*PlannedProductReachForecast)(nil),                      // 17: google.ads.googleads.v12.services.PlannedProductReachForecast
-	(*PlannedProductForecast)(nil),                           // 18: google.ads.googleads.v12.services.PlannedProductForecast
-	(*OnTargetAudienceMetrics)(nil),                          // 19: google.ads.googleads.v12.services.OnTargetAudienceMetrics
-	(*EffectiveFrequencyBreakdown)(nil),                      // 20: google.ads.googleads.v12.services.EffectiveFrequencyBreakdown
-	(*ForecastMetricOptions)(nil),                            // 21: google.ads.googleads.v12.services.ForecastMetricOptions
-	(*AudienceTargeting)(nil),                                // 22: google.ads.googleads.v12.services.AudienceTargeting
-	(*AdvancedProductTargeting)(nil),                         // 23: google.ads.googleads.v12.services.AdvancedProductTargeting
-	(*YouTubeSelectSettings)(nil),                            // 24: google.ads.googleads.v12.services.YouTubeSelectSettings
-	(*YouTubeSelectLineUp)(nil),                              // 25: google.ads.googleads.v12.services.YouTubeSelectLineUp
-	(enums.ReachPlanAgeRangeEnum_ReachPlanAgeRange)(0),       // 26: google.ads.googleads.v12.enums.ReachPlanAgeRangeEnum.ReachPlanAgeRange
-	(*common.GenderInfo)(nil),                                // 27: google.ads.googleads.v12.common.GenderInfo
-	(*common.DeviceInfo)(nil),                                // 28: google.ads.googleads.v12.common.DeviceInfo
-	(enums.ReachPlanNetworkEnum_ReachPlanNetwork)(0),         // 29: google.ads.googleads.v12.enums.ReachPlanNetworkEnum.ReachPlanNetwork
-	(enums.FrequencyCapTimeUnitEnum_FrequencyCapTimeUnit)(0), // 30: google.ads.googleads.v12.enums.FrequencyCapTimeUnitEnum.FrequencyCapTimeUnit
-	(*common.DateRange)(nil),                                 // 31: google.ads.googleads.v12.common.DateRange
-	(*common.UserInterestInfo)(nil),                          // 32: google.ads.googleads.v12.common.UserInterestInfo
+var file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes = make([]protoimpl.MessageInfo, 26)
+var file_google_ads_googleads_v13_services_reach_plan_service_proto_goTypes = []interface{}{
+	(*ListPlannableLocationsRequest)(nil),                    // 0: google.ads.googleads.v13.services.ListPlannableLocationsRequest
+	(*ListPlannableLocationsResponse)(nil),                   // 1: google.ads.googleads.v13.services.ListPlannableLocationsResponse
+	(*PlannableLocation)(nil),                                // 2: google.ads.googleads.v13.services.PlannableLocation
+	(*ListPlannableProductsRequest)(nil),                     // 3: google.ads.googleads.v13.services.ListPlannableProductsRequest
+	(*ListPlannableProductsResponse)(nil),                    // 4: google.ads.googleads.v13.services.ListPlannableProductsResponse
+	(*ProductMetadata)(nil),                                  // 5: google.ads.googleads.v13.services.ProductMetadata
+	(*PlannableTargeting)(nil),                               // 6: google.ads.googleads.v13.services.PlannableTargeting
+	(*GenerateReachForecastRequest)(nil),                     // 7: google.ads.googleads.v13.services.GenerateReachForecastRequest
+	(*EffectiveFrequencyLimit)(nil),                          // 8: google.ads.googleads.v13.services.EffectiveFrequencyLimit
+	(*FrequencyCap)(nil),                                     // 9: google.ads.googleads.v13.services.FrequencyCap
+	(*Targeting)(nil),                                        // 10: google.ads.googleads.v13.services.Targeting
+	(*CampaignDuration)(nil),                                 // 11: google.ads.googleads.v13.services.CampaignDuration
+	(*PlannedProduct)(nil),                                   // 12: google.ads.googleads.v13.services.PlannedProduct
+	(*GenerateReachForecastResponse)(nil),                    // 13: google.ads.googleads.v13.services.GenerateReachForecastResponse
+	(*ReachCurve)(nil),                                       // 14: google.ads.googleads.v13.services.ReachCurve
+	(*ReachForecast)(nil),                                    // 15: google.ads.googleads.v13.services.ReachForecast
+	(*Forecast)(nil),                                         // 16: google.ads.googleads.v13.services.Forecast
+	(*PlannedProductReachForecast)(nil),                      // 17: google.ads.googleads.v13.services.PlannedProductReachForecast
+	(*PlannedProductForecast)(nil),                           // 18: google.ads.googleads.v13.services.PlannedProductForecast
+	(*OnTargetAudienceMetrics)(nil),                          // 19: google.ads.googleads.v13.services.OnTargetAudienceMetrics
+	(*EffectiveFrequencyBreakdown)(nil),                      // 20: google.ads.googleads.v13.services.EffectiveFrequencyBreakdown
+	(*ForecastMetricOptions)(nil),                            // 21: google.ads.googleads.v13.services.ForecastMetricOptions
+	(*AudienceTargeting)(nil),                                // 22: google.ads.googleads.v13.services.AudienceTargeting
+	(*AdvancedProductTargeting)(nil),                         // 23: google.ads.googleads.v13.services.AdvancedProductTargeting
+	(*YouTubeSelectSettings)(nil),                            // 24: google.ads.googleads.v13.services.YouTubeSelectSettings
+	(*YouTubeSelectLineUp)(nil),                              // 25: google.ads.googleads.v13.services.YouTubeSelectLineUp
+	(enums.ReachPlanAgeRangeEnum_ReachPlanAgeRange)(0),       // 26: google.ads.googleads.v13.enums.ReachPlanAgeRangeEnum.ReachPlanAgeRange
+	(*common.GenderInfo)(nil),                                // 27: google.ads.googleads.v13.common.GenderInfo
+	(*common.DeviceInfo)(nil),                                // 28: google.ads.googleads.v13.common.DeviceInfo
+	(enums.ReachPlanNetworkEnum_ReachPlanNetwork)(0),         // 29: google.ads.googleads.v13.enums.ReachPlanNetworkEnum.ReachPlanNetwork
+	(enums.FrequencyCapTimeUnitEnum_FrequencyCapTimeUnit)(0), // 30: google.ads.googleads.v13.enums.FrequencyCapTimeUnitEnum.FrequencyCapTimeUnit
+	(*common.DateRange)(nil),                                 // 31: google.ads.googleads.v13.common.DateRange
+	(*common.UserInterestInfo)(nil),                          // 32: google.ads.googleads.v13.common.UserInterestInfo
 }
-var file_google_ads_googleads_v12_services_reach_plan_service_proto_depIdxs = []int32{
-	2,  // 0: google.ads.googleads.v12.services.ListPlannableLocationsResponse.plannable_locations:type_name -> google.ads.googleads.v12.services.PlannableLocation
-	5,  // 1: google.ads.googleads.v12.services.ListPlannableProductsResponse.product_metadata:type_name -> google.ads.googleads.v12.services.ProductMetadata
-	6,  // 2: google.ads.googleads.v12.services.ProductMetadata.plannable_targeting:type_name -> google.ads.googleads.v12.services.PlannableTargeting
-	26, // 3: google.ads.googleads.v12.services.PlannableTargeting.age_ranges:type_name -> google.ads.googleads.v12.enums.ReachPlanAgeRangeEnum.ReachPlanAgeRange
-	27, // 4: google.ads.googleads.v12.services.PlannableTargeting.genders:type_name -> google.ads.googleads.v12.common.GenderInfo
-	28, // 5: google.ads.googleads.v12.services.PlannableTargeting.devices:type_name -> google.ads.googleads.v12.common.DeviceInfo
-	29, // 6: google.ads.googleads.v12.services.PlannableTargeting.networks:type_name -> google.ads.googleads.v12.enums.ReachPlanNetworkEnum.ReachPlanNetwork
-	25, // 7: google.ads.googleads.v12.services.PlannableTargeting.youtube_select_lineups:type_name -> google.ads.googleads.v12.services.YouTubeSelectLineUp
-	11, // 8: google.ads.googleads.v12.services.GenerateReachForecastRequest.campaign_duration:type_name -> google.ads.googleads.v12.services.CampaignDuration
-	9,  // 9: google.ads.googleads.v12.services.GenerateReachForecastRequest.cookie_frequency_cap_setting:type_name -> google.ads.googleads.v12.services.FrequencyCap
-	8,  // 10: google.ads.googleads.v12.services.GenerateReachForecastRequest.effective_frequency_limit:type_name -> google.ads.googleads.v12.services.EffectiveFrequencyLimit
-	10, // 11: google.ads.googleads.v12.services.GenerateReachForecastRequest.targeting:type_name -> google.ads.googleads.v12.services.Targeting
-	12, // 12: google.ads.googleads.v12.services.GenerateReachForecastRequest.planned_products:type_name -> google.ads.googleads.v12.services.PlannedProduct
-	21, // 13: google.ads.googleads.v12.services.GenerateReachForecastRequest.forecast_metric_options:type_name -> google.ads.googleads.v12.services.ForecastMetricOptions
-	30, // 14: google.ads.googleads.v12.services.FrequencyCap.time_unit:type_name -> google.ads.googleads.v12.enums.FrequencyCapTimeUnitEnum.FrequencyCapTimeUnit
-	26, // 15: google.ads.googleads.v12.services.Targeting.age_range:type_name -> google.ads.googleads.v12.enums.ReachPlanAgeRangeEnum.ReachPlanAgeRange
-	27, // 16: google.ads.googleads.v12.services.Targeting.genders:type_name -> google.ads.googleads.v12.common.GenderInfo
-	28, // 17: google.ads.googleads.v12.services.Targeting.devices:type_name -> google.ads.googleads.v12.common.DeviceInfo
-	29, // 18: google.ads.googleads.v12.services.Targeting.network:type_name -> google.ads.googleads.v12.enums.ReachPlanNetworkEnum.ReachPlanNetwork
-	22, // 19: google.ads.googleads.v12.services.Targeting.audience_targeting:type_name -> google.ads.googleads.v12.services.AudienceTargeting
-	31, // 20: google.ads.googleads.v12.services.CampaignDuration.date_range:type_name -> google.ads.googleads.v12.common.DateRange
-	23, // 21: google.ads.googleads.v12.services.PlannedProduct.advanced_product_targeting:type_name -> google.ads.googleads.v12.services.AdvancedProductTargeting
-	19, // 22: google.ads.googleads.v12.services.GenerateReachForecastResponse.on_target_audience_metrics:type_name -> google.ads.googleads.v12.services.OnTargetAudienceMetrics
-	14, // 23: google.ads.googleads.v12.services.GenerateReachForecastResponse.reach_curve:type_name -> google.ads.googleads.v12.services.ReachCurve
-	15, // 24: google.ads.googleads.v12.services.ReachCurve.reach_forecasts:type_name -> google.ads.googleads.v12.services.ReachForecast
-	16, // 25: google.ads.googleads.v12.services.ReachForecast.forecast:type_name -> google.ads.googleads.v12.services.Forecast
-	17, // 26: google.ads.googleads.v12.services.ReachForecast.planned_product_reach_forecasts:type_name -> google.ads.googleads.v12.services.PlannedProductReachForecast
-	20, // 27: google.ads.googleads.v12.services.Forecast.effective_frequency_breakdowns:type_name -> google.ads.googleads.v12.services.EffectiveFrequencyBreakdown
-	18, // 28: google.ads.googleads.v12.services.PlannedProductReachForecast.planned_product_forecast:type_name -> google.ads.googleads.v12.services.PlannedProductForecast
-	32, // 29: google.ads.googleads.v12.services.AudienceTargeting.user_interest:type_name -> google.ads.googleads.v12.common.UserInterestInfo
-	24, // 30: google.ads.googleads.v12.services.AdvancedProductTargeting.youtube_select_settings:type_name -> google.ads.googleads.v12.services.YouTubeSelectSettings
-	0,  // 31: google.ads.googleads.v12.services.ReachPlanService.ListPlannableLocations:input_type -> google.ads.googleads.v12.services.ListPlannableLocationsRequest
-	3,  // 32: google.ads.googleads.v12.services.ReachPlanService.ListPlannableProducts:input_type -> google.ads.googleads.v12.services.ListPlannableProductsRequest
-	7,  // 33: google.ads.googleads.v12.services.ReachPlanService.GenerateReachForecast:input_type -> google.ads.googleads.v12.services.GenerateReachForecastRequest
-	1,  // 34: google.ads.googleads.v12.services.ReachPlanService.ListPlannableLocations:output_type -> google.ads.googleads.v12.services.ListPlannableLocationsResponse
-	4,  // 35: google.ads.googleads.v12.services.ReachPlanService.ListPlannableProducts:output_type -> google.ads.googleads.v12.services.ListPlannableProductsResponse
-	13, // 36: google.ads.googleads.v12.services.ReachPlanService.GenerateReachForecast:output_type -> google.ads.googleads.v12.services.GenerateReachForecastResponse
+var file_google_ads_googleads_v13_services_reach_plan_service_proto_depIdxs = []int32{
+	2,  // 0: google.ads.googleads.v13.services.ListPlannableLocationsResponse.plannable_locations:type_name -> google.ads.googleads.v13.services.PlannableLocation
+	5,  // 1: google.ads.googleads.v13.services.ListPlannableProductsResponse.product_metadata:type_name -> google.ads.googleads.v13.services.ProductMetadata
+	6,  // 2: google.ads.googleads.v13.services.ProductMetadata.plannable_targeting:type_name -> google.ads.googleads.v13.services.PlannableTargeting
+	26, // 3: google.ads.googleads.v13.services.PlannableTargeting.age_ranges:type_name -> google.ads.googleads.v13.enums.ReachPlanAgeRangeEnum.ReachPlanAgeRange
+	27, // 4: google.ads.googleads.v13.services.PlannableTargeting.genders:type_name -> google.ads.googleads.v13.common.GenderInfo
+	28, // 5: google.ads.googleads.v13.services.PlannableTargeting.devices:type_name -> google.ads.googleads.v13.common.DeviceInfo
+	29, // 6: google.ads.googleads.v13.services.PlannableTargeting.networks:type_name -> google.ads.googleads.v13.enums.ReachPlanNetworkEnum.ReachPlanNetwork
+	25, // 7: google.ads.googleads.v13.services.PlannableTargeting.youtube_select_lineups:type_name -> google.ads.googleads.v13.services.YouTubeSelectLineUp
+	11, // 8: google.ads.googleads.v13.services.GenerateReachForecastRequest.campaign_duration:type_name -> google.ads.googleads.v13.services.CampaignDuration
+	9,  // 9: google.ads.googleads.v13.services.GenerateReachForecastRequest.cookie_frequency_cap_setting:type_name -> google.ads.googleads.v13.services.FrequencyCap
+	8,  // 10: google.ads.googleads.v13.services.GenerateReachForecastRequest.effective_frequency_limit:type_name -> google.ads.googleads.v13.services.EffectiveFrequencyLimit
+	10, // 11: google.ads.googleads.v13.services.GenerateReachForecastRequest.targeting:type_name -> google.ads.googleads.v13.services.Targeting
+	12, // 12: google.ads.googleads.v13.services.GenerateReachForecastRequest.planned_products:type_name -> google.ads.googleads.v13.services.PlannedProduct
+	21, // 13: google.ads.googleads.v13.services.GenerateReachForecastRequest.forecast_metric_options:type_name -> google.ads.googleads.v13.services.ForecastMetricOptions
+	30, // 14: google.ads.googleads.v13.services.FrequencyCap.time_unit:type_name -> google.ads.googleads.v13.enums.FrequencyCapTimeUnitEnum.FrequencyCapTimeUnit
+	26, // 15: google.ads.googleads.v13.services.Targeting.age_range:type_name -> google.ads.googleads.v13.enums.ReachPlanAgeRangeEnum.ReachPlanAgeRange
+	27, // 16: google.ads.googleads.v13.services.Targeting.genders:type_name -> google.ads.googleads.v13.common.GenderInfo
+	28, // 17: google.ads.googleads.v13.services.Targeting.devices:type_name -> google.ads.googleads.v13.common.DeviceInfo
+	29, // 18: google.ads.googleads.v13.services.Targeting.network:type_name -> google.ads.googleads.v13.enums.ReachPlanNetworkEnum.ReachPlanNetwork
+	22, // 19: google.ads.googleads.v13.services.Targeting.audience_targeting:type_name -> google.ads.googleads.v13.services.AudienceTargeting
+	31, // 20: google.ads.googleads.v13.services.CampaignDuration.date_range:type_name -> google.ads.googleads.v13.common.DateRange
+	23, // 21: google.ads.googleads.v13.services.PlannedProduct.advanced_product_targeting:type_name -> google.ads.googleads.v13.services.AdvancedProductTargeting
+	19, // 22: google.ads.googleads.v13.services.GenerateReachForecastResponse.on_target_audience_metrics:type_name -> google.ads.googleads.v13.services.OnTargetAudienceMetrics
+	14, // 23: google.ads.googleads.v13.services.GenerateReachForecastResponse.reach_curve:type_name -> google.ads.googleads.v13.services.ReachCurve
+	15, // 24: google.ads.googleads.v13.services.ReachCurve.reach_forecasts:type_name -> google.ads.googleads.v13.services.ReachForecast
+	16, // 25: google.ads.googleads.v13.services.ReachForecast.forecast:type_name -> google.ads.googleads.v13.services.Forecast
+	17, // 26: google.ads.googleads.v13.services.ReachForecast.planned_product_reach_forecasts:type_name -> google.ads.googleads.v13.services.PlannedProductReachForecast
+	20, // 27: google.ads.googleads.v13.services.Forecast.effective_frequency_breakdowns:type_name -> google.ads.googleads.v13.services.EffectiveFrequencyBreakdown
+	18, // 28: google.ads.googleads.v13.services.PlannedProductReachForecast.planned_product_forecast:type_name -> google.ads.googleads.v13.services.PlannedProductForecast
+	32, // 29: google.ads.googleads.v13.services.AudienceTargeting.user_interest:type_name -> google.ads.googleads.v13.common.UserInterestInfo
+	24, // 30: google.ads.googleads.v13.services.AdvancedProductTargeting.youtube_select_settings:type_name -> google.ads.googleads.v13.services.YouTubeSelectSettings
+	0,  // 31: google.ads.googleads.v13.services.ReachPlanService.ListPlannableLocations:input_type -> google.ads.googleads.v13.services.ListPlannableLocationsRequest
+	3,  // 32: google.ads.googleads.v13.services.ReachPlanService.ListPlannableProducts:input_type -> google.ads.googleads.v13.services.ListPlannableProductsRequest
+	7,  // 33: google.ads.googleads.v13.services.ReachPlanService.GenerateReachForecast:input_type -> google.ads.googleads.v13.services.GenerateReachForecastRequest
+	1,  // 34: google.ads.googleads.v13.services.ReachPlanService.ListPlannableLocations:output_type -> google.ads.googleads.v13.services.ListPlannableLocationsResponse
+	4,  // 35: google.ads.googleads.v13.services.ReachPlanService.ListPlannableProducts:output_type -> google.ads.googleads.v13.services.ListPlannableProductsResponse
+	13, // 36: google.ads.googleads.v13.services.ReachPlanService.GenerateReachForecast:output_type -> google.ads.googleads.v13.services.GenerateReachForecastResponse
 	34, // [34:37] is the sub-list for method output_type
 	31, // [31:34] is the sub-list for method input_type
 	31, // [31:31] is the sub-list for extension type_name
@@ -2644,13 +2649,13 @@ var file_google_ads_googleads_v12_services_reach_plan_service_proto_depIdxs = []
 	0,  // [0:31] is the sub-list for field type_name
 }
 
-func init() { file_google_ads_googleads_v12_services_reach_plan_service_proto_init() }
-func file_google_ads_googleads_v12_services_reach_plan_service_proto_init() {
-	if File_google_ads_googleads_v12_services_reach_plan_service_proto != nil {
+func init() { file_google_ads_googleads_v13_services_reach_plan_service_proto_init() }
+func file_google_ads_googleads_v13_services_reach_plan_service_proto_init() {
+	if File_google_ads_googleads_v13_services_reach_plan_service_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListPlannableLocationsRequest); i {
 			case 0:
 				return &v.state
@@ -2662,7 +2667,7 @@ func file_google_ads_googleads_v12_services_reach_plan_service_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListPlannableLocationsResponse); i {
 			case 0:
 				return &v.state
@@ -2674,7 +2679,7 @@ func file_google_ads_googleads_v12_services_reach_plan_service_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PlannableLocation); i {
 			case 0:
 				return &v.state
@@ -2686,7 +2691,7 @@ func file_google_ads_googleads_v12_services_reach_plan_service_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListPlannableProductsRequest); i {
 			case 0:
 				return &v.state
@@ -2698,7 +2703,7 @@ func file_google_ads_googleads_v12_services_reach_plan_service_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListPlannableProductsResponse); i {
 			case 0:
 				return &v.state
@@ -2710,7 +2715,7 @@ func file_google_ads_googleads_v12_services_reach_plan_service_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ProductMetadata); i {
 			case 0:
 				return &v.state
@@ -2722,7 +2727,7 @@ func file_google_ads_googleads_v12_services_reach_plan_service_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PlannableTargeting); i {
 			case 0:
 				return &v.state
@@ -2734,7 +2739,7 @@ func file_google_ads_googleads_v12_services_reach_plan_service_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GenerateReachForecastRequest); i {
 			case 0:
 				return &v.state
@@ -2746,7 +2751,7 @@ func file_google_ads_googleads_v12_services_reach_plan_service_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*EffectiveFrequencyLimit); i {
 			case 0:
 				return &v.state
@@ -2758,7 +2763,7 @@ func file_google_ads_googleads_v12_services_reach_plan_service_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*FrequencyCap); i {
 			case 0:
 				return &v.state
@@ -2770,7 +2775,7 @@ func file_google_ads_googleads_v12_services_reach_plan_service_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Targeting); i {
 			case 0:
 				return &v.state
@@ -2782,7 +2787,7 @@ func file_google_ads_googleads_v12_services_reach_plan_service_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CampaignDuration); i {
 			case 0:
 				return &v.state
@@ -2794,7 +2799,7 @@ func file_google_ads_googleads_v12_services_reach_plan_service_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PlannedProduct); i {
 			case 0:
 				return &v.state
@@ -2806,7 +2811,7 @@ func file_google_ads_googleads_v12_services_reach_plan_service_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GenerateReachForecastResponse); i {
 			case 0:
 				return &v.state
@@ -2818,7 +2823,7 @@ func file_google_ads_googleads_v12_services_reach_plan_service_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ReachCurve); i {
 			case 0:
 				return &v.state
@@ -2830,7 +2835,7 @@ func file_google_ads_googleads_v12_services_reach_plan_service_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ReachForecast); i {
 			case 0:
 				return &v.state
@@ -2842,7 +2847,7 @@ func file_google_ads_googleads_v12_services_reach_plan_service_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Forecast); i {
 			case 0:
 				return &v.state
@@ -2854,7 +2859,7 @@ func file_google_ads_googleads_v12_services_reach_plan_service_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PlannedProductReachForecast); i {
 			case 0:
 				return &v.state
@@ -2866,7 +2871,7 @@ func file_google_ads_googleads_v12_services_reach_plan_service_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PlannedProductForecast); i {
 			case 0:
 				return &v.state
@@ -2878,7 +2883,7 @@ func file_google_ads_googleads_v12_services_reach_plan_service_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*OnTargetAudienceMetrics); i {
 			case 0:
 				return &v.state
@@ -2890,7 +2895,7 @@ func file_google_ads_googleads_v12_services_reach_plan_service_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*EffectiveFrequencyBreakdown); i {
 			case 0:
 				return &v.state
@@ -2902,7 +2907,7 @@ func file_google_ads_googleads_v12_services_reach_plan_service_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ForecastMetricOptions); i {
 			case 0:
 				return &v.state
@@ -2914,7 +2919,7 @@ func file_google_ads_googleads_v12_services_reach_plan_service_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AudienceTargeting); i {
 			case 0:
 				return &v.state
@@ -2926,7 +2931,7 @@ func file_google_ads_googleads_v12_services_reach_plan_service_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AdvancedProductTargeting); i {
 			case 0:
 				return &v.state
@@ -2938,7 +2943,7 @@ func file_google_ads_googleads_v12_services_reach_plan_service_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*YouTubeSelectSettings); i {
 			case 0:
 				return &v.state
@@ -2950,7 +2955,7 @@ func file_google_ads_googleads_v12_services_reach_plan_service_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[25].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[25].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*YouTubeSelectLineUp); i {
 			case 0:
 				return &v.state
@@ -2963,35 +2968,35 @@ func file_google_ads_googleads_v12_services_reach_plan_service_proto_init() {
 			}
 		}
 	}
-	file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[2].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[5].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[7].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[10].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[11].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[12].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[16].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[18].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[19].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[20].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes[23].OneofWrappers = []interface{}{
+	file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[2].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[5].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[7].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[10].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[11].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[12].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[16].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[18].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[19].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[20].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes[23].OneofWrappers = []interface{}{
 		(*AdvancedProductTargeting_YoutubeSelectSettings)(nil),
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDesc,
+			RawDescriptor: file_google_ads_googleads_v13_services_reach_plan_service_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   26,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_google_ads_googleads_v12_services_reach_plan_service_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v12_services_reach_plan_service_proto_depIdxs,
-		MessageInfos:      file_google_ads_googleads_v12_services_reach_plan_service_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v13_services_reach_plan_service_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v13_services_reach_plan_service_proto_depIdxs,
+		MessageInfos:      file_google_ads_googleads_v13_services_reach_plan_service_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v12_services_reach_plan_service_proto = out.File
-	file_google_ads_googleads_v12_services_reach_plan_service_proto_rawDesc = nil
-	file_google_ads_googleads_v12_services_reach_plan_service_proto_goTypes = nil
-	file_google_ads_googleads_v12_services_reach_plan_service_proto_depIdxs = nil
+	File_google_ads_googleads_v13_services_reach_plan_service_proto = out.File
+	file_google_ads_googleads_v13_services_reach_plan_service_proto_rawDesc = nil
+	file_google_ads_googleads_v13_services_reach_plan_service_proto_goTypes = nil
+	file_google_ads_googleads_v13_services_reach_plan_service_proto_depIdxs = nil
 }

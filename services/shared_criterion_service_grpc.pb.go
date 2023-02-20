@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.9
-// source: google/ads/googleads/v12/services/shared_criterion_service.proto
+// source: google/ads/googleads/v13/services/shared_criterion_service.proto
 
 package services
 
@@ -59,7 +59,7 @@ func NewSharedCriterionServiceClient(cc grpc.ClientConnInterface) SharedCriterio
 
 func (c *sharedCriterionServiceClient) MutateSharedCriteria(ctx context.Context, in *MutateSharedCriteriaRequest, opts ...grpc.CallOption) (*MutateSharedCriteriaResponse, error) {
 	out := new(MutateSharedCriteriaResponse)
-	err := c.cc.Invoke(ctx, "/google.ads.googleads.v12.services.SharedCriterionService/MutateSharedCriteria", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/google.ads.googleads.v13.services.SharedCriterionService/MutateSharedCriteria", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -129,7 +129,7 @@ func _SharedCriterionService_MutateSharedCriteria_Handler(srv interface{}, ctx c
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/google.ads.googleads.v12.services.SharedCriterionService/MutateSharedCriteria",
+		FullMethod: "/google.ads.googleads.v13.services.SharedCriterionService/MutateSharedCriteria",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SharedCriterionServiceServer).MutateSharedCriteria(ctx, req.(*MutateSharedCriteriaRequest))
@@ -141,7 +141,7 @@ func _SharedCriterionService_MutateSharedCriteria_Handler(srv interface{}, ctx c
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var SharedCriterionService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v12.services.SharedCriterionService",
+	ServiceName: "google.ads.googleads.v13.services.SharedCriterionService",
 	HandlerType: (*SharedCriterionServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -150,5 +150,5 @@ var SharedCriterionService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v12/services/shared_criterion_service.proto",
+	Metadata: "google/ads/googleads/v13/services/shared_criterion_service.proto",
 }
