@@ -6,7 +6,7 @@ on:
       version:
         description: "version"
         required: true
-        default: "v12"
+        default: "v13"
 
 jobs:
   build:
@@ -62,6 +62,7 @@ jobs:
           BUILD_PKG=google.golang.org/genproto/googleapis/ads/googleads/$VERSION
           cp -r $BUILD_PATH/* $OUTPUT_PATH/ && rm -rf $OUTPUT_PATH/google.golang.org
           find $OUTPUT_PATH -name '*.go' -exec sed -i "s|${BUILD_PKG}|${PUBLISH_PKG}|g" '{}' \;
+          find $OUTPUT_PATH/clients/internal/snippets -name '*.go' -exec sed -i "s|\"clients\"|\"${PUBLISH_PKG}/clients\"|g" '{}' \;
           rm -rf $OUTPUT_PATH/clients/*_example_test.go
 
       - name: Fix errors
@@ -69,11 +70,6 @@ jobs:
           if [ -f $OUTPUT_PATH/resources/experiment_arm.pb.go ]; then
             echo "==> Rename experiment_arm.pb.go to experimentarm.pb.go"
             mv $OUTPUT_PATH/resources/experiment_arm.pb.go $OUTPUT_PATH/resources/experimentarm.pb.go -f
-          fi
-          if [ -f $OUTPUT_PATH/clients/campaign_experiment_client.go ]; then
-            echo "==> Remove StatusIterator struct"
-            ERR_LINE=$(grep -n 'type StatusIterator struct' $OUTPUT_PATH/clients/campaign_experiment_client.go | awk -F':' '{print $1}')
-            sed -i "${ERR_LINE},\$d" $OUTPUT_PATH/clients/campaign_experiment_client.go
           fi
 
       - name: Format
