@@ -19,13 +19,14 @@ Please note that this is not an official project. But we think it is very low ri
 
 ## Version support
 
-| google-ads-pb | Google Ads API |
-|---|---|
-| v1.4.0 | v13 |
-| v1.3.1 | v12 |
-| v1.2.1 | v11.1 |
-| v1.2.0 | v11 |
-| v1.1.1 | v10 |
+| google-ads-pb | Google Ads API | Sunset date |
+|---|---|---|
+| v1.4.1 | v13.1 | End of January 2024 |
+| v1.4.0 | v13 | End of January 2024 | 
+| v1.3.1 | v12 | End of September 2023 |
+| <del>v1.2.1</del> | <del>v11.1</del> | Deprecated |
+| <del>v1.2.0</del> | <del>v11</del> | Deprecated |
+| <del>v1.1.1</del> | <del>v10</del> | Deprecated |
 
 ## Requirements
 
@@ -107,3 +108,9 @@ Here are some related projects
 ## Contributing
 
 Welcome to contribute more examples and documentations.
+
+### Supporting
+
+If you like this project, please consider buying me a coffee. 😄
+
+<a href="https://www.buymeacoffee.com/crazyfrog" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
