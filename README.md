@@ -31,7 +31,7 @@ Please note that this is not an official project. But we think it is very low ri
 
 ## Requirements
 
-- Go 20 or later.
+- Go 1.20 or later.
 - Before starting, recommend to read the [OAuth2 guide](https://developers.google.com/google-ads/api/docs/oauth/overview).
 - Apply for a [developer token](https://developers.google.com/google-ads/api/docs/first-call/dev-token) if you don't already have one.
 
