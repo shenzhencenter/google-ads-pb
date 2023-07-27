@@ -56,6 +56,7 @@ func defaultRecommendationGRPCClientOptions() []option.ClientOption {
 func defaultRecommendationCallOptions() *RecommendationCallOptions {
 	return &RecommendationCallOptions{
 		ApplyRecommendation: []gax.CallOption{
+			gax.WithTimeout(14400000 * time.Millisecond),
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
 					codes.Unavailable,
@@ -68,6 +69,7 @@ func defaultRecommendationCallOptions() *RecommendationCallOptions {
 			}),
 		},
 		DismissRecommendation: []gax.CallOption{
+			gax.WithTimeout(14400000 * time.Millisecond),
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
 					codes.Unavailable,
@@ -165,9 +167,6 @@ type recommendationGRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
 
-	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
-	disableDeadlines bool
-
 	// Points back to the CallOptions field of the containing RecommendationClient
 	CallOptions **RecommendationCallOptions
 
@@ -192,11 +191,6 @@ func NewRecommendationClient(ctx context.Context, opts ...option.ClientOption) (
 		clientOpts = append(clientOpts, hookOpts...)
 	}
 
-	disableDeadlines, err := checkDisableDeadlines()
-	if err != nil {
-		return nil, err
-	}
-
 	connPool, err := gtransport.DialPool(ctx, append(clientOpts, opts...)...)
 	if err != nil {
 		return nil, err
@@ -205,7 +199,6 @@ func NewRecommendationClient(ctx context.Context, opts ...option.ClientOption) (
 
 	c := &recommendationGRPCClient{
 		connPool:             connPool,
-		disableDeadlines:     disableDeadlines,
 		recommendationClient: servicespb.NewRecommendationServiceClient(connPool),
 		CallOptions:          &client.CallOptions,
 	}
@@ -228,7 +221,7 @@ func (c *recommendationGRPCClient) Connection() *grpc.ClientConn {
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
 func (c *recommendationGRPCClient) setGoogleClientInfo(keyval ...string) {
-	kv := append([]string{"gl-go", versionGo()}, keyval...)
+	kv := append([]string{"gl-go", gax.GoVersion}, keyval...)
 	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
@@ -240,11 +233,6 @@ func (c *recommendationGRPCClient) Close() error {
 }
 
 func (c *recommendationGRPCClient) ApplyRecommendation(ctx context.Context, req *servicespb.ApplyRecommendationRequest, opts ...gax.CallOption) (*servicespb.ApplyRecommendationResponse, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
 
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
@@ -262,11 +250,6 @@ func (c *recommendationGRPCClient) ApplyRecommendation(ctx context.Context, req 
 }
 
 func (c *recommendationGRPCClient) DismissRecommendation(ctx context.Context, req *servicespb.DismissRecommendationRequest, opts ...gax.CallOption) (*servicespb.DismissRecommendationResponse, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
 
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)

@@ -53,6 +53,7 @@ func defaultGeoTargetConstantGRPCClientOptions() []option.ClientOption {
 func defaultGeoTargetConstantCallOptions() *GeoTargetConstantCallOptions {
 	return &GeoTargetConstantCallOptions{
 		SuggestGeoTargetConstants: []gax.CallOption{
+			gax.WithTimeout(14400000 * time.Millisecond),
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
 					codes.Unavailable,
@@ -131,9 +132,6 @@ type geoTargetConstantGRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
 
-	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
-	disableDeadlines bool
-
 	// Points back to the CallOptions field of the containing GeoTargetConstantClient
 	CallOptions **GeoTargetConstantCallOptions
 
@@ -158,11 +156,6 @@ func NewGeoTargetConstantClient(ctx context.Context, opts ...option.ClientOption
 		clientOpts = append(clientOpts, hookOpts...)
 	}
 
-	disableDeadlines, err := checkDisableDeadlines()
-	if err != nil {
-		return nil, err
-	}
-
 	connPool, err := gtransport.DialPool(ctx, append(clientOpts, opts...)...)
 	if err != nil {
 		return nil, err
@@ -171,7 +164,6 @@ func NewGeoTargetConstantClient(ctx context.Context, opts ...option.ClientOption
 
 	c := &geoTargetConstantGRPCClient{
 		connPool:                connPool,
-		disableDeadlines:        disableDeadlines,
 		geoTargetConstantClient: servicespb.NewGeoTargetConstantServiceClient(connPool),
 		CallOptions:             &client.CallOptions,
 	}
@@ -194,7 +186,7 @@ func (c *geoTargetConstantGRPCClient) Connection() *grpc.ClientConn {
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
 func (c *geoTargetConstantGRPCClient) setGoogleClientInfo(keyval ...string) {
-	kv := append([]string{"gl-go", versionGo()}, keyval...)
+	kv := append([]string{"gl-go", gax.GoVersion}, keyval...)
 	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
@@ -206,11 +198,6 @@ func (c *geoTargetConstantGRPCClient) Close() error {
 }
 
 func (c *geoTargetConstantGRPCClient) SuggestGeoTargetConstants(ctx context.Context, req *servicespb.SuggestGeoTargetConstantsRequest, opts ...gax.CallOption) (*servicespb.SuggestGeoTargetConstantsResponse, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
 	ctx = insertMetadata(ctx, c.xGoogMetadata)
 	opts = append((*c.CallOptions).SuggestGeoTargetConstants[0:len((*c.CallOptions).SuggestGeoTargetConstants):len((*c.CallOptions).SuggestGeoTargetConstants)], opts...)
 	var resp *servicespb.SuggestGeoTargetConstantsResponse

@@ -21,23 +21,24 @@ Please note that this is not an official project. But we think it is very low ri
 
 | google-ads-pb | Google Ads API | Sunset date |
 |---|---|---|
+| v1.5.0 | v14 | End of May 2024 |
 | v1.4.1 | v13.1 | End of January 2024 |
 | v1.4.0 | v13 | End of January 2024 | 
-| v1.3.1 | v12 | End of September 2023 |
+| v1.3.1 | v12 | <b>End of September 2023</b> |
 | <del>v1.2.1</del> | <del>v11.1</del> | Deprecated |
 | <del>v1.2.0</del> | <del>v11</del> | Deprecated |
 | <del>v1.1.1</del> | <del>v10</del> | Deprecated |
 
 ## Requirements
 
-- Golang 1.4 or later.
+- Go 1.20 or later.
 - Before starting, recommend to read the [OAuth2 guide](https://developers.google.com/google-ads/api/docs/oauth/overview).
 - Apply for a [developer token](https://developers.google.com/google-ads/api/docs/first-call/dev-token) if you don't already have one.
 
 ## Installation
 
 ```bash
-$ go get -d github.com/shenzhencenter/google-ads-pb
+$ go get github.com/shenzhencenter/google-ads-pb
 ```
     
 ## Getting started

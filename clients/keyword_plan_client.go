@@ -37,11 +37,7 @@ var newKeywordPlanClientHook clientHook
 
 // KeywordPlanCallOptions contains the retry settings for each method of KeywordPlanClient.
 type KeywordPlanCallOptions struct {
-	MutateKeywordPlans         []gax.CallOption
-	GenerateForecastCurve      []gax.CallOption
-	GenerateForecastTimeSeries []gax.CallOption
-	GenerateForecastMetrics    []gax.CallOption
-	GenerateHistoricalMetrics  []gax.CallOption
+	MutateKeywordPlans []gax.CallOption
 }
 
 func defaultKeywordPlanGRPCClientOptions() []option.ClientOption {
@@ -59,54 +55,7 @@ func defaultKeywordPlanGRPCClientOptions() []option.ClientOption {
 func defaultKeywordPlanCallOptions() *KeywordPlanCallOptions {
 	return &KeywordPlanCallOptions{
 		MutateKeywordPlans: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
-		GenerateForecastCurve: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
-		GenerateForecastTimeSeries: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
-		GenerateForecastMetrics: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.Unavailable,
-					codes.DeadlineExceeded,
-				}, gax.Backoff{
-					Initial:    5000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 1.30,
-				})
-			}),
-		},
-		GenerateHistoricalMetrics: []gax.CallOption{
+			gax.WithTimeout(14400000 * time.Millisecond),
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
 					codes.Unavailable,
@@ -127,10 +76,6 @@ type internalKeywordPlanClient interface {
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
 	MutateKeywordPlans(context.Context, *servicespb.MutateKeywordPlansRequest, ...gax.CallOption) (*servicespb.MutateKeywordPlansResponse, error)
-	GenerateForecastCurve(context.Context, *servicespb.GenerateForecastCurveRequest, ...gax.CallOption) (*servicespb.GenerateForecastCurveResponse, error)
-	GenerateForecastTimeSeries(context.Context, *servicespb.GenerateForecastTimeSeriesRequest, ...gax.CallOption) (*servicespb.GenerateForecastTimeSeriesResponse, error)
-	GenerateForecastMetrics(context.Context, *servicespb.GenerateForecastMetricsRequest, ...gax.CallOption) (*servicespb.GenerateForecastMetricsResponse, error)
-	GenerateHistoricalMetrics(context.Context, *servicespb.GenerateHistoricalMetricsRequest, ...gax.CallOption) (*servicespb.GenerateHistoricalMetricsResponse, error)
 }
 
 // KeywordPlanClient is a client for interacting with Google Ads API.
@@ -189,82 +134,12 @@ func (c *KeywordPlanClient) MutateKeywordPlans(ctx context.Context, req *service
 	return c.internalClient.MutateKeywordPlans(ctx, req, opts...)
 }
 
-// GenerateForecastCurve returns the requested Keyword Plan forecast curve.
-// Only the bidding strategy is considered for generating forecast curve.
-// The bidding strategy value specified in the plan is ignored.
-//
-// To generate a forecast at a value specified in the plan, use
-// KeywordPlanService.GenerateForecastMetrics.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// KeywordPlanError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *KeywordPlanClient) GenerateForecastCurve(ctx context.Context, req *servicespb.GenerateForecastCurveRequest, opts ...gax.CallOption) (*servicespb.GenerateForecastCurveResponse, error) {
-	return c.internalClient.GenerateForecastCurve(ctx, req, opts...)
-}
-
-// GenerateForecastTimeSeries returns a forecast in the form of a time series for the Keyword Plan over
-// the next 52 weeks.
-// (1) Forecasts closer to the current date are generally more accurate than
-// further out.
-//
-// (2) The forecast reflects seasonal trends using current and
-// prior traffic patterns. The forecast period of the plan is ignored.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// KeywordPlanError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *KeywordPlanClient) GenerateForecastTimeSeries(ctx context.Context, req *servicespb.GenerateForecastTimeSeriesRequest, opts ...gax.CallOption) (*servicespb.GenerateForecastTimeSeriesResponse, error) {
-	return c.internalClient.GenerateForecastTimeSeries(ctx, req, opts...)
-}
-
-// GenerateForecastMetrics returns the requested Keyword Plan forecasts.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// KeywordPlanError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *KeywordPlanClient) GenerateForecastMetrics(ctx context.Context, req *servicespb.GenerateForecastMetricsRequest, opts ...gax.CallOption) (*servicespb.GenerateForecastMetricsResponse, error) {
-	return c.internalClient.GenerateForecastMetrics(ctx, req, opts...)
-}
-
-// GenerateHistoricalMetrics returns the requested Keyword Plan historical metrics.
-//
-// List of thrown errors:
-// AuthenticationError (at )
-// AuthorizationError (at )
-// HeaderError (at )
-// InternalError (at )
-// KeywordPlanError (at )
-// QuotaError (at )
-// RequestError (at )
-func (c *KeywordPlanClient) GenerateHistoricalMetrics(ctx context.Context, req *servicespb.GenerateHistoricalMetricsRequest, opts ...gax.CallOption) (*servicespb.GenerateHistoricalMetricsResponse, error) {
-	return c.internalClient.GenerateHistoricalMetrics(ctx, req, opts...)
-}
-
 // keywordPlanGRPCClient is a client for interacting with Google Ads API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 type keywordPlanGRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
-
-	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
-	disableDeadlines bool
 
 	// Points back to the CallOptions field of the containing KeywordPlanClient
 	CallOptions **KeywordPlanCallOptions
@@ -290,11 +165,6 @@ func NewKeywordPlanClient(ctx context.Context, opts ...option.ClientOption) (*Ke
 		clientOpts = append(clientOpts, hookOpts...)
 	}
 
-	disableDeadlines, err := checkDisableDeadlines()
-	if err != nil {
-		return nil, err
-	}
-
 	connPool, err := gtransport.DialPool(ctx, append(clientOpts, opts...)...)
 	if err != nil {
 		return nil, err
@@ -303,7 +173,6 @@ func NewKeywordPlanClient(ctx context.Context, opts ...option.ClientOption) (*Ke
 
 	c := &keywordPlanGRPCClient{
 		connPool:          connPool,
-		disableDeadlines:  disableDeadlines,
 		keywordPlanClient: servicespb.NewKeywordPlanServiceClient(connPool),
 		CallOptions:       &client.CallOptions,
 	}
@@ -326,7 +195,7 @@ func (c *keywordPlanGRPCClient) Connection() *grpc.ClientConn {
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
 func (c *keywordPlanGRPCClient) setGoogleClientInfo(keyval ...string) {
-	kv := append([]string{"gl-go", versionGo()}, keyval...)
+	kv := append([]string{"gl-go", gax.GoVersion}, keyval...)
 	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
@@ -338,11 +207,6 @@ func (c *keywordPlanGRPCClient) Close() error {
 }
 
 func (c *keywordPlanGRPCClient) MutateKeywordPlans(ctx context.Context, req *servicespb.MutateKeywordPlansRequest, opts ...gax.CallOption) (*servicespb.MutateKeywordPlansResponse, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
 
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
@@ -351,94 +215,6 @@ func (c *keywordPlanGRPCClient) MutateKeywordPlans(ctx context.Context, req *ser
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
 		resp, err = c.keywordPlanClient.MutateKeywordPlans(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
-}
-
-func (c *keywordPlanGRPCClient) GenerateForecastCurve(ctx context.Context, req *servicespb.GenerateForecastCurveRequest, opts ...gax.CallOption) (*servicespb.GenerateForecastCurveResponse, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "keyword_plan", url.QueryEscape(req.GetKeywordPlan())))
-
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GenerateForecastCurve[0:len((*c.CallOptions).GenerateForecastCurve):len((*c.CallOptions).GenerateForecastCurve)], opts...)
-	var resp *servicespb.GenerateForecastCurveResponse
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.keywordPlanClient.GenerateForecastCurve(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
-}
-
-func (c *keywordPlanGRPCClient) GenerateForecastTimeSeries(ctx context.Context, req *servicespb.GenerateForecastTimeSeriesRequest, opts ...gax.CallOption) (*servicespb.GenerateForecastTimeSeriesResponse, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "keyword_plan", url.QueryEscape(req.GetKeywordPlan())))
-
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GenerateForecastTimeSeries[0:len((*c.CallOptions).GenerateForecastTimeSeries):len((*c.CallOptions).GenerateForecastTimeSeries)], opts...)
-	var resp *servicespb.GenerateForecastTimeSeriesResponse
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.keywordPlanClient.GenerateForecastTimeSeries(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
-}
-
-func (c *keywordPlanGRPCClient) GenerateForecastMetrics(ctx context.Context, req *servicespb.GenerateForecastMetricsRequest, opts ...gax.CallOption) (*servicespb.GenerateForecastMetricsResponse, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "keyword_plan", url.QueryEscape(req.GetKeywordPlan())))
-
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GenerateForecastMetrics[0:len((*c.CallOptions).GenerateForecastMetrics):len((*c.CallOptions).GenerateForecastMetrics)], opts...)
-	var resp *servicespb.GenerateForecastMetricsResponse
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.keywordPlanClient.GenerateForecastMetrics(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
-}
-
-func (c *keywordPlanGRPCClient) GenerateHistoricalMetrics(ctx context.Context, req *servicespb.GenerateHistoricalMetricsRequest, opts ...gax.CallOption) (*servicespb.GenerateHistoricalMetricsResponse, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "keyword_plan", url.QueryEscape(req.GetKeywordPlan())))
-
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).GenerateHistoricalMetrics[0:len((*c.CallOptions).GenerateHistoricalMetrics):len((*c.CallOptions).GenerateHistoricalMetrics)], opts...)
-	var resp *servicespb.GenerateHistoricalMetricsResponse
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.keywordPlanClient.GenerateHistoricalMetrics(ctx, req, settings.GRPC...)
 		return err
 	}, opts...)
 	if err != nil {

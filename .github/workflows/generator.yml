@@ -6,7 +6,7 @@ on:
       version:
         description: "version"
         required: true
-        default: "v13"
+        default: "v14"
 
 jobs:
   build:
@@ -44,6 +44,7 @@ jobs:
       - name: Remove old files
         run: |
           rm -rf $OUTPUT_PATH/clients $OUTPUT_PATH/common $OUTPUT_PATH/enums $OUTPUT_PATH/errors $OUTPUT_PATH/resources $OUTPUT_PATH/services
+          rm -rf $OUTPUT_PATH/go.mod $OUTPUT_PATH/go.sum
 
       - name: Build
         run: |
