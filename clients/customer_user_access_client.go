@@ -55,6 +55,7 @@ func defaultCustomerUserAccessGRPCClientOptions() []option.ClientOption {
 func defaultCustomerUserAccessCallOptions() *CustomerUserAccessCallOptions {
 	return &CustomerUserAccessCallOptions{
 		MutateCustomerUserAccess: []gax.CallOption{
+			gax.WithTimeout(14400000 * time.Millisecond),
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
 					codes.Unavailable,
@@ -136,9 +137,6 @@ type customerUserAccessGRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
 
-	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
-	disableDeadlines bool
-
 	// Points back to the CallOptions field of the containing CustomerUserAccessClient
 	CallOptions **CustomerUserAccessCallOptions
 
@@ -163,11 +161,6 @@ func NewCustomerUserAccessClient(ctx context.Context, opts ...option.ClientOptio
 		clientOpts = append(clientOpts, hookOpts...)
 	}
 
-	disableDeadlines, err := checkDisableDeadlines()
-	if err != nil {
-		return nil, err
-	}
-
 	connPool, err := gtransport.DialPool(ctx, append(clientOpts, opts...)...)
 	if err != nil {
 		return nil, err
@@ -176,7 +169,6 @@ func NewCustomerUserAccessClient(ctx context.Context, opts ...option.ClientOptio
 
 	c := &customerUserAccessGRPCClient{
 		connPool:                 connPool,
-		disableDeadlines:         disableDeadlines,
 		customerUserAccessClient: servicespb.NewCustomerUserAccessServiceClient(connPool),
 		CallOptions:              &client.CallOptions,
 	}
@@ -199,7 +191,7 @@ func (c *customerUserAccessGRPCClient) Connection() *grpc.ClientConn {
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
 func (c *customerUserAccessGRPCClient) setGoogleClientInfo(keyval ...string) {
-	kv := append([]string{"gl-go", versionGo()}, keyval...)
+	kv := append([]string{"gl-go", gax.GoVersion}, keyval...)
 	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
@@ -211,11 +203,6 @@ func (c *customerUserAccessGRPCClient) Close() error {
 }
 
 func (c *customerUserAccessGRPCClient) MutateCustomerUserAccess(ctx context.Context, req *servicespb.MutateCustomerUserAccessRequest, opts ...gax.CallOption) (*servicespb.MutateCustomerUserAccessResponse, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
 
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)

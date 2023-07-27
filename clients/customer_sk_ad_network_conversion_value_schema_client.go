@@ -55,6 +55,7 @@ func defaultCustomerSkAdNetworkConversionValueSchemaGRPCClientOptions() []option
 func defaultCustomerSkAdNetworkConversionValueSchemaCallOptions() *CustomerSkAdNetworkConversionValueSchemaCallOptions {
 	return &CustomerSkAdNetworkConversionValueSchemaCallOptions{
 		MutateCustomerSkAdNetworkConversionValueSchema: []gax.CallOption{
+			gax.WithTimeout(14400000 * time.Millisecond),
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
 					codes.Unavailable,
@@ -131,9 +132,6 @@ type customerSkAdNetworkConversionValueSchemaGRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
 
-	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
-	disableDeadlines bool
-
 	// Points back to the CallOptions field of the containing CustomerSkAdNetworkConversionValueSchemaClient
 	CallOptions **CustomerSkAdNetworkConversionValueSchemaCallOptions
 
@@ -158,11 +156,6 @@ func NewCustomerSkAdNetworkConversionValueSchemaClient(ctx context.Context, opts
 		clientOpts = append(clientOpts, hookOpts...)
 	}
 
-	disableDeadlines, err := checkDisableDeadlines()
-	if err != nil {
-		return nil, err
-	}
-
 	connPool, err := gtransport.DialPool(ctx, append(clientOpts, opts...)...)
 	if err != nil {
 		return nil, err
@@ -170,8 +163,7 @@ func NewCustomerSkAdNetworkConversionValueSchemaClient(ctx context.Context, opts
 	client := CustomerSkAdNetworkConversionValueSchemaClient{CallOptions: defaultCustomerSkAdNetworkConversionValueSchemaCallOptions()}
 
 	c := &customerSkAdNetworkConversionValueSchemaGRPCClient{
-		connPool:         connPool,
-		disableDeadlines: disableDeadlines,
+		connPool: connPool,
 		customerSkAdNetworkConversionValueSchemaClient: servicespb.NewCustomerSkAdNetworkConversionValueSchemaServiceClient(connPool),
 		CallOptions: &client.CallOptions,
 	}
@@ -194,7 +186,7 @@ func (c *customerSkAdNetworkConversionValueSchemaGRPCClient) Connection() *grpc.
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
 func (c *customerSkAdNetworkConversionValueSchemaGRPCClient) setGoogleClientInfo(keyval ...string) {
-	kv := append([]string{"gl-go", versionGo()}, keyval...)
+	kv := append([]string{"gl-go", gax.GoVersion}, keyval...)
 	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
@@ -206,11 +198,6 @@ func (c *customerSkAdNetworkConversionValueSchemaGRPCClient) Close() error {
 }
 
 func (c *customerSkAdNetworkConversionValueSchemaGRPCClient) MutateCustomerSkAdNetworkConversionValueSchema(ctx context.Context, req *servicespb.MutateCustomerSkAdNetworkConversionValueSchemaRequest, opts ...gax.CallOption) (*servicespb.MutateCustomerSkAdNetworkConversionValueSchemaResponse, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
 
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)

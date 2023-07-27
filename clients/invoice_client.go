@@ -55,6 +55,7 @@ func defaultInvoiceGRPCClientOptions() []option.ClientOption {
 func defaultInvoiceCallOptions() *InvoiceCallOptions {
 	return &InvoiceCallOptions{
 		ListInvoices: []gax.CallOption{
+			gax.WithTimeout(14400000 * time.Millisecond),
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
 					codes.Unavailable,
@@ -134,9 +135,6 @@ type invoiceGRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
 
-	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
-	disableDeadlines bool
-
 	// Points back to the CallOptions field of the containing InvoiceClient
 	CallOptions **InvoiceCallOptions
 
@@ -161,11 +159,6 @@ func NewInvoiceClient(ctx context.Context, opts ...option.ClientOption) (*Invoic
 		clientOpts = append(clientOpts, hookOpts...)
 	}
 
-	disableDeadlines, err := checkDisableDeadlines()
-	if err != nil {
-		return nil, err
-	}
-
 	connPool, err := gtransport.DialPool(ctx, append(clientOpts, opts...)...)
 	if err != nil {
 		return nil, err
@@ -173,10 +166,9 @@ func NewInvoiceClient(ctx context.Context, opts ...option.ClientOption) (*Invoic
 	client := InvoiceClient{CallOptions: defaultInvoiceCallOptions()}
 
 	c := &invoiceGRPCClient{
-		connPool:         connPool,
-		disableDeadlines: disableDeadlines,
-		invoiceClient:    servicespb.NewInvoiceServiceClient(connPool),
-		CallOptions:      &client.CallOptions,
+		connPool:      connPool,
+		invoiceClient: servicespb.NewInvoiceServiceClient(connPool),
+		CallOptions:   &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
@@ -197,7 +189,7 @@ func (c *invoiceGRPCClient) Connection() *grpc.ClientConn {
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
 func (c *invoiceGRPCClient) setGoogleClientInfo(keyval ...string) {
-	kv := append([]string{"gl-go", versionGo()}, keyval...)
+	kv := append([]string{"gl-go", gax.GoVersion}, keyval...)
 	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
@@ -209,11 +201,6 @@ func (c *invoiceGRPCClient) Close() error {
 }
 
 func (c *invoiceGRPCClient) ListInvoices(ctx context.Context, req *servicespb.ListInvoicesRequest, opts ...gax.CallOption) (*servicespb.ListInvoicesResponse, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
 
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)

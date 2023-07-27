@@ -58,6 +58,7 @@ func defaultAudienceInsightsGRPCClientOptions() []option.ClientOption {
 func defaultAudienceInsightsCallOptions() *AudienceInsightsCallOptions {
 	return &AudienceInsightsCallOptions{
 		GenerateInsightsFinderReport: []gax.CallOption{
+			gax.WithTimeout(14400000 * time.Millisecond),
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
 					codes.Unavailable,
@@ -70,6 +71,7 @@ func defaultAudienceInsightsCallOptions() *AudienceInsightsCallOptions {
 			}),
 		},
 		ListAudienceInsightsAttributes: []gax.CallOption{
+			gax.WithTimeout(14400000 * time.Millisecond),
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
 					codes.Unavailable,
@@ -82,6 +84,7 @@ func defaultAudienceInsightsCallOptions() *AudienceInsightsCallOptions {
 			}),
 		},
 		ListInsightsEligibleDates: []gax.CallOption{
+			gax.WithTimeout(14400000 * time.Millisecond),
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
 					codes.Unavailable,
@@ -94,6 +97,7 @@ func defaultAudienceInsightsCallOptions() *AudienceInsightsCallOptions {
 			}),
 		},
 		GenerateAudienceCompositionInsights: []gax.CallOption{
+			gax.WithTimeout(14400000 * time.Millisecond),
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
 					codes.Unavailable,
@@ -226,9 +230,6 @@ type audienceInsightsGRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
 
-	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
-	disableDeadlines bool
-
 	// Points back to the CallOptions field of the containing AudienceInsightsClient
 	CallOptions **AudienceInsightsCallOptions
 
@@ -255,11 +256,6 @@ func NewAudienceInsightsClient(ctx context.Context, opts ...option.ClientOption)
 		clientOpts = append(clientOpts, hookOpts...)
 	}
 
-	disableDeadlines, err := checkDisableDeadlines()
-	if err != nil {
-		return nil, err
-	}
-
 	connPool, err := gtransport.DialPool(ctx, append(clientOpts, opts...)...)
 	if err != nil {
 		return nil, err
@@ -268,7 +264,6 @@ func NewAudienceInsightsClient(ctx context.Context, opts ...option.ClientOption)
 
 	c := &audienceInsightsGRPCClient{
 		connPool:               connPool,
-		disableDeadlines:       disableDeadlines,
 		audienceInsightsClient: servicespb.NewAudienceInsightsServiceClient(connPool),
 		CallOptions:            &client.CallOptions,
 	}
@@ -291,7 +286,7 @@ func (c *audienceInsightsGRPCClient) Connection() *grpc.ClientConn {
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
 func (c *audienceInsightsGRPCClient) setGoogleClientInfo(keyval ...string) {
-	kv := append([]string{"gl-go", versionGo()}, keyval...)
+	kv := append([]string{"gl-go", gax.GoVersion}, keyval...)
 	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
@@ -303,11 +298,6 @@ func (c *audienceInsightsGRPCClient) Close() error {
 }
 
 func (c *audienceInsightsGRPCClient) GenerateInsightsFinderReport(ctx context.Context, req *servicespb.GenerateInsightsFinderReportRequest, opts ...gax.CallOption) (*servicespb.GenerateInsightsFinderReportResponse, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
 
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
@@ -325,11 +315,6 @@ func (c *audienceInsightsGRPCClient) GenerateInsightsFinderReport(ctx context.Co
 }
 
 func (c *audienceInsightsGRPCClient) ListAudienceInsightsAttributes(ctx context.Context, req *servicespb.ListAudienceInsightsAttributesRequest, opts ...gax.CallOption) (*servicespb.ListAudienceInsightsAttributesResponse, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
 
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
@@ -347,11 +332,6 @@ func (c *audienceInsightsGRPCClient) ListAudienceInsightsAttributes(ctx context.
 }
 
 func (c *audienceInsightsGRPCClient) ListInsightsEligibleDates(ctx context.Context, req *servicespb.ListInsightsEligibleDatesRequest, opts ...gax.CallOption) (*servicespb.ListInsightsEligibleDatesResponse, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
 	ctx = insertMetadata(ctx, c.xGoogMetadata)
 	opts = append((*c.CallOptions).ListInsightsEligibleDates[0:len((*c.CallOptions).ListInsightsEligibleDates):len((*c.CallOptions).ListInsightsEligibleDates)], opts...)
 	var resp *servicespb.ListInsightsEligibleDatesResponse
@@ -367,11 +347,6 @@ func (c *audienceInsightsGRPCClient) ListInsightsEligibleDates(ctx context.Conte
 }
 
 func (c *audienceInsightsGRPCClient) GenerateAudienceCompositionInsights(ctx context.Context, req *servicespb.GenerateAudienceCompositionInsightsRequest, opts ...gax.CallOption) (*servicespb.GenerateAudienceCompositionInsightsResponse, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 14400000*time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
 
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
