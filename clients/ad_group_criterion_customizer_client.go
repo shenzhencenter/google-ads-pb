@@ -30,7 +30,6 @@ import (
 	gtransport "google.golang.org/api/transport/grpc"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/metadata"
 )
 
 var newAdGroupCriterionCustomizerClientHook clientHook
@@ -133,7 +132,7 @@ type adGroupCriterionCustomizerGRPCClient struct {
 	adGroupCriterionCustomizerClient servicespb.AdGroupCriterionCustomizerServiceClient
 
 	// The x-goog-* metadata to be sent with each request.
-	xGoogMetadata metadata.MD
+	xGoogHeaders []string
 }
 
 // NewAdGroupCriterionCustomizerClient creates a new ad group criterion customizer service client based on gRPC.
@@ -182,7 +181,7 @@ func (c *adGroupCriterionCustomizerGRPCClient) Connection() *grpc.ClientConn {
 func (c *adGroupCriterionCustomizerGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", gax.GoVersion}, keyval...)
 	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
-	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
+	c.xGoogHeaders = []string{"x-goog-api-client", gax.XGoogHeader(kv...)}
 }
 
 // Close closes the connection to the API service. The user should invoke this when
@@ -192,9 +191,10 @@ func (c *adGroupCriterionCustomizerGRPCClient) Close() error {
 }
 
 func (c *adGroupCriterionCustomizerGRPCClient) MutateAdGroupCriterionCustomizers(ctx context.Context, req *servicespb.MutateAdGroupCriterionCustomizersRequest, opts ...gax.CallOption) (*servicespb.MutateAdGroupCriterionCustomizersResponse, error) {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId()))}
 
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
 	opts = append((*c.CallOptions).MutateAdGroupCriterionCustomizers[0:len((*c.CallOptions).MutateAdGroupCriterionCustomizers):len((*c.CallOptions).MutateAdGroupCriterionCustomizers)], opts...)
 	var resp *servicespb.MutateAdGroupCriterionCustomizersResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {

@@ -30,7 +30,6 @@ import (
 	gtransport "google.golang.org/api/transport/grpc"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/metadata"
 )
 
 var newCustomerSkAdNetworkConversionValueSchemaClientHook clientHook
@@ -139,7 +138,7 @@ type customerSkAdNetworkConversionValueSchemaGRPCClient struct {
 	customerSkAdNetworkConversionValueSchemaClient servicespb.CustomerSkAdNetworkConversionValueSchemaServiceClient
 
 	// The x-goog-* metadata to be sent with each request.
-	xGoogMetadata metadata.MD
+	xGoogHeaders []string
 }
 
 // NewCustomerSkAdNetworkConversionValueSchemaClient creates a new customer sk ad network conversion value schema service client based on gRPC.
@@ -188,7 +187,7 @@ func (c *customerSkAdNetworkConversionValueSchemaGRPCClient) Connection() *grpc.
 func (c *customerSkAdNetworkConversionValueSchemaGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", gax.GoVersion}, keyval...)
 	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
-	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
+	c.xGoogHeaders = []string{"x-goog-api-client", gax.XGoogHeader(kv...)}
 }
 
 // Close closes the connection to the API service. The user should invoke this when
@@ -198,9 +197,10 @@ func (c *customerSkAdNetworkConversionValueSchemaGRPCClient) Close() error {
 }
 
 func (c *customerSkAdNetworkConversionValueSchemaGRPCClient) MutateCustomerSkAdNetworkConversionValueSchema(ctx context.Context, req *servicespb.MutateCustomerSkAdNetworkConversionValueSchemaRequest, opts ...gax.CallOption) (*servicespb.MutateCustomerSkAdNetworkConversionValueSchemaResponse, error) {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId()))}
 
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
 	opts = append((*c.CallOptions).MutateCustomerSkAdNetworkConversionValueSchema[0:len((*c.CallOptions).MutateCustomerSkAdNetworkConversionValueSchema):len((*c.CallOptions).MutateCustomerSkAdNetworkConversionValueSchema)], opts...)
 	var resp *servicespb.MutateCustomerSkAdNetworkConversionValueSchemaResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {

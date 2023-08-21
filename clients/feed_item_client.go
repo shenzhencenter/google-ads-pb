@@ -30,7 +30,6 @@ import (
 	gtransport "google.golang.org/api/transport/grpc"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/metadata"
 )
 
 var newFeedItemClientHook clientHook
@@ -160,7 +159,7 @@ type feedItemGRPCClient struct {
 	feedItemClient servicespb.FeedItemServiceClient
 
 	// The x-goog-* metadata to be sent with each request.
-	xGoogMetadata metadata.MD
+	xGoogHeaders []string
 }
 
 // NewFeedItemClient creates a new feed item service client based on gRPC.
@@ -209,7 +208,7 @@ func (c *feedItemGRPCClient) Connection() *grpc.ClientConn {
 func (c *feedItemGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", gax.GoVersion}, keyval...)
 	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
-	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
+	c.xGoogHeaders = []string{"x-goog-api-client", gax.XGoogHeader(kv...)}
 }
 
 // Close closes the connection to the API service. The user should invoke this when
@@ -219,9 +218,10 @@ func (c *feedItemGRPCClient) Close() error {
 }
 
 func (c *feedItemGRPCClient) MutateFeedItems(ctx context.Context, req *servicespb.MutateFeedItemsRequest, opts ...gax.CallOption) (*servicespb.MutateFeedItemsResponse, error) {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId()))}
 
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
 	opts = append((*c.CallOptions).MutateFeedItems[0:len((*c.CallOptions).MutateFeedItems):len((*c.CallOptions).MutateFeedItems)], opts...)
 	var resp *servicespb.MutateFeedItemsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {

@@ -34,7 +34,6 @@ import (
 	gtransport "google.golang.org/api/transport/grpc"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/metadata"
 )
 
 var newOfflineUserDataJobClientHook clientHook
@@ -230,7 +229,7 @@ type offlineUserDataJobGRPCClient struct {
 	LROClient **lroauto.OperationsClient
 
 	// The x-goog-* metadata to be sent with each request.
-	xGoogMetadata metadata.MD
+	xGoogHeaders []string
 }
 
 // NewOfflineUserDataJobClient creates a new offline user data job service client based on gRPC.
@@ -290,7 +289,7 @@ func (c *offlineUserDataJobGRPCClient) Connection() *grpc.ClientConn {
 func (c *offlineUserDataJobGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", gax.GoVersion}, keyval...)
 	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
-	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
+	c.xGoogHeaders = []string{"x-goog-api-client", gax.XGoogHeader(kv...)}
 }
 
 // Close closes the connection to the API service. The user should invoke this when
@@ -300,9 +299,10 @@ func (c *offlineUserDataJobGRPCClient) Close() error {
 }
 
 func (c *offlineUserDataJobGRPCClient) CreateOfflineUserDataJob(ctx context.Context, req *servicespb.CreateOfflineUserDataJobRequest, opts ...gax.CallOption) (*servicespb.CreateOfflineUserDataJobResponse, error) {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId()))}
 
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
 	opts = append((*c.CallOptions).CreateOfflineUserDataJob[0:len((*c.CallOptions).CreateOfflineUserDataJob):len((*c.CallOptions).CreateOfflineUserDataJob)], opts...)
 	var resp *servicespb.CreateOfflineUserDataJobResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -317,9 +317,10 @@ func (c *offlineUserDataJobGRPCClient) CreateOfflineUserDataJob(ctx context.Cont
 }
 
 func (c *offlineUserDataJobGRPCClient) AddOfflineUserDataJobOperations(ctx context.Context, req *servicespb.AddOfflineUserDataJobOperationsRequest, opts ...gax.CallOption) (*servicespb.AddOfflineUserDataJobOperationsResponse, error) {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName()))}
 
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
 	opts = append((*c.CallOptions).AddOfflineUserDataJobOperations[0:len((*c.CallOptions).AddOfflineUserDataJobOperations):len((*c.CallOptions).AddOfflineUserDataJobOperations)], opts...)
 	var resp *servicespb.AddOfflineUserDataJobOperationsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -334,9 +335,10 @@ func (c *offlineUserDataJobGRPCClient) AddOfflineUserDataJobOperations(ctx conte
 }
 
 func (c *offlineUserDataJobGRPCClient) RunOfflineUserDataJob(ctx context.Context, req *servicespb.RunOfflineUserDataJobRequest, opts ...gax.CallOption) (*RunOfflineUserDataJobOperation, error) {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName()))}
 
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
 	opts = append((*c.CallOptions).RunOfflineUserDataJob[0:len((*c.CallOptions).RunOfflineUserDataJob):len((*c.CallOptions).RunOfflineUserDataJob)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {

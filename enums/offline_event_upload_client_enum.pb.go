@@ -34,7 +34,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-// Next id: 5
+// Type of client.
 type OfflineEventUploadClientEnum_OfflineEventUploadClient int32
 
 const (

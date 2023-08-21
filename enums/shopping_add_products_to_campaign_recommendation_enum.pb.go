@@ -104,7 +104,6 @@ func (ShoppingAddProductsToCampaignRecommendationEnum_Reason) EnumDescriptor() (
 
 // Indicates the key issue that results in a shopping campaign targeting zero
 // products.
-// Next Id: 5
 type ShoppingAddProductsToCampaignRecommendationEnum struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

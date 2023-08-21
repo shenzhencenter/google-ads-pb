@@ -30,7 +30,6 @@ import (
 	gtransport "google.golang.org/api/transport/grpc"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/metadata"
 )
 
 var newAudienceInsightsClientHook clientHook
@@ -237,7 +236,7 @@ type audienceInsightsGRPCClient struct {
 	audienceInsightsClient servicespb.AudienceInsightsServiceClient
 
 	// The x-goog-* metadata to be sent with each request.
-	xGoogMetadata metadata.MD
+	xGoogHeaders []string
 }
 
 // NewAudienceInsightsClient creates a new audience insights service client based on gRPC.
@@ -288,7 +287,7 @@ func (c *audienceInsightsGRPCClient) Connection() *grpc.ClientConn {
 func (c *audienceInsightsGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", gax.GoVersion}, keyval...)
 	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
-	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
+	c.xGoogHeaders = []string{"x-goog-api-client", gax.XGoogHeader(kv...)}
 }
 
 // Close closes the connection to the API service. The user should invoke this when
@@ -298,9 +297,10 @@ func (c *audienceInsightsGRPCClient) Close() error {
 }
 
 func (c *audienceInsightsGRPCClient) GenerateInsightsFinderReport(ctx context.Context, req *servicespb.GenerateInsightsFinderReportRequest, opts ...gax.CallOption) (*servicespb.GenerateInsightsFinderReportResponse, error) {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId()))}
 
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
 	opts = append((*c.CallOptions).GenerateInsightsFinderReport[0:len((*c.CallOptions).GenerateInsightsFinderReport):len((*c.CallOptions).GenerateInsightsFinderReport)], opts...)
 	var resp *servicespb.GenerateInsightsFinderReportResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -315,9 +315,10 @@ func (c *audienceInsightsGRPCClient) GenerateInsightsFinderReport(ctx context.Co
 }
 
 func (c *audienceInsightsGRPCClient) ListAudienceInsightsAttributes(ctx context.Context, req *servicespb.ListAudienceInsightsAttributesRequest, opts ...gax.CallOption) (*servicespb.ListAudienceInsightsAttributesResponse, error) {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId()))}
 
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
 	opts = append((*c.CallOptions).ListAudienceInsightsAttributes[0:len((*c.CallOptions).ListAudienceInsightsAttributes):len((*c.CallOptions).ListAudienceInsightsAttributes)], opts...)
 	var resp *servicespb.ListAudienceInsightsAttributesResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -332,7 +333,7 @@ func (c *audienceInsightsGRPCClient) ListAudienceInsightsAttributes(ctx context.
 }
 
 func (c *audienceInsightsGRPCClient) ListInsightsEligibleDates(ctx context.Context, req *servicespb.ListInsightsEligibleDatesRequest, opts ...gax.CallOption) (*servicespb.ListInsightsEligibleDatesResponse, error) {
-	ctx = insertMetadata(ctx, c.xGoogMetadata)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, c.xGoogHeaders...)
 	opts = append((*c.CallOptions).ListInsightsEligibleDates[0:len((*c.CallOptions).ListInsightsEligibleDates):len((*c.CallOptions).ListInsightsEligibleDates)], opts...)
 	var resp *servicespb.ListInsightsEligibleDatesResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -347,9 +348,10 @@ func (c *audienceInsightsGRPCClient) ListInsightsEligibleDates(ctx context.Conte
 }
 
 func (c *audienceInsightsGRPCClient) GenerateAudienceCompositionInsights(ctx context.Context, req *servicespb.GenerateAudienceCompositionInsightsRequest, opts ...gax.CallOption) (*servicespb.GenerateAudienceCompositionInsightsResponse, error) {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId()))}
 
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
 	opts = append((*c.CallOptions).GenerateAudienceCompositionInsights[0:len((*c.CallOptions).GenerateAudienceCompositionInsights):len((*c.CallOptions).GenerateAudienceCompositionInsights)], opts...)
 	var resp *servicespb.GenerateAudienceCompositionInsightsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {

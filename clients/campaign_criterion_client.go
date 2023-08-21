@@ -30,7 +30,6 @@ import (
 	gtransport "google.golang.org/api/transport/grpc"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/metadata"
 )
 
 var newCampaignCriterionClientHook clientHook
@@ -163,7 +162,7 @@ type campaignCriterionGRPCClient struct {
 	campaignCriterionClient servicespb.CampaignCriterionServiceClient
 
 	// The x-goog-* metadata to be sent with each request.
-	xGoogMetadata metadata.MD
+	xGoogHeaders []string
 }
 
 // NewCampaignCriterionClient creates a new campaign criterion service client based on gRPC.
@@ -212,7 +211,7 @@ func (c *campaignCriterionGRPCClient) Connection() *grpc.ClientConn {
 func (c *campaignCriterionGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", gax.GoVersion}, keyval...)
 	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
-	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
+	c.xGoogHeaders = []string{"x-goog-api-client", gax.XGoogHeader(kv...)}
 }
 
 // Close closes the connection to the API service. The user should invoke this when
@@ -222,9 +221,10 @@ func (c *campaignCriterionGRPCClient) Close() error {
 }
 
 func (c *campaignCriterionGRPCClient) MutateCampaignCriteria(ctx context.Context, req *servicespb.MutateCampaignCriteriaRequest, opts ...gax.CallOption) (*servicespb.MutateCampaignCriteriaResponse, error) {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId()))}
 
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
 	opts = append((*c.CallOptions).MutateCampaignCriteria[0:len((*c.CallOptions).MutateCampaignCriteria):len((*c.CallOptions).MutateCampaignCriteria)], opts...)
 	var resp *servicespb.MutateCampaignCriteriaResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {

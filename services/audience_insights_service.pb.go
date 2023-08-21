@@ -464,7 +464,8 @@ func (x *ListAudienceInsightsAttributesResponse) GetAttributes() []*AudienceInsi
 	return nil
 }
 
-// Request message for [AudienceInsightsService.ListAudienceInsightsDates][].
+// Request message for
+// [AudienceInsightsService.ListInsightsEligibleDates][google.ads.googleads.v14.services.AudienceInsightsService.ListInsightsEligibleDates].
 type ListInsightsEligibleDatesRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -503,7 +504,8 @@ func (*ListInsightsEligibleDatesRequest) Descriptor() ([]byte, []int) {
 	return file_google_ads_googleads_v14_services_audience_insights_service_proto_rawDescGZIP(), []int{6}
 }
 
-// Response message for [AudienceInsightsService.ListAudienceInsightsDates][].
+// Response message for
+// [AudienceInsightsService.ListInsightsEligibleDates][google.ads.googleads.v14.services.AudienceInsightsService.ListInsightsEligibleDates].
 type ListInsightsEligibleDatesResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

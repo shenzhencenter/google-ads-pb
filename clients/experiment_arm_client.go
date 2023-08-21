@@ -30,7 +30,6 @@ import (
 	gtransport "google.golang.org/api/transport/grpc"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/metadata"
 )
 
 var newExperimentArmClientHook clientHook
@@ -142,7 +141,7 @@ type experimentArmGRPCClient struct {
 	experimentArmClient servicespb.ExperimentArmServiceClient
 
 	// The x-goog-* metadata to be sent with each request.
-	xGoogMetadata metadata.MD
+	xGoogHeaders []string
 }
 
 // NewExperimentArmClient creates a new experiment arm service client based on gRPC.
@@ -191,7 +190,7 @@ func (c *experimentArmGRPCClient) Connection() *grpc.ClientConn {
 func (c *experimentArmGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", gax.GoVersion}, keyval...)
 	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
-	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
+	c.xGoogHeaders = []string{"x-goog-api-client", gax.XGoogHeader(kv...)}
 }
 
 // Close closes the connection to the API service. The user should invoke this when
@@ -201,9 +200,10 @@ func (c *experimentArmGRPCClient) Close() error {
 }
 
 func (c *experimentArmGRPCClient) MutateExperimentArms(ctx context.Context, req *servicespb.MutateExperimentArmsRequest, opts ...gax.CallOption) (*servicespb.MutateExperimentArmsResponse, error) {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId()))}
 
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
 	opts = append((*c.CallOptions).MutateExperimentArms[0:len((*c.CallOptions).MutateExperimentArms):len((*c.CallOptions).MutateExperimentArms)], opts...)
 	var resp *servicespb.MutateExperimentArmsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {

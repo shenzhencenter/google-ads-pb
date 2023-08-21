@@ -139,7 +139,7 @@ const (
 	// Read only.
 	ConversionActionTypeEnum_STORE_VISITS ConversionActionTypeEnum_ConversionActionType = 36
 	// Conversions created from website events (such as form submissions or page
-	// loads), that don't use individually coded event snippets.
+	// loads), that don't use individually coded event snippets. Read only.
 	ConversionActionTypeEnum_WEBPAGE_CODELESS ConversionActionTypeEnum_ConversionActionType = 37
 	// Conversions that come from linked Universal Analytics goals.
 	ConversionActionTypeEnum_UNIVERSAL_ANALYTICS_GOAL ConversionActionTypeEnum_ConversionActionType = 38

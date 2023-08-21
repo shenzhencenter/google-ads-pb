@@ -37,7 +37,7 @@ const (
 )
 
 // Request message for
-// [CustomerUserAccessInvitation.MutateCustomerUserAccessInvitation][]
+// [CustomerUserAccessInvitationService.MutateCustomerUserAccessInvitation][google.ads.googleads.v14.services.CustomerUserAccessInvitationService.MutateCustomerUserAccessInvitation]
 type MutateCustomerUserAccessInvitationRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

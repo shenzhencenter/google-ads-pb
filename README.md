@@ -21,6 +21,7 @@ Please note that this is not an official project. But we think it is very low ri
 
 | google-ads-pb | Google Ads API | Sunset date |
 |---|---|---|
+| v1.5.1 | v14.1 | End of May 2024 |
 | v1.5.0 | v14 | End of May 2024 |
 | v1.4.1 | v13.1 | End of January 2024 |
 | v1.4.0 | v13 | End of January 2024 | 

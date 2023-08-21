@@ -28,7 +28,6 @@ import (
 	gtransport "google.golang.org/api/transport/grpc"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/metadata"
 )
 
 var newKeywordThemeConstantClientHook clientHook
@@ -138,7 +137,7 @@ type keywordThemeConstantGRPCClient struct {
 	keywordThemeConstantClient servicespb.KeywordThemeConstantServiceClient
 
 	// The x-goog-* metadata to be sent with each request.
-	xGoogMetadata metadata.MD
+	xGoogHeaders []string
 }
 
 // NewKeywordThemeConstantClient creates a new keyword theme constant service client based on gRPC.
@@ -187,7 +186,7 @@ func (c *keywordThemeConstantGRPCClient) Connection() *grpc.ClientConn {
 func (c *keywordThemeConstantGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", gax.GoVersion}, keyval...)
 	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
-	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
+	c.xGoogHeaders = []string{"x-goog-api-client", gax.XGoogHeader(kv...)}
 }
 
 // Close closes the connection to the API service. The user should invoke this when
@@ -197,7 +196,7 @@ func (c *keywordThemeConstantGRPCClient) Close() error {
 }
 
 func (c *keywordThemeConstantGRPCClient) SuggestKeywordThemeConstants(ctx context.Context, req *servicespb.SuggestKeywordThemeConstantsRequest, opts ...gax.CallOption) (*servicespb.SuggestKeywordThemeConstantsResponse, error) {
-	ctx = insertMetadata(ctx, c.xGoogMetadata)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, c.xGoogHeaders...)
 	opts = append((*c.CallOptions).SuggestKeywordThemeConstants[0:len((*c.CallOptions).SuggestKeywordThemeConstants):len((*c.CallOptions).SuggestKeywordThemeConstants)], opts...)
 	var resp *servicespb.SuggestKeywordThemeConstantsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {

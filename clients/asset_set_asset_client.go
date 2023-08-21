@@ -30,7 +30,6 @@ import (
 	gtransport "google.golang.org/api/transport/grpc"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/metadata"
 )
 
 var newAssetSetAssetClientHook clientHook
@@ -133,7 +132,7 @@ type assetSetAssetGRPCClient struct {
 	assetSetAssetClient servicespb.AssetSetAssetServiceClient
 
 	// The x-goog-* metadata to be sent with each request.
-	xGoogMetadata metadata.MD
+	xGoogHeaders []string
 }
 
 // NewAssetSetAssetClient creates a new asset set asset service client based on gRPC.
@@ -182,7 +181,7 @@ func (c *assetSetAssetGRPCClient) Connection() *grpc.ClientConn {
 func (c *assetSetAssetGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", gax.GoVersion}, keyval...)
 	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
-	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
+	c.xGoogHeaders = []string{"x-goog-api-client", gax.XGoogHeader(kv...)}
 }
 
 // Close closes the connection to the API service. The user should invoke this when
@@ -192,9 +191,10 @@ func (c *assetSetAssetGRPCClient) Close() error {
 }
 
 func (c *assetSetAssetGRPCClient) MutateAssetSetAssets(ctx context.Context, req *servicespb.MutateAssetSetAssetsRequest, opts ...gax.CallOption) (*servicespb.MutateAssetSetAssetsResponse, error) {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId()))}
 
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
 	opts = append((*c.CallOptions).MutateAssetSetAssets[0:len((*c.CallOptions).MutateAssetSetAssets):len((*c.CallOptions).MutateAssetSetAssets)], opts...)
 	var resp *servicespb.MutateAssetSetAssetsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {

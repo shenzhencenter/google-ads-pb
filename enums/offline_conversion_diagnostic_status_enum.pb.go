@@ -34,7 +34,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-// Next id: 8
+// Possible statuses of the offline ingestion setup.
 type OfflineConversionDiagnosticStatusEnum_OfflineConversionDiagnosticStatus int32
 
 const (

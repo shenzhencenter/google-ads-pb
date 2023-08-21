@@ -2819,6 +2819,129 @@ func (x *DiscoveryCarouselAdInfo) GetCarouselCards() []*AdDiscoveryCarouselCardA
 	return nil
 }
 
+// A discovery video responsive ad.
+type DiscoveryVideoResponsiveAdInfo struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// List of text assets used for the short headline, for example, the "Call To
+	// Action" banner.
+	Headlines []*AdTextAsset `protobuf:"bytes,1,rep,name=headlines,proto3" json:"headlines,omitempty"`
+	// List of text assets used for the long headline.
+	LongHeadlines []*AdTextAsset `protobuf:"bytes,2,rep,name=long_headlines,json=longHeadlines,proto3" json:"long_headlines,omitempty"`
+	// List of text assets used for the description.
+	Descriptions []*AdTextAsset `protobuf:"bytes,3,rep,name=descriptions,proto3" json:"descriptions,omitempty"`
+	// List of YouTube video assets used for the ad.
+	Videos []*AdVideoAsset `protobuf:"bytes,4,rep,name=videos,proto3" json:"videos,omitempty"`
+	// Logo image to be used in the ad. Valid image types are GIF, JPEG, and PNG.
+	// The minimum size is 128x128 and the aspect ratio must be 1:1(+-1%).
+	LogoImages []*AdImageAsset `protobuf:"bytes,5,rep,name=logo_images,json=logoImages,proto3" json:"logo_images,omitempty"`
+	// First part of text that appears in the ad with the displayed URL.
+	Breadcrumb1 string `protobuf:"bytes,6,opt,name=breadcrumb1,proto3" json:"breadcrumb1,omitempty"`
+	// Second part of text that appears in the ad with the displayed URL.
+	Breadcrumb2 string `protobuf:"bytes,7,opt,name=breadcrumb2,proto3" json:"breadcrumb2,omitempty"`
+	// Required. The advertiser/brand name.
+	BusinessName *AdTextAsset `protobuf:"bytes,8,opt,name=business_name,json=businessName,proto3" json:"business_name,omitempty"`
+	// Assets of type CallToActionAsset used for the "Call To Action" button.
+	CallToActions []*AdCallToActionAsset `protobuf:"bytes,9,rep,name=call_to_actions,json=callToActions,proto3" json:"call_to_actions,omitempty"`
+}
+
+func (x *DiscoveryVideoResponsiveAdInfo) Reset() {
+	*x = DiscoveryVideoResponsiveAdInfo{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_google_ads_googleads_v14_common_ad_type_infos_proto_msgTypes[30]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DiscoveryVideoResponsiveAdInfo) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DiscoveryVideoResponsiveAdInfo) ProtoMessage() {}
+
+func (x *DiscoveryVideoResponsiveAdInfo) ProtoReflect() protoreflect.Message {
+	mi := &file_google_ads_googleads_v14_common_ad_type_infos_proto_msgTypes[30]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DiscoveryVideoResponsiveAdInfo.ProtoReflect.Descriptor instead.
+func (*DiscoveryVideoResponsiveAdInfo) Descriptor() ([]byte, []int) {
+	return file_google_ads_googleads_v14_common_ad_type_infos_proto_rawDescGZIP(), []int{30}
+}
+
+func (x *DiscoveryVideoResponsiveAdInfo) GetHeadlines() []*AdTextAsset {
+	if x != nil {
+		return x.Headlines
+	}
+	return nil
+}
+
+func (x *DiscoveryVideoResponsiveAdInfo) GetLongHeadlines() []*AdTextAsset {
+	if x != nil {
+		return x.LongHeadlines
+	}
+	return nil
+}
+
+func (x *DiscoveryVideoResponsiveAdInfo) GetDescriptions() []*AdTextAsset {
+	if x != nil {
+		return x.Descriptions
+	}
+	return nil
+}
+
+func (x *DiscoveryVideoResponsiveAdInfo) GetVideos() []*AdVideoAsset {
+	if x != nil {
+		return x.Videos
+	}
+	return nil
+}
+
+func (x *DiscoveryVideoResponsiveAdInfo) GetLogoImages() []*AdImageAsset {
+	if x != nil {
+		return x.LogoImages
+	}
+	return nil
+}
+
+func (x *DiscoveryVideoResponsiveAdInfo) GetBreadcrumb1() string {
+	if x != nil {
+		return x.Breadcrumb1
+	}
+	return ""
+}
+
+func (x *DiscoveryVideoResponsiveAdInfo) GetBreadcrumb2() string {
+	if x != nil {
+		return x.Breadcrumb2
+	}
+	return ""
+}
+
+func (x *DiscoveryVideoResponsiveAdInfo) GetBusinessName() *AdTextAsset {
+	if x != nil {
+		return x.BusinessName
+	}
+	return nil
+}
+
+func (x *DiscoveryVideoResponsiveAdInfo) GetCallToActions() []*AdCallToActionAsset {
+	if x != nil {
+		return x.CallToActions
+	}
+	return nil
+}
+
 var File_google_ads_googleads_v14_common_ad_type_infos_proto protoreflect.FileDescriptor
 
 var file_google_ads_googleads_v14_common_ad_type_infos_proto_rawDesc = []byte{
@@ -3535,23 +3658,65 @@ var file_google_ads_googleads_v14_common_ad_type_infos_proto_rawDesc = []byte{
 	0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x41, 0x64,
 	0x44, 0x69, 0x73, 0x63, 0x6f, 0x76, 0x65, 0x72, 0x79, 0x43, 0x61, 0x72, 0x6f, 0x75, 0x73, 0x65,
 	0x6c, 0x43, 0x61, 0x72, 0x64, 0x41, 0x73, 0x73, 0x65, 0x74, 0x42, 0x03, 0xe0, 0x41, 0x02, 0x52,
-	0x0d, 0x63, 0x61, 0x72, 0x6f, 0x75, 0x73, 0x65, 0x6c, 0x43, 0x61, 0x72, 0x64, 0x73, 0x42, 0xf0,
-	0x01, 0x0a, 0x23, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64,
+	0x0d, 0x63, 0x61, 0x72, 0x6f, 0x75, 0x73, 0x65, 0x6c, 0x43, 0x61, 0x72, 0x64, 0x73, 0x22, 0xa4,
+	0x05, 0x0a, 0x1e, 0x44, 0x69, 0x73, 0x63, 0x6f, 0x76, 0x65, 0x72, 0x79, 0x56, 0x69, 0x64, 0x65,
+	0x6f, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x69, 0x76, 0x65, 0x41, 0x64, 0x49, 0x6e, 0x66,
+	0x6f, 0x12, 0x4a, 0x0a, 0x09, 0x68, 0x65, 0x61, 0x64, 0x6c, 0x69, 0x6e, 0x65, 0x73, 0x18, 0x01,
+	0x20, 0x03, 0x28, 0x0b, 0x32, 0x2c, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64,
 	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e,
-	0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x42, 0x10, 0x41, 0x64, 0x54, 0x79, 0x70, 0x65, 0x49, 0x6e,
-	0x66, 0x6f, 0x73, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x45, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x2e, 0x67, 0x6f, 0x6c, 0x61, 0x6e, 0x67, 0x2e, 0x6f, 0x72, 0x67, 0x2f, 0x67, 0x65,
-	0x6e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x70, 0x69,
-	0x73, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f,
-	0x76, 0x31, 0x34, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x3b, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
-	0x6e, 0xa2, 0x02, 0x03, 0x47, 0x41, 0x41, 0xaa, 0x02, 0x1f, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x2e, 0x41, 0x64, 0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e, 0x56,
-	0x31, 0x34, 0x2e, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xca, 0x02, 0x1f, 0x47, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x5c, 0x41, 0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73,
-	0x5c, 0x56, 0x31, 0x34, 0x5c, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xea, 0x02, 0x23, 0x47, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x3a, 0x3a, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x47, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x31, 0x34, 0x3a, 0x3a, 0x43, 0x6f, 0x6d, 0x6d, 0x6f,
-	0x6e, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x41, 0x64, 0x54, 0x65, 0x78, 0x74, 0x41, 0x73, 0x73,
+	0x65, 0x74, 0x52, 0x09, 0x68, 0x65, 0x61, 0x64, 0x6c, 0x69, 0x6e, 0x65, 0x73, 0x12, 0x53, 0x0a,
+	0x0e, 0x6c, 0x6f, 0x6e, 0x67, 0x5f, 0x68, 0x65, 0x61, 0x64, 0x6c, 0x69, 0x6e, 0x65, 0x73, 0x18,
+	0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x2c, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61,
+	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34,
+	0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x41, 0x64, 0x54, 0x65, 0x78, 0x74, 0x41, 0x73,
+	0x73, 0x65, 0x74, 0x52, 0x0d, 0x6c, 0x6f, 0x6e, 0x67, 0x48, 0x65, 0x61, 0x64, 0x6c, 0x69, 0x6e,
+	0x65, 0x73, 0x12, 0x50, 0x0a, 0x0c, 0x64, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f,
+	0x6e, 0x73, 0x18, 0x03, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x2c, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
+	0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e,
+	0x76, 0x31, 0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x41, 0x64, 0x54, 0x65, 0x78,
+	0x74, 0x41, 0x73, 0x73, 0x65, 0x74, 0x52, 0x0c, 0x64, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74,
+	0x69, 0x6f, 0x6e, 0x73, 0x12, 0x45, 0x0a, 0x06, 0x76, 0x69, 0x64, 0x65, 0x6f, 0x73, 0x18, 0x04,
+	0x20, 0x03, 0x28, 0x0b, 0x32, 0x2d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64,
+	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e,
+	0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x41, 0x64, 0x56, 0x69, 0x64, 0x65, 0x6f, 0x41, 0x73,
+	0x73, 0x65, 0x74, 0x52, 0x06, 0x76, 0x69, 0x64, 0x65, 0x6f, 0x73, 0x12, 0x4e, 0x0a, 0x0b, 0x6c,
+	0x6f, 0x67, 0x6f, 0x5f, 0x69, 0x6d, 0x61, 0x67, 0x65, 0x73, 0x18, 0x05, 0x20, 0x03, 0x28, 0x0b,
+	0x32, 0x2d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f,
+	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d,
+	0x6f, 0x6e, 0x2e, 0x41, 0x64, 0x49, 0x6d, 0x61, 0x67, 0x65, 0x41, 0x73, 0x73, 0x65, 0x74, 0x52,
+	0x0a, 0x6c, 0x6f, 0x67, 0x6f, 0x49, 0x6d, 0x61, 0x67, 0x65, 0x73, 0x12, 0x20, 0x0a, 0x0b, 0x62,
+	0x72, 0x65, 0x61, 0x64, 0x63, 0x72, 0x75, 0x6d, 0x62, 0x31, 0x18, 0x06, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x0b, 0x62, 0x72, 0x65, 0x61, 0x64, 0x63, 0x72, 0x75, 0x6d, 0x62, 0x31, 0x12, 0x20, 0x0a,
+	0x0b, 0x62, 0x72, 0x65, 0x61, 0x64, 0x63, 0x72, 0x75, 0x6d, 0x62, 0x32, 0x18, 0x07, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x0b, 0x62, 0x72, 0x65, 0x61, 0x64, 0x63, 0x72, 0x75, 0x6d, 0x62, 0x32, 0x12,
+	0x56, 0x0a, 0x0d, 0x62, 0x75, 0x73, 0x69, 0x6e, 0x65, 0x73, 0x73, 0x5f, 0x6e, 0x61, 0x6d, 0x65,
+	0x18, 0x08, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2c, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
+	0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31,
+	0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x41, 0x64, 0x54, 0x65, 0x78, 0x74, 0x41,
+	0x73, 0x73, 0x65, 0x74, 0x42, 0x03, 0xe0, 0x41, 0x02, 0x52, 0x0c, 0x62, 0x75, 0x73, 0x69, 0x6e,
+	0x65, 0x73, 0x73, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x5c, 0x0a, 0x0f, 0x63, 0x61, 0x6c, 0x6c, 0x5f,
+	0x74, 0x6f, 0x5f, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x18, 0x09, 0x20, 0x03, 0x28, 0x0b,
+	0x32, 0x34, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f,
+	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d,
+	0x6f, 0x6e, 0x2e, 0x41, 0x64, 0x43, 0x61, 0x6c, 0x6c, 0x54, 0x6f, 0x41, 0x63, 0x74, 0x69, 0x6f,
+	0x6e, 0x41, 0x73, 0x73, 0x65, 0x74, 0x52, 0x0d, 0x63, 0x61, 0x6c, 0x6c, 0x54, 0x6f, 0x41, 0x63,
+	0x74, 0x69, 0x6f, 0x6e, 0x73, 0x42, 0xf0, 0x01, 0x0a, 0x23, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x6f,
+	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
+	0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x42, 0x10, 0x41,
+	0x64, 0x54, 0x79, 0x70, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50,
+	0x01, 0x5a, 0x45, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x67, 0x6f, 0x6c, 0x61, 0x6e, 0x67,
+	0x2e, 0x6f, 0x72, 0x67, 0x2f, 0x67, 0x65, 0x6e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x6f,
+	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x70, 0x69, 0x73, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
+	0x6e, 0x3b, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xa2, 0x02, 0x03, 0x47, 0x41, 0x41, 0xaa, 0x02,
+	0x1f, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x41, 0x64, 0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67,
+	0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e, 0x56, 0x31, 0x34, 0x2e, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e,
+	0xca, 0x02, 0x1f, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x5c, 0x41, 0x64, 0x73, 0x5c, 0x47, 0x6f,
+	0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x31, 0x34, 0x5c, 0x43, 0x6f, 0x6d, 0x6d,
+	0x6f, 0x6e, 0xea, 0x02, 0x23, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x3a, 0x3a, 0x41, 0x64, 0x73,
+	0x3a, 0x3a, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x31, 0x34,
+	0x3a, 0x3a, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -3566,122 +3731,131 @@ func file_google_ads_googleads_v14_common_ad_type_infos_proto_rawDescGZIP() []by
 	return file_google_ads_googleads_v14_common_ad_type_infos_proto_rawDescData
 }
 
-var file_google_ads_googleads_v14_common_ad_type_infos_proto_msgTypes = make([]protoimpl.MessageInfo, 30)
+var file_google_ads_googleads_v14_common_ad_type_infos_proto_msgTypes = make([]protoimpl.MessageInfo, 31)
 var file_google_ads_googleads_v14_common_ad_type_infos_proto_goTypes = []interface{}{
-	(*TextAdInfo)(nil),                                                   // 0: google.ads.googleads.v14.common.TextAdInfo
-	(*ExpandedTextAdInfo)(nil),                                           // 1: google.ads.googleads.v14.common.ExpandedTextAdInfo
-	(*ExpandedDynamicSearchAdInfo)(nil),                                  // 2: google.ads.googleads.v14.common.ExpandedDynamicSearchAdInfo
-	(*HotelAdInfo)(nil),                                                  // 3: google.ads.googleads.v14.common.HotelAdInfo
-	(*TravelAdInfo)(nil),                                                 // 4: google.ads.googleads.v14.common.TravelAdInfo
-	(*ShoppingSmartAdInfo)(nil),                                          // 5: google.ads.googleads.v14.common.ShoppingSmartAdInfo
-	(*ShoppingProductAdInfo)(nil),                                        // 6: google.ads.googleads.v14.common.ShoppingProductAdInfo
-	(*ShoppingComparisonListingAdInfo)(nil),                              // 7: google.ads.googleads.v14.common.ShoppingComparisonListingAdInfo
-	(*ImageAdInfo)(nil),                                                  // 8: google.ads.googleads.v14.common.ImageAdInfo
-	(*VideoBumperInStreamAdInfo)(nil),                                    // 9: google.ads.googleads.v14.common.VideoBumperInStreamAdInfo
-	(*VideoNonSkippableInStreamAdInfo)(nil),                              // 10: google.ads.googleads.v14.common.VideoNonSkippableInStreamAdInfo
-	(*VideoTrueViewInStreamAdInfo)(nil),                                  // 11: google.ads.googleads.v14.common.VideoTrueViewInStreamAdInfo
-	(*VideoOutstreamAdInfo)(nil),                                         // 12: google.ads.googleads.v14.common.VideoOutstreamAdInfo
-	(*InFeedVideoAdInfo)(nil),                                            // 13: google.ads.googleads.v14.common.InFeedVideoAdInfo
-	(*VideoAdInfo)(nil),                                                  // 14: google.ads.googleads.v14.common.VideoAdInfo
-	(*VideoResponsiveAdInfo)(nil),                                        // 15: google.ads.googleads.v14.common.VideoResponsiveAdInfo
-	(*ResponsiveSearchAdInfo)(nil),                                       // 16: google.ads.googleads.v14.common.ResponsiveSearchAdInfo
-	(*LegacyResponsiveDisplayAdInfo)(nil),                                // 17: google.ads.googleads.v14.common.LegacyResponsiveDisplayAdInfo
-	(*AppAdInfo)(nil),                                                    // 18: google.ads.googleads.v14.common.AppAdInfo
-	(*AppEngagementAdInfo)(nil),                                          // 19: google.ads.googleads.v14.common.AppEngagementAdInfo
-	(*AppPreRegistrationAdInfo)(nil),                                     // 20: google.ads.googleads.v14.common.AppPreRegistrationAdInfo
-	(*LegacyAppInstallAdInfo)(nil),                                       // 21: google.ads.googleads.v14.common.LegacyAppInstallAdInfo
-	(*ResponsiveDisplayAdInfo)(nil),                                      // 22: google.ads.googleads.v14.common.ResponsiveDisplayAdInfo
-	(*LocalAdInfo)(nil),                                                  // 23: google.ads.googleads.v14.common.LocalAdInfo
-	(*DisplayUploadAdInfo)(nil),                                          // 24: google.ads.googleads.v14.common.DisplayUploadAdInfo
-	(*ResponsiveDisplayAdControlSpec)(nil),                               // 25: google.ads.googleads.v14.common.ResponsiveDisplayAdControlSpec
-	(*SmartCampaignAdInfo)(nil),                                          // 26: google.ads.googleads.v14.common.SmartCampaignAdInfo
-	(*CallAdInfo)(nil),                                                   // 27: google.ads.googleads.v14.common.CallAdInfo
-	(*DiscoveryMultiAssetAdInfo)(nil),                                    // 28: google.ads.googleads.v14.common.DiscoveryMultiAssetAdInfo
-	(*DiscoveryCarouselAdInfo)(nil),                                      // 29: google.ads.googleads.v14.common.DiscoveryCarouselAdInfo
-	(enums.MimeTypeEnum_MimeType)(0),                                     // 30: google.ads.googleads.v14.enums.MimeTypeEnum.MimeType
-	(*AdImageAsset)(nil),                                                 // 31: google.ads.googleads.v14.common.AdImageAsset
-	(enums.VideoThumbnailEnum_VideoThumbnail)(0),                         // 32: google.ads.googleads.v14.enums.VideoThumbnailEnum.VideoThumbnail
-	(*AdVideoAsset)(nil),                                                 // 33: google.ads.googleads.v14.common.AdVideoAsset
-	(*AdTextAsset)(nil),                                                  // 34: google.ads.googleads.v14.common.AdTextAsset
-	(enums.DisplayAdFormatSettingEnum_DisplayAdFormatSetting)(0),         // 35: google.ads.googleads.v14.enums.DisplayAdFormatSettingEnum.DisplayAdFormatSetting
-	(*AdMediaBundleAsset)(nil),                                           // 36: google.ads.googleads.v14.common.AdMediaBundleAsset
-	(enums.LegacyAppInstallAdAppStoreEnum_LegacyAppInstallAdAppStore)(0), // 37: google.ads.googleads.v14.enums.LegacyAppInstallAdAppStoreEnum.LegacyAppInstallAdAppStore
-	(enums.DisplayUploadProductTypeEnum_DisplayUploadProductType)(0),     // 38: google.ads.googleads.v14.enums.DisplayUploadProductTypeEnum.DisplayUploadProductType
-	(enums.CallConversionReportingStateEnum_CallConversionReportingState)(0), // 39: google.ads.googleads.v14.enums.CallConversionReportingStateEnum.CallConversionReportingState
-	(*AdDiscoveryCarouselCardAsset)(nil),                                     // 40: google.ads.googleads.v14.common.AdDiscoveryCarouselCardAsset
+	(*TextAdInfo)(nil),                                                       // 0: google.ads.googleads.v14.common.TextAdInfo
+	(*ExpandedTextAdInfo)(nil),                                               // 1: google.ads.googleads.v14.common.ExpandedTextAdInfo
+	(*ExpandedDynamicSearchAdInfo)(nil),                                      // 2: google.ads.googleads.v14.common.ExpandedDynamicSearchAdInfo
+	(*HotelAdInfo)(nil),                                                      // 3: google.ads.googleads.v14.common.HotelAdInfo
+	(*TravelAdInfo)(nil),                                                     // 4: google.ads.googleads.v14.common.TravelAdInfo
+	(*ShoppingSmartAdInfo)(nil),                                              // 5: google.ads.googleads.v14.common.ShoppingSmartAdInfo
+	(*ShoppingProductAdInfo)(nil),                                            // 6: google.ads.googleads.v14.common.ShoppingProductAdInfo
+	(*ShoppingComparisonListingAdInfo)(nil),                                  // 7: google.ads.googleads.v14.common.ShoppingComparisonListingAdInfo
+	(*ImageAdInfo)(nil),                                                      // 8: google.ads.googleads.v14.common.ImageAdInfo
+	(*VideoBumperInStreamAdInfo)(nil),                                        // 9: google.ads.googleads.v14.common.VideoBumperInStreamAdInfo
+	(*VideoNonSkippableInStreamAdInfo)(nil),                                  // 10: google.ads.googleads.v14.common.VideoNonSkippableInStreamAdInfo
+	(*VideoTrueViewInStreamAdInfo)(nil),                                      // 11: google.ads.googleads.v14.common.VideoTrueViewInStreamAdInfo
+	(*VideoOutstreamAdInfo)(nil),                                             // 12: google.ads.googleads.v14.common.VideoOutstreamAdInfo
+	(*InFeedVideoAdInfo)(nil),                                                // 13: google.ads.googleads.v14.common.InFeedVideoAdInfo
+	(*VideoAdInfo)(nil),                                                      // 14: google.ads.googleads.v14.common.VideoAdInfo
+	(*VideoResponsiveAdInfo)(nil),                                            // 15: google.ads.googleads.v14.common.VideoResponsiveAdInfo
+	(*ResponsiveSearchAdInfo)(nil),                                           // 16: google.ads.googleads.v14.common.ResponsiveSearchAdInfo
+	(*LegacyResponsiveDisplayAdInfo)(nil),                                    // 17: google.ads.googleads.v14.common.LegacyResponsiveDisplayAdInfo
+	(*AppAdInfo)(nil),                                                        // 18: google.ads.googleads.v14.common.AppAdInfo
+	(*AppEngagementAdInfo)(nil),                                              // 19: google.ads.googleads.v14.common.AppEngagementAdInfo
+	(*AppPreRegistrationAdInfo)(nil),                                         // 20: google.ads.googleads.v14.common.AppPreRegistrationAdInfo
+	(*LegacyAppInstallAdInfo)(nil),                                           // 21: google.ads.googleads.v14.common.LegacyAppInstallAdInfo
+	(*ResponsiveDisplayAdInfo)(nil),                                          // 22: google.ads.googleads.v14.common.ResponsiveDisplayAdInfo
+	(*LocalAdInfo)(nil),                                                      // 23: google.ads.googleads.v14.common.LocalAdInfo
+	(*DisplayUploadAdInfo)(nil),                                              // 24: google.ads.googleads.v14.common.DisplayUploadAdInfo
+	(*ResponsiveDisplayAdControlSpec)(nil),                                   // 25: google.ads.googleads.v14.common.ResponsiveDisplayAdControlSpec
+	(*SmartCampaignAdInfo)(nil),                                              // 26: google.ads.googleads.v14.common.SmartCampaignAdInfo
+	(*CallAdInfo)(nil),                                                       // 27: google.ads.googleads.v14.common.CallAdInfo
+	(*DiscoveryMultiAssetAdInfo)(nil),                                        // 28: google.ads.googleads.v14.common.DiscoveryMultiAssetAdInfo
+	(*DiscoveryCarouselAdInfo)(nil),                                          // 29: google.ads.googleads.v14.common.DiscoveryCarouselAdInfo
+	(*DiscoveryVideoResponsiveAdInfo)(nil),                                   // 30: google.ads.googleads.v14.common.DiscoveryVideoResponsiveAdInfo
+	(enums.MimeTypeEnum_MimeType)(0),                                         // 31: google.ads.googleads.v14.enums.MimeTypeEnum.MimeType
+	(*AdImageAsset)(nil),                                                     // 32: google.ads.googleads.v14.common.AdImageAsset
+	(enums.VideoThumbnailEnum_VideoThumbnail)(0),                             // 33: google.ads.googleads.v14.enums.VideoThumbnailEnum.VideoThumbnail
+	(*AdVideoAsset)(nil),                                                     // 34: google.ads.googleads.v14.common.AdVideoAsset
+	(*AdTextAsset)(nil),                                                      // 35: google.ads.googleads.v14.common.AdTextAsset
+	(enums.DisplayAdFormatSettingEnum_DisplayAdFormatSetting)(0),             // 36: google.ads.googleads.v14.enums.DisplayAdFormatSettingEnum.DisplayAdFormatSetting
+	(*AdMediaBundleAsset)(nil),                                               // 37: google.ads.googleads.v14.common.AdMediaBundleAsset
+	(enums.LegacyAppInstallAdAppStoreEnum_LegacyAppInstallAdAppStore)(0),     // 38: google.ads.googleads.v14.enums.LegacyAppInstallAdAppStoreEnum.LegacyAppInstallAdAppStore
+	(enums.DisplayUploadProductTypeEnum_DisplayUploadProductType)(0),         // 39: google.ads.googleads.v14.enums.DisplayUploadProductTypeEnum.DisplayUploadProductType
+	(enums.CallConversionReportingStateEnum_CallConversionReportingState)(0), // 40: google.ads.googleads.v14.enums.CallConversionReportingStateEnum.CallConversionReportingState
+	(*AdDiscoveryCarouselCardAsset)(nil),                                     // 41: google.ads.googleads.v14.common.AdDiscoveryCarouselCardAsset
+	(*AdCallToActionAsset)(nil),                                              // 42: google.ads.googleads.v14.common.AdCallToActionAsset
 }
 var file_google_ads_googleads_v14_common_ad_type_infos_proto_depIdxs = []int32{
-	30, // 0: google.ads.googleads.v14.common.ImageAdInfo.mime_type:type_name -> google.ads.googleads.v14.enums.MimeTypeEnum.MimeType
-	31, // 1: google.ads.googleads.v14.common.VideoBumperInStreamAdInfo.companion_banner:type_name -> google.ads.googleads.v14.common.AdImageAsset
-	31, // 2: google.ads.googleads.v14.common.VideoNonSkippableInStreamAdInfo.companion_banner:type_name -> google.ads.googleads.v14.common.AdImageAsset
-	31, // 3: google.ads.googleads.v14.common.VideoTrueViewInStreamAdInfo.companion_banner:type_name -> google.ads.googleads.v14.common.AdImageAsset
-	32, // 4: google.ads.googleads.v14.common.InFeedVideoAdInfo.thumbnail:type_name -> google.ads.googleads.v14.enums.VideoThumbnailEnum.VideoThumbnail
-	33, // 5: google.ads.googleads.v14.common.VideoAdInfo.video:type_name -> google.ads.googleads.v14.common.AdVideoAsset
+	31, // 0: google.ads.googleads.v14.common.ImageAdInfo.mime_type:type_name -> google.ads.googleads.v14.enums.MimeTypeEnum.MimeType
+	32, // 1: google.ads.googleads.v14.common.VideoBumperInStreamAdInfo.companion_banner:type_name -> google.ads.googleads.v14.common.AdImageAsset
+	32, // 2: google.ads.googleads.v14.common.VideoNonSkippableInStreamAdInfo.companion_banner:type_name -> google.ads.googleads.v14.common.AdImageAsset
+	32, // 3: google.ads.googleads.v14.common.VideoTrueViewInStreamAdInfo.companion_banner:type_name -> google.ads.googleads.v14.common.AdImageAsset
+	33, // 4: google.ads.googleads.v14.common.InFeedVideoAdInfo.thumbnail:type_name -> google.ads.googleads.v14.enums.VideoThumbnailEnum.VideoThumbnail
+	34, // 5: google.ads.googleads.v14.common.VideoAdInfo.video:type_name -> google.ads.googleads.v14.common.AdVideoAsset
 	11, // 6: google.ads.googleads.v14.common.VideoAdInfo.in_stream:type_name -> google.ads.googleads.v14.common.VideoTrueViewInStreamAdInfo
 	9,  // 7: google.ads.googleads.v14.common.VideoAdInfo.bumper:type_name -> google.ads.googleads.v14.common.VideoBumperInStreamAdInfo
 	12, // 8: google.ads.googleads.v14.common.VideoAdInfo.out_stream:type_name -> google.ads.googleads.v14.common.VideoOutstreamAdInfo
 	10, // 9: google.ads.googleads.v14.common.VideoAdInfo.non_skippable:type_name -> google.ads.googleads.v14.common.VideoNonSkippableInStreamAdInfo
 	13, // 10: google.ads.googleads.v14.common.VideoAdInfo.in_feed:type_name -> google.ads.googleads.v14.common.InFeedVideoAdInfo
-	34, // 11: google.ads.googleads.v14.common.VideoResponsiveAdInfo.headlines:type_name -> google.ads.googleads.v14.common.AdTextAsset
-	34, // 12: google.ads.googleads.v14.common.VideoResponsiveAdInfo.long_headlines:type_name -> google.ads.googleads.v14.common.AdTextAsset
-	34, // 13: google.ads.googleads.v14.common.VideoResponsiveAdInfo.descriptions:type_name -> google.ads.googleads.v14.common.AdTextAsset
-	34, // 14: google.ads.googleads.v14.common.VideoResponsiveAdInfo.call_to_actions:type_name -> google.ads.googleads.v14.common.AdTextAsset
-	33, // 15: google.ads.googleads.v14.common.VideoResponsiveAdInfo.videos:type_name -> google.ads.googleads.v14.common.AdVideoAsset
-	31, // 16: google.ads.googleads.v14.common.VideoResponsiveAdInfo.companion_banners:type_name -> google.ads.googleads.v14.common.AdImageAsset
-	34, // 17: google.ads.googleads.v14.common.ResponsiveSearchAdInfo.headlines:type_name -> google.ads.googleads.v14.common.AdTextAsset
-	34, // 18: google.ads.googleads.v14.common.ResponsiveSearchAdInfo.descriptions:type_name -> google.ads.googleads.v14.common.AdTextAsset
-	35, // 19: google.ads.googleads.v14.common.LegacyResponsiveDisplayAdInfo.format_setting:type_name -> google.ads.googleads.v14.enums.DisplayAdFormatSettingEnum.DisplayAdFormatSetting
-	34, // 20: google.ads.googleads.v14.common.AppAdInfo.mandatory_ad_text:type_name -> google.ads.googleads.v14.common.AdTextAsset
-	34, // 21: google.ads.googleads.v14.common.AppAdInfo.headlines:type_name -> google.ads.googleads.v14.common.AdTextAsset
-	34, // 22: google.ads.googleads.v14.common.AppAdInfo.descriptions:type_name -> google.ads.googleads.v14.common.AdTextAsset
-	31, // 23: google.ads.googleads.v14.common.AppAdInfo.images:type_name -> google.ads.googleads.v14.common.AdImageAsset
-	33, // 24: google.ads.googleads.v14.common.AppAdInfo.youtube_videos:type_name -> google.ads.googleads.v14.common.AdVideoAsset
-	36, // 25: google.ads.googleads.v14.common.AppAdInfo.html5_media_bundles:type_name -> google.ads.googleads.v14.common.AdMediaBundleAsset
-	34, // 26: google.ads.googleads.v14.common.AppEngagementAdInfo.headlines:type_name -> google.ads.googleads.v14.common.AdTextAsset
-	34, // 27: google.ads.googleads.v14.common.AppEngagementAdInfo.descriptions:type_name -> google.ads.googleads.v14.common.AdTextAsset
-	31, // 28: google.ads.googleads.v14.common.AppEngagementAdInfo.images:type_name -> google.ads.googleads.v14.common.AdImageAsset
-	33, // 29: google.ads.googleads.v14.common.AppEngagementAdInfo.videos:type_name -> google.ads.googleads.v14.common.AdVideoAsset
-	34, // 30: google.ads.googleads.v14.common.AppPreRegistrationAdInfo.headlines:type_name -> google.ads.googleads.v14.common.AdTextAsset
-	34, // 31: google.ads.googleads.v14.common.AppPreRegistrationAdInfo.descriptions:type_name -> google.ads.googleads.v14.common.AdTextAsset
-	31, // 32: google.ads.googleads.v14.common.AppPreRegistrationAdInfo.images:type_name -> google.ads.googleads.v14.common.AdImageAsset
-	33, // 33: google.ads.googleads.v14.common.AppPreRegistrationAdInfo.youtube_videos:type_name -> google.ads.googleads.v14.common.AdVideoAsset
-	37, // 34: google.ads.googleads.v14.common.LegacyAppInstallAdInfo.app_store:type_name -> google.ads.googleads.v14.enums.LegacyAppInstallAdAppStoreEnum.LegacyAppInstallAdAppStore
-	31, // 35: google.ads.googleads.v14.common.ResponsiveDisplayAdInfo.marketing_images:type_name -> google.ads.googleads.v14.common.AdImageAsset
-	31, // 36: google.ads.googleads.v14.common.ResponsiveDisplayAdInfo.square_marketing_images:type_name -> google.ads.googleads.v14.common.AdImageAsset
-	31, // 37: google.ads.googleads.v14.common.ResponsiveDisplayAdInfo.logo_images:type_name -> google.ads.googleads.v14.common.AdImageAsset
-	31, // 38: google.ads.googleads.v14.common.ResponsiveDisplayAdInfo.square_logo_images:type_name -> google.ads.googleads.v14.common.AdImageAsset
-	34, // 39: google.ads.googleads.v14.common.ResponsiveDisplayAdInfo.headlines:type_name -> google.ads.googleads.v14.common.AdTextAsset
-	34, // 40: google.ads.googleads.v14.common.ResponsiveDisplayAdInfo.long_headline:type_name -> google.ads.googleads.v14.common.AdTextAsset
-	34, // 41: google.ads.googleads.v14.common.ResponsiveDisplayAdInfo.descriptions:type_name -> google.ads.googleads.v14.common.AdTextAsset
-	33, // 42: google.ads.googleads.v14.common.ResponsiveDisplayAdInfo.youtube_videos:type_name -> google.ads.googleads.v14.common.AdVideoAsset
-	35, // 43: google.ads.googleads.v14.common.ResponsiveDisplayAdInfo.format_setting:type_name -> google.ads.googleads.v14.enums.DisplayAdFormatSettingEnum.DisplayAdFormatSetting
+	35, // 11: google.ads.googleads.v14.common.VideoResponsiveAdInfo.headlines:type_name -> google.ads.googleads.v14.common.AdTextAsset
+	35, // 12: google.ads.googleads.v14.common.VideoResponsiveAdInfo.long_headlines:type_name -> google.ads.googleads.v14.common.AdTextAsset
+	35, // 13: google.ads.googleads.v14.common.VideoResponsiveAdInfo.descriptions:type_name -> google.ads.googleads.v14.common.AdTextAsset
+	35, // 14: google.ads.googleads.v14.common.VideoResponsiveAdInfo.call_to_actions:type_name -> google.ads.googleads.v14.common.AdTextAsset
+	34, // 15: google.ads.googleads.v14.common.VideoResponsiveAdInfo.videos:type_name -> google.ads.googleads.v14.common.AdVideoAsset
+	32, // 16: google.ads.googleads.v14.common.VideoResponsiveAdInfo.companion_banners:type_name -> google.ads.googleads.v14.common.AdImageAsset
+	35, // 17: google.ads.googleads.v14.common.ResponsiveSearchAdInfo.headlines:type_name -> google.ads.googleads.v14.common.AdTextAsset
+	35, // 18: google.ads.googleads.v14.common.ResponsiveSearchAdInfo.descriptions:type_name -> google.ads.googleads.v14.common.AdTextAsset
+	36, // 19: google.ads.googleads.v14.common.LegacyResponsiveDisplayAdInfo.format_setting:type_name -> google.ads.googleads.v14.enums.DisplayAdFormatSettingEnum.DisplayAdFormatSetting
+	35, // 20: google.ads.googleads.v14.common.AppAdInfo.mandatory_ad_text:type_name -> google.ads.googleads.v14.common.AdTextAsset
+	35, // 21: google.ads.googleads.v14.common.AppAdInfo.headlines:type_name -> google.ads.googleads.v14.common.AdTextAsset
+	35, // 22: google.ads.googleads.v14.common.AppAdInfo.descriptions:type_name -> google.ads.googleads.v14.common.AdTextAsset
+	32, // 23: google.ads.googleads.v14.common.AppAdInfo.images:type_name -> google.ads.googleads.v14.common.AdImageAsset
+	34, // 24: google.ads.googleads.v14.common.AppAdInfo.youtube_videos:type_name -> google.ads.googleads.v14.common.AdVideoAsset
+	37, // 25: google.ads.googleads.v14.common.AppAdInfo.html5_media_bundles:type_name -> google.ads.googleads.v14.common.AdMediaBundleAsset
+	35, // 26: google.ads.googleads.v14.common.AppEngagementAdInfo.headlines:type_name -> google.ads.googleads.v14.common.AdTextAsset
+	35, // 27: google.ads.googleads.v14.common.AppEngagementAdInfo.descriptions:type_name -> google.ads.googleads.v14.common.AdTextAsset
+	32, // 28: google.ads.googleads.v14.common.AppEngagementAdInfo.images:type_name -> google.ads.googleads.v14.common.AdImageAsset
+	34, // 29: google.ads.googleads.v14.common.AppEngagementAdInfo.videos:type_name -> google.ads.googleads.v14.common.AdVideoAsset
+	35, // 30: google.ads.googleads.v14.common.AppPreRegistrationAdInfo.headlines:type_name -> google.ads.googleads.v14.common.AdTextAsset
+	35, // 31: google.ads.googleads.v14.common.AppPreRegistrationAdInfo.descriptions:type_name -> google.ads.googleads.v14.common.AdTextAsset
+	32, // 32: google.ads.googleads.v14.common.AppPreRegistrationAdInfo.images:type_name -> google.ads.googleads.v14.common.AdImageAsset
+	34, // 33: google.ads.googleads.v14.common.AppPreRegistrationAdInfo.youtube_videos:type_name -> google.ads.googleads.v14.common.AdVideoAsset
+	38, // 34: google.ads.googleads.v14.common.LegacyAppInstallAdInfo.app_store:type_name -> google.ads.googleads.v14.enums.LegacyAppInstallAdAppStoreEnum.LegacyAppInstallAdAppStore
+	32, // 35: google.ads.googleads.v14.common.ResponsiveDisplayAdInfo.marketing_images:type_name -> google.ads.googleads.v14.common.AdImageAsset
+	32, // 36: google.ads.googleads.v14.common.ResponsiveDisplayAdInfo.square_marketing_images:type_name -> google.ads.googleads.v14.common.AdImageAsset
+	32, // 37: google.ads.googleads.v14.common.ResponsiveDisplayAdInfo.logo_images:type_name -> google.ads.googleads.v14.common.AdImageAsset
+	32, // 38: google.ads.googleads.v14.common.ResponsiveDisplayAdInfo.square_logo_images:type_name -> google.ads.googleads.v14.common.AdImageAsset
+	35, // 39: google.ads.googleads.v14.common.ResponsiveDisplayAdInfo.headlines:type_name -> google.ads.googleads.v14.common.AdTextAsset
+	35, // 40: google.ads.googleads.v14.common.ResponsiveDisplayAdInfo.long_headline:type_name -> google.ads.googleads.v14.common.AdTextAsset
+	35, // 41: google.ads.googleads.v14.common.ResponsiveDisplayAdInfo.descriptions:type_name -> google.ads.googleads.v14.common.AdTextAsset
+	34, // 42: google.ads.googleads.v14.common.ResponsiveDisplayAdInfo.youtube_videos:type_name -> google.ads.googleads.v14.common.AdVideoAsset
+	36, // 43: google.ads.googleads.v14.common.ResponsiveDisplayAdInfo.format_setting:type_name -> google.ads.googleads.v14.enums.DisplayAdFormatSettingEnum.DisplayAdFormatSetting
 	25, // 44: google.ads.googleads.v14.common.ResponsiveDisplayAdInfo.control_spec:type_name -> google.ads.googleads.v14.common.ResponsiveDisplayAdControlSpec
-	34, // 45: google.ads.googleads.v14.common.LocalAdInfo.headlines:type_name -> google.ads.googleads.v14.common.AdTextAsset
-	34, // 46: google.ads.googleads.v14.common.LocalAdInfo.descriptions:type_name -> google.ads.googleads.v14.common.AdTextAsset
-	34, // 47: google.ads.googleads.v14.common.LocalAdInfo.call_to_actions:type_name -> google.ads.googleads.v14.common.AdTextAsset
-	31, // 48: google.ads.googleads.v14.common.LocalAdInfo.marketing_images:type_name -> google.ads.googleads.v14.common.AdImageAsset
-	31, // 49: google.ads.googleads.v14.common.LocalAdInfo.logo_images:type_name -> google.ads.googleads.v14.common.AdImageAsset
-	33, // 50: google.ads.googleads.v14.common.LocalAdInfo.videos:type_name -> google.ads.googleads.v14.common.AdVideoAsset
-	38, // 51: google.ads.googleads.v14.common.DisplayUploadAdInfo.display_upload_product_type:type_name -> google.ads.googleads.v14.enums.DisplayUploadProductTypeEnum.DisplayUploadProductType
-	36, // 52: google.ads.googleads.v14.common.DisplayUploadAdInfo.media_bundle:type_name -> google.ads.googleads.v14.common.AdMediaBundleAsset
-	34, // 53: google.ads.googleads.v14.common.SmartCampaignAdInfo.headlines:type_name -> google.ads.googleads.v14.common.AdTextAsset
-	34, // 54: google.ads.googleads.v14.common.SmartCampaignAdInfo.descriptions:type_name -> google.ads.googleads.v14.common.AdTextAsset
-	39, // 55: google.ads.googleads.v14.common.CallAdInfo.conversion_reporting_state:type_name -> google.ads.googleads.v14.enums.CallConversionReportingStateEnum.CallConversionReportingState
-	31, // 56: google.ads.googleads.v14.common.DiscoveryMultiAssetAdInfo.marketing_images:type_name -> google.ads.googleads.v14.common.AdImageAsset
-	31, // 57: google.ads.googleads.v14.common.DiscoveryMultiAssetAdInfo.square_marketing_images:type_name -> google.ads.googleads.v14.common.AdImageAsset
-	31, // 58: google.ads.googleads.v14.common.DiscoveryMultiAssetAdInfo.portrait_marketing_images:type_name -> google.ads.googleads.v14.common.AdImageAsset
-	31, // 59: google.ads.googleads.v14.common.DiscoveryMultiAssetAdInfo.logo_images:type_name -> google.ads.googleads.v14.common.AdImageAsset
-	34, // 60: google.ads.googleads.v14.common.DiscoveryMultiAssetAdInfo.headlines:type_name -> google.ads.googleads.v14.common.AdTextAsset
-	34, // 61: google.ads.googleads.v14.common.DiscoveryMultiAssetAdInfo.descriptions:type_name -> google.ads.googleads.v14.common.AdTextAsset
-	31, // 62: google.ads.googleads.v14.common.DiscoveryCarouselAdInfo.logo_image:type_name -> google.ads.googleads.v14.common.AdImageAsset
-	34, // 63: google.ads.googleads.v14.common.DiscoveryCarouselAdInfo.headline:type_name -> google.ads.googleads.v14.common.AdTextAsset
-	34, // 64: google.ads.googleads.v14.common.DiscoveryCarouselAdInfo.description:type_name -> google.ads.googleads.v14.common.AdTextAsset
-	40, // 65: google.ads.googleads.v14.common.DiscoveryCarouselAdInfo.carousel_cards:type_name -> google.ads.googleads.v14.common.AdDiscoveryCarouselCardAsset
-	66, // [66:66] is the sub-list for method output_type
-	66, // [66:66] is the sub-list for method input_type
-	66, // [66:66] is the sub-list for extension type_name
-	66, // [66:66] is the sub-list for extension extendee
-	0,  // [0:66] is the sub-list for field type_name
+	35, // 45: google.ads.googleads.v14.common.LocalAdInfo.headlines:type_name -> google.ads.googleads.v14.common.AdTextAsset
+	35, // 46: google.ads.googleads.v14.common.LocalAdInfo.descriptions:type_name -> google.ads.googleads.v14.common.AdTextAsset
+	35, // 47: google.ads.googleads.v14.common.LocalAdInfo.call_to_actions:type_name -> google.ads.googleads.v14.common.AdTextAsset
+	32, // 48: google.ads.googleads.v14.common.LocalAdInfo.marketing_images:type_name -> google.ads.googleads.v14.common.AdImageAsset
+	32, // 49: google.ads.googleads.v14.common.LocalAdInfo.logo_images:type_name -> google.ads.googleads.v14.common.AdImageAsset
+	34, // 50: google.ads.googleads.v14.common.LocalAdInfo.videos:type_name -> google.ads.googleads.v14.common.AdVideoAsset
+	39, // 51: google.ads.googleads.v14.common.DisplayUploadAdInfo.display_upload_product_type:type_name -> google.ads.googleads.v14.enums.DisplayUploadProductTypeEnum.DisplayUploadProductType
+	37, // 52: google.ads.googleads.v14.common.DisplayUploadAdInfo.media_bundle:type_name -> google.ads.googleads.v14.common.AdMediaBundleAsset
+	35, // 53: google.ads.googleads.v14.common.SmartCampaignAdInfo.headlines:type_name -> google.ads.googleads.v14.common.AdTextAsset
+	35, // 54: google.ads.googleads.v14.common.SmartCampaignAdInfo.descriptions:type_name -> google.ads.googleads.v14.common.AdTextAsset
+	40, // 55: google.ads.googleads.v14.common.CallAdInfo.conversion_reporting_state:type_name -> google.ads.googleads.v14.enums.CallConversionReportingStateEnum.CallConversionReportingState
+	32, // 56: google.ads.googleads.v14.common.DiscoveryMultiAssetAdInfo.marketing_images:type_name -> google.ads.googleads.v14.common.AdImageAsset
+	32, // 57: google.ads.googleads.v14.common.DiscoveryMultiAssetAdInfo.square_marketing_images:type_name -> google.ads.googleads.v14.common.AdImageAsset
+	32, // 58: google.ads.googleads.v14.common.DiscoveryMultiAssetAdInfo.portrait_marketing_images:type_name -> google.ads.googleads.v14.common.AdImageAsset
+	32, // 59: google.ads.googleads.v14.common.DiscoveryMultiAssetAdInfo.logo_images:type_name -> google.ads.googleads.v14.common.AdImageAsset
+	35, // 60: google.ads.googleads.v14.common.DiscoveryMultiAssetAdInfo.headlines:type_name -> google.ads.googleads.v14.common.AdTextAsset
+	35, // 61: google.ads.googleads.v14.common.DiscoveryMultiAssetAdInfo.descriptions:type_name -> google.ads.googleads.v14.common.AdTextAsset
+	32, // 62: google.ads.googleads.v14.common.DiscoveryCarouselAdInfo.logo_image:type_name -> google.ads.googleads.v14.common.AdImageAsset
+	35, // 63: google.ads.googleads.v14.common.DiscoveryCarouselAdInfo.headline:type_name -> google.ads.googleads.v14.common.AdTextAsset
+	35, // 64: google.ads.googleads.v14.common.DiscoveryCarouselAdInfo.description:type_name -> google.ads.googleads.v14.common.AdTextAsset
+	41, // 65: google.ads.googleads.v14.common.DiscoveryCarouselAdInfo.carousel_cards:type_name -> google.ads.googleads.v14.common.AdDiscoveryCarouselCardAsset
+	35, // 66: google.ads.googleads.v14.common.DiscoveryVideoResponsiveAdInfo.headlines:type_name -> google.ads.googleads.v14.common.AdTextAsset
+	35, // 67: google.ads.googleads.v14.common.DiscoveryVideoResponsiveAdInfo.long_headlines:type_name -> google.ads.googleads.v14.common.AdTextAsset
+	35, // 68: google.ads.googleads.v14.common.DiscoveryVideoResponsiveAdInfo.descriptions:type_name -> google.ads.googleads.v14.common.AdTextAsset
+	34, // 69: google.ads.googleads.v14.common.DiscoveryVideoResponsiveAdInfo.videos:type_name -> google.ads.googleads.v14.common.AdVideoAsset
+	32, // 70: google.ads.googleads.v14.common.DiscoveryVideoResponsiveAdInfo.logo_images:type_name -> google.ads.googleads.v14.common.AdImageAsset
+	35, // 71: google.ads.googleads.v14.common.DiscoveryVideoResponsiveAdInfo.business_name:type_name -> google.ads.googleads.v14.common.AdTextAsset
+	42, // 72: google.ads.googleads.v14.common.DiscoveryVideoResponsiveAdInfo.call_to_actions:type_name -> google.ads.googleads.v14.common.AdCallToActionAsset
+	73, // [73:73] is the sub-list for method output_type
+	73, // [73:73] is the sub-list for method input_type
+	73, // [73:73] is the sub-list for extension type_name
+	73, // [73:73] is the sub-list for extension extendee
+	0,  // [0:73] is the sub-list for field type_name
 }
 
 func init() { file_google_ads_googleads_v14_common_ad_type_infos_proto_init() }
@@ -4051,6 +4225,18 @@ func file_google_ads_googleads_v14_common_ad_type_infos_proto_init() {
 				return nil
 			}
 		}
+		file_google_ads_googleads_v14_common_ad_type_infos_proto_msgTypes[30].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DiscoveryVideoResponsiveAdInfo); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	file_google_ads_googleads_v14_common_ad_type_infos_proto_msgTypes[0].OneofWrappers = []interface{}{}
 	file_google_ads_googleads_v14_common_ad_type_infos_proto_msgTypes[1].OneofWrappers = []interface{}{}
@@ -4083,7 +4269,7 @@ func file_google_ads_googleads_v14_common_ad_type_infos_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_google_ads_googleads_v14_common_ad_type_infos_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   30,
+			NumMessages:   31,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

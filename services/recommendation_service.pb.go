@@ -40,7 +40,6 @@ const (
 )
 
 // Scope to apply the assets to.
-// Next ID: 4
 type ApplyRecommendationOperation_AdAssetApplyParameters_ApplyScope int32
 
 const (

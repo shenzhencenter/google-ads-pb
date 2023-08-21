@@ -30,7 +30,6 @@ import (
 	gtransport "google.golang.org/api/transport/grpc"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/metadata"
 )
 
 var newCampaignSharedSetClientHook clientHook
@@ -156,7 +155,7 @@ type campaignSharedSetGRPCClient struct {
 	campaignSharedSetClient servicespb.CampaignSharedSetServiceClient
 
 	// The x-goog-* metadata to be sent with each request.
-	xGoogMetadata metadata.MD
+	xGoogHeaders []string
 }
 
 // NewCampaignSharedSetClient creates a new campaign shared set service client based on gRPC.
@@ -205,7 +204,7 @@ func (c *campaignSharedSetGRPCClient) Connection() *grpc.ClientConn {
 func (c *campaignSharedSetGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", gax.GoVersion}, keyval...)
 	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
-	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
+	c.xGoogHeaders = []string{"x-goog-api-client", gax.XGoogHeader(kv...)}
 }
 
 // Close closes the connection to the API service. The user should invoke this when
@@ -215,9 +214,10 @@ func (c *campaignSharedSetGRPCClient) Close() error {
 }
 
 func (c *campaignSharedSetGRPCClient) MutateCampaignSharedSets(ctx context.Context, req *servicespb.MutateCampaignSharedSetsRequest, opts ...gax.CallOption) (*servicespb.MutateCampaignSharedSetsResponse, error) {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId()))}
 
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
 	opts = append((*c.CallOptions).MutateCampaignSharedSets[0:len((*c.CallOptions).MutateCampaignSharedSets):len((*c.CallOptions).MutateCampaignSharedSets)], opts...)
 	var resp *servicespb.MutateCampaignSharedSetsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
