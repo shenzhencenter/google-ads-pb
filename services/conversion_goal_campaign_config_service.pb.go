@@ -39,7 +39,7 @@ const (
 )
 
 // Request message for
-// [ConversionGoalCampaignConfigService.MutateConversionGoalCampaignConfig][].
+// [ConversionGoalCampaignConfigService.MutateConversionGoalCampaignConfigs][google.ads.googleads.v14.services.ConversionGoalCampaignConfigService.MutateConversionGoalCampaignConfigs].
 type MutateConversionGoalCampaignConfigsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

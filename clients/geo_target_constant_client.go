@@ -28,7 +28,6 @@ import (
 	gtransport "google.golang.org/api/transport/grpc"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/metadata"
 )
 
 var newGeoTargetConstantClientHook clientHook
@@ -139,7 +138,7 @@ type geoTargetConstantGRPCClient struct {
 	geoTargetConstantClient servicespb.GeoTargetConstantServiceClient
 
 	// The x-goog-* metadata to be sent with each request.
-	xGoogMetadata metadata.MD
+	xGoogHeaders []string
 }
 
 // NewGeoTargetConstantClient creates a new geo target constant service client based on gRPC.
@@ -188,7 +187,7 @@ func (c *geoTargetConstantGRPCClient) Connection() *grpc.ClientConn {
 func (c *geoTargetConstantGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", gax.GoVersion}, keyval...)
 	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
-	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
+	c.xGoogHeaders = []string{"x-goog-api-client", gax.XGoogHeader(kv...)}
 }
 
 // Close closes the connection to the API service. The user should invoke this when
@@ -198,7 +197,7 @@ func (c *geoTargetConstantGRPCClient) Close() error {
 }
 
 func (c *geoTargetConstantGRPCClient) SuggestGeoTargetConstants(ctx context.Context, req *servicespb.SuggestGeoTargetConstantsRequest, opts ...gax.CallOption) (*servicespb.SuggestGeoTargetConstantsResponse, error) {
-	ctx = insertMetadata(ctx, c.xGoogMetadata)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, c.xGoogHeaders...)
 	opts = append((*c.CallOptions).SuggestGeoTargetConstants[0:len((*c.CallOptions).SuggestGeoTargetConstants):len((*c.CallOptions).SuggestGeoTargetConstants)], opts...)
 	var resp *servicespb.SuggestGeoTargetConstantsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {

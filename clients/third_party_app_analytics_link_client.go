@@ -30,7 +30,6 @@ import (
 	gtransport "google.golang.org/api/transport/grpc"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/metadata"
 )
 
 var newThirdPartyAppAnalyticsLinkClientHook clientHook
@@ -142,7 +141,7 @@ type thirdPartyAppAnalyticsLinkGRPCClient struct {
 	thirdPartyAppAnalyticsLinkClient servicespb.ThirdPartyAppAnalyticsLinkServiceClient
 
 	// The x-goog-* metadata to be sent with each request.
-	xGoogMetadata metadata.MD
+	xGoogHeaders []string
 }
 
 // NewThirdPartyAppAnalyticsLinkClient creates a new third party app analytics link service client based on gRPC.
@@ -192,7 +191,7 @@ func (c *thirdPartyAppAnalyticsLinkGRPCClient) Connection() *grpc.ClientConn {
 func (c *thirdPartyAppAnalyticsLinkGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", gax.GoVersion}, keyval...)
 	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
-	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
+	c.xGoogHeaders = []string{"x-goog-api-client", gax.XGoogHeader(kv...)}
 }
 
 // Close closes the connection to the API service. The user should invoke this when
@@ -202,9 +201,10 @@ func (c *thirdPartyAppAnalyticsLinkGRPCClient) Close() error {
 }
 
 func (c *thirdPartyAppAnalyticsLinkGRPCClient) RegenerateShareableLinkId(ctx context.Context, req *servicespb.RegenerateShareableLinkIdRequest, opts ...gax.CallOption) (*servicespb.RegenerateShareableLinkIdResponse, error) {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName()))}
 
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
 	opts = append((*c.CallOptions).RegenerateShareableLinkId[0:len((*c.CallOptions).RegenerateShareableLinkId):len((*c.CallOptions).RegenerateShareableLinkId)], opts...)
 	var resp *servicespb.RegenerateShareableLinkIdResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {

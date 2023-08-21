@@ -30,7 +30,6 @@ import (
 	gtransport "google.golang.org/api/transport/grpc"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/metadata"
 )
 
 var newLabelClientHook clientHook
@@ -157,7 +156,7 @@ type labelGRPCClient struct {
 	labelClient servicespb.LabelServiceClient
 
 	// The x-goog-* metadata to be sent with each request.
-	xGoogMetadata metadata.MD
+	xGoogHeaders []string
 }
 
 // NewLabelClient creates a new label service client based on gRPC.
@@ -206,7 +205,7 @@ func (c *labelGRPCClient) Connection() *grpc.ClientConn {
 func (c *labelGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", gax.GoVersion}, keyval...)
 	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
-	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
+	c.xGoogHeaders = []string{"x-goog-api-client", gax.XGoogHeader(kv...)}
 }
 
 // Close closes the connection to the API service. The user should invoke this when
@@ -216,9 +215,10 @@ func (c *labelGRPCClient) Close() error {
 }
 
 func (c *labelGRPCClient) MutateLabels(ctx context.Context, req *servicespb.MutateLabelsRequest, opts ...gax.CallOption) (*servicespb.MutateLabelsResponse, error) {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId()))}
 
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
 	opts = append((*c.CallOptions).MutateLabels[0:len((*c.CallOptions).MutateLabels):len((*c.CallOptions).MutateLabels)], opts...)
 	var resp *servicespb.MutateLabelsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {

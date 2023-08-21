@@ -35,7 +35,6 @@ import (
 	statuspb "google.golang.org/genproto/googleapis/rpc/status"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/metadata"
 	"google.golang.org/protobuf/proto"
 	emptypb "google.golang.org/protobuf/types/known/emptypb"
 )
@@ -236,7 +235,7 @@ type campaignDraftGRPCClient struct {
 	LROClient **lroauto.OperationsClient
 
 	// The x-goog-* metadata to be sent with each request.
-	xGoogMetadata metadata.MD
+	xGoogHeaders []string
 }
 
 // NewCampaignDraftClient creates a new campaign draft service client based on gRPC.
@@ -296,7 +295,7 @@ func (c *campaignDraftGRPCClient) Connection() *grpc.ClientConn {
 func (c *campaignDraftGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", gax.GoVersion}, keyval...)
 	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
-	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
+	c.xGoogHeaders = []string{"x-goog-api-client", gax.XGoogHeader(kv...)}
 }
 
 // Close closes the connection to the API service. The user should invoke this when
@@ -306,9 +305,10 @@ func (c *campaignDraftGRPCClient) Close() error {
 }
 
 func (c *campaignDraftGRPCClient) MutateCampaignDrafts(ctx context.Context, req *servicespb.MutateCampaignDraftsRequest, opts ...gax.CallOption) (*servicespb.MutateCampaignDraftsResponse, error) {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId()))}
 
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
 	opts = append((*c.CallOptions).MutateCampaignDrafts[0:len((*c.CallOptions).MutateCampaignDrafts):len((*c.CallOptions).MutateCampaignDrafts)], opts...)
 	var resp *servicespb.MutateCampaignDraftsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -323,9 +323,10 @@ func (c *campaignDraftGRPCClient) MutateCampaignDrafts(ctx context.Context, req 
 }
 
 func (c *campaignDraftGRPCClient) PromoteCampaignDraft(ctx context.Context, req *servicespb.PromoteCampaignDraftRequest, opts ...gax.CallOption) (*PromoteCampaignDraftOperation, error) {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "campaign_draft", url.QueryEscape(req.GetCampaignDraft())))
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "campaign_draft", url.QueryEscape(req.GetCampaignDraft()))}
 
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
 	opts = append((*c.CallOptions).PromoteCampaignDraft[0:len((*c.CallOptions).PromoteCampaignDraft):len((*c.CallOptions).PromoteCampaignDraft)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -342,9 +343,10 @@ func (c *campaignDraftGRPCClient) PromoteCampaignDraft(ctx context.Context, req 
 }
 
 func (c *campaignDraftGRPCClient) ListCampaignDraftAsyncErrors(ctx context.Context, req *servicespb.ListCampaignDraftAsyncErrorsRequest, opts ...gax.CallOption) *StatusIterator {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName())))
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName()))}
 
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
 	opts = append((*c.CallOptions).ListCampaignDraftAsyncErrors[0:len((*c.CallOptions).ListCampaignDraftAsyncErrors):len((*c.CallOptions).ListCampaignDraftAsyncErrors)], opts...)
 	it := &StatusIterator{}
 	req = proto.Clone(req).(*servicespb.ListCampaignDraftAsyncErrorsRequest)

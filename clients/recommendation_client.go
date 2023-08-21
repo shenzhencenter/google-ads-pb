@@ -30,7 +30,6 @@ import (
 	gtransport "google.golang.org/api/transport/grpc"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/metadata"
 )
 
 var newRecommendationClientHook clientHook
@@ -174,7 +173,7 @@ type recommendationGRPCClient struct {
 	recommendationClient servicespb.RecommendationServiceClient
 
 	// The x-goog-* metadata to be sent with each request.
-	xGoogMetadata metadata.MD
+	xGoogHeaders []string
 }
 
 // NewRecommendationClient creates a new recommendation service client based on gRPC.
@@ -223,7 +222,7 @@ func (c *recommendationGRPCClient) Connection() *grpc.ClientConn {
 func (c *recommendationGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", gax.GoVersion}, keyval...)
 	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
-	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
+	c.xGoogHeaders = []string{"x-goog-api-client", gax.XGoogHeader(kv...)}
 }
 
 // Close closes the connection to the API service. The user should invoke this when
@@ -233,9 +232,10 @@ func (c *recommendationGRPCClient) Close() error {
 }
 
 func (c *recommendationGRPCClient) ApplyRecommendation(ctx context.Context, req *servicespb.ApplyRecommendationRequest, opts ...gax.CallOption) (*servicespb.ApplyRecommendationResponse, error) {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId()))}
 
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
 	opts = append((*c.CallOptions).ApplyRecommendation[0:len((*c.CallOptions).ApplyRecommendation):len((*c.CallOptions).ApplyRecommendation)], opts...)
 	var resp *servicespb.ApplyRecommendationResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -250,9 +250,10 @@ func (c *recommendationGRPCClient) ApplyRecommendation(ctx context.Context, req 
 }
 
 func (c *recommendationGRPCClient) DismissRecommendation(ctx context.Context, req *servicespb.DismissRecommendationRequest, opts ...gax.CallOption) (*servicespb.DismissRecommendationResponse, error) {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId()))}
 
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
 	opts = append((*c.CallOptions).DismissRecommendation[0:len((*c.CallOptions).DismissRecommendation):len((*c.CallOptions).DismissRecommendation)], opts...)
 	var resp *servicespb.DismissRecommendationResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {

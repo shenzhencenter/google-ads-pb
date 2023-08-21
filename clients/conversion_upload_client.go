@@ -30,7 +30,6 @@ import (
 	gtransport "google.golang.org/api/transport/grpc"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/metadata"
 )
 
 var newConversionUploadClientHook clientHook
@@ -171,7 +170,7 @@ type conversionUploadGRPCClient struct {
 	conversionUploadClient servicespb.ConversionUploadServiceClient
 
 	// The x-goog-* metadata to be sent with each request.
-	xGoogMetadata metadata.MD
+	xGoogHeaders []string
 }
 
 // NewConversionUploadClient creates a new conversion upload service client based on gRPC.
@@ -220,7 +219,7 @@ func (c *conversionUploadGRPCClient) Connection() *grpc.ClientConn {
 func (c *conversionUploadGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", gax.GoVersion}, keyval...)
 	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
-	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
+	c.xGoogHeaders = []string{"x-goog-api-client", gax.XGoogHeader(kv...)}
 }
 
 // Close closes the connection to the API service. The user should invoke this when
@@ -230,9 +229,10 @@ func (c *conversionUploadGRPCClient) Close() error {
 }
 
 func (c *conversionUploadGRPCClient) UploadClickConversions(ctx context.Context, req *servicespb.UploadClickConversionsRequest, opts ...gax.CallOption) (*servicespb.UploadClickConversionsResponse, error) {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId()))}
 
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
 	opts = append((*c.CallOptions).UploadClickConversions[0:len((*c.CallOptions).UploadClickConversions):len((*c.CallOptions).UploadClickConversions)], opts...)
 	var resp *servicespb.UploadClickConversionsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -247,9 +247,10 @@ func (c *conversionUploadGRPCClient) UploadClickConversions(ctx context.Context,
 }
 
 func (c *conversionUploadGRPCClient) UploadCallConversions(ctx context.Context, req *servicespb.UploadCallConversionsRequest, opts ...gax.CallOption) (*servicespb.UploadCallConversionsResponse, error) {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId()))}
 
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
 	opts = append((*c.CallOptions).UploadCallConversions[0:len((*c.CallOptions).UploadCallConversions):len((*c.CallOptions).UploadCallConversions)], opts...)
 	var resp *servicespb.UploadCallConversionsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {

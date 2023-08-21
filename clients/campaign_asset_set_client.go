@@ -30,7 +30,6 @@ import (
 	gtransport "google.golang.org/api/transport/grpc"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/metadata"
 )
 
 var newCampaignAssetSetClientHook clientHook
@@ -133,7 +132,7 @@ type campaignAssetSetGRPCClient struct {
 	campaignAssetSetClient servicespb.CampaignAssetSetServiceClient
 
 	// The x-goog-* metadata to be sent with each request.
-	xGoogMetadata metadata.MD
+	xGoogHeaders []string
 }
 
 // NewCampaignAssetSetClient creates a new campaign asset set service client based on gRPC.
@@ -182,7 +181,7 @@ func (c *campaignAssetSetGRPCClient) Connection() *grpc.ClientConn {
 func (c *campaignAssetSetGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", gax.GoVersion}, keyval...)
 	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
-	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
+	c.xGoogHeaders = []string{"x-goog-api-client", gax.XGoogHeader(kv...)}
 }
 
 // Close closes the connection to the API service. The user should invoke this when
@@ -192,9 +191,10 @@ func (c *campaignAssetSetGRPCClient) Close() error {
 }
 
 func (c *campaignAssetSetGRPCClient) MutateCampaignAssetSets(ctx context.Context, req *servicespb.MutateCampaignAssetSetsRequest, opts ...gax.CallOption) (*servicespb.MutateCampaignAssetSetsResponse, error) {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId()))}
 
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
 	opts = append((*c.CallOptions).MutateCampaignAssetSets[0:len((*c.CallOptions).MutateCampaignAssetSets):len((*c.CallOptions).MutateCampaignAssetSets)], opts...)
 	var resp *servicespb.MutateCampaignAssetSetsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {

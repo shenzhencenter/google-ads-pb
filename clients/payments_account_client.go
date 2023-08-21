@@ -30,7 +30,6 @@ import (
 	gtransport "google.golang.org/api/transport/grpc"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/metadata"
 )
 
 var newPaymentsAccountClientHook clientHook
@@ -144,7 +143,7 @@ type paymentsAccountGRPCClient struct {
 	paymentsAccountClient servicespb.PaymentsAccountServiceClient
 
 	// The x-goog-* metadata to be sent with each request.
-	xGoogMetadata metadata.MD
+	xGoogHeaders []string
 }
 
 // NewPaymentsAccountClient creates a new payments account service client based on gRPC.
@@ -194,7 +193,7 @@ func (c *paymentsAccountGRPCClient) Connection() *grpc.ClientConn {
 func (c *paymentsAccountGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", gax.GoVersion}, keyval...)
 	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
-	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
+	c.xGoogHeaders = []string{"x-goog-api-client", gax.XGoogHeader(kv...)}
 }
 
 // Close closes the connection to the API service. The user should invoke this when
@@ -204,9 +203,10 @@ func (c *paymentsAccountGRPCClient) Close() error {
 }
 
 func (c *paymentsAccountGRPCClient) ListPaymentsAccounts(ctx context.Context, req *servicespb.ListPaymentsAccountsRequest, opts ...gax.CallOption) (*servicespb.ListPaymentsAccountsResponse, error) {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId()))}
 
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
 	opts = append((*c.CallOptions).ListPaymentsAccounts[0:len((*c.CallOptions).ListPaymentsAccounts):len((*c.CallOptions).ListPaymentsAccounts)], opts...)
 	var resp *servicespb.ListPaymentsAccountsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {

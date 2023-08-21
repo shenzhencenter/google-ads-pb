@@ -30,7 +30,6 @@ import (
 	gtransport "google.golang.org/api/transport/grpc"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/metadata"
 )
 
 var newUserListClientHook clientHook
@@ -154,7 +153,7 @@ type userListGRPCClient struct {
 	userListClient servicespb.UserListServiceClient
 
 	// The x-goog-* metadata to be sent with each request.
-	xGoogMetadata metadata.MD
+	xGoogHeaders []string
 }
 
 // NewUserListClient creates a new user list service client based on gRPC.
@@ -203,7 +202,7 @@ func (c *userListGRPCClient) Connection() *grpc.ClientConn {
 func (c *userListGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", gax.GoVersion}, keyval...)
 	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
-	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
+	c.xGoogHeaders = []string{"x-goog-api-client", gax.XGoogHeader(kv...)}
 }
 
 // Close closes the connection to the API service. The user should invoke this when
@@ -213,9 +212,10 @@ func (c *userListGRPCClient) Close() error {
 }
 
 func (c *userListGRPCClient) MutateUserLists(ctx context.Context, req *servicespb.MutateUserListsRequest, opts ...gax.CallOption) (*servicespb.MutateUserListsResponse, error) {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId()))}
 
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
 	opts = append((*c.CallOptions).MutateUserLists[0:len((*c.CallOptions).MutateUserLists):len((*c.CallOptions).MutateUserLists)], opts...)
 	var resp *servicespb.MutateUserListsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {

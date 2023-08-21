@@ -30,7 +30,6 @@ import (
 	gtransport "google.golang.org/api/transport/grpc"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/metadata"
 )
 
 var newReachPlanClientHook clientHook
@@ -204,7 +203,7 @@ type reachPlanGRPCClient struct {
 	reachPlanClient servicespb.ReachPlanServiceClient
 
 	// The x-goog-* metadata to be sent with each request.
-	xGoogMetadata metadata.MD
+	xGoogHeaders []string
 }
 
 // NewReachPlanClient creates a new reach plan service client based on gRPC.
@@ -257,7 +256,7 @@ func (c *reachPlanGRPCClient) Connection() *grpc.ClientConn {
 func (c *reachPlanGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", gax.GoVersion}, keyval...)
 	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
-	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
+	c.xGoogHeaders = []string{"x-goog-api-client", gax.XGoogHeader(kv...)}
 }
 
 // Close closes the connection to the API service. The user should invoke this when
@@ -267,7 +266,7 @@ func (c *reachPlanGRPCClient) Close() error {
 }
 
 func (c *reachPlanGRPCClient) ListPlannableLocations(ctx context.Context, req *servicespb.ListPlannableLocationsRequest, opts ...gax.CallOption) (*servicespb.ListPlannableLocationsResponse, error) {
-	ctx = insertMetadata(ctx, c.xGoogMetadata)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, c.xGoogHeaders...)
 	opts = append((*c.CallOptions).ListPlannableLocations[0:len((*c.CallOptions).ListPlannableLocations):len((*c.CallOptions).ListPlannableLocations)], opts...)
 	var resp *servicespb.ListPlannableLocationsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -282,7 +281,7 @@ func (c *reachPlanGRPCClient) ListPlannableLocations(ctx context.Context, req *s
 }
 
 func (c *reachPlanGRPCClient) ListPlannableProducts(ctx context.Context, req *servicespb.ListPlannableProductsRequest, opts ...gax.CallOption) (*servicespb.ListPlannableProductsResponse, error) {
-	ctx = insertMetadata(ctx, c.xGoogMetadata)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, c.xGoogHeaders...)
 	opts = append((*c.CallOptions).ListPlannableProducts[0:len((*c.CallOptions).ListPlannableProducts):len((*c.CallOptions).ListPlannableProducts)], opts...)
 	var resp *servicespb.ListPlannableProductsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -297,9 +296,10 @@ func (c *reachPlanGRPCClient) ListPlannableProducts(ctx context.Context, req *se
 }
 
 func (c *reachPlanGRPCClient) GenerateReachForecast(ctx context.Context, req *servicespb.GenerateReachForecastRequest, opts ...gax.CallOption) (*servicespb.GenerateReachForecastResponse, error) {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId()))}
 
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
 	opts = append((*c.CallOptions).GenerateReachForecast[0:len((*c.CallOptions).GenerateReachForecast):len((*c.CallOptions).GenerateReachForecast)], opts...)
 	var resp *servicespb.GenerateReachForecastResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {

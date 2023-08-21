@@ -30,7 +30,6 @@ import (
 	gtransport "google.golang.org/api/transport/grpc"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/metadata"
 )
 
 var newSmartCampaignSuggestClientHook clientHook
@@ -173,7 +172,7 @@ type smartCampaignSuggestGRPCClient struct {
 	smartCampaignSuggestClient servicespb.SmartCampaignSuggestServiceClient
 
 	// The x-goog-* metadata to be sent with each request.
-	xGoogMetadata metadata.MD
+	xGoogHeaders []string
 }
 
 // NewSmartCampaignSuggestClient creates a new smart campaign suggest service client based on gRPC.
@@ -222,7 +221,7 @@ func (c *smartCampaignSuggestGRPCClient) Connection() *grpc.ClientConn {
 func (c *smartCampaignSuggestGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", gax.GoVersion}, keyval...)
 	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
-	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
+	c.xGoogHeaders = []string{"x-goog-api-client", gax.XGoogHeader(kv...)}
 }
 
 // Close closes the connection to the API service. The user should invoke this when
@@ -232,9 +231,10 @@ func (c *smartCampaignSuggestGRPCClient) Close() error {
 }
 
 func (c *smartCampaignSuggestGRPCClient) SuggestSmartCampaignBudgetOptions(ctx context.Context, req *servicespb.SuggestSmartCampaignBudgetOptionsRequest, opts ...gax.CallOption) (*servicespb.SuggestSmartCampaignBudgetOptionsResponse, error) {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId()))}
 
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
 	opts = append((*c.CallOptions).SuggestSmartCampaignBudgetOptions[0:len((*c.CallOptions).SuggestSmartCampaignBudgetOptions):len((*c.CallOptions).SuggestSmartCampaignBudgetOptions)], opts...)
 	var resp *servicespb.SuggestSmartCampaignBudgetOptionsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -249,9 +249,10 @@ func (c *smartCampaignSuggestGRPCClient) SuggestSmartCampaignBudgetOptions(ctx c
 }
 
 func (c *smartCampaignSuggestGRPCClient) SuggestSmartCampaignAd(ctx context.Context, req *servicespb.SuggestSmartCampaignAdRequest, opts ...gax.CallOption) (*servicespb.SuggestSmartCampaignAdResponse, error) {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId()))}
 
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
 	opts = append((*c.CallOptions).SuggestSmartCampaignAd[0:len((*c.CallOptions).SuggestSmartCampaignAd):len((*c.CallOptions).SuggestSmartCampaignAd)], opts...)
 	var resp *servicespb.SuggestSmartCampaignAdResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -266,9 +267,10 @@ func (c *smartCampaignSuggestGRPCClient) SuggestSmartCampaignAd(ctx context.Cont
 }
 
 func (c *smartCampaignSuggestGRPCClient) SuggestKeywordThemes(ctx context.Context, req *servicespb.SuggestKeywordThemesRequest, opts ...gax.CallOption) (*servicespb.SuggestKeywordThemesResponse, error) {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId()))}
 
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
 	opts = append((*c.CallOptions).SuggestKeywordThemes[0:len((*c.CallOptions).SuggestKeywordThemes):len((*c.CallOptions).SuggestKeywordThemes)], opts...)
 	var resp *servicespb.SuggestKeywordThemesResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {

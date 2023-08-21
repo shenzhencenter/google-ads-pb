@@ -38,7 +38,7 @@ const (
 )
 
 // Request message for
-// [SmartCampaignSuggestService.SuggestSmartCampaignBudgets][].
+// [SmartCampaignSuggestService.SuggestSmartCampaignBudgetOptions][google.ads.googleads.v14.services.SmartCampaignSuggestService.SuggestSmartCampaignBudgetOptions].
 type SuggestSmartCampaignBudgetOptionsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -321,9 +321,9 @@ func (*SmartCampaignSuggestionInfo_LocationList_) isSmartCampaignSuggestionInfo_
 func (*SmartCampaignSuggestionInfo_Proximity) isSmartCampaignSuggestionInfo_GeoTarget() {}
 
 // Response message for
-// [SmartCampaignSuggestService.SuggestSmartCampaignBudgets][]. Depending on
-// whether the system could suggest the options, either all of the options or
-// none of them might be returned.
+// [SmartCampaignSuggestService.SuggestSmartCampaignBudgetOptions][google.ads.googleads.v14.services.SmartCampaignSuggestService.SuggestSmartCampaignBudgetOptions].
+// Depending on whether the system could suggest the options, either all of the
+// options or none of them might be returned.
 type SuggestSmartCampaignBudgetOptionsResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

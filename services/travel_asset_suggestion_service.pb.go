@@ -37,7 +37,7 @@ const (
 )
 
 // Request message for
-// [TravelSuggestAssetsService.SuggestTravelAssets][].
+// [TravelAssetSuggestionService.SuggestTravelAssets][google.ads.googleads.v14.services.TravelAssetSuggestionService.SuggestTravelAssets].
 type SuggestTravelAssetsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -109,7 +109,7 @@ func (x *SuggestTravelAssetsRequest) GetPlaceIds() []string {
 }
 
 // Response message for
-// [TravelSuggestAssetsService.SuggestTravelAssets][].
+// [TravelAssetSuggestionService.SuggestTravelAssets][google.ads.googleads.v14.services.TravelAssetSuggestionService.SuggestTravelAssets].
 type SuggestTravelAssetsResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

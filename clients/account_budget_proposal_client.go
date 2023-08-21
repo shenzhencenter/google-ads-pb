@@ -30,7 +30,6 @@ import (
 	gtransport "google.golang.org/api/transport/grpc"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/metadata"
 )
 
 var newAccountBudgetProposalClientHook clientHook
@@ -156,7 +155,7 @@ type accountBudgetProposalGRPCClient struct {
 	accountBudgetProposalClient servicespb.AccountBudgetProposalServiceClient
 
 	// The x-goog-* metadata to be sent with each request.
-	xGoogMetadata metadata.MD
+	xGoogHeaders []string
 }
 
 // NewAccountBudgetProposalClient creates a new account budget proposal service client based on gRPC.
@@ -213,7 +212,7 @@ func (c *accountBudgetProposalGRPCClient) Connection() *grpc.ClientConn {
 func (c *accountBudgetProposalGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", gax.GoVersion}, keyval...)
 	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
-	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
+	c.xGoogHeaders = []string{"x-goog-api-client", gax.XGoogHeader(kv...)}
 }
 
 // Close closes the connection to the API service. The user should invoke this when
@@ -223,9 +222,10 @@ func (c *accountBudgetProposalGRPCClient) Close() error {
 }
 
 func (c *accountBudgetProposalGRPCClient) MutateAccountBudgetProposal(ctx context.Context, req *servicespb.MutateAccountBudgetProposalRequest, opts ...gax.CallOption) (*servicespb.MutateAccountBudgetProposalResponse, error) {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId()))}
 
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
 	opts = append((*c.CallOptions).MutateAccountBudgetProposal[0:len((*c.CallOptions).MutateAccountBudgetProposal):len((*c.CallOptions).MutateAccountBudgetProposal)], opts...)
 	var resp *servicespb.MutateAccountBudgetProposalResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {

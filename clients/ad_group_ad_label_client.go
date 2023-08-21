@@ -30,7 +30,6 @@ import (
 	gtransport "google.golang.org/api/transport/grpc"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/metadata"
 )
 
 var newAdGroupAdLabelClientHook clientHook
@@ -145,7 +144,7 @@ type adGroupAdLabelGRPCClient struct {
 	adGroupAdLabelClient servicespb.AdGroupAdLabelServiceClient
 
 	// The x-goog-* metadata to be sent with each request.
-	xGoogMetadata metadata.MD
+	xGoogHeaders []string
 }
 
 // NewAdGroupAdLabelClient creates a new ad group ad label service client based on gRPC.
@@ -194,7 +193,7 @@ func (c *adGroupAdLabelGRPCClient) Connection() *grpc.ClientConn {
 func (c *adGroupAdLabelGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", gax.GoVersion}, keyval...)
 	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
-	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
+	c.xGoogHeaders = []string{"x-goog-api-client", gax.XGoogHeader(kv...)}
 }
 
 // Close closes the connection to the API service. The user should invoke this when
@@ -204,9 +203,10 @@ func (c *adGroupAdLabelGRPCClient) Close() error {
 }
 
 func (c *adGroupAdLabelGRPCClient) MutateAdGroupAdLabels(ctx context.Context, req *servicespb.MutateAdGroupAdLabelsRequest, opts ...gax.CallOption) (*servicespb.MutateAdGroupAdLabelsResponse, error) {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId()))}
 
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
 	opts = append((*c.CallOptions).MutateAdGroupAdLabels[0:len((*c.CallOptions).MutateAdGroupAdLabels):len((*c.CallOptions).MutateAdGroupAdLabels)], opts...)
 	var resp *servicespb.MutateAdGroupAdLabelsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {

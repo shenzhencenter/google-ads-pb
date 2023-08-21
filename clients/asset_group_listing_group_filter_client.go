@@ -30,7 +30,6 @@ import (
 	gtransport "google.golang.org/api/transport/grpc"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/metadata"
 )
 
 var newAssetGroupListingGroupFilterClientHook clientHook
@@ -133,7 +132,7 @@ type assetGroupListingGroupFilterGRPCClient struct {
 	assetGroupListingGroupFilterClient servicespb.AssetGroupListingGroupFilterServiceClient
 
 	// The x-goog-* metadata to be sent with each request.
-	xGoogMetadata metadata.MD
+	xGoogHeaders []string
 }
 
 // NewAssetGroupListingGroupFilterClient creates a new asset group listing group filter service client based on gRPC.
@@ -182,7 +181,7 @@ func (c *assetGroupListingGroupFilterGRPCClient) Connection() *grpc.ClientConn {
 func (c *assetGroupListingGroupFilterGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", gax.GoVersion}, keyval...)
 	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
-	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
+	c.xGoogHeaders = []string{"x-goog-api-client", gax.XGoogHeader(kv...)}
 }
 
 // Close closes the connection to the API service. The user should invoke this when
@@ -192,9 +191,10 @@ func (c *assetGroupListingGroupFilterGRPCClient) Close() error {
 }
 
 func (c *assetGroupListingGroupFilterGRPCClient) MutateAssetGroupListingGroupFilters(ctx context.Context, req *servicespb.MutateAssetGroupListingGroupFiltersRequest, opts ...gax.CallOption) (*servicespb.MutateAssetGroupListingGroupFiltersResponse, error) {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId()))}
 
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
 	opts = append((*c.CallOptions).MutateAssetGroupListingGroupFilters[0:len((*c.CallOptions).MutateAssetGroupListingGroupFilters):len((*c.CallOptions).MutateAssetGroupListingGroupFilters)], opts...)
 	var resp *servicespb.MutateAssetGroupListingGroupFiltersResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {

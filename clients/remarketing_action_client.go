@@ -30,7 +30,6 @@ import (
 	gtransport "google.golang.org/api/transport/grpc"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/metadata"
 )
 
 var newRemarketingActionClientHook clientHook
@@ -141,7 +140,7 @@ type remarketingActionGRPCClient struct {
 	remarketingActionClient servicespb.RemarketingActionServiceClient
 
 	// The x-goog-* metadata to be sent with each request.
-	xGoogMetadata metadata.MD
+	xGoogHeaders []string
 }
 
 // NewRemarketingActionClient creates a new remarketing action service client based on gRPC.
@@ -190,7 +189,7 @@ func (c *remarketingActionGRPCClient) Connection() *grpc.ClientConn {
 func (c *remarketingActionGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", gax.GoVersion}, keyval...)
 	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
-	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
+	c.xGoogHeaders = []string{"x-goog-api-client", gax.XGoogHeader(kv...)}
 }
 
 // Close closes the connection to the API service. The user should invoke this when
@@ -200,9 +199,10 @@ func (c *remarketingActionGRPCClient) Close() error {
 }
 
 func (c *remarketingActionGRPCClient) MutateRemarketingActions(ctx context.Context, req *servicespb.MutateRemarketingActionsRequest, opts ...gax.CallOption) (*servicespb.MutateRemarketingActionsResponse, error) {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId()))}
 
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
 	opts = append((*c.CallOptions).MutateRemarketingActions[0:len((*c.CallOptions).MutateRemarketingActions):len((*c.CallOptions).MutateRemarketingActions)], opts...)
 	var resp *servicespb.MutateRemarketingActionsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {

@@ -30,7 +30,6 @@ import (
 	gtransport "google.golang.org/api/transport/grpc"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/metadata"
 )
 
 var newCampaignExtensionSettingClientHook clientHook
@@ -162,7 +161,7 @@ type campaignExtensionSettingGRPCClient struct {
 	campaignExtensionSettingClient servicespb.CampaignExtensionSettingServiceClient
 
 	// The x-goog-* metadata to be sent with each request.
-	xGoogMetadata metadata.MD
+	xGoogHeaders []string
 }
 
 // NewCampaignExtensionSettingClient creates a new campaign extension setting service client based on gRPC.
@@ -211,7 +210,7 @@ func (c *campaignExtensionSettingGRPCClient) Connection() *grpc.ClientConn {
 func (c *campaignExtensionSettingGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", gax.GoVersion}, keyval...)
 	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
-	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
+	c.xGoogHeaders = []string{"x-goog-api-client", gax.XGoogHeader(kv...)}
 }
 
 // Close closes the connection to the API service. The user should invoke this when
@@ -221,9 +220,10 @@ func (c *campaignExtensionSettingGRPCClient) Close() error {
 }
 
 func (c *campaignExtensionSettingGRPCClient) MutateCampaignExtensionSettings(ctx context.Context, req *servicespb.MutateCampaignExtensionSettingsRequest, opts ...gax.CallOption) (*servicespb.MutateCampaignExtensionSettingsResponse, error) {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId()))}
 
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
 	opts = append((*c.CallOptions).MutateCampaignExtensionSettings[0:len((*c.CallOptions).MutateCampaignExtensionSettings):len((*c.CallOptions).MutateCampaignExtensionSettings)], opts...)
 	var resp *servicespb.MutateCampaignExtensionSettingsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {

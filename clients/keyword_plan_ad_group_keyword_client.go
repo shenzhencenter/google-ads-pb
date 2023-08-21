@@ -30,7 +30,6 @@ import (
 	gtransport "google.golang.org/api/transport/grpc"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/metadata"
 )
 
 var newKeywordPlanAdGroupKeywordClientHook clientHook
@@ -151,7 +150,7 @@ type keywordPlanAdGroupKeywordGRPCClient struct {
 	keywordPlanAdGroupKeywordClient servicespb.KeywordPlanAdGroupKeywordServiceClient
 
 	// The x-goog-* metadata to be sent with each request.
-	xGoogMetadata metadata.MD
+	xGoogHeaders []string
 }
 
 // NewKeywordPlanAdGroupKeywordClient creates a new keyword plan ad group keyword service client based on gRPC.
@@ -204,7 +203,7 @@ func (c *keywordPlanAdGroupKeywordGRPCClient) Connection() *grpc.ClientConn {
 func (c *keywordPlanAdGroupKeywordGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", gax.GoVersion}, keyval...)
 	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
-	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
+	c.xGoogHeaders = []string{"x-goog-api-client", gax.XGoogHeader(kv...)}
 }
 
 // Close closes the connection to the API service. The user should invoke this when
@@ -214,9 +213,10 @@ func (c *keywordPlanAdGroupKeywordGRPCClient) Close() error {
 }
 
 func (c *keywordPlanAdGroupKeywordGRPCClient) MutateKeywordPlanAdGroupKeywords(ctx context.Context, req *servicespb.MutateKeywordPlanAdGroupKeywordsRequest, opts ...gax.CallOption) (*servicespb.MutateKeywordPlanAdGroupKeywordsResponse, error) {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId()))}
 
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
 	opts = append((*c.CallOptions).MutateKeywordPlanAdGroupKeywords[0:len((*c.CallOptions).MutateKeywordPlanAdGroupKeywords):len((*c.CallOptions).MutateKeywordPlanAdGroupKeywords)], opts...)
 	var resp *servicespb.MutateKeywordPlanAdGroupKeywordsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {

@@ -30,7 +30,6 @@ import (
 	gtransport "google.golang.org/api/transport/grpc"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/metadata"
 )
 
 var newKeywordPlanCampaignClientHook clientHook
@@ -150,7 +149,7 @@ type keywordPlanCampaignGRPCClient struct {
 	keywordPlanCampaignClient servicespb.KeywordPlanCampaignServiceClient
 
 	// The x-goog-* metadata to be sent with each request.
-	xGoogMetadata metadata.MD
+	xGoogHeaders []string
 }
 
 // NewKeywordPlanCampaignClient creates a new keyword plan campaign service client based on gRPC.
@@ -199,7 +198,7 @@ func (c *keywordPlanCampaignGRPCClient) Connection() *grpc.ClientConn {
 func (c *keywordPlanCampaignGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", gax.GoVersion}, keyval...)
 	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
-	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
+	c.xGoogHeaders = []string{"x-goog-api-client", gax.XGoogHeader(kv...)}
 }
 
 // Close closes the connection to the API service. The user should invoke this when
@@ -209,9 +208,10 @@ func (c *keywordPlanCampaignGRPCClient) Close() error {
 }
 
 func (c *keywordPlanCampaignGRPCClient) MutateKeywordPlanCampaigns(ctx context.Context, req *servicespb.MutateKeywordPlanCampaignsRequest, opts ...gax.CallOption) (*servicespb.MutateKeywordPlanCampaignsResponse, error) {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId())))
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId()))}
 
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
 	opts = append((*c.CallOptions).MutateKeywordPlanCampaigns[0:len((*c.CallOptions).MutateKeywordPlanCampaigns):len((*c.CallOptions).MutateKeywordPlanCampaigns)], opts...)
 	var resp *servicespb.MutateKeywordPlanCampaignsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {

@@ -502,7 +502,7 @@ func (*GetSmartCampaignStatusResponse_EndedDetails) isGetSmartCampaignStatusResp
 }
 
 // Request message for
-// [SmartCampaignSettingService.MutateSmartCampaignSetting][].
+// [SmartCampaignSettingService.MutateSmartCampaignSettings][google.ads.googleads.v14.services.SmartCampaignSettingService.MutateSmartCampaignSettings].
 type MutateSmartCampaignSettingsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
