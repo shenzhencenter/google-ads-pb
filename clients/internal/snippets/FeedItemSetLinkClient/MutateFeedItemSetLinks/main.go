@@ -19,10 +19,10 @@
 package main
 
 import (
+	clients "github.com/Optable/google-ads-pb/clients"
 	"context"
-	clients "github.com/shenzhencenter/google-ads-pb/clients"
 
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
+	servicespb "github.com/Optable/google-ads-pb/protogen/services"
 )
 
 func main() {
@@ -40,7 +40,7 @@ func main() {
 
 	req := &servicespb.MutateFeedItemSetLinksRequest{
 		// TODO: Fill request struct fields.
-		// See https://pkg.go.dev/github.com/shenzhencenter/google-ads-pb/services#MutateFeedItemSetLinksRequest.
+		// See https://pkg.go.dev/github.com/Optable/google-ads-pb/protogen/services#MutateFeedItemSetLinksRequest.
 	}
 	resp, err := c.MutateFeedItemSetLinks(ctx, req)
 	if err != nil {

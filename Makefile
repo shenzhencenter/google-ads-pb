@@ -7,6 +7,7 @@ GRPC_CONFIG_PATH = $(INPUT_PATH)/google/ads/googleads/v${VERSION}/googleads_grpc
 BUILD_PATH = $(OUTPUT_PATH)/google/ads/googleads/v${VERSION}
 BUILD_PKG = google.golang.org/genproto/googleapis/ads/googleads/v${VERSION}
 PUBLISH_PKG = github.com/Optable/google-ads-pb/protogen
+PUBLISH_CLIENT = github.com/Optable/google-ads-pb/clients
 PATH := $(shell go env GOPATH)/bin:$(PATH)
 
 .PHONY: generate
@@ -66,7 +67,7 @@ fix-files:
 	mv ${BUILD_PATH}/* ./${OUTPUT_PATH}
 	@echo "\nRenaming the package..."
 	find ./${OUTPUT_PATH} -name '*.go' -exec sed -i.bak "s|${BUILD_PKG}|${PUBLISH_PKG}|" '{}' \; -exec rm {}.bak \; \
-	&& find ./${OUTPUT_PATH}/clients/internal/snippets -name '*.go' -exec sed -i.bak "s|\"clients\"|\"${PUBLISH_PKG}/clients\"|g" '{}' \; -exec rm {}.bak \;
+	&& find ./${OUTPUT_PATH}/clients/internal/snippets -name '*.go' -exec sed -i.bak "s|\"clients\"|\"${PUBLISH_CLIENT}\"|g" '{}' \; -exec rm {}.bak \;
 	@echo "\nMoving the clients..."
 	mv ./${OUTPUT_PATH}/clients/* ./clients/
 	@if [ -f ${OUTPUT_PATH}/resources/experiment_arm.pb.go ] ; then \
@@ -79,4 +80,5 @@ cleanup:
 	@echo "\nCleaning up..."
 	rm -rf ./${INPUT_PATH}	\
 	&& rm -rf ./${OUTPUT_PATH}/google  \
-	&& rm -rf ./${OUTPUT_PATH}/clients
+	&& rm -rf ./${OUTPUT_PATH}/clients \
+	&& rm -rf ./clients/*_example_test.go

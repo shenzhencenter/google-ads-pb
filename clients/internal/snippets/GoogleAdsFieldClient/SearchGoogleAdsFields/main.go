@@ -19,11 +19,11 @@
 package main
 
 import (
+	clients "github.com/Optable/google-ads-pb/clients"
 	"context"
-	clients "github.com/shenzhencenter/google-ads-pb/clients"
 
-	servicespb "github.com/shenzhencenter/google-ads-pb/services"
 	"google.golang.org/api/iterator"
+	servicespb "github.com/Optable/google-ads-pb/protogen/services"
 )
 
 func main() {
@@ -41,7 +41,7 @@ func main() {
 
 	req := &servicespb.SearchGoogleAdsFieldsRequest{
 		// TODO: Fill request struct fields.
-		// See https://pkg.go.dev/github.com/shenzhencenter/google-ads-pb/services#SearchGoogleAdsFieldsRequest.
+		// See https://pkg.go.dev/github.com/Optable/google-ads-pb/protogen/services#SearchGoogleAdsFieldsRequest.
 	}
 	it := c.SearchGoogleAdsFields(ctx, req)
 	for {
