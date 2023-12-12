@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.21.1
-// source: google/ads/googleads/v14/services/customer_user_access_service.proto
+// source: google/ads/googleads/v15/services/customer_user_access_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	CustomerUserAccessService_MutateCustomerUserAccess_FullMethodName = "/google.ads.googleads.v14.services.CustomerUserAccessService/MutateCustomerUserAccess"
+	CustomerUserAccessService_MutateCustomerUserAccess_FullMethodName = "/google.ads.googleads.v15.services.CustomerUserAccessService/MutateCustomerUserAccess"
 )
 
 // CustomerUserAccessServiceClient is the client API for CustomerUserAccessService service.
@@ -139,7 +139,7 @@ func _CustomerUserAccessService_MutateCustomerUserAccess_Handler(srv interface{}
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CustomerUserAccessService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v14.services.CustomerUserAccessService",
+	ServiceName: "google.ads.googleads.v15.services.CustomerUserAccessService",
 	HandlerType: (*CustomerUserAccessServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -148,5 +148,5 @@ var CustomerUserAccessService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v14/services/customer_user_access_service.proto",
+	Metadata: "google/ads/googleads/v15/services/customer_user_access_service.proto",
 }

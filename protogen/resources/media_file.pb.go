@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.31.0
 // 	protoc        v3.21.1
-// source: google/ads/googleads/v14/resources/media_file.proto
+// source: google/ads/googleads/v15/resources/media_file.proto
 
 package resources
 
@@ -50,9 +50,9 @@ type MediaFile struct {
 	// Output only. The ID of the media file.
 	Id *int64 `protobuf:"varint,12,opt,name=id,proto3,oneof" json:"id,omitempty"`
 	// Immutable. Type of the media file.
-	Type enums.MediaTypeEnum_MediaType `protobuf:"varint,5,opt,name=type,proto3,enum=google.ads.googleads.v14.enums.MediaTypeEnum_MediaType" json:"type,omitempty"`
+	Type enums.MediaTypeEnum_MediaType `protobuf:"varint,5,opt,name=type,proto3,enum=google.ads.googleads.v15.enums.MediaTypeEnum_MediaType" json:"type,omitempty"`
 	// Output only. The mime type of the media file.
-	MimeType enums.MimeTypeEnum_MimeType `protobuf:"varint,6,opt,name=mime_type,json=mimeType,proto3,enum=google.ads.googleads.v14.enums.MimeTypeEnum_MimeType" json:"mime_type,omitempty"`
+	MimeType enums.MimeTypeEnum_MimeType `protobuf:"varint,6,opt,name=mime_type,json=mimeType,proto3,enum=google.ads.googleads.v15.enums.MimeTypeEnum_MimeType" json:"mime_type,omitempty"`
 	// Immutable. The URL of where the original media file was downloaded from (or
 	// a file name). Only used for media of type AUDIO and IMAGE.
 	SourceUrl *string `protobuf:"bytes,13,opt,name=source_url,json=sourceUrl,proto3,oneof" json:"source_url,omitempty"`
@@ -75,7 +75,7 @@ type MediaFile struct {
 func (x *MediaFile) Reset() {
 	*x = MediaFile{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_resources_media_file_proto_msgTypes[0]
+		mi := &file_google_ads_googleads_v15_resources_media_file_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -88,7 +88,7 @@ func (x *MediaFile) String() string {
 func (*MediaFile) ProtoMessage() {}
 
 func (x *MediaFile) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_resources_media_file_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v15_resources_media_file_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -101,7 +101,7 @@ func (x *MediaFile) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MediaFile.ProtoReflect.Descriptor instead.
 func (*MediaFile) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_resources_media_file_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v15_resources_media_file_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *MediaFile) GetResourceName() string {
@@ -238,7 +238,7 @@ type MediaImage struct {
 func (x *MediaImage) Reset() {
 	*x = MediaImage{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_resources_media_file_proto_msgTypes[1]
+		mi := &file_google_ads_googleads_v15_resources_media_file_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -251,7 +251,7 @@ func (x *MediaImage) String() string {
 func (*MediaImage) ProtoMessage() {}
 
 func (x *MediaImage) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_resources_media_file_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v15_resources_media_file_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -264,7 +264,7 @@ func (x *MediaImage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MediaImage.ProtoReflect.Descriptor instead.
 func (*MediaImage) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_resources_media_file_proto_rawDescGZIP(), []int{1}
+	return file_google_ads_googleads_v15_resources_media_file_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *MediaImage) GetData() []byte {
@@ -305,7 +305,7 @@ type MediaBundle struct {
 func (x *MediaBundle) Reset() {
 	*x = MediaBundle{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_resources_media_file_proto_msgTypes[2]
+		mi := &file_google_ads_googleads_v15_resources_media_file_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -318,7 +318,7 @@ func (x *MediaBundle) String() string {
 func (*MediaBundle) ProtoMessage() {}
 
 func (x *MediaBundle) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_resources_media_file_proto_msgTypes[2]
+	mi := &file_google_ads_googleads_v15_resources_media_file_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -331,7 +331,7 @@ func (x *MediaBundle) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MediaBundle.ProtoReflect.Descriptor instead.
 func (*MediaBundle) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_resources_media_file_proto_rawDescGZIP(), []int{2}
+	return file_google_ads_googleads_v15_resources_media_file_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *MediaBundle) GetData() []byte {
@@ -361,7 +361,7 @@ type MediaAudio struct {
 func (x *MediaAudio) Reset() {
 	*x = MediaAudio{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_resources_media_file_proto_msgTypes[3]
+		mi := &file_google_ads_googleads_v15_resources_media_file_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -374,7 +374,7 @@ func (x *MediaAudio) String() string {
 func (*MediaAudio) ProtoMessage() {}
 
 func (x *MediaAudio) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_resources_media_file_proto_msgTypes[3]
+	mi := &file_google_ads_googleads_v15_resources_media_file_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -387,7 +387,7 @@ func (x *MediaAudio) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MediaAudio.ProtoReflect.Descriptor instead.
 func (*MediaAudio) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_resources_media_file_proto_rawDescGZIP(), []int{3}
+	return file_google_ads_googleads_v15_resources_media_file_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *MediaAudio) GetAdDurationMillis() int64 {
@@ -421,7 +421,7 @@ type MediaVideo struct {
 func (x *MediaVideo) Reset() {
 	*x = MediaVideo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_resources_media_file_proto_msgTypes[4]
+		mi := &file_google_ads_googleads_v15_resources_media_file_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -434,7 +434,7 @@ func (x *MediaVideo) String() string {
 func (*MediaVideo) ProtoMessage() {}
 
 func (x *MediaVideo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_resources_media_file_proto_msgTypes[4]
+	mi := &file_google_ads_googleads_v15_resources_media_file_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -447,7 +447,7 @@ func (x *MediaVideo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MediaVideo.ProtoReflect.Descriptor instead.
 func (*MediaVideo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_resources_media_file_proto_rawDescGZIP(), []int{4}
+	return file_google_ads_googleads_v15_resources_media_file_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *MediaVideo) GetAdDurationMillis() int64 {
@@ -478,20 +478,20 @@ func (x *MediaVideo) GetIsciCode() string {
 	return ""
 }
 
-var File_google_ads_googleads_v14_resources_media_file_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v15_resources_media_file_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v14_resources_media_file_proto_rawDesc = []byte{
+var file_google_ads_googleads_v15_resources_media_file_proto_rawDesc = []byte{
 	0x0a, 0x33, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x72, 0x65, 0x73, 0x6f, 0x75,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x72, 0x65, 0x73, 0x6f, 0x75,
 	0x72, 0x63, 0x65, 0x73, 0x2f, 0x6d, 0x65, 0x64, 0x69, 0x61, 0x5f, 0x66, 0x69, 0x6c, 0x65, 0x2e,
 	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x22, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64,
-	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e,
+	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e,
 	0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x1a, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f,
-	0x76, 0x31, 0x34, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x6d, 0x65, 0x64, 0x69, 0x61, 0x5f,
+	0x76, 0x31, 0x35, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x6d, 0x65, 0x64, 0x69, 0x61, 0x5f,
 	0x74, 0x79, 0x70, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
-	0x2f, 0x76, 0x31, 0x34, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x6d, 0x69, 0x6d, 0x65, 0x5f,
+	0x2f, 0x76, 0x31, 0x35, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x6d, 0x69, 0x6d, 0x65, 0x5f,
 	0x74, 0x79, 0x70, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x1f, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x66, 0x69, 0x65, 0x6c, 0x64, 0x5f, 0x62, 0x65, 0x68,
 	0x61, 0x76, 0x69, 0x6f, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x19, 0x67, 0x6f, 0x6f,
@@ -506,12 +506,12 @@ var file_google_ads_googleads_v14_resources_media_file_proto_rawDesc = []byte{
 	0x03, 0x42, 0x03, 0xe0, 0x41, 0x03, 0x48, 0x01, 0x52, 0x02, 0x69, 0x64, 0x88, 0x01, 0x01, 0x12,
 	0x50, 0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x05, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x37, 0x2e,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x4d,
+	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x4d,
 	0x65, 0x64, 0x69, 0x61, 0x54, 0x79, 0x70, 0x65, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x4d, 0x65, 0x64,
 	0x69, 0x61, 0x54, 0x79, 0x70, 0x65, 0x42, 0x03, 0xe0, 0x41, 0x05, 0x52, 0x04, 0x74, 0x79, 0x70,
 	0x65, 0x12, 0x57, 0x0a, 0x09, 0x6d, 0x69, 0x6d, 0x65, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x18, 0x06,
 	0x20, 0x01, 0x28, 0x0e, 0x32, 0x35, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64,
-	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e,
+	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e,
 	0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x4d, 0x69, 0x6d, 0x65, 0x54, 0x79, 0x70, 0x65, 0x45, 0x6e,
 	0x75, 0x6d, 0x2e, 0x4d, 0x69, 0x6d, 0x65, 0x54, 0x79, 0x70, 0x65, 0x42, 0x03, 0xe0, 0x41, 0x03,
 	0x52, 0x08, 0x6d, 0x69, 0x6d, 0x65, 0x54, 0x79, 0x70, 0x65, 0x12, 0x27, 0x0a, 0x0a, 0x73, 0x6f,
@@ -524,22 +524,22 @@ var file_google_ads_googleads_v14_resources_media_file_proto_rawDesc = []byte{
 	0x65, 0x53, 0x69, 0x7a, 0x65, 0x88, 0x01, 0x01, 0x12, 0x4b, 0x0a, 0x05, 0x69, 0x6d, 0x61, 0x67,
 	0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2e, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76,
-	0x31, 0x34, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e, 0x4d, 0x65, 0x64,
+	0x31, 0x35, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e, 0x4d, 0x65, 0x64,
 	0x69, 0x61, 0x49, 0x6d, 0x61, 0x67, 0x65, 0x42, 0x03, 0xe0, 0x41, 0x05, 0x48, 0x00, 0x52, 0x05,
 	0x69, 0x6d, 0x61, 0x67, 0x65, 0x12, 0x59, 0x0a, 0x0c, 0x6d, 0x65, 0x64, 0x69, 0x61, 0x5f, 0x62,
 	0x75, 0x6e, 0x64, 0x6c, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2f, 0x2e, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73,
+	0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73,
 	0x2e, 0x4d, 0x65, 0x64, 0x69, 0x61, 0x42, 0x75, 0x6e, 0x64, 0x6c, 0x65, 0x42, 0x03, 0xe0, 0x41,
 	0x05, 0x48, 0x00, 0x52, 0x0b, 0x6d, 0x65, 0x64, 0x69, 0x61, 0x42, 0x75, 0x6e, 0x64, 0x6c, 0x65,
 	0x12, 0x4b, 0x0a, 0x05, 0x61, 0x75, 0x64, 0x69, 0x6f, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32,
 	0x2e, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75,
 	0x72, 0x63, 0x65, 0x73, 0x2e, 0x4d, 0x65, 0x64, 0x69, 0x61, 0x41, 0x75, 0x64, 0x69, 0x6f, 0x42,
 	0x03, 0xe0, 0x41, 0x03, 0x48, 0x00, 0x52, 0x05, 0x61, 0x75, 0x64, 0x69, 0x6f, 0x12, 0x4b, 0x0a,
 	0x05, 0x76, 0x69, 0x64, 0x65, 0x6f, 0x18, 0x0b, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2e, 0x2e, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65,
+	0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65,
 	0x73, 0x2e, 0x4d, 0x65, 0x64, 0x69, 0x61, 0x56, 0x69, 0x64, 0x65, 0x6f, 0x42, 0x03, 0xe0, 0x41,
 	0x05, 0x48, 0x00, 0x52, 0x05, 0x76, 0x69, 0x64, 0x65, 0x6f, 0x3a, 0x5b, 0xea, 0x41, 0x58, 0x0a,
 	0x22, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
@@ -597,53 +597,53 @@ var file_google_ads_googleads_v14_resources_media_file_proto_rawDesc = []byte{
 	0x67, 0x5f, 0x69, 0x64, 0x5f, 0x63, 0x6f, 0x64, 0x65, 0x42, 0x0c, 0x0a, 0x0a, 0x5f, 0x69, 0x73,
 	0x63, 0x69, 0x5f, 0x63, 0x6f, 0x64, 0x65, 0x42, 0x80, 0x02, 0x0a, 0x26, 0x63, 0x6f, 0x6d, 0x2e,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63,
+	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63,
 	0x65, 0x73, 0x42, 0x0e, 0x4d, 0x65, 0x64, 0x69, 0x61, 0x46, 0x69, 0x6c, 0x65, 0x50, 0x72, 0x6f,
 	0x74, 0x6f, 0x50, 0x01, 0x5a, 0x4b, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x67, 0x6f, 0x6c,
 	0x61, 0x6e, 0x67, 0x2e, 0x6f, 0x72, 0x67, 0x2f, 0x67, 0x65, 0x6e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
 	0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x70, 0x69, 0x73, 0x2f, 0x61, 0x64, 0x73, 0x2f,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x72, 0x65,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x72, 0x65,
 	0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x3b, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65,
 	0x73, 0xa2, 0x02, 0x03, 0x47, 0x41, 0x41, 0xaa, 0x02, 0x22, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x41, 0x64, 0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e, 0x56,
-	0x31, 0x34, 0x2e, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0xca, 0x02, 0x22, 0x47,
+	0x31, 0x35, 0x2e, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0xca, 0x02, 0x22, 0x47,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x5c, 0x41, 0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x41, 0x64, 0x73, 0x5c, 0x56, 0x31, 0x34, 0x5c, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65,
+	0x41, 0x64, 0x73, 0x5c, 0x56, 0x31, 0x35, 0x5c, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65,
 	0x73, 0xea, 0x02, 0x26, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x3a, 0x3a, 0x41, 0x64, 0x73, 0x3a,
-	0x3a, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x31, 0x34, 0x3a,
+	0x3a, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x31, 0x35, 0x3a,
 	0x3a, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
 	0x6f, 0x33,
 }
 
 var (
-	file_google_ads_googleads_v14_resources_media_file_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v14_resources_media_file_proto_rawDescData = file_google_ads_googleads_v14_resources_media_file_proto_rawDesc
+	file_google_ads_googleads_v15_resources_media_file_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v15_resources_media_file_proto_rawDescData = file_google_ads_googleads_v15_resources_media_file_proto_rawDesc
 )
 
-func file_google_ads_googleads_v14_resources_media_file_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v14_resources_media_file_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v14_resources_media_file_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v14_resources_media_file_proto_rawDescData)
+func file_google_ads_googleads_v15_resources_media_file_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v15_resources_media_file_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v15_resources_media_file_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v15_resources_media_file_proto_rawDescData)
 	})
-	return file_google_ads_googleads_v14_resources_media_file_proto_rawDescData
+	return file_google_ads_googleads_v15_resources_media_file_proto_rawDescData
 }
 
-var file_google_ads_googleads_v14_resources_media_file_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
-var file_google_ads_googleads_v14_resources_media_file_proto_goTypes = []interface{}{
-	(*MediaFile)(nil),                  // 0: google.ads.googleads.v14.resources.MediaFile
-	(*MediaImage)(nil),                 // 1: google.ads.googleads.v14.resources.MediaImage
-	(*MediaBundle)(nil),                // 2: google.ads.googleads.v14.resources.MediaBundle
-	(*MediaAudio)(nil),                 // 3: google.ads.googleads.v14.resources.MediaAudio
-	(*MediaVideo)(nil),                 // 4: google.ads.googleads.v14.resources.MediaVideo
-	(enums.MediaTypeEnum_MediaType)(0), // 5: google.ads.googleads.v14.enums.MediaTypeEnum.MediaType
-	(enums.MimeTypeEnum_MimeType)(0),   // 6: google.ads.googleads.v14.enums.MimeTypeEnum.MimeType
+var file_google_ads_googleads_v15_resources_media_file_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
+var file_google_ads_googleads_v15_resources_media_file_proto_goTypes = []interface{}{
+	(*MediaFile)(nil),                  // 0: google.ads.googleads.v15.resources.MediaFile
+	(*MediaImage)(nil),                 // 1: google.ads.googleads.v15.resources.MediaImage
+	(*MediaBundle)(nil),                // 2: google.ads.googleads.v15.resources.MediaBundle
+	(*MediaAudio)(nil),                 // 3: google.ads.googleads.v15.resources.MediaAudio
+	(*MediaVideo)(nil),                 // 4: google.ads.googleads.v15.resources.MediaVideo
+	(enums.MediaTypeEnum_MediaType)(0), // 5: google.ads.googleads.v15.enums.MediaTypeEnum.MediaType
+	(enums.MimeTypeEnum_MimeType)(0),   // 6: google.ads.googleads.v15.enums.MimeTypeEnum.MimeType
 }
-var file_google_ads_googleads_v14_resources_media_file_proto_depIdxs = []int32{
-	5, // 0: google.ads.googleads.v14.resources.MediaFile.type:type_name -> google.ads.googleads.v14.enums.MediaTypeEnum.MediaType
-	6, // 1: google.ads.googleads.v14.resources.MediaFile.mime_type:type_name -> google.ads.googleads.v14.enums.MimeTypeEnum.MimeType
-	1, // 2: google.ads.googleads.v14.resources.MediaFile.image:type_name -> google.ads.googleads.v14.resources.MediaImage
-	2, // 3: google.ads.googleads.v14.resources.MediaFile.media_bundle:type_name -> google.ads.googleads.v14.resources.MediaBundle
-	3, // 4: google.ads.googleads.v14.resources.MediaFile.audio:type_name -> google.ads.googleads.v14.resources.MediaAudio
-	4, // 5: google.ads.googleads.v14.resources.MediaFile.video:type_name -> google.ads.googleads.v14.resources.MediaVideo
+var file_google_ads_googleads_v15_resources_media_file_proto_depIdxs = []int32{
+	5, // 0: google.ads.googleads.v15.resources.MediaFile.type:type_name -> google.ads.googleads.v15.enums.MediaTypeEnum.MediaType
+	6, // 1: google.ads.googleads.v15.resources.MediaFile.mime_type:type_name -> google.ads.googleads.v15.enums.MimeTypeEnum.MimeType
+	1, // 2: google.ads.googleads.v15.resources.MediaFile.image:type_name -> google.ads.googleads.v15.resources.MediaImage
+	2, // 3: google.ads.googleads.v15.resources.MediaFile.media_bundle:type_name -> google.ads.googleads.v15.resources.MediaBundle
+	3, // 4: google.ads.googleads.v15.resources.MediaFile.audio:type_name -> google.ads.googleads.v15.resources.MediaAudio
+	4, // 5: google.ads.googleads.v15.resources.MediaFile.video:type_name -> google.ads.googleads.v15.resources.MediaVideo
 	6, // [6:6] is the sub-list for method output_type
 	6, // [6:6] is the sub-list for method input_type
 	6, // [6:6] is the sub-list for extension type_name
@@ -651,13 +651,13 @@ var file_google_ads_googleads_v14_resources_media_file_proto_depIdxs = []int32{
 	0, // [0:6] is the sub-list for field type_name
 }
 
-func init() { file_google_ads_googleads_v14_resources_media_file_proto_init() }
-func file_google_ads_googleads_v14_resources_media_file_proto_init() {
-	if File_google_ads_googleads_v14_resources_media_file_proto != nil {
+func init() { file_google_ads_googleads_v15_resources_media_file_proto_init() }
+func file_google_ads_googleads_v15_resources_media_file_proto_init() {
+	if File_google_ads_googleads_v15_resources_media_file_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_google_ads_googleads_v14_resources_media_file_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_resources_media_file_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*MediaFile); i {
 			case 0:
 				return &v.state
@@ -669,7 +669,7 @@ func file_google_ads_googleads_v14_resources_media_file_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_resources_media_file_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_resources_media_file_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*MediaImage); i {
 			case 0:
 				return &v.state
@@ -681,7 +681,7 @@ func file_google_ads_googleads_v14_resources_media_file_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_resources_media_file_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_resources_media_file_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*MediaBundle); i {
 			case 0:
 				return &v.state
@@ -693,7 +693,7 @@ func file_google_ads_googleads_v14_resources_media_file_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_resources_media_file_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_resources_media_file_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*MediaAudio); i {
 			case 0:
 				return &v.state
@@ -705,7 +705,7 @@ func file_google_ads_googleads_v14_resources_media_file_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_resources_media_file_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_resources_media_file_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*MediaVideo); i {
 			case 0:
 				return &v.state
@@ -718,32 +718,32 @@ func file_google_ads_googleads_v14_resources_media_file_proto_init() {
 			}
 		}
 	}
-	file_google_ads_googleads_v14_resources_media_file_proto_msgTypes[0].OneofWrappers = []interface{}{
+	file_google_ads_googleads_v15_resources_media_file_proto_msgTypes[0].OneofWrappers = []interface{}{
 		(*MediaFile_Image)(nil),
 		(*MediaFile_MediaBundle)(nil),
 		(*MediaFile_Audio)(nil),
 		(*MediaFile_Video)(nil),
 	}
-	file_google_ads_googleads_v14_resources_media_file_proto_msgTypes[1].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v14_resources_media_file_proto_msgTypes[2].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v14_resources_media_file_proto_msgTypes[3].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v14_resources_media_file_proto_msgTypes[4].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_resources_media_file_proto_msgTypes[1].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_resources_media_file_proto_msgTypes[2].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_resources_media_file_proto_msgTypes[3].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_resources_media_file_proto_msgTypes[4].OneofWrappers = []interface{}{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_google_ads_googleads_v14_resources_media_file_proto_rawDesc,
+			RawDescriptor: file_google_ads_googleads_v15_resources_media_file_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_google_ads_googleads_v14_resources_media_file_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v14_resources_media_file_proto_depIdxs,
-		MessageInfos:      file_google_ads_googleads_v14_resources_media_file_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v15_resources_media_file_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v15_resources_media_file_proto_depIdxs,
+		MessageInfos:      file_google_ads_googleads_v15_resources_media_file_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v14_resources_media_file_proto = out.File
-	file_google_ads_googleads_v14_resources_media_file_proto_rawDesc = nil
-	file_google_ads_googleads_v14_resources_media_file_proto_goTypes = nil
-	file_google_ads_googleads_v14_resources_media_file_proto_depIdxs = nil
+	File_google_ads_googleads_v15_resources_media_file_proto = out.File
+	file_google_ads_googleads_v15_resources_media_file_proto_rawDesc = nil
+	file_google_ads_googleads_v15_resources_media_file_proto_goTypes = nil
+	file_google_ads_googleads_v15_resources_media_file_proto_depIdxs = nil
 }

@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.21.1
-// source: google/ads/googleads/v14/services/custom_audience_service.proto
+// source: google/ads/googleads/v15/services/custom_audience_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	CustomAudienceService_MutateCustomAudiences_FullMethodName = "/google.ads.googleads.v14.services.CustomAudienceService/MutateCustomAudiences"
+	CustomAudienceService_MutateCustomAudiences_FullMethodName = "/google.ads.googleads.v15.services.CustomAudienceService/MutateCustomAudiences"
 )
 
 // CustomAudienceServiceClient is the client API for CustomAudienceService service.
@@ -144,7 +144,7 @@ func _CustomAudienceService_MutateCustomAudiences_Handler(srv interface{}, ctx c
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CustomAudienceService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v14.services.CustomAudienceService",
+	ServiceName: "google.ads.googleads.v15.services.CustomAudienceService",
 	HandlerType: (*CustomAudienceServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -153,5 +153,5 @@ var CustomAudienceService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v14/services/custom_audience_service.proto",
+	Metadata: "google/ads/googleads/v15/services/custom_audience_service.proto",
 }

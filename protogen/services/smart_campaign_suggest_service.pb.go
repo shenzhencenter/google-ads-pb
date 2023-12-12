@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.31.0
 // 	protoc        v3.21.1
-// source: google/ads/googleads/v14/services/smart_campaign_suggest_service.proto
+// source: google/ads/googleads/v15/services/smart_campaign_suggest_service.proto
 
 package services
 
@@ -38,7 +38,7 @@ const (
 )
 
 // Request message for
-// [SmartCampaignSuggestService.SuggestSmartCampaignBudgetOptions][google.ads.googleads.v14.services.SmartCampaignSuggestService.SuggestSmartCampaignBudgetOptions].
+// [SmartCampaignSuggestService.SuggestSmartCampaignBudgetOptions][google.ads.googleads.v15.services.SmartCampaignSuggestService.SuggestSmartCampaignBudgetOptions].
 type SuggestSmartCampaignBudgetOptionsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -60,7 +60,7 @@ type SuggestSmartCampaignBudgetOptionsRequest struct {
 func (x *SuggestSmartCampaignBudgetOptionsRequest) Reset() {
 	*x = SuggestSmartCampaignBudgetOptionsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_msgTypes[0]
+		mi := &file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -73,7 +73,7 @@ func (x *SuggestSmartCampaignBudgetOptionsRequest) String() string {
 func (*SuggestSmartCampaignBudgetOptionsRequest) ProtoMessage() {}
 
 func (x *SuggestSmartCampaignBudgetOptionsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -86,7 +86,7 @@ func (x *SuggestSmartCampaignBudgetOptionsRequest) ProtoReflect() protoreflect.M
 
 // Deprecated: Use SuggestSmartCampaignBudgetOptionsRequest.ProtoReflect.Descriptor instead.
 func (*SuggestSmartCampaignBudgetOptionsRequest) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *SuggestSmartCampaignBudgetOptionsRequest) GetCustomerId() string {
@@ -176,7 +176,7 @@ type SmartCampaignSuggestionInfo struct {
 func (x *SmartCampaignSuggestionInfo) Reset() {
 	*x = SmartCampaignSuggestionInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_msgTypes[1]
+		mi := &file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -189,7 +189,7 @@ func (x *SmartCampaignSuggestionInfo) String() string {
 func (*SmartCampaignSuggestionInfo) ProtoMessage() {}
 
 func (x *SmartCampaignSuggestionInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -202,7 +202,7 @@ func (x *SmartCampaignSuggestionInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SmartCampaignSuggestionInfo.ProtoReflect.Descriptor instead.
 func (*SmartCampaignSuggestionInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_rawDescGZIP(), []int{1}
+	return file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *SmartCampaignSuggestionInfo) GetFinalUrl() string {
@@ -321,7 +321,7 @@ func (*SmartCampaignSuggestionInfo_LocationList_) isSmartCampaignSuggestionInfo_
 func (*SmartCampaignSuggestionInfo_Proximity) isSmartCampaignSuggestionInfo_GeoTarget() {}
 
 // Response message for
-// [SmartCampaignSuggestService.SuggestSmartCampaignBudgetOptions][google.ads.googleads.v14.services.SmartCampaignSuggestService.SuggestSmartCampaignBudgetOptions].
+// [SmartCampaignSuggestService.SuggestSmartCampaignBudgetOptions][google.ads.googleads.v15.services.SmartCampaignSuggestService.SuggestSmartCampaignBudgetOptions].
 // Depending on whether the system could suggest the options, either all of the
 // options or none of them might be returned.
 type SuggestSmartCampaignBudgetOptionsResponse struct {
@@ -340,7 +340,7 @@ type SuggestSmartCampaignBudgetOptionsResponse struct {
 func (x *SuggestSmartCampaignBudgetOptionsResponse) Reset() {
 	*x = SuggestSmartCampaignBudgetOptionsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_msgTypes[2]
+		mi := &file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -353,7 +353,7 @@ func (x *SuggestSmartCampaignBudgetOptionsResponse) String() string {
 func (*SuggestSmartCampaignBudgetOptionsResponse) ProtoMessage() {}
 
 func (x *SuggestSmartCampaignBudgetOptionsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_msgTypes[2]
+	mi := &file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -366,7 +366,7 @@ func (x *SuggestSmartCampaignBudgetOptionsResponse) ProtoReflect() protoreflect.
 
 // Deprecated: Use SuggestSmartCampaignBudgetOptionsResponse.ProtoReflect.Descriptor instead.
 func (*SuggestSmartCampaignBudgetOptionsResponse) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_rawDescGZIP(), []int{2}
+	return file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *SuggestSmartCampaignBudgetOptionsResponse) GetLow() *SuggestSmartCampaignBudgetOptionsResponse_BudgetOption {
@@ -391,7 +391,7 @@ func (x *SuggestSmartCampaignBudgetOptionsResponse) GetHigh() *SuggestSmartCampa
 }
 
 // Request message for
-// [SmartCampaignSuggestService.SuggestSmartCampaignAd][google.ads.googleads.v14.services.SmartCampaignSuggestService.SuggestSmartCampaignAd].
+// [SmartCampaignSuggestService.SuggestSmartCampaignAd][google.ads.googleads.v15.services.SmartCampaignSuggestService.SuggestSmartCampaignAd].
 type SuggestSmartCampaignAdRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -409,7 +409,7 @@ type SuggestSmartCampaignAdRequest struct {
 func (x *SuggestSmartCampaignAdRequest) Reset() {
 	*x = SuggestSmartCampaignAdRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_msgTypes[3]
+		mi := &file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -422,7 +422,7 @@ func (x *SuggestSmartCampaignAdRequest) String() string {
 func (*SuggestSmartCampaignAdRequest) ProtoMessage() {}
 
 func (x *SuggestSmartCampaignAdRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_msgTypes[3]
+	mi := &file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -435,7 +435,7 @@ func (x *SuggestSmartCampaignAdRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SuggestSmartCampaignAdRequest.ProtoReflect.Descriptor instead.
 func (*SuggestSmartCampaignAdRequest) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_rawDescGZIP(), []int{3}
+	return file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *SuggestSmartCampaignAdRequest) GetCustomerId() string {
@@ -453,7 +453,7 @@ func (x *SuggestSmartCampaignAdRequest) GetSuggestionInfo() *SmartCampaignSugges
 }
 
 // Response message for
-// [SmartCampaignSuggestService.SuggestSmartCampaignAd][google.ads.googleads.v14.services.SmartCampaignSuggestService.SuggestSmartCampaignAd].
+// [SmartCampaignSuggestService.SuggestSmartCampaignAd][google.ads.googleads.v15.services.SmartCampaignSuggestService.SuggestSmartCampaignAd].
 type SuggestSmartCampaignAdResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -467,7 +467,7 @@ type SuggestSmartCampaignAdResponse struct {
 func (x *SuggestSmartCampaignAdResponse) Reset() {
 	*x = SuggestSmartCampaignAdResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_msgTypes[4]
+		mi := &file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -480,7 +480,7 @@ func (x *SuggestSmartCampaignAdResponse) String() string {
 func (*SuggestSmartCampaignAdResponse) ProtoMessage() {}
 
 func (x *SuggestSmartCampaignAdResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_msgTypes[4]
+	mi := &file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -493,7 +493,7 @@ func (x *SuggestSmartCampaignAdResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SuggestSmartCampaignAdResponse.ProtoReflect.Descriptor instead.
 func (*SuggestSmartCampaignAdResponse) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_rawDescGZIP(), []int{4}
+	return file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *SuggestSmartCampaignAdResponse) GetAdInfo() *common.SmartCampaignAdInfo {
@@ -504,7 +504,7 @@ func (x *SuggestSmartCampaignAdResponse) GetAdInfo() *common.SmartCampaignAdInfo
 }
 
 // Request message for
-// [SmartCampaignSuggestService.SuggestKeywordThemes][google.ads.googleads.v14.services.SmartCampaignSuggestService.SuggestKeywordThemes].
+// [SmartCampaignSuggestService.SuggestKeywordThemes][google.ads.googleads.v15.services.SmartCampaignSuggestService.SuggestKeywordThemes].
 type SuggestKeywordThemesRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -528,7 +528,7 @@ type SuggestKeywordThemesRequest struct {
 func (x *SuggestKeywordThemesRequest) Reset() {
 	*x = SuggestKeywordThemesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_msgTypes[5]
+		mi := &file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -541,7 +541,7 @@ func (x *SuggestKeywordThemesRequest) String() string {
 func (*SuggestKeywordThemesRequest) ProtoMessage() {}
 
 func (x *SuggestKeywordThemesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_msgTypes[5]
+	mi := &file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -554,7 +554,7 @@ func (x *SuggestKeywordThemesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SuggestKeywordThemesRequest.ProtoReflect.Descriptor instead.
 func (*SuggestKeywordThemesRequest) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_rawDescGZIP(), []int{5}
+	return file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *SuggestKeywordThemesRequest) GetCustomerId() string {
@@ -572,7 +572,7 @@ func (x *SuggestKeywordThemesRequest) GetSuggestionInfo() *SmartCampaignSuggesti
 }
 
 // Response message for
-// [SmartCampaignSuggestService.SuggestKeywordThemes][google.ads.googleads.v14.services.SmartCampaignSuggestService.SuggestKeywordThemes].
+// [SmartCampaignSuggestService.SuggestKeywordThemes][google.ads.googleads.v15.services.SmartCampaignSuggestService.SuggestKeywordThemes].
 type SuggestKeywordThemesResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -585,7 +585,7 @@ type SuggestKeywordThemesResponse struct {
 func (x *SuggestKeywordThemesResponse) Reset() {
 	*x = SuggestKeywordThemesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_msgTypes[6]
+		mi := &file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -598,7 +598,7 @@ func (x *SuggestKeywordThemesResponse) String() string {
 func (*SuggestKeywordThemesResponse) ProtoMessage() {}
 
 func (x *SuggestKeywordThemesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_msgTypes[6]
+	mi := &file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -611,7 +611,7 @@ func (x *SuggestKeywordThemesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SuggestKeywordThemesResponse.ProtoReflect.Descriptor instead.
 func (*SuggestKeywordThemesResponse) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_rawDescGZIP(), []int{6}
+	return file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *SuggestKeywordThemesResponse) GetKeywordThemes() []*SuggestKeywordThemesResponse_KeywordTheme {
@@ -634,7 +634,7 @@ type SmartCampaignSuggestionInfo_LocationList struct {
 func (x *SmartCampaignSuggestionInfo_LocationList) Reset() {
 	*x = SmartCampaignSuggestionInfo_LocationList{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_msgTypes[7]
+		mi := &file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -647,7 +647,7 @@ func (x *SmartCampaignSuggestionInfo_LocationList) String() string {
 func (*SmartCampaignSuggestionInfo_LocationList) ProtoMessage() {}
 
 func (x *SmartCampaignSuggestionInfo_LocationList) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_msgTypes[7]
+	mi := &file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -660,7 +660,7 @@ func (x *SmartCampaignSuggestionInfo_LocationList) ProtoReflect() protoreflect.M
 
 // Deprecated: Use SmartCampaignSuggestionInfo_LocationList.ProtoReflect.Descriptor instead.
 func (*SmartCampaignSuggestionInfo_LocationList) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_rawDescGZIP(), []int{1, 0}
+	return file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_rawDescGZIP(), []int{1, 0}
 }
 
 func (x *SmartCampaignSuggestionInfo_LocationList) GetLocations() []*common.LocationInfo {
@@ -683,7 +683,7 @@ type SmartCampaignSuggestionInfo_BusinessContext struct {
 func (x *SmartCampaignSuggestionInfo_BusinessContext) Reset() {
 	*x = SmartCampaignSuggestionInfo_BusinessContext{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_msgTypes[8]
+		mi := &file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -696,7 +696,7 @@ func (x *SmartCampaignSuggestionInfo_BusinessContext) String() string {
 func (*SmartCampaignSuggestionInfo_BusinessContext) ProtoMessage() {}
 
 func (x *SmartCampaignSuggestionInfo_BusinessContext) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_msgTypes[8]
+	mi := &file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -709,7 +709,7 @@ func (x *SmartCampaignSuggestionInfo_BusinessContext) ProtoReflect() protoreflec
 
 // Deprecated: Use SmartCampaignSuggestionInfo_BusinessContext.ProtoReflect.Descriptor instead.
 func (*SmartCampaignSuggestionInfo_BusinessContext) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_rawDescGZIP(), []int{1, 1}
+	return file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_rawDescGZIP(), []int{1, 1}
 }
 
 func (x *SmartCampaignSuggestionInfo_BusinessContext) GetBusinessName() string {
@@ -734,7 +734,7 @@ type SuggestSmartCampaignBudgetOptionsResponse_Metrics struct {
 func (x *SuggestSmartCampaignBudgetOptionsResponse_Metrics) Reset() {
 	*x = SuggestSmartCampaignBudgetOptionsResponse_Metrics{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_msgTypes[9]
+		mi := &file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -747,7 +747,7 @@ func (x *SuggestSmartCampaignBudgetOptionsResponse_Metrics) String() string {
 func (*SuggestSmartCampaignBudgetOptionsResponse_Metrics) ProtoMessage() {}
 
 func (x *SuggestSmartCampaignBudgetOptionsResponse_Metrics) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_msgTypes[9]
+	mi := &file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -760,7 +760,7 @@ func (x *SuggestSmartCampaignBudgetOptionsResponse_Metrics) ProtoReflect() proto
 
 // Deprecated: Use SuggestSmartCampaignBudgetOptionsResponse_Metrics.ProtoReflect.Descriptor instead.
 func (*SuggestSmartCampaignBudgetOptionsResponse_Metrics) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_rawDescGZIP(), []int{2, 0}
+	return file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_rawDescGZIP(), []int{2, 0}
 }
 
 func (x *SuggestSmartCampaignBudgetOptionsResponse_Metrics) GetMinDailyClicks() int64 {
@@ -795,7 +795,7 @@ type SuggestSmartCampaignBudgetOptionsResponse_BudgetOption struct {
 func (x *SuggestSmartCampaignBudgetOptionsResponse_BudgetOption) Reset() {
 	*x = SuggestSmartCampaignBudgetOptionsResponse_BudgetOption{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_msgTypes[10]
+		mi := &file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -808,7 +808,7 @@ func (x *SuggestSmartCampaignBudgetOptionsResponse_BudgetOption) String() string
 func (*SuggestSmartCampaignBudgetOptionsResponse_BudgetOption) ProtoMessage() {}
 
 func (x *SuggestSmartCampaignBudgetOptionsResponse_BudgetOption) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_msgTypes[10]
+	mi := &file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -821,7 +821,7 @@ func (x *SuggestSmartCampaignBudgetOptionsResponse_BudgetOption) ProtoReflect() 
 
 // Deprecated: Use SuggestSmartCampaignBudgetOptionsResponse_BudgetOption.ProtoReflect.Descriptor instead.
 func (*SuggestSmartCampaignBudgetOptionsResponse_BudgetOption) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_rawDescGZIP(), []int{2, 1}
+	return file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_rawDescGZIP(), []int{2, 1}
 }
 
 func (x *SuggestSmartCampaignBudgetOptionsResponse_BudgetOption) GetDailyAmountMicros() int64 {
@@ -856,7 +856,7 @@ type SuggestKeywordThemesResponse_KeywordTheme struct {
 func (x *SuggestKeywordThemesResponse_KeywordTheme) Reset() {
 	*x = SuggestKeywordThemesResponse_KeywordTheme{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_msgTypes[11]
+		mi := &file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -869,7 +869,7 @@ func (x *SuggestKeywordThemesResponse_KeywordTheme) String() string {
 func (*SuggestKeywordThemesResponse_KeywordTheme) ProtoMessage() {}
 
 func (x *SuggestKeywordThemesResponse_KeywordTheme) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_msgTypes[11]
+	mi := &file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -882,7 +882,7 @@ func (x *SuggestKeywordThemesResponse_KeywordTheme) ProtoReflect() protoreflect.
 
 // Deprecated: Use SuggestKeywordThemesResponse_KeywordTheme.ProtoReflect.Descriptor instead.
 func (*SuggestKeywordThemesResponse_KeywordTheme) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_rawDescGZIP(), []int{6, 0}
+	return file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_rawDescGZIP(), []int{6, 0}
 }
 
 func (m *SuggestKeywordThemesResponse_KeywordTheme) GetKeywordTheme() isSuggestKeywordThemesResponse_KeywordTheme_KeywordTheme {
@@ -926,24 +926,24 @@ func (*SuggestKeywordThemesResponse_KeywordTheme_KeywordThemeConstant) isSuggest
 func (*SuggestKeywordThemesResponse_KeywordTheme_FreeFormKeywordTheme) isSuggestKeywordThemesResponse_KeywordTheme_KeywordTheme() {
 }
 
-var File_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_rawDesc = []byte{
+var file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_rawDesc = []byte{
 	0x0a, 0x46, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69,
 	0x63, 0x65, 0x73, 0x2f, 0x73, 0x6d, 0x61, 0x72, 0x74, 0x5f, 0x63, 0x61, 0x6d, 0x70, 0x61, 0x69,
 	0x67, 0x6e, 0x5f, 0x73, 0x75, 0x67, 0x67, 0x65, 0x73, 0x74, 0x5f, 0x73, 0x65, 0x72, 0x76, 0x69,
 	0x63, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x21, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76,
-	0x31, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x1a, 0x33, 0x67, 0x6f, 0x6f,
+	0x31, 0x35, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x1a, 0x33, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64,
-	0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2f, 0x61, 0x64, 0x5f,
+	0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2f, 0x61, 0x64, 0x5f,
 	0x74, 0x79, 0x70, 0x65, 0x5f, 0x69, 0x6e, 0x66, 0x6f, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
 	0x1a, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
 	0x6e, 0x2f, 0x63, 0x72, 0x69, 0x74, 0x65, 0x72, 0x69, 0x61, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
 	0x1a, 0x3f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x72, 0x65, 0x73, 0x6f, 0x75,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x72, 0x65, 0x73, 0x6f, 0x75,
 	0x72, 0x63, 0x65, 0x73, 0x2f, 0x6b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64, 0x5f, 0x74, 0x68, 0x65,
 	0x6d, 0x65, 0x5f, 0x63, 0x6f, 0x6e, 0x73, 0x74, 0x61, 0x6e, 0x74, 0x2e, 0x70, 0x72, 0x6f, 0x74,
 	0x6f, 0x1a, 0x1c, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x6e,
@@ -966,7 +966,7 @@ var file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_
 	0x12, 0x6e, 0x0a, 0x0f, 0x73, 0x75, 0x67, 0x67, 0x65, 0x73, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69,
 	0x6e, 0x66, 0x6f, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x3e, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
-	0x2e, 0x76, 0x31, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x53, 0x6d,
+	0x2e, 0x76, 0x31, 0x35, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x53, 0x6d,
 	0x61, 0x72, 0x74, 0x43, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x53, 0x75, 0x67, 0x67, 0x65,
 	0x73, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x6e, 0x66, 0x6f, 0x42, 0x03, 0xe0, 0x41, 0x02, 0x48, 0x00,
 	0x52, 0x0e, 0x73, 0x75, 0x67, 0x67, 0x65, 0x73, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x6e, 0x66, 0x6f,
@@ -980,19 +980,19 @@ var file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_
 	0x01, 0x52, 0x0c, 0x6c, 0x61, 0x6e, 0x67, 0x75, 0x61, 0x67, 0x65, 0x43, 0x6f, 0x64, 0x65, 0x12,
 	0x57, 0x0a, 0x0c, 0x61, 0x64, 0x5f, 0x73, 0x63, 0x68, 0x65, 0x64, 0x75, 0x6c, 0x65, 0x73, 0x18,
 	0x06, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x2f, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61,
-	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34,
+	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35,
 	0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x41, 0x64, 0x53, 0x63, 0x68, 0x65, 0x64, 0x75,
 	0x6c, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x42, 0x03, 0xe0, 0x41, 0x01, 0x52, 0x0b, 0x61, 0x64, 0x53,
 	0x63, 0x68, 0x65, 0x64, 0x75, 0x6c, 0x65, 0x73, 0x12, 0x5d, 0x0a, 0x0e, 0x6b, 0x65, 0x79, 0x77,
 	0x6f, 0x72, 0x64, 0x5f, 0x74, 0x68, 0x65, 0x6d, 0x65, 0x73, 0x18, 0x07, 0x20, 0x03, 0x28, 0x0b,
 	0x32, 0x31, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d,
+	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x63, 0x6f, 0x6d, 0x6d,
 	0x6f, 0x6e, 0x2e, 0x4b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64, 0x54, 0x68, 0x65, 0x6d, 0x65, 0x49,
 	0x6e, 0x66, 0x6f, 0x42, 0x03, 0xe0, 0x41, 0x01, 0x52, 0x0d, 0x6b, 0x65, 0x79, 0x77, 0x6f, 0x72,
 	0x64, 0x54, 0x68, 0x65, 0x6d, 0x65, 0x73, 0x12, 0x80, 0x01, 0x0a, 0x10, 0x62, 0x75, 0x73, 0x69,
 	0x6e, 0x65, 0x73, 0x73, 0x5f, 0x63, 0x6f, 0x6e, 0x74, 0x65, 0x78, 0x74, 0x18, 0x08, 0x20, 0x01,
 	0x28, 0x0b, 0x32, 0x4e, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x73, 0x65,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x73, 0x65,
 	0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x53, 0x6d, 0x61, 0x72, 0x74, 0x43, 0x61, 0x6d, 0x70,
 	0x61, 0x69, 0x67, 0x6e, 0x53, 0x75, 0x67, 0x67, 0x65, 0x73, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x6e,
 	0x66, 0x6f, 0x2e, 0x42, 0x75, 0x73, 0x69, 0x6e, 0x65, 0x73, 0x73, 0x43, 0x6f, 0x6e, 0x74, 0x65,
@@ -1004,7 +1004,7 @@ var file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_
 	0x6f, 0x66, 0x69, 0x6c, 0x65, 0x4c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x77, 0x0a,
 	0x0d, 0x6c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x6c, 0x69, 0x73, 0x74, 0x18, 0x04,
 	0x20, 0x01, 0x28, 0x0b, 0x32, 0x4b, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64,
-	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e,
+	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x53, 0x6d, 0x61, 0x72, 0x74, 0x43, 0x61,
 	0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x53, 0x75, 0x67, 0x67, 0x65, 0x73, 0x74, 0x69, 0x6f, 0x6e,
 	0x49, 0x6e, 0x66, 0x6f, 0x2e, 0x4c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4c, 0x69, 0x73,
@@ -1012,13 +1012,13 @@ var file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_
 	0x6f, 0x6e, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x53, 0x0a, 0x09, 0x70, 0x72, 0x6f, 0x78, 0x69, 0x6d,
 	0x69, 0x74, 0x79, 0x18, 0x05, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2e, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
-	0x2e, 0x76, 0x31, 0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x50, 0x72, 0x6f, 0x78,
+	0x2e, 0x76, 0x31, 0x35, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x50, 0x72, 0x6f, 0x78,
 	0x69, 0x6d, 0x69, 0x74, 0x79, 0x49, 0x6e, 0x66, 0x6f, 0x42, 0x03, 0xe0, 0x41, 0x01, 0x48, 0x01,
 	0x52, 0x09, 0x70, 0x72, 0x6f, 0x78, 0x69, 0x6d, 0x69, 0x74, 0x79, 0x1a, 0x60, 0x0a, 0x0c, 0x4c,
 	0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x50, 0x0a, 0x09, 0x6c,
 	0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x2d,
 	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e,
+	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e,
 	0x2e, 0x4c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x6e, 0x66, 0x6f, 0x42, 0x03, 0xe0,
 	0x41, 0x02, 0x52, 0x09, 0x6c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x1a, 0x3b, 0x0a,
 	0x0f, 0x42, 0x75, 0x73, 0x69, 0x6e, 0x65, 0x73, 0x73, 0x43, 0x6f, 0x6e, 0x74, 0x65, 0x78, 0x74,
@@ -1032,7 +1032,7 @@ var file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_
 	0x6e, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x75, 0x0a, 0x03, 0x6c, 0x6f,
 	0x77, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x59, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76,
-	0x31, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x53, 0x75, 0x67, 0x67,
+	0x31, 0x35, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x53, 0x75, 0x67, 0x67,
 	0x65, 0x73, 0x74, 0x53, 0x6d, 0x61, 0x72, 0x74, 0x43, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e,
 	0x42, 0x75, 0x64, 0x67, 0x65, 0x74, 0x4f, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x52, 0x65, 0x73,
 	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x2e, 0x42, 0x75, 0x64, 0x67, 0x65, 0x74, 0x4f, 0x70, 0x74, 0x69,
@@ -1040,7 +1040,7 @@ var file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_
 	0x01, 0x12, 0x85, 0x01, 0x0a, 0x0b, 0x72, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x65,
 	0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x59, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76,
-	0x31, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x53, 0x75, 0x67, 0x67,
+	0x31, 0x35, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x53, 0x75, 0x67, 0x67,
 	0x65, 0x73, 0x74, 0x53, 0x6d, 0x61, 0x72, 0x74, 0x43, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e,
 	0x42, 0x75, 0x64, 0x67, 0x65, 0x74, 0x4f, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x52, 0x65, 0x73,
 	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x2e, 0x42, 0x75, 0x64, 0x67, 0x65, 0x74, 0x4f, 0x70, 0x74, 0x69,
@@ -1048,7 +1048,7 @@ var file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_
 	0x6d, 0x65, 0x6e, 0x64, 0x65, 0x64, 0x88, 0x01, 0x01, 0x12, 0x77, 0x0a, 0x04, 0x68, 0x69, 0x67,
 	0x68, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x59, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76,
-	0x31, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x53, 0x75, 0x67, 0x67,
+	0x31, 0x35, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x53, 0x75, 0x67, 0x67,
 	0x65, 0x73, 0x74, 0x53, 0x6d, 0x61, 0x72, 0x74, 0x43, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e,
 	0x42, 0x75, 0x64, 0x67, 0x65, 0x74, 0x4f, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x52, 0x65, 0x73,
 	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x2e, 0x42, 0x75, 0x64, 0x67, 0x65, 0x74, 0x4f, 0x70, 0x74, 0x69,
@@ -1065,7 +1065,7 @@ var file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_
 	0x11, 0x64, 0x61, 0x69, 0x6c, 0x79, 0x41, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x4d, 0x69, 0x63, 0x72,
 	0x6f, 0x73, 0x12, 0x6e, 0x0a, 0x07, 0x6d, 0x65, 0x74, 0x72, 0x69, 0x63, 0x73, 0x18, 0x02, 0x20,
 	0x01, 0x28, 0x0b, 0x32, 0x54, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73,
-	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x73,
+	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x73,
 	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x53, 0x75, 0x67, 0x67, 0x65, 0x73, 0x74, 0x53,
 	0x6d, 0x61, 0x72, 0x74, 0x43, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x42, 0x75, 0x64, 0x67,
 	0x65, 0x74, 0x4f, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
@@ -1079,7 +1079,7 @@ var file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_
 	0x0a, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x49, 0x64, 0x12, 0x6c, 0x0a, 0x0f, 0x73,
 	0x75, 0x67, 0x67, 0x65, 0x73, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x6e, 0x66, 0x6f, 0x18, 0x02,
 	0x20, 0x01, 0x28, 0x0b, 0x32, 0x3e, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64,
-	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e,
+	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x53, 0x6d, 0x61, 0x72, 0x74, 0x43, 0x61,
 	0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x53, 0x75, 0x67, 0x67, 0x65, 0x73, 0x74, 0x69, 0x6f, 0x6e,
 	0x49, 0x6e, 0x66, 0x6f, 0x42, 0x03, 0xe0, 0x41, 0x02, 0x52, 0x0e, 0x73, 0x75, 0x67, 0x67, 0x65,
@@ -1088,7 +1088,7 @@ var file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_
 	0x6e, 0x41, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x52, 0x0a, 0x07, 0x61,
 	0x64, 0x5f, 0x69, 0x6e, 0x66, 0x6f, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x34, 0x2e, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x53,
+	0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x53,
 	0x6d, 0x61, 0x72, 0x74, 0x43, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x41, 0x64, 0x49, 0x6e,
 	0x66, 0x6f, 0x42, 0x03, 0xe0, 0x41, 0x01, 0x52, 0x06, 0x61, 0x64, 0x49, 0x6e, 0x66, 0x6f, 0x22,
 	0xb1, 0x01, 0x0a, 0x1b, 0x53, 0x75, 0x67, 0x67, 0x65, 0x73, 0x74, 0x4b, 0x65, 0x79, 0x77, 0x6f,
@@ -1098,7 +1098,7 @@ var file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_
 	0x6d, 0x65, 0x72, 0x49, 0x64, 0x12, 0x6c, 0x0a, 0x0f, 0x73, 0x75, 0x67, 0x67, 0x65, 0x73, 0x74,
 	0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x6e, 0x66, 0x6f, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x3e,
 	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
+	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
 	0x65, 0x73, 0x2e, 0x53, 0x6d, 0x61, 0x72, 0x74, 0x43, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e,
 	0x53, 0x75, 0x67, 0x67, 0x65, 0x73, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x6e, 0x66, 0x6f, 0x42, 0x03,
 	0xe0, 0x41, 0x02, 0x52, 0x0e, 0x73, 0x75, 0x67, 0x67, 0x65, 0x73, 0x74, 0x69, 0x6f, 0x6e, 0x49,
@@ -1107,7 +1107,7 @@ var file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_
 	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x73, 0x0a, 0x0e, 0x6b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64, 0x5f,
 	0x74, 0x68, 0x65, 0x6d, 0x65, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x4c, 0x2e, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73,
+	0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73,
 	0x2e, 0x53, 0x75, 0x67, 0x67, 0x65, 0x73, 0x74, 0x4b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64, 0x54,
 	0x68, 0x65, 0x6d, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x2e, 0x4b, 0x65,
 	0x79, 0x77, 0x6f, 0x72, 0x64, 0x54, 0x68, 0x65, 0x6d, 0x65, 0x52, 0x0d, 0x6b, 0x65, 0x79, 0x77,
@@ -1116,7 +1116,7 @@ var file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_
 	0x79, 0x77, 0x6f, 0x72, 0x64, 0x5f, 0x74, 0x68, 0x65, 0x6d, 0x65, 0x5f, 0x63, 0x6f, 0x6e, 0x73,
 	0x74, 0x61, 0x6e, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x38, 0x2e, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64,
-	0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e,
+	0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e,
 	0x4b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64, 0x54, 0x68, 0x65, 0x6d, 0x65, 0x43, 0x6f, 0x6e, 0x73,
 	0x74, 0x61, 0x6e, 0x74, 0x48, 0x00, 0x52, 0x14, 0x6b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64, 0x54,
 	0x68, 0x65, 0x6d, 0x65, 0x43, 0x6f, 0x6e, 0x73, 0x74, 0x61, 0x6e, 0x74, 0x12, 0x37, 0x0a, 0x17,
@@ -1130,45 +1130,45 @@ var file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_
 	0x73, 0x74, 0x53, 0x6d, 0x61, 0x72, 0x74, 0x43, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x42,
 	0x75, 0x64, 0x67, 0x65, 0x74, 0x4f, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x12, 0x4b, 0x2e, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73,
+	0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73,
 	0x2e, 0x53, 0x75, 0x67, 0x67, 0x65, 0x73, 0x74, 0x53, 0x6d, 0x61, 0x72, 0x74, 0x43, 0x61, 0x6d,
 	0x70, 0x61, 0x69, 0x67, 0x6e, 0x42, 0x75, 0x64, 0x67, 0x65, 0x74, 0x4f, 0x70, 0x74, 0x69, 0x6f,
 	0x6e, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x4c, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
-	0x2e, 0x76, 0x31, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x53, 0x75,
+	0x2e, 0x76, 0x31, 0x35, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x53, 0x75,
 	0x67, 0x67, 0x65, 0x73, 0x74, 0x53, 0x6d, 0x61, 0x72, 0x74, 0x43, 0x61, 0x6d, 0x70, 0x61, 0x69,
 	0x67, 0x6e, 0x42, 0x75, 0x64, 0x67, 0x65, 0x74, 0x4f, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x52,
 	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x4b, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x45, 0x3a,
-	0x01, 0x2a, 0x22, 0x40, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65,
+	0x01, 0x2a, 0x22, 0x40, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65,
 	0x72, 0x73, 0x2f, 0x7b, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x3d,
 	0x2a, 0x7d, 0x3a, 0x73, 0x75, 0x67, 0x67, 0x65, 0x73, 0x74, 0x53, 0x6d, 0x61, 0x72, 0x74, 0x43,
 	0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x42, 0x75, 0x64, 0x67, 0x65, 0x74, 0x4f, 0x70, 0x74,
 	0x69, 0x6f, 0x6e, 0x73, 0x12, 0xdf, 0x01, 0x0a, 0x16, 0x53, 0x75, 0x67, 0x67, 0x65, 0x73, 0x74,
 	0x53, 0x6d, 0x61, 0x72, 0x74, 0x43, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x41, 0x64, 0x12,
 	0x40, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
 	0x63, 0x65, 0x73, 0x2e, 0x53, 0x75, 0x67, 0x67, 0x65, 0x73, 0x74, 0x53, 0x6d, 0x61, 0x72, 0x74,
 	0x43, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x41, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
 	0x74, 0x1a, 0x41, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x73, 0x65, 0x72,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x73, 0x65, 0x72,
 	0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x53, 0x75, 0x67, 0x67, 0x65, 0x73, 0x74, 0x53, 0x6d, 0x61,
 	0x72, 0x74, 0x43, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x41, 0x64, 0x52, 0x65, 0x73, 0x70,
 	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x40, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x3a, 0x3a, 0x01, 0x2a, 0x22,
-	0x35, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x73, 0x2f,
+	0x35, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x73, 0x2f,
 	0x7b, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x3d, 0x2a, 0x7d, 0x3a,
 	0x73, 0x75, 0x67, 0x67, 0x65, 0x73, 0x74, 0x53, 0x6d, 0x61, 0x72, 0x74, 0x43, 0x61, 0x6d, 0x70,
 	0x61, 0x69, 0x67, 0x6e, 0x41, 0x64, 0x12, 0xd7, 0x01, 0x0a, 0x14, 0x53, 0x75, 0x67, 0x67, 0x65,
 	0x73, 0x74, 0x4b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64, 0x54, 0x68, 0x65, 0x6d, 0x65, 0x73, 0x12,
 	0x3e, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
 	0x63, 0x65, 0x73, 0x2e, 0x53, 0x75, 0x67, 0x67, 0x65, 0x73, 0x74, 0x4b, 0x65, 0x79, 0x77, 0x6f,
 	0x72, 0x64, 0x54, 0x68, 0x65, 0x6d, 0x65, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
 	0x3f, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
 	0x63, 0x65, 0x73, 0x2e, 0x53, 0x75, 0x67, 0x67, 0x65, 0x73, 0x74, 0x4b, 0x65, 0x79, 0x77, 0x6f,
 	0x72, 0x64, 0x54, 0x68, 0x65, 0x6d, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
 	0x22, 0x3e, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x38, 0x3a, 0x01, 0x2a, 0x22, 0x33, 0x2f, 0x76, 0x31,
-	0x34, 0x2f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x73, 0x2f, 0x7b, 0x63, 0x75, 0x73,
+	0x35, 0x2f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x73, 0x2f, 0x7b, 0x63, 0x75, 0x73,
 	0x74, 0x6f, 0x6d, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x3d, 0x2a, 0x7d, 0x3a, 0x73, 0x75, 0x67, 0x67,
 	0x65, 0x73, 0x74, 0x4b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64, 0x54, 0x68, 0x65, 0x6d, 0x65, 0x73,
 	0x1a, 0x45, 0xca, 0x41, 0x18, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x67,
@@ -1177,80 +1177,80 @@ var file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_
 	0x6c, 0x65, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x61, 0x75, 0x74, 0x68, 0x2f,
 	0x61, 0x64, 0x77, 0x6f, 0x72, 0x64, 0x73, 0x42, 0x8c, 0x02, 0x0a, 0x25, 0x63, 0x6f, 0x6d, 0x2e,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
 	0x73, 0x42, 0x20, 0x53, 0x6d, 0x61, 0x72, 0x74, 0x43, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e,
 	0x53, 0x75, 0x67, 0x67, 0x65, 0x73, 0x74, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x50, 0x72,
 	0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x49, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x67, 0x6f,
 	0x6c, 0x61, 0x6e, 0x67, 0x2e, 0x6f, 0x72, 0x67, 0x2f, 0x67, 0x65, 0x6e, 0x70, 0x72, 0x6f, 0x74,
 	0x6f, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x70, 0x69, 0x73, 0x2f, 0x61, 0x64, 0x73,
-	0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x73,
+	0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x73,
 	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x3b, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73,
 	0xa2, 0x02, 0x03, 0x47, 0x41, 0x41, 0xaa, 0x02, 0x21, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
 	0x41, 0x64, 0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e, 0x56, 0x31,
-	0x34, 0x2e, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0xca, 0x02, 0x21, 0x47, 0x6f, 0x6f,
+	0x35, 0x2e, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0xca, 0x02, 0x21, 0x47, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x5c, 0x41, 0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64,
-	0x73, 0x5c, 0x56, 0x31, 0x34, 0x5c, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0xea, 0x02,
+	0x73, 0x5c, 0x56, 0x31, 0x35, 0x5c, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0xea, 0x02,
 	0x25, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x3a, 0x3a, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x47, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x31, 0x34, 0x3a, 0x3a, 0x53, 0x65,
+	0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x31, 0x35, 0x3a, 0x3a, 0x53, 0x65,
 	0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
-	file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_rawDescData = file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_rawDesc
+	file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_rawDescData = file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_rawDesc
 )
 
-func file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_rawDescData)
+func file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_rawDescData)
 	})
-	return file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_rawDescData
+	return file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_rawDescData
 }
 
-var file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
-var file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_goTypes = []interface{}{
-	(*SuggestSmartCampaignBudgetOptionsRequest)(nil),               // 0: google.ads.googleads.v14.services.SuggestSmartCampaignBudgetOptionsRequest
-	(*SmartCampaignSuggestionInfo)(nil),                            // 1: google.ads.googleads.v14.services.SmartCampaignSuggestionInfo
-	(*SuggestSmartCampaignBudgetOptionsResponse)(nil),              // 2: google.ads.googleads.v14.services.SuggestSmartCampaignBudgetOptionsResponse
-	(*SuggestSmartCampaignAdRequest)(nil),                          // 3: google.ads.googleads.v14.services.SuggestSmartCampaignAdRequest
-	(*SuggestSmartCampaignAdResponse)(nil),                         // 4: google.ads.googleads.v14.services.SuggestSmartCampaignAdResponse
-	(*SuggestKeywordThemesRequest)(nil),                            // 5: google.ads.googleads.v14.services.SuggestKeywordThemesRequest
-	(*SuggestKeywordThemesResponse)(nil),                           // 6: google.ads.googleads.v14.services.SuggestKeywordThemesResponse
-	(*SmartCampaignSuggestionInfo_LocationList)(nil),               // 7: google.ads.googleads.v14.services.SmartCampaignSuggestionInfo.LocationList
-	(*SmartCampaignSuggestionInfo_BusinessContext)(nil),            // 8: google.ads.googleads.v14.services.SmartCampaignSuggestionInfo.BusinessContext
-	(*SuggestSmartCampaignBudgetOptionsResponse_Metrics)(nil),      // 9: google.ads.googleads.v14.services.SuggestSmartCampaignBudgetOptionsResponse.Metrics
-	(*SuggestSmartCampaignBudgetOptionsResponse_BudgetOption)(nil), // 10: google.ads.googleads.v14.services.SuggestSmartCampaignBudgetOptionsResponse.BudgetOption
-	(*SuggestKeywordThemesResponse_KeywordTheme)(nil),              // 11: google.ads.googleads.v14.services.SuggestKeywordThemesResponse.KeywordTheme
-	(*common.AdScheduleInfo)(nil),                                  // 12: google.ads.googleads.v14.common.AdScheduleInfo
-	(*common.KeywordThemeInfo)(nil),                                // 13: google.ads.googleads.v14.common.KeywordThemeInfo
-	(*common.ProximityInfo)(nil),                                   // 14: google.ads.googleads.v14.common.ProximityInfo
-	(*common.SmartCampaignAdInfo)(nil),                             // 15: google.ads.googleads.v14.common.SmartCampaignAdInfo
-	(*common.LocationInfo)(nil),                                    // 16: google.ads.googleads.v14.common.LocationInfo
-	(*resources.KeywordThemeConstant)(nil),                         // 17: google.ads.googleads.v14.resources.KeywordThemeConstant
+var file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
+var file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_goTypes = []interface{}{
+	(*SuggestSmartCampaignBudgetOptionsRequest)(nil),               // 0: google.ads.googleads.v15.services.SuggestSmartCampaignBudgetOptionsRequest
+	(*SmartCampaignSuggestionInfo)(nil),                            // 1: google.ads.googleads.v15.services.SmartCampaignSuggestionInfo
+	(*SuggestSmartCampaignBudgetOptionsResponse)(nil),              // 2: google.ads.googleads.v15.services.SuggestSmartCampaignBudgetOptionsResponse
+	(*SuggestSmartCampaignAdRequest)(nil),                          // 3: google.ads.googleads.v15.services.SuggestSmartCampaignAdRequest
+	(*SuggestSmartCampaignAdResponse)(nil),                         // 4: google.ads.googleads.v15.services.SuggestSmartCampaignAdResponse
+	(*SuggestKeywordThemesRequest)(nil),                            // 5: google.ads.googleads.v15.services.SuggestKeywordThemesRequest
+	(*SuggestKeywordThemesResponse)(nil),                           // 6: google.ads.googleads.v15.services.SuggestKeywordThemesResponse
+	(*SmartCampaignSuggestionInfo_LocationList)(nil),               // 7: google.ads.googleads.v15.services.SmartCampaignSuggestionInfo.LocationList
+	(*SmartCampaignSuggestionInfo_BusinessContext)(nil),            // 8: google.ads.googleads.v15.services.SmartCampaignSuggestionInfo.BusinessContext
+	(*SuggestSmartCampaignBudgetOptionsResponse_Metrics)(nil),      // 9: google.ads.googleads.v15.services.SuggestSmartCampaignBudgetOptionsResponse.Metrics
+	(*SuggestSmartCampaignBudgetOptionsResponse_BudgetOption)(nil), // 10: google.ads.googleads.v15.services.SuggestSmartCampaignBudgetOptionsResponse.BudgetOption
+	(*SuggestKeywordThemesResponse_KeywordTheme)(nil),              // 11: google.ads.googleads.v15.services.SuggestKeywordThemesResponse.KeywordTheme
+	(*common.AdScheduleInfo)(nil),                                  // 12: google.ads.googleads.v15.common.AdScheduleInfo
+	(*common.KeywordThemeInfo)(nil),                                // 13: google.ads.googleads.v15.common.KeywordThemeInfo
+	(*common.ProximityInfo)(nil),                                   // 14: google.ads.googleads.v15.common.ProximityInfo
+	(*common.SmartCampaignAdInfo)(nil),                             // 15: google.ads.googleads.v15.common.SmartCampaignAdInfo
+	(*common.LocationInfo)(nil),                                    // 16: google.ads.googleads.v15.common.LocationInfo
+	(*resources.KeywordThemeConstant)(nil),                         // 17: google.ads.googleads.v15.resources.KeywordThemeConstant
 }
-var file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_depIdxs = []int32{
-	1,  // 0: google.ads.googleads.v14.services.SuggestSmartCampaignBudgetOptionsRequest.suggestion_info:type_name -> google.ads.googleads.v14.services.SmartCampaignSuggestionInfo
-	12, // 1: google.ads.googleads.v14.services.SmartCampaignSuggestionInfo.ad_schedules:type_name -> google.ads.googleads.v14.common.AdScheduleInfo
-	13, // 2: google.ads.googleads.v14.services.SmartCampaignSuggestionInfo.keyword_themes:type_name -> google.ads.googleads.v14.common.KeywordThemeInfo
-	8,  // 3: google.ads.googleads.v14.services.SmartCampaignSuggestionInfo.business_context:type_name -> google.ads.googleads.v14.services.SmartCampaignSuggestionInfo.BusinessContext
-	7,  // 4: google.ads.googleads.v14.services.SmartCampaignSuggestionInfo.location_list:type_name -> google.ads.googleads.v14.services.SmartCampaignSuggestionInfo.LocationList
-	14, // 5: google.ads.googleads.v14.services.SmartCampaignSuggestionInfo.proximity:type_name -> google.ads.googleads.v14.common.ProximityInfo
-	10, // 6: google.ads.googleads.v14.services.SuggestSmartCampaignBudgetOptionsResponse.low:type_name -> google.ads.googleads.v14.services.SuggestSmartCampaignBudgetOptionsResponse.BudgetOption
-	10, // 7: google.ads.googleads.v14.services.SuggestSmartCampaignBudgetOptionsResponse.recommended:type_name -> google.ads.googleads.v14.services.SuggestSmartCampaignBudgetOptionsResponse.BudgetOption
-	10, // 8: google.ads.googleads.v14.services.SuggestSmartCampaignBudgetOptionsResponse.high:type_name -> google.ads.googleads.v14.services.SuggestSmartCampaignBudgetOptionsResponse.BudgetOption
-	1,  // 9: google.ads.googleads.v14.services.SuggestSmartCampaignAdRequest.suggestion_info:type_name -> google.ads.googleads.v14.services.SmartCampaignSuggestionInfo
-	15, // 10: google.ads.googleads.v14.services.SuggestSmartCampaignAdResponse.ad_info:type_name -> google.ads.googleads.v14.common.SmartCampaignAdInfo
-	1,  // 11: google.ads.googleads.v14.services.SuggestKeywordThemesRequest.suggestion_info:type_name -> google.ads.googleads.v14.services.SmartCampaignSuggestionInfo
-	11, // 12: google.ads.googleads.v14.services.SuggestKeywordThemesResponse.keyword_themes:type_name -> google.ads.googleads.v14.services.SuggestKeywordThemesResponse.KeywordTheme
-	16, // 13: google.ads.googleads.v14.services.SmartCampaignSuggestionInfo.LocationList.locations:type_name -> google.ads.googleads.v14.common.LocationInfo
-	9,  // 14: google.ads.googleads.v14.services.SuggestSmartCampaignBudgetOptionsResponse.BudgetOption.metrics:type_name -> google.ads.googleads.v14.services.SuggestSmartCampaignBudgetOptionsResponse.Metrics
-	17, // 15: google.ads.googleads.v14.services.SuggestKeywordThemesResponse.KeywordTheme.keyword_theme_constant:type_name -> google.ads.googleads.v14.resources.KeywordThemeConstant
-	0,  // 16: google.ads.googleads.v14.services.SmartCampaignSuggestService.SuggestSmartCampaignBudgetOptions:input_type -> google.ads.googleads.v14.services.SuggestSmartCampaignBudgetOptionsRequest
-	3,  // 17: google.ads.googleads.v14.services.SmartCampaignSuggestService.SuggestSmartCampaignAd:input_type -> google.ads.googleads.v14.services.SuggestSmartCampaignAdRequest
-	5,  // 18: google.ads.googleads.v14.services.SmartCampaignSuggestService.SuggestKeywordThemes:input_type -> google.ads.googleads.v14.services.SuggestKeywordThemesRequest
-	2,  // 19: google.ads.googleads.v14.services.SmartCampaignSuggestService.SuggestSmartCampaignBudgetOptions:output_type -> google.ads.googleads.v14.services.SuggestSmartCampaignBudgetOptionsResponse
-	4,  // 20: google.ads.googleads.v14.services.SmartCampaignSuggestService.SuggestSmartCampaignAd:output_type -> google.ads.googleads.v14.services.SuggestSmartCampaignAdResponse
-	6,  // 21: google.ads.googleads.v14.services.SmartCampaignSuggestService.SuggestKeywordThemes:output_type -> google.ads.googleads.v14.services.SuggestKeywordThemesResponse
+var file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_depIdxs = []int32{
+	1,  // 0: google.ads.googleads.v15.services.SuggestSmartCampaignBudgetOptionsRequest.suggestion_info:type_name -> google.ads.googleads.v15.services.SmartCampaignSuggestionInfo
+	12, // 1: google.ads.googleads.v15.services.SmartCampaignSuggestionInfo.ad_schedules:type_name -> google.ads.googleads.v15.common.AdScheduleInfo
+	13, // 2: google.ads.googleads.v15.services.SmartCampaignSuggestionInfo.keyword_themes:type_name -> google.ads.googleads.v15.common.KeywordThemeInfo
+	8,  // 3: google.ads.googleads.v15.services.SmartCampaignSuggestionInfo.business_context:type_name -> google.ads.googleads.v15.services.SmartCampaignSuggestionInfo.BusinessContext
+	7,  // 4: google.ads.googleads.v15.services.SmartCampaignSuggestionInfo.location_list:type_name -> google.ads.googleads.v15.services.SmartCampaignSuggestionInfo.LocationList
+	14, // 5: google.ads.googleads.v15.services.SmartCampaignSuggestionInfo.proximity:type_name -> google.ads.googleads.v15.common.ProximityInfo
+	10, // 6: google.ads.googleads.v15.services.SuggestSmartCampaignBudgetOptionsResponse.low:type_name -> google.ads.googleads.v15.services.SuggestSmartCampaignBudgetOptionsResponse.BudgetOption
+	10, // 7: google.ads.googleads.v15.services.SuggestSmartCampaignBudgetOptionsResponse.recommended:type_name -> google.ads.googleads.v15.services.SuggestSmartCampaignBudgetOptionsResponse.BudgetOption
+	10, // 8: google.ads.googleads.v15.services.SuggestSmartCampaignBudgetOptionsResponse.high:type_name -> google.ads.googleads.v15.services.SuggestSmartCampaignBudgetOptionsResponse.BudgetOption
+	1,  // 9: google.ads.googleads.v15.services.SuggestSmartCampaignAdRequest.suggestion_info:type_name -> google.ads.googleads.v15.services.SmartCampaignSuggestionInfo
+	15, // 10: google.ads.googleads.v15.services.SuggestSmartCampaignAdResponse.ad_info:type_name -> google.ads.googleads.v15.common.SmartCampaignAdInfo
+	1,  // 11: google.ads.googleads.v15.services.SuggestKeywordThemesRequest.suggestion_info:type_name -> google.ads.googleads.v15.services.SmartCampaignSuggestionInfo
+	11, // 12: google.ads.googleads.v15.services.SuggestKeywordThemesResponse.keyword_themes:type_name -> google.ads.googleads.v15.services.SuggestKeywordThemesResponse.KeywordTheme
+	16, // 13: google.ads.googleads.v15.services.SmartCampaignSuggestionInfo.LocationList.locations:type_name -> google.ads.googleads.v15.common.LocationInfo
+	9,  // 14: google.ads.googleads.v15.services.SuggestSmartCampaignBudgetOptionsResponse.BudgetOption.metrics:type_name -> google.ads.googleads.v15.services.SuggestSmartCampaignBudgetOptionsResponse.Metrics
+	17, // 15: google.ads.googleads.v15.services.SuggestKeywordThemesResponse.KeywordTheme.keyword_theme_constant:type_name -> google.ads.googleads.v15.resources.KeywordThemeConstant
+	0,  // 16: google.ads.googleads.v15.services.SmartCampaignSuggestService.SuggestSmartCampaignBudgetOptions:input_type -> google.ads.googleads.v15.services.SuggestSmartCampaignBudgetOptionsRequest
+	3,  // 17: google.ads.googleads.v15.services.SmartCampaignSuggestService.SuggestSmartCampaignAd:input_type -> google.ads.googleads.v15.services.SuggestSmartCampaignAdRequest
+	5,  // 18: google.ads.googleads.v15.services.SmartCampaignSuggestService.SuggestKeywordThemes:input_type -> google.ads.googleads.v15.services.SuggestKeywordThemesRequest
+	2,  // 19: google.ads.googleads.v15.services.SmartCampaignSuggestService.SuggestSmartCampaignBudgetOptions:output_type -> google.ads.googleads.v15.services.SuggestSmartCampaignBudgetOptionsResponse
+	4,  // 20: google.ads.googleads.v15.services.SmartCampaignSuggestService.SuggestSmartCampaignAd:output_type -> google.ads.googleads.v15.services.SuggestSmartCampaignAdResponse
+	6,  // 21: google.ads.googleads.v15.services.SmartCampaignSuggestService.SuggestKeywordThemes:output_type -> google.ads.googleads.v15.services.SuggestKeywordThemesResponse
 	19, // [19:22] is the sub-list for method output_type
 	16, // [16:19] is the sub-list for method input_type
 	16, // [16:16] is the sub-list for extension type_name
@@ -1258,13 +1258,13 @@ var file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_
 	0,  // [0:16] is the sub-list for field type_name
 }
 
-func init() { file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_init() }
-func file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_init() {
-	if File_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto != nil {
+func init() { file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_init() }
+func file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_init() {
+	if File_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SuggestSmartCampaignBudgetOptionsRequest); i {
 			case 0:
 				return &v.state
@@ -1276,7 +1276,7 @@ func file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SmartCampaignSuggestionInfo); i {
 			case 0:
 				return &v.state
@@ -1288,7 +1288,7 @@ func file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SuggestSmartCampaignBudgetOptionsResponse); i {
 			case 0:
 				return &v.state
@@ -1300,7 +1300,7 @@ func file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SuggestSmartCampaignAdRequest); i {
 			case 0:
 				return &v.state
@@ -1312,7 +1312,7 @@ func file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SuggestSmartCampaignAdResponse); i {
 			case 0:
 				return &v.state
@@ -1324,7 +1324,7 @@ func file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SuggestKeywordThemesRequest); i {
 			case 0:
 				return &v.state
@@ -1336,7 +1336,7 @@ func file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SuggestKeywordThemesResponse); i {
 			case 0:
 				return &v.state
@@ -1348,7 +1348,7 @@ func file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SmartCampaignSuggestionInfo_LocationList); i {
 			case 0:
 				return &v.state
@@ -1360,7 +1360,7 @@ func file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SmartCampaignSuggestionInfo_BusinessContext); i {
 			case 0:
 				return &v.state
@@ -1372,7 +1372,7 @@ func file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SuggestSmartCampaignBudgetOptionsResponse_Metrics); i {
 			case 0:
 				return &v.state
@@ -1384,7 +1384,7 @@ func file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SuggestSmartCampaignBudgetOptionsResponse_BudgetOption); i {
 			case 0:
 				return &v.state
@@ -1396,7 +1396,7 @@ func file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SuggestKeywordThemesResponse_KeywordTheme); i {
 			case 0:
 				return &v.state
@@ -1409,18 +1409,18 @@ func file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto
 			}
 		}
 	}
-	file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_msgTypes[0].OneofWrappers = []interface{}{
+	file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_msgTypes[0].OneofWrappers = []interface{}{
 		(*SuggestSmartCampaignBudgetOptionsRequest_Campaign)(nil),
 		(*SuggestSmartCampaignBudgetOptionsRequest_SuggestionInfo)(nil),
 	}
-	file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_msgTypes[1].OneofWrappers = []interface{}{
+	file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_msgTypes[1].OneofWrappers = []interface{}{
 		(*SmartCampaignSuggestionInfo_BusinessContext_)(nil),
 		(*SmartCampaignSuggestionInfo_BusinessProfileLocation)(nil),
 		(*SmartCampaignSuggestionInfo_LocationList_)(nil),
 		(*SmartCampaignSuggestionInfo_Proximity)(nil),
 	}
-	file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_msgTypes[2].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_msgTypes[11].OneofWrappers = []interface{}{
+	file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_msgTypes[2].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_msgTypes[11].OneofWrappers = []interface{}{
 		(*SuggestKeywordThemesResponse_KeywordTheme_KeywordThemeConstant)(nil),
 		(*SuggestKeywordThemesResponse_KeywordTheme_FreeFormKeywordTheme)(nil),
 	}
@@ -1428,18 +1428,18 @@ func file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_rawDesc,
+			RawDescriptor: file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   12,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_depIdxs,
-		MessageInfos:      file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_depIdxs,
+		MessageInfos:      file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto = out.File
-	file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_rawDesc = nil
-	file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_goTypes = nil
-	file_google_ads_googleads_v14_services_smart_campaign_suggest_service_proto_depIdxs = nil
+	File_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto = out.File
+	file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_rawDesc = nil
+	file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_goTypes = nil
+	file_google_ads_googleads_v15_services_smart_campaign_suggest_service_proto_depIdxs = nil
 }

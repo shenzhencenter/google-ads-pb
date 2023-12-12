@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.21.1
-// source: google/ads/googleads/v14/services/batch_job_service.proto
+// source: google/ads/googleads/v15/services/batch_job_service.proto
 
 package services
 
@@ -34,10 +34,10 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	BatchJobService_MutateBatchJob_FullMethodName        = "/google.ads.googleads.v14.services.BatchJobService/MutateBatchJob"
-	BatchJobService_ListBatchJobResults_FullMethodName   = "/google.ads.googleads.v14.services.BatchJobService/ListBatchJobResults"
-	BatchJobService_RunBatchJob_FullMethodName           = "/google.ads.googleads.v14.services.BatchJobService/RunBatchJob"
-	BatchJobService_AddBatchJobOperations_FullMethodName = "/google.ads.googleads.v14.services.BatchJobService/AddBatchJobOperations"
+	BatchJobService_MutateBatchJob_FullMethodName        = "/google.ads.googleads.v15.services.BatchJobService/MutateBatchJob"
+	BatchJobService_ListBatchJobResults_FullMethodName   = "/google.ads.googleads.v15.services.BatchJobService/ListBatchJobResults"
+	BatchJobService_RunBatchJob_FullMethodName           = "/google.ads.googleads.v15.services.BatchJobService/RunBatchJob"
+	BatchJobService_AddBatchJobOperations_FullMethodName = "/google.ads.googleads.v15.services.BatchJobService/AddBatchJobOperations"
 )
 
 // BatchJobServiceClient is the client API for BatchJobService service.
@@ -310,7 +310,7 @@ func _BatchJobService_AddBatchJobOperations_Handler(srv interface{}, ctx context
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var BatchJobService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v14.services.BatchJobService",
+	ServiceName: "google.ads.googleads.v15.services.BatchJobService",
 	HandlerType: (*BatchJobServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -331,5 +331,5 @@ var BatchJobService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v14/services/batch_job_service.proto",
+	Metadata: "google/ads/googleads/v15/services/batch_job_service.proto",
 }

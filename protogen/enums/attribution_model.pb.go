@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.31.0
 // 	protoc        v3.21.1
-// source: google/ads/googleads/v14/enums/attribution_model.proto
+// source: google/ads/googleads/v15/enums/attribution_model.proto
 
 package enums
 
@@ -102,11 +102,11 @@ func (x AttributionModelEnum_AttributionModel) String() string {
 }
 
 func (AttributionModelEnum_AttributionModel) Descriptor() protoreflect.EnumDescriptor {
-	return file_google_ads_googleads_v14_enums_attribution_model_proto_enumTypes[0].Descriptor()
+	return file_google_ads_googleads_v15_enums_attribution_model_proto_enumTypes[0].Descriptor()
 }
 
 func (AttributionModelEnum_AttributionModel) Type() protoreflect.EnumType {
-	return &file_google_ads_googleads_v14_enums_attribution_model_proto_enumTypes[0]
+	return &file_google_ads_googleads_v15_enums_attribution_model_proto_enumTypes[0]
 }
 
 func (x AttributionModelEnum_AttributionModel) Number() protoreflect.EnumNumber {
@@ -115,7 +115,7 @@ func (x AttributionModelEnum_AttributionModel) Number() protoreflect.EnumNumber 
 
 // Deprecated: Use AttributionModelEnum_AttributionModel.Descriptor instead.
 func (AttributionModelEnum_AttributionModel) EnumDescriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_enums_attribution_model_proto_rawDescGZIP(), []int{0, 0}
+	return file_google_ads_googleads_v15_enums_attribution_model_proto_rawDescGZIP(), []int{0, 0}
 }
 
 // Container for enum representing the attribution model that describes how to
@@ -130,7 +130,7 @@ type AttributionModelEnum struct {
 func (x *AttributionModelEnum) Reset() {
 	*x = AttributionModelEnum{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_enums_attribution_model_proto_msgTypes[0]
+		mi := &file_google_ads_googleads_v15_enums_attribution_model_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -143,7 +143,7 @@ func (x *AttributionModelEnum) String() string {
 func (*AttributionModelEnum) ProtoMessage() {}
 
 func (x *AttributionModelEnum) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_enums_attribution_model_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v15_enums_attribution_model_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -156,18 +156,18 @@ func (x *AttributionModelEnum) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AttributionModelEnum.ProtoReflect.Descriptor instead.
 func (*AttributionModelEnum) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_enums_attribution_model_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v15_enums_attribution_model_proto_rawDescGZIP(), []int{0}
 }
 
-var File_google_ads_googleads_v14_enums_attribution_model_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v15_enums_attribution_model_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v14_enums_attribution_model_proto_rawDesc = []byte{
+var file_google_ads_googleads_v15_enums_attribution_model_proto_rawDesc = []byte{
 	0x0a, 0x36, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73,
 	0x2f, 0x61, 0x74, 0x74, 0x72, 0x69, 0x62, 0x75, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x6d, 0x6f, 0x64,
 	0x65, 0x6c, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x1e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76,
-	0x31, 0x34, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x22, 0xc6, 0x02, 0x0a, 0x14, 0x41, 0x74, 0x74,
+	0x31, 0x35, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x22, 0xc6, 0x02, 0x0a, 0x14, 0x41, 0x74, 0x74,
 	0x72, 0x69, 0x62, 0x75, 0x74, 0x69, 0x6f, 0x6e, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x45, 0x6e, 0x75,
 	0x6d, 0x22, 0xad, 0x02, 0x0a, 0x10, 0x41, 0x74, 0x74, 0x72, 0x69, 0x62, 0x75, 0x74, 0x69, 0x6f,
 	0x6e, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x12, 0x0f, 0x0a, 0x0b, 0x55, 0x4e, 0x53, 0x50, 0x45, 0x43,
@@ -190,41 +190,41 @@ var file_google_ads_googleads_v14_enums_attribution_model_proto_rawDesc = []byte
 	0x49, 0x4f, 0x4e, 0x5f, 0x44, 0x41, 0x54, 0x41, 0x5f, 0x44, 0x52, 0x49, 0x56, 0x45, 0x4e, 0x10,
 	0x6a, 0x42, 0xef, 0x01, 0x0a, 0x22, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76,
-	0x31, 0x34, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x42, 0x15, 0x41, 0x74, 0x74, 0x72, 0x69, 0x62,
+	0x31, 0x35, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x42, 0x15, 0x41, 0x74, 0x74, 0x72, 0x69, 0x62,
 	0x75, 0x74, 0x69, 0x6f, 0x6e, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50,
 	0x01, 0x5a, 0x43, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x67, 0x6f, 0x6c, 0x61, 0x6e, 0x67,
 	0x2e, 0x6f, 0x72, 0x67, 0x2f, 0x67, 0x65, 0x6e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x70, 0x69, 0x73, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73,
 	0x3b, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0xa2, 0x02, 0x03, 0x47, 0x41, 0x41, 0xaa, 0x02, 0x1e, 0x47,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x41, 0x64, 0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x41, 0x64, 0x73, 0x2e, 0x56, 0x31, 0x34, 0x2e, 0x45, 0x6e, 0x75, 0x6d, 0x73, 0xca, 0x02, 0x1e,
+	0x41, 0x64, 0x73, 0x2e, 0x56, 0x31, 0x35, 0x2e, 0x45, 0x6e, 0x75, 0x6d, 0x73, 0xca, 0x02, 0x1e,
 	0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x5c, 0x41, 0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x31, 0x34, 0x5c, 0x45, 0x6e, 0x75, 0x6d, 0x73, 0xea, 0x02,
+	0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x31, 0x35, 0x5c, 0x45, 0x6e, 0x75, 0x6d, 0x73, 0xea, 0x02,
 	0x22, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x3a, 0x3a, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x47, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x31, 0x34, 0x3a, 0x3a, 0x45, 0x6e,
+	0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x31, 0x35, 0x3a, 0x3a, 0x45, 0x6e,
 	0x75, 0x6d, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
-	file_google_ads_googleads_v14_enums_attribution_model_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v14_enums_attribution_model_proto_rawDescData = file_google_ads_googleads_v14_enums_attribution_model_proto_rawDesc
+	file_google_ads_googleads_v15_enums_attribution_model_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v15_enums_attribution_model_proto_rawDescData = file_google_ads_googleads_v15_enums_attribution_model_proto_rawDesc
 )
 
-func file_google_ads_googleads_v14_enums_attribution_model_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v14_enums_attribution_model_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v14_enums_attribution_model_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v14_enums_attribution_model_proto_rawDescData)
+func file_google_ads_googleads_v15_enums_attribution_model_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v15_enums_attribution_model_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v15_enums_attribution_model_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v15_enums_attribution_model_proto_rawDescData)
 	})
-	return file_google_ads_googleads_v14_enums_attribution_model_proto_rawDescData
+	return file_google_ads_googleads_v15_enums_attribution_model_proto_rawDescData
 }
 
-var file_google_ads_googleads_v14_enums_attribution_model_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_google_ads_googleads_v14_enums_attribution_model_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
-var file_google_ads_googleads_v14_enums_attribution_model_proto_goTypes = []interface{}{
-	(AttributionModelEnum_AttributionModel)(0), // 0: google.ads.googleads.v14.enums.AttributionModelEnum.AttributionModel
-	(*AttributionModelEnum)(nil),               // 1: google.ads.googleads.v14.enums.AttributionModelEnum
+var file_google_ads_googleads_v15_enums_attribution_model_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_google_ads_googleads_v15_enums_attribution_model_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_google_ads_googleads_v15_enums_attribution_model_proto_goTypes = []interface{}{
+	(AttributionModelEnum_AttributionModel)(0), // 0: google.ads.googleads.v15.enums.AttributionModelEnum.AttributionModel
+	(*AttributionModelEnum)(nil),               // 1: google.ads.googleads.v15.enums.AttributionModelEnum
 }
-var file_google_ads_googleads_v14_enums_attribution_model_proto_depIdxs = []int32{
+var file_google_ads_googleads_v15_enums_attribution_model_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type
 	0, // [0:0] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
@@ -232,13 +232,13 @@ var file_google_ads_googleads_v14_enums_attribution_model_proto_depIdxs = []int3
 	0, // [0:0] is the sub-list for field type_name
 }
 
-func init() { file_google_ads_googleads_v14_enums_attribution_model_proto_init() }
-func file_google_ads_googleads_v14_enums_attribution_model_proto_init() {
-	if File_google_ads_googleads_v14_enums_attribution_model_proto != nil {
+func init() { file_google_ads_googleads_v15_enums_attribution_model_proto_init() }
+func file_google_ads_googleads_v15_enums_attribution_model_proto_init() {
+	if File_google_ads_googleads_v15_enums_attribution_model_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_google_ads_googleads_v14_enums_attribution_model_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_enums_attribution_model_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AttributionModelEnum); i {
 			case 0:
 				return &v.state
@@ -255,19 +255,19 @@ func file_google_ads_googleads_v14_enums_attribution_model_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_google_ads_googleads_v14_enums_attribution_model_proto_rawDesc,
+			RawDescriptor: file_google_ads_googleads_v15_enums_attribution_model_proto_rawDesc,
 			NumEnums:      1,
 			NumMessages:   1,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_google_ads_googleads_v14_enums_attribution_model_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v14_enums_attribution_model_proto_depIdxs,
-		EnumInfos:         file_google_ads_googleads_v14_enums_attribution_model_proto_enumTypes,
-		MessageInfos:      file_google_ads_googleads_v14_enums_attribution_model_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v15_enums_attribution_model_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v15_enums_attribution_model_proto_depIdxs,
+		EnumInfos:         file_google_ads_googleads_v15_enums_attribution_model_proto_enumTypes,
+		MessageInfos:      file_google_ads_googleads_v15_enums_attribution_model_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v14_enums_attribution_model_proto = out.File
-	file_google_ads_googleads_v14_enums_attribution_model_proto_rawDesc = nil
-	file_google_ads_googleads_v14_enums_attribution_model_proto_goTypes = nil
-	file_google_ads_googleads_v14_enums_attribution_model_proto_depIdxs = nil
+	File_google_ads_googleads_v15_enums_attribution_model_proto = out.File
+	file_google_ads_googleads_v15_enums_attribution_model_proto_rawDesc = nil
+	file_google_ads_googleads_v15_enums_attribution_model_proto_goTypes = nil
+	file_google_ads_googleads_v15_enums_attribution_model_proto_depIdxs = nil
 }

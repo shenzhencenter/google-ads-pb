@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.21.1
-// source: google/ads/googleads/v14/services/feed_item_target_service.proto
+// source: google/ads/googleads/v15/services/feed_item_target_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	FeedItemTargetService_MutateFeedItemTargets_FullMethodName = "/google.ads.googleads.v14.services.FeedItemTargetService/MutateFeedItemTargets"
+	FeedItemTargetService_MutateFeedItemTargets_FullMethodName = "/google.ads.googleads.v15.services.FeedItemTargetService/MutateFeedItemTargets"
 )
 
 // FeedItemTargetServiceClient is the client API for FeedItemTargetService service.
@@ -156,7 +156,7 @@ func _FeedItemTargetService_MutateFeedItemTargets_Handler(srv interface{}, ctx c
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var FeedItemTargetService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v14.services.FeedItemTargetService",
+	ServiceName: "google.ads.googleads.v15.services.FeedItemTargetService",
 	HandlerType: (*FeedItemTargetServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -165,5 +165,5 @@ var FeedItemTargetService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v14/services/feed_item_target_service.proto",
+	Metadata: "google/ads/googleads/v15/services/feed_item_target_service.proto",
 }

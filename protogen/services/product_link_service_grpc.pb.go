@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.21.1
-// source: google/ads/googleads/v14/services/product_link_service.proto
+// source: google/ads/googleads/v15/services/product_link_service.proto
 
 package services
 
@@ -33,8 +33,8 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	ProductLinkService_CreateProductLink_FullMethodName = "/google.ads.googleads.v14.services.ProductLinkService/CreateProductLink"
-	ProductLinkService_RemoveProductLink_FullMethodName = "/google.ads.googleads.v14.services.ProductLinkService/RemoveProductLink"
+	ProductLinkService_CreateProductLink_FullMethodName = "/google.ads.googleads.v15.services.ProductLinkService/CreateProductLink"
+	ProductLinkService_RemoveProductLink_FullMethodName = "/google.ads.googleads.v15.services.ProductLinkService/RemoveProductLink"
 )
 
 // ProductLinkServiceClient is the client API for ProductLinkService service.
@@ -193,7 +193,7 @@ func _ProductLinkService_RemoveProductLink_Handler(srv interface{}, ctx context.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ProductLinkService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v14.services.ProductLinkService",
+	ServiceName: "google.ads.googleads.v15.services.ProductLinkService",
 	HandlerType: (*ProductLinkServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -206,5 +206,5 @@ var ProductLinkService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v14/services/product_link_service.proto",
+	Metadata: "google/ads/googleads/v15/services/product_link_service.proto",
 }

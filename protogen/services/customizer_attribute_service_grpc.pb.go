@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.21.1
-// source: google/ads/googleads/v14/services/customizer_attribute_service.proto
+// source: google/ads/googleads/v15/services/customizer_attribute_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	CustomizerAttributeService_MutateCustomizerAttributes_FullMethodName = "/google.ads.googleads.v14.services.CustomizerAttributeService/MutateCustomizerAttributes"
+	CustomizerAttributeService_MutateCustomizerAttributes_FullMethodName = "/google.ads.googleads.v15.services.CustomizerAttributeService/MutateCustomizerAttributes"
 )
 
 // CustomizerAttributeServiceClient is the client API for CustomizerAttributeService service.
@@ -115,7 +115,7 @@ func _CustomizerAttributeService_MutateCustomizerAttributes_Handler(srv interfac
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CustomizerAttributeService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v14.services.CustomizerAttributeService",
+	ServiceName: "google.ads.googleads.v15.services.CustomizerAttributeService",
 	HandlerType: (*CustomizerAttributeServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -124,5 +124,5 @@ var CustomizerAttributeService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v14/services/customizer_attribute_service.proto",
+	Metadata: "google/ads/googleads/v15/services/customizer_attribute_service.proto",
 }

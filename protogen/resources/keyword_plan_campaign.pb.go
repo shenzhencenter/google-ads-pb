@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.31.0
 // 	protoc        v3.21.1
-// source: google/ads/googleads/v14/resources/keyword_plan_campaign.proto
+// source: google/ads/googleads/v15/resources/keyword_plan_campaign.proto
 
 package resources
 
@@ -64,7 +64,7 @@ type KeywordPlanCampaign struct {
 	//
 	// This field is required and should not be empty when creating Keyword Plan
 	// campaigns.
-	KeywordPlanNetwork enums.KeywordPlanNetworkEnum_KeywordPlanNetwork `protobuf:"varint,6,opt,name=keyword_plan_network,json=keywordPlanNetwork,proto3,enum=google.ads.googleads.v14.enums.KeywordPlanNetworkEnum_KeywordPlanNetwork" json:"keyword_plan_network,omitempty"`
+	KeywordPlanNetwork enums.KeywordPlanNetworkEnum_KeywordPlanNetwork `protobuf:"varint,6,opt,name=keyword_plan_network,json=keywordPlanNetwork,proto3,enum=google.ads.googleads.v15.enums.KeywordPlanNetworkEnum_KeywordPlanNetwork" json:"keyword_plan_network,omitempty"`
 	// A default max cpc bid in micros, and in the account currency, for all ad
 	// groups under the campaign.
 	//
@@ -79,7 +79,7 @@ type KeywordPlanCampaign struct {
 func (x *KeywordPlanCampaign) Reset() {
 	*x = KeywordPlanCampaign{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_resources_keyword_plan_campaign_proto_msgTypes[0]
+		mi := &file_google_ads_googleads_v15_resources_keyword_plan_campaign_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -92,7 +92,7 @@ func (x *KeywordPlanCampaign) String() string {
 func (*KeywordPlanCampaign) ProtoMessage() {}
 
 func (x *KeywordPlanCampaign) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_resources_keyword_plan_campaign_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v15_resources_keyword_plan_campaign_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -105,7 +105,7 @@ func (x *KeywordPlanCampaign) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use KeywordPlanCampaign.ProtoReflect.Descriptor instead.
 func (*KeywordPlanCampaign) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_resources_keyword_plan_campaign_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v15_resources_keyword_plan_campaign_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *KeywordPlanCampaign) GetResourceName() string {
@@ -177,7 +177,7 @@ type KeywordPlanGeoTarget struct {
 func (x *KeywordPlanGeoTarget) Reset() {
 	*x = KeywordPlanGeoTarget{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_resources_keyword_plan_campaign_proto_msgTypes[1]
+		mi := &file_google_ads_googleads_v15_resources_keyword_plan_campaign_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -190,7 +190,7 @@ func (x *KeywordPlanGeoTarget) String() string {
 func (*KeywordPlanGeoTarget) ProtoMessage() {}
 
 func (x *KeywordPlanGeoTarget) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_resources_keyword_plan_campaign_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v15_resources_keyword_plan_campaign_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -203,7 +203,7 @@ func (x *KeywordPlanGeoTarget) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use KeywordPlanGeoTarget.ProtoReflect.Descriptor instead.
 func (*KeywordPlanGeoTarget) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_resources_keyword_plan_campaign_proto_rawDescGZIP(), []int{1}
+	return file_google_ads_googleads_v15_resources_keyword_plan_campaign_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *KeywordPlanGeoTarget) GetGeoTargetConstant() string {
@@ -213,17 +213,17 @@ func (x *KeywordPlanGeoTarget) GetGeoTargetConstant() string {
 	return ""
 }
 
-var File_google_ads_googleads_v14_resources_keyword_plan_campaign_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v15_resources_keyword_plan_campaign_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v14_resources_keyword_plan_campaign_proto_rawDesc = []byte{
+var file_google_ads_googleads_v15_resources_keyword_plan_campaign_proto_rawDesc = []byte{
 	0x0a, 0x3e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x72, 0x65, 0x73, 0x6f, 0x75,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x72, 0x65, 0x73, 0x6f, 0x75,
 	0x72, 0x63, 0x65, 0x73, 0x2f, 0x6b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64, 0x5f, 0x70, 0x6c, 0x61,
 	0x6e, 0x5f, 0x63, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
 	0x12, 0x22, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75,
 	0x72, 0x63, 0x65, 0x73, 0x1a, 0x39, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73,
-	0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x65,
+	0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x65,
 	0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x6b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64, 0x5f, 0x70, 0x6c, 0x61,
 	0x6e, 0x5f, 0x6e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a,
 	0x1f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x66, 0x69, 0x65, 0x6c,
@@ -254,7 +254,7 @@ var file_google_ads_googleads_v14_resources_keyword_plan_campaign_proto_rawDesc 
 	0x6e, 0x74, 0x73, 0x12, 0x7b, 0x0a, 0x14, 0x6b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64, 0x5f, 0x70,
 	0x6c, 0x61, 0x6e, 0x5f, 0x6e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x18, 0x06, 0x20, 0x01, 0x28,
 	0x0e, 0x32, 0x49, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x65, 0x6e, 0x75,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x65, 0x6e, 0x75,
 	0x6d, 0x73, 0x2e, 0x4b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64, 0x50, 0x6c, 0x61, 0x6e, 0x4e, 0x65,
 	0x74, 0x77, 0x6f, 0x72, 0x6b, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x4b, 0x65, 0x79, 0x77, 0x6f, 0x72,
 	0x64, 0x50, 0x6c, 0x61, 0x6e, 0x4e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x52, 0x12, 0x6b, 0x65,
@@ -264,7 +264,7 @@ var file_google_ads_googleads_v14_resources_keyword_plan_campaign_proto_rawDesc 
 	0x69, 0x64, 0x4d, 0x69, 0x63, 0x72, 0x6f, 0x73, 0x88, 0x01, 0x01, 0x12, 0x59, 0x0a, 0x0b, 0x67,
 	0x65, 0x6f, 0x5f, 0x74, 0x61, 0x72, 0x67, 0x65, 0x74, 0x73, 0x18, 0x08, 0x20, 0x03, 0x28, 0x0b,
 	0x32, 0x38, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x72, 0x65, 0x73, 0x6f,
+	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x72, 0x65, 0x73, 0x6f,
 	0x75, 0x72, 0x63, 0x65, 0x73, 0x2e, 0x4b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64, 0x50, 0x6c, 0x61,
 	0x6e, 0x47, 0x65, 0x6f, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x52, 0x0a, 0x67, 0x65, 0x6f, 0x54,
 	0x61, 0x72, 0x67, 0x65, 0x74, 0x73, 0x3a, 0x7a, 0xea, 0x41, 0x77, 0x0a, 0x2c, 0x67, 0x6f, 0x6f,
@@ -289,46 +289,46 @@ var file_google_ads_googleads_v14_resources_keyword_plan_campaign_proto_rawDesc 
 	0x6e, 0x74, 0x88, 0x01, 0x01, 0x42, 0x16, 0x0a, 0x14, 0x5f, 0x67, 0x65, 0x6f, 0x5f, 0x74, 0x61,
 	0x72, 0x67, 0x65, 0x74, 0x5f, 0x63, 0x6f, 0x6e, 0x73, 0x74, 0x61, 0x6e, 0x74, 0x42, 0x8a, 0x02,
 	0x0a, 0x26, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73,
-	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x72,
+	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x72,
 	0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x42, 0x18, 0x4b, 0x65, 0x79, 0x77, 0x6f, 0x72,
 	0x64, 0x50, 0x6c, 0x61, 0x6e, 0x43, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x50, 0x72, 0x6f,
 	0x74, 0x6f, 0x50, 0x01, 0x5a, 0x4b, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x67, 0x6f, 0x6c,
 	0x61, 0x6e, 0x67, 0x2e, 0x6f, 0x72, 0x67, 0x2f, 0x67, 0x65, 0x6e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
 	0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x70, 0x69, 0x73, 0x2f, 0x61, 0x64, 0x73, 0x2f,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x72, 0x65,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x72, 0x65,
 	0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x3b, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65,
 	0x73, 0xa2, 0x02, 0x03, 0x47, 0x41, 0x41, 0xaa, 0x02, 0x22, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x41, 0x64, 0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e, 0x56,
-	0x31, 0x34, 0x2e, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0xca, 0x02, 0x22, 0x47,
+	0x31, 0x35, 0x2e, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0xca, 0x02, 0x22, 0x47,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x5c, 0x41, 0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x41, 0x64, 0x73, 0x5c, 0x56, 0x31, 0x34, 0x5c, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65,
+	0x41, 0x64, 0x73, 0x5c, 0x56, 0x31, 0x35, 0x5c, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65,
 	0x73, 0xea, 0x02, 0x26, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x3a, 0x3a, 0x41, 0x64, 0x73, 0x3a,
-	0x3a, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x31, 0x34, 0x3a,
+	0x3a, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x31, 0x35, 0x3a,
 	0x3a, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
 	0x6f, 0x33,
 }
 
 var (
-	file_google_ads_googleads_v14_resources_keyword_plan_campaign_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v14_resources_keyword_plan_campaign_proto_rawDescData = file_google_ads_googleads_v14_resources_keyword_plan_campaign_proto_rawDesc
+	file_google_ads_googleads_v15_resources_keyword_plan_campaign_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v15_resources_keyword_plan_campaign_proto_rawDescData = file_google_ads_googleads_v15_resources_keyword_plan_campaign_proto_rawDesc
 )
 
-func file_google_ads_googleads_v14_resources_keyword_plan_campaign_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v14_resources_keyword_plan_campaign_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v14_resources_keyword_plan_campaign_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v14_resources_keyword_plan_campaign_proto_rawDescData)
+func file_google_ads_googleads_v15_resources_keyword_plan_campaign_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v15_resources_keyword_plan_campaign_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v15_resources_keyword_plan_campaign_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v15_resources_keyword_plan_campaign_proto_rawDescData)
 	})
-	return file_google_ads_googleads_v14_resources_keyword_plan_campaign_proto_rawDescData
+	return file_google_ads_googleads_v15_resources_keyword_plan_campaign_proto_rawDescData
 }
 
-var file_google_ads_googleads_v14_resources_keyword_plan_campaign_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
-var file_google_ads_googleads_v14_resources_keyword_plan_campaign_proto_goTypes = []interface{}{
-	(*KeywordPlanCampaign)(nil),                          // 0: google.ads.googleads.v14.resources.KeywordPlanCampaign
-	(*KeywordPlanGeoTarget)(nil),                         // 1: google.ads.googleads.v14.resources.KeywordPlanGeoTarget
-	(enums.KeywordPlanNetworkEnum_KeywordPlanNetwork)(0), // 2: google.ads.googleads.v14.enums.KeywordPlanNetworkEnum.KeywordPlanNetwork
+var file_google_ads_googleads_v15_resources_keyword_plan_campaign_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_google_ads_googleads_v15_resources_keyword_plan_campaign_proto_goTypes = []interface{}{
+	(*KeywordPlanCampaign)(nil),                          // 0: google.ads.googleads.v15.resources.KeywordPlanCampaign
+	(*KeywordPlanGeoTarget)(nil),                         // 1: google.ads.googleads.v15.resources.KeywordPlanGeoTarget
+	(enums.KeywordPlanNetworkEnum_KeywordPlanNetwork)(0), // 2: google.ads.googleads.v15.enums.KeywordPlanNetworkEnum.KeywordPlanNetwork
 }
-var file_google_ads_googleads_v14_resources_keyword_plan_campaign_proto_depIdxs = []int32{
-	2, // 0: google.ads.googleads.v14.resources.KeywordPlanCampaign.keyword_plan_network:type_name -> google.ads.googleads.v14.enums.KeywordPlanNetworkEnum.KeywordPlanNetwork
-	1, // 1: google.ads.googleads.v14.resources.KeywordPlanCampaign.geo_targets:type_name -> google.ads.googleads.v14.resources.KeywordPlanGeoTarget
+var file_google_ads_googleads_v15_resources_keyword_plan_campaign_proto_depIdxs = []int32{
+	2, // 0: google.ads.googleads.v15.resources.KeywordPlanCampaign.keyword_plan_network:type_name -> google.ads.googleads.v15.enums.KeywordPlanNetworkEnum.KeywordPlanNetwork
+	1, // 1: google.ads.googleads.v15.resources.KeywordPlanCampaign.geo_targets:type_name -> google.ads.googleads.v15.resources.KeywordPlanGeoTarget
 	2, // [2:2] is the sub-list for method output_type
 	2, // [2:2] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name
@@ -336,13 +336,13 @@ var file_google_ads_googleads_v14_resources_keyword_plan_campaign_proto_depIdxs 
 	0, // [0:2] is the sub-list for field type_name
 }
 
-func init() { file_google_ads_googleads_v14_resources_keyword_plan_campaign_proto_init() }
-func file_google_ads_googleads_v14_resources_keyword_plan_campaign_proto_init() {
-	if File_google_ads_googleads_v14_resources_keyword_plan_campaign_proto != nil {
+func init() { file_google_ads_googleads_v15_resources_keyword_plan_campaign_proto_init() }
+func file_google_ads_googleads_v15_resources_keyword_plan_campaign_proto_init() {
+	if File_google_ads_googleads_v15_resources_keyword_plan_campaign_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_google_ads_googleads_v14_resources_keyword_plan_campaign_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_resources_keyword_plan_campaign_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*KeywordPlanCampaign); i {
 			case 0:
 				return &v.state
@@ -354,7 +354,7 @@ func file_google_ads_googleads_v14_resources_keyword_plan_campaign_proto_init() 
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_resources_keyword_plan_campaign_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_resources_keyword_plan_campaign_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*KeywordPlanGeoTarget); i {
 			case 0:
 				return &v.state
@@ -367,24 +367,24 @@ func file_google_ads_googleads_v14_resources_keyword_plan_campaign_proto_init() 
 			}
 		}
 	}
-	file_google_ads_googleads_v14_resources_keyword_plan_campaign_proto_msgTypes[0].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v14_resources_keyword_plan_campaign_proto_msgTypes[1].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_resources_keyword_plan_campaign_proto_msgTypes[0].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_resources_keyword_plan_campaign_proto_msgTypes[1].OneofWrappers = []interface{}{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_google_ads_googleads_v14_resources_keyword_plan_campaign_proto_rawDesc,
+			RawDescriptor: file_google_ads_googleads_v15_resources_keyword_plan_campaign_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_google_ads_googleads_v14_resources_keyword_plan_campaign_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v14_resources_keyword_plan_campaign_proto_depIdxs,
-		MessageInfos:      file_google_ads_googleads_v14_resources_keyword_plan_campaign_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v15_resources_keyword_plan_campaign_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v15_resources_keyword_plan_campaign_proto_depIdxs,
+		MessageInfos:      file_google_ads_googleads_v15_resources_keyword_plan_campaign_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v14_resources_keyword_plan_campaign_proto = out.File
-	file_google_ads_googleads_v14_resources_keyword_plan_campaign_proto_rawDesc = nil
-	file_google_ads_googleads_v14_resources_keyword_plan_campaign_proto_goTypes = nil
-	file_google_ads_googleads_v14_resources_keyword_plan_campaign_proto_depIdxs = nil
+	File_google_ads_googleads_v15_resources_keyword_plan_campaign_proto = out.File
+	file_google_ads_googleads_v15_resources_keyword_plan_campaign_proto_rawDesc = nil
+	file_google_ads_googleads_v15_resources_keyword_plan_campaign_proto_goTypes = nil
+	file_google_ads_googleads_v15_resources_keyword_plan_campaign_proto_depIdxs = nil
 }

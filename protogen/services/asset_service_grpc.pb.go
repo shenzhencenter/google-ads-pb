@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.21.1
-// source: google/ads/googleads/v14/services/asset_service.proto
+// source: google/ads/googleads/v15/services/asset_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	AssetService_MutateAssets_FullMethodName = "/google.ads.googleads.v14.services.AssetService/MutateAssets"
+	AssetService_MutateAssets_FullMethodName = "/google.ads.googleads.v15.services.AssetService/MutateAssets"
 )
 
 // AssetServiceClient is the client API for AssetService service.
@@ -172,7 +172,7 @@ func _AssetService_MutateAssets_Handler(srv interface{}, ctx context.Context, de
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AssetService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v14.services.AssetService",
+	ServiceName: "google.ads.googleads.v15.services.AssetService",
 	HandlerType: (*AssetServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -181,5 +181,5 @@ var AssetService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v14/services/asset_service.proto",
+	Metadata: "google/ads/googleads/v15/services/asset_service.proto",
 }

@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.21.1
-// source: google/ads/googleads/v14/services/customer_extension_setting_service.proto
+// source: google/ads/googleads/v15/services/customer_extension_setting_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	CustomerExtensionSettingService_MutateCustomerExtensionSettings_FullMethodName = "/google.ads.googleads.v14.services.CustomerExtensionSettingService/MutateCustomerExtensionSettings"
+	CustomerExtensionSettingService_MutateCustomerExtensionSettings_FullMethodName = "/google.ads.googleads.v15.services.CustomerExtensionSettingService/MutateCustomerExtensionSettings"
 )
 
 // CustomerExtensionSettingServiceClient is the client API for CustomerExtensionSettingService service.
@@ -171,7 +171,7 @@ func _CustomerExtensionSettingService_MutateCustomerExtensionSettings_Handler(sr
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CustomerExtensionSettingService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v14.services.CustomerExtensionSettingService",
+	ServiceName: "google.ads.googleads.v15.services.CustomerExtensionSettingService",
 	HandlerType: (*CustomerExtensionSettingServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -180,5 +180,5 @@ var CustomerExtensionSettingService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v14/services/customer_extension_setting_service.proto",
+	Metadata: "google/ads/googleads/v15/services/customer_extension_setting_service.proto",
 }

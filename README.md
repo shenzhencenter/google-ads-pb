@@ -23,13 +23,13 @@ Although this project isn't official, we deem it as low-risk due to its maturity
 
 | google-ads-pb     | Google Ads API   | Sunset date                  |
 | ----------------- | ---------------- | ---------------------------- |
-| Not generated yet            | v18              | End of September 2025       |
-| Not generated yet            | v17.1            | End of May 2025             |
-| Not generated yet            | v17              | End of May 2025             |
-| Not generated yet            | v16.1            | End of January 2025         |
-| Not generated yet            | v16              | End of January 2025         |
-| Not generated yet            | v15              | End of September 2024       |
-| v1.0.0            | v14              | End of May 2024       |
+| Not generated yet   | v18              | End of September 2025      |
+| Not generated yet   | v17.1            | End of May 2025            |
+| Not generated yet   | v17              | End of May 2025            |
+| Not generated yet   | v16.1            | End of January 2025        |
+| Not generated yet   | v16              | End of January 2025        |
+| v1.2.0              | v15              | End of September 2024      |
+| v1.0.0              | v14              | End of May 2024            |
 
 ## Requirements
 

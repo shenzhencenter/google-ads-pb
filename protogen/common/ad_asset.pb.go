@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.31.0
 // 	protoc        v3.21.1
-// source: google/ads/googleads/v14/common/ad_asset.proto
+// source: google/ads/googleads/v15/common/ad_asset.proto
 
 package common
 
@@ -47,9 +47,9 @@ type AdTextAsset struct {
 	// within this field. Multiple assets can be pinned to the same field. An
 	// asset that is unpinned or pinned to a different field will not serve in a
 	// field where some other asset has been pinned.
-	PinnedField enums.ServedAssetFieldTypeEnum_ServedAssetFieldType `protobuf:"varint,2,opt,name=pinned_field,json=pinnedField,proto3,enum=google.ads.googleads.v14.enums.ServedAssetFieldTypeEnum_ServedAssetFieldType" json:"pinned_field,omitempty"`
+	PinnedField enums.ServedAssetFieldTypeEnum_ServedAssetFieldType `protobuf:"varint,2,opt,name=pinned_field,json=pinnedField,proto3,enum=google.ads.googleads.v15.enums.ServedAssetFieldTypeEnum_ServedAssetFieldType" json:"pinned_field,omitempty"`
 	// The performance label of this text asset.
-	AssetPerformanceLabel enums.AssetPerformanceLabelEnum_AssetPerformanceLabel `protobuf:"varint,5,opt,name=asset_performance_label,json=assetPerformanceLabel,proto3,enum=google.ads.googleads.v14.enums.AssetPerformanceLabelEnum_AssetPerformanceLabel" json:"asset_performance_label,omitempty"`
+	AssetPerformanceLabel enums.AssetPerformanceLabelEnum_AssetPerformanceLabel `protobuf:"varint,5,opt,name=asset_performance_label,json=assetPerformanceLabel,proto3,enum=google.ads.googleads.v15.enums.AssetPerformanceLabelEnum_AssetPerformanceLabel" json:"asset_performance_label,omitempty"`
 	// The policy summary of this text asset.
 	PolicySummaryInfo *AdAssetPolicySummary `protobuf:"bytes,6,opt,name=policy_summary_info,json=policySummaryInfo,proto3" json:"policy_summary_info,omitempty"`
 }
@@ -57,7 +57,7 @@ type AdTextAsset struct {
 func (x *AdTextAsset) Reset() {
 	*x = AdTextAsset{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_ad_asset_proto_msgTypes[0]
+		mi := &file_google_ads_googleads_v15_common_ad_asset_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -70,7 +70,7 @@ func (x *AdTextAsset) String() string {
 func (*AdTextAsset) ProtoMessage() {}
 
 func (x *AdTextAsset) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_ad_asset_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v15_common_ad_asset_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -83,7 +83,7 @@ func (x *AdTextAsset) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AdTextAsset.ProtoReflect.Descriptor instead.
 func (*AdTextAsset) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_ad_asset_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v15_common_ad_asset_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *AdTextAsset) GetText() string {
@@ -127,7 +127,7 @@ type AdImageAsset struct {
 func (x *AdImageAsset) Reset() {
 	*x = AdImageAsset{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_ad_asset_proto_msgTypes[1]
+		mi := &file_google_ads_googleads_v15_common_ad_asset_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -140,7 +140,7 @@ func (x *AdImageAsset) String() string {
 func (*AdImageAsset) ProtoMessage() {}
 
 func (x *AdImageAsset) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_ad_asset_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v15_common_ad_asset_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -153,7 +153,7 @@ func (x *AdImageAsset) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AdImageAsset.ProtoReflect.Descriptor instead.
 func (*AdImageAsset) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_ad_asset_proto_rawDescGZIP(), []int{1}
+	return file_google_ads_googleads_v15_common_ad_asset_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *AdImageAsset) GetAsset() string {
@@ -176,7 +176,7 @@ type AdVideoAsset struct {
 func (x *AdVideoAsset) Reset() {
 	*x = AdVideoAsset{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_ad_asset_proto_msgTypes[2]
+		mi := &file_google_ads_googleads_v15_common_ad_asset_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -189,7 +189,7 @@ func (x *AdVideoAsset) String() string {
 func (*AdVideoAsset) ProtoMessage() {}
 
 func (x *AdVideoAsset) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_ad_asset_proto_msgTypes[2]
+	mi := &file_google_ads_googleads_v15_common_ad_asset_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -202,7 +202,7 @@ func (x *AdVideoAsset) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AdVideoAsset.ProtoReflect.Descriptor instead.
 func (*AdVideoAsset) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_ad_asset_proto_rawDescGZIP(), []int{2}
+	return file_google_ads_googleads_v15_common_ad_asset_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *AdVideoAsset) GetAsset() string {
@@ -225,7 +225,7 @@ type AdMediaBundleAsset struct {
 func (x *AdMediaBundleAsset) Reset() {
 	*x = AdMediaBundleAsset{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_ad_asset_proto_msgTypes[3]
+		mi := &file_google_ads_googleads_v15_common_ad_asset_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -238,7 +238,7 @@ func (x *AdMediaBundleAsset) String() string {
 func (*AdMediaBundleAsset) ProtoMessage() {}
 
 func (x *AdMediaBundleAsset) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_ad_asset_proto_msgTypes[3]
+	mi := &file_google_ads_googleads_v15_common_ad_asset_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -251,7 +251,7 @@ func (x *AdMediaBundleAsset) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AdMediaBundleAsset.ProtoReflect.Descriptor instead.
 func (*AdMediaBundleAsset) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_ad_asset_proto_rawDescGZIP(), []int{3}
+	return file_google_ads_googleads_v15_common_ad_asset_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *AdMediaBundleAsset) GetAsset() string {
@@ -274,7 +274,7 @@ type AdDiscoveryCarouselCardAsset struct {
 func (x *AdDiscoveryCarouselCardAsset) Reset() {
 	*x = AdDiscoveryCarouselCardAsset{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_ad_asset_proto_msgTypes[4]
+		mi := &file_google_ads_googleads_v15_common_ad_asset_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -287,7 +287,7 @@ func (x *AdDiscoveryCarouselCardAsset) String() string {
 func (*AdDiscoveryCarouselCardAsset) ProtoMessage() {}
 
 func (x *AdDiscoveryCarouselCardAsset) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_ad_asset_proto_msgTypes[4]
+	mi := &file_google_ads_googleads_v15_common_ad_asset_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -300,7 +300,7 @@ func (x *AdDiscoveryCarouselCardAsset) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AdDiscoveryCarouselCardAsset.ProtoReflect.Descriptor instead.
 func (*AdDiscoveryCarouselCardAsset) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_ad_asset_proto_rawDescGZIP(), []int{4}
+	return file_google_ads_googleads_v15_common_ad_asset_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *AdDiscoveryCarouselCardAsset) GetAsset() string {
@@ -323,7 +323,7 @@ type AdCallToActionAsset struct {
 func (x *AdCallToActionAsset) Reset() {
 	*x = AdCallToActionAsset{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_ad_asset_proto_msgTypes[5]
+		mi := &file_google_ads_googleads_v15_common_ad_asset_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -336,7 +336,7 @@ func (x *AdCallToActionAsset) String() string {
 func (*AdCallToActionAsset) ProtoMessage() {}
 
 func (x *AdCallToActionAsset) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_ad_asset_proto_msgTypes[5]
+	mi := &file_google_ads_googleads_v15_common_ad_asset_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -349,7 +349,7 @@ func (x *AdCallToActionAsset) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AdCallToActionAsset.ProtoReflect.Descriptor instead.
 func (*AdCallToActionAsset) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_ad_asset_proto_rawDescGZIP(), []int{5}
+	return file_google_ads_googleads_v15_common_ad_asset_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *AdCallToActionAsset) GetAsset() string {
@@ -359,23 +359,23 @@ func (x *AdCallToActionAsset) GetAsset() string {
 	return ""
 }
 
-var File_google_ads_googleads_v14_common_ad_asset_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v15_common_ad_asset_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v14_common_ad_asset_proto_rawDesc = []byte{
+var file_google_ads_googleads_v15_common_ad_asset_proto_rawDesc = []byte{
 	0x0a, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
 	0x6e, 0x2f, 0x61, 0x64, 0x5f, 0x61, 0x73, 0x73, 0x65, 0x74, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
 	0x12, 0x1f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
 	0x6e, 0x1a, 0x32, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x63, 0x6f, 0x6d, 0x6d,
+	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x63, 0x6f, 0x6d, 0x6d,
 	0x6f, 0x6e, 0x2f, 0x61, 0x73, 0x73, 0x65, 0x74, 0x5f, 0x70, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x2e,
 	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x3c, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64,
-	0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f,
+	0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f,
 	0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x61, 0x73, 0x73, 0x65, 0x74, 0x5f, 0x70, 0x65, 0x72, 0x66,
 	0x6f, 0x72, 0x6d, 0x61, 0x6e, 0x63, 0x65, 0x5f, 0x6c, 0x61, 0x62, 0x65, 0x6c, 0x2e, 0x70, 0x72,
 	0x6f, 0x74, 0x6f, 0x1a, 0x3c, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x65, 0x6e,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x65, 0x6e,
 	0x75, 0x6d, 0x73, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x65, 0x64, 0x5f, 0x61, 0x73, 0x73, 0x65, 0x74,
 	0x5f, 0x66, 0x69, 0x65, 0x6c, 0x64, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74,
 	0x6f, 0x22, 0x92, 0x03, 0x0a, 0x0b, 0x41, 0x64, 0x54, 0x65, 0x78, 0x74, 0x41, 0x73, 0x73, 0x65,
@@ -383,7 +383,7 @@ var file_google_ads_googleads_v14_common_ad_asset_proto_rawDesc = []byte{
 	0x00, 0x52, 0x04, 0x74, 0x65, 0x78, 0x74, 0x88, 0x01, 0x01, 0x12, 0x70, 0x0a, 0x0c, 0x70, 0x69,
 	0x6e, 0x6e, 0x65, 0x64, 0x5f, 0x66, 0x69, 0x65, 0x6c, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0e,
 	0x32, 0x4d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x65, 0x6e, 0x75, 0x6d,
+	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x65, 0x6e, 0x75, 0x6d,
 	0x73, 0x2e, 0x53, 0x65, 0x72, 0x76, 0x65, 0x64, 0x41, 0x73, 0x73, 0x65, 0x74, 0x46, 0x69, 0x65,
 	0x6c, 0x64, 0x54, 0x79, 0x70, 0x65, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x53, 0x65, 0x72, 0x76, 0x65,
 	0x64, 0x41, 0x73, 0x73, 0x65, 0x74, 0x46, 0x69, 0x65, 0x6c, 0x64, 0x54, 0x79, 0x70, 0x65, 0x52,
@@ -391,7 +391,7 @@ var file_google_ads_googleads_v14_common_ad_asset_proto_rawDesc = []byte{
 	0x17, 0x61, 0x73, 0x73, 0x65, 0x74, 0x5f, 0x70, 0x65, 0x72, 0x66, 0x6f, 0x72, 0x6d, 0x61, 0x6e,
 	0x63, 0x65, 0x5f, 0x6c, 0x61, 0x62, 0x65, 0x6c, 0x18, 0x05, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x4f,
 	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e,
+	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e,
 	0x41, 0x73, 0x73, 0x65, 0x74, 0x50, 0x65, 0x72, 0x66, 0x6f, 0x72, 0x6d, 0x61, 0x6e, 0x63, 0x65,
 	0x4c, 0x61, 0x62, 0x65, 0x6c, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x41, 0x73, 0x73, 0x65, 0x74, 0x50,
 	0x65, 0x72, 0x66, 0x6f, 0x72, 0x6d, 0x61, 0x6e, 0x63, 0x65, 0x4c, 0x61, 0x62, 0x65, 0x6c, 0x52,
@@ -399,7 +399,7 @@ var file_google_ads_googleads_v14_common_ad_asset_proto_rawDesc = []byte{
 	0x65, 0x4c, 0x61, 0x62, 0x65, 0x6c, 0x12, 0x65, 0x0a, 0x13, 0x70, 0x6f, 0x6c, 0x69, 0x63, 0x79,
 	0x5f, 0x73, 0x75, 0x6d, 0x6d, 0x61, 0x72, 0x79, 0x5f, 0x69, 0x6e, 0x66, 0x6f, 0x18, 0x06, 0x20,
 	0x01, 0x28, 0x0b, 0x32, 0x35, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73,
-	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x63,
+	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x63,
 	0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x41, 0x64, 0x41, 0x73, 0x73, 0x65, 0x74, 0x50, 0x6f, 0x6c,
 	0x69, 0x63, 0x79, 0x53, 0x75, 0x6d, 0x6d, 0x61, 0x72, 0x79, 0x52, 0x11, 0x70, 0x6f, 0x6c, 0x69,
 	0x63, 0x79, 0x53, 0x75, 0x6d, 0x6d, 0x61, 0x72, 0x79, 0x49, 0x6e, 0x66, 0x6f, 0x42, 0x07, 0x0a,
@@ -423,51 +423,51 @@ var file_google_ads_googleads_v14_common_ad_asset_proto_rawDesc = []byte{
 	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x48, 0x00, 0x52, 0x05, 0x61, 0x73, 0x73, 0x65, 0x74, 0x88,
 	0x01, 0x01, 0x42, 0x08, 0x0a, 0x06, 0x5f, 0x61, 0x73, 0x73, 0x65, 0x74, 0x42, 0xec, 0x01, 0x0a,
 	0x23, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x63, 0x6f,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x63, 0x6f,
 	0x6d, 0x6d, 0x6f, 0x6e, 0x42, 0x0c, 0x41, 0x64, 0x41, 0x73, 0x73, 0x65, 0x74, 0x50, 0x72, 0x6f,
 	0x74, 0x6f, 0x50, 0x01, 0x5a, 0x45, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x67, 0x6f, 0x6c,
 	0x61, 0x6e, 0x67, 0x2e, 0x6f, 0x72, 0x67, 0x2f, 0x67, 0x65, 0x6e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
 	0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x70, 0x69, 0x73, 0x2f, 0x61, 0x64, 0x73, 0x2f,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x63, 0x6f,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x63, 0x6f,
 	0x6d, 0x6d, 0x6f, 0x6e, 0x3b, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xa2, 0x02, 0x03, 0x47, 0x41,
 	0x41, 0xaa, 0x02, 0x1f, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x41, 0x64, 0x73, 0x2e, 0x47,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e, 0x56, 0x31, 0x34, 0x2e, 0x43, 0x6f, 0x6d,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e, 0x56, 0x31, 0x35, 0x2e, 0x43, 0x6f, 0x6d,
 	0x6d, 0x6f, 0x6e, 0xca, 0x02, 0x1f, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x5c, 0x41, 0x64, 0x73,
-	0x5c, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x31, 0x34, 0x5c, 0x43,
+	0x5c, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x31, 0x35, 0x5c, 0x43,
 	0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xea, 0x02, 0x23, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x3a, 0x3a,
 	0x41, 0x64, 0x73, 0x3a, 0x3a, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a,
-	0x56, 0x31, 0x34, 0x3a, 0x3a, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x62, 0x06, 0x70, 0x72, 0x6f,
+	0x56, 0x31, 0x35, 0x3a, 0x3a, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x62, 0x06, 0x70, 0x72, 0x6f,
 	0x74, 0x6f, 0x33,
 }
 
 var (
-	file_google_ads_googleads_v14_common_ad_asset_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v14_common_ad_asset_proto_rawDescData = file_google_ads_googleads_v14_common_ad_asset_proto_rawDesc
+	file_google_ads_googleads_v15_common_ad_asset_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v15_common_ad_asset_proto_rawDescData = file_google_ads_googleads_v15_common_ad_asset_proto_rawDesc
 )
 
-func file_google_ads_googleads_v14_common_ad_asset_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v14_common_ad_asset_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v14_common_ad_asset_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v14_common_ad_asset_proto_rawDescData)
+func file_google_ads_googleads_v15_common_ad_asset_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v15_common_ad_asset_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v15_common_ad_asset_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v15_common_ad_asset_proto_rawDescData)
 	})
-	return file_google_ads_googleads_v14_common_ad_asset_proto_rawDescData
+	return file_google_ads_googleads_v15_common_ad_asset_proto_rawDescData
 }
 
-var file_google_ads_googleads_v14_common_ad_asset_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
-var file_google_ads_googleads_v14_common_ad_asset_proto_goTypes = []interface{}{
-	(*AdTextAsset)(nil),                                        // 0: google.ads.googleads.v14.common.AdTextAsset
-	(*AdImageAsset)(nil),                                       // 1: google.ads.googleads.v14.common.AdImageAsset
-	(*AdVideoAsset)(nil),                                       // 2: google.ads.googleads.v14.common.AdVideoAsset
-	(*AdMediaBundleAsset)(nil),                                 // 3: google.ads.googleads.v14.common.AdMediaBundleAsset
-	(*AdDiscoveryCarouselCardAsset)(nil),                       // 4: google.ads.googleads.v14.common.AdDiscoveryCarouselCardAsset
-	(*AdCallToActionAsset)(nil),                                // 5: google.ads.googleads.v14.common.AdCallToActionAsset
-	(enums.ServedAssetFieldTypeEnum_ServedAssetFieldType)(0),   // 6: google.ads.googleads.v14.enums.ServedAssetFieldTypeEnum.ServedAssetFieldType
-	(enums.AssetPerformanceLabelEnum_AssetPerformanceLabel)(0), // 7: google.ads.googleads.v14.enums.AssetPerformanceLabelEnum.AssetPerformanceLabel
-	(*AdAssetPolicySummary)(nil),                               // 8: google.ads.googleads.v14.common.AdAssetPolicySummary
+var file_google_ads_googleads_v15_common_ad_asset_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
+var file_google_ads_googleads_v15_common_ad_asset_proto_goTypes = []interface{}{
+	(*AdTextAsset)(nil),                                        // 0: google.ads.googleads.v15.common.AdTextAsset
+	(*AdImageAsset)(nil),                                       // 1: google.ads.googleads.v15.common.AdImageAsset
+	(*AdVideoAsset)(nil),                                       // 2: google.ads.googleads.v15.common.AdVideoAsset
+	(*AdMediaBundleAsset)(nil),                                 // 3: google.ads.googleads.v15.common.AdMediaBundleAsset
+	(*AdDiscoveryCarouselCardAsset)(nil),                       // 4: google.ads.googleads.v15.common.AdDiscoveryCarouselCardAsset
+	(*AdCallToActionAsset)(nil),                                // 5: google.ads.googleads.v15.common.AdCallToActionAsset
+	(enums.ServedAssetFieldTypeEnum_ServedAssetFieldType)(0),   // 6: google.ads.googleads.v15.enums.ServedAssetFieldTypeEnum.ServedAssetFieldType
+	(enums.AssetPerformanceLabelEnum_AssetPerformanceLabel)(0), // 7: google.ads.googleads.v15.enums.AssetPerformanceLabelEnum.AssetPerformanceLabel
+	(*AdAssetPolicySummary)(nil),                               // 8: google.ads.googleads.v15.common.AdAssetPolicySummary
 }
-var file_google_ads_googleads_v14_common_ad_asset_proto_depIdxs = []int32{
-	6, // 0: google.ads.googleads.v14.common.AdTextAsset.pinned_field:type_name -> google.ads.googleads.v14.enums.ServedAssetFieldTypeEnum.ServedAssetFieldType
-	7, // 1: google.ads.googleads.v14.common.AdTextAsset.asset_performance_label:type_name -> google.ads.googleads.v14.enums.AssetPerformanceLabelEnum.AssetPerformanceLabel
-	8, // 2: google.ads.googleads.v14.common.AdTextAsset.policy_summary_info:type_name -> google.ads.googleads.v14.common.AdAssetPolicySummary
+var file_google_ads_googleads_v15_common_ad_asset_proto_depIdxs = []int32{
+	6, // 0: google.ads.googleads.v15.common.AdTextAsset.pinned_field:type_name -> google.ads.googleads.v15.enums.ServedAssetFieldTypeEnum.ServedAssetFieldType
+	7, // 1: google.ads.googleads.v15.common.AdTextAsset.asset_performance_label:type_name -> google.ads.googleads.v15.enums.AssetPerformanceLabelEnum.AssetPerformanceLabel
+	8, // 2: google.ads.googleads.v15.common.AdTextAsset.policy_summary_info:type_name -> google.ads.googleads.v15.common.AdAssetPolicySummary
 	3, // [3:3] is the sub-list for method output_type
 	3, // [3:3] is the sub-list for method input_type
 	3, // [3:3] is the sub-list for extension type_name
@@ -475,14 +475,14 @@ var file_google_ads_googleads_v14_common_ad_asset_proto_depIdxs = []int32{
 	0, // [0:3] is the sub-list for field type_name
 }
 
-func init() { file_google_ads_googleads_v14_common_ad_asset_proto_init() }
-func file_google_ads_googleads_v14_common_ad_asset_proto_init() {
-	if File_google_ads_googleads_v14_common_ad_asset_proto != nil {
+func init() { file_google_ads_googleads_v15_common_ad_asset_proto_init() }
+func file_google_ads_googleads_v15_common_ad_asset_proto_init() {
+	if File_google_ads_googleads_v15_common_ad_asset_proto != nil {
 		return
 	}
-	file_google_ads_googleads_v14_common_asset_policy_proto_init()
+	file_google_ads_googleads_v15_common_asset_policy_proto_init()
 	if !protoimpl.UnsafeEnabled {
-		file_google_ads_googleads_v14_common_ad_asset_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_ad_asset_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AdTextAsset); i {
 			case 0:
 				return &v.state
@@ -494,7 +494,7 @@ func file_google_ads_googleads_v14_common_ad_asset_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_ad_asset_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_ad_asset_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AdImageAsset); i {
 			case 0:
 				return &v.state
@@ -506,7 +506,7 @@ func file_google_ads_googleads_v14_common_ad_asset_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_ad_asset_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_ad_asset_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AdVideoAsset); i {
 			case 0:
 				return &v.state
@@ -518,7 +518,7 @@ func file_google_ads_googleads_v14_common_ad_asset_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_ad_asset_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_ad_asset_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AdMediaBundleAsset); i {
 			case 0:
 				return &v.state
@@ -530,7 +530,7 @@ func file_google_ads_googleads_v14_common_ad_asset_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_ad_asset_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_ad_asset_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AdDiscoveryCarouselCardAsset); i {
 			case 0:
 				return &v.state
@@ -542,7 +542,7 @@ func file_google_ads_googleads_v14_common_ad_asset_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_ad_asset_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_ad_asset_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AdCallToActionAsset); i {
 			case 0:
 				return &v.state
@@ -555,28 +555,28 @@ func file_google_ads_googleads_v14_common_ad_asset_proto_init() {
 			}
 		}
 	}
-	file_google_ads_googleads_v14_common_ad_asset_proto_msgTypes[0].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v14_common_ad_asset_proto_msgTypes[1].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v14_common_ad_asset_proto_msgTypes[2].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v14_common_ad_asset_proto_msgTypes[3].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v14_common_ad_asset_proto_msgTypes[4].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v14_common_ad_asset_proto_msgTypes[5].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_common_ad_asset_proto_msgTypes[0].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_common_ad_asset_proto_msgTypes[1].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_common_ad_asset_proto_msgTypes[2].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_common_ad_asset_proto_msgTypes[3].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_common_ad_asset_proto_msgTypes[4].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_common_ad_asset_proto_msgTypes[5].OneofWrappers = []interface{}{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_google_ads_googleads_v14_common_ad_asset_proto_rawDesc,
+			RawDescriptor: file_google_ads_googleads_v15_common_ad_asset_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_google_ads_googleads_v14_common_ad_asset_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v14_common_ad_asset_proto_depIdxs,
-		MessageInfos:      file_google_ads_googleads_v14_common_ad_asset_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v15_common_ad_asset_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v15_common_ad_asset_proto_depIdxs,
+		MessageInfos:      file_google_ads_googleads_v15_common_ad_asset_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v14_common_ad_asset_proto = out.File
-	file_google_ads_googleads_v14_common_ad_asset_proto_rawDesc = nil
-	file_google_ads_googleads_v14_common_ad_asset_proto_goTypes = nil
-	file_google_ads_googleads_v14_common_ad_asset_proto_depIdxs = nil
+	File_google_ads_googleads_v15_common_ad_asset_proto = out.File
+	file_google_ads_googleads_v15_common_ad_asset_proto_rawDesc = nil
+	file_google_ads_googleads_v15_common_ad_asset_proto_goTypes = nil
+	file_google_ads_googleads_v15_common_ad_asset_proto_depIdxs = nil
 }

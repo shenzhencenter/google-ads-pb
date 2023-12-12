@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.21.1
-// source: google/ads/googleads/v14/services/ad_group_extension_setting_service.proto
+// source: google/ads/googleads/v15/services/ad_group_extension_setting_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	AdGroupExtensionSettingService_MutateAdGroupExtensionSettings_FullMethodName = "/google.ads.googleads.v14.services.AdGroupExtensionSettingService/MutateAdGroupExtensionSettings"
+	AdGroupExtensionSettingService_MutateAdGroupExtensionSettings_FullMethodName = "/google.ads.googleads.v15.services.AdGroupExtensionSettingService/MutateAdGroupExtensionSettings"
 )
 
 // AdGroupExtensionSettingServiceClient is the client API for AdGroupExtensionSettingService service.
@@ -177,7 +177,7 @@ func _AdGroupExtensionSettingService_MutateAdGroupExtensionSettings_Handler(srv 
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AdGroupExtensionSettingService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v14.services.AdGroupExtensionSettingService",
+	ServiceName: "google.ads.googleads.v15.services.AdGroupExtensionSettingService",
 	HandlerType: (*AdGroupExtensionSettingServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -186,5 +186,5 @@ var AdGroupExtensionSettingService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v14/services/ad_group_extension_setting_service.proto",
+	Metadata: "google/ads/googleads/v15/services/ad_group_extension_setting_service.proto",
 }

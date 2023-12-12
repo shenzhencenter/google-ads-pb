@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.21.1
-// source: google/ads/googleads/v14/services/smart_campaign_setting_service.proto
+// source: google/ads/googleads/v15/services/smart_campaign_setting_service.proto
 
 package services
 
@@ -33,8 +33,8 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	SmartCampaignSettingService_GetSmartCampaignStatus_FullMethodName      = "/google.ads.googleads.v14.services.SmartCampaignSettingService/GetSmartCampaignStatus"
-	SmartCampaignSettingService_MutateSmartCampaignSettings_FullMethodName = "/google.ads.googleads.v14.services.SmartCampaignSettingService/MutateSmartCampaignSettings"
+	SmartCampaignSettingService_GetSmartCampaignStatus_FullMethodName      = "/google.ads.googleads.v15.services.SmartCampaignSettingService/GetSmartCampaignStatus"
+	SmartCampaignSettingService_MutateSmartCampaignSettings_FullMethodName = "/google.ads.googleads.v15.services.SmartCampaignSettingService/MutateSmartCampaignSettings"
 )
 
 // SmartCampaignSettingServiceClient is the client API for SmartCampaignSettingService service.
@@ -148,7 +148,7 @@ func _SmartCampaignSettingService_MutateSmartCampaignSettings_Handler(srv interf
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var SmartCampaignSettingService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v14.services.SmartCampaignSettingService",
+	ServiceName: "google.ads.googleads.v15.services.SmartCampaignSettingService",
 	HandlerType: (*SmartCampaignSettingServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -161,5 +161,5 @@ var SmartCampaignSettingService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v14/services/smart_campaign_setting_service.proto",
+	Metadata: "google/ads/googleads/v15/services/smart_campaign_setting_service.proto",
 }

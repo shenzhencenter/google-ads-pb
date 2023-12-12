@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.21.1
-// source: google/ads/googleads/v14/services/google_ads_field_service.proto
+// source: google/ads/googleads/v15/services/google_ads_field_service.proto
 
 package services
 
@@ -34,8 +34,8 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	GoogleAdsFieldService_GetGoogleAdsField_FullMethodName     = "/google.ads.googleads.v14.services.GoogleAdsFieldService/GetGoogleAdsField"
-	GoogleAdsFieldService_SearchGoogleAdsFields_FullMethodName = "/google.ads.googleads.v14.services.GoogleAdsFieldService/SearchGoogleAdsFields"
+	GoogleAdsFieldService_GetGoogleAdsField_FullMethodName     = "/google.ads.googleads.v15.services.GoogleAdsFieldService/GetGoogleAdsField"
+	GoogleAdsFieldService_SearchGoogleAdsFields_FullMethodName = "/google.ads.googleads.v15.services.GoogleAdsFieldService/SearchGoogleAdsFields"
 )
 
 // GoogleAdsFieldServiceClient is the client API for GoogleAdsFieldService service.
@@ -186,7 +186,7 @@ func _GoogleAdsFieldService_SearchGoogleAdsFields_Handler(srv interface{}, ctx c
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var GoogleAdsFieldService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v14.services.GoogleAdsFieldService",
+	ServiceName: "google.ads.googleads.v15.services.GoogleAdsFieldService",
 	HandlerType: (*GoogleAdsFieldServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -199,5 +199,5 @@ var GoogleAdsFieldService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v14/services/google_ads_field_service.proto",
+	Metadata: "google/ads/googleads/v15/services/google_ads_field_service.proto",
 }

@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.21.1
-// source: google/ads/googleads/v14/services/campaign_criterion_service.proto
+// source: google/ads/googleads/v15/services/campaign_criterion_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	CampaignCriterionService_MutateCampaignCriteria_FullMethodName = "/google.ads.googleads.v14.services.CampaignCriterionService/MutateCampaignCriteria"
+	CampaignCriterionService_MutateCampaignCriteria_FullMethodName = "/google.ads.googleads.v15.services.CampaignCriterionService/MutateCampaignCriteria"
 )
 
 // CampaignCriterionServiceClient is the client API for CampaignCriterionService service.
@@ -177,7 +177,7 @@ func _CampaignCriterionService_MutateCampaignCriteria_Handler(srv interface{}, c
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CampaignCriterionService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v14.services.CampaignCriterionService",
+	ServiceName: "google.ads.googleads.v15.services.CampaignCriterionService",
 	HandlerType: (*CampaignCriterionServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -186,5 +186,5 @@ var CampaignCriterionService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v14/services/campaign_criterion_service.proto",
+	Metadata: "google/ads/googleads/v15/services/campaign_criterion_service.proto",
 }

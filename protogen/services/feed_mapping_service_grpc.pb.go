@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.21.1
-// source: google/ads/googleads/v14/services/feed_mapping_service.proto
+// source: google/ads/googleads/v15/services/feed_mapping_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	FeedMappingService_MutateFeedMappings_FullMethodName = "/google.ads.googleads.v14.services.FeedMappingService/MutateFeedMappings"
+	FeedMappingService_MutateFeedMappings_FullMethodName = "/google.ads.googleads.v15.services.FeedMappingService/MutateFeedMappings"
 )
 
 // FeedMappingServiceClient is the client API for FeedMappingService service.
@@ -158,7 +158,7 @@ func _FeedMappingService_MutateFeedMappings_Handler(srv interface{}, ctx context
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var FeedMappingService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v14.services.FeedMappingService",
+	ServiceName: "google.ads.googleads.v15.services.FeedMappingService",
 	HandlerType: (*FeedMappingServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -167,5 +167,5 @@ var FeedMappingService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v14/services/feed_mapping_service.proto",
+	Metadata: "google/ads/googleads/v15/services/feed_mapping_service.proto",
 }

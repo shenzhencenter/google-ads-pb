@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.21.1
-// source: google/ads/googleads/v14/services/user_data_service.proto
+// source: google/ads/googleads/v15/services/user_data_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	UserDataService_UploadUserData_FullMethodName = "/google.ads.googleads.v14.services.UserDataService/UploadUserData"
+	UserDataService_UploadUserData_FullMethodName = "/google.ads.googleads.v15.services.UserDataService/UploadUserData"
 )
 
 // UserDataServiceClient is the client API for UserDataService service.
@@ -140,7 +140,7 @@ func _UserDataService_UploadUserData_Handler(srv interface{}, ctx context.Contex
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var UserDataService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v14.services.UserDataService",
+	ServiceName: "google.ads.googleads.v15.services.UserDataService",
 	HandlerType: (*UserDataServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -149,5 +149,5 @@ var UserDataService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v14/services/user_data_service.proto",
+	Metadata: "google/ads/googleads/v15/services/user_data_service.proto",
 }

@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.21.1
-// source: google/ads/googleads/v14/services/asset_group_service.proto
+// source: google/ads/googleads/v15/services/asset_group_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	AssetGroupService_MutateAssetGroups_FullMethodName = "/google.ads.googleads.v14.services.AssetGroupService/MutateAssetGroups"
+	AssetGroupService_MutateAssetGroups_FullMethodName = "/google.ads.googleads.v15.services.AssetGroupService/MutateAssetGroups"
 )
 
 // AssetGroupServiceClient is the client API for AssetGroupService service.
@@ -114,7 +114,7 @@ func _AssetGroupService_MutateAssetGroups_Handler(srv interface{}, ctx context.C
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AssetGroupService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v14.services.AssetGroupService",
+	ServiceName: "google.ads.googleads.v15.services.AssetGroupService",
 	HandlerType: (*AssetGroupServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -123,5 +123,5 @@ var AssetGroupService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v14/services/asset_group_service.proto",
+	Metadata: "google/ads/googleads/v15/services/asset_group_service.proto",
 }

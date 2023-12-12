@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.21.1
-// source: google/ads/googleads/v14/services/reach_plan_service.proto
+// source: google/ads/googleads/v15/services/reach_plan_service.proto
 
 package services
 
@@ -33,9 +33,9 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	ReachPlanService_ListPlannableLocations_FullMethodName = "/google.ads.googleads.v14.services.ReachPlanService/ListPlannableLocations"
-	ReachPlanService_ListPlannableProducts_FullMethodName  = "/google.ads.googleads.v14.services.ReachPlanService/ListPlannableProducts"
-	ReachPlanService_GenerateReachForecast_FullMethodName  = "/google.ads.googleads.v14.services.ReachPlanService/GenerateReachForecast"
+	ReachPlanService_ListPlannableLocations_FullMethodName = "/google.ads.googleads.v15.services.ReachPlanService/ListPlannableLocations"
+	ReachPlanService_ListPlannableProducts_FullMethodName  = "/google.ads.googleads.v15.services.ReachPlanService/ListPlannableProducts"
+	ReachPlanService_GenerateReachForecast_FullMethodName  = "/google.ads.googleads.v15.services.ReachPlanService/GenerateReachForecast"
 )
 
 // ReachPlanServiceClient is the client API for ReachPlanService service.
@@ -244,7 +244,7 @@ func _ReachPlanService_GenerateReachForecast_Handler(srv interface{}, ctx contex
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ReachPlanService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v14.services.ReachPlanService",
+	ServiceName: "google.ads.googleads.v15.services.ReachPlanService",
 	HandlerType: (*ReachPlanServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -261,5 +261,5 @@ var ReachPlanService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v14/services/reach_plan_service.proto",
+	Metadata: "google/ads/googleads/v15/services/reach_plan_service.proto",
 }

@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.21.1
-// source: google/ads/googleads/v14/services/experiment_arm_service.proto
+// source: google/ads/googleads/v15/services/experiment_arm_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	ExperimentArmService_MutateExperimentArms_FullMethodName = "/google.ads.googleads.v14.services.ExperimentArmService/MutateExperimentArms"
+	ExperimentArmService_MutateExperimentArms_FullMethodName = "/google.ads.googleads.v15.services.ExperimentArmService/MutateExperimentArms"
 )
 
 // ExperimentArmServiceClient is the client API for ExperimentArmService service.
@@ -134,7 +134,7 @@ func _ExperimentArmService_MutateExperimentArms_Handler(srv interface{}, ctx con
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ExperimentArmService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v14.services.ExperimentArmService",
+	ServiceName: "google.ads.googleads.v15.services.ExperimentArmService",
 	HandlerType: (*ExperimentArmServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -143,5 +143,5 @@ var ExperimentArmService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v14/services/experiment_arm_service.proto",
+	Metadata: "google/ads/googleads/v15/services/experiment_arm_service.proto",
 }

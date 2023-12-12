@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.31.0
 // 	protoc        v3.21.1
-// source: google/ads/googleads/v14/common/keyword_plan_common.proto
+// source: google/ads/googleads/v15/common/keyword_plan_common.proto
 
 package common
 
@@ -50,7 +50,7 @@ type KeywordPlanHistoricalMetrics struct {
 	// Approximate number of searches on this query for the past twelve months.
 	MonthlySearchVolumes []*MonthlySearchVolume `protobuf:"bytes,6,rep,name=monthly_search_volumes,json=monthlySearchVolumes,proto3" json:"monthly_search_volumes,omitempty"`
 	// The competition level for the query.
-	Competition enums.KeywordPlanCompetitionLevelEnum_KeywordPlanCompetitionLevel `protobuf:"varint,2,opt,name=competition,proto3,enum=google.ads.googleads.v14.enums.KeywordPlanCompetitionLevelEnum_KeywordPlanCompetitionLevel" json:"competition,omitempty"`
+	Competition enums.KeywordPlanCompetitionLevelEnum_KeywordPlanCompetitionLevel `protobuf:"varint,2,opt,name=competition,proto3,enum=google.ads.googleads.v15.enums.KeywordPlanCompetitionLevelEnum_KeywordPlanCompetitionLevel" json:"competition,omitempty"`
 	// The competition index for the query in the range [0, 100].
 	// Shows how competitive ad placement is for a keyword.
 	// The level of competition from 0-100 is determined by the number of ad slots
@@ -68,7 +68,7 @@ type KeywordPlanHistoricalMetrics struct {
 func (x *KeywordPlanHistoricalMetrics) Reset() {
 	*x = KeywordPlanHistoricalMetrics{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_keyword_plan_common_proto_msgTypes[0]
+		mi := &file_google_ads_googleads_v15_common_keyword_plan_common_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -81,7 +81,7 @@ func (x *KeywordPlanHistoricalMetrics) String() string {
 func (*KeywordPlanHistoricalMetrics) ProtoMessage() {}
 
 func (x *KeywordPlanHistoricalMetrics) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_keyword_plan_common_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v15_common_keyword_plan_common_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -94,7 +94,7 @@ func (x *KeywordPlanHistoricalMetrics) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use KeywordPlanHistoricalMetrics.ProtoReflect.Descriptor instead.
 func (*KeywordPlanHistoricalMetrics) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_keyword_plan_common_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v15_common_keyword_plan_common_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *KeywordPlanHistoricalMetrics) GetAvgMonthlySearches() int64 {
@@ -166,7 +166,7 @@ type HistoricalMetricsOptions struct {
 func (x *HistoricalMetricsOptions) Reset() {
 	*x = HistoricalMetricsOptions{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_keyword_plan_common_proto_msgTypes[1]
+		mi := &file_google_ads_googleads_v15_common_keyword_plan_common_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -179,7 +179,7 @@ func (x *HistoricalMetricsOptions) String() string {
 func (*HistoricalMetricsOptions) ProtoMessage() {}
 
 func (x *HistoricalMetricsOptions) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_keyword_plan_common_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v15_common_keyword_plan_common_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -192,7 +192,7 @@ func (x *HistoricalMetricsOptions) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HistoricalMetricsOptions.ProtoReflect.Descriptor instead.
 func (*HistoricalMetricsOptions) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_keyword_plan_common_proto_rawDescGZIP(), []int{1}
+	return file_google_ads_googleads_v15_common_keyword_plan_common_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *HistoricalMetricsOptions) GetYearMonthRange() *YearMonthRange {
@@ -218,7 +218,7 @@ type MonthlySearchVolume struct {
 	// The year of the search volume (for example, 2020).
 	Year *int64 `protobuf:"varint,4,opt,name=year,proto3,oneof" json:"year,omitempty"`
 	// The month of the search volume.
-	Month enums.MonthOfYearEnum_MonthOfYear `protobuf:"varint,2,opt,name=month,proto3,enum=google.ads.googleads.v14.enums.MonthOfYearEnum_MonthOfYear" json:"month,omitempty"`
+	Month enums.MonthOfYearEnum_MonthOfYear `protobuf:"varint,2,opt,name=month,proto3,enum=google.ads.googleads.v15.enums.MonthOfYearEnum_MonthOfYear" json:"month,omitempty"`
 	// Approximate number of searches for the month.
 	// A null value indicates the search volume is unavailable for
 	// that month.
@@ -228,7 +228,7 @@ type MonthlySearchVolume struct {
 func (x *MonthlySearchVolume) Reset() {
 	*x = MonthlySearchVolume{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_keyword_plan_common_proto_msgTypes[2]
+		mi := &file_google_ads_googleads_v15_common_keyword_plan_common_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -241,7 +241,7 @@ func (x *MonthlySearchVolume) String() string {
 func (*MonthlySearchVolume) ProtoMessage() {}
 
 func (x *MonthlySearchVolume) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_keyword_plan_common_proto_msgTypes[2]
+	mi := &file_google_ads_googleads_v15_common_keyword_plan_common_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -254,7 +254,7 @@ func (x *MonthlySearchVolume) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MonthlySearchVolume.ProtoReflect.Descriptor instead.
 func (*MonthlySearchVolume) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_keyword_plan_common_proto_rawDescGZIP(), []int{2}
+	return file_google_ads_googleads_v15_common_keyword_plan_common_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *MonthlySearchVolume) GetYear() int64 {
@@ -285,13 +285,13 @@ type KeywordPlanAggregateMetrics struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The list of aggregate metrics to fetch data.
-	AggregateMetricTypes []enums.KeywordPlanAggregateMetricTypeEnum_KeywordPlanAggregateMetricType `protobuf:"varint,1,rep,packed,name=aggregate_metric_types,json=aggregateMetricTypes,proto3,enum=google.ads.googleads.v14.enums.KeywordPlanAggregateMetricTypeEnum_KeywordPlanAggregateMetricType" json:"aggregate_metric_types,omitempty"`
+	AggregateMetricTypes []enums.KeywordPlanAggregateMetricTypeEnum_KeywordPlanAggregateMetricType `protobuf:"varint,1,rep,packed,name=aggregate_metric_types,json=aggregateMetricTypes,proto3,enum=google.ads.googleads.v15.enums.KeywordPlanAggregateMetricTypeEnum_KeywordPlanAggregateMetricType" json:"aggregate_metric_types,omitempty"`
 }
 
 func (x *KeywordPlanAggregateMetrics) Reset() {
 	*x = KeywordPlanAggregateMetrics{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_keyword_plan_common_proto_msgTypes[3]
+		mi := &file_google_ads_googleads_v15_common_keyword_plan_common_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -304,7 +304,7 @@ func (x *KeywordPlanAggregateMetrics) String() string {
 func (*KeywordPlanAggregateMetrics) ProtoMessage() {}
 
 func (x *KeywordPlanAggregateMetrics) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_keyword_plan_common_proto_msgTypes[3]
+	mi := &file_google_ads_googleads_v15_common_keyword_plan_common_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -317,7 +317,7 @@ func (x *KeywordPlanAggregateMetrics) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use KeywordPlanAggregateMetrics.ProtoReflect.Descriptor instead.
 func (*KeywordPlanAggregateMetrics) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_keyword_plan_common_proto_rawDescGZIP(), []int{3}
+	return file_google_ads_googleads_v15_common_keyword_plan_common_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *KeywordPlanAggregateMetrics) GetAggregateMetricTypes() []enums.KeywordPlanAggregateMetricTypeEnum_KeywordPlanAggregateMetricType {
@@ -345,7 +345,7 @@ type KeywordPlanAggregateMetricResults struct {
 func (x *KeywordPlanAggregateMetricResults) Reset() {
 	*x = KeywordPlanAggregateMetricResults{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_keyword_plan_common_proto_msgTypes[4]
+		mi := &file_google_ads_googleads_v15_common_keyword_plan_common_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -358,7 +358,7 @@ func (x *KeywordPlanAggregateMetricResults) String() string {
 func (*KeywordPlanAggregateMetricResults) ProtoMessage() {}
 
 func (x *KeywordPlanAggregateMetricResults) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_keyword_plan_common_proto_msgTypes[4]
+	mi := &file_google_ads_googleads_v15_common_keyword_plan_common_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -371,7 +371,7 @@ func (x *KeywordPlanAggregateMetricResults) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use KeywordPlanAggregateMetricResults.ProtoReflect.Descriptor instead.
 func (*KeywordPlanAggregateMetricResults) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_keyword_plan_common_proto_rawDescGZIP(), []int{4}
+	return file_google_ads_googleads_v15_common_keyword_plan_common_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *KeywordPlanAggregateMetricResults) GetDeviceSearches() []*KeywordPlanDeviceSearches {
@@ -388,7 +388,7 @@ type KeywordPlanDeviceSearches struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The device type.
-	Device enums.DeviceEnum_Device `protobuf:"varint,1,opt,name=device,proto3,enum=google.ads.googleads.v14.enums.DeviceEnum_Device" json:"device,omitempty"`
+	Device enums.DeviceEnum_Device `protobuf:"varint,1,opt,name=device,proto3,enum=google.ads.googleads.v15.enums.DeviceEnum_Device" json:"device,omitempty"`
 	// The total searches for the device.
 	SearchCount *int64 `protobuf:"varint,2,opt,name=search_count,json=searchCount,proto3,oneof" json:"search_count,omitempty"`
 }
@@ -396,7 +396,7 @@ type KeywordPlanDeviceSearches struct {
 func (x *KeywordPlanDeviceSearches) Reset() {
 	*x = KeywordPlanDeviceSearches{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_keyword_plan_common_proto_msgTypes[5]
+		mi := &file_google_ads_googleads_v15_common_keyword_plan_common_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -409,7 +409,7 @@ func (x *KeywordPlanDeviceSearches) String() string {
 func (*KeywordPlanDeviceSearches) ProtoMessage() {}
 
 func (x *KeywordPlanDeviceSearches) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_keyword_plan_common_proto_msgTypes[5]
+	mi := &file_google_ads_googleads_v15_common_keyword_plan_common_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -422,7 +422,7 @@ func (x *KeywordPlanDeviceSearches) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use KeywordPlanDeviceSearches.ProtoReflect.Descriptor instead.
 func (*KeywordPlanDeviceSearches) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_keyword_plan_common_proto_rawDescGZIP(), []int{5}
+	return file_google_ads_googleads_v15_common_keyword_plan_common_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *KeywordPlanDeviceSearches) GetDevice() enums.DeviceEnum_Device {
@@ -452,7 +452,7 @@ type KeywordAnnotations struct {
 func (x *KeywordAnnotations) Reset() {
 	*x = KeywordAnnotations{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_keyword_plan_common_proto_msgTypes[6]
+		mi := &file_google_ads_googleads_v15_common_keyword_plan_common_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -465,7 +465,7 @@ func (x *KeywordAnnotations) String() string {
 func (*KeywordAnnotations) ProtoMessage() {}
 
 func (x *KeywordAnnotations) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_keyword_plan_common_proto_msgTypes[6]
+	mi := &file_google_ads_googleads_v15_common_keyword_plan_common_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -478,7 +478,7 @@ func (x *KeywordAnnotations) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use KeywordAnnotations.ProtoReflect.Descriptor instead.
 func (*KeywordAnnotations) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_keyword_plan_common_proto_rawDescGZIP(), []int{6}
+	return file_google_ads_googleads_v15_common_keyword_plan_common_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *KeywordAnnotations) GetConcepts() []*KeywordConcept {
@@ -503,7 +503,7 @@ type KeywordConcept struct {
 func (x *KeywordConcept) Reset() {
 	*x = KeywordConcept{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_keyword_plan_common_proto_msgTypes[7]
+		mi := &file_google_ads_googleads_v15_common_keyword_plan_common_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -516,7 +516,7 @@ func (x *KeywordConcept) String() string {
 func (*KeywordConcept) ProtoMessage() {}
 
 func (x *KeywordConcept) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_keyword_plan_common_proto_msgTypes[7]
+	mi := &file_google_ads_googleads_v15_common_keyword_plan_common_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -529,7 +529,7 @@ func (x *KeywordConcept) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use KeywordConcept.ProtoReflect.Descriptor instead.
 func (*KeywordConcept) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_keyword_plan_common_proto_rawDescGZIP(), []int{7}
+	return file_google_ads_googleads_v15_common_keyword_plan_common_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *KeywordConcept) GetName() string {
@@ -555,13 +555,13 @@ type ConceptGroup struct {
 	// The concept group name.
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 	// The concept group type.
-	Type enums.KeywordPlanConceptGroupTypeEnum_KeywordPlanConceptGroupType `protobuf:"varint,2,opt,name=type,proto3,enum=google.ads.googleads.v14.enums.KeywordPlanConceptGroupTypeEnum_KeywordPlanConceptGroupType" json:"type,omitempty"`
+	Type enums.KeywordPlanConceptGroupTypeEnum_KeywordPlanConceptGroupType `protobuf:"varint,2,opt,name=type,proto3,enum=google.ads.googleads.v15.enums.KeywordPlanConceptGroupTypeEnum_KeywordPlanConceptGroupType" json:"type,omitempty"`
 }
 
 func (x *ConceptGroup) Reset() {
 	*x = ConceptGroup{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_keyword_plan_common_proto_msgTypes[8]
+		mi := &file_google_ads_googleads_v15_common_keyword_plan_common_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -574,7 +574,7 @@ func (x *ConceptGroup) String() string {
 func (*ConceptGroup) ProtoMessage() {}
 
 func (x *ConceptGroup) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_keyword_plan_common_proto_msgTypes[8]
+	mi := &file_google_ads_googleads_v15_common_keyword_plan_common_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -587,7 +587,7 @@ func (x *ConceptGroup) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConceptGroup.ProtoReflect.Descriptor instead.
 func (*ConceptGroup) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_keyword_plan_common_proto_rawDescGZIP(), []int{8}
+	return file_google_ads_googleads_v15_common_keyword_plan_common_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *ConceptGroup) GetName() string {
@@ -604,36 +604,36 @@ func (x *ConceptGroup) GetType() enums.KeywordPlanConceptGroupTypeEnum_KeywordPl
 	return enums.KeywordPlanConceptGroupTypeEnum_KeywordPlanConceptGroupType(0)
 }
 
-var File_google_ads_googleads_v14_common_keyword_plan_common_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v15_common_keyword_plan_common_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v14_common_keyword_plan_common_proto_rawDesc = []byte{
+var file_google_ads_googleads_v15_common_keyword_plan_common_proto_rawDesc = []byte{
 	0x0a, 0x39, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
 	0x6e, 0x2f, 0x6b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64, 0x5f, 0x70, 0x6c, 0x61, 0x6e, 0x5f, 0x63,
 	0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x1f, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64,
-	0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x1a, 0x2b, 0x67, 0x6f,
+	0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x1a, 0x2b, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2f, 0x64, 0x61,
+	0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2f, 0x64, 0x61,
 	0x74, 0x65, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x2b, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f,
-	0x76, 0x31, 0x34, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65,
+	0x76, 0x31, 0x35, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65,
 	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x47, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61,
-	0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34,
+	0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35,
 	0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x6b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64, 0x5f, 0x70,
 	0x6c, 0x61, 0x6e, 0x5f, 0x61, 0x67, 0x67, 0x72, 0x65, 0x67, 0x61, 0x74, 0x65, 0x5f, 0x6d, 0x65,
 	0x74, 0x72, 0x69, 0x63, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a,
 	0x43, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f,
+	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f,
 	0x6b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64, 0x5f, 0x70, 0x6c, 0x61, 0x6e, 0x5f, 0x63, 0x6f, 0x6d,
 	0x70, 0x65, 0x74, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x6c, 0x65, 0x76, 0x65, 0x6c, 0x2e, 0x70,
 	0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x44, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73,
-	0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x65,
+	0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x65,
 	0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x6b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64, 0x5f, 0x70, 0x6c, 0x61,
 	0x6e, 0x5f, 0x63, 0x6f, 0x6e, 0x63, 0x65, 0x70, 0x74, 0x5f, 0x67, 0x72, 0x6f, 0x75, 0x70, 0x5f,
 	0x74, 0x79, 0x70, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x32, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
-	0x2f, 0x76, 0x31, 0x34, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x6d, 0x6f, 0x6e, 0x74, 0x68,
+	0x2f, 0x76, 0x31, 0x35, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x6d, 0x6f, 0x6e, 0x74, 0x68,
 	0x5f, 0x6f, 0x66, 0x5f, 0x79, 0x65, 0x61, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0xac,
 	0x05, 0x0a, 0x1c, 0x4b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64, 0x50, 0x6c, 0x61, 0x6e, 0x48, 0x69,
 	0x73, 0x74, 0x6f, 0x72, 0x69, 0x63, 0x61, 0x6c, 0x4d, 0x65, 0x74, 0x72, 0x69, 0x63, 0x73, 0x12,
@@ -644,13 +644,13 @@ var file_google_ads_googleads_v14_common_keyword_plan_common_proto_rawDesc = []b
 	0x79, 0x5f, 0x73, 0x65, 0x61, 0x72, 0x63, 0x68, 0x5f, 0x76, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x73,
 	0x18, 0x06, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x34, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
 	0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31,
-	0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x4d, 0x6f, 0x6e, 0x74, 0x68, 0x6c, 0x79,
+	0x35, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x4d, 0x6f, 0x6e, 0x74, 0x68, 0x6c, 0x79,
 	0x53, 0x65, 0x61, 0x72, 0x63, 0x68, 0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x52, 0x14, 0x6d, 0x6f,
 	0x6e, 0x74, 0x68, 0x6c, 0x79, 0x53, 0x65, 0x61, 0x72, 0x63, 0x68, 0x56, 0x6f, 0x6c, 0x75, 0x6d,
 	0x65, 0x73, 0x12, 0x7d, 0x0a, 0x0b, 0x63, 0x6f, 0x6d, 0x70, 0x65, 0x74, 0x69, 0x74, 0x69, 0x6f,
 	0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x5b, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76,
-	0x31, 0x34, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x4b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64,
+	0x31, 0x35, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x4b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64,
 	0x50, 0x6c, 0x61, 0x6e, 0x43, 0x6f, 0x6d, 0x70, 0x65, 0x74, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x4c,
 	0x65, 0x76, 0x65, 0x6c, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x4b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64,
 	0x50, 0x6c, 0x61, 0x6e, 0x43, 0x6f, 0x6d, 0x70, 0x65, 0x74, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x4c,
@@ -682,7 +682,7 @@ var file_google_ads_googleads_v14_common_keyword_plan_common_proto_rawDesc = []b
 	0x69, 0x63, 0x73, 0x4f, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x12, 0x5e, 0x0a, 0x10, 0x79, 0x65,
 	0x61, 0x72, 0x5f, 0x6d, 0x6f, 0x6e, 0x74, 0x68, 0x5f, 0x72, 0x61, 0x6e, 0x67, 0x65, 0x18, 0x01,
 	0x20, 0x01, 0x28, 0x0b, 0x32, 0x2f, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64,
-	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e,
+	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e,
 	0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x59, 0x65, 0x61, 0x72, 0x4d, 0x6f, 0x6e, 0x74, 0x68,
 	0x52, 0x61, 0x6e, 0x67, 0x65, 0x48, 0x00, 0x52, 0x0e, 0x79, 0x65, 0x61, 0x72, 0x4d, 0x6f, 0x6e,
 	0x74, 0x68, 0x52, 0x61, 0x6e, 0x67, 0x65, 0x88, 0x01, 0x01, 0x12, 0x2e, 0x0a, 0x13, 0x69, 0x6e,
@@ -695,7 +695,7 @@ var file_google_ads_googleads_v14_common_keyword_plan_common_proto_rawDesc = []b
 	0x04, 0x20, 0x01, 0x28, 0x03, 0x48, 0x00, 0x52, 0x04, 0x79, 0x65, 0x61, 0x72, 0x88, 0x01, 0x01,
 	0x12, 0x51, 0x0a, 0x05, 0x6d, 0x6f, 0x6e, 0x74, 0x68, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0e, 0x32,
 	0x3b, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73,
 	0x2e, 0x4d, 0x6f, 0x6e, 0x74, 0x68, 0x4f, 0x66, 0x59, 0x65, 0x61, 0x72, 0x45, 0x6e, 0x75, 0x6d,
 	0x2e, 0x4d, 0x6f, 0x6e, 0x74, 0x68, 0x4f, 0x66, 0x59, 0x65, 0x61, 0x72, 0x52, 0x05, 0x6d, 0x6f,
 	0x6e, 0x74, 0x68, 0x12, 0x2e, 0x0a, 0x10, 0x6d, 0x6f, 0x6e, 0x74, 0x68, 0x6c, 0x79, 0x5f, 0x73,
@@ -708,7 +708,7 @@ var file_google_ads_googleads_v14_common_keyword_plan_common_proto_rawDesc = []b
 	0x73, 0x12, 0x97, 0x01, 0x0a, 0x16, 0x61, 0x67, 0x67, 0x72, 0x65, 0x67, 0x61, 0x74, 0x65, 0x5f,
 	0x6d, 0x65, 0x74, 0x72, 0x69, 0x63, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x73, 0x18, 0x01, 0x20, 0x03,
 	0x28, 0x0e, 0x32, 0x61, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x65, 0x6e,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x65, 0x6e,
 	0x75, 0x6d, 0x73, 0x2e, 0x4b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64, 0x50, 0x6c, 0x61, 0x6e, 0x41,
 	0x67, 0x67, 0x72, 0x65, 0x67, 0x61, 0x74, 0x65, 0x4d, 0x65, 0x74, 0x72, 0x69, 0x63, 0x54, 0x79,
 	0x70, 0x65, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x4b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64, 0x50, 0x6c,
@@ -720,14 +720,14 @@ var file_google_ads_googleads_v14_common_keyword_plan_common_proto_rawDesc = []b
 	0x73, 0x12, 0x63, 0x0a, 0x0f, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x5f, 0x73, 0x65, 0x61, 0x72,
 	0x63, 0x68, 0x65, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x3a, 0x2e, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64,
-	0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x4b, 0x65, 0x79,
+	0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x4b, 0x65, 0x79,
 	0x77, 0x6f, 0x72, 0x64, 0x50, 0x6c, 0x61, 0x6e, 0x44, 0x65, 0x76, 0x69, 0x63, 0x65, 0x53, 0x65,
 	0x61, 0x72, 0x63, 0x68, 0x65, 0x73, 0x52, 0x0e, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x53, 0x65,
 	0x61, 0x72, 0x63, 0x68, 0x65, 0x73, 0x22, 0x9f, 0x01, 0x0a, 0x19, 0x4b, 0x65, 0x79, 0x77, 0x6f,
 	0x72, 0x64, 0x50, 0x6c, 0x61, 0x6e, 0x44, 0x65, 0x76, 0x69, 0x63, 0x65, 0x53, 0x65, 0x61, 0x72,
 	0x63, 0x68, 0x65, 0x73, 0x12, 0x49, 0x0a, 0x06, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x18, 0x01,
 	0x20, 0x01, 0x28, 0x0e, 0x32, 0x31, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64,
-	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e,
+	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e,
 	0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x44, 0x65, 0x76, 0x69, 0x63, 0x65, 0x45, 0x6e, 0x75, 0x6d,
 	0x2e, 0x44, 0x65, 0x76, 0x69, 0x63, 0x65, 0x52, 0x06, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x12,
 	0x26, 0x0a, 0x0c, 0x73, 0x65, 0x61, 0x72, 0x63, 0x68, 0x5f, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x18,
@@ -737,7 +737,7 @@ var file_google_ads_googleads_v14_common_keyword_plan_common_proto_rawDesc = []b
 	0x6f, 0x72, 0x64, 0x41, 0x6e, 0x6e, 0x6f, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x12, 0x4b,
 	0x0a, 0x08, 0x63, 0x6f, 0x6e, 0x63, 0x65, 0x70, 0x74, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b,
 	0x32, 0x2f, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d,
+	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x63, 0x6f, 0x6d, 0x6d,
 	0x6f, 0x6e, 0x2e, 0x4b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64, 0x43, 0x6f, 0x6e, 0x63, 0x65, 0x70,
 	0x74, 0x52, 0x08, 0x63, 0x6f, 0x6e, 0x63, 0x65, 0x70, 0x74, 0x73, 0x22, 0x78, 0x0a, 0x0e, 0x4b,
 	0x65, 0x79, 0x77, 0x6f, 0x72, 0x64, 0x43, 0x6f, 0x6e, 0x63, 0x65, 0x70, 0x74, 0x12, 0x12, 0x0a,
@@ -745,77 +745,77 @@ var file_google_ads_googleads_v14_common_keyword_plan_common_proto_rawDesc = []b
 	0x65, 0x12, 0x52, 0x0a, 0x0d, 0x63, 0x6f, 0x6e, 0x63, 0x65, 0x70, 0x74, 0x5f, 0x67, 0x72, 0x6f,
 	0x75, 0x70, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e,
-	0x76, 0x31, 0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x43, 0x6f, 0x6e, 0x63, 0x65,
+	0x76, 0x31, 0x35, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x43, 0x6f, 0x6e, 0x63, 0x65,
 	0x70, 0x74, 0x47, 0x72, 0x6f, 0x75, 0x70, 0x52, 0x0c, 0x63, 0x6f, 0x6e, 0x63, 0x65, 0x70, 0x74,
 	0x47, 0x72, 0x6f, 0x75, 0x70, 0x22, 0x93, 0x01, 0x0a, 0x0c, 0x43, 0x6f, 0x6e, 0x63, 0x65, 0x70,
 	0x74, 0x47, 0x72, 0x6f, 0x75, 0x70, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01,
 	0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x6f, 0x0a, 0x04, 0x74, 0x79,
 	0x70, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x5b, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e,
-	0x76, 0x31, 0x34, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x4b, 0x65, 0x79, 0x77, 0x6f, 0x72,
+	0x76, 0x31, 0x35, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x4b, 0x65, 0x79, 0x77, 0x6f, 0x72,
 	0x64, 0x50, 0x6c, 0x61, 0x6e, 0x43, 0x6f, 0x6e, 0x63, 0x65, 0x70, 0x74, 0x47, 0x72, 0x6f, 0x75,
 	0x70, 0x54, 0x79, 0x70, 0x65, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x4b, 0x65, 0x79, 0x77, 0x6f, 0x72,
 	0x64, 0x50, 0x6c, 0x61, 0x6e, 0x43, 0x6f, 0x6e, 0x63, 0x65, 0x70, 0x74, 0x47, 0x72, 0x6f, 0x75,
 	0x70, 0x54, 0x79, 0x70, 0x65, 0x52, 0x04, 0x74, 0x79, 0x70, 0x65, 0x42, 0xf6, 0x01, 0x0a, 0x23,
 	0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x63, 0x6f, 0x6d,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x63, 0x6f, 0x6d,
 	0x6d, 0x6f, 0x6e, 0x42, 0x16, 0x4b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64, 0x50, 0x6c, 0x61, 0x6e,
 	0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x45, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x67, 0x6f, 0x6c, 0x61, 0x6e, 0x67, 0x2e, 0x6f, 0x72, 0x67,
 	0x2f, 0x67, 0x65, 0x6e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x61, 0x70, 0x69, 0x73, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x3b, 0x63, 0x6f,
+	0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x3b, 0x63, 0x6f,
 	0x6d, 0x6d, 0x6f, 0x6e, 0xa2, 0x02, 0x03, 0x47, 0x41, 0x41, 0xaa, 0x02, 0x1f, 0x47, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2e, 0x41, 0x64, 0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64,
-	0x73, 0x2e, 0x56, 0x31, 0x34, 0x2e, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xca, 0x02, 0x1f, 0x47,
+	0x73, 0x2e, 0x56, 0x31, 0x35, 0x2e, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xca, 0x02, 0x1f, 0x47,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x5c, 0x41, 0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x41, 0x64, 0x73, 0x5c, 0x56, 0x31, 0x34, 0x5c, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xea, 0x02,
+	0x41, 0x64, 0x73, 0x5c, 0x56, 0x31, 0x35, 0x5c, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xea, 0x02,
 	0x23, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x3a, 0x3a, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x47, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x31, 0x34, 0x3a, 0x3a, 0x43, 0x6f,
+	0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x31, 0x35, 0x3a, 0x3a, 0x43, 0x6f,
 	0x6d, 0x6d, 0x6f, 0x6e, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
-	file_google_ads_googleads_v14_common_keyword_plan_common_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v14_common_keyword_plan_common_proto_rawDescData = file_google_ads_googleads_v14_common_keyword_plan_common_proto_rawDesc
+	file_google_ads_googleads_v15_common_keyword_plan_common_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v15_common_keyword_plan_common_proto_rawDescData = file_google_ads_googleads_v15_common_keyword_plan_common_proto_rawDesc
 )
 
-func file_google_ads_googleads_v14_common_keyword_plan_common_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v14_common_keyword_plan_common_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v14_common_keyword_plan_common_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v14_common_keyword_plan_common_proto_rawDescData)
+func file_google_ads_googleads_v15_common_keyword_plan_common_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v15_common_keyword_plan_common_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v15_common_keyword_plan_common_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v15_common_keyword_plan_common_proto_rawDescData)
 	})
-	return file_google_ads_googleads_v14_common_keyword_plan_common_proto_rawDescData
+	return file_google_ads_googleads_v15_common_keyword_plan_common_proto_rawDescData
 }
 
-var file_google_ads_googleads_v14_common_keyword_plan_common_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
-var file_google_ads_googleads_v14_common_keyword_plan_common_proto_goTypes = []interface{}{
-	(*KeywordPlanHistoricalMetrics)(nil),                                         // 0: google.ads.googleads.v14.common.KeywordPlanHistoricalMetrics
-	(*HistoricalMetricsOptions)(nil),                                             // 1: google.ads.googleads.v14.common.HistoricalMetricsOptions
-	(*MonthlySearchVolume)(nil),                                                  // 2: google.ads.googleads.v14.common.MonthlySearchVolume
-	(*KeywordPlanAggregateMetrics)(nil),                                          // 3: google.ads.googleads.v14.common.KeywordPlanAggregateMetrics
-	(*KeywordPlanAggregateMetricResults)(nil),                                    // 4: google.ads.googleads.v14.common.KeywordPlanAggregateMetricResults
-	(*KeywordPlanDeviceSearches)(nil),                                            // 5: google.ads.googleads.v14.common.KeywordPlanDeviceSearches
-	(*KeywordAnnotations)(nil),                                                   // 6: google.ads.googleads.v14.common.KeywordAnnotations
-	(*KeywordConcept)(nil),                                                       // 7: google.ads.googleads.v14.common.KeywordConcept
-	(*ConceptGroup)(nil),                                                         // 8: google.ads.googleads.v14.common.ConceptGroup
-	(enums.KeywordPlanCompetitionLevelEnum_KeywordPlanCompetitionLevel)(0),       // 9: google.ads.googleads.v14.enums.KeywordPlanCompetitionLevelEnum.KeywordPlanCompetitionLevel
-	(*YearMonthRange)(nil),                                                       // 10: google.ads.googleads.v14.common.YearMonthRange
-	(enums.MonthOfYearEnum_MonthOfYear)(0),                                       // 11: google.ads.googleads.v14.enums.MonthOfYearEnum.MonthOfYear
-	(enums.KeywordPlanAggregateMetricTypeEnum_KeywordPlanAggregateMetricType)(0), // 12: google.ads.googleads.v14.enums.KeywordPlanAggregateMetricTypeEnum.KeywordPlanAggregateMetricType
-	(enums.DeviceEnum_Device)(0),                                                 // 13: google.ads.googleads.v14.enums.DeviceEnum.Device
-	(enums.KeywordPlanConceptGroupTypeEnum_KeywordPlanConceptGroupType)(0),       // 14: google.ads.googleads.v14.enums.KeywordPlanConceptGroupTypeEnum.KeywordPlanConceptGroupType
+var file_google_ads_googleads_v15_common_keyword_plan_common_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
+var file_google_ads_googleads_v15_common_keyword_plan_common_proto_goTypes = []interface{}{
+	(*KeywordPlanHistoricalMetrics)(nil),                                         // 0: google.ads.googleads.v15.common.KeywordPlanHistoricalMetrics
+	(*HistoricalMetricsOptions)(nil),                                             // 1: google.ads.googleads.v15.common.HistoricalMetricsOptions
+	(*MonthlySearchVolume)(nil),                                                  // 2: google.ads.googleads.v15.common.MonthlySearchVolume
+	(*KeywordPlanAggregateMetrics)(nil),                                          // 3: google.ads.googleads.v15.common.KeywordPlanAggregateMetrics
+	(*KeywordPlanAggregateMetricResults)(nil),                                    // 4: google.ads.googleads.v15.common.KeywordPlanAggregateMetricResults
+	(*KeywordPlanDeviceSearches)(nil),                                            // 5: google.ads.googleads.v15.common.KeywordPlanDeviceSearches
+	(*KeywordAnnotations)(nil),                                                   // 6: google.ads.googleads.v15.common.KeywordAnnotations
+	(*KeywordConcept)(nil),                                                       // 7: google.ads.googleads.v15.common.KeywordConcept
+	(*ConceptGroup)(nil),                                                         // 8: google.ads.googleads.v15.common.ConceptGroup
+	(enums.KeywordPlanCompetitionLevelEnum_KeywordPlanCompetitionLevel)(0),       // 9: google.ads.googleads.v15.enums.KeywordPlanCompetitionLevelEnum.KeywordPlanCompetitionLevel
+	(*YearMonthRange)(nil),                                                       // 10: google.ads.googleads.v15.common.YearMonthRange
+	(enums.MonthOfYearEnum_MonthOfYear)(0),                                       // 11: google.ads.googleads.v15.enums.MonthOfYearEnum.MonthOfYear
+	(enums.KeywordPlanAggregateMetricTypeEnum_KeywordPlanAggregateMetricType)(0), // 12: google.ads.googleads.v15.enums.KeywordPlanAggregateMetricTypeEnum.KeywordPlanAggregateMetricType
+	(enums.DeviceEnum_Device)(0),                                                 // 13: google.ads.googleads.v15.enums.DeviceEnum.Device
+	(enums.KeywordPlanConceptGroupTypeEnum_KeywordPlanConceptGroupType)(0),       // 14: google.ads.googleads.v15.enums.KeywordPlanConceptGroupTypeEnum.KeywordPlanConceptGroupType
 }
-var file_google_ads_googleads_v14_common_keyword_plan_common_proto_depIdxs = []int32{
-	2,  // 0: google.ads.googleads.v14.common.KeywordPlanHistoricalMetrics.monthly_search_volumes:type_name -> google.ads.googleads.v14.common.MonthlySearchVolume
-	9,  // 1: google.ads.googleads.v14.common.KeywordPlanHistoricalMetrics.competition:type_name -> google.ads.googleads.v14.enums.KeywordPlanCompetitionLevelEnum.KeywordPlanCompetitionLevel
-	10, // 2: google.ads.googleads.v14.common.HistoricalMetricsOptions.year_month_range:type_name -> google.ads.googleads.v14.common.YearMonthRange
-	11, // 3: google.ads.googleads.v14.common.MonthlySearchVolume.month:type_name -> google.ads.googleads.v14.enums.MonthOfYearEnum.MonthOfYear
-	12, // 4: google.ads.googleads.v14.common.KeywordPlanAggregateMetrics.aggregate_metric_types:type_name -> google.ads.googleads.v14.enums.KeywordPlanAggregateMetricTypeEnum.KeywordPlanAggregateMetricType
-	5,  // 5: google.ads.googleads.v14.common.KeywordPlanAggregateMetricResults.device_searches:type_name -> google.ads.googleads.v14.common.KeywordPlanDeviceSearches
-	13, // 6: google.ads.googleads.v14.common.KeywordPlanDeviceSearches.device:type_name -> google.ads.googleads.v14.enums.DeviceEnum.Device
-	7,  // 7: google.ads.googleads.v14.common.KeywordAnnotations.concepts:type_name -> google.ads.googleads.v14.common.KeywordConcept
-	8,  // 8: google.ads.googleads.v14.common.KeywordConcept.concept_group:type_name -> google.ads.googleads.v14.common.ConceptGroup
-	14, // 9: google.ads.googleads.v14.common.ConceptGroup.type:type_name -> google.ads.googleads.v14.enums.KeywordPlanConceptGroupTypeEnum.KeywordPlanConceptGroupType
+var file_google_ads_googleads_v15_common_keyword_plan_common_proto_depIdxs = []int32{
+	2,  // 0: google.ads.googleads.v15.common.KeywordPlanHistoricalMetrics.monthly_search_volumes:type_name -> google.ads.googleads.v15.common.MonthlySearchVolume
+	9,  // 1: google.ads.googleads.v15.common.KeywordPlanHistoricalMetrics.competition:type_name -> google.ads.googleads.v15.enums.KeywordPlanCompetitionLevelEnum.KeywordPlanCompetitionLevel
+	10, // 2: google.ads.googleads.v15.common.HistoricalMetricsOptions.year_month_range:type_name -> google.ads.googleads.v15.common.YearMonthRange
+	11, // 3: google.ads.googleads.v15.common.MonthlySearchVolume.month:type_name -> google.ads.googleads.v15.enums.MonthOfYearEnum.MonthOfYear
+	12, // 4: google.ads.googleads.v15.common.KeywordPlanAggregateMetrics.aggregate_metric_types:type_name -> google.ads.googleads.v15.enums.KeywordPlanAggregateMetricTypeEnum.KeywordPlanAggregateMetricType
+	5,  // 5: google.ads.googleads.v15.common.KeywordPlanAggregateMetricResults.device_searches:type_name -> google.ads.googleads.v15.common.KeywordPlanDeviceSearches
+	13, // 6: google.ads.googleads.v15.common.KeywordPlanDeviceSearches.device:type_name -> google.ads.googleads.v15.enums.DeviceEnum.Device
+	7,  // 7: google.ads.googleads.v15.common.KeywordAnnotations.concepts:type_name -> google.ads.googleads.v15.common.KeywordConcept
+	8,  // 8: google.ads.googleads.v15.common.KeywordConcept.concept_group:type_name -> google.ads.googleads.v15.common.ConceptGroup
+	14, // 9: google.ads.googleads.v15.common.ConceptGroup.type:type_name -> google.ads.googleads.v15.enums.KeywordPlanConceptGroupTypeEnum.KeywordPlanConceptGroupType
 	10, // [10:10] is the sub-list for method output_type
 	10, // [10:10] is the sub-list for method input_type
 	10, // [10:10] is the sub-list for extension type_name
@@ -823,14 +823,14 @@ var file_google_ads_googleads_v14_common_keyword_plan_common_proto_depIdxs = []i
 	0,  // [0:10] is the sub-list for field type_name
 }
 
-func init() { file_google_ads_googleads_v14_common_keyword_plan_common_proto_init() }
-func file_google_ads_googleads_v14_common_keyword_plan_common_proto_init() {
-	if File_google_ads_googleads_v14_common_keyword_plan_common_proto != nil {
+func init() { file_google_ads_googleads_v15_common_keyword_plan_common_proto_init() }
+func file_google_ads_googleads_v15_common_keyword_plan_common_proto_init() {
+	if File_google_ads_googleads_v15_common_keyword_plan_common_proto != nil {
 		return
 	}
-	file_google_ads_googleads_v14_common_dates_proto_init()
+	file_google_ads_googleads_v15_common_dates_proto_init()
 	if !protoimpl.UnsafeEnabled {
-		file_google_ads_googleads_v14_common_keyword_plan_common_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_keyword_plan_common_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*KeywordPlanHistoricalMetrics); i {
 			case 0:
 				return &v.state
@@ -842,7 +842,7 @@ func file_google_ads_googleads_v14_common_keyword_plan_common_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_keyword_plan_common_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_keyword_plan_common_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*HistoricalMetricsOptions); i {
 			case 0:
 				return &v.state
@@ -854,7 +854,7 @@ func file_google_ads_googleads_v14_common_keyword_plan_common_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_keyword_plan_common_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_keyword_plan_common_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*MonthlySearchVolume); i {
 			case 0:
 				return &v.state
@@ -866,7 +866,7 @@ func file_google_ads_googleads_v14_common_keyword_plan_common_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_keyword_plan_common_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_keyword_plan_common_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*KeywordPlanAggregateMetrics); i {
 			case 0:
 				return &v.state
@@ -878,7 +878,7 @@ func file_google_ads_googleads_v14_common_keyword_plan_common_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_keyword_plan_common_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_keyword_plan_common_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*KeywordPlanAggregateMetricResults); i {
 			case 0:
 				return &v.state
@@ -890,7 +890,7 @@ func file_google_ads_googleads_v14_common_keyword_plan_common_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_keyword_plan_common_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_keyword_plan_common_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*KeywordPlanDeviceSearches); i {
 			case 0:
 				return &v.state
@@ -902,7 +902,7 @@ func file_google_ads_googleads_v14_common_keyword_plan_common_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_keyword_plan_common_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_keyword_plan_common_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*KeywordAnnotations); i {
 			case 0:
 				return &v.state
@@ -914,7 +914,7 @@ func file_google_ads_googleads_v14_common_keyword_plan_common_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_keyword_plan_common_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_keyword_plan_common_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*KeywordConcept); i {
 			case 0:
 				return &v.state
@@ -926,7 +926,7 @@ func file_google_ads_googleads_v14_common_keyword_plan_common_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_keyword_plan_common_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_keyword_plan_common_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ConceptGroup); i {
 			case 0:
 				return &v.state
@@ -939,26 +939,26 @@ func file_google_ads_googleads_v14_common_keyword_plan_common_proto_init() {
 			}
 		}
 	}
-	file_google_ads_googleads_v14_common_keyword_plan_common_proto_msgTypes[0].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v14_common_keyword_plan_common_proto_msgTypes[1].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v14_common_keyword_plan_common_proto_msgTypes[2].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v14_common_keyword_plan_common_proto_msgTypes[5].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_common_keyword_plan_common_proto_msgTypes[0].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_common_keyword_plan_common_proto_msgTypes[1].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_common_keyword_plan_common_proto_msgTypes[2].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_common_keyword_plan_common_proto_msgTypes[5].OneofWrappers = []interface{}{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_google_ads_googleads_v14_common_keyword_plan_common_proto_rawDesc,
+			RawDescriptor: file_google_ads_googleads_v15_common_keyword_plan_common_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   9,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_google_ads_googleads_v14_common_keyword_plan_common_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v14_common_keyword_plan_common_proto_depIdxs,
-		MessageInfos:      file_google_ads_googleads_v14_common_keyword_plan_common_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v15_common_keyword_plan_common_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v15_common_keyword_plan_common_proto_depIdxs,
+		MessageInfos:      file_google_ads_googleads_v15_common_keyword_plan_common_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v14_common_keyword_plan_common_proto = out.File
-	file_google_ads_googleads_v14_common_keyword_plan_common_proto_rawDesc = nil
-	file_google_ads_googleads_v14_common_keyword_plan_common_proto_goTypes = nil
-	file_google_ads_googleads_v14_common_keyword_plan_common_proto_depIdxs = nil
+	File_google_ads_googleads_v15_common_keyword_plan_common_proto = out.File
+	file_google_ads_googleads_v15_common_keyword_plan_common_proto_rawDesc = nil
+	file_google_ads_googleads_v15_common_keyword_plan_common_proto_goTypes = nil
+	file_google_ads_googleads_v15_common_keyword_plan_common_proto_depIdxs = nil
 }

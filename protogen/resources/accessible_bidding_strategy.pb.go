@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.31.0
 // 	protoc        v3.21.1
-// source: google/ads/googleads/v14/resources/accessible_bidding_strategy.proto
+// source: google/ads/googleads/v15/resources/accessible_bidding_strategy.proto
 
 package resources
 
@@ -57,7 +57,7 @@ type AccessibleBiddingStrategy struct {
 	// Output only. The name of the bidding strategy.
 	Name string `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
 	// Output only. The type of the bidding strategy.
-	Type enums.BiddingStrategyTypeEnum_BiddingStrategyType `protobuf:"varint,4,opt,name=type,proto3,enum=google.ads.googleads.v14.enums.BiddingStrategyTypeEnum_BiddingStrategyType" json:"type,omitempty"`
+	Type enums.BiddingStrategyTypeEnum_BiddingStrategyType `protobuf:"varint,4,opt,name=type,proto3,enum=google.ads.googleads.v15.enums.BiddingStrategyTypeEnum_BiddingStrategyType" json:"type,omitempty"`
 	// Output only. The ID of the Customer which owns the bidding strategy.
 	OwnerCustomerId int64 `protobuf:"varint,5,opt,name=owner_customer_id,json=ownerCustomerId,proto3" json:"owner_customer_id,omitempty"`
 	// Output only. descriptive_name of the Customer which owns the bidding
@@ -81,7 +81,7 @@ type AccessibleBiddingStrategy struct {
 func (x *AccessibleBiddingStrategy) Reset() {
 	*x = AccessibleBiddingStrategy{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_msgTypes[0]
+		mi := &file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -94,7 +94,7 @@ func (x *AccessibleBiddingStrategy) String() string {
 func (*AccessibleBiddingStrategy) ProtoMessage() {}
 
 func (x *AccessibleBiddingStrategy) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -107,7 +107,7 @@ func (x *AccessibleBiddingStrategy) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AccessibleBiddingStrategy.ProtoReflect.Descriptor instead.
 func (*AccessibleBiddingStrategy) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *AccessibleBiddingStrategy) GetResourceName() string {
@@ -271,7 +271,7 @@ type AccessibleBiddingStrategy_MaximizeConversionValue struct {
 func (x *AccessibleBiddingStrategy_MaximizeConversionValue) Reset() {
 	*x = AccessibleBiddingStrategy_MaximizeConversionValue{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_msgTypes[1]
+		mi := &file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -284,7 +284,7 @@ func (x *AccessibleBiddingStrategy_MaximizeConversionValue) String() string {
 func (*AccessibleBiddingStrategy_MaximizeConversionValue) ProtoMessage() {}
 
 func (x *AccessibleBiddingStrategy_MaximizeConversionValue) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -297,7 +297,7 @@ func (x *AccessibleBiddingStrategy_MaximizeConversionValue) ProtoReflect() proto
 
 // Deprecated: Use AccessibleBiddingStrategy_MaximizeConversionValue.ProtoReflect.Descriptor instead.
 func (*AccessibleBiddingStrategy_MaximizeConversionValue) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_rawDescGZIP(), []int{0, 0}
+	return file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_rawDescGZIP(), []int{0, 0}
 }
 
 func (x *AccessibleBiddingStrategy_MaximizeConversionValue) GetTargetRoas() float64 {
@@ -322,7 +322,7 @@ type AccessibleBiddingStrategy_MaximizeConversions struct {
 func (x *AccessibleBiddingStrategy_MaximizeConversions) Reset() {
 	*x = AccessibleBiddingStrategy_MaximizeConversions{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_msgTypes[2]
+		mi := &file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -335,7 +335,7 @@ func (x *AccessibleBiddingStrategy_MaximizeConversions) String() string {
 func (*AccessibleBiddingStrategy_MaximizeConversions) ProtoMessage() {}
 
 func (x *AccessibleBiddingStrategy_MaximizeConversions) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_msgTypes[2]
+	mi := &file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -348,7 +348,7 @@ func (x *AccessibleBiddingStrategy_MaximizeConversions) ProtoReflect() protorefl
 
 // Deprecated: Use AccessibleBiddingStrategy_MaximizeConversions.ProtoReflect.Descriptor instead.
 func (*AccessibleBiddingStrategy_MaximizeConversions) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_rawDescGZIP(), []int{0, 1}
+	return file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_rawDescGZIP(), []int{0, 1}
 }
 
 func (x *AccessibleBiddingStrategy_MaximizeConversions) GetTargetCpaMicros() int64 {
@@ -374,7 +374,7 @@ type AccessibleBiddingStrategy_TargetCpa struct {
 func (x *AccessibleBiddingStrategy_TargetCpa) Reset() {
 	*x = AccessibleBiddingStrategy_TargetCpa{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_msgTypes[3]
+		mi := &file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -387,7 +387,7 @@ func (x *AccessibleBiddingStrategy_TargetCpa) String() string {
 func (*AccessibleBiddingStrategy_TargetCpa) ProtoMessage() {}
 
 func (x *AccessibleBiddingStrategy_TargetCpa) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_msgTypes[3]
+	mi := &file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -400,7 +400,7 @@ func (x *AccessibleBiddingStrategy_TargetCpa) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use AccessibleBiddingStrategy_TargetCpa.ProtoReflect.Descriptor instead.
 func (*AccessibleBiddingStrategy_TargetCpa) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_rawDescGZIP(), []int{0, 2}
+	return file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_rawDescGZIP(), []int{0, 2}
 }
 
 func (x *AccessibleBiddingStrategy_TargetCpa) GetTargetCpaMicros() int64 {
@@ -419,7 +419,7 @@ type AccessibleBiddingStrategy_TargetImpressionShare struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Output only. The targeted location on the search results page.
-	Location enums.TargetImpressionShareLocationEnum_TargetImpressionShareLocation `protobuf:"varint,1,opt,name=location,proto3,enum=google.ads.googleads.v14.enums.TargetImpressionShareLocationEnum_TargetImpressionShareLocation" json:"location,omitempty"`
+	Location enums.TargetImpressionShareLocationEnum_TargetImpressionShareLocation `protobuf:"varint,1,opt,name=location,proto3,enum=google.ads.googleads.v15.enums.TargetImpressionShareLocationEnum_TargetImpressionShareLocation" json:"location,omitempty"`
 	// The chosen fraction of ads to be shown in the targeted location in
 	// micros. For example, 1% equals 10,000.
 	LocationFractionMicros *int64 `protobuf:"varint,2,opt,name=location_fraction_micros,json=locationFractionMicros,proto3,oneof" json:"location_fraction_micros,omitempty"`
@@ -432,7 +432,7 @@ type AccessibleBiddingStrategy_TargetImpressionShare struct {
 func (x *AccessibleBiddingStrategy_TargetImpressionShare) Reset() {
 	*x = AccessibleBiddingStrategy_TargetImpressionShare{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_msgTypes[4]
+		mi := &file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -445,7 +445,7 @@ func (x *AccessibleBiddingStrategy_TargetImpressionShare) String() string {
 func (*AccessibleBiddingStrategy_TargetImpressionShare) ProtoMessage() {}
 
 func (x *AccessibleBiddingStrategy_TargetImpressionShare) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_msgTypes[4]
+	mi := &file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -458,7 +458,7 @@ func (x *AccessibleBiddingStrategy_TargetImpressionShare) ProtoReflect() protore
 
 // Deprecated: Use AccessibleBiddingStrategy_TargetImpressionShare.ProtoReflect.Descriptor instead.
 func (*AccessibleBiddingStrategy_TargetImpressionShare) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_rawDescGZIP(), []int{0, 3}
+	return file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_rawDescGZIP(), []int{0, 3}
 }
 
 func (x *AccessibleBiddingStrategy_TargetImpressionShare) GetLocation() enums.TargetImpressionShareLocationEnum_TargetImpressionShareLocation {
@@ -497,7 +497,7 @@ type AccessibleBiddingStrategy_TargetRoas struct {
 func (x *AccessibleBiddingStrategy_TargetRoas) Reset() {
 	*x = AccessibleBiddingStrategy_TargetRoas{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_msgTypes[5]
+		mi := &file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -510,7 +510,7 @@ func (x *AccessibleBiddingStrategy_TargetRoas) String() string {
 func (*AccessibleBiddingStrategy_TargetRoas) ProtoMessage() {}
 
 func (x *AccessibleBiddingStrategy_TargetRoas) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_msgTypes[5]
+	mi := &file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -523,7 +523,7 @@ func (x *AccessibleBiddingStrategy_TargetRoas) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use AccessibleBiddingStrategy_TargetRoas.ProtoReflect.Descriptor instead.
 func (*AccessibleBiddingStrategy_TargetRoas) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_rawDescGZIP(), []int{0, 4}
+	return file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_rawDescGZIP(), []int{0, 4}
 }
 
 func (x *AccessibleBiddingStrategy_TargetRoas) GetTargetRoas() float64 {
@@ -548,7 +548,7 @@ type AccessibleBiddingStrategy_TargetSpend struct {
 	// https://ads-developers.googleblog.com/2020/05/reminder-about-sunset-creation-of.html
 	// for details.
 	//
-	// Deprecated: Marked as deprecated in google/ads/googleads/v14/resources/accessible_bidding_strategy.proto.
+	// Deprecated: Marked as deprecated in google/ads/googleads/v15/resources/accessible_bidding_strategy.proto.
 	TargetSpendMicros *int64 `protobuf:"varint,1,opt,name=target_spend_micros,json=targetSpendMicros,proto3,oneof" json:"target_spend_micros,omitempty"`
 	// Output only. Maximum bid limit that can be set by the bid strategy.
 	// The limit applies to all keywords managed by the strategy.
@@ -558,7 +558,7 @@ type AccessibleBiddingStrategy_TargetSpend struct {
 func (x *AccessibleBiddingStrategy_TargetSpend) Reset() {
 	*x = AccessibleBiddingStrategy_TargetSpend{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_msgTypes[6]
+		mi := &file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -571,7 +571,7 @@ func (x *AccessibleBiddingStrategy_TargetSpend) String() string {
 func (*AccessibleBiddingStrategy_TargetSpend) ProtoMessage() {}
 
 func (x *AccessibleBiddingStrategy_TargetSpend) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_msgTypes[6]
+	mi := &file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -584,10 +584,10 @@ func (x *AccessibleBiddingStrategy_TargetSpend) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use AccessibleBiddingStrategy_TargetSpend.ProtoReflect.Descriptor instead.
 func (*AccessibleBiddingStrategy_TargetSpend) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_rawDescGZIP(), []int{0, 5}
+	return file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_rawDescGZIP(), []int{0, 5}
 }
 
-// Deprecated: Marked as deprecated in google/ads/googleads/v14/resources/accessible_bidding_strategy.proto.
+// Deprecated: Marked as deprecated in google/ads/googleads/v15/resources/accessible_bidding_strategy.proto.
 func (x *AccessibleBiddingStrategy_TargetSpend) GetTargetSpendMicros() int64 {
 	if x != nil && x.TargetSpendMicros != nil {
 		return *x.TargetSpendMicros
@@ -602,21 +602,21 @@ func (x *AccessibleBiddingStrategy_TargetSpend) GetCpcBidCeilingMicros() int64 {
 	return 0
 }
 
-var File_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_rawDesc = []byte{
+var file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_rawDesc = []byte{
 	0x0a, 0x44, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x72, 0x65, 0x73, 0x6f, 0x75,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x72, 0x65, 0x73, 0x6f, 0x75,
 	0x72, 0x63, 0x65, 0x73, 0x2f, 0x61, 0x63, 0x63, 0x65, 0x73, 0x73, 0x69, 0x62, 0x6c, 0x65, 0x5f,
 	0x62, 0x69, 0x64, 0x64, 0x69, 0x6e, 0x67, 0x5f, 0x73, 0x74, 0x72, 0x61, 0x74, 0x65, 0x67, 0x79,
 	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x22, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61,
-	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34,
+	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35,
 	0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x1a, 0x3a, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
-	0x2f, 0x76, 0x31, 0x34, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x62, 0x69, 0x64, 0x64, 0x69,
+	0x2f, 0x76, 0x31, 0x35, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x62, 0x69, 0x64, 0x64, 0x69,
 	0x6e, 0x67, 0x5f, 0x73, 0x74, 0x72, 0x61, 0x74, 0x65, 0x67, 0x79, 0x5f, 0x74, 0x79, 0x70, 0x65,
 	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x45, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61,
-	0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34,
+	0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35,
 	0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x74, 0x61, 0x72, 0x67, 0x65, 0x74, 0x5f, 0x69, 0x6d,
 	0x70, 0x72, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x5f, 0x73, 0x68, 0x61, 0x72, 0x65, 0x5f, 0x6c,
 	0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x1f, 0x67,
@@ -636,7 +636,7 @@ var file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_ra
 	0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42, 0x03, 0xe0, 0x41, 0x03,
 	0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x64, 0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x04,
 	0x20, 0x01, 0x28, 0x0e, 0x32, 0x4b, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64,
-	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e,
+	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e,
 	0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x42, 0x69, 0x64, 0x64, 0x69, 0x6e, 0x67, 0x53, 0x74, 0x72,
 	0x61, 0x74, 0x65, 0x67, 0x79, 0x54, 0x79, 0x70, 0x65, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x42, 0x69,
 	0x64, 0x64, 0x69, 0x6e, 0x67, 0x53, 0x74, 0x72, 0x61, 0x74, 0x65, 0x67, 0x79, 0x54, 0x79, 0x70,
@@ -651,7 +651,7 @@ var file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_ra
 	0x69, 0x6d, 0x69, 0x7a, 0x65, 0x5f, 0x63, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e,
 	0x5f, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x07, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x55, 0x2e, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65,
+	0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65,
 	0x73, 0x2e, 0x41, 0x63, 0x63, 0x65, 0x73, 0x73, 0x69, 0x62, 0x6c, 0x65, 0x42, 0x69, 0x64, 0x64,
 	0x69, 0x6e, 0x67, 0x53, 0x74, 0x72, 0x61, 0x74, 0x65, 0x67, 0x79, 0x2e, 0x4d, 0x61, 0x78, 0x69,
 	0x6d, 0x69, 0x7a, 0x65, 0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x56, 0x61,
@@ -660,7 +660,7 @@ var file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_ra
 	0x6c, 0x75, 0x65, 0x12, 0x8b, 0x01, 0x0a, 0x14, 0x6d, 0x61, 0x78, 0x69, 0x6d, 0x69, 0x7a, 0x65,
 	0x5f, 0x63, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x73, 0x18, 0x08, 0x20, 0x01,
 	0x28, 0x0b, 0x32, 0x51, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x72, 0x65,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x72, 0x65,
 	0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e, 0x41, 0x63, 0x63, 0x65, 0x73, 0x73, 0x69, 0x62,
 	0x6c, 0x65, 0x42, 0x69, 0x64, 0x64, 0x69, 0x6e, 0x67, 0x53, 0x74, 0x72, 0x61, 0x74, 0x65, 0x67,
 	0x79, 0x2e, 0x4d, 0x61, 0x78, 0x69, 0x6d, 0x69, 0x7a, 0x65, 0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72,
@@ -668,7 +668,7 @@ var file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_ra
 	0x78, 0x69, 0x6d, 0x69, 0x7a, 0x65, 0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e,
 	0x73, 0x12, 0x6d, 0x0a, 0x0a, 0x74, 0x61, 0x72, 0x67, 0x65, 0x74, 0x5f, 0x63, 0x70, 0x61, 0x18,
 	0x09, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x47, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61,
-	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34,
+	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35,
 	0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e, 0x41, 0x63, 0x63, 0x65, 0x73,
 	0x73, 0x69, 0x62, 0x6c, 0x65, 0x42, 0x69, 0x64, 0x64, 0x69, 0x6e, 0x67, 0x53, 0x74, 0x72, 0x61,
 	0x74, 0x65, 0x67, 0x79, 0x2e, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x43, 0x70, 0x61, 0x42, 0x03,
@@ -676,7 +676,7 @@ var file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_ra
 	0x12, 0x92, 0x01, 0x0a, 0x17, 0x74, 0x61, 0x72, 0x67, 0x65, 0x74, 0x5f, 0x69, 0x6d, 0x70, 0x72,
 	0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x5f, 0x73, 0x68, 0x61, 0x72, 0x65, 0x18, 0x0a, 0x20, 0x01,
 	0x28, 0x0b, 0x32, 0x53, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x72, 0x65,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x72, 0x65,
 	0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e, 0x41, 0x63, 0x63, 0x65, 0x73, 0x73, 0x69, 0x62,
 	0x6c, 0x65, 0x42, 0x69, 0x64, 0x64, 0x69, 0x6e, 0x67, 0x53, 0x74, 0x72, 0x61, 0x74, 0x65, 0x67,
 	0x79, 0x2e, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x49, 0x6d, 0x70, 0x72, 0x65, 0x73, 0x73, 0x69,
@@ -685,14 +685,14 @@ var file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_ra
 	0x53, 0x68, 0x61, 0x72, 0x65, 0x12, 0x70, 0x0a, 0x0b, 0x74, 0x61, 0x72, 0x67, 0x65, 0x74, 0x5f,
 	0x72, 0x6f, 0x61, 0x73, 0x18, 0x0b, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x48, 0x2e, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64,
-	0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e,
+	0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e,
 	0x41, 0x63, 0x63, 0x65, 0x73, 0x73, 0x69, 0x62, 0x6c, 0x65, 0x42, 0x69, 0x64, 0x64, 0x69, 0x6e,
 	0x67, 0x53, 0x74, 0x72, 0x61, 0x74, 0x65, 0x67, 0x79, 0x2e, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74,
 	0x52, 0x6f, 0x61, 0x73, 0x42, 0x03, 0xe0, 0x41, 0x03, 0x48, 0x00, 0x52, 0x0a, 0x74, 0x61, 0x72,
 	0x67, 0x65, 0x74, 0x52, 0x6f, 0x61, 0x73, 0x12, 0x73, 0x0a, 0x0c, 0x74, 0x61, 0x72, 0x67, 0x65,
 	0x74, 0x5f, 0x73, 0x70, 0x65, 0x6e, 0x64, 0x18, 0x0c, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x49, 0x2e,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63,
+	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63,
 	0x65, 0x73, 0x2e, 0x41, 0x63, 0x63, 0x65, 0x73, 0x73, 0x69, 0x62, 0x6c, 0x65, 0x42, 0x69, 0x64,
 	0x64, 0x69, 0x6e, 0x67, 0x53, 0x74, 0x72, 0x61, 0x74, 0x65, 0x67, 0x79, 0x2e, 0x54, 0x61, 0x72,
 	0x67, 0x65, 0x74, 0x53, 0x70, 0x65, 0x6e, 0x64, 0x42, 0x03, 0xe0, 0x41, 0x03, 0x48, 0x00, 0x52,
@@ -715,7 +715,7 @@ var file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_ra
 	0x69, 0x6f, 0x6e, 0x53, 0x68, 0x61, 0x72, 0x65, 0x12, 0x80, 0x01, 0x0a, 0x08, 0x6c, 0x6f, 0x63,
 	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x5f, 0x2e, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x54, 0x61, 0x72,
+	0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x54, 0x61, 0x72,
 	0x67, 0x65, 0x74, 0x49, 0x6d, 0x70, 0x72, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x53, 0x68, 0x61,
 	0x72, 0x65, 0x4c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x54,
 	0x61, 0x72, 0x67, 0x65, 0x74, 0x49, 0x6d, 0x70, 0x72, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x53,
@@ -759,58 +759,58 @@ var file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_ra
 	0x5f, 0x73, 0x74, 0x72, 0x61, 0x74, 0x65, 0x67, 0x79, 0x5f, 0x69, 0x64, 0x7d, 0x42, 0x08, 0x0a,
 	0x06, 0x73, 0x63, 0x68, 0x65, 0x6d, 0x65, 0x42, 0x90, 0x02, 0x0a, 0x26, 0x63, 0x6f, 0x6d, 0x2e,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63,
+	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63,
 	0x65, 0x73, 0x42, 0x1e, 0x41, 0x63, 0x63, 0x65, 0x73, 0x73, 0x69, 0x62, 0x6c, 0x65, 0x42, 0x69,
 	0x64, 0x64, 0x69, 0x6e, 0x67, 0x53, 0x74, 0x72, 0x61, 0x74, 0x65, 0x67, 0x79, 0x50, 0x72, 0x6f,
 	0x74, 0x6f, 0x50, 0x01, 0x5a, 0x4b, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x67, 0x6f, 0x6c,
 	0x61, 0x6e, 0x67, 0x2e, 0x6f, 0x72, 0x67, 0x2f, 0x67, 0x65, 0x6e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
 	0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x70, 0x69, 0x73, 0x2f, 0x61, 0x64, 0x73, 0x2f,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x72, 0x65,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x72, 0x65,
 	0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x3b, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65,
 	0x73, 0xa2, 0x02, 0x03, 0x47, 0x41, 0x41, 0xaa, 0x02, 0x22, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x41, 0x64, 0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e, 0x56,
-	0x31, 0x34, 0x2e, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0xca, 0x02, 0x22, 0x47,
+	0x31, 0x35, 0x2e, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0xca, 0x02, 0x22, 0x47,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x5c, 0x41, 0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x41, 0x64, 0x73, 0x5c, 0x56, 0x31, 0x34, 0x5c, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65,
+	0x41, 0x64, 0x73, 0x5c, 0x56, 0x31, 0x35, 0x5c, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65,
 	0x73, 0xea, 0x02, 0x26, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x3a, 0x3a, 0x41, 0x64, 0x73, 0x3a,
-	0x3a, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x31, 0x34, 0x3a,
+	0x3a, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x31, 0x35, 0x3a,
 	0x3a, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
 	0x6f, 0x33,
 }
 
 var (
-	file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_rawDescData = file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_rawDesc
+	file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_rawDescData = file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_rawDesc
 )
 
-func file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_rawDescData)
+func file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_rawDescData)
 	})
-	return file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_rawDescData
+	return file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_rawDescData
 }
 
-var file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
-var file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_goTypes = []interface{}{
-	(*AccessibleBiddingStrategy)(nil),                                          // 0: google.ads.googleads.v14.resources.AccessibleBiddingStrategy
-	(*AccessibleBiddingStrategy_MaximizeConversionValue)(nil),                  // 1: google.ads.googleads.v14.resources.AccessibleBiddingStrategy.MaximizeConversionValue
-	(*AccessibleBiddingStrategy_MaximizeConversions)(nil),                      // 2: google.ads.googleads.v14.resources.AccessibleBiddingStrategy.MaximizeConversions
-	(*AccessibleBiddingStrategy_TargetCpa)(nil),                                // 3: google.ads.googleads.v14.resources.AccessibleBiddingStrategy.TargetCpa
-	(*AccessibleBiddingStrategy_TargetImpressionShare)(nil),                    // 4: google.ads.googleads.v14.resources.AccessibleBiddingStrategy.TargetImpressionShare
-	(*AccessibleBiddingStrategy_TargetRoas)(nil),                               // 5: google.ads.googleads.v14.resources.AccessibleBiddingStrategy.TargetRoas
-	(*AccessibleBiddingStrategy_TargetSpend)(nil),                              // 6: google.ads.googleads.v14.resources.AccessibleBiddingStrategy.TargetSpend
-	(enums.BiddingStrategyTypeEnum_BiddingStrategyType)(0),                     // 7: google.ads.googleads.v14.enums.BiddingStrategyTypeEnum.BiddingStrategyType
-	(enums.TargetImpressionShareLocationEnum_TargetImpressionShareLocation)(0), // 8: google.ads.googleads.v14.enums.TargetImpressionShareLocationEnum.TargetImpressionShareLocation
+var file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
+var file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_goTypes = []interface{}{
+	(*AccessibleBiddingStrategy)(nil),                                          // 0: google.ads.googleads.v15.resources.AccessibleBiddingStrategy
+	(*AccessibleBiddingStrategy_MaximizeConversionValue)(nil),                  // 1: google.ads.googleads.v15.resources.AccessibleBiddingStrategy.MaximizeConversionValue
+	(*AccessibleBiddingStrategy_MaximizeConversions)(nil),                      // 2: google.ads.googleads.v15.resources.AccessibleBiddingStrategy.MaximizeConversions
+	(*AccessibleBiddingStrategy_TargetCpa)(nil),                                // 3: google.ads.googleads.v15.resources.AccessibleBiddingStrategy.TargetCpa
+	(*AccessibleBiddingStrategy_TargetImpressionShare)(nil),                    // 4: google.ads.googleads.v15.resources.AccessibleBiddingStrategy.TargetImpressionShare
+	(*AccessibleBiddingStrategy_TargetRoas)(nil),                               // 5: google.ads.googleads.v15.resources.AccessibleBiddingStrategy.TargetRoas
+	(*AccessibleBiddingStrategy_TargetSpend)(nil),                              // 6: google.ads.googleads.v15.resources.AccessibleBiddingStrategy.TargetSpend
+	(enums.BiddingStrategyTypeEnum_BiddingStrategyType)(0),                     // 7: google.ads.googleads.v15.enums.BiddingStrategyTypeEnum.BiddingStrategyType
+	(enums.TargetImpressionShareLocationEnum_TargetImpressionShareLocation)(0), // 8: google.ads.googleads.v15.enums.TargetImpressionShareLocationEnum.TargetImpressionShareLocation
 }
-var file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_depIdxs = []int32{
-	7, // 0: google.ads.googleads.v14.resources.AccessibleBiddingStrategy.type:type_name -> google.ads.googleads.v14.enums.BiddingStrategyTypeEnum.BiddingStrategyType
-	1, // 1: google.ads.googleads.v14.resources.AccessibleBiddingStrategy.maximize_conversion_value:type_name -> google.ads.googleads.v14.resources.AccessibleBiddingStrategy.MaximizeConversionValue
-	2, // 2: google.ads.googleads.v14.resources.AccessibleBiddingStrategy.maximize_conversions:type_name -> google.ads.googleads.v14.resources.AccessibleBiddingStrategy.MaximizeConversions
-	3, // 3: google.ads.googleads.v14.resources.AccessibleBiddingStrategy.target_cpa:type_name -> google.ads.googleads.v14.resources.AccessibleBiddingStrategy.TargetCpa
-	4, // 4: google.ads.googleads.v14.resources.AccessibleBiddingStrategy.target_impression_share:type_name -> google.ads.googleads.v14.resources.AccessibleBiddingStrategy.TargetImpressionShare
-	5, // 5: google.ads.googleads.v14.resources.AccessibleBiddingStrategy.target_roas:type_name -> google.ads.googleads.v14.resources.AccessibleBiddingStrategy.TargetRoas
-	6, // 6: google.ads.googleads.v14.resources.AccessibleBiddingStrategy.target_spend:type_name -> google.ads.googleads.v14.resources.AccessibleBiddingStrategy.TargetSpend
-	8, // 7: google.ads.googleads.v14.resources.AccessibleBiddingStrategy.TargetImpressionShare.location:type_name -> google.ads.googleads.v14.enums.TargetImpressionShareLocationEnum.TargetImpressionShareLocation
+var file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_depIdxs = []int32{
+	7, // 0: google.ads.googleads.v15.resources.AccessibleBiddingStrategy.type:type_name -> google.ads.googleads.v15.enums.BiddingStrategyTypeEnum.BiddingStrategyType
+	1, // 1: google.ads.googleads.v15.resources.AccessibleBiddingStrategy.maximize_conversion_value:type_name -> google.ads.googleads.v15.resources.AccessibleBiddingStrategy.MaximizeConversionValue
+	2, // 2: google.ads.googleads.v15.resources.AccessibleBiddingStrategy.maximize_conversions:type_name -> google.ads.googleads.v15.resources.AccessibleBiddingStrategy.MaximizeConversions
+	3, // 3: google.ads.googleads.v15.resources.AccessibleBiddingStrategy.target_cpa:type_name -> google.ads.googleads.v15.resources.AccessibleBiddingStrategy.TargetCpa
+	4, // 4: google.ads.googleads.v15.resources.AccessibleBiddingStrategy.target_impression_share:type_name -> google.ads.googleads.v15.resources.AccessibleBiddingStrategy.TargetImpressionShare
+	5, // 5: google.ads.googleads.v15.resources.AccessibleBiddingStrategy.target_roas:type_name -> google.ads.googleads.v15.resources.AccessibleBiddingStrategy.TargetRoas
+	6, // 6: google.ads.googleads.v15.resources.AccessibleBiddingStrategy.target_spend:type_name -> google.ads.googleads.v15.resources.AccessibleBiddingStrategy.TargetSpend
+	8, // 7: google.ads.googleads.v15.resources.AccessibleBiddingStrategy.TargetImpressionShare.location:type_name -> google.ads.googleads.v15.enums.TargetImpressionShareLocationEnum.TargetImpressionShareLocation
 	8, // [8:8] is the sub-list for method output_type
 	8, // [8:8] is the sub-list for method input_type
 	8, // [8:8] is the sub-list for extension type_name
@@ -818,13 +818,13 @@ var file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_de
 	0, // [0:8] is the sub-list for field type_name
 }
 
-func init() { file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_init() }
-func file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_init() {
-	if File_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto != nil {
+func init() { file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_init() }
+func file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_init() {
+	if File_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AccessibleBiddingStrategy); i {
 			case 0:
 				return &v.state
@@ -836,7 +836,7 @@ func file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_i
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AccessibleBiddingStrategy_MaximizeConversionValue); i {
 			case 0:
 				return &v.state
@@ -848,7 +848,7 @@ func file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_i
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AccessibleBiddingStrategy_MaximizeConversions); i {
 			case 0:
 				return &v.state
@@ -860,7 +860,7 @@ func file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_i
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AccessibleBiddingStrategy_TargetCpa); i {
 			case 0:
 				return &v.state
@@ -872,7 +872,7 @@ func file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_i
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AccessibleBiddingStrategy_TargetImpressionShare); i {
 			case 0:
 				return &v.state
@@ -884,7 +884,7 @@ func file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_i
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AccessibleBiddingStrategy_TargetRoas); i {
 			case 0:
 				return &v.state
@@ -896,7 +896,7 @@ func file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_i
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AccessibleBiddingStrategy_TargetSpend); i {
 			case 0:
 				return &v.state
@@ -909,7 +909,7 @@ func file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_i
 			}
 		}
 	}
-	file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_msgTypes[0].OneofWrappers = []interface{}{
+	file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_msgTypes[0].OneofWrappers = []interface{}{
 		(*AccessibleBiddingStrategy_MaximizeConversionValue_)(nil),
 		(*AccessibleBiddingStrategy_MaximizeConversions_)(nil),
 		(*AccessibleBiddingStrategy_TargetCpa_)(nil),
@@ -917,26 +917,26 @@ func file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_i
 		(*AccessibleBiddingStrategy_TargetRoas_)(nil),
 		(*AccessibleBiddingStrategy_TargetSpend_)(nil),
 	}
-	file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_msgTypes[3].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_msgTypes[4].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_msgTypes[5].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_msgTypes[6].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_msgTypes[3].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_msgTypes[4].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_msgTypes[5].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_msgTypes[6].OneofWrappers = []interface{}{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_rawDesc,
+			RawDescriptor: file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   7,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_depIdxs,
-		MessageInfos:      file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_depIdxs,
+		MessageInfos:      file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto = out.File
-	file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_rawDesc = nil
-	file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_goTypes = nil
-	file_google_ads_googleads_v14_resources_accessible_bidding_strategy_proto_depIdxs = nil
+	File_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto = out.File
+	file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_rawDesc = nil
+	file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_goTypes = nil
+	file_google_ads_googleads_v15_resources_accessible_bidding_strategy_proto_depIdxs = nil
 }

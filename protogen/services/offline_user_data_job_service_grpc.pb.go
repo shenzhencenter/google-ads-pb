@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.21.1
-// source: google/ads/googleads/v14/services/offline_user_data_job_service.proto
+// source: google/ads/googleads/v15/services/offline_user_data_job_service.proto
 
 package services
 
@@ -34,9 +34,9 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	OfflineUserDataJobService_CreateOfflineUserDataJob_FullMethodName        = "/google.ads.googleads.v14.services.OfflineUserDataJobService/CreateOfflineUserDataJob"
-	OfflineUserDataJobService_AddOfflineUserDataJobOperations_FullMethodName = "/google.ads.googleads.v14.services.OfflineUserDataJobService/AddOfflineUserDataJobOperations"
-	OfflineUserDataJobService_RunOfflineUserDataJob_FullMethodName           = "/google.ads.googleads.v14.services.OfflineUserDataJobService/RunOfflineUserDataJob"
+	OfflineUserDataJobService_CreateOfflineUserDataJob_FullMethodName        = "/google.ads.googleads.v15.services.OfflineUserDataJobService/CreateOfflineUserDataJob"
+	OfflineUserDataJobService_AddOfflineUserDataJobOperations_FullMethodName = "/google.ads.googleads.v15.services.OfflineUserDataJobService/AddOfflineUserDataJobOperations"
+	OfflineUserDataJobService_RunOfflineUserDataJob_FullMethodName           = "/google.ads.googleads.v15.services.OfflineUserDataJobService/RunOfflineUserDataJob"
 )
 
 // OfflineUserDataJobServiceClient is the client API for OfflineUserDataJobService service.
@@ -264,7 +264,7 @@ func _OfflineUserDataJobService_RunOfflineUserDataJob_Handler(srv interface{}, c
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var OfflineUserDataJobService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v14.services.OfflineUserDataJobService",
+	ServiceName: "google.ads.googleads.v15.services.OfflineUserDataJobService",
 	HandlerType: (*OfflineUserDataJobServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -281,5 +281,5 @@ var OfflineUserDataJobService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v14/services/offline_user_data_job_service.proto",
+	Metadata: "google/ads/googleads/v15/services/offline_user_data_job_service.proto",
 }

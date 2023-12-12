@@ -40,7 +40,7 @@
 //  // - It may require correct/in-range values for request initialization.
 //  // - It may require specifying regional endpoints when creating the service client as shown in:
 //  //   https://pkg.go.dev/cloud.google.com/go#hdr-Client_Options
-//  c, err := clients.NewCustomConversionGoalClient(ctx)
+//  c, err := clients.NewCustomerLifecycleClient(ctx)
 //  if err != nil {
 //  	// TODO: Handle error.
 //  }
@@ -60,17 +60,17 @@
 //  // - It may require correct/in-range values for request initialization.
 //  // - It may require specifying regional endpoints when creating the service client as shown in:
 //  //   https://pkg.go.dev/cloud.google.com/go#hdr-Client_Options
-//  c, err := clients.NewCustomConversionGoalClient(ctx)
+//  c, err := clients.NewCustomerLifecycleClient(ctx)
 //  if err != nil {
 //  	// TODO: Handle error.
 //  }
 //  defer c.Close()
 //
-//  req := &servicespb.MutateCustomConversionGoalsRequest{
+//  req := &servicespb.ConfigureCustomerLifecycleGoalsRequest{
 //  	// TODO: Fill request struct fields.
-//  	// See https://pkg.go.dev/github.com/Optable/google-ads-pb/protogen/services#MutateCustomConversionGoalsRequest.
+//  	// See https://pkg.go.dev/github.com/Optable/google-ads-pb/protogen/services#ConfigureCustomerLifecycleGoalsRequest.
 //  }
-//  resp, err := c.MutateCustomConversionGoals(ctx, req)
+//  resp, err := c.ConfigureCustomerLifecycleGoals(ctx, req)
 //  if err != nil {
 //  	// TODO: Handle error.
 //  }
@@ -79,7 +79,7 @@
 //
 // Use of Context
 //
-// The ctx passed to NewCustomConversionGoalClient is used for authentication requests and
+// The ctx passed to NewCustomerLifecycleClient is used for authentication requests and
 // for creating the underlying connection, but is not used for subsequent calls.
 // Individual methods on the client use the ctx given to them.
 //

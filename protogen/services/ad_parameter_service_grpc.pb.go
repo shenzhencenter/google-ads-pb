@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.21.1
-// source: google/ads/googleads/v14/services/ad_parameter_service.proto
+// source: google/ads/googleads/v15/services/ad_parameter_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	AdParameterService_MutateAdParameters_FullMethodName = "/google.ads.googleads.v14.services.AdParameterService/MutateAdParameters"
+	AdParameterService_MutateAdParameters_FullMethodName = "/google.ads.googleads.v15.services.AdParameterService/MutateAdParameters"
 )
 
 // AdParameterServiceClient is the client API for AdParameterService service.
@@ -144,7 +144,7 @@ func _AdParameterService_MutateAdParameters_Handler(srv interface{}, ctx context
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AdParameterService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v14.services.AdParameterService",
+	ServiceName: "google.ads.googleads.v15.services.AdParameterService",
 	HandlerType: (*AdParameterServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -153,5 +153,5 @@ var AdParameterService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v14/services/ad_parameter_service.proto",
+	Metadata: "google/ads/googleads/v15/services/ad_parameter_service.proto",
 }

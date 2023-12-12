@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.21.1
-// source: google/ads/googleads/v14/services/customer_service.proto
+// source: google/ads/googleads/v15/services/customer_service.proto
 
 package services
 
@@ -33,9 +33,9 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	CustomerService_MutateCustomer_FullMethodName          = "/google.ads.googleads.v14.services.CustomerService/MutateCustomer"
-	CustomerService_ListAccessibleCustomers_FullMethodName = "/google.ads.googleads.v14.services.CustomerService/ListAccessibleCustomers"
-	CustomerService_CreateCustomerClient_FullMethodName    = "/google.ads.googleads.v14.services.CustomerService/CreateCustomerClient"
+	CustomerService_MutateCustomer_FullMethodName          = "/google.ads.googleads.v15.services.CustomerService/MutateCustomer"
+	CustomerService_ListAccessibleCustomers_FullMethodName = "/google.ads.googleads.v15.services.CustomerService/ListAccessibleCustomers"
+	CustomerService_CreateCustomerClient_FullMethodName    = "/google.ads.googleads.v15.services.CustomerService/CreateCustomerClient"
 )
 
 // CustomerServiceClient is the client API for CustomerService service.
@@ -254,7 +254,7 @@ func _CustomerService_CreateCustomerClient_Handler(srv interface{}, ctx context.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CustomerService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v14.services.CustomerService",
+	ServiceName: "google.ads.googleads.v15.services.CustomerService",
 	HandlerType: (*CustomerServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -271,5 +271,5 @@ var CustomerService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v14/services/customer_service.proto",
+	Metadata: "google/ads/googleads/v15/services/customer_service.proto",
 }

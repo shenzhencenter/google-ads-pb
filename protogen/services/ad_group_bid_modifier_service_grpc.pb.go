@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.21.1
-// source: google/ads/googleads/v14/services/ad_group_bid_modifier_service.proto
+// source: google/ads/googleads/v15/services/ad_group_bid_modifier_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	AdGroupBidModifierService_MutateAdGroupBidModifiers_FullMethodName = "/google.ads.googleads.v14.services.AdGroupBidModifierService/MutateAdGroupBidModifiers"
+	AdGroupBidModifierService_MutateAdGroupBidModifiers_FullMethodName = "/google.ads.googleads.v15.services.AdGroupBidModifierService/MutateAdGroupBidModifiers"
 )
 
 // AdGroupBidModifierServiceClient is the client API for AdGroupBidModifierService service.
@@ -167,7 +167,7 @@ func _AdGroupBidModifierService_MutateAdGroupBidModifiers_Handler(srv interface{
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AdGroupBidModifierService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v14.services.AdGroupBidModifierService",
+	ServiceName: "google.ads.googleads.v15.services.AdGroupBidModifierService",
 	HandlerType: (*AdGroupBidModifierServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -176,5 +176,5 @@ var AdGroupBidModifierService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v14/services/ad_group_bid_modifier_service.proto",
+	Metadata: "google/ads/googleads/v15/services/ad_group_bid_modifier_service.proto",
 }

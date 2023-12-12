@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.21.1
-// source: google/ads/googleads/v14/services/ad_group_criterion_label_service.proto
+// source: google/ads/googleads/v15/services/ad_group_criterion_label_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	AdGroupCriterionLabelService_MutateAdGroupCriterionLabels_FullMethodName = "/google.ads.googleads.v14.services.AdGroupCriterionLabelService/MutateAdGroupCriterionLabels"
+	AdGroupCriterionLabelService_MutateAdGroupCriterionLabels_FullMethodName = "/google.ads.googleads.v15.services.AdGroupCriterionLabelService/MutateAdGroupCriterionLabels"
 )
 
 // AdGroupCriterionLabelServiceClient is the client API for AdGroupCriterionLabelService service.
@@ -137,7 +137,7 @@ func _AdGroupCriterionLabelService_MutateAdGroupCriterionLabels_Handler(srv inte
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AdGroupCriterionLabelService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v14.services.AdGroupCriterionLabelService",
+	ServiceName: "google.ads.googleads.v15.services.AdGroupCriterionLabelService",
 	HandlerType: (*AdGroupCriterionLabelServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -146,5 +146,5 @@ var AdGroupCriterionLabelService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v14/services/ad_group_criterion_label_service.proto",
+	Metadata: "google/ads/googleads/v15/services/ad_group_criterion_label_service.proto",
 }

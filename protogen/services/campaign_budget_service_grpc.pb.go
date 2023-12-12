@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.21.1
-// source: google/ads/googleads/v14/services/campaign_budget_service.proto
+// source: google/ads/googleads/v15/services/campaign_budget_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	CampaignBudgetService_MutateCampaignBudgets_FullMethodName = "/google.ads.googleads.v14.services.CampaignBudgetService/MutateCampaignBudgets"
+	CampaignBudgetService_MutateCampaignBudgets_FullMethodName = "/google.ads.googleads.v15.services.CampaignBudgetService/MutateCampaignBudgets"
 )
 
 // CampaignBudgetServiceClient is the client API for CampaignBudgetService service.
@@ -154,7 +154,7 @@ func _CampaignBudgetService_MutateCampaignBudgets_Handler(srv interface{}, ctx c
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CampaignBudgetService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v14.services.CampaignBudgetService",
+	ServiceName: "google.ads.googleads.v15.services.CampaignBudgetService",
 	HandlerType: (*CampaignBudgetServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -163,5 +163,5 @@ var CampaignBudgetService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v14/services/campaign_budget_service.proto",
+	Metadata: "google/ads/googleads/v15/services/campaign_budget_service.proto",
 }

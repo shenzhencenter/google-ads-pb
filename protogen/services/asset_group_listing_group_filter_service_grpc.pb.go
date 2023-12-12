@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.21.1
-// source: google/ads/googleads/v14/services/asset_group_listing_group_filter_service.proto
+// source: google/ads/googleads/v15/services/asset_group_listing_group_filter_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	AssetGroupListingGroupFilterService_MutateAssetGroupListingGroupFilters_FullMethodName = "/google.ads.googleads.v14.services.AssetGroupListingGroupFilterService/MutateAssetGroupListingGroupFilters"
+	AssetGroupListingGroupFilterService_MutateAssetGroupListingGroupFilters_FullMethodName = "/google.ads.googleads.v15.services.AssetGroupListingGroupFilterService/MutateAssetGroupListingGroupFilters"
 )
 
 // AssetGroupListingGroupFilterServiceClient is the client API for AssetGroupListingGroupFilterService service.
@@ -115,7 +115,7 @@ func _AssetGroupListingGroupFilterService_MutateAssetGroupListingGroupFilters_Ha
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AssetGroupListingGroupFilterService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v14.services.AssetGroupListingGroupFilterService",
+	ServiceName: "google.ads.googleads.v15.services.AssetGroupListingGroupFilterService",
 	HandlerType: (*AssetGroupListingGroupFilterServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -124,5 +124,5 @@ var AssetGroupListingGroupFilterService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v14/services/asset_group_listing_group_filter_service.proto",
+	Metadata: "google/ads/googleads/v15/services/asset_group_listing_group_filter_service.proto",
 }

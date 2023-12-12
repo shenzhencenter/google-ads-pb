@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.21.1
-// source: google/ads/googleads/v14/services/google_ads_service.proto
+// source: google/ads/googleads/v15/services/google_ads_service.proto
 
 package services
 
@@ -33,9 +33,9 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	GoogleAdsService_Search_FullMethodName       = "/google.ads.googleads.v14.services.GoogleAdsService/Search"
-	GoogleAdsService_SearchStream_FullMethodName = "/google.ads.googleads.v14.services.GoogleAdsService/SearchStream"
-	GoogleAdsService_Mutate_FullMethodName       = "/google.ads.googleads.v14.services.GoogleAdsService/Mutate"
+	GoogleAdsService_Search_FullMethodName       = "/google.ads.googleads.v15.services.GoogleAdsService/Search"
+	GoogleAdsService_SearchStream_FullMethodName = "/google.ads.googleads.v15.services.GoogleAdsService/SearchStream"
+	GoogleAdsService_Mutate_FullMethodName       = "/google.ads.googleads.v15.services.GoogleAdsService/Mutate"
 )
 
 // GoogleAdsServiceClient is the client API for GoogleAdsService service.
@@ -484,7 +484,7 @@ func _GoogleAdsService_Mutate_Handler(srv interface{}, ctx context.Context, dec 
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var GoogleAdsService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v14.services.GoogleAdsService",
+	ServiceName: "google.ads.googleads.v15.services.GoogleAdsService",
 	HandlerType: (*GoogleAdsServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -503,5 +503,5 @@ var GoogleAdsService_ServiceDesc = grpc.ServiceDesc{
 			ServerStreams: true,
 		},
 	},
-	Metadata: "google/ads/googleads/v14/services/google_ads_service.proto",
+	Metadata: "google/ads/googleads/v15/services/google_ads_service.proto",
 }

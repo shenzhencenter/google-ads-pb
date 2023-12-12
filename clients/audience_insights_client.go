@@ -41,6 +41,7 @@ type AudienceInsightsCallOptions struct {
 	ListAudienceInsightsAttributes []gax.CallOption
 	ListInsightsEligibleDates []gax.CallOption
 	GenerateAudienceCompositionInsights []gax.CallOption
+	GenerateSuggestedTargetingInsights []gax.CallOption
 }
 
 func defaultAudienceInsightsGRPCClientOptions() []option.ClientOption {
@@ -109,6 +110,19 @@ func defaultAudienceInsightsCallOptions() *AudienceInsightsCallOptions {
 				})
 			}),
 		},
+		GenerateSuggestedTargetingInsights: []gax.CallOption{
+			gax.WithTimeout(14400000 * time.Millisecond),
+			gax.WithRetry(func() gax.Retryer {
+				return gax.OnCodes([]codes.Code{
+					codes.Unavailable,
+					codes.DeadlineExceeded,
+				}, gax.Backoff{
+					Initial:    5000 * time.Millisecond,
+					Max:        60000 * time.Millisecond,
+					Multiplier: 1.30,
+				})
+			}),
+		},
 	}
 }
 
@@ -121,6 +135,7 @@ type internalAudienceInsightsClient interface {
 	ListAudienceInsightsAttributes(context.Context, *servicespb.ListAudienceInsightsAttributesRequest, ...gax.CallOption) (*servicespb.ListAudienceInsightsAttributesResponse, error)
 	ListInsightsEligibleDates(context.Context, *servicespb.ListInsightsEligibleDatesRequest, ...gax.CallOption) (*servicespb.ListInsightsEligibleDatesResponse, error)
 	GenerateAudienceCompositionInsights(context.Context, *servicespb.GenerateAudienceCompositionInsightsRequest, ...gax.CallOption) (*servicespb.GenerateAudienceCompositionInsightsResponse, error)
+	GenerateSuggestedTargetingInsights(context.Context, *servicespb.GenerateSuggestedTargetingInsightsRequest, ...gax.CallOption) (*servicespb.GenerateSuggestedTargetingInsightsResponse, error)
 }
 
 // AudienceInsightsClient is a client for interacting with Google Ads API.
@@ -222,6 +237,23 @@ func (c *AudienceInsightsClient) ListInsightsEligibleDates(ctx context.Context, 
 // RequestError (at )
 func (c *AudienceInsightsClient) GenerateAudienceCompositionInsights(ctx context.Context, req *servicespb.GenerateAudienceCompositionInsightsRequest, opts ...gax.CallOption) (*servicespb.GenerateAudienceCompositionInsightsResponse, error) {
 	return c.internalClient.GenerateAudienceCompositionInsights(ctx, req, opts...)
+}
+
+// GenerateSuggestedTargetingInsights returns a collection of targeting insights (e.g. targetable audiences) that
+// are relevant to the requested audience.
+//
+// List of thrown errors:
+// AudienceInsightsError (at )
+// AuthenticationError (at )
+// AuthorizationError (at )
+// FieldError (at )
+// HeaderError (at )
+// InternalError (at )
+// QuotaError (at )
+// RangeError (at )
+// RequestError (at )
+func (c *AudienceInsightsClient) GenerateSuggestedTargetingInsights(ctx context.Context, req *servicespb.GenerateSuggestedTargetingInsightsRequest, opts ...gax.CallOption) (*servicespb.GenerateSuggestedTargetingInsightsResponse, error) {
+	return c.internalClient.GenerateSuggestedTargetingInsights(ctx, req, opts...)
 }
 
 // audienceInsightsGRPCClient is a client for interacting with Google Ads API over gRPC transport.
@@ -360,6 +392,24 @@ func (c *audienceInsightsGRPCClient) GenerateAudienceCompositionInsights(ctx con
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
 		resp, err = c.audienceInsightsClient.GenerateAudienceCompositionInsights(ctx, req, settings.GRPC...)
+		return err
+	}, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return resp, nil
+}
+
+func (c *audienceInsightsGRPCClient) GenerateSuggestedTargetingInsights(ctx context.Context, req *servicespb.GenerateSuggestedTargetingInsightsRequest, opts ...gax.CallOption) (*servicespb.GenerateSuggestedTargetingInsightsResponse, error) {
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId()))}
+
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
+	opts = append((*c.CallOptions).GenerateSuggestedTargetingInsights[0:len((*c.CallOptions).GenerateSuggestedTargetingInsights):len((*c.CallOptions).GenerateSuggestedTargetingInsights)], opts...)
+	var resp *servicespb.GenerateSuggestedTargetingInsightsResponse
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		resp, err = c.audienceInsightsClient.GenerateSuggestedTargetingInsights(ctx, req, settings.GRPC...)
 		return err
 	}, opts...)
 	if err != nil {

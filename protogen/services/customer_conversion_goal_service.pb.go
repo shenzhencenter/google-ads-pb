@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.31.0
 // 	protoc        v3.21.1
-// source: google/ads/googleads/v14/services/customer_conversion_goal_service.proto
+// source: google/ads/googleads/v15/services/customer_conversion_goal_service.proto
 
 package services
 
@@ -38,7 +38,7 @@ const (
 )
 
 // Request message for
-// [CustomerConversionGoalService.MutateCustomerConversionGoals][google.ads.googleads.v14.services.CustomerConversionGoalService.MutateCustomerConversionGoals].
+// [CustomerConversionGoalService.MutateCustomerConversionGoals][google.ads.googleads.v15.services.CustomerConversionGoalService.MutateCustomerConversionGoals].
 type MutateCustomerConversionGoalsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -58,7 +58,7 @@ type MutateCustomerConversionGoalsRequest struct {
 func (x *MutateCustomerConversionGoalsRequest) Reset() {
 	*x = MutateCustomerConversionGoalsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_services_customer_conversion_goal_service_proto_msgTypes[0]
+		mi := &file_google_ads_googleads_v15_services_customer_conversion_goal_service_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -71,7 +71,7 @@ func (x *MutateCustomerConversionGoalsRequest) String() string {
 func (*MutateCustomerConversionGoalsRequest) ProtoMessage() {}
 
 func (x *MutateCustomerConversionGoalsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_services_customer_conversion_goal_service_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v15_services_customer_conversion_goal_service_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -84,7 +84,7 @@ func (x *MutateCustomerConversionGoalsRequest) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use MutateCustomerConversionGoalsRequest.ProtoReflect.Descriptor instead.
 func (*MutateCustomerConversionGoalsRequest) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_services_customer_conversion_goal_service_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v15_services_customer_conversion_goal_service_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *MutateCustomerConversionGoalsRequest) GetCustomerId() string {
@@ -127,7 +127,7 @@ type CustomerConversionGoalOperation struct {
 func (x *CustomerConversionGoalOperation) Reset() {
 	*x = CustomerConversionGoalOperation{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_services_customer_conversion_goal_service_proto_msgTypes[1]
+		mi := &file_google_ads_googleads_v15_services_customer_conversion_goal_service_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -140,7 +140,7 @@ func (x *CustomerConversionGoalOperation) String() string {
 func (*CustomerConversionGoalOperation) ProtoMessage() {}
 
 func (x *CustomerConversionGoalOperation) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_services_customer_conversion_goal_service_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v15_services_customer_conversion_goal_service_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -153,7 +153,7 @@ func (x *CustomerConversionGoalOperation) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CustomerConversionGoalOperation.ProtoReflect.Descriptor instead.
 func (*CustomerConversionGoalOperation) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_services_customer_conversion_goal_service_proto_rawDescGZIP(), []int{1}
+	return file_google_ads_googleads_v15_services_customer_conversion_goal_service_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *CustomerConversionGoalOperation) GetUpdateMask() *fieldmaskpb.FieldMask {
@@ -202,7 +202,7 @@ type MutateCustomerConversionGoalsResponse struct {
 func (x *MutateCustomerConversionGoalsResponse) Reset() {
 	*x = MutateCustomerConversionGoalsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_services_customer_conversion_goal_service_proto_msgTypes[2]
+		mi := &file_google_ads_googleads_v15_services_customer_conversion_goal_service_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -215,7 +215,7 @@ func (x *MutateCustomerConversionGoalsResponse) String() string {
 func (*MutateCustomerConversionGoalsResponse) ProtoMessage() {}
 
 func (x *MutateCustomerConversionGoalsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_services_customer_conversion_goal_service_proto_msgTypes[2]
+	mi := &file_google_ads_googleads_v15_services_customer_conversion_goal_service_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -228,7 +228,7 @@ func (x *MutateCustomerConversionGoalsResponse) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use MutateCustomerConversionGoalsResponse.ProtoReflect.Descriptor instead.
 func (*MutateCustomerConversionGoalsResponse) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_services_customer_conversion_goal_service_proto_rawDescGZIP(), []int{2}
+	return file_google_ads_googleads_v15_services_customer_conversion_goal_service_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *MutateCustomerConversionGoalsResponse) GetResults() []*MutateCustomerConversionGoalResult {
@@ -251,7 +251,7 @@ type MutateCustomerConversionGoalResult struct {
 func (x *MutateCustomerConversionGoalResult) Reset() {
 	*x = MutateCustomerConversionGoalResult{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_services_customer_conversion_goal_service_proto_msgTypes[3]
+		mi := &file_google_ads_googleads_v15_services_customer_conversion_goal_service_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -264,7 +264,7 @@ func (x *MutateCustomerConversionGoalResult) String() string {
 func (*MutateCustomerConversionGoalResult) ProtoMessage() {}
 
 func (x *MutateCustomerConversionGoalResult) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_services_customer_conversion_goal_service_proto_msgTypes[3]
+	mi := &file_google_ads_googleads_v15_services_customer_conversion_goal_service_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -277,7 +277,7 @@ func (x *MutateCustomerConversionGoalResult) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use MutateCustomerConversionGoalResult.ProtoReflect.Descriptor instead.
 func (*MutateCustomerConversionGoalResult) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_services_customer_conversion_goal_service_proto_rawDescGZIP(), []int{3}
+	return file_google_ads_googleads_v15_services_customer_conversion_goal_service_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *MutateCustomerConversionGoalResult) GetResourceName() string {
@@ -287,18 +287,18 @@ func (x *MutateCustomerConversionGoalResult) GetResourceName() string {
 	return ""
 }
 
-var File_google_ads_googleads_v14_services_customer_conversion_goal_service_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v15_services_customer_conversion_goal_service_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v14_services_customer_conversion_goal_service_proto_rawDesc = []byte{
+var file_google_ads_googleads_v15_services_customer_conversion_goal_service_proto_rawDesc = []byte{
 	0x0a, 0x48, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69,
 	0x63, 0x65, 0x73, 0x2f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x5f, 0x63, 0x6f, 0x6e,
 	0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x5f, 0x67, 0x6f, 0x61, 0x6c, 0x5f, 0x73, 0x65, 0x72,
 	0x76, 0x69, 0x63, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x21, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
-	0x2e, 0x76, 0x31, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x1a, 0x41, 0x67,
+	0x2e, 0x76, 0x31, 0x35, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x1a, 0x41, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65,
+	0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65,
 	0x73, 0x2f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x5f, 0x63, 0x6f, 0x6e, 0x76, 0x65,
 	0x72, 0x73, 0x69, 0x6f, 0x6e, 0x5f, 0x67, 0x6f, 0x61, 0x6c, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
 	0x1a, 0x1c, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x6e, 0x6e,
@@ -318,7 +318,7 @@ var file_google_ads_googleads_v14_services_customer_conversion_goal_service_prot
 	0x65, 0x72, 0x49, 0x64, 0x12, 0x67, 0x0a, 0x0a, 0x6f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f,
 	0x6e, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x42, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e,
-	0x76, 0x31, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x43, 0x75, 0x73,
+	0x76, 0x31, 0x35, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x43, 0x75, 0x73,
 	0x74, 0x6f, 0x6d, 0x65, 0x72, 0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x47,
 	0x6f, 0x61, 0x6c, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x42, 0x03, 0xe0, 0x41,
 	0x02, 0x52, 0x0a, 0x6f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x12, 0x23, 0x0a,
@@ -332,7 +332,7 @@ var file_google_ads_googleads_v14_services_customer_conversion_goal_service_prot
 	0x65, 0x6c, 0x64, 0x4d, 0x61, 0x73, 0x6b, 0x52, 0x0a, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4d,
 	0x61, 0x73, 0x6b, 0x12, 0x54, 0x0a, 0x06, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x18, 0x01, 0x20,
 	0x01, 0x28, 0x0b, 0x32, 0x3a, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73,
-	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x72,
+	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x72,
 	0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65,
 	0x72, 0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x47, 0x6f, 0x61, 0x6c, 0x48,
 	0x00, 0x52, 0x06, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x42, 0x0b, 0x0a, 0x09, 0x6f, 0x70, 0x65,
@@ -341,7 +341,7 @@ var file_google_ads_googleads_v14_services_customer_conversion_goal_service_prot
 	0x69, 0x6f, 0x6e, 0x47, 0x6f, 0x61, 0x6c, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
 	0x12, 0x5f, 0x0a, 0x07, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28,
 	0x0b, 0x32, 0x45, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x73, 0x65, 0x72,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x73, 0x65, 0x72,
 	0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x4d, 0x75, 0x74, 0x61, 0x74, 0x65, 0x43, 0x75, 0x73, 0x74,
 	0x6f, 0x6d, 0x65, 0x72, 0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x47, 0x6f,
 	0x61, 0x6c, 0x52, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x52, 0x07, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74,
@@ -359,17 +359,17 @@ var file_google_ads_googleads_v14_services_customer_conversion_goal_service_prot
 	0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f,
 	0x6e, 0x47, 0x6f, 0x61, 0x6c, 0x73, 0x12, 0x47, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
 	0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31,
-	0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x4d, 0x75, 0x74, 0x61, 0x74,
+	0x35, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x4d, 0x75, 0x74, 0x61, 0x74,
 	0x65, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73,
 	0x69, 0x6f, 0x6e, 0x47, 0x6f, 0x61, 0x6c, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
 	0x48, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
 	0x63, 0x65, 0x73, 0x2e, 0x4d, 0x75, 0x74, 0x61, 0x74, 0x65, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d,
 	0x65, 0x72, 0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x47, 0x6f, 0x61, 0x6c,
 	0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x61, 0xda, 0x41, 0x16, 0x63, 0x75,
 	0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x2c, 0x6f, 0x70, 0x65, 0x72, 0x61, 0x74,
 	0x69, 0x6f, 0x6e, 0x73, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x42, 0x3a, 0x01, 0x2a, 0x22, 0x3d, 0x2f,
-	0x76, 0x31, 0x34, 0x2f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x73, 0x2f, 0x7b, 0x63,
+	0x76, 0x31, 0x35, 0x2f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x73, 0x2f, 0x7b, 0x63,
 	0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x3d, 0x2a, 0x7d, 0x2f, 0x63, 0x75,
 	0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e,
 	0x47, 0x6f, 0x61, 0x6c, 0x73, 0x3a, 0x6d, 0x75, 0x74, 0x61, 0x74, 0x65, 0x1a, 0x45, 0xca, 0x41,
@@ -379,52 +379,52 @@ var file_google_ads_googleads_v14_services_customer_conversion_goal_service_prot
 	0x69, 0x73, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x61, 0x75, 0x74, 0x68, 0x2f, 0x61, 0x64, 0x77, 0x6f,
 	0x72, 0x64, 0x73, 0x42, 0x8e, 0x02, 0x0a, 0x25, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
-	0x2e, 0x76, 0x31, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x42, 0x22, 0x43,
+	0x2e, 0x76, 0x31, 0x35, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x42, 0x22, 0x43,
 	0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f,
 	0x6e, 0x47, 0x6f, 0x61, 0x6c, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x50, 0x72, 0x6f, 0x74,
 	0x6f, 0x50, 0x01, 0x5a, 0x49, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x67, 0x6f, 0x6c, 0x61,
 	0x6e, 0x67, 0x2e, 0x6f, 0x72, 0x67, 0x2f, 0x67, 0x65, 0x6e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x70, 0x69, 0x73, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x73, 0x65, 0x72,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x73, 0x65, 0x72,
 	0x76, 0x69, 0x63, 0x65, 0x73, 0x3b, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0xa2, 0x02,
 	0x03, 0x47, 0x41, 0x41, 0xaa, 0x02, 0x21, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x41, 0x64,
-	0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e, 0x56, 0x31, 0x34, 0x2e,
+	0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e, 0x56, 0x31, 0x35, 0x2e,
 	0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0xca, 0x02, 0x21, 0x47, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x5c, 0x41, 0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c,
-	0x56, 0x31, 0x34, 0x5c, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0xea, 0x02, 0x25, 0x47,
+	0x56, 0x31, 0x35, 0x5c, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0xea, 0x02, 0x25, 0x47,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x3a, 0x3a, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x47, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x31, 0x34, 0x3a, 0x3a, 0x53, 0x65, 0x72, 0x76,
+	0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x31, 0x35, 0x3a, 0x3a, 0x53, 0x65, 0x72, 0x76,
 	0x69, 0x63, 0x65, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
-	file_google_ads_googleads_v14_services_customer_conversion_goal_service_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v14_services_customer_conversion_goal_service_proto_rawDescData = file_google_ads_googleads_v14_services_customer_conversion_goal_service_proto_rawDesc
+	file_google_ads_googleads_v15_services_customer_conversion_goal_service_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v15_services_customer_conversion_goal_service_proto_rawDescData = file_google_ads_googleads_v15_services_customer_conversion_goal_service_proto_rawDesc
 )
 
-func file_google_ads_googleads_v14_services_customer_conversion_goal_service_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v14_services_customer_conversion_goal_service_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v14_services_customer_conversion_goal_service_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v14_services_customer_conversion_goal_service_proto_rawDescData)
+func file_google_ads_googleads_v15_services_customer_conversion_goal_service_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v15_services_customer_conversion_goal_service_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v15_services_customer_conversion_goal_service_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v15_services_customer_conversion_goal_service_proto_rawDescData)
 	})
-	return file_google_ads_googleads_v14_services_customer_conversion_goal_service_proto_rawDescData
+	return file_google_ads_googleads_v15_services_customer_conversion_goal_service_proto_rawDescData
 }
 
-var file_google_ads_googleads_v14_services_customer_conversion_goal_service_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
-var file_google_ads_googleads_v14_services_customer_conversion_goal_service_proto_goTypes = []interface{}{
-	(*MutateCustomerConversionGoalsRequest)(nil),  // 0: google.ads.googleads.v14.services.MutateCustomerConversionGoalsRequest
-	(*CustomerConversionGoalOperation)(nil),       // 1: google.ads.googleads.v14.services.CustomerConversionGoalOperation
-	(*MutateCustomerConversionGoalsResponse)(nil), // 2: google.ads.googleads.v14.services.MutateCustomerConversionGoalsResponse
-	(*MutateCustomerConversionGoalResult)(nil),    // 3: google.ads.googleads.v14.services.MutateCustomerConversionGoalResult
+var file_google_ads_googleads_v15_services_customer_conversion_goal_service_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_google_ads_googleads_v15_services_customer_conversion_goal_service_proto_goTypes = []interface{}{
+	(*MutateCustomerConversionGoalsRequest)(nil),  // 0: google.ads.googleads.v15.services.MutateCustomerConversionGoalsRequest
+	(*CustomerConversionGoalOperation)(nil),       // 1: google.ads.googleads.v15.services.CustomerConversionGoalOperation
+	(*MutateCustomerConversionGoalsResponse)(nil), // 2: google.ads.googleads.v15.services.MutateCustomerConversionGoalsResponse
+	(*MutateCustomerConversionGoalResult)(nil),    // 3: google.ads.googleads.v15.services.MutateCustomerConversionGoalResult
 	(*fieldmaskpb.FieldMask)(nil),                 // 4: google.protobuf.FieldMask
-	(*resources.CustomerConversionGoal)(nil),      // 5: google.ads.googleads.v14.resources.CustomerConversionGoal
+	(*resources.CustomerConversionGoal)(nil),      // 5: google.ads.googleads.v15.resources.CustomerConversionGoal
 }
-var file_google_ads_googleads_v14_services_customer_conversion_goal_service_proto_depIdxs = []int32{
-	1, // 0: google.ads.googleads.v14.services.MutateCustomerConversionGoalsRequest.operations:type_name -> google.ads.googleads.v14.services.CustomerConversionGoalOperation
-	4, // 1: google.ads.googleads.v14.services.CustomerConversionGoalOperation.update_mask:type_name -> google.protobuf.FieldMask
-	5, // 2: google.ads.googleads.v14.services.CustomerConversionGoalOperation.update:type_name -> google.ads.googleads.v14.resources.CustomerConversionGoal
-	3, // 3: google.ads.googleads.v14.services.MutateCustomerConversionGoalsResponse.results:type_name -> google.ads.googleads.v14.services.MutateCustomerConversionGoalResult
-	0, // 4: google.ads.googleads.v14.services.CustomerConversionGoalService.MutateCustomerConversionGoals:input_type -> google.ads.googleads.v14.services.MutateCustomerConversionGoalsRequest
-	2, // 5: google.ads.googleads.v14.services.CustomerConversionGoalService.MutateCustomerConversionGoals:output_type -> google.ads.googleads.v14.services.MutateCustomerConversionGoalsResponse
+var file_google_ads_googleads_v15_services_customer_conversion_goal_service_proto_depIdxs = []int32{
+	1, // 0: google.ads.googleads.v15.services.MutateCustomerConversionGoalsRequest.operations:type_name -> google.ads.googleads.v15.services.CustomerConversionGoalOperation
+	4, // 1: google.ads.googleads.v15.services.CustomerConversionGoalOperation.update_mask:type_name -> google.protobuf.FieldMask
+	5, // 2: google.ads.googleads.v15.services.CustomerConversionGoalOperation.update:type_name -> google.ads.googleads.v15.resources.CustomerConversionGoal
+	3, // 3: google.ads.googleads.v15.services.MutateCustomerConversionGoalsResponse.results:type_name -> google.ads.googleads.v15.services.MutateCustomerConversionGoalResult
+	0, // 4: google.ads.googleads.v15.services.CustomerConversionGoalService.MutateCustomerConversionGoals:input_type -> google.ads.googleads.v15.services.MutateCustomerConversionGoalsRequest
+	2, // 5: google.ads.googleads.v15.services.CustomerConversionGoalService.MutateCustomerConversionGoals:output_type -> google.ads.googleads.v15.services.MutateCustomerConversionGoalsResponse
 	5, // [5:6] is the sub-list for method output_type
 	4, // [4:5] is the sub-list for method input_type
 	4, // [4:4] is the sub-list for extension type_name
@@ -432,13 +432,13 @@ var file_google_ads_googleads_v14_services_customer_conversion_goal_service_prot
 	0, // [0:4] is the sub-list for field type_name
 }
 
-func init() { file_google_ads_googleads_v14_services_customer_conversion_goal_service_proto_init() }
-func file_google_ads_googleads_v14_services_customer_conversion_goal_service_proto_init() {
-	if File_google_ads_googleads_v14_services_customer_conversion_goal_service_proto != nil {
+func init() { file_google_ads_googleads_v15_services_customer_conversion_goal_service_proto_init() }
+func file_google_ads_googleads_v15_services_customer_conversion_goal_service_proto_init() {
+	if File_google_ads_googleads_v15_services_customer_conversion_goal_service_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_google_ads_googleads_v14_services_customer_conversion_goal_service_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_services_customer_conversion_goal_service_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*MutateCustomerConversionGoalsRequest); i {
 			case 0:
 				return &v.state
@@ -450,7 +450,7 @@ func file_google_ads_googleads_v14_services_customer_conversion_goal_service_pro
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_services_customer_conversion_goal_service_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_services_customer_conversion_goal_service_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CustomerConversionGoalOperation); i {
 			case 0:
 				return &v.state
@@ -462,7 +462,7 @@ func file_google_ads_googleads_v14_services_customer_conversion_goal_service_pro
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_services_customer_conversion_goal_service_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_services_customer_conversion_goal_service_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*MutateCustomerConversionGoalsResponse); i {
 			case 0:
 				return &v.state
@@ -474,7 +474,7 @@ func file_google_ads_googleads_v14_services_customer_conversion_goal_service_pro
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_services_customer_conversion_goal_service_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_services_customer_conversion_goal_service_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*MutateCustomerConversionGoalResult); i {
 			case 0:
 				return &v.state
@@ -487,25 +487,25 @@ func file_google_ads_googleads_v14_services_customer_conversion_goal_service_pro
 			}
 		}
 	}
-	file_google_ads_googleads_v14_services_customer_conversion_goal_service_proto_msgTypes[1].OneofWrappers = []interface{}{
+	file_google_ads_googleads_v15_services_customer_conversion_goal_service_proto_msgTypes[1].OneofWrappers = []interface{}{
 		(*CustomerConversionGoalOperation_Update)(nil),
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_google_ads_googleads_v14_services_customer_conversion_goal_service_proto_rawDesc,
+			RawDescriptor: file_google_ads_googleads_v15_services_customer_conversion_goal_service_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_google_ads_googleads_v14_services_customer_conversion_goal_service_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v14_services_customer_conversion_goal_service_proto_depIdxs,
-		MessageInfos:      file_google_ads_googleads_v14_services_customer_conversion_goal_service_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v15_services_customer_conversion_goal_service_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v15_services_customer_conversion_goal_service_proto_depIdxs,
+		MessageInfos:      file_google_ads_googleads_v15_services_customer_conversion_goal_service_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v14_services_customer_conversion_goal_service_proto = out.File
-	file_google_ads_googleads_v14_services_customer_conversion_goal_service_proto_rawDesc = nil
-	file_google_ads_googleads_v14_services_customer_conversion_goal_service_proto_goTypes = nil
-	file_google_ads_googleads_v14_services_customer_conversion_goal_service_proto_depIdxs = nil
+	File_google_ads_googleads_v15_services_customer_conversion_goal_service_proto = out.File
+	file_google_ads_googleads_v15_services_customer_conversion_goal_service_proto_rawDesc = nil
+	file_google_ads_googleads_v15_services_customer_conversion_goal_service_proto_goTypes = nil
+	file_google_ads_googleads_v15_services_customer_conversion_goal_service_proto_depIdxs = nil
 }

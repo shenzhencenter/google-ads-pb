@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.21.1
-// source: google/ads/googleads/v14/services/feed_service.proto
+// source: google/ads/googleads/v15/services/feed_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	FeedService_MutateFeeds_FullMethodName = "/google.ads.googleads.v14.services.FeedService/MutateFeeds"
+	FeedService_MutateFeeds_FullMethodName = "/google.ads.googleads.v15.services.FeedService/MutateFeeds"
 )
 
 // FeedServiceClient is the client API for FeedService service.
@@ -168,7 +168,7 @@ func _FeedService_MutateFeeds_Handler(srv interface{}, ctx context.Context, dec 
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var FeedService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v14.services.FeedService",
+	ServiceName: "google.ads.googleads.v15.services.FeedService",
 	HandlerType: (*FeedServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -177,5 +177,5 @@ var FeedService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v14/services/feed_service.proto",
+	Metadata: "google/ads/googleads/v15/services/feed_service.proto",
 }

@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.21.1
-// source: google/ads/googleads/v14/services/keyword_plan_campaign_service.proto
+// source: google/ads/googleads/v15/services/keyword_plan_campaign_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	KeywordPlanCampaignService_MutateKeywordPlanCampaigns_FullMethodName = "/google.ads.googleads.v14.services.KeywordPlanCampaignService/MutateKeywordPlanCampaigns"
+	KeywordPlanCampaignService_MutateKeywordPlanCampaigns_FullMethodName = "/google.ads.googleads.v15.services.KeywordPlanCampaignService/MutateKeywordPlanCampaigns"
 )
 
 // KeywordPlanCampaignServiceClient is the client API for KeywordPlanCampaignService service.
@@ -151,7 +151,7 @@ func _KeywordPlanCampaignService_MutateKeywordPlanCampaigns_Handler(srv interfac
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var KeywordPlanCampaignService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v14.services.KeywordPlanCampaignService",
+	ServiceName: "google.ads.googleads.v15.services.KeywordPlanCampaignService",
 	HandlerType: (*KeywordPlanCampaignServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -160,5 +160,5 @@ var KeywordPlanCampaignService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v14/services/keyword_plan_campaign_service.proto",
+	Metadata: "google/ads/googleads/v15/services/keyword_plan_campaign_service.proto",
 }

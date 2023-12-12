@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.21.1
-// source: google/ads/googleads/v14/services/shared_criterion_service.proto
+// source: google/ads/googleads/v15/services/shared_criterion_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	SharedCriterionService_MutateSharedCriteria_FullMethodName = "/google.ads.googleads.v14.services.SharedCriterionService/MutateSharedCriteria"
+	SharedCriterionService_MutateSharedCriteria_FullMethodName = "/google.ads.googleads.v15.services.SharedCriterionService/MutateSharedCriteria"
 )
 
 // SharedCriterionServiceClient is the client API for SharedCriterionService service.
@@ -159,7 +159,7 @@ func _SharedCriterionService_MutateSharedCriteria_Handler(srv interface{}, ctx c
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var SharedCriterionService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v14.services.SharedCriterionService",
+	ServiceName: "google.ads.googleads.v15.services.SharedCriterionService",
 	HandlerType: (*SharedCriterionServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -168,5 +168,5 @@ var SharedCriterionService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v14/services/shared_criterion_service.proto",
+	Metadata: "google/ads/googleads/v15/services/shared_criterion_service.proto",
 }

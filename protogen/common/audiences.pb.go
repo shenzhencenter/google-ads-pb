@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.31.0
 // 	protoc        v3.21.1
-// source: google/ads/googleads/v14/common/audiences.proto
+// source: google/ads/googleads/v15/common/audiences.proto
 
 package common
 
@@ -56,7 +56,7 @@ type AudienceDimension struct {
 func (x *AudienceDimension) Reset() {
 	*x = AudienceDimension{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_audiences_proto_msgTypes[0]
+		mi := &file_google_ads_googleads_v15_common_audiences_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -69,7 +69,7 @@ func (x *AudienceDimension) String() string {
 func (*AudienceDimension) ProtoMessage() {}
 
 func (x *AudienceDimension) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_audiences_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v15_common_audiences_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -82,7 +82,7 @@ func (x *AudienceDimension) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AudienceDimension.ProtoReflect.Descriptor instead.
 func (*AudienceDimension) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_audiences_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v15_common_audiences_proto_rawDescGZIP(), []int{0}
 }
 
 func (m *AudienceDimension) GetDimension() isAudienceDimension_Dimension {
@@ -180,7 +180,7 @@ type AudienceExclusionDimension struct {
 func (x *AudienceExclusionDimension) Reset() {
 	*x = AudienceExclusionDimension{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_audiences_proto_msgTypes[1]
+		mi := &file_google_ads_googleads_v15_common_audiences_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -193,7 +193,7 @@ func (x *AudienceExclusionDimension) String() string {
 func (*AudienceExclusionDimension) ProtoMessage() {}
 
 func (x *AudienceExclusionDimension) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_audiences_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v15_common_audiences_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -206,7 +206,7 @@ func (x *AudienceExclusionDimension) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AudienceExclusionDimension.ProtoReflect.Descriptor instead.
 func (*AudienceExclusionDimension) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_audiences_proto_rawDescGZIP(), []int{1}
+	return file_google_ads_googleads_v15_common_audiences_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *AudienceExclusionDimension) GetExclusions() []*ExclusionSegment {
@@ -233,7 +233,7 @@ type ExclusionSegment struct {
 func (x *ExclusionSegment) Reset() {
 	*x = ExclusionSegment{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_audiences_proto_msgTypes[2]
+		mi := &file_google_ads_googleads_v15_common_audiences_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -246,7 +246,7 @@ func (x *ExclusionSegment) String() string {
 func (*ExclusionSegment) ProtoMessage() {}
 
 func (x *ExclusionSegment) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_audiences_proto_msgTypes[2]
+	mi := &file_google_ads_googleads_v15_common_audiences_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -259,7 +259,7 @@ func (x *ExclusionSegment) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExclusionSegment.ProtoReflect.Descriptor instead.
 func (*ExclusionSegment) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_audiences_proto_rawDescGZIP(), []int{2}
+	return file_google_ads_googleads_v15_common_audiences_proto_rawDescGZIP(), []int{2}
 }
 
 func (m *ExclusionSegment) GetSegment() isExclusionSegment_Segment {
@@ -302,7 +302,7 @@ type AgeDimension struct {
 func (x *AgeDimension) Reset() {
 	*x = AgeDimension{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_audiences_proto_msgTypes[3]
+		mi := &file_google_ads_googleads_v15_common_audiences_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -315,7 +315,7 @@ func (x *AgeDimension) String() string {
 func (*AgeDimension) ProtoMessage() {}
 
 func (x *AgeDimension) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_audiences_proto_msgTypes[3]
+	mi := &file_google_ads_googleads_v15_common_audiences_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -328,7 +328,7 @@ func (x *AgeDimension) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AgeDimension.ProtoReflect.Descriptor instead.
 func (*AgeDimension) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_audiences_proto_rawDescGZIP(), []int{3}
+	return file_google_ads_googleads_v15_common_audiences_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *AgeDimension) GetAgeRanges() []*AgeSegment {
@@ -363,7 +363,7 @@ type AgeSegment struct {
 func (x *AgeSegment) Reset() {
 	*x = AgeSegment{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_audiences_proto_msgTypes[4]
+		mi := &file_google_ads_googleads_v15_common_audiences_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -376,7 +376,7 @@ func (x *AgeSegment) String() string {
 func (*AgeSegment) ProtoMessage() {}
 
 func (x *AgeSegment) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_audiences_proto_msgTypes[4]
+	mi := &file_google_ads_googleads_v15_common_audiences_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -389,7 +389,7 @@ func (x *AgeSegment) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AgeSegment.ProtoReflect.Descriptor instead.
 func (*AgeSegment) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_audiences_proto_rawDescGZIP(), []int{4}
+	return file_google_ads_googleads_v15_common_audiences_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *AgeSegment) GetMinAge() int32 {
@@ -413,7 +413,7 @@ type GenderDimension struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Included gender demographic segments.
-	Genders []enums.GenderTypeEnum_GenderType `protobuf:"varint,1,rep,packed,name=genders,proto3,enum=google.ads.googleads.v14.enums.GenderTypeEnum_GenderType" json:"genders,omitempty"`
+	Genders []enums.GenderTypeEnum_GenderType `protobuf:"varint,1,rep,packed,name=genders,proto3,enum=google.ads.googleads.v15.enums.GenderTypeEnum_GenderType" json:"genders,omitempty"`
 	// Include users whose gender is not determined.
 	IncludeUndetermined *bool `protobuf:"varint,2,opt,name=include_undetermined,json=includeUndetermined,proto3,oneof" json:"include_undetermined,omitempty"`
 }
@@ -421,7 +421,7 @@ type GenderDimension struct {
 func (x *GenderDimension) Reset() {
 	*x = GenderDimension{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_audiences_proto_msgTypes[5]
+		mi := &file_google_ads_googleads_v15_common_audiences_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -434,7 +434,7 @@ func (x *GenderDimension) String() string {
 func (*GenderDimension) ProtoMessage() {}
 
 func (x *GenderDimension) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_audiences_proto_msgTypes[5]
+	mi := &file_google_ads_googleads_v15_common_audiences_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -447,7 +447,7 @@ func (x *GenderDimension) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GenderDimension.ProtoReflect.Descriptor instead.
 func (*GenderDimension) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_audiences_proto_rawDescGZIP(), []int{5}
+	return file_google_ads_googleads_v15_common_audiences_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *GenderDimension) GetGenders() []enums.GenderTypeEnum_GenderType {
@@ -471,7 +471,7 @@ type HouseholdIncomeDimension struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Included household income demographic segments.
-	IncomeRanges []enums.IncomeRangeTypeEnum_IncomeRangeType `protobuf:"varint,1,rep,packed,name=income_ranges,json=incomeRanges,proto3,enum=google.ads.googleads.v14.enums.IncomeRangeTypeEnum_IncomeRangeType" json:"income_ranges,omitempty"`
+	IncomeRanges []enums.IncomeRangeTypeEnum_IncomeRangeType `protobuf:"varint,1,rep,packed,name=income_ranges,json=incomeRanges,proto3,enum=google.ads.googleads.v15.enums.IncomeRangeTypeEnum_IncomeRangeType" json:"income_ranges,omitempty"`
 	// Include users whose household income is not determined.
 	IncludeUndetermined *bool `protobuf:"varint,2,opt,name=include_undetermined,json=includeUndetermined,proto3,oneof" json:"include_undetermined,omitempty"`
 }
@@ -479,7 +479,7 @@ type HouseholdIncomeDimension struct {
 func (x *HouseholdIncomeDimension) Reset() {
 	*x = HouseholdIncomeDimension{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_audiences_proto_msgTypes[6]
+		mi := &file_google_ads_googleads_v15_common_audiences_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -492,7 +492,7 @@ func (x *HouseholdIncomeDimension) String() string {
 func (*HouseholdIncomeDimension) ProtoMessage() {}
 
 func (x *HouseholdIncomeDimension) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_audiences_proto_msgTypes[6]
+	mi := &file_google_ads_googleads_v15_common_audiences_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -505,7 +505,7 @@ func (x *HouseholdIncomeDimension) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HouseholdIncomeDimension.ProtoReflect.Descriptor instead.
 func (*HouseholdIncomeDimension) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_audiences_proto_rawDescGZIP(), []int{6}
+	return file_google_ads_googleads_v15_common_audiences_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *HouseholdIncomeDimension) GetIncomeRanges() []enums.IncomeRangeTypeEnum_IncomeRangeType {
@@ -529,7 +529,7 @@ type ParentalStatusDimension struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Included parental status demographic segments.
-	ParentalStatuses []enums.ParentalStatusTypeEnum_ParentalStatusType `protobuf:"varint,1,rep,packed,name=parental_statuses,json=parentalStatuses,proto3,enum=google.ads.googleads.v14.enums.ParentalStatusTypeEnum_ParentalStatusType" json:"parental_statuses,omitempty"`
+	ParentalStatuses []enums.ParentalStatusTypeEnum_ParentalStatusType `protobuf:"varint,1,rep,packed,name=parental_statuses,json=parentalStatuses,proto3,enum=google.ads.googleads.v15.enums.ParentalStatusTypeEnum_ParentalStatusType" json:"parental_statuses,omitempty"`
 	// Include users whose parental status is undetermined.
 	IncludeUndetermined *bool `protobuf:"varint,2,opt,name=include_undetermined,json=includeUndetermined,proto3,oneof" json:"include_undetermined,omitempty"`
 }
@@ -537,7 +537,7 @@ type ParentalStatusDimension struct {
 func (x *ParentalStatusDimension) Reset() {
 	*x = ParentalStatusDimension{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_audiences_proto_msgTypes[7]
+		mi := &file_google_ads_googleads_v15_common_audiences_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -550,7 +550,7 @@ func (x *ParentalStatusDimension) String() string {
 func (*ParentalStatusDimension) ProtoMessage() {}
 
 func (x *ParentalStatusDimension) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_audiences_proto_msgTypes[7]
+	mi := &file_google_ads_googleads_v15_common_audiences_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -563,7 +563,7 @@ func (x *ParentalStatusDimension) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ParentalStatusDimension.ProtoReflect.Descriptor instead.
 func (*ParentalStatusDimension) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_audiences_proto_rawDescGZIP(), []int{7}
+	return file_google_ads_googleads_v15_common_audiences_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *ParentalStatusDimension) GetParentalStatuses() []enums.ParentalStatusTypeEnum_ParentalStatusType {
@@ -594,7 +594,7 @@ type AudienceSegmentDimension struct {
 func (x *AudienceSegmentDimension) Reset() {
 	*x = AudienceSegmentDimension{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_audiences_proto_msgTypes[8]
+		mi := &file_google_ads_googleads_v15_common_audiences_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -607,7 +607,7 @@ func (x *AudienceSegmentDimension) String() string {
 func (*AudienceSegmentDimension) ProtoMessage() {}
 
 func (x *AudienceSegmentDimension) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_audiences_proto_msgTypes[8]
+	mi := &file_google_ads_googleads_v15_common_audiences_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -620,7 +620,7 @@ func (x *AudienceSegmentDimension) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AudienceSegmentDimension.ProtoReflect.Descriptor instead.
 func (*AudienceSegmentDimension) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_audiences_proto_rawDescGZIP(), []int{8}
+	return file_google_ads_googleads_v15_common_audiences_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *AudienceSegmentDimension) GetSegments() []*AudienceSegment {
@@ -651,7 +651,7 @@ type AudienceSegment struct {
 func (x *AudienceSegment) Reset() {
 	*x = AudienceSegment{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_audiences_proto_msgTypes[9]
+		mi := &file_google_ads_googleads_v15_common_audiences_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -664,7 +664,7 @@ func (x *AudienceSegment) String() string {
 func (*AudienceSegment) ProtoMessage() {}
 
 func (x *AudienceSegment) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_audiences_proto_msgTypes[9]
+	mi := &file_google_ads_googleads_v15_common_audiences_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -677,7 +677,7 @@ func (x *AudienceSegment) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AudienceSegment.ProtoReflect.Descriptor instead.
 func (*AudienceSegment) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_audiences_proto_rawDescGZIP(), []int{9}
+	return file_google_ads_googleads_v15_common_audiences_proto_rawDescGZIP(), []int{9}
 }
 
 func (m *AudienceSegment) GetSegment() isAudienceSegment_Segment {
@@ -777,7 +777,7 @@ type UserListSegment struct {
 func (x *UserListSegment) Reset() {
 	*x = UserListSegment{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_audiences_proto_msgTypes[10]
+		mi := &file_google_ads_googleads_v15_common_audiences_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -790,7 +790,7 @@ func (x *UserListSegment) String() string {
 func (*UserListSegment) ProtoMessage() {}
 
 func (x *UserListSegment) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_audiences_proto_msgTypes[10]
+	mi := &file_google_ads_googleads_v15_common_audiences_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -803,7 +803,7 @@ func (x *UserListSegment) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UserListSegment.ProtoReflect.Descriptor instead.
 func (*UserListSegment) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_audiences_proto_rawDescGZIP(), []int{10}
+	return file_google_ads_googleads_v15_common_audiences_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *UserListSegment) GetUserList() string {
@@ -826,7 +826,7 @@ type UserInterestSegment struct {
 func (x *UserInterestSegment) Reset() {
 	*x = UserInterestSegment{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_audiences_proto_msgTypes[11]
+		mi := &file_google_ads_googleads_v15_common_audiences_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -839,7 +839,7 @@ func (x *UserInterestSegment) String() string {
 func (*UserInterestSegment) ProtoMessage() {}
 
 func (x *UserInterestSegment) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_audiences_proto_msgTypes[11]
+	mi := &file_google_ads_googleads_v15_common_audiences_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -852,7 +852,7 @@ func (x *UserInterestSegment) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UserInterestSegment.ProtoReflect.Descriptor instead.
 func (*UserInterestSegment) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_audiences_proto_rawDescGZIP(), []int{11}
+	return file_google_ads_googleads_v15_common_audiences_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *UserInterestSegment) GetUserInterestCategory() string {
@@ -875,7 +875,7 @@ type LifeEventSegment struct {
 func (x *LifeEventSegment) Reset() {
 	*x = LifeEventSegment{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_audiences_proto_msgTypes[12]
+		mi := &file_google_ads_googleads_v15_common_audiences_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -888,7 +888,7 @@ func (x *LifeEventSegment) String() string {
 func (*LifeEventSegment) ProtoMessage() {}
 
 func (x *LifeEventSegment) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_audiences_proto_msgTypes[12]
+	mi := &file_google_ads_googleads_v15_common_audiences_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -901,7 +901,7 @@ func (x *LifeEventSegment) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LifeEventSegment.ProtoReflect.Descriptor instead.
 func (*LifeEventSegment) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_audiences_proto_rawDescGZIP(), []int{12}
+	return file_google_ads_googleads_v15_common_audiences_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *LifeEventSegment) GetLifeEvent() string {
@@ -924,7 +924,7 @@ type DetailedDemographicSegment struct {
 func (x *DetailedDemographicSegment) Reset() {
 	*x = DetailedDemographicSegment{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_audiences_proto_msgTypes[13]
+		mi := &file_google_ads_googleads_v15_common_audiences_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -937,7 +937,7 @@ func (x *DetailedDemographicSegment) String() string {
 func (*DetailedDemographicSegment) ProtoMessage() {}
 
 func (x *DetailedDemographicSegment) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_audiences_proto_msgTypes[13]
+	mi := &file_google_ads_googleads_v15_common_audiences_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -950,7 +950,7 @@ func (x *DetailedDemographicSegment) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DetailedDemographicSegment.ProtoReflect.Descriptor instead.
 func (*DetailedDemographicSegment) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_audiences_proto_rawDescGZIP(), []int{13}
+	return file_google_ads_googleads_v15_common_audiences_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *DetailedDemographicSegment) GetDetailedDemographic() string {
@@ -973,7 +973,7 @@ type CustomAudienceSegment struct {
 func (x *CustomAudienceSegment) Reset() {
 	*x = CustomAudienceSegment{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_audiences_proto_msgTypes[14]
+		mi := &file_google_ads_googleads_v15_common_audiences_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -986,7 +986,7 @@ func (x *CustomAudienceSegment) String() string {
 func (*CustomAudienceSegment) ProtoMessage() {}
 
 func (x *CustomAudienceSegment) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_audiences_proto_msgTypes[14]
+	mi := &file_google_ads_googleads_v15_common_audiences_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -999,7 +999,7 @@ func (x *CustomAudienceSegment) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CustomAudienceSegment.ProtoReflect.Descriptor instead.
 func (*CustomAudienceSegment) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_audiences_proto_rawDescGZIP(), []int{14}
+	return file_google_ads_googleads_v15_common_audiences_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *CustomAudienceSegment) GetCustomAudience() string {
@@ -1009,51 +1009,51 @@ func (x *CustomAudienceSegment) GetCustomAudience() string {
 	return ""
 }
 
-var File_google_ads_googleads_v14_common_audiences_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v15_common_audiences_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v14_common_audiences_proto_rawDesc = []byte{
+var file_google_ads_googleads_v15_common_audiences_proto_rawDesc = []byte{
 	0x0a, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
 	0x6e, 0x2f, 0x61, 0x75, 0x64, 0x69, 0x65, 0x6e, 0x63, 0x65, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74,
 	0x6f, 0x12, 0x1f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d,
+	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x63, 0x6f, 0x6d, 0x6d,
 	0x6f, 0x6e, 0x1a, 0x30, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x65, 0x6e, 0x75,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x65, 0x6e, 0x75,
 	0x6d, 0x73, 0x2f, 0x67, 0x65, 0x6e, 0x64, 0x65, 0x72, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x2e, 0x70,
 	0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x36, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73,
-	0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x65,
+	0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x65,
 	0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x69, 0x6e, 0x63, 0x6f, 0x6d, 0x65, 0x5f, 0x72, 0x61, 0x6e, 0x67,
 	0x65, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x39, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x70, 0x61, 0x72,
+	0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x70, 0x61, 0x72,
 	0x65, 0x6e, 0x74, 0x61, 0x6c, 0x5f, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x5f, 0x74, 0x79, 0x70,
 	0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0xe6, 0x03, 0x0a, 0x11, 0x41, 0x75, 0x64, 0x69,
 	0x65, 0x6e, 0x63, 0x65, 0x44, 0x69, 0x6d, 0x65, 0x6e, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x41, 0x0a,
 	0x03, 0x61, 0x67, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2d, 0x2e, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64,
-	0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x41, 0x67, 0x65,
+	0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x41, 0x67, 0x65,
 	0x44, 0x69, 0x6d, 0x65, 0x6e, 0x73, 0x69, 0x6f, 0x6e, 0x48, 0x00, 0x52, 0x03, 0x61, 0x67, 0x65,
 	0x12, 0x4a, 0x0a, 0x06, 0x67, 0x65, 0x6e, 0x64, 0x65, 0x72, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b,
 	0x32, 0x30, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d,
+	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x63, 0x6f, 0x6d, 0x6d,
 	0x6f, 0x6e, 0x2e, 0x47, 0x65, 0x6e, 0x64, 0x65, 0x72, 0x44, 0x69, 0x6d, 0x65, 0x6e, 0x73, 0x69,
 	0x6f, 0x6e, 0x48, 0x00, 0x52, 0x06, 0x67, 0x65, 0x6e, 0x64, 0x65, 0x72, 0x12, 0x66, 0x0a, 0x10,
 	0x68, 0x6f, 0x75, 0x73, 0x65, 0x68, 0x6f, 0x6c, 0x64, 0x5f, 0x69, 0x6e, 0x63, 0x6f, 0x6d, 0x65,
 	0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x39, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
 	0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31,
-	0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x48, 0x6f, 0x75, 0x73, 0x65, 0x68, 0x6f,
+	0x35, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x48, 0x6f, 0x75, 0x73, 0x65, 0x68, 0x6f,
 	0x6c, 0x64, 0x49, 0x6e, 0x63, 0x6f, 0x6d, 0x65, 0x44, 0x69, 0x6d, 0x65, 0x6e, 0x73, 0x69, 0x6f,
 	0x6e, 0x48, 0x00, 0x52, 0x0f, 0x68, 0x6f, 0x75, 0x73, 0x65, 0x68, 0x6f, 0x6c, 0x64, 0x49, 0x6e,
 	0x63, 0x6f, 0x6d, 0x65, 0x12, 0x63, 0x0a, 0x0f, 0x70, 0x61, 0x72, 0x65, 0x6e, 0x74, 0x61, 0x6c,
 	0x5f, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x38, 0x2e,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e,
+	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e,
 	0x50, 0x61, 0x72, 0x65, 0x6e, 0x74, 0x61, 0x6c, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x44, 0x69,
 	0x6d, 0x65, 0x6e, 0x73, 0x69, 0x6f, 0x6e, 0x48, 0x00, 0x52, 0x0e, 0x70, 0x61, 0x72, 0x65, 0x6e,
 	0x74, 0x61, 0x6c, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x12, 0x68, 0x0a, 0x11, 0x61, 0x75, 0x64,
 	0x69, 0x65, 0x6e, 0x63, 0x65, 0x5f, 0x73, 0x65, 0x67, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x18, 0x05,
 	0x20, 0x01, 0x28, 0x0b, 0x32, 0x39, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64,
-	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e,
+	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e,
 	0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x41, 0x75, 0x64, 0x69, 0x65, 0x6e, 0x63, 0x65, 0x53,
 	0x65, 0x67, 0x6d, 0x65, 0x6e, 0x74, 0x44, 0x69, 0x6d, 0x65, 0x6e, 0x73, 0x69, 0x6f, 0x6e, 0x48,
 	0x00, 0x52, 0x10, 0x61, 0x75, 0x64, 0x69, 0x65, 0x6e, 0x63, 0x65, 0x53, 0x65, 0x67, 0x6d, 0x65,
@@ -1062,21 +1062,21 @@ var file_google_ads_googleads_v14_common_audiences_proto_rawDesc = []byte{
 	0x75, 0x73, 0x69, 0x6f, 0x6e, 0x44, 0x69, 0x6d, 0x65, 0x6e, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x51,
 	0x0a, 0x0a, 0x65, 0x78, 0x63, 0x6c, 0x75, 0x73, 0x69, 0x6f, 0x6e, 0x73, 0x18, 0x01, 0x20, 0x03,
 	0x28, 0x0b, 0x32, 0x31, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x63, 0x6f,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x63, 0x6f,
 	0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x45, 0x78, 0x63, 0x6c, 0x75, 0x73, 0x69, 0x6f, 0x6e, 0x53, 0x65,
 	0x67, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x0a, 0x65, 0x78, 0x63, 0x6c, 0x75, 0x73, 0x69, 0x6f, 0x6e,
 	0x73, 0x22, 0x6e, 0x0a, 0x10, 0x45, 0x78, 0x63, 0x6c, 0x75, 0x73, 0x69, 0x6f, 0x6e, 0x53, 0x65,
 	0x67, 0x6d, 0x65, 0x6e, 0x74, 0x12, 0x4f, 0x0a, 0x09, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x6c, 0x69,
 	0x73, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x30, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e,
-	0x76, 0x31, 0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x4c,
+	0x76, 0x31, 0x35, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x4c,
 	0x69, 0x73, 0x74, 0x53, 0x65, 0x67, 0x6d, 0x65, 0x6e, 0x74, 0x48, 0x00, 0x52, 0x08, 0x75, 0x73,
 	0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x42, 0x09, 0x0a, 0x07, 0x73, 0x65, 0x67, 0x6d, 0x65, 0x6e,
 	0x74, 0x22, 0xab, 0x01, 0x0a, 0x0c, 0x41, 0x67, 0x65, 0x44, 0x69, 0x6d, 0x65, 0x6e, 0x73, 0x69,
 	0x6f, 0x6e, 0x12, 0x4a, 0x0a, 0x0a, 0x61, 0x67, 0x65, 0x5f, 0x72, 0x61, 0x6e, 0x67, 0x65, 0x73,
 	0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x2b, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
 	0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31,
-	0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x41, 0x67, 0x65, 0x53, 0x65, 0x67, 0x6d,
+	0x35, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x41, 0x67, 0x65, 0x53, 0x65, 0x67, 0x6d,
 	0x65, 0x6e, 0x74, 0x52, 0x09, 0x61, 0x67, 0x65, 0x52, 0x61, 0x6e, 0x67, 0x65, 0x73, 0x12, 0x36,
 	0x0a, 0x14, 0x69, 0x6e, 0x63, 0x6c, 0x75, 0x64, 0x65, 0x5f, 0x75, 0x6e, 0x64, 0x65, 0x74, 0x65,
 	0x72, 0x6d, 0x69, 0x6e, 0x65, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x08, 0x48, 0x00, 0x52, 0x13,
@@ -1093,7 +1093,7 @@ var file_google_ads_googleads_v14_common_audiences_proto_rawDesc = []byte{
 	0x6e, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x53, 0x0a, 0x07, 0x67, 0x65, 0x6e, 0x64, 0x65, 0x72, 0x73,
 	0x18, 0x01, 0x20, 0x03, 0x28, 0x0e, 0x32, 0x39, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
 	0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31,
-	0x34, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x47, 0x65, 0x6e, 0x64, 0x65, 0x72, 0x54, 0x79,
+	0x35, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x47, 0x65, 0x6e, 0x64, 0x65, 0x72, 0x54, 0x79,
 	0x70, 0x65, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x47, 0x65, 0x6e, 0x64, 0x65, 0x72, 0x54, 0x79, 0x70,
 	0x65, 0x52, 0x07, 0x67, 0x65, 0x6e, 0x64, 0x65, 0x72, 0x73, 0x12, 0x36, 0x0a, 0x14, 0x69, 0x6e,
 	0x63, 0x6c, 0x75, 0x64, 0x65, 0x5f, 0x75, 0x6e, 0x64, 0x65, 0x74, 0x65, 0x72, 0x6d, 0x69, 0x6e,
@@ -1105,7 +1105,7 @@ var file_google_ads_googleads_v14_common_audiences_proto_rawDesc = []byte{
 	0x69, 0x6d, 0x65, 0x6e, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x68, 0x0a, 0x0d, 0x69, 0x6e, 0x63, 0x6f,
 	0x6d, 0x65, 0x5f, 0x72, 0x61, 0x6e, 0x67, 0x65, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0e, 0x32,
 	0x43, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73,
 	0x2e, 0x49, 0x6e, 0x63, 0x6f, 0x6d, 0x65, 0x52, 0x61, 0x6e, 0x67, 0x65, 0x54, 0x79, 0x70, 0x65,
 	0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x49, 0x6e, 0x63, 0x6f, 0x6d, 0x65, 0x52, 0x61, 0x6e, 0x67, 0x65,
 	0x54, 0x79, 0x70, 0x65, 0x52, 0x0c, 0x69, 0x6e, 0x63, 0x6f, 0x6d, 0x65, 0x52, 0x61, 0x6e, 0x67,
@@ -1119,7 +1119,7 @@ var file_google_ads_googleads_v14_common_audiences_proto_rawDesc = []byte{
 	0x76, 0x0a, 0x11, 0x70, 0x61, 0x72, 0x65, 0x6e, 0x74, 0x61, 0x6c, 0x5f, 0x73, 0x74, 0x61, 0x74,
 	0x75, 0x73, 0x65, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0e, 0x32, 0x49, 0x2e, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64,
-	0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x50, 0x61, 0x72, 0x65,
+	0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x50, 0x61, 0x72, 0x65,
 	0x6e, 0x74, 0x61, 0x6c, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x54, 0x79, 0x70, 0x65, 0x45, 0x6e,
 	0x75, 0x6d, 0x2e, 0x50, 0x61, 0x72, 0x65, 0x6e, 0x74, 0x61, 0x6c, 0x53, 0x74, 0x61, 0x74, 0x75,
 	0x73, 0x54, 0x79, 0x70, 0x65, 0x52, 0x10, 0x70, 0x61, 0x72, 0x65, 0x6e, 0x74, 0x61, 0x6c, 0x53,
@@ -1133,36 +1133,36 @@ var file_google_ads_googleads_v14_common_audiences_proto_rawDesc = []byte{
 	0x73, 0x69, 0x6f, 0x6e, 0x12, 0x4c, 0x0a, 0x08, 0x73, 0x65, 0x67, 0x6d, 0x65, 0x6e, 0x74, 0x73,
 	0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x30, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
 	0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31,
-	0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x41, 0x75, 0x64, 0x69, 0x65, 0x6e, 0x63,
+	0x35, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x41, 0x75, 0x64, 0x69, 0x65, 0x6e, 0x63,
 	0x65, 0x53, 0x65, 0x67, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x08, 0x73, 0x65, 0x67, 0x6d, 0x65, 0x6e,
 	0x74, 0x73, 0x22, 0xf3, 0x03, 0x0a, 0x0f, 0x41, 0x75, 0x64, 0x69, 0x65, 0x6e, 0x63, 0x65, 0x53,
 	0x65, 0x67, 0x6d, 0x65, 0x6e, 0x74, 0x12, 0x4f, 0x0a, 0x09, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x6c,
 	0x69, 0x73, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x30, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
-	0x2e, 0x76, 0x31, 0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x55, 0x73, 0x65, 0x72,
+	0x2e, 0x76, 0x31, 0x35, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x55, 0x73, 0x65, 0x72,
 	0x4c, 0x69, 0x73, 0x74, 0x53, 0x65, 0x67, 0x6d, 0x65, 0x6e, 0x74, 0x48, 0x00, 0x52, 0x08, 0x75,
 	0x73, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x5b, 0x0a, 0x0d, 0x75, 0x73, 0x65, 0x72, 0x5f,
 	0x69, 0x6e, 0x74, 0x65, 0x72, 0x65, 0x73, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x34,
 	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e,
+	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e,
 	0x2e, 0x55, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x65, 0x73, 0x74, 0x53, 0x65, 0x67,
 	0x6d, 0x65, 0x6e, 0x74, 0x48, 0x00, 0x52, 0x0c, 0x75, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x74, 0x65,
 	0x72, 0x65, 0x73, 0x74, 0x12, 0x52, 0x0a, 0x0a, 0x6c, 0x69, 0x66, 0x65, 0x5f, 0x65, 0x76, 0x65,
 	0x6e, 0x74, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x31, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e,
-	0x76, 0x31, 0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x4c, 0x69, 0x66, 0x65, 0x45,
+	0x76, 0x31, 0x35, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x4c, 0x69, 0x66, 0x65, 0x45,
 	0x76, 0x65, 0x6e, 0x74, 0x53, 0x65, 0x67, 0x6d, 0x65, 0x6e, 0x74, 0x48, 0x00, 0x52, 0x09, 0x6c,
 	0x69, 0x66, 0x65, 0x45, 0x76, 0x65, 0x6e, 0x74, 0x12, 0x70, 0x0a, 0x14, 0x64, 0x65, 0x74, 0x61,
 	0x69, 0x6c, 0x65, 0x64, 0x5f, 0x64, 0x65, 0x6d, 0x6f, 0x67, 0x72, 0x61, 0x70, 0x68, 0x69, 0x63,
 	0x18, 0x04, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x3b, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
 	0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31,
-	0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x65,
+	0x35, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x65,
 	0x64, 0x44, 0x65, 0x6d, 0x6f, 0x67, 0x72, 0x61, 0x70, 0x68, 0x69, 0x63, 0x53, 0x65, 0x67, 0x6d,
 	0x65, 0x6e, 0x74, 0x48, 0x00, 0x52, 0x13, 0x64, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x65, 0x64, 0x44,
 	0x65, 0x6d, 0x6f, 0x67, 0x72, 0x61, 0x70, 0x68, 0x69, 0x63, 0x12, 0x61, 0x0a, 0x0f, 0x63, 0x75,
 	0x73, 0x74, 0x6f, 0x6d, 0x5f, 0x61, 0x75, 0x64, 0x69, 0x65, 0x6e, 0x63, 0x65, 0x18, 0x05, 0x20,
 	0x01, 0x28, 0x0b, 0x32, 0x36, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73,
-	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x63,
+	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x63,
 	0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x41, 0x75, 0x64, 0x69,
 	0x65, 0x6e, 0x63, 0x65, 0x53, 0x65, 0x67, 0x6d, 0x65, 0x6e, 0x74, 0x48, 0x00, 0x52, 0x0e, 0x63,
 	0x75, 0x73, 0x74, 0x6f, 0x6d, 0x41, 0x75, 0x64, 0x69, 0x65, 0x6e, 0x63, 0x65, 0x42, 0x09, 0x0a,
@@ -1196,74 +1196,74 @@ var file_google_ads_googleads_v14_common_audiences_proto_rawDesc = []byte{
 	0x63, 0x65, 0x88, 0x01, 0x01, 0x42, 0x12, 0x0a, 0x10, 0x5f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d,
 	0x5f, 0x61, 0x75, 0x64, 0x69, 0x65, 0x6e, 0x63, 0x65, 0x42, 0xee, 0x01, 0x0a, 0x23, 0x63, 0x6f,
 	0x6d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
 	0x6e, 0x42, 0x0e, 0x41, 0x75, 0x64, 0x69, 0x65, 0x6e, 0x63, 0x65, 0x73, 0x50, 0x72, 0x6f, 0x74,
 	0x6f, 0x50, 0x01, 0x5a, 0x45, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x67, 0x6f, 0x6c, 0x61,
 	0x6e, 0x67, 0x2e, 0x6f, 0x72, 0x67, 0x2f, 0x67, 0x65, 0x6e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x70, 0x69, 0x73, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x63, 0x6f, 0x6d,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x63, 0x6f, 0x6d,
 	0x6d, 0x6f, 0x6e, 0x3b, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xa2, 0x02, 0x03, 0x47, 0x41, 0x41,
 	0xaa, 0x02, 0x1f, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x41, 0x64, 0x73, 0x2e, 0x47, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e, 0x56, 0x31, 0x34, 0x2e, 0x43, 0x6f, 0x6d, 0x6d,
+	0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e, 0x56, 0x31, 0x35, 0x2e, 0x43, 0x6f, 0x6d, 0x6d,
 	0x6f, 0x6e, 0xca, 0x02, 0x1f, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x5c, 0x41, 0x64, 0x73, 0x5c,
-	0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x31, 0x34, 0x5c, 0x43, 0x6f,
+	0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x31, 0x35, 0x5c, 0x43, 0x6f,
 	0x6d, 0x6d, 0x6f, 0x6e, 0xea, 0x02, 0x23, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x3a, 0x3a, 0x41,
 	0x64, 0x73, 0x3a, 0x3a, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56,
-	0x31, 0x34, 0x3a, 0x3a, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
+	0x31, 0x35, 0x3a, 0x3a, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
 	0x6f, 0x33,
 }
 
 var (
-	file_google_ads_googleads_v14_common_audiences_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v14_common_audiences_proto_rawDescData = file_google_ads_googleads_v14_common_audiences_proto_rawDesc
+	file_google_ads_googleads_v15_common_audiences_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v15_common_audiences_proto_rawDescData = file_google_ads_googleads_v15_common_audiences_proto_rawDesc
 )
 
-func file_google_ads_googleads_v14_common_audiences_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v14_common_audiences_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v14_common_audiences_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v14_common_audiences_proto_rawDescData)
+func file_google_ads_googleads_v15_common_audiences_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v15_common_audiences_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v15_common_audiences_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v15_common_audiences_proto_rawDescData)
 	})
-	return file_google_ads_googleads_v14_common_audiences_proto_rawDescData
+	return file_google_ads_googleads_v15_common_audiences_proto_rawDescData
 }
 
-var file_google_ads_googleads_v14_common_audiences_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
-var file_google_ads_googleads_v14_common_audiences_proto_goTypes = []interface{}{
-	(*AudienceDimension)(nil),                            // 0: google.ads.googleads.v14.common.AudienceDimension
-	(*AudienceExclusionDimension)(nil),                   // 1: google.ads.googleads.v14.common.AudienceExclusionDimension
-	(*ExclusionSegment)(nil),                             // 2: google.ads.googleads.v14.common.ExclusionSegment
-	(*AgeDimension)(nil),                                 // 3: google.ads.googleads.v14.common.AgeDimension
-	(*AgeSegment)(nil),                                   // 4: google.ads.googleads.v14.common.AgeSegment
-	(*GenderDimension)(nil),                              // 5: google.ads.googleads.v14.common.GenderDimension
-	(*HouseholdIncomeDimension)(nil),                     // 6: google.ads.googleads.v14.common.HouseholdIncomeDimension
-	(*ParentalStatusDimension)(nil),                      // 7: google.ads.googleads.v14.common.ParentalStatusDimension
-	(*AudienceSegmentDimension)(nil),                     // 8: google.ads.googleads.v14.common.AudienceSegmentDimension
-	(*AudienceSegment)(nil),                              // 9: google.ads.googleads.v14.common.AudienceSegment
-	(*UserListSegment)(nil),                              // 10: google.ads.googleads.v14.common.UserListSegment
-	(*UserInterestSegment)(nil),                          // 11: google.ads.googleads.v14.common.UserInterestSegment
-	(*LifeEventSegment)(nil),                             // 12: google.ads.googleads.v14.common.LifeEventSegment
-	(*DetailedDemographicSegment)(nil),                   // 13: google.ads.googleads.v14.common.DetailedDemographicSegment
-	(*CustomAudienceSegment)(nil),                        // 14: google.ads.googleads.v14.common.CustomAudienceSegment
-	(enums.GenderTypeEnum_GenderType)(0),                 // 15: google.ads.googleads.v14.enums.GenderTypeEnum.GenderType
-	(enums.IncomeRangeTypeEnum_IncomeRangeType)(0),       // 16: google.ads.googleads.v14.enums.IncomeRangeTypeEnum.IncomeRangeType
-	(enums.ParentalStatusTypeEnum_ParentalStatusType)(0), // 17: google.ads.googleads.v14.enums.ParentalStatusTypeEnum.ParentalStatusType
+var file_google_ads_googleads_v15_common_audiences_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
+var file_google_ads_googleads_v15_common_audiences_proto_goTypes = []interface{}{
+	(*AudienceDimension)(nil),                            // 0: google.ads.googleads.v15.common.AudienceDimension
+	(*AudienceExclusionDimension)(nil),                   // 1: google.ads.googleads.v15.common.AudienceExclusionDimension
+	(*ExclusionSegment)(nil),                             // 2: google.ads.googleads.v15.common.ExclusionSegment
+	(*AgeDimension)(nil),                                 // 3: google.ads.googleads.v15.common.AgeDimension
+	(*AgeSegment)(nil),                                   // 4: google.ads.googleads.v15.common.AgeSegment
+	(*GenderDimension)(nil),                              // 5: google.ads.googleads.v15.common.GenderDimension
+	(*HouseholdIncomeDimension)(nil),                     // 6: google.ads.googleads.v15.common.HouseholdIncomeDimension
+	(*ParentalStatusDimension)(nil),                      // 7: google.ads.googleads.v15.common.ParentalStatusDimension
+	(*AudienceSegmentDimension)(nil),                     // 8: google.ads.googleads.v15.common.AudienceSegmentDimension
+	(*AudienceSegment)(nil),                              // 9: google.ads.googleads.v15.common.AudienceSegment
+	(*UserListSegment)(nil),                              // 10: google.ads.googleads.v15.common.UserListSegment
+	(*UserInterestSegment)(nil),                          // 11: google.ads.googleads.v15.common.UserInterestSegment
+	(*LifeEventSegment)(nil),                             // 12: google.ads.googleads.v15.common.LifeEventSegment
+	(*DetailedDemographicSegment)(nil),                   // 13: google.ads.googleads.v15.common.DetailedDemographicSegment
+	(*CustomAudienceSegment)(nil),                        // 14: google.ads.googleads.v15.common.CustomAudienceSegment
+	(enums.GenderTypeEnum_GenderType)(0),                 // 15: google.ads.googleads.v15.enums.GenderTypeEnum.GenderType
+	(enums.IncomeRangeTypeEnum_IncomeRangeType)(0),       // 16: google.ads.googleads.v15.enums.IncomeRangeTypeEnum.IncomeRangeType
+	(enums.ParentalStatusTypeEnum_ParentalStatusType)(0), // 17: google.ads.googleads.v15.enums.ParentalStatusTypeEnum.ParentalStatusType
 }
-var file_google_ads_googleads_v14_common_audiences_proto_depIdxs = []int32{
-	3,  // 0: google.ads.googleads.v14.common.AudienceDimension.age:type_name -> google.ads.googleads.v14.common.AgeDimension
-	5,  // 1: google.ads.googleads.v14.common.AudienceDimension.gender:type_name -> google.ads.googleads.v14.common.GenderDimension
-	6,  // 2: google.ads.googleads.v14.common.AudienceDimension.household_income:type_name -> google.ads.googleads.v14.common.HouseholdIncomeDimension
-	7,  // 3: google.ads.googleads.v14.common.AudienceDimension.parental_status:type_name -> google.ads.googleads.v14.common.ParentalStatusDimension
-	8,  // 4: google.ads.googleads.v14.common.AudienceDimension.audience_segments:type_name -> google.ads.googleads.v14.common.AudienceSegmentDimension
-	2,  // 5: google.ads.googleads.v14.common.AudienceExclusionDimension.exclusions:type_name -> google.ads.googleads.v14.common.ExclusionSegment
-	10, // 6: google.ads.googleads.v14.common.ExclusionSegment.user_list:type_name -> google.ads.googleads.v14.common.UserListSegment
-	4,  // 7: google.ads.googleads.v14.common.AgeDimension.age_ranges:type_name -> google.ads.googleads.v14.common.AgeSegment
-	15, // 8: google.ads.googleads.v14.common.GenderDimension.genders:type_name -> google.ads.googleads.v14.enums.GenderTypeEnum.GenderType
-	16, // 9: google.ads.googleads.v14.common.HouseholdIncomeDimension.income_ranges:type_name -> google.ads.googleads.v14.enums.IncomeRangeTypeEnum.IncomeRangeType
-	17, // 10: google.ads.googleads.v14.common.ParentalStatusDimension.parental_statuses:type_name -> google.ads.googleads.v14.enums.ParentalStatusTypeEnum.ParentalStatusType
-	9,  // 11: google.ads.googleads.v14.common.AudienceSegmentDimension.segments:type_name -> google.ads.googleads.v14.common.AudienceSegment
-	10, // 12: google.ads.googleads.v14.common.AudienceSegment.user_list:type_name -> google.ads.googleads.v14.common.UserListSegment
-	11, // 13: google.ads.googleads.v14.common.AudienceSegment.user_interest:type_name -> google.ads.googleads.v14.common.UserInterestSegment
-	12, // 14: google.ads.googleads.v14.common.AudienceSegment.life_event:type_name -> google.ads.googleads.v14.common.LifeEventSegment
-	13, // 15: google.ads.googleads.v14.common.AudienceSegment.detailed_demographic:type_name -> google.ads.googleads.v14.common.DetailedDemographicSegment
-	14, // 16: google.ads.googleads.v14.common.AudienceSegment.custom_audience:type_name -> google.ads.googleads.v14.common.CustomAudienceSegment
+var file_google_ads_googleads_v15_common_audiences_proto_depIdxs = []int32{
+	3,  // 0: google.ads.googleads.v15.common.AudienceDimension.age:type_name -> google.ads.googleads.v15.common.AgeDimension
+	5,  // 1: google.ads.googleads.v15.common.AudienceDimension.gender:type_name -> google.ads.googleads.v15.common.GenderDimension
+	6,  // 2: google.ads.googleads.v15.common.AudienceDimension.household_income:type_name -> google.ads.googleads.v15.common.HouseholdIncomeDimension
+	7,  // 3: google.ads.googleads.v15.common.AudienceDimension.parental_status:type_name -> google.ads.googleads.v15.common.ParentalStatusDimension
+	8,  // 4: google.ads.googleads.v15.common.AudienceDimension.audience_segments:type_name -> google.ads.googleads.v15.common.AudienceSegmentDimension
+	2,  // 5: google.ads.googleads.v15.common.AudienceExclusionDimension.exclusions:type_name -> google.ads.googleads.v15.common.ExclusionSegment
+	10, // 6: google.ads.googleads.v15.common.ExclusionSegment.user_list:type_name -> google.ads.googleads.v15.common.UserListSegment
+	4,  // 7: google.ads.googleads.v15.common.AgeDimension.age_ranges:type_name -> google.ads.googleads.v15.common.AgeSegment
+	15, // 8: google.ads.googleads.v15.common.GenderDimension.genders:type_name -> google.ads.googleads.v15.enums.GenderTypeEnum.GenderType
+	16, // 9: google.ads.googleads.v15.common.HouseholdIncomeDimension.income_ranges:type_name -> google.ads.googleads.v15.enums.IncomeRangeTypeEnum.IncomeRangeType
+	17, // 10: google.ads.googleads.v15.common.ParentalStatusDimension.parental_statuses:type_name -> google.ads.googleads.v15.enums.ParentalStatusTypeEnum.ParentalStatusType
+	9,  // 11: google.ads.googleads.v15.common.AudienceSegmentDimension.segments:type_name -> google.ads.googleads.v15.common.AudienceSegment
+	10, // 12: google.ads.googleads.v15.common.AudienceSegment.user_list:type_name -> google.ads.googleads.v15.common.UserListSegment
+	11, // 13: google.ads.googleads.v15.common.AudienceSegment.user_interest:type_name -> google.ads.googleads.v15.common.UserInterestSegment
+	12, // 14: google.ads.googleads.v15.common.AudienceSegment.life_event:type_name -> google.ads.googleads.v15.common.LifeEventSegment
+	13, // 15: google.ads.googleads.v15.common.AudienceSegment.detailed_demographic:type_name -> google.ads.googleads.v15.common.DetailedDemographicSegment
+	14, // 16: google.ads.googleads.v15.common.AudienceSegment.custom_audience:type_name -> google.ads.googleads.v15.common.CustomAudienceSegment
 	17, // [17:17] is the sub-list for method output_type
 	17, // [17:17] is the sub-list for method input_type
 	17, // [17:17] is the sub-list for extension type_name
@@ -1271,13 +1271,13 @@ var file_google_ads_googleads_v14_common_audiences_proto_depIdxs = []int32{
 	0,  // [0:17] is the sub-list for field type_name
 }
 
-func init() { file_google_ads_googleads_v14_common_audiences_proto_init() }
-func file_google_ads_googleads_v14_common_audiences_proto_init() {
-	if File_google_ads_googleads_v14_common_audiences_proto != nil {
+func init() { file_google_ads_googleads_v15_common_audiences_proto_init() }
+func file_google_ads_googleads_v15_common_audiences_proto_init() {
+	if File_google_ads_googleads_v15_common_audiences_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_google_ads_googleads_v14_common_audiences_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_audiences_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AudienceDimension); i {
 			case 0:
 				return &v.state
@@ -1289,7 +1289,7 @@ func file_google_ads_googleads_v14_common_audiences_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_audiences_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_audiences_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AudienceExclusionDimension); i {
 			case 0:
 				return &v.state
@@ -1301,7 +1301,7 @@ func file_google_ads_googleads_v14_common_audiences_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_audiences_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_audiences_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ExclusionSegment); i {
 			case 0:
 				return &v.state
@@ -1313,7 +1313,7 @@ func file_google_ads_googleads_v14_common_audiences_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_audiences_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_audiences_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AgeDimension); i {
 			case 0:
 				return &v.state
@@ -1325,7 +1325,7 @@ func file_google_ads_googleads_v14_common_audiences_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_audiences_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_audiences_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AgeSegment); i {
 			case 0:
 				return &v.state
@@ -1337,7 +1337,7 @@ func file_google_ads_googleads_v14_common_audiences_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_audiences_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_audiences_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GenderDimension); i {
 			case 0:
 				return &v.state
@@ -1349,7 +1349,7 @@ func file_google_ads_googleads_v14_common_audiences_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_audiences_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_audiences_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*HouseholdIncomeDimension); i {
 			case 0:
 				return &v.state
@@ -1361,7 +1361,7 @@ func file_google_ads_googleads_v14_common_audiences_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_audiences_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_audiences_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ParentalStatusDimension); i {
 			case 0:
 				return &v.state
@@ -1373,7 +1373,7 @@ func file_google_ads_googleads_v14_common_audiences_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_audiences_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_audiences_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AudienceSegmentDimension); i {
 			case 0:
 				return &v.state
@@ -1385,7 +1385,7 @@ func file_google_ads_googleads_v14_common_audiences_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_audiences_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_audiences_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AudienceSegment); i {
 			case 0:
 				return &v.state
@@ -1397,7 +1397,7 @@ func file_google_ads_googleads_v14_common_audiences_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_audiences_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_audiences_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UserListSegment); i {
 			case 0:
 				return &v.state
@@ -1409,7 +1409,7 @@ func file_google_ads_googleads_v14_common_audiences_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_audiences_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_audiences_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UserInterestSegment); i {
 			case 0:
 				return &v.state
@@ -1421,7 +1421,7 @@ func file_google_ads_googleads_v14_common_audiences_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_audiences_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_audiences_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*LifeEventSegment); i {
 			case 0:
 				return &v.state
@@ -1433,7 +1433,7 @@ func file_google_ads_googleads_v14_common_audiences_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_audiences_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_audiences_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DetailedDemographicSegment); i {
 			case 0:
 				return &v.state
@@ -1445,7 +1445,7 @@ func file_google_ads_googleads_v14_common_audiences_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_audiences_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_audiences_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CustomAudienceSegment); i {
 			case 0:
 				return &v.state
@@ -1458,49 +1458,49 @@ func file_google_ads_googleads_v14_common_audiences_proto_init() {
 			}
 		}
 	}
-	file_google_ads_googleads_v14_common_audiences_proto_msgTypes[0].OneofWrappers = []interface{}{
+	file_google_ads_googleads_v15_common_audiences_proto_msgTypes[0].OneofWrappers = []interface{}{
 		(*AudienceDimension_Age)(nil),
 		(*AudienceDimension_Gender)(nil),
 		(*AudienceDimension_HouseholdIncome)(nil),
 		(*AudienceDimension_ParentalStatus)(nil),
 		(*AudienceDimension_AudienceSegments)(nil),
 	}
-	file_google_ads_googleads_v14_common_audiences_proto_msgTypes[2].OneofWrappers = []interface{}{
+	file_google_ads_googleads_v15_common_audiences_proto_msgTypes[2].OneofWrappers = []interface{}{
 		(*ExclusionSegment_UserList)(nil),
 	}
-	file_google_ads_googleads_v14_common_audiences_proto_msgTypes[3].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v14_common_audiences_proto_msgTypes[4].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v14_common_audiences_proto_msgTypes[5].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v14_common_audiences_proto_msgTypes[6].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v14_common_audiences_proto_msgTypes[7].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v14_common_audiences_proto_msgTypes[9].OneofWrappers = []interface{}{
+	file_google_ads_googleads_v15_common_audiences_proto_msgTypes[3].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_common_audiences_proto_msgTypes[4].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_common_audiences_proto_msgTypes[5].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_common_audiences_proto_msgTypes[6].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_common_audiences_proto_msgTypes[7].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_common_audiences_proto_msgTypes[9].OneofWrappers = []interface{}{
 		(*AudienceSegment_UserList)(nil),
 		(*AudienceSegment_UserInterest)(nil),
 		(*AudienceSegment_LifeEvent)(nil),
 		(*AudienceSegment_DetailedDemographic)(nil),
 		(*AudienceSegment_CustomAudience)(nil),
 	}
-	file_google_ads_googleads_v14_common_audiences_proto_msgTypes[10].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v14_common_audiences_proto_msgTypes[11].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v14_common_audiences_proto_msgTypes[12].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v14_common_audiences_proto_msgTypes[13].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v14_common_audiences_proto_msgTypes[14].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_common_audiences_proto_msgTypes[10].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_common_audiences_proto_msgTypes[11].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_common_audiences_proto_msgTypes[12].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_common_audiences_proto_msgTypes[13].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_common_audiences_proto_msgTypes[14].OneofWrappers = []interface{}{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_google_ads_googleads_v14_common_audiences_proto_rawDesc,
+			RawDescriptor: file_google_ads_googleads_v15_common_audiences_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   15,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_google_ads_googleads_v14_common_audiences_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v14_common_audiences_proto_depIdxs,
-		MessageInfos:      file_google_ads_googleads_v14_common_audiences_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v15_common_audiences_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v15_common_audiences_proto_depIdxs,
+		MessageInfos:      file_google_ads_googleads_v15_common_audiences_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v14_common_audiences_proto = out.File
-	file_google_ads_googleads_v14_common_audiences_proto_rawDesc = nil
-	file_google_ads_googleads_v14_common_audiences_proto_goTypes = nil
-	file_google_ads_googleads_v14_common_audiences_proto_depIdxs = nil
+	File_google_ads_googleads_v15_common_audiences_proto = out.File
+	file_google_ads_googleads_v15_common_audiences_proto_rawDesc = nil
+	file_google_ads_googleads_v15_common_audiences_proto_goTypes = nil
+	file_google_ads_googleads_v15_common_audiences_proto_depIdxs = nil
 }

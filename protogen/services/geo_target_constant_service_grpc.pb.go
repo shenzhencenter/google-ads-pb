@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.21.1
-// source: google/ads/googleads/v14/services/geo_target_constant_service.proto
+// source: google/ads/googleads/v15/services/geo_target_constant_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	GeoTargetConstantService_SuggestGeoTargetConstants_FullMethodName = "/google.ads.googleads.v14.services.GeoTargetConstantService/SuggestGeoTargetConstants"
+	GeoTargetConstantService_SuggestGeoTargetConstants_FullMethodName = "/google.ads.googleads.v15.services.GeoTargetConstantService/SuggestGeoTargetConstants"
 )
 
 // GeoTargetConstantServiceClient is the client API for GeoTargetConstantService service.
@@ -133,7 +133,7 @@ func _GeoTargetConstantService_SuggestGeoTargetConstants_Handler(srv interface{}
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var GeoTargetConstantService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v14.services.GeoTargetConstantService",
+	ServiceName: "google.ads.googleads.v15.services.GeoTargetConstantService",
 	HandlerType: (*GeoTargetConstantServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -142,5 +142,5 @@ var GeoTargetConstantService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v14/services/geo_target_constant_service.proto",
+	Metadata: "google/ads/googleads/v15/services/geo_target_constant_service.proto",
 }

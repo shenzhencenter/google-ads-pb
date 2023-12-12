@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.21.1
-// source: google/ads/googleads/v14/services/label_service.proto
+// source: google/ads/googleads/v15/services/label_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	LabelService_MutateLabels_FullMethodName = "/google.ads.googleads.v14.services.LabelService/MutateLabels"
+	LabelService_MutateLabels_FullMethodName = "/google.ads.googleads.v15.services.LabelService/MutateLabels"
 )
 
 // LabelServiceClient is the client API for LabelService service.
@@ -164,7 +164,7 @@ func _LabelService_MutateLabels_Handler(srv interface{}, ctx context.Context, de
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var LabelService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v14.services.LabelService",
+	ServiceName: "google.ads.googleads.v15.services.LabelService",
 	HandlerType: (*LabelServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -173,5 +173,5 @@ var LabelService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v14/services/label_service.proto",
+	Metadata: "google/ads/googleads/v15/services/label_service.proto",
 }

@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.31.0
 // 	protoc        v3.21.1
-// source: google/ads/googleads/v14/services/account_link_service.proto
+// source: google/ads/googleads/v15/services/account_link_service.proto
 
 package services
 
@@ -39,7 +39,7 @@ const (
 )
 
 // Request message for
-// [AccountLinkService.CreateAccountLink][google.ads.googleads.v14.services.AccountLinkService.CreateAccountLink].
+// [AccountLinkService.CreateAccountLink][google.ads.googleads.v15.services.AccountLinkService.CreateAccountLink].
 type CreateAccountLinkRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -54,7 +54,7 @@ type CreateAccountLinkRequest struct {
 func (x *CreateAccountLinkRequest) Reset() {
 	*x = CreateAccountLinkRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_services_account_link_service_proto_msgTypes[0]
+		mi := &file_google_ads_googleads_v15_services_account_link_service_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -67,7 +67,7 @@ func (x *CreateAccountLinkRequest) String() string {
 func (*CreateAccountLinkRequest) ProtoMessage() {}
 
 func (x *CreateAccountLinkRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_services_account_link_service_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v15_services_account_link_service_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -80,7 +80,7 @@ func (x *CreateAccountLinkRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateAccountLinkRequest.ProtoReflect.Descriptor instead.
 func (*CreateAccountLinkRequest) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_services_account_link_service_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v15_services_account_link_service_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *CreateAccountLinkRequest) GetCustomerId() string {
@@ -98,7 +98,7 @@ func (x *CreateAccountLinkRequest) GetAccountLink() *resources.AccountLink {
 }
 
 // Response message for
-// [AccountLinkService.CreateAccountLink][google.ads.googleads.v14.services.AccountLinkService.CreateAccountLink].
+// [AccountLinkService.CreateAccountLink][google.ads.googleads.v15.services.AccountLinkService.CreateAccountLink].
 type CreateAccountLinkResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -111,7 +111,7 @@ type CreateAccountLinkResponse struct {
 func (x *CreateAccountLinkResponse) Reset() {
 	*x = CreateAccountLinkResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_services_account_link_service_proto_msgTypes[1]
+		mi := &file_google_ads_googleads_v15_services_account_link_service_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -124,7 +124,7 @@ func (x *CreateAccountLinkResponse) String() string {
 func (*CreateAccountLinkResponse) ProtoMessage() {}
 
 func (x *CreateAccountLinkResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_services_account_link_service_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v15_services_account_link_service_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -137,7 +137,7 @@ func (x *CreateAccountLinkResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateAccountLinkResponse.ProtoReflect.Descriptor instead.
 func (*CreateAccountLinkResponse) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_services_account_link_service_proto_rawDescGZIP(), []int{1}
+	return file_google_ads_googleads_v15_services_account_link_service_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *CreateAccountLinkResponse) GetResourceName() string {
@@ -148,7 +148,7 @@ func (x *CreateAccountLinkResponse) GetResourceName() string {
 }
 
 // Request message for
-// [AccountLinkService.MutateAccountLink][google.ads.googleads.v14.services.AccountLinkService.MutateAccountLink].
+// [AccountLinkService.MutateAccountLink][google.ads.googleads.v15.services.AccountLinkService.MutateAccountLink].
 type MutateAccountLinkRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -171,7 +171,7 @@ type MutateAccountLinkRequest struct {
 func (x *MutateAccountLinkRequest) Reset() {
 	*x = MutateAccountLinkRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_services_account_link_service_proto_msgTypes[2]
+		mi := &file_google_ads_googleads_v15_services_account_link_service_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -184,7 +184,7 @@ func (x *MutateAccountLinkRequest) String() string {
 func (*MutateAccountLinkRequest) ProtoMessage() {}
 
 func (x *MutateAccountLinkRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_services_account_link_service_proto_msgTypes[2]
+	mi := &file_google_ads_googleads_v15_services_account_link_service_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -197,7 +197,7 @@ func (x *MutateAccountLinkRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MutateAccountLinkRequest.ProtoReflect.Descriptor instead.
 func (*MutateAccountLinkRequest) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_services_account_link_service_proto_rawDescGZIP(), []int{2}
+	return file_google_ads_googleads_v15_services_account_link_service_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *MutateAccountLinkRequest) GetCustomerId() string {
@@ -248,7 +248,7 @@ type AccountLinkOperation struct {
 func (x *AccountLinkOperation) Reset() {
 	*x = AccountLinkOperation{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_services_account_link_service_proto_msgTypes[3]
+		mi := &file_google_ads_googleads_v15_services_account_link_service_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -261,7 +261,7 @@ func (x *AccountLinkOperation) String() string {
 func (*AccountLinkOperation) ProtoMessage() {}
 
 func (x *AccountLinkOperation) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_services_account_link_service_proto_msgTypes[3]
+	mi := &file_google_ads_googleads_v15_services_account_link_service_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -274,7 +274,7 @@ func (x *AccountLinkOperation) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AccountLinkOperation.ProtoReflect.Descriptor instead.
 func (*AccountLinkOperation) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_services_account_link_service_proto_rawDescGZIP(), []int{3}
+	return file_google_ads_googleads_v15_services_account_link_service_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *AccountLinkOperation) GetUpdateMask() *fieldmaskpb.FieldMask {
@@ -345,7 +345,7 @@ type MutateAccountLinkResponse struct {
 func (x *MutateAccountLinkResponse) Reset() {
 	*x = MutateAccountLinkResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_services_account_link_service_proto_msgTypes[4]
+		mi := &file_google_ads_googleads_v15_services_account_link_service_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -358,7 +358,7 @@ func (x *MutateAccountLinkResponse) String() string {
 func (*MutateAccountLinkResponse) ProtoMessage() {}
 
 func (x *MutateAccountLinkResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_services_account_link_service_proto_msgTypes[4]
+	mi := &file_google_ads_googleads_v15_services_account_link_service_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -371,7 +371,7 @@ func (x *MutateAccountLinkResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MutateAccountLinkResponse.ProtoReflect.Descriptor instead.
 func (*MutateAccountLinkResponse) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_services_account_link_service_proto_rawDescGZIP(), []int{4}
+	return file_google_ads_googleads_v15_services_account_link_service_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *MutateAccountLinkResponse) GetResult() *MutateAccountLinkResult {
@@ -401,7 +401,7 @@ type MutateAccountLinkResult struct {
 func (x *MutateAccountLinkResult) Reset() {
 	*x = MutateAccountLinkResult{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_services_account_link_service_proto_msgTypes[5]
+		mi := &file_google_ads_googleads_v15_services_account_link_service_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -414,7 +414,7 @@ func (x *MutateAccountLinkResult) String() string {
 func (*MutateAccountLinkResult) ProtoMessage() {}
 
 func (x *MutateAccountLinkResult) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_services_account_link_service_proto_msgTypes[5]
+	mi := &file_google_ads_googleads_v15_services_account_link_service_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -427,7 +427,7 @@ func (x *MutateAccountLinkResult) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MutateAccountLinkResult.ProtoReflect.Descriptor instead.
 func (*MutateAccountLinkResult) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_services_account_link_service_proto_rawDescGZIP(), []int{5}
+	return file_google_ads_googleads_v15_services_account_link_service_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *MutateAccountLinkResult) GetResourceName() string {
@@ -437,17 +437,17 @@ func (x *MutateAccountLinkResult) GetResourceName() string {
 	return ""
 }
 
-var File_google_ads_googleads_v14_services_account_link_service_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v15_services_account_link_service_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v14_services_account_link_service_proto_rawDesc = []byte{
+var file_google_ads_googleads_v15_services_account_link_service_proto_rawDesc = []byte{
 	0x0a, 0x3c, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69,
 	0x63, 0x65, 0x73, 0x2f, 0x61, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x5f, 0x6c, 0x69, 0x6e, 0x6b,
 	0x5f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x21,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
 	0x73, 0x1a, 0x35, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x72, 0x65, 0x73, 0x6f,
+	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x72, 0x65, 0x73, 0x6f,
 	0x75, 0x72, 0x63, 0x65, 0x73, 0x2f, 0x61, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x5f, 0x6c, 0x69,
 	0x6e, 0x6b, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x1c, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x6e, 0x6e, 0x6f, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73,
@@ -467,7 +467,7 @@ var file_google_ads_googleads_v14_services_account_link_service_proto_rawDesc = 
 	0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x49, 0x64, 0x12, 0x57, 0x0a, 0x0c, 0x61, 0x63, 0x63,
 	0x6f, 0x75, 0x6e, 0x74, 0x5f, 0x6c, 0x69, 0x6e, 0x6b, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32,
 	0x2f, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75,
 	0x72, 0x63, 0x65, 0x73, 0x2e, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x4c, 0x69, 0x6e, 0x6b,
 	0x42, 0x03, 0xe0, 0x41, 0x02, 0x52, 0x0b, 0x61, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x4c, 0x69,
 	0x6e, 0x6b, 0x22, 0x6b, 0x0a, 0x19, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x63, 0x63, 0x6f,
@@ -483,7 +483,7 @@ var file_google_ads_googleads_v14_services_account_link_service_proto_rawDesc = 
 	0x09, 0x42, 0x03, 0xe0, 0x41, 0x02, 0x52, 0x0a, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72,
 	0x49, 0x64, 0x12, 0x5a, 0x0a, 0x09, 0x6f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18,
 	0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x37, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61,
-	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34,
+	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35,
 	0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e,
 	0x74, 0x4c, 0x69, 0x6e, 0x6b, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x42, 0x03,
 	0xe0, 0x41, 0x02, 0x52, 0x09, 0x6f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x27,
@@ -499,7 +499,7 @@ var file_google_ads_googleads_v14_services_account_link_service_proto_rawDesc = 
 	0x6c, 0x64, 0x4d, 0x61, 0x73, 0x6b, 0x52, 0x0a, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4d, 0x61,
 	0x73, 0x6b, 0x12, 0x49, 0x0a, 0x06, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x18, 0x02, 0x20, 0x01,
 	0x28, 0x0b, 0x32, 0x2f, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x72, 0x65,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x72, 0x65,
 	0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x4c,
 	0x69, 0x6e, 0x6b, 0x48, 0x00, 0x52, 0x06, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x12, 0x43, 0x0a,
 	0x06, 0x72, 0x65, 0x6d, 0x6f, 0x76, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42, 0x29, 0xfa,
@@ -511,7 +511,7 @@ var file_google_ads_googleads_v14_services_account_link_service_proto_rawDesc = 
 	0x74, 0x4c, 0x69, 0x6e, 0x6b, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x52, 0x0a,
 	0x06, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x3a, 0x2e,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
 	0x73, 0x2e, 0x4d, 0x75, 0x74, 0x61, 0x74, 0x65, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x4c,
 	0x69, 0x6e, 0x6b, 0x52, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x52, 0x06, 0x72, 0x65, 0x73, 0x75, 0x6c,
 	0x74, 0x12, 0x46, 0x0a, 0x15, 0x70, 0x61, 0x72, 0x74, 0x69, 0x61, 0x6c, 0x5f, 0x66, 0x61, 0x69,
@@ -529,30 +529,30 @@ var file_google_ads_googleads_v14_services_account_link_service_proto_rawDesc = 
 	0x4c, 0x69, 0x6e, 0x6b, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0xe8, 0x01, 0x0a, 0x11,
 	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x4c, 0x69, 0x6e,
 	0x6b, 0x12, 0x3b, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x73, 0x65, 0x72,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x73, 0x65, 0x72,
 	0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x63, 0x63, 0x6f,
 	0x75, 0x6e, 0x74, 0x4c, 0x69, 0x6e, 0x6b, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x3c,
 	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
+	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
 	0x65, 0x73, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74,
 	0x4c, 0x69, 0x6e, 0x6b, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x58, 0xda, 0x41,
 	0x18, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x2c, 0x61, 0x63, 0x63,
 	0x6f, 0x75, 0x6e, 0x74, 0x5f, 0x6c, 0x69, 0x6e, 0x6b, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x37, 0x3a,
-	0x01, 0x2a, 0x22, 0x32, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65,
+	0x01, 0x2a, 0x22, 0x32, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65,
 	0x72, 0x73, 0x2f, 0x7b, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x3d,
 	0x2a, 0x7d, 0x2f, 0x61, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x4c, 0x69, 0x6e, 0x6b, 0x73, 0x3a,
 	0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x12, 0xe5, 0x01, 0x0a, 0x11, 0x4d, 0x75, 0x74, 0x61, 0x74,
 	0x65, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x4c, 0x69, 0x6e, 0x6b, 0x12, 0x3b, 0x2e, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73,
+	0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73,
 	0x2e, 0x4d, 0x75, 0x74, 0x61, 0x74, 0x65, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x4c, 0x69,
 	0x6e, 0x6b, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x3c, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
-	0x2e, 0x76, 0x31, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x4d, 0x75,
+	0x2e, 0x76, 0x31, 0x35, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x4d, 0x75,
 	0x74, 0x61, 0x74, 0x65, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x4c, 0x69, 0x6e, 0x6b, 0x52,
 	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x55, 0xda, 0x41, 0x15, 0x63, 0x75, 0x73, 0x74,
 	0x6f, 0x6d, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x2c, 0x6f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f,
-	0x6e, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x37, 0x3a, 0x01, 0x2a, 0x22, 0x32, 0x2f, 0x76, 0x31, 0x34,
+	0x6e, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x37, 0x3a, 0x01, 0x2a, 0x22, 0x32, 0x2f, 0x76, 0x31, 0x35,
 	0x2f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x73, 0x2f, 0x7b, 0x63, 0x75, 0x73, 0x74,
 	0x6f, 0x6d, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x3d, 0x2a, 0x7d, 0x2f, 0x61, 0x63, 0x63, 0x6f, 0x75,
 	0x6e, 0x74, 0x4c, 0x69, 0x6e, 0x6b, 0x73, 0x3a, 0x6d, 0x75, 0x74, 0x61, 0x74, 0x65, 0x1a, 0x45,
@@ -562,59 +562,59 @@ var file_google_ads_googleads_v14_services_account_link_service_proto_rawDesc = 
 	0x61, 0x70, 0x69, 0x73, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x61, 0x75, 0x74, 0x68, 0x2f, 0x61, 0x64,
 	0x77, 0x6f, 0x72, 0x64, 0x73, 0x42, 0x83, 0x02, 0x0a, 0x25, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x42,
+	0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x42,
 	0x17, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x4c, 0x69, 0x6e, 0x6b, 0x53, 0x65, 0x72, 0x76,
 	0x69, 0x63, 0x65, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x49, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2e, 0x67, 0x6f, 0x6c, 0x61, 0x6e, 0x67, 0x2e, 0x6f, 0x72, 0x67, 0x2f, 0x67, 0x65,
 	0x6e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x70, 0x69,
 	0x73, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f,
-	0x76, 0x31, 0x34, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x3b, 0x73, 0x65, 0x72,
+	0x76, 0x31, 0x35, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x3b, 0x73, 0x65, 0x72,
 	0x76, 0x69, 0x63, 0x65, 0x73, 0xa2, 0x02, 0x03, 0x47, 0x41, 0x41, 0xaa, 0x02, 0x21, 0x47, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x41, 0x64, 0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41,
-	0x64, 0x73, 0x2e, 0x56, 0x31, 0x34, 0x2e, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0xca,
+	0x64, 0x73, 0x2e, 0x56, 0x31, 0x35, 0x2e, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0xca,
 	0x02, 0x21, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x5c, 0x41, 0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x31, 0x34, 0x5c, 0x53, 0x65, 0x72, 0x76, 0x69,
+	0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x31, 0x35, 0x5c, 0x53, 0x65, 0x72, 0x76, 0x69,
 	0x63, 0x65, 0x73, 0xea, 0x02, 0x25, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x3a, 0x3a, 0x41, 0x64,
 	0x73, 0x3a, 0x3a, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x31,
-	0x34, 0x3a, 0x3a, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f,
+	0x35, 0x3a, 0x3a, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f,
 	0x74, 0x6f, 0x33,
 }
 
 var (
-	file_google_ads_googleads_v14_services_account_link_service_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v14_services_account_link_service_proto_rawDescData = file_google_ads_googleads_v14_services_account_link_service_proto_rawDesc
+	file_google_ads_googleads_v15_services_account_link_service_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v15_services_account_link_service_proto_rawDescData = file_google_ads_googleads_v15_services_account_link_service_proto_rawDesc
 )
 
-func file_google_ads_googleads_v14_services_account_link_service_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v14_services_account_link_service_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v14_services_account_link_service_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v14_services_account_link_service_proto_rawDescData)
+func file_google_ads_googleads_v15_services_account_link_service_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v15_services_account_link_service_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v15_services_account_link_service_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v15_services_account_link_service_proto_rawDescData)
 	})
-	return file_google_ads_googleads_v14_services_account_link_service_proto_rawDescData
+	return file_google_ads_googleads_v15_services_account_link_service_proto_rawDescData
 }
 
-var file_google_ads_googleads_v14_services_account_link_service_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
-var file_google_ads_googleads_v14_services_account_link_service_proto_goTypes = []interface{}{
-	(*CreateAccountLinkRequest)(nil),  // 0: google.ads.googleads.v14.services.CreateAccountLinkRequest
-	(*CreateAccountLinkResponse)(nil), // 1: google.ads.googleads.v14.services.CreateAccountLinkResponse
-	(*MutateAccountLinkRequest)(nil),  // 2: google.ads.googleads.v14.services.MutateAccountLinkRequest
-	(*AccountLinkOperation)(nil),      // 3: google.ads.googleads.v14.services.AccountLinkOperation
-	(*MutateAccountLinkResponse)(nil), // 4: google.ads.googleads.v14.services.MutateAccountLinkResponse
-	(*MutateAccountLinkResult)(nil),   // 5: google.ads.googleads.v14.services.MutateAccountLinkResult
-	(*resources.AccountLink)(nil),     // 6: google.ads.googleads.v14.resources.AccountLink
+var file_google_ads_googleads_v15_services_account_link_service_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
+var file_google_ads_googleads_v15_services_account_link_service_proto_goTypes = []interface{}{
+	(*CreateAccountLinkRequest)(nil),  // 0: google.ads.googleads.v15.services.CreateAccountLinkRequest
+	(*CreateAccountLinkResponse)(nil), // 1: google.ads.googleads.v15.services.CreateAccountLinkResponse
+	(*MutateAccountLinkRequest)(nil),  // 2: google.ads.googleads.v15.services.MutateAccountLinkRequest
+	(*AccountLinkOperation)(nil),      // 3: google.ads.googleads.v15.services.AccountLinkOperation
+	(*MutateAccountLinkResponse)(nil), // 4: google.ads.googleads.v15.services.MutateAccountLinkResponse
+	(*MutateAccountLinkResult)(nil),   // 5: google.ads.googleads.v15.services.MutateAccountLinkResult
+	(*resources.AccountLink)(nil),     // 6: google.ads.googleads.v15.resources.AccountLink
 	(*fieldmaskpb.FieldMask)(nil),     // 7: google.protobuf.FieldMask
 	(*status.Status)(nil),             // 8: google.rpc.Status
 }
-var file_google_ads_googleads_v14_services_account_link_service_proto_depIdxs = []int32{
-	6, // 0: google.ads.googleads.v14.services.CreateAccountLinkRequest.account_link:type_name -> google.ads.googleads.v14.resources.AccountLink
-	3, // 1: google.ads.googleads.v14.services.MutateAccountLinkRequest.operation:type_name -> google.ads.googleads.v14.services.AccountLinkOperation
-	7, // 2: google.ads.googleads.v14.services.AccountLinkOperation.update_mask:type_name -> google.protobuf.FieldMask
-	6, // 3: google.ads.googleads.v14.services.AccountLinkOperation.update:type_name -> google.ads.googleads.v14.resources.AccountLink
-	5, // 4: google.ads.googleads.v14.services.MutateAccountLinkResponse.result:type_name -> google.ads.googleads.v14.services.MutateAccountLinkResult
-	8, // 5: google.ads.googleads.v14.services.MutateAccountLinkResponse.partial_failure_error:type_name -> google.rpc.Status
-	0, // 6: google.ads.googleads.v14.services.AccountLinkService.CreateAccountLink:input_type -> google.ads.googleads.v14.services.CreateAccountLinkRequest
-	2, // 7: google.ads.googleads.v14.services.AccountLinkService.MutateAccountLink:input_type -> google.ads.googleads.v14.services.MutateAccountLinkRequest
-	1, // 8: google.ads.googleads.v14.services.AccountLinkService.CreateAccountLink:output_type -> google.ads.googleads.v14.services.CreateAccountLinkResponse
-	4, // 9: google.ads.googleads.v14.services.AccountLinkService.MutateAccountLink:output_type -> google.ads.googleads.v14.services.MutateAccountLinkResponse
+var file_google_ads_googleads_v15_services_account_link_service_proto_depIdxs = []int32{
+	6, // 0: google.ads.googleads.v15.services.CreateAccountLinkRequest.account_link:type_name -> google.ads.googleads.v15.resources.AccountLink
+	3, // 1: google.ads.googleads.v15.services.MutateAccountLinkRequest.operation:type_name -> google.ads.googleads.v15.services.AccountLinkOperation
+	7, // 2: google.ads.googleads.v15.services.AccountLinkOperation.update_mask:type_name -> google.protobuf.FieldMask
+	6, // 3: google.ads.googleads.v15.services.AccountLinkOperation.update:type_name -> google.ads.googleads.v15.resources.AccountLink
+	5, // 4: google.ads.googleads.v15.services.MutateAccountLinkResponse.result:type_name -> google.ads.googleads.v15.services.MutateAccountLinkResult
+	8, // 5: google.ads.googleads.v15.services.MutateAccountLinkResponse.partial_failure_error:type_name -> google.rpc.Status
+	0, // 6: google.ads.googleads.v15.services.AccountLinkService.CreateAccountLink:input_type -> google.ads.googleads.v15.services.CreateAccountLinkRequest
+	2, // 7: google.ads.googleads.v15.services.AccountLinkService.MutateAccountLink:input_type -> google.ads.googleads.v15.services.MutateAccountLinkRequest
+	1, // 8: google.ads.googleads.v15.services.AccountLinkService.CreateAccountLink:output_type -> google.ads.googleads.v15.services.CreateAccountLinkResponse
+	4, // 9: google.ads.googleads.v15.services.AccountLinkService.MutateAccountLink:output_type -> google.ads.googleads.v15.services.MutateAccountLinkResponse
 	8, // [8:10] is the sub-list for method output_type
 	6, // [6:8] is the sub-list for method input_type
 	6, // [6:6] is the sub-list for extension type_name
@@ -622,13 +622,13 @@ var file_google_ads_googleads_v14_services_account_link_service_proto_depIdxs = 
 	0, // [0:6] is the sub-list for field type_name
 }
 
-func init() { file_google_ads_googleads_v14_services_account_link_service_proto_init() }
-func file_google_ads_googleads_v14_services_account_link_service_proto_init() {
-	if File_google_ads_googleads_v14_services_account_link_service_proto != nil {
+func init() { file_google_ads_googleads_v15_services_account_link_service_proto_init() }
+func file_google_ads_googleads_v15_services_account_link_service_proto_init() {
+	if File_google_ads_googleads_v15_services_account_link_service_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_google_ads_googleads_v14_services_account_link_service_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_services_account_link_service_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateAccountLinkRequest); i {
 			case 0:
 				return &v.state
@@ -640,7 +640,7 @@ func file_google_ads_googleads_v14_services_account_link_service_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_services_account_link_service_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_services_account_link_service_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateAccountLinkResponse); i {
 			case 0:
 				return &v.state
@@ -652,7 +652,7 @@ func file_google_ads_googleads_v14_services_account_link_service_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_services_account_link_service_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_services_account_link_service_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*MutateAccountLinkRequest); i {
 			case 0:
 				return &v.state
@@ -664,7 +664,7 @@ func file_google_ads_googleads_v14_services_account_link_service_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_services_account_link_service_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_services_account_link_service_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AccountLinkOperation); i {
 			case 0:
 				return &v.state
@@ -676,7 +676,7 @@ func file_google_ads_googleads_v14_services_account_link_service_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_services_account_link_service_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_services_account_link_service_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*MutateAccountLinkResponse); i {
 			case 0:
 				return &v.state
@@ -688,7 +688,7 @@ func file_google_ads_googleads_v14_services_account_link_service_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_services_account_link_service_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_services_account_link_service_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*MutateAccountLinkResult); i {
 			case 0:
 				return &v.state
@@ -701,7 +701,7 @@ func file_google_ads_googleads_v14_services_account_link_service_proto_init() {
 			}
 		}
 	}
-	file_google_ads_googleads_v14_services_account_link_service_proto_msgTypes[3].OneofWrappers = []interface{}{
+	file_google_ads_googleads_v15_services_account_link_service_proto_msgTypes[3].OneofWrappers = []interface{}{
 		(*AccountLinkOperation_Update)(nil),
 		(*AccountLinkOperation_Remove)(nil),
 	}
@@ -709,18 +709,18 @@ func file_google_ads_googleads_v14_services_account_link_service_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_google_ads_googleads_v14_services_account_link_service_proto_rawDesc,
+			RawDescriptor: file_google_ads_googleads_v15_services_account_link_service_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_google_ads_googleads_v14_services_account_link_service_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v14_services_account_link_service_proto_depIdxs,
-		MessageInfos:      file_google_ads_googleads_v14_services_account_link_service_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v15_services_account_link_service_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v15_services_account_link_service_proto_depIdxs,
+		MessageInfos:      file_google_ads_googleads_v15_services_account_link_service_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v14_services_account_link_service_proto = out.File
-	file_google_ads_googleads_v14_services_account_link_service_proto_rawDesc = nil
-	file_google_ads_googleads_v14_services_account_link_service_proto_goTypes = nil
-	file_google_ads_googleads_v14_services_account_link_service_proto_depIdxs = nil
+	File_google_ads_googleads_v15_services_account_link_service_proto = out.File
+	file_google_ads_googleads_v15_services_account_link_service_proto_rawDesc = nil
+	file_google_ads_googleads_v15_services_account_link_service_proto_goTypes = nil
+	file_google_ads_googleads_v15_services_account_link_service_proto_depIdxs = nil
 }

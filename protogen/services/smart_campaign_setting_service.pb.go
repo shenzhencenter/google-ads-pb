@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.31.0
 // 	protoc        v3.21.1
-// source: google/ads/googleads/v14/services/smart_campaign_setting_service.proto
+// source: google/ads/googleads/v15/services/smart_campaign_setting_service.proto
 
 package services
 
@@ -40,7 +40,7 @@ const (
 )
 
 // Request message for
-// [SmartCampaignSettingService.GetSmartCampaignStatus][google.ads.googleads.v14.services.SmartCampaignSettingService.GetSmartCampaignStatus].
+// [SmartCampaignSettingService.GetSmartCampaignStatus][google.ads.googleads.v15.services.SmartCampaignSettingService.GetSmartCampaignStatus].
 type GetSmartCampaignStatusRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -54,7 +54,7 @@ type GetSmartCampaignStatusRequest struct {
 func (x *GetSmartCampaignStatusRequest) Reset() {
 	*x = GetSmartCampaignStatusRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_msgTypes[0]
+		mi := &file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -67,7 +67,7 @@ func (x *GetSmartCampaignStatusRequest) String() string {
 func (*GetSmartCampaignStatusRequest) ProtoMessage() {}
 
 func (x *GetSmartCampaignStatusRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -80,7 +80,7 @@ func (x *GetSmartCampaignStatusRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetSmartCampaignStatusRequest.ProtoReflect.Descriptor instead.
 func (*GetSmartCampaignStatusRequest) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *GetSmartCampaignStatusRequest) GetResourceName() string {
@@ -97,13 +97,13 @@ type SmartCampaignNotEligibleDetails struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The reason why the Smart campaign is not eligible to serve.
-	NotEligibleReason *enums.SmartCampaignNotEligibleReasonEnum_SmartCampaignNotEligibleReason `protobuf:"varint,1,opt,name=not_eligible_reason,json=notEligibleReason,proto3,enum=google.ads.googleads.v14.enums.SmartCampaignNotEligibleReasonEnum_SmartCampaignNotEligibleReason,oneof" json:"not_eligible_reason,omitempty"`
+	NotEligibleReason *enums.SmartCampaignNotEligibleReasonEnum_SmartCampaignNotEligibleReason `protobuf:"varint,1,opt,name=not_eligible_reason,json=notEligibleReason,proto3,enum=google.ads.googleads.v15.enums.SmartCampaignNotEligibleReasonEnum_SmartCampaignNotEligibleReason,oneof" json:"not_eligible_reason,omitempty"`
 }
 
 func (x *SmartCampaignNotEligibleDetails) Reset() {
 	*x = SmartCampaignNotEligibleDetails{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_msgTypes[1]
+		mi := &file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -116,7 +116,7 @@ func (x *SmartCampaignNotEligibleDetails) String() string {
 func (*SmartCampaignNotEligibleDetails) ProtoMessage() {}
 
 func (x *SmartCampaignNotEligibleDetails) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -129,7 +129,7 @@ func (x *SmartCampaignNotEligibleDetails) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SmartCampaignNotEligibleDetails.ProtoReflect.Descriptor instead.
 func (*SmartCampaignNotEligibleDetails) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_rawDescGZIP(), []int{1}
+	return file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *SmartCampaignNotEligibleDetails) GetNotEligibleReason() enums.SmartCampaignNotEligibleReasonEnum_SmartCampaignNotEligibleReason {
@@ -159,7 +159,7 @@ type SmartCampaignEligibleDetails struct {
 func (x *SmartCampaignEligibleDetails) Reset() {
 	*x = SmartCampaignEligibleDetails{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_msgTypes[2]
+		mi := &file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -172,7 +172,7 @@ func (x *SmartCampaignEligibleDetails) String() string {
 func (*SmartCampaignEligibleDetails) ProtoMessage() {}
 
 func (x *SmartCampaignEligibleDetails) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_msgTypes[2]
+	mi := &file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -185,7 +185,7 @@ func (x *SmartCampaignEligibleDetails) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SmartCampaignEligibleDetails.ProtoReflect.Descriptor instead.
 func (*SmartCampaignEligibleDetails) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_rawDescGZIP(), []int{2}
+	return file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *SmartCampaignEligibleDetails) GetLastImpressionDateTime() string {
@@ -217,7 +217,7 @@ type SmartCampaignPausedDetails struct {
 func (x *SmartCampaignPausedDetails) Reset() {
 	*x = SmartCampaignPausedDetails{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_msgTypes[3]
+		mi := &file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -230,7 +230,7 @@ func (x *SmartCampaignPausedDetails) String() string {
 func (*SmartCampaignPausedDetails) ProtoMessage() {}
 
 func (x *SmartCampaignPausedDetails) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_msgTypes[3]
+	mi := &file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -243,7 +243,7 @@ func (x *SmartCampaignPausedDetails) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SmartCampaignPausedDetails.ProtoReflect.Descriptor instead.
 func (*SmartCampaignPausedDetails) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_rawDescGZIP(), []int{3}
+	return file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *SmartCampaignPausedDetails) GetPausedDateTime() string {
@@ -268,7 +268,7 @@ type SmartCampaignRemovedDetails struct {
 func (x *SmartCampaignRemovedDetails) Reset() {
 	*x = SmartCampaignRemovedDetails{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_msgTypes[4]
+		mi := &file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -281,7 +281,7 @@ func (x *SmartCampaignRemovedDetails) String() string {
 func (*SmartCampaignRemovedDetails) ProtoMessage() {}
 
 func (x *SmartCampaignRemovedDetails) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_msgTypes[4]
+	mi := &file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -294,7 +294,7 @@ func (x *SmartCampaignRemovedDetails) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SmartCampaignRemovedDetails.ProtoReflect.Descriptor instead.
 func (*SmartCampaignRemovedDetails) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_rawDescGZIP(), []int{4}
+	return file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *SmartCampaignRemovedDetails) GetRemovedDateTime() string {
@@ -319,7 +319,7 @@ type SmartCampaignEndedDetails struct {
 func (x *SmartCampaignEndedDetails) Reset() {
 	*x = SmartCampaignEndedDetails{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_msgTypes[5]
+		mi := &file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -332,7 +332,7 @@ func (x *SmartCampaignEndedDetails) String() string {
 func (*SmartCampaignEndedDetails) ProtoMessage() {}
 
 func (x *SmartCampaignEndedDetails) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_msgTypes[5]
+	mi := &file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -345,7 +345,7 @@ func (x *SmartCampaignEndedDetails) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SmartCampaignEndedDetails.ProtoReflect.Descriptor instead.
 func (*SmartCampaignEndedDetails) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_rawDescGZIP(), []int{5}
+	return file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *SmartCampaignEndedDetails) GetEndDateTime() string {
@@ -356,14 +356,14 @@ func (x *SmartCampaignEndedDetails) GetEndDateTime() string {
 }
 
 // Response message for
-// [SmartCampaignSettingService.GetSmartCampaignStatus][google.ads.googleads.v14.services.SmartCampaignSettingService.GetSmartCampaignStatus].
+// [SmartCampaignSettingService.GetSmartCampaignStatus][google.ads.googleads.v15.services.SmartCampaignSettingService.GetSmartCampaignStatus].
 type GetSmartCampaignStatusResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	// The status of this Smart campaign.
-	SmartCampaignStatus enums.SmartCampaignStatusEnum_SmartCampaignStatus `protobuf:"varint,1,opt,name=smart_campaign_status,json=smartCampaignStatus,proto3,enum=google.ads.googleads.v14.enums.SmartCampaignStatusEnum_SmartCampaignStatus" json:"smart_campaign_status,omitempty"`
+	SmartCampaignStatus enums.SmartCampaignStatusEnum_SmartCampaignStatus `protobuf:"varint,1,opt,name=smart_campaign_status,json=smartCampaignStatus,proto3,enum=google.ads.googleads.v15.enums.SmartCampaignStatusEnum_SmartCampaignStatus" json:"smart_campaign_status,omitempty"`
 	// Additional details accompanying the status of a Smart campaign.
 	//
 	// Types that are assignable to SmartCampaignStatusDetails:
@@ -379,7 +379,7 @@ type GetSmartCampaignStatusResponse struct {
 func (x *GetSmartCampaignStatusResponse) Reset() {
 	*x = GetSmartCampaignStatusResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_msgTypes[6]
+		mi := &file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -392,7 +392,7 @@ func (x *GetSmartCampaignStatusResponse) String() string {
 func (*GetSmartCampaignStatusResponse) ProtoMessage() {}
 
 func (x *GetSmartCampaignStatusResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_msgTypes[6]
+	mi := &file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -405,7 +405,7 @@ func (x *GetSmartCampaignStatusResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetSmartCampaignStatusResponse.ProtoReflect.Descriptor instead.
 func (*GetSmartCampaignStatusResponse) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_rawDescGZIP(), []int{6}
+	return file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *GetSmartCampaignStatusResponse) GetSmartCampaignStatus() enums.SmartCampaignStatusEnum_SmartCampaignStatus {
@@ -502,7 +502,7 @@ func (*GetSmartCampaignStatusResponse_EndedDetails) isGetSmartCampaignStatusResp
 }
 
 // Request message for
-// [SmartCampaignSettingService.MutateSmartCampaignSettings][google.ads.googleads.v14.services.SmartCampaignSettingService.MutateSmartCampaignSettings].
+// [SmartCampaignSettingService.MutateSmartCampaignSettings][google.ads.googleads.v15.services.SmartCampaignSettingService.MutateSmartCampaignSettings].
 type MutateSmartCampaignSettingsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -524,13 +524,13 @@ type MutateSmartCampaignSettingsRequest struct {
 	ValidateOnly bool `protobuf:"varint,4,opt,name=validate_only,json=validateOnly,proto3" json:"validate_only,omitempty"`
 	// The response content type setting. Determines whether the mutable resource
 	// or just the resource name should be returned post mutation.
-	ResponseContentType enums.ResponseContentTypeEnum_ResponseContentType `protobuf:"varint,5,opt,name=response_content_type,json=responseContentType,proto3,enum=google.ads.googleads.v14.enums.ResponseContentTypeEnum_ResponseContentType" json:"response_content_type,omitempty"`
+	ResponseContentType enums.ResponseContentTypeEnum_ResponseContentType `protobuf:"varint,5,opt,name=response_content_type,json=responseContentType,proto3,enum=google.ads.googleads.v15.enums.ResponseContentTypeEnum_ResponseContentType" json:"response_content_type,omitempty"`
 }
 
 func (x *MutateSmartCampaignSettingsRequest) Reset() {
 	*x = MutateSmartCampaignSettingsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_msgTypes[7]
+		mi := &file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -543,7 +543,7 @@ func (x *MutateSmartCampaignSettingsRequest) String() string {
 func (*MutateSmartCampaignSettingsRequest) ProtoMessage() {}
 
 func (x *MutateSmartCampaignSettingsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_msgTypes[7]
+	mi := &file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -556,7 +556,7 @@ func (x *MutateSmartCampaignSettingsRequest) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use MutateSmartCampaignSettingsRequest.ProtoReflect.Descriptor instead.
 func (*MutateSmartCampaignSettingsRequest) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_rawDescGZIP(), []int{7}
+	return file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *MutateSmartCampaignSettingsRequest) GetCustomerId() string {
@@ -610,7 +610,7 @@ type SmartCampaignSettingOperation struct {
 func (x *SmartCampaignSettingOperation) Reset() {
 	*x = SmartCampaignSettingOperation{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_msgTypes[8]
+		mi := &file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -623,7 +623,7 @@ func (x *SmartCampaignSettingOperation) String() string {
 func (*SmartCampaignSettingOperation) ProtoMessage() {}
 
 func (x *SmartCampaignSettingOperation) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_msgTypes[8]
+	mi := &file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -636,7 +636,7 @@ func (x *SmartCampaignSettingOperation) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SmartCampaignSettingOperation.ProtoReflect.Descriptor instead.
 func (*SmartCampaignSettingOperation) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_rawDescGZIP(), []int{8}
+	return file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *SmartCampaignSettingOperation) GetUpdate() *resources.SmartCampaignSetting {
@@ -671,7 +671,7 @@ type MutateSmartCampaignSettingsResponse struct {
 func (x *MutateSmartCampaignSettingsResponse) Reset() {
 	*x = MutateSmartCampaignSettingsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_msgTypes[9]
+		mi := &file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -684,7 +684,7 @@ func (x *MutateSmartCampaignSettingsResponse) String() string {
 func (*MutateSmartCampaignSettingsResponse) ProtoMessage() {}
 
 func (x *MutateSmartCampaignSettingsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_msgTypes[9]
+	mi := &file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -697,7 +697,7 @@ func (x *MutateSmartCampaignSettingsResponse) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use MutateSmartCampaignSettingsResponse.ProtoReflect.Descriptor instead.
 func (*MutateSmartCampaignSettingsResponse) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_rawDescGZIP(), []int{9}
+	return file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *MutateSmartCampaignSettingsResponse) GetPartialFailureError() *status.Status {
@@ -731,7 +731,7 @@ type MutateSmartCampaignSettingResult struct {
 func (x *MutateSmartCampaignSettingResult) Reset() {
 	*x = MutateSmartCampaignSettingResult{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_msgTypes[10]
+		mi := &file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -744,7 +744,7 @@ func (x *MutateSmartCampaignSettingResult) String() string {
 func (*MutateSmartCampaignSettingResult) ProtoMessage() {}
 
 func (x *MutateSmartCampaignSettingResult) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_msgTypes[10]
+	mi := &file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -757,7 +757,7 @@ func (x *MutateSmartCampaignSettingResult) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MutateSmartCampaignSettingResult.ProtoReflect.Descriptor instead.
 func (*MutateSmartCampaignSettingResult) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_rawDescGZIP(), []int{10}
+	return file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *MutateSmartCampaignSettingResult) GetResourceName() string {
@@ -774,30 +774,30 @@ func (x *MutateSmartCampaignSettingResult) GetSmartCampaignSetting() *resources.
 	return nil
 }
 
-var File_google_ads_googleads_v14_services_smart_campaign_setting_service_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v15_services_smart_campaign_setting_service_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_rawDesc = []byte{
+var file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_rawDesc = []byte{
 	0x0a, 0x46, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69,
 	0x63, 0x65, 0x73, 0x2f, 0x73, 0x6d, 0x61, 0x72, 0x74, 0x5f, 0x63, 0x61, 0x6d, 0x70, 0x61, 0x69,
 	0x67, 0x6e, 0x5f, 0x73, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x5f, 0x73, 0x65, 0x72, 0x76, 0x69,
 	0x63, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x21, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76,
-	0x31, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x1a, 0x3a, 0x67, 0x6f, 0x6f,
+	0x31, 0x35, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x1a, 0x3a, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64,
-	0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x72, 0x65, 0x73, 0x70,
+	0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x72, 0x65, 0x73, 0x70,
 	0x6f, 0x6e, 0x73, 0x65, 0x5f, 0x63, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x5f, 0x74, 0x79, 0x70,
 	0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x47, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f,
 	0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31,
-	0x34, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x73, 0x6d, 0x61, 0x72, 0x74, 0x5f, 0x63, 0x61,
+	0x35, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x73, 0x6d, 0x61, 0x72, 0x74, 0x5f, 0x63, 0x61,
 	0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x5f, 0x6e, 0x6f, 0x74, 0x5f, 0x65, 0x6c, 0x69, 0x67, 0x69,
 	0x62, 0x6c, 0x65, 0x5f, 0x72, 0x65, 0x61, 0x73, 0x6f, 0x6e, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
 	0x1a, 0x3a, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73,
 	0x2f, 0x73, 0x6d, 0x61, 0x72, 0x74, 0x5f, 0x63, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x5f,
 	0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x3f, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73,
+	0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73,
 	0x2f, 0x73, 0x6d, 0x61, 0x72, 0x74, 0x5f, 0x63, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x5f,
 	0x73, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x1c, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x6e, 0x6e, 0x6f, 0x74, 0x61,
@@ -824,7 +824,7 @@ var file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_
 	0x13, 0x6e, 0x6f, 0x74, 0x5f, 0x65, 0x6c, 0x69, 0x67, 0x69, 0x62, 0x6c, 0x65, 0x5f, 0x72, 0x65,
 	0x61, 0x73, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x61, 0x2e, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64,
-	0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x53, 0x6d, 0x61, 0x72,
+	0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x53, 0x6d, 0x61, 0x72,
 	0x74, 0x43, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x4e, 0x6f, 0x74, 0x45, 0x6c, 0x69, 0x67,
 	0x69, 0x62, 0x6c, 0x65, 0x52, 0x65, 0x61, 0x73, 0x6f, 0x6e, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x53,
 	0x6d, 0x61, 0x72, 0x74, 0x43, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x4e, 0x6f, 0x74, 0x45,
@@ -867,7 +867,7 @@ var file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_
 	0x61, 0x72, 0x74, 0x5f, 0x63, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x5f, 0x73, 0x74, 0x61,
 	0x74, 0x75, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x4b, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
-	0x2e, 0x76, 0x31, 0x34, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x53, 0x6d, 0x61, 0x72, 0x74,
+	0x2e, 0x76, 0x31, 0x35, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x53, 0x6d, 0x61, 0x72, 0x74,
 	0x43, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x45, 0x6e,
 	0x75, 0x6d, 0x2e, 0x53, 0x6d, 0x61, 0x72, 0x74, 0x43, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e,
 	0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x52, 0x13, 0x73, 0x6d, 0x61, 0x72, 0x74, 0x43, 0x61, 0x6d,
@@ -875,34 +875,34 @@ var file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_
 	0x6f, 0x74, 0x5f, 0x65, 0x6c, 0x69, 0x67, 0x69, 0x62, 0x6c, 0x65, 0x5f, 0x64, 0x65, 0x74, 0x61,
 	0x69, 0x6c, 0x73, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x42, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
-	0x2e, 0x76, 0x31, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x53, 0x6d,
+	0x2e, 0x76, 0x31, 0x35, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x53, 0x6d,
 	0x61, 0x72, 0x74, 0x43, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x4e, 0x6f, 0x74, 0x45, 0x6c,
 	0x69, 0x67, 0x69, 0x62, 0x6c, 0x65, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x48, 0x00, 0x52,
 	0x12, 0x6e, 0x6f, 0x74, 0x45, 0x6c, 0x69, 0x67, 0x69, 0x62, 0x6c, 0x65, 0x44, 0x65, 0x74, 0x61,
 	0x69, 0x6c, 0x73, 0x12, 0x6c, 0x0a, 0x10, 0x65, 0x6c, 0x69, 0x67, 0x69, 0x62, 0x6c, 0x65, 0x5f,
 	0x64, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x3f, 0x2e,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
 	0x73, 0x2e, 0x53, 0x6d, 0x61, 0x72, 0x74, 0x43, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x45,
 	0x6c, 0x69, 0x67, 0x69, 0x62, 0x6c, 0x65, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x48, 0x00,
 	0x52, 0x0f, 0x65, 0x6c, 0x69, 0x67, 0x69, 0x62, 0x6c, 0x65, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c,
 	0x73, 0x12, 0x66, 0x0a, 0x0e, 0x70, 0x61, 0x75, 0x73, 0x65, 0x64, 0x5f, 0x64, 0x65, 0x74, 0x61,
 	0x69, 0x6c, 0x73, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x3d, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
-	0x2e, 0x76, 0x31, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x53, 0x6d,
+	0x2e, 0x76, 0x31, 0x35, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x53, 0x6d,
 	0x61, 0x72, 0x74, 0x43, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x50, 0x61, 0x75, 0x73, 0x65,
 	0x64, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x48, 0x00, 0x52, 0x0d, 0x70, 0x61, 0x75, 0x73,
 	0x65, 0x64, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x12, 0x69, 0x0a, 0x0f, 0x72, 0x65, 0x6d,
 	0x6f, 0x76, 0x65, 0x64, 0x5f, 0x64, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x18, 0x05, 0x20, 0x01,
 	0x28, 0x0b, 0x32, 0x3e, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x73, 0x65,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x73, 0x65,
 	0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x53, 0x6d, 0x61, 0x72, 0x74, 0x43, 0x61, 0x6d, 0x70,
 	0x61, 0x69, 0x67, 0x6e, 0x52, 0x65, 0x6d, 0x6f, 0x76, 0x65, 0x64, 0x44, 0x65, 0x74, 0x61, 0x69,
 	0x6c, 0x73, 0x48, 0x00, 0x52, 0x0e, 0x72, 0x65, 0x6d, 0x6f, 0x76, 0x65, 0x64, 0x44, 0x65, 0x74,
 	0x61, 0x69, 0x6c, 0x73, 0x12, 0x63, 0x0a, 0x0d, 0x65, 0x6e, 0x64, 0x65, 0x64, 0x5f, 0x64, 0x65,
 	0x74, 0x61, 0x69, 0x6c, 0x73, 0x18, 0x06, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x3c, 0x2e, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e,
+	0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e,
 	0x53, 0x6d, 0x61, 0x72, 0x74, 0x43, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x45, 0x6e, 0x64,
 	0x65, 0x64, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x48, 0x00, 0x52, 0x0c, 0x65, 0x6e, 0x64,
 	0x65, 0x64, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x42, 0x1f, 0x0a, 0x1d, 0x73, 0x6d, 0x61,
@@ -915,7 +915,7 @@ var file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_
 	0x74, 0x6f, 0x6d, 0x65, 0x72, 0x49, 0x64, 0x12, 0x65, 0x0a, 0x0a, 0x6f, 0x70, 0x65, 0x72, 0x61,
 	0x74, 0x69, 0x6f, 0x6e, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x40, 0x2e, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e,
+	0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e,
 	0x53, 0x6d, 0x61, 0x72, 0x74, 0x43, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x53, 0x65, 0x74,
 	0x74, 0x69, 0x6e, 0x67, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x42, 0x03, 0xe0,
 	0x41, 0x02, 0x52, 0x0a, 0x6f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x12, 0x27,
@@ -927,7 +927,7 @@ var file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_
 	0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x5f, 0x63, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74,
 	0x5f, 0x74, 0x79, 0x70, 0x65, 0x18, 0x05, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x4b, 0x2e, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x52, 0x65, 0x73,
+	0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x52, 0x65, 0x73,
 	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x54, 0x79, 0x70, 0x65,
 	0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x43, 0x6f, 0x6e,
 	0x74, 0x65, 0x6e, 0x74, 0x54, 0x79, 0x70, 0x65, 0x52, 0x13, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e,
@@ -936,7 +936,7 @@ var file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_
 	0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12,
 	0x50, 0x0a, 0x06, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32,
 	0x38, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75,
 	0x72, 0x63, 0x65, 0x73, 0x2e, 0x53, 0x6d, 0x61, 0x72, 0x74, 0x43, 0x61, 0x6d, 0x70, 0x61, 0x69,
 	0x67, 0x6e, 0x53, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x52, 0x06, 0x75, 0x70, 0x64, 0x61, 0x74,
 	0x65, 0x12, 0x3b, 0x0a, 0x0b, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x5f, 0x6d, 0x61, 0x73, 0x6b,
@@ -952,7 +952,7 @@ var file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_
 	0x61, 0x6c, 0x46, 0x61, 0x69, 0x6c, 0x75, 0x72, 0x65, 0x45, 0x72, 0x72, 0x6f, 0x72, 0x12, 0x5d,
 	0x0a, 0x07, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32,
 	0x43, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
 	0x63, 0x65, 0x73, 0x2e, 0x4d, 0x75, 0x74, 0x61, 0x74, 0x65, 0x53, 0x6d, 0x61, 0x72, 0x74, 0x43,
 	0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x53, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x52, 0x65,
 	0x73, 0x75, 0x6c, 0x74, 0x52, 0x07, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x73, 0x22, 0xeb, 0x01,
@@ -967,7 +967,7 @@ var file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_
 	0x6d, 0x61, 0x72, 0x74, 0x5f, 0x63, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x5f, 0x73, 0x65,
 	0x74, 0x74, 0x69, 0x6e, 0x67, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x38, 0x2e, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73,
+	0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73,
 	0x2e, 0x53, 0x6d, 0x61, 0x72, 0x74, 0x43, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x53, 0x65,
 	0x74, 0x74, 0x69, 0x6e, 0x67, 0x52, 0x14, 0x73, 0x6d, 0x61, 0x72, 0x74, 0x43, 0x61, 0x6d, 0x70,
 	0x61, 0x69, 0x67, 0x6e, 0x53, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x32, 0xfd, 0x04, 0x0a, 0x1b,
@@ -976,15 +976,15 @@ var file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_
 	0x47, 0x65, 0x74, 0x53, 0x6d, 0x61, 0x72, 0x74, 0x43, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e,
 	0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x12, 0x40, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
 	0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31,
-	0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x47, 0x65, 0x74, 0x53, 0x6d,
+	0x35, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x47, 0x65, 0x74, 0x53, 0x6d,
 	0x61, 0x72, 0x74, 0x43, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x53, 0x74, 0x61, 0x74, 0x75,
 	0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x41, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e,
-	0x76, 0x31, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x47, 0x65, 0x74,
+	0x76, 0x31, 0x35, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x47, 0x65, 0x74,
 	0x53, 0x6d, 0x61, 0x72, 0x74, 0x43, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x53, 0x74, 0x61,
 	0x74, 0x75, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x67, 0xda, 0x41, 0x0d,
 	0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x82, 0xd3, 0xe4,
-	0x93, 0x02, 0x51, 0x12, 0x4f, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x7b, 0x72, 0x65, 0x73, 0x6f, 0x75,
+	0x93, 0x02, 0x51, 0x12, 0x4f, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x7b, 0x72, 0x65, 0x73, 0x6f, 0x75,
 	0x72, 0x63, 0x65, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x3d, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65,
 	0x72, 0x73, 0x2f, 0x2a, 0x2f, 0x73, 0x6d, 0x61, 0x72, 0x74, 0x43, 0x61, 0x6d, 0x70, 0x61, 0x69,
 	0x67, 0x6e, 0x53, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x73, 0x2f, 0x2a, 0x7d, 0x3a, 0x67, 0x65,
@@ -992,17 +992,17 @@ var file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_
 	0x61, 0x74, 0x75, 0x73, 0x12, 0x8d, 0x02, 0x0a, 0x1b, 0x4d, 0x75, 0x74, 0x61, 0x74, 0x65, 0x53,
 	0x6d, 0x61, 0x72, 0x74, 0x43, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x53, 0x65, 0x74, 0x74,
 	0x69, 0x6e, 0x67, 0x73, 0x12, 0x45, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64,
-	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e,
+	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x4d, 0x75, 0x74, 0x61, 0x74, 0x65, 0x53,
 	0x6d, 0x61, 0x72, 0x74, 0x43, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x53, 0x65, 0x74, 0x74,
 	0x69, 0x6e, 0x67, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x46, 0x2e, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e,
+	0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e,
 	0x4d, 0x75, 0x74, 0x61, 0x74, 0x65, 0x53, 0x6d, 0x61, 0x72, 0x74, 0x43, 0x61, 0x6d, 0x70, 0x61,
 	0x69, 0x67, 0x6e, 0x53, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f,
 	0x6e, 0x73, 0x65, 0x22, 0x5f, 0xda, 0x41, 0x16, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72,
 	0x5f, 0x69, 0x64, 0x2c, 0x6f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x82, 0xd3,
-	0xe4, 0x93, 0x02, 0x40, 0x3a, 0x01, 0x2a, 0x22, 0x3b, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x63, 0x75,
+	0xe4, 0x93, 0x02, 0x40, 0x3a, 0x01, 0x2a, 0x22, 0x3b, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x63, 0x75,
 	0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x73, 0x2f, 0x7b, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65,
 	0x72, 0x5f, 0x69, 0x64, 0x3d, 0x2a, 0x7d, 0x2f, 0x73, 0x6d, 0x61, 0x72, 0x74, 0x43, 0x61, 0x6d,
 	0x70, 0x61, 0x69, 0x67, 0x6e, 0x53, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x73, 0x3a, 0x6d, 0x75,
@@ -1012,76 +1012,76 @@ var file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x61,
 	0x75, 0x74, 0x68, 0x2f, 0x61, 0x64, 0x77, 0x6f, 0x72, 0x64, 0x73, 0x42, 0x8c, 0x02, 0x0a, 0x25,
 	0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x73, 0x65, 0x72,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x73, 0x65, 0x72,
 	0x76, 0x69, 0x63, 0x65, 0x73, 0x42, 0x20, 0x53, 0x6d, 0x61, 0x72, 0x74, 0x43, 0x61, 0x6d, 0x70,
 	0x61, 0x69, 0x67, 0x6e, 0x53, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x53, 0x65, 0x72, 0x76, 0x69,
 	0x63, 0x65, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x49, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2e, 0x67, 0x6f, 0x6c, 0x61, 0x6e, 0x67, 0x2e, 0x6f, 0x72, 0x67, 0x2f, 0x67, 0x65, 0x6e,
 	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x70, 0x69, 0x73,
 	0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76,
-	0x31, 0x34, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x3b, 0x73, 0x65, 0x72, 0x76,
+	0x31, 0x35, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x3b, 0x73, 0x65, 0x72, 0x76,
 	0x69, 0x63, 0x65, 0x73, 0xa2, 0x02, 0x03, 0x47, 0x41, 0x41, 0xaa, 0x02, 0x21, 0x47, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2e, 0x41, 0x64, 0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64,
-	0x73, 0x2e, 0x56, 0x31, 0x34, 0x2e, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0xca, 0x02,
+	0x73, 0x2e, 0x56, 0x31, 0x35, 0x2e, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0xca, 0x02,
 	0x21, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x5c, 0x41, 0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x31, 0x34, 0x5c, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63,
+	0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x31, 0x35, 0x5c, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63,
 	0x65, 0x73, 0xea, 0x02, 0x25, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x3a, 0x3a, 0x41, 0x64, 0x73,
-	0x3a, 0x3a, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x31, 0x34,
+	0x3a, 0x3a, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x31, 0x35,
 	0x3a, 0x3a, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
 	0x6f, 0x33,
 }
 
 var (
-	file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_rawDescData = file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_rawDesc
+	file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_rawDescData = file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_rawDesc
 )
 
-func file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_rawDescData)
+func file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_rawDescData)
 	})
-	return file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_rawDescData
+	return file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_rawDescData
 }
 
-var file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
-var file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_goTypes = []interface{}{
-	(*GetSmartCampaignStatusRequest)(nil),                                        // 0: google.ads.googleads.v14.services.GetSmartCampaignStatusRequest
-	(*SmartCampaignNotEligibleDetails)(nil),                                      // 1: google.ads.googleads.v14.services.SmartCampaignNotEligibleDetails
-	(*SmartCampaignEligibleDetails)(nil),                                         // 2: google.ads.googleads.v14.services.SmartCampaignEligibleDetails
-	(*SmartCampaignPausedDetails)(nil),                                           // 3: google.ads.googleads.v14.services.SmartCampaignPausedDetails
-	(*SmartCampaignRemovedDetails)(nil),                                          // 4: google.ads.googleads.v14.services.SmartCampaignRemovedDetails
-	(*SmartCampaignEndedDetails)(nil),                                            // 5: google.ads.googleads.v14.services.SmartCampaignEndedDetails
-	(*GetSmartCampaignStatusResponse)(nil),                                       // 6: google.ads.googleads.v14.services.GetSmartCampaignStatusResponse
-	(*MutateSmartCampaignSettingsRequest)(nil),                                   // 7: google.ads.googleads.v14.services.MutateSmartCampaignSettingsRequest
-	(*SmartCampaignSettingOperation)(nil),                                        // 8: google.ads.googleads.v14.services.SmartCampaignSettingOperation
-	(*MutateSmartCampaignSettingsResponse)(nil),                                  // 9: google.ads.googleads.v14.services.MutateSmartCampaignSettingsResponse
-	(*MutateSmartCampaignSettingResult)(nil),                                     // 10: google.ads.googleads.v14.services.MutateSmartCampaignSettingResult
-	(enums.SmartCampaignNotEligibleReasonEnum_SmartCampaignNotEligibleReason)(0), // 11: google.ads.googleads.v14.enums.SmartCampaignNotEligibleReasonEnum.SmartCampaignNotEligibleReason
-	(enums.SmartCampaignStatusEnum_SmartCampaignStatus)(0),                       // 12: google.ads.googleads.v14.enums.SmartCampaignStatusEnum.SmartCampaignStatus
-	(enums.ResponseContentTypeEnum_ResponseContentType)(0),                       // 13: google.ads.googleads.v14.enums.ResponseContentTypeEnum.ResponseContentType
-	(*resources.SmartCampaignSetting)(nil),                                       // 14: google.ads.googleads.v14.resources.SmartCampaignSetting
+var file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
+var file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_goTypes = []interface{}{
+	(*GetSmartCampaignStatusRequest)(nil),                                        // 0: google.ads.googleads.v15.services.GetSmartCampaignStatusRequest
+	(*SmartCampaignNotEligibleDetails)(nil),                                      // 1: google.ads.googleads.v15.services.SmartCampaignNotEligibleDetails
+	(*SmartCampaignEligibleDetails)(nil),                                         // 2: google.ads.googleads.v15.services.SmartCampaignEligibleDetails
+	(*SmartCampaignPausedDetails)(nil),                                           // 3: google.ads.googleads.v15.services.SmartCampaignPausedDetails
+	(*SmartCampaignRemovedDetails)(nil),                                          // 4: google.ads.googleads.v15.services.SmartCampaignRemovedDetails
+	(*SmartCampaignEndedDetails)(nil),                                            // 5: google.ads.googleads.v15.services.SmartCampaignEndedDetails
+	(*GetSmartCampaignStatusResponse)(nil),                                       // 6: google.ads.googleads.v15.services.GetSmartCampaignStatusResponse
+	(*MutateSmartCampaignSettingsRequest)(nil),                                   // 7: google.ads.googleads.v15.services.MutateSmartCampaignSettingsRequest
+	(*SmartCampaignSettingOperation)(nil),                                        // 8: google.ads.googleads.v15.services.SmartCampaignSettingOperation
+	(*MutateSmartCampaignSettingsResponse)(nil),                                  // 9: google.ads.googleads.v15.services.MutateSmartCampaignSettingsResponse
+	(*MutateSmartCampaignSettingResult)(nil),                                     // 10: google.ads.googleads.v15.services.MutateSmartCampaignSettingResult
+	(enums.SmartCampaignNotEligibleReasonEnum_SmartCampaignNotEligibleReason)(0), // 11: google.ads.googleads.v15.enums.SmartCampaignNotEligibleReasonEnum.SmartCampaignNotEligibleReason
+	(enums.SmartCampaignStatusEnum_SmartCampaignStatus)(0),                       // 12: google.ads.googleads.v15.enums.SmartCampaignStatusEnum.SmartCampaignStatus
+	(enums.ResponseContentTypeEnum_ResponseContentType)(0),                       // 13: google.ads.googleads.v15.enums.ResponseContentTypeEnum.ResponseContentType
+	(*resources.SmartCampaignSetting)(nil),                                       // 14: google.ads.googleads.v15.resources.SmartCampaignSetting
 	(*fieldmaskpb.FieldMask)(nil),                                                // 15: google.protobuf.FieldMask
 	(*status.Status)(nil),                                                        // 16: google.rpc.Status
 }
-var file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_depIdxs = []int32{
-	11, // 0: google.ads.googleads.v14.services.SmartCampaignNotEligibleDetails.not_eligible_reason:type_name -> google.ads.googleads.v14.enums.SmartCampaignNotEligibleReasonEnum.SmartCampaignNotEligibleReason
-	12, // 1: google.ads.googleads.v14.services.GetSmartCampaignStatusResponse.smart_campaign_status:type_name -> google.ads.googleads.v14.enums.SmartCampaignStatusEnum.SmartCampaignStatus
-	1,  // 2: google.ads.googleads.v14.services.GetSmartCampaignStatusResponse.not_eligible_details:type_name -> google.ads.googleads.v14.services.SmartCampaignNotEligibleDetails
-	2,  // 3: google.ads.googleads.v14.services.GetSmartCampaignStatusResponse.eligible_details:type_name -> google.ads.googleads.v14.services.SmartCampaignEligibleDetails
-	3,  // 4: google.ads.googleads.v14.services.GetSmartCampaignStatusResponse.paused_details:type_name -> google.ads.googleads.v14.services.SmartCampaignPausedDetails
-	4,  // 5: google.ads.googleads.v14.services.GetSmartCampaignStatusResponse.removed_details:type_name -> google.ads.googleads.v14.services.SmartCampaignRemovedDetails
-	5,  // 6: google.ads.googleads.v14.services.GetSmartCampaignStatusResponse.ended_details:type_name -> google.ads.googleads.v14.services.SmartCampaignEndedDetails
-	8,  // 7: google.ads.googleads.v14.services.MutateSmartCampaignSettingsRequest.operations:type_name -> google.ads.googleads.v14.services.SmartCampaignSettingOperation
-	13, // 8: google.ads.googleads.v14.services.MutateSmartCampaignSettingsRequest.response_content_type:type_name -> google.ads.googleads.v14.enums.ResponseContentTypeEnum.ResponseContentType
-	14, // 9: google.ads.googleads.v14.services.SmartCampaignSettingOperation.update:type_name -> google.ads.googleads.v14.resources.SmartCampaignSetting
-	15, // 10: google.ads.googleads.v14.services.SmartCampaignSettingOperation.update_mask:type_name -> google.protobuf.FieldMask
-	16, // 11: google.ads.googleads.v14.services.MutateSmartCampaignSettingsResponse.partial_failure_error:type_name -> google.rpc.Status
-	10, // 12: google.ads.googleads.v14.services.MutateSmartCampaignSettingsResponse.results:type_name -> google.ads.googleads.v14.services.MutateSmartCampaignSettingResult
-	14, // 13: google.ads.googleads.v14.services.MutateSmartCampaignSettingResult.smart_campaign_setting:type_name -> google.ads.googleads.v14.resources.SmartCampaignSetting
-	0,  // 14: google.ads.googleads.v14.services.SmartCampaignSettingService.GetSmartCampaignStatus:input_type -> google.ads.googleads.v14.services.GetSmartCampaignStatusRequest
-	7,  // 15: google.ads.googleads.v14.services.SmartCampaignSettingService.MutateSmartCampaignSettings:input_type -> google.ads.googleads.v14.services.MutateSmartCampaignSettingsRequest
-	6,  // 16: google.ads.googleads.v14.services.SmartCampaignSettingService.GetSmartCampaignStatus:output_type -> google.ads.googleads.v14.services.GetSmartCampaignStatusResponse
-	9,  // 17: google.ads.googleads.v14.services.SmartCampaignSettingService.MutateSmartCampaignSettings:output_type -> google.ads.googleads.v14.services.MutateSmartCampaignSettingsResponse
+var file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_depIdxs = []int32{
+	11, // 0: google.ads.googleads.v15.services.SmartCampaignNotEligibleDetails.not_eligible_reason:type_name -> google.ads.googleads.v15.enums.SmartCampaignNotEligibleReasonEnum.SmartCampaignNotEligibleReason
+	12, // 1: google.ads.googleads.v15.services.GetSmartCampaignStatusResponse.smart_campaign_status:type_name -> google.ads.googleads.v15.enums.SmartCampaignStatusEnum.SmartCampaignStatus
+	1,  // 2: google.ads.googleads.v15.services.GetSmartCampaignStatusResponse.not_eligible_details:type_name -> google.ads.googleads.v15.services.SmartCampaignNotEligibleDetails
+	2,  // 3: google.ads.googleads.v15.services.GetSmartCampaignStatusResponse.eligible_details:type_name -> google.ads.googleads.v15.services.SmartCampaignEligibleDetails
+	3,  // 4: google.ads.googleads.v15.services.GetSmartCampaignStatusResponse.paused_details:type_name -> google.ads.googleads.v15.services.SmartCampaignPausedDetails
+	4,  // 5: google.ads.googleads.v15.services.GetSmartCampaignStatusResponse.removed_details:type_name -> google.ads.googleads.v15.services.SmartCampaignRemovedDetails
+	5,  // 6: google.ads.googleads.v15.services.GetSmartCampaignStatusResponse.ended_details:type_name -> google.ads.googleads.v15.services.SmartCampaignEndedDetails
+	8,  // 7: google.ads.googleads.v15.services.MutateSmartCampaignSettingsRequest.operations:type_name -> google.ads.googleads.v15.services.SmartCampaignSettingOperation
+	13, // 8: google.ads.googleads.v15.services.MutateSmartCampaignSettingsRequest.response_content_type:type_name -> google.ads.googleads.v15.enums.ResponseContentTypeEnum.ResponseContentType
+	14, // 9: google.ads.googleads.v15.services.SmartCampaignSettingOperation.update:type_name -> google.ads.googleads.v15.resources.SmartCampaignSetting
+	15, // 10: google.ads.googleads.v15.services.SmartCampaignSettingOperation.update_mask:type_name -> google.protobuf.FieldMask
+	16, // 11: google.ads.googleads.v15.services.MutateSmartCampaignSettingsResponse.partial_failure_error:type_name -> google.rpc.Status
+	10, // 12: google.ads.googleads.v15.services.MutateSmartCampaignSettingsResponse.results:type_name -> google.ads.googleads.v15.services.MutateSmartCampaignSettingResult
+	14, // 13: google.ads.googleads.v15.services.MutateSmartCampaignSettingResult.smart_campaign_setting:type_name -> google.ads.googleads.v15.resources.SmartCampaignSetting
+	0,  // 14: google.ads.googleads.v15.services.SmartCampaignSettingService.GetSmartCampaignStatus:input_type -> google.ads.googleads.v15.services.GetSmartCampaignStatusRequest
+	7,  // 15: google.ads.googleads.v15.services.SmartCampaignSettingService.MutateSmartCampaignSettings:input_type -> google.ads.googleads.v15.services.MutateSmartCampaignSettingsRequest
+	6,  // 16: google.ads.googleads.v15.services.SmartCampaignSettingService.GetSmartCampaignStatus:output_type -> google.ads.googleads.v15.services.GetSmartCampaignStatusResponse
+	9,  // 17: google.ads.googleads.v15.services.SmartCampaignSettingService.MutateSmartCampaignSettings:output_type -> google.ads.googleads.v15.services.MutateSmartCampaignSettingsResponse
 	16, // [16:18] is the sub-list for method output_type
 	14, // [14:16] is the sub-list for method input_type
 	14, // [14:14] is the sub-list for extension type_name
@@ -1089,13 +1089,13 @@ var file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_
 	0,  // [0:14] is the sub-list for field type_name
 }
 
-func init() { file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_init() }
-func file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_init() {
-	if File_google_ads_googleads_v14_services_smart_campaign_setting_service_proto != nil {
+func init() { file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_init() }
+func file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_init() {
+	if File_google_ads_googleads_v15_services_smart_campaign_setting_service_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetSmartCampaignStatusRequest); i {
 			case 0:
 				return &v.state
@@ -1107,7 +1107,7 @@ func file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SmartCampaignNotEligibleDetails); i {
 			case 0:
 				return &v.state
@@ -1119,7 +1119,7 @@ func file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SmartCampaignEligibleDetails); i {
 			case 0:
 				return &v.state
@@ -1131,7 +1131,7 @@ func file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SmartCampaignPausedDetails); i {
 			case 0:
 				return &v.state
@@ -1143,7 +1143,7 @@ func file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SmartCampaignRemovedDetails); i {
 			case 0:
 				return &v.state
@@ -1155,7 +1155,7 @@ func file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SmartCampaignEndedDetails); i {
 			case 0:
 				return &v.state
@@ -1167,7 +1167,7 @@ func file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetSmartCampaignStatusResponse); i {
 			case 0:
 				return &v.state
@@ -1179,7 +1179,7 @@ func file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*MutateSmartCampaignSettingsRequest); i {
 			case 0:
 				return &v.state
@@ -1191,7 +1191,7 @@ func file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SmartCampaignSettingOperation); i {
 			case 0:
 				return &v.state
@@ -1203,7 +1203,7 @@ func file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*MutateSmartCampaignSettingsResponse); i {
 			case 0:
 				return &v.state
@@ -1215,7 +1215,7 @@ func file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*MutateSmartCampaignSettingResult); i {
 			case 0:
 				return &v.state
@@ -1228,12 +1228,12 @@ func file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto
 			}
 		}
 	}
-	file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_msgTypes[1].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_msgTypes[2].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_msgTypes[3].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_msgTypes[4].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_msgTypes[5].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_msgTypes[6].OneofWrappers = []interface{}{
+	file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_msgTypes[1].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_msgTypes[2].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_msgTypes[3].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_msgTypes[4].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_msgTypes[5].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_msgTypes[6].OneofWrappers = []interface{}{
 		(*GetSmartCampaignStatusResponse_NotEligibleDetails)(nil),
 		(*GetSmartCampaignStatusResponse_EligibleDetails)(nil),
 		(*GetSmartCampaignStatusResponse_PausedDetails)(nil),
@@ -1244,18 +1244,18 @@ func file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_rawDesc,
+			RawDescriptor: file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   11,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_depIdxs,
-		MessageInfos:      file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_depIdxs,
+		MessageInfos:      file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v14_services_smart_campaign_setting_service_proto = out.File
-	file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_rawDesc = nil
-	file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_goTypes = nil
-	file_google_ads_googleads_v14_services_smart_campaign_setting_service_proto_depIdxs = nil
+	File_google_ads_googleads_v15_services_smart_campaign_setting_service_proto = out.File
+	file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_rawDesc = nil
+	file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_goTypes = nil
+	file_google_ads_googleads_v15_services_smart_campaign_setting_service_proto_depIdxs = nil
 }

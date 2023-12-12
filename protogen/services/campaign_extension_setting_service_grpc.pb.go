@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.21.1
-// source: google/ads/googleads/v14/services/campaign_extension_setting_service.proto
+// source: google/ads/googleads/v15/services/campaign_extension_setting_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	CampaignExtensionSettingService_MutateCampaignExtensionSettings_FullMethodName = "/google.ads.googleads.v14.services.CampaignExtensionSettingService/MutateCampaignExtensionSettings"
+	CampaignExtensionSettingService_MutateCampaignExtensionSettings_FullMethodName = "/google.ads.googleads.v15.services.CampaignExtensionSettingService/MutateCampaignExtensionSettings"
 )
 
 // CampaignExtensionSettingServiceClient is the client API for CampaignExtensionSettingService service.
@@ -175,7 +175,7 @@ func _CampaignExtensionSettingService_MutateCampaignExtensionSettings_Handler(sr
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CampaignExtensionSettingService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v14.services.CampaignExtensionSettingService",
+	ServiceName: "google.ads.googleads.v15.services.CampaignExtensionSettingService",
 	HandlerType: (*CampaignExtensionSettingServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -184,5 +184,5 @@ var CampaignExtensionSettingService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v14/services/campaign_extension_setting_service.proto",
+	Metadata: "google/ads/googleads/v15/services/campaign_extension_setting_service.proto",
 }

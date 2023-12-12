@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.31.0
 // 	protoc        v3.21.1
-// source: google/ads/googleads/v14/common/policy.proto
+// source: google/ads/googleads/v15/common/policy.proto
 
 package common
 
@@ -55,7 +55,7 @@ type PolicyViolationKey struct {
 func (x *PolicyViolationKey) Reset() {
 	*x = PolicyViolationKey{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_policy_proto_msgTypes[0]
+		mi := &file_google_ads_googleads_v15_common_policy_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -68,7 +68,7 @@ func (x *PolicyViolationKey) String() string {
 func (*PolicyViolationKey) ProtoMessage() {}
 
 func (x *PolicyViolationKey) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_policy_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v15_common_policy_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -81,7 +81,7 @@ func (x *PolicyViolationKey) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PolicyViolationKey.ProtoReflect.Descriptor instead.
 func (*PolicyViolationKey) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_policy_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v15_common_policy_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *PolicyViolationKey) GetPolicyName() string {
@@ -128,7 +128,7 @@ type PolicyValidationParameter struct {
 func (x *PolicyValidationParameter) Reset() {
 	*x = PolicyValidationParameter{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_policy_proto_msgTypes[1]
+		mi := &file_google_ads_googleads_v15_common_policy_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -141,7 +141,7 @@ func (x *PolicyValidationParameter) String() string {
 func (*PolicyValidationParameter) ProtoMessage() {}
 
 func (x *PolicyValidationParameter) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_policy_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v15_common_policy_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -154,7 +154,7 @@ func (x *PolicyValidationParameter) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PolicyValidationParameter.ProtoReflect.Descriptor instead.
 func (*PolicyValidationParameter) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_policy_proto_rawDescGZIP(), []int{1}
+	return file_google_ads_googleads_v15_common_policy_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *PolicyValidationParameter) GetIgnorablePolicyTopics() []string {
@@ -190,7 +190,7 @@ type PolicyTopicEntry struct {
 	// at any time.
 	Topic *string `protobuf:"bytes,5,opt,name=topic,proto3,oneof" json:"topic,omitempty"`
 	// Describes the negative or positive effect this policy will have on serving.
-	Type enums.PolicyTopicEntryTypeEnum_PolicyTopicEntryType `protobuf:"varint,2,opt,name=type,proto3,enum=google.ads.googleads.v14.enums.PolicyTopicEntryTypeEnum_PolicyTopicEntryType" json:"type,omitempty"`
+	Type enums.PolicyTopicEntryTypeEnum_PolicyTopicEntryType `protobuf:"varint,2,opt,name=type,proto3,enum=google.ads.googleads.v15.enums.PolicyTopicEntryTypeEnum_PolicyTopicEntryType" json:"type,omitempty"`
 	// Additional information that explains policy finding
 	// (for example, the brand name for a trademark finding).
 	Evidences []*PolicyTopicEvidence `protobuf:"bytes,3,rep,name=evidences,proto3" json:"evidences,omitempty"`
@@ -202,7 +202,7 @@ type PolicyTopicEntry struct {
 func (x *PolicyTopicEntry) Reset() {
 	*x = PolicyTopicEntry{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_policy_proto_msgTypes[2]
+		mi := &file_google_ads_googleads_v15_common_policy_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -215,7 +215,7 @@ func (x *PolicyTopicEntry) String() string {
 func (*PolicyTopicEntry) ProtoMessage() {}
 
 func (x *PolicyTopicEntry) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_policy_proto_msgTypes[2]
+	mi := &file_google_ads_googleads_v15_common_policy_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -228,7 +228,7 @@ func (x *PolicyTopicEntry) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PolicyTopicEntry.ProtoReflect.Descriptor instead.
 func (*PolicyTopicEntry) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_policy_proto_rawDescGZIP(), []int{2}
+	return file_google_ads_googleads_v15_common_policy_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *PolicyTopicEntry) GetTopic() string {
@@ -281,7 +281,7 @@ type PolicyTopicEvidence struct {
 func (x *PolicyTopicEvidence) Reset() {
 	*x = PolicyTopicEvidence{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_policy_proto_msgTypes[3]
+		mi := &file_google_ads_googleads_v15_common_policy_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -294,7 +294,7 @@ func (x *PolicyTopicEvidence) String() string {
 func (*PolicyTopicEvidence) ProtoMessage() {}
 
 func (x *PolicyTopicEvidence) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_policy_proto_msgTypes[3]
+	mi := &file_google_ads_googleads_v15_common_policy_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -307,7 +307,7 @@ func (x *PolicyTopicEvidence) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PolicyTopicEvidence.ProtoReflect.Descriptor instead.
 func (*PolicyTopicEvidence) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_policy_proto_rawDescGZIP(), []int{3}
+	return file_google_ads_googleads_v15_common_policy_proto_rawDescGZIP(), []int{3}
 }
 
 func (m *PolicyTopicEvidence) GetValue() isPolicyTopicEvidence_Value {
@@ -428,7 +428,7 @@ type PolicyTopicConstraint struct {
 func (x *PolicyTopicConstraint) Reset() {
 	*x = PolicyTopicConstraint{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_policy_proto_msgTypes[4]
+		mi := &file_google_ads_googleads_v15_common_policy_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -441,7 +441,7 @@ func (x *PolicyTopicConstraint) String() string {
 func (*PolicyTopicConstraint) ProtoMessage() {}
 
 func (x *PolicyTopicConstraint) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_policy_proto_msgTypes[4]
+	mi := &file_google_ads_googleads_v15_common_policy_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -454,7 +454,7 @@ func (x *PolicyTopicConstraint) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PolicyTopicConstraint.ProtoReflect.Descriptor instead.
 func (*PolicyTopicConstraint) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_policy_proto_rawDescGZIP(), []int{4}
+	return file_google_ads_googleads_v15_common_policy_proto_rawDescGZIP(), []int{4}
 }
 
 func (m *PolicyTopicConstraint) GetValue() isPolicyTopicConstraint_Value {
@@ -539,7 +539,7 @@ type PolicyTopicEvidence_TextList struct {
 func (x *PolicyTopicEvidence_TextList) Reset() {
 	*x = PolicyTopicEvidence_TextList{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_policy_proto_msgTypes[5]
+		mi := &file_google_ads_googleads_v15_common_policy_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -552,7 +552,7 @@ func (x *PolicyTopicEvidence_TextList) String() string {
 func (*PolicyTopicEvidence_TextList) ProtoMessage() {}
 
 func (x *PolicyTopicEvidence_TextList) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_policy_proto_msgTypes[5]
+	mi := &file_google_ads_googleads_v15_common_policy_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -565,7 +565,7 @@ func (x *PolicyTopicEvidence_TextList) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PolicyTopicEvidence_TextList.ProtoReflect.Descriptor instead.
 func (*PolicyTopicEvidence_TextList) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_policy_proto_rawDescGZIP(), []int{3, 0}
+	return file_google_ads_googleads_v15_common_policy_proto_rawDescGZIP(), []int{3, 0}
 }
 
 func (x *PolicyTopicEvidence_TextList) GetTexts() []string {
@@ -591,7 +591,7 @@ type PolicyTopicEvidence_WebsiteList struct {
 func (x *PolicyTopicEvidence_WebsiteList) Reset() {
 	*x = PolicyTopicEvidence_WebsiteList{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_policy_proto_msgTypes[6]
+		mi := &file_google_ads_googleads_v15_common_policy_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -604,7 +604,7 @@ func (x *PolicyTopicEvidence_WebsiteList) String() string {
 func (*PolicyTopicEvidence_WebsiteList) ProtoMessage() {}
 
 func (x *PolicyTopicEvidence_WebsiteList) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_policy_proto_msgTypes[6]
+	mi := &file_google_ads_googleads_v15_common_policy_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -617,7 +617,7 @@ func (x *PolicyTopicEvidence_WebsiteList) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PolicyTopicEvidence_WebsiteList.ProtoReflect.Descriptor instead.
 func (*PolicyTopicEvidence_WebsiteList) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_policy_proto_rawDescGZIP(), []int{3, 1}
+	return file_google_ads_googleads_v15_common_policy_proto_rawDescGZIP(), []int{3, 1}
 }
 
 func (x *PolicyTopicEvidence_WebsiteList) GetWebsites() []string {
@@ -641,7 +641,7 @@ type PolicyTopicEvidence_DestinationTextList struct {
 func (x *PolicyTopicEvidence_DestinationTextList) Reset() {
 	*x = PolicyTopicEvidence_DestinationTextList{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_policy_proto_msgTypes[7]
+		mi := &file_google_ads_googleads_v15_common_policy_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -654,7 +654,7 @@ func (x *PolicyTopicEvidence_DestinationTextList) String() string {
 func (*PolicyTopicEvidence_DestinationTextList) ProtoMessage() {}
 
 func (x *PolicyTopicEvidence_DestinationTextList) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_policy_proto_msgTypes[7]
+	mi := &file_google_ads_googleads_v15_common_policy_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -667,7 +667,7 @@ func (x *PolicyTopicEvidence_DestinationTextList) ProtoReflect() protoreflect.Me
 
 // Deprecated: Use PolicyTopicEvidence_DestinationTextList.ProtoReflect.Descriptor instead.
 func (*PolicyTopicEvidence_DestinationTextList) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_policy_proto_rawDescGZIP(), []int{3, 2}
+	return file_google_ads_googleads_v15_common_policy_proto_rawDescGZIP(), []int{3, 2}
 }
 
 func (x *PolicyTopicEvidence_DestinationTextList) GetDestinationTexts() []string {
@@ -684,13 +684,13 @@ type PolicyTopicEvidence_DestinationMismatch struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The set of URLs that did not match each other.
-	UrlTypes []enums.PolicyTopicEvidenceDestinationMismatchUrlTypeEnum_PolicyTopicEvidenceDestinationMismatchUrlType `protobuf:"varint,1,rep,packed,name=url_types,json=urlTypes,proto3,enum=google.ads.googleads.v14.enums.PolicyTopicEvidenceDestinationMismatchUrlTypeEnum_PolicyTopicEvidenceDestinationMismatchUrlType" json:"url_types,omitempty"`
+	UrlTypes []enums.PolicyTopicEvidenceDestinationMismatchUrlTypeEnum_PolicyTopicEvidenceDestinationMismatchUrlType `protobuf:"varint,1,rep,packed,name=url_types,json=urlTypes,proto3,enum=google.ads.googleads.v15.enums.PolicyTopicEvidenceDestinationMismatchUrlTypeEnum_PolicyTopicEvidenceDestinationMismatchUrlType" json:"url_types,omitempty"`
 }
 
 func (x *PolicyTopicEvidence_DestinationMismatch) Reset() {
 	*x = PolicyTopicEvidence_DestinationMismatch{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_policy_proto_msgTypes[8]
+		mi := &file_google_ads_googleads_v15_common_policy_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -703,7 +703,7 @@ func (x *PolicyTopicEvidence_DestinationMismatch) String() string {
 func (*PolicyTopicEvidence_DestinationMismatch) ProtoMessage() {}
 
 func (x *PolicyTopicEvidence_DestinationMismatch) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_policy_proto_msgTypes[8]
+	mi := &file_google_ads_googleads_v15_common_policy_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -716,7 +716,7 @@ func (x *PolicyTopicEvidence_DestinationMismatch) ProtoReflect() protoreflect.Me
 
 // Deprecated: Use PolicyTopicEvidence_DestinationMismatch.ProtoReflect.Descriptor instead.
 func (*PolicyTopicEvidence_DestinationMismatch) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_policy_proto_rawDescGZIP(), []int{3, 3}
+	return file_google_ads_googleads_v15_common_policy_proto_rawDescGZIP(), []int{3, 3}
 }
 
 func (x *PolicyTopicEvidence_DestinationMismatch) GetUrlTypes() []enums.PolicyTopicEvidenceDestinationMismatchUrlTypeEnum_PolicyTopicEvidenceDestinationMismatchUrlType {
@@ -736,7 +736,7 @@ type PolicyTopicEvidence_DestinationNotWorking struct {
 	// The full URL that didn't work.
 	ExpandedUrl *string `protobuf:"bytes,7,opt,name=expanded_url,json=expandedUrl,proto3,oneof" json:"expanded_url,omitempty"`
 	// The type of device that failed to load the URL.
-	Device enums.PolicyTopicEvidenceDestinationNotWorkingDeviceEnum_PolicyTopicEvidenceDestinationNotWorkingDevice `protobuf:"varint,4,opt,name=device,proto3,enum=google.ads.googleads.v14.enums.PolicyTopicEvidenceDestinationNotWorkingDeviceEnum_PolicyTopicEvidenceDestinationNotWorkingDevice" json:"device,omitempty"`
+	Device enums.PolicyTopicEvidenceDestinationNotWorkingDeviceEnum_PolicyTopicEvidenceDestinationNotWorkingDevice `protobuf:"varint,4,opt,name=device,proto3,enum=google.ads.googleads.v15.enums.PolicyTopicEvidenceDestinationNotWorkingDeviceEnum_PolicyTopicEvidenceDestinationNotWorkingDevice" json:"device,omitempty"`
 	// The time the URL was last checked.
 	// The format is "YYYY-MM-DD HH:MM:SS".
 	// Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
@@ -753,7 +753,7 @@ type PolicyTopicEvidence_DestinationNotWorking struct {
 func (x *PolicyTopicEvidence_DestinationNotWorking) Reset() {
 	*x = PolicyTopicEvidence_DestinationNotWorking{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_policy_proto_msgTypes[9]
+		mi := &file_google_ads_googleads_v15_common_policy_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -766,7 +766,7 @@ func (x *PolicyTopicEvidence_DestinationNotWorking) String() string {
 func (*PolicyTopicEvidence_DestinationNotWorking) ProtoMessage() {}
 
 func (x *PolicyTopicEvidence_DestinationNotWorking) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_policy_proto_msgTypes[9]
+	mi := &file_google_ads_googleads_v15_common_policy_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -779,7 +779,7 @@ func (x *PolicyTopicEvidence_DestinationNotWorking) ProtoReflect() protoreflect.
 
 // Deprecated: Use PolicyTopicEvidence_DestinationNotWorking.ProtoReflect.Descriptor instead.
 func (*PolicyTopicEvidence_DestinationNotWorking) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_policy_proto_rawDescGZIP(), []int{3, 4}
+	return file_google_ads_googleads_v15_common_policy_proto_rawDescGZIP(), []int{3, 4}
 }
 
 func (x *PolicyTopicEvidence_DestinationNotWorking) GetExpandedUrl() string {
@@ -830,7 +830,7 @@ type isPolicyTopicEvidence_DestinationNotWorking_Reason interface {
 
 type PolicyTopicEvidence_DestinationNotWorking_DnsErrorType struct {
 	// The type of DNS error.
-	DnsErrorType enums.PolicyTopicEvidenceDestinationNotWorkingDnsErrorTypeEnum_PolicyTopicEvidenceDestinationNotWorkingDnsErrorType `protobuf:"varint,1,opt,name=dns_error_type,json=dnsErrorType,proto3,enum=google.ads.googleads.v14.enums.PolicyTopicEvidenceDestinationNotWorkingDnsErrorTypeEnum_PolicyTopicEvidenceDestinationNotWorkingDnsErrorType,oneof"`
+	DnsErrorType enums.PolicyTopicEvidenceDestinationNotWorkingDnsErrorTypeEnum_PolicyTopicEvidenceDestinationNotWorkingDnsErrorType `protobuf:"varint,1,opt,name=dns_error_type,json=dnsErrorType,proto3,enum=google.ads.googleads.v15.enums.PolicyTopicEvidenceDestinationNotWorkingDnsErrorTypeEnum_PolicyTopicEvidenceDestinationNotWorkingDnsErrorType,oneof"`
 }
 
 type PolicyTopicEvidence_DestinationNotWorking_HttpErrorCode struct {
@@ -859,7 +859,7 @@ type PolicyTopicConstraint_CountryConstraintList struct {
 func (x *PolicyTopicConstraint_CountryConstraintList) Reset() {
 	*x = PolicyTopicConstraint_CountryConstraintList{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_policy_proto_msgTypes[10]
+		mi := &file_google_ads_googleads_v15_common_policy_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -872,7 +872,7 @@ func (x *PolicyTopicConstraint_CountryConstraintList) String() string {
 func (*PolicyTopicConstraint_CountryConstraintList) ProtoMessage() {}
 
 func (x *PolicyTopicConstraint_CountryConstraintList) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_policy_proto_msgTypes[10]
+	mi := &file_google_ads_googleads_v15_common_policy_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -885,7 +885,7 @@ func (x *PolicyTopicConstraint_CountryConstraintList) ProtoReflect() protoreflec
 
 // Deprecated: Use PolicyTopicConstraint_CountryConstraintList.ProtoReflect.Descriptor instead.
 func (*PolicyTopicConstraint_CountryConstraintList) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_policy_proto_rawDescGZIP(), []int{4, 0}
+	return file_google_ads_googleads_v15_common_policy_proto_rawDescGZIP(), []int{4, 0}
 }
 
 func (x *PolicyTopicConstraint_CountryConstraintList) GetTotalTargetedCountries() int32 {
@@ -913,7 +913,7 @@ type PolicyTopicConstraint_ResellerConstraint struct {
 func (x *PolicyTopicConstraint_ResellerConstraint) Reset() {
 	*x = PolicyTopicConstraint_ResellerConstraint{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_policy_proto_msgTypes[11]
+		mi := &file_google_ads_googleads_v15_common_policy_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -926,7 +926,7 @@ func (x *PolicyTopicConstraint_ResellerConstraint) String() string {
 func (*PolicyTopicConstraint_ResellerConstraint) ProtoMessage() {}
 
 func (x *PolicyTopicConstraint_ResellerConstraint) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_policy_proto_msgTypes[11]
+	mi := &file_google_ads_googleads_v15_common_policy_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -939,7 +939,7 @@ func (x *PolicyTopicConstraint_ResellerConstraint) ProtoReflect() protoreflect.M
 
 // Deprecated: Use PolicyTopicConstraint_ResellerConstraint.ProtoReflect.Descriptor instead.
 func (*PolicyTopicConstraint_ResellerConstraint) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_policy_proto_rawDescGZIP(), []int{4, 1}
+	return file_google_ads_googleads_v15_common_policy_proto_rawDescGZIP(), []int{4, 1}
 }
 
 // Indicates that a resource's ability to serve in a particular country is
@@ -957,7 +957,7 @@ type PolicyTopicConstraint_CountryConstraint struct {
 func (x *PolicyTopicConstraint_CountryConstraint) Reset() {
 	*x = PolicyTopicConstraint_CountryConstraint{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_policy_proto_msgTypes[12]
+		mi := &file_google_ads_googleads_v15_common_policy_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -970,7 +970,7 @@ func (x *PolicyTopicConstraint_CountryConstraint) String() string {
 func (*PolicyTopicConstraint_CountryConstraint) ProtoMessage() {}
 
 func (x *PolicyTopicConstraint_CountryConstraint) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_policy_proto_msgTypes[12]
+	mi := &file_google_ads_googleads_v15_common_policy_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -983,7 +983,7 @@ func (x *PolicyTopicConstraint_CountryConstraint) ProtoReflect() protoreflect.Me
 
 // Deprecated: Use PolicyTopicConstraint_CountryConstraint.ProtoReflect.Descriptor instead.
 func (*PolicyTopicConstraint_CountryConstraint) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_policy_proto_rawDescGZIP(), []int{4, 2}
+	return file_google_ads_googleads_v15_common_policy_proto_rawDescGZIP(), []int{4, 2}
 }
 
 func (x *PolicyTopicConstraint_CountryConstraint) GetCountryCriterion() string {
@@ -993,31 +993,31 @@ func (x *PolicyTopicConstraint_CountryConstraint) GetCountryCriterion() string {
 	return ""
 }
 
-var File_google_ads_googleads_v14_common_policy_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v15_common_policy_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v14_common_policy_proto_rawDesc = []byte{
+var file_google_ads_googleads_v15_common_policy_proto_rawDesc = []byte{
 	0x0a, 0x2c, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
 	0x6e, 0x2f, 0x70, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x1f,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x1a,
+	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x1a,
 	0x3c, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f,
+	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f,
 	0x70, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x5f, 0x74, 0x6f, 0x70, 0x69, 0x63, 0x5f, 0x65, 0x6e, 0x74,
 	0x72, 0x79, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x58, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x70, 0x6f,
+	0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x70, 0x6f,
 	0x6c, 0x69, 0x63, 0x79, 0x5f, 0x74, 0x6f, 0x70, 0x69, 0x63, 0x5f, 0x65, 0x76, 0x69, 0x64, 0x65,
 	0x6e, 0x63, 0x65, 0x5f, 0x64, 0x65, 0x73, 0x74, 0x69, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f,
 	0x6d, 0x69, 0x73, 0x6d, 0x61, 0x74, 0x63, 0x68, 0x5f, 0x75, 0x72, 0x6c, 0x5f, 0x74, 0x79, 0x70,
 	0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x59, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f,
 	0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31,
-	0x34, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x70, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x5f, 0x74,
+	0x35, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x70, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x5f, 0x74,
 	0x6f, 0x70, 0x69, 0x63, 0x5f, 0x65, 0x76, 0x69, 0x64, 0x65, 0x6e, 0x63, 0x65, 0x5f, 0x64, 0x65,
 	0x73, 0x74, 0x69, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x6e, 0x6f, 0x74, 0x5f, 0x77, 0x6f,
 	0x72, 0x6b, 0x69, 0x6e, 0x67, 0x5f, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x70, 0x72, 0x6f,
 	0x74, 0x6f, 0x1a, 0x61, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x65, 0x6e, 0x75,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x65, 0x6e, 0x75,
 	0x6d, 0x73, 0x2f, 0x70, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x5f, 0x74, 0x6f, 0x70, 0x69, 0x63, 0x5f,
 	0x65, 0x76, 0x69, 0x64, 0x65, 0x6e, 0x63, 0x65, 0x5f, 0x64, 0x65, 0x73, 0x74, 0x69, 0x6e, 0x61,
 	0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x6e, 0x6f, 0x74, 0x5f, 0x77, 0x6f, 0x72, 0x6b, 0x69, 0x6e, 0x67,
@@ -1040,7 +1040,7 @@ var file_google_ads_googleads_v14_common_policy_proto_rawDesc = []byte{
 	0x74, 0x5f, 0x70, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x5f, 0x76, 0x69, 0x6f, 0x6c, 0x61, 0x74, 0x69,
 	0x6f, 0x6e, 0x5f, 0x6b, 0x65, 0x79, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x33, 0x2e,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e,
+	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e,
 	0x50, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x56, 0x69, 0x6f, 0x6c, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4b,
 	0x65, 0x79, 0x52, 0x19, 0x65, 0x78, 0x65, 0x6d, 0x70, 0x74, 0x50, 0x6f, 0x6c, 0x69, 0x63, 0x79,
 	0x56, 0x69, 0x6f, 0x6c, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4b, 0x65, 0x79, 0x73, 0x22, 0xc8, 0x02,
@@ -1049,19 +1049,19 @@ var file_google_ads_googleads_v14_common_policy_proto_rawDesc = []byte{
 	0x09, 0x48, 0x00, 0x52, 0x05, 0x74, 0x6f, 0x70, 0x69, 0x63, 0x88, 0x01, 0x01, 0x12, 0x61, 0x0a,
 	0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x4d, 0x2e, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x50, 0x6f, 0x6c,
+	0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x50, 0x6f, 0x6c,
 	0x69, 0x63, 0x79, 0x54, 0x6f, 0x70, 0x69, 0x63, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x54, 0x79, 0x70,
 	0x65, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x50, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x54, 0x6f, 0x70, 0x69,
 	0x63, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x54, 0x79, 0x70, 0x65, 0x52, 0x04, 0x74, 0x79, 0x70, 0x65,
 	0x12, 0x52, 0x0a, 0x09, 0x65, 0x76, 0x69, 0x64, 0x65, 0x6e, 0x63, 0x65, 0x73, 0x18, 0x03, 0x20,
 	0x03, 0x28, 0x0b, 0x32, 0x34, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73,
-	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x63,
+	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x63,
 	0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x50, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x54, 0x6f, 0x70, 0x69,
 	0x63, 0x45, 0x76, 0x69, 0x64, 0x65, 0x6e, 0x63, 0x65, 0x52, 0x09, 0x65, 0x76, 0x69, 0x64, 0x65,
 	0x6e, 0x63, 0x65, 0x73, 0x12, 0x58, 0x0a, 0x0b, 0x63, 0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61, 0x69,
 	0x6e, 0x74, 0x73, 0x18, 0x04, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x36, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
-	0x2e, 0x76, 0x31, 0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x50, 0x6f, 0x6c, 0x69,
+	0x2e, 0x76, 0x31, 0x35, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x50, 0x6f, 0x6c, 0x69,
 	0x63, 0x79, 0x54, 0x6f, 0x70, 0x69, 0x63, 0x43, 0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61, 0x69, 0x6e,
 	0x74, 0x52, 0x0b, 0x63, 0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x74, 0x73, 0x42, 0x08,
 	0x0a, 0x06, 0x5f, 0x74, 0x6f, 0x70, 0x69, 0x63, 0x22, 0x8a, 0x0c, 0x0a, 0x13, 0x50, 0x6f, 0x6c,
@@ -1069,13 +1069,13 @@ var file_google_ads_googleads_v14_common_policy_proto_rawDesc = []byte{
 	0x12, 0x65, 0x0a, 0x0c, 0x77, 0x65, 0x62, 0x73, 0x69, 0x74, 0x65, 0x5f, 0x6c, 0x69, 0x73, 0x74,
 	0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x40, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
 	0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31,
-	0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x50, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x54,
+	0x35, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x50, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x54,
 	0x6f, 0x70, 0x69, 0x63, 0x45, 0x76, 0x69, 0x64, 0x65, 0x6e, 0x63, 0x65, 0x2e, 0x57, 0x65, 0x62,
 	0x73, 0x69, 0x74, 0x65, 0x4c, 0x69, 0x73, 0x74, 0x48, 0x00, 0x52, 0x0b, 0x77, 0x65, 0x62, 0x73,
 	0x69, 0x74, 0x65, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x5c, 0x0a, 0x09, 0x74, 0x65, 0x78, 0x74, 0x5f,
 	0x6c, 0x69, 0x73, 0x74, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x3d, 0x2e, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64,
-	0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x50, 0x6f, 0x6c,
+	0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x50, 0x6f, 0x6c,
 	0x69, 0x63, 0x79, 0x54, 0x6f, 0x70, 0x69, 0x63, 0x45, 0x76, 0x69, 0x64, 0x65, 0x6e, 0x63, 0x65,
 	0x2e, 0x54, 0x65, 0x78, 0x74, 0x4c, 0x69, 0x73, 0x74, 0x48, 0x00, 0x52, 0x08, 0x74, 0x65, 0x78,
 	0x74, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x25, 0x0a, 0x0d, 0x6c, 0x61, 0x6e, 0x67, 0x75, 0x61, 0x67,
@@ -1084,7 +1084,7 @@ var file_google_ads_googleads_v14_common_policy_proto_rawDesc = []byte{
 	0x64, 0x65, 0x73, 0x74, 0x69, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x74, 0x65, 0x78, 0x74,
 	0x5f, 0x6c, 0x69, 0x73, 0x74, 0x18, 0x06, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x48, 0x2e, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x50, 0x6f,
+	0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x50, 0x6f,
 	0x6c, 0x69, 0x63, 0x79, 0x54, 0x6f, 0x70, 0x69, 0x63, 0x45, 0x76, 0x69, 0x64, 0x65, 0x6e, 0x63,
 	0x65, 0x2e, 0x44, 0x65, 0x73, 0x74, 0x69, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x54, 0x65, 0x78,
 	0x74, 0x4c, 0x69, 0x73, 0x74, 0x48, 0x00, 0x52, 0x13, 0x64, 0x65, 0x73, 0x74, 0x69, 0x6e, 0x61,
@@ -1092,7 +1092,7 @@ var file_google_ads_googleads_v14_common_policy_proto_rawDesc = []byte{
 	0x64, 0x65, 0x73, 0x74, 0x69, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x6d, 0x69, 0x73, 0x6d,
 	0x61, 0x74, 0x63, 0x68, 0x18, 0x07, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x48, 0x2e, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64,
-	0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x50, 0x6f, 0x6c,
+	0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x50, 0x6f, 0x6c,
 	0x69, 0x63, 0x79, 0x54, 0x6f, 0x70, 0x69, 0x63, 0x45, 0x76, 0x69, 0x64, 0x65, 0x6e, 0x63, 0x65,
 	0x2e, 0x44, 0x65, 0x73, 0x74, 0x69, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4d, 0x69, 0x73, 0x6d,
 	0x61, 0x74, 0x63, 0x68, 0x48, 0x00, 0x52, 0x13, 0x64, 0x65, 0x73, 0x74, 0x69, 0x6e, 0x61, 0x74,
@@ -1100,7 +1100,7 @@ var file_google_ads_googleads_v14_common_policy_proto_rawDesc = []byte{
 	0x64, 0x65, 0x73, 0x74, 0x69, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x6e, 0x6f, 0x74, 0x5f,
 	0x77, 0x6f, 0x72, 0x6b, 0x69, 0x6e, 0x67, 0x18, 0x08, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x4a, 0x2e,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e,
+	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e,
 	0x50, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x54, 0x6f, 0x70, 0x69, 0x63, 0x45, 0x76, 0x69, 0x64, 0x65,
 	0x6e, 0x63, 0x65, 0x2e, 0x44, 0x65, 0x73, 0x74, 0x69, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4e,
 	0x6f, 0x74, 0x57, 0x6f, 0x72, 0x6b, 0x69, 0x6e, 0x67, 0x48, 0x00, 0x52, 0x15, 0x64, 0x65, 0x73,
@@ -1118,7 +1118,7 @@ var file_google_ads_googleads_v14_common_policy_proto_rawDesc = []byte{
 	0x69, 0x6f, 0x6e, 0x4d, 0x69, 0x73, 0x6d, 0x61, 0x74, 0x63, 0x68, 0x12, 0x9c, 0x01, 0x0a, 0x09,
 	0x75, 0x72, 0x6c, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0e, 0x32,
 	0x7f, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73,
 	0x2e, 0x50, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x54, 0x6f, 0x70, 0x69, 0x63, 0x45, 0x76, 0x69, 0x64,
 	0x65, 0x6e, 0x63, 0x65, 0x44, 0x65, 0x73, 0x74, 0x69, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4d,
 	0x69, 0x73, 0x6d, 0x61, 0x74, 0x63, 0x68, 0x55, 0x72, 0x6c, 0x54, 0x79, 0x70, 0x65, 0x45, 0x6e,
@@ -1132,7 +1132,7 @@ var file_google_ads_googleads_v14_common_policy_proto_rawDesc = []byte{
 	0x70, 0x61, 0x6e, 0x64, 0x65, 0x64, 0x55, 0x72, 0x6c, 0x88, 0x01, 0x01, 0x12, 0x9a, 0x01, 0x0a,
 	0x06, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x81, 0x01,
 	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e,
+	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e,
 	0x50, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x54, 0x6f, 0x70, 0x69, 0x63, 0x45, 0x76, 0x69, 0x64, 0x65,
 	0x6e, 0x63, 0x65, 0x44, 0x65, 0x73, 0x74, 0x69, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4e, 0x6f,
 	0x74, 0x57, 0x6f, 0x72, 0x6b, 0x69, 0x6e, 0x67, 0x44, 0x65, 0x76, 0x69, 0x63, 0x65, 0x45, 0x6e,
@@ -1146,7 +1146,7 @@ var file_google_ads_googleads_v14_common_policy_proto_rawDesc = []byte{
 	0x88, 0x01, 0x01, 0x12, 0xb6, 0x01, 0x0a, 0x0e, 0x64, 0x6e, 0x73, 0x5f, 0x65, 0x72, 0x72, 0x6f,
 	0x72, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x8d, 0x01, 0x2e,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x50,
+	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x50,
 	0x6f, 0x6c, 0x69, 0x63, 0x79, 0x54, 0x6f, 0x70, 0x69, 0x63, 0x45, 0x76, 0x69, 0x64, 0x65, 0x6e,
 	0x63, 0x65, 0x44, 0x65, 0x73, 0x74, 0x69, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4e, 0x6f, 0x74,
 	0x57, 0x6f, 0x72, 0x6b, 0x69, 0x6e, 0x67, 0x44, 0x6e, 0x73, 0x45, 0x72, 0x72, 0x6f, 0x72, 0x54,
@@ -1166,7 +1166,7 @@ var file_google_ads_googleads_v14_common_policy_proto_rawDesc = []byte{
 	0x86, 0x01, 0x0a, 0x17, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x72, 0x79, 0x5f, 0x63, 0x6f, 0x6e, 0x73,
 	0x74, 0x72, 0x61, 0x69, 0x6e, 0x74, 0x5f, 0x6c, 0x69, 0x73, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28,
 	0x0b, 0x32, 0x4c, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x63, 0x6f, 0x6d,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x63, 0x6f, 0x6d,
 	0x6d, 0x6f, 0x6e, 0x2e, 0x50, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x54, 0x6f, 0x70, 0x69, 0x63, 0x43,
 	0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x74, 0x2e, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x72,
 	0x79, 0x43, 0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x74, 0x4c, 0x69, 0x73, 0x74, 0x48,
@@ -1174,7 +1174,7 @@ var file_google_ads_googleads_v14_common_policy_proto_rawDesc = []byte{
 	0x61, 0x69, 0x6e, 0x74, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x7c, 0x0a, 0x13, 0x72, 0x65, 0x73, 0x65,
 	0x6c, 0x6c, 0x65, 0x72, 0x5f, 0x63, 0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x74, 0x18,
 	0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x49, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61,
-	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34,
+	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35,
 	0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x50, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x54, 0x6f,
 	0x70, 0x69, 0x63, 0x43, 0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x74, 0x2e, 0x52, 0x65,
 	0x73, 0x65, 0x6c, 0x6c, 0x65, 0x72, 0x43, 0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x74,
@@ -1183,7 +1183,7 @@ var file_google_ads_googleads_v14_common_policy_proto_rawDesc = []byte{
 	0x66, 0x69, 0x63, 0x61, 0x74, 0x65, 0x5f, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6e, 0x67, 0x5f, 0x69,
 	0x6e, 0x5f, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x72, 0x79, 0x5f, 0x6c, 0x69, 0x73, 0x74, 0x18, 0x03,
 	0x20, 0x01, 0x28, 0x0b, 0x32, 0x4c, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64,
-	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e,
+	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e,
 	0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x50, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x54, 0x6f, 0x70,
 	0x69, 0x63, 0x43, 0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x74, 0x2e, 0x43, 0x6f, 0x75,
 	0x6e, 0x74, 0x72, 0x79, 0x43, 0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x74, 0x4c, 0x69,
@@ -1194,7 +1194,7 @@ var file_google_ads_googleads_v14_common_policy_proto_rawDesc = []byte{
 	0x6d, 0x61, 0x74, 0x63, 0x68, 0x5f, 0x69, 0x6e, 0x5f, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x72, 0x79,
 	0x5f, 0x6c, 0x69, 0x73, 0x74, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x4c, 0x2e, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x50, 0x6f,
+	0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x50, 0x6f,
 	0x6c, 0x69, 0x63, 0x79, 0x54, 0x6f, 0x70, 0x69, 0x63, 0x43, 0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61,
 	0x69, 0x6e, 0x74, 0x2e, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x72, 0x79, 0x43, 0x6f, 0x6e, 0x73, 0x74,
 	0x72, 0x61, 0x69, 0x6e, 0x74, 0x4c, 0x69, 0x73, 0x74, 0x48, 0x00, 0x52, 0x26, 0x63, 0x65, 0x72,
@@ -1208,7 +1208,7 @@ var file_google_ads_googleads_v14_common_policy_proto_rawDesc = []byte{
 	0x43, 0x6f, 0x75, 0x6e, 0x74, 0x72, 0x69, 0x65, 0x73, 0x88, 0x01, 0x01, 0x12, 0x66, 0x0a, 0x09,
 	0x63, 0x6f, 0x75, 0x6e, 0x74, 0x72, 0x69, 0x65, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32,
 	0x48, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
 	0x6e, 0x2e, 0x50, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x54, 0x6f, 0x70, 0x69, 0x63, 0x43, 0x6f, 0x6e,
 	0x73, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x74, 0x2e, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x72, 0x79, 0x43,
 	0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x74, 0x52, 0x09, 0x63, 0x6f, 0x75, 0x6e, 0x74,
@@ -1223,73 +1223,73 @@ var file_google_ads_googleads_v14_common_policy_proto_rawDesc = []byte{
 	0x0a, 0x12, 0x5f, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x72, 0x79, 0x5f, 0x63, 0x72, 0x69, 0x74, 0x65,
 	0x72, 0x69, 0x6f, 0x6e, 0x42, 0x07, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x42, 0xeb, 0x01,
 	0x0a, 0x23, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73,
-	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x63,
+	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x63,
 	0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x42, 0x0b, 0x50, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x50, 0x72, 0x6f,
 	0x74, 0x6f, 0x50, 0x01, 0x5a, 0x45, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x67, 0x6f, 0x6c,
 	0x61, 0x6e, 0x67, 0x2e, 0x6f, 0x72, 0x67, 0x2f, 0x67, 0x65, 0x6e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
 	0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x70, 0x69, 0x73, 0x2f, 0x61, 0x64, 0x73, 0x2f,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x63, 0x6f,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x63, 0x6f,
 	0x6d, 0x6d, 0x6f, 0x6e, 0x3b, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xa2, 0x02, 0x03, 0x47, 0x41,
 	0x41, 0xaa, 0x02, 0x1f, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x41, 0x64, 0x73, 0x2e, 0x47,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e, 0x56, 0x31, 0x34, 0x2e, 0x43, 0x6f, 0x6d,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e, 0x56, 0x31, 0x35, 0x2e, 0x43, 0x6f, 0x6d,
 	0x6d, 0x6f, 0x6e, 0xca, 0x02, 0x1f, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x5c, 0x41, 0x64, 0x73,
-	0x5c, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x31, 0x34, 0x5c, 0x43,
+	0x5c, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x31, 0x35, 0x5c, 0x43,
 	0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xea, 0x02, 0x23, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x3a, 0x3a,
 	0x41, 0x64, 0x73, 0x3a, 0x3a, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a,
-	0x56, 0x31, 0x34, 0x3a, 0x3a, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x62, 0x06, 0x70, 0x72, 0x6f,
+	0x56, 0x31, 0x35, 0x3a, 0x3a, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x62, 0x06, 0x70, 0x72, 0x6f,
 	0x74, 0x6f, 0x33,
 }
 
 var (
-	file_google_ads_googleads_v14_common_policy_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v14_common_policy_proto_rawDescData = file_google_ads_googleads_v14_common_policy_proto_rawDesc
+	file_google_ads_googleads_v15_common_policy_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v15_common_policy_proto_rawDescData = file_google_ads_googleads_v15_common_policy_proto_rawDesc
 )
 
-func file_google_ads_googleads_v14_common_policy_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v14_common_policy_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v14_common_policy_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v14_common_policy_proto_rawDescData)
+func file_google_ads_googleads_v15_common_policy_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v15_common_policy_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v15_common_policy_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v15_common_policy_proto_rawDescData)
 	})
-	return file_google_ads_googleads_v14_common_policy_proto_rawDescData
+	return file_google_ads_googleads_v15_common_policy_proto_rawDescData
 }
 
-var file_google_ads_googleads_v14_common_policy_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
-var file_google_ads_googleads_v14_common_policy_proto_goTypes = []interface{}{
-	(*PolicyViolationKey)(nil),                               // 0: google.ads.googleads.v14.common.PolicyViolationKey
-	(*PolicyValidationParameter)(nil),                        // 1: google.ads.googleads.v14.common.PolicyValidationParameter
-	(*PolicyTopicEntry)(nil),                                 // 2: google.ads.googleads.v14.common.PolicyTopicEntry
-	(*PolicyTopicEvidence)(nil),                              // 3: google.ads.googleads.v14.common.PolicyTopicEvidence
-	(*PolicyTopicConstraint)(nil),                            // 4: google.ads.googleads.v14.common.PolicyTopicConstraint
-	(*PolicyTopicEvidence_TextList)(nil),                     // 5: google.ads.googleads.v14.common.PolicyTopicEvidence.TextList
-	(*PolicyTopicEvidence_WebsiteList)(nil),                  // 6: google.ads.googleads.v14.common.PolicyTopicEvidence.WebsiteList
-	(*PolicyTopicEvidence_DestinationTextList)(nil),          // 7: google.ads.googleads.v14.common.PolicyTopicEvidence.DestinationTextList
-	(*PolicyTopicEvidence_DestinationMismatch)(nil),          // 8: google.ads.googleads.v14.common.PolicyTopicEvidence.DestinationMismatch
-	(*PolicyTopicEvidence_DestinationNotWorking)(nil),        // 9: google.ads.googleads.v14.common.PolicyTopicEvidence.DestinationNotWorking
-	(*PolicyTopicConstraint_CountryConstraintList)(nil),      // 10: google.ads.googleads.v14.common.PolicyTopicConstraint.CountryConstraintList
-	(*PolicyTopicConstraint_ResellerConstraint)(nil),         // 11: google.ads.googleads.v14.common.PolicyTopicConstraint.ResellerConstraint
-	(*PolicyTopicConstraint_CountryConstraint)(nil),          // 12: google.ads.googleads.v14.common.PolicyTopicConstraint.CountryConstraint
-	(enums.PolicyTopicEntryTypeEnum_PolicyTopicEntryType)(0), // 13: google.ads.googleads.v14.enums.PolicyTopicEntryTypeEnum.PolicyTopicEntryType
-	(enums.PolicyTopicEvidenceDestinationMismatchUrlTypeEnum_PolicyTopicEvidenceDestinationMismatchUrlType)(0),               // 14: google.ads.googleads.v14.enums.PolicyTopicEvidenceDestinationMismatchUrlTypeEnum.PolicyTopicEvidenceDestinationMismatchUrlType
-	(enums.PolicyTopicEvidenceDestinationNotWorkingDeviceEnum_PolicyTopicEvidenceDestinationNotWorkingDevice)(0),             // 15: google.ads.googleads.v14.enums.PolicyTopicEvidenceDestinationNotWorkingDeviceEnum.PolicyTopicEvidenceDestinationNotWorkingDevice
-	(enums.PolicyTopicEvidenceDestinationNotWorkingDnsErrorTypeEnum_PolicyTopicEvidenceDestinationNotWorkingDnsErrorType)(0), // 16: google.ads.googleads.v14.enums.PolicyTopicEvidenceDestinationNotWorkingDnsErrorTypeEnum.PolicyTopicEvidenceDestinationNotWorkingDnsErrorType
+var file_google_ads_googleads_v15_common_policy_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
+var file_google_ads_googleads_v15_common_policy_proto_goTypes = []interface{}{
+	(*PolicyViolationKey)(nil),                               // 0: google.ads.googleads.v15.common.PolicyViolationKey
+	(*PolicyValidationParameter)(nil),                        // 1: google.ads.googleads.v15.common.PolicyValidationParameter
+	(*PolicyTopicEntry)(nil),                                 // 2: google.ads.googleads.v15.common.PolicyTopicEntry
+	(*PolicyTopicEvidence)(nil),                              // 3: google.ads.googleads.v15.common.PolicyTopicEvidence
+	(*PolicyTopicConstraint)(nil),                            // 4: google.ads.googleads.v15.common.PolicyTopicConstraint
+	(*PolicyTopicEvidence_TextList)(nil),                     // 5: google.ads.googleads.v15.common.PolicyTopicEvidence.TextList
+	(*PolicyTopicEvidence_WebsiteList)(nil),                  // 6: google.ads.googleads.v15.common.PolicyTopicEvidence.WebsiteList
+	(*PolicyTopicEvidence_DestinationTextList)(nil),          // 7: google.ads.googleads.v15.common.PolicyTopicEvidence.DestinationTextList
+	(*PolicyTopicEvidence_DestinationMismatch)(nil),          // 8: google.ads.googleads.v15.common.PolicyTopicEvidence.DestinationMismatch
+	(*PolicyTopicEvidence_DestinationNotWorking)(nil),        // 9: google.ads.googleads.v15.common.PolicyTopicEvidence.DestinationNotWorking
+	(*PolicyTopicConstraint_CountryConstraintList)(nil),      // 10: google.ads.googleads.v15.common.PolicyTopicConstraint.CountryConstraintList
+	(*PolicyTopicConstraint_ResellerConstraint)(nil),         // 11: google.ads.googleads.v15.common.PolicyTopicConstraint.ResellerConstraint
+	(*PolicyTopicConstraint_CountryConstraint)(nil),          // 12: google.ads.googleads.v15.common.PolicyTopicConstraint.CountryConstraint
+	(enums.PolicyTopicEntryTypeEnum_PolicyTopicEntryType)(0), // 13: google.ads.googleads.v15.enums.PolicyTopicEntryTypeEnum.PolicyTopicEntryType
+	(enums.PolicyTopicEvidenceDestinationMismatchUrlTypeEnum_PolicyTopicEvidenceDestinationMismatchUrlType)(0),               // 14: google.ads.googleads.v15.enums.PolicyTopicEvidenceDestinationMismatchUrlTypeEnum.PolicyTopicEvidenceDestinationMismatchUrlType
+	(enums.PolicyTopicEvidenceDestinationNotWorkingDeviceEnum_PolicyTopicEvidenceDestinationNotWorkingDevice)(0),             // 15: google.ads.googleads.v15.enums.PolicyTopicEvidenceDestinationNotWorkingDeviceEnum.PolicyTopicEvidenceDestinationNotWorkingDevice
+	(enums.PolicyTopicEvidenceDestinationNotWorkingDnsErrorTypeEnum_PolicyTopicEvidenceDestinationNotWorkingDnsErrorType)(0), // 16: google.ads.googleads.v15.enums.PolicyTopicEvidenceDestinationNotWorkingDnsErrorTypeEnum.PolicyTopicEvidenceDestinationNotWorkingDnsErrorType
 }
-var file_google_ads_googleads_v14_common_policy_proto_depIdxs = []int32{
-	0,  // 0: google.ads.googleads.v14.common.PolicyValidationParameter.exempt_policy_violation_keys:type_name -> google.ads.googleads.v14.common.PolicyViolationKey
-	13, // 1: google.ads.googleads.v14.common.PolicyTopicEntry.type:type_name -> google.ads.googleads.v14.enums.PolicyTopicEntryTypeEnum.PolicyTopicEntryType
-	3,  // 2: google.ads.googleads.v14.common.PolicyTopicEntry.evidences:type_name -> google.ads.googleads.v14.common.PolicyTopicEvidence
-	4,  // 3: google.ads.googleads.v14.common.PolicyTopicEntry.constraints:type_name -> google.ads.googleads.v14.common.PolicyTopicConstraint
-	6,  // 4: google.ads.googleads.v14.common.PolicyTopicEvidence.website_list:type_name -> google.ads.googleads.v14.common.PolicyTopicEvidence.WebsiteList
-	5,  // 5: google.ads.googleads.v14.common.PolicyTopicEvidence.text_list:type_name -> google.ads.googleads.v14.common.PolicyTopicEvidence.TextList
-	7,  // 6: google.ads.googleads.v14.common.PolicyTopicEvidence.destination_text_list:type_name -> google.ads.googleads.v14.common.PolicyTopicEvidence.DestinationTextList
-	8,  // 7: google.ads.googleads.v14.common.PolicyTopicEvidence.destination_mismatch:type_name -> google.ads.googleads.v14.common.PolicyTopicEvidence.DestinationMismatch
-	9,  // 8: google.ads.googleads.v14.common.PolicyTopicEvidence.destination_not_working:type_name -> google.ads.googleads.v14.common.PolicyTopicEvidence.DestinationNotWorking
-	10, // 9: google.ads.googleads.v14.common.PolicyTopicConstraint.country_constraint_list:type_name -> google.ads.googleads.v14.common.PolicyTopicConstraint.CountryConstraintList
-	11, // 10: google.ads.googleads.v14.common.PolicyTopicConstraint.reseller_constraint:type_name -> google.ads.googleads.v14.common.PolicyTopicConstraint.ResellerConstraint
-	10, // 11: google.ads.googleads.v14.common.PolicyTopicConstraint.certificate_missing_in_country_list:type_name -> google.ads.googleads.v14.common.PolicyTopicConstraint.CountryConstraintList
-	10, // 12: google.ads.googleads.v14.common.PolicyTopicConstraint.certificate_domain_mismatch_in_country_list:type_name -> google.ads.googleads.v14.common.PolicyTopicConstraint.CountryConstraintList
-	14, // 13: google.ads.googleads.v14.common.PolicyTopicEvidence.DestinationMismatch.url_types:type_name -> google.ads.googleads.v14.enums.PolicyTopicEvidenceDestinationMismatchUrlTypeEnum.PolicyTopicEvidenceDestinationMismatchUrlType
-	15, // 14: google.ads.googleads.v14.common.PolicyTopicEvidence.DestinationNotWorking.device:type_name -> google.ads.googleads.v14.enums.PolicyTopicEvidenceDestinationNotWorkingDeviceEnum.PolicyTopicEvidenceDestinationNotWorkingDevice
-	16, // 15: google.ads.googleads.v14.common.PolicyTopicEvidence.DestinationNotWorking.dns_error_type:type_name -> google.ads.googleads.v14.enums.PolicyTopicEvidenceDestinationNotWorkingDnsErrorTypeEnum.PolicyTopicEvidenceDestinationNotWorkingDnsErrorType
-	12, // 16: google.ads.googleads.v14.common.PolicyTopicConstraint.CountryConstraintList.countries:type_name -> google.ads.googleads.v14.common.PolicyTopicConstraint.CountryConstraint
+var file_google_ads_googleads_v15_common_policy_proto_depIdxs = []int32{
+	0,  // 0: google.ads.googleads.v15.common.PolicyValidationParameter.exempt_policy_violation_keys:type_name -> google.ads.googleads.v15.common.PolicyViolationKey
+	13, // 1: google.ads.googleads.v15.common.PolicyTopicEntry.type:type_name -> google.ads.googleads.v15.enums.PolicyTopicEntryTypeEnum.PolicyTopicEntryType
+	3,  // 2: google.ads.googleads.v15.common.PolicyTopicEntry.evidences:type_name -> google.ads.googleads.v15.common.PolicyTopicEvidence
+	4,  // 3: google.ads.googleads.v15.common.PolicyTopicEntry.constraints:type_name -> google.ads.googleads.v15.common.PolicyTopicConstraint
+	6,  // 4: google.ads.googleads.v15.common.PolicyTopicEvidence.website_list:type_name -> google.ads.googleads.v15.common.PolicyTopicEvidence.WebsiteList
+	5,  // 5: google.ads.googleads.v15.common.PolicyTopicEvidence.text_list:type_name -> google.ads.googleads.v15.common.PolicyTopicEvidence.TextList
+	7,  // 6: google.ads.googleads.v15.common.PolicyTopicEvidence.destination_text_list:type_name -> google.ads.googleads.v15.common.PolicyTopicEvidence.DestinationTextList
+	8,  // 7: google.ads.googleads.v15.common.PolicyTopicEvidence.destination_mismatch:type_name -> google.ads.googleads.v15.common.PolicyTopicEvidence.DestinationMismatch
+	9,  // 8: google.ads.googleads.v15.common.PolicyTopicEvidence.destination_not_working:type_name -> google.ads.googleads.v15.common.PolicyTopicEvidence.DestinationNotWorking
+	10, // 9: google.ads.googleads.v15.common.PolicyTopicConstraint.country_constraint_list:type_name -> google.ads.googleads.v15.common.PolicyTopicConstraint.CountryConstraintList
+	11, // 10: google.ads.googleads.v15.common.PolicyTopicConstraint.reseller_constraint:type_name -> google.ads.googleads.v15.common.PolicyTopicConstraint.ResellerConstraint
+	10, // 11: google.ads.googleads.v15.common.PolicyTopicConstraint.certificate_missing_in_country_list:type_name -> google.ads.googleads.v15.common.PolicyTopicConstraint.CountryConstraintList
+	10, // 12: google.ads.googleads.v15.common.PolicyTopicConstraint.certificate_domain_mismatch_in_country_list:type_name -> google.ads.googleads.v15.common.PolicyTopicConstraint.CountryConstraintList
+	14, // 13: google.ads.googleads.v15.common.PolicyTopicEvidence.DestinationMismatch.url_types:type_name -> google.ads.googleads.v15.enums.PolicyTopicEvidenceDestinationMismatchUrlTypeEnum.PolicyTopicEvidenceDestinationMismatchUrlType
+	15, // 14: google.ads.googleads.v15.common.PolicyTopicEvidence.DestinationNotWorking.device:type_name -> google.ads.googleads.v15.enums.PolicyTopicEvidenceDestinationNotWorkingDeviceEnum.PolicyTopicEvidenceDestinationNotWorkingDevice
+	16, // 15: google.ads.googleads.v15.common.PolicyTopicEvidence.DestinationNotWorking.dns_error_type:type_name -> google.ads.googleads.v15.enums.PolicyTopicEvidenceDestinationNotWorkingDnsErrorTypeEnum.PolicyTopicEvidenceDestinationNotWorkingDnsErrorType
+	12, // 16: google.ads.googleads.v15.common.PolicyTopicConstraint.CountryConstraintList.countries:type_name -> google.ads.googleads.v15.common.PolicyTopicConstraint.CountryConstraint
 	17, // [17:17] is the sub-list for method output_type
 	17, // [17:17] is the sub-list for method input_type
 	17, // [17:17] is the sub-list for extension type_name
@@ -1297,13 +1297,13 @@ var file_google_ads_googleads_v14_common_policy_proto_depIdxs = []int32{
 	0,  // [0:17] is the sub-list for field type_name
 }
 
-func init() { file_google_ads_googleads_v14_common_policy_proto_init() }
-func file_google_ads_googleads_v14_common_policy_proto_init() {
-	if File_google_ads_googleads_v14_common_policy_proto != nil {
+func init() { file_google_ads_googleads_v15_common_policy_proto_init() }
+func file_google_ads_googleads_v15_common_policy_proto_init() {
+	if File_google_ads_googleads_v15_common_policy_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_google_ads_googleads_v14_common_policy_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_policy_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PolicyViolationKey); i {
 			case 0:
 				return &v.state
@@ -1315,7 +1315,7 @@ func file_google_ads_googleads_v14_common_policy_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_policy_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_policy_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PolicyValidationParameter); i {
 			case 0:
 				return &v.state
@@ -1327,7 +1327,7 @@ func file_google_ads_googleads_v14_common_policy_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_policy_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_policy_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PolicyTopicEntry); i {
 			case 0:
 				return &v.state
@@ -1339,7 +1339,7 @@ func file_google_ads_googleads_v14_common_policy_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_policy_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_policy_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PolicyTopicEvidence); i {
 			case 0:
 				return &v.state
@@ -1351,7 +1351,7 @@ func file_google_ads_googleads_v14_common_policy_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_policy_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_policy_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PolicyTopicConstraint); i {
 			case 0:
 				return &v.state
@@ -1363,7 +1363,7 @@ func file_google_ads_googleads_v14_common_policy_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_policy_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_policy_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PolicyTopicEvidence_TextList); i {
 			case 0:
 				return &v.state
@@ -1375,7 +1375,7 @@ func file_google_ads_googleads_v14_common_policy_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_policy_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_policy_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PolicyTopicEvidence_WebsiteList); i {
 			case 0:
 				return &v.state
@@ -1387,7 +1387,7 @@ func file_google_ads_googleads_v14_common_policy_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_policy_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_policy_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PolicyTopicEvidence_DestinationTextList); i {
 			case 0:
 				return &v.state
@@ -1399,7 +1399,7 @@ func file_google_ads_googleads_v14_common_policy_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_policy_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_policy_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PolicyTopicEvidence_DestinationMismatch); i {
 			case 0:
 				return &v.state
@@ -1411,7 +1411,7 @@ func file_google_ads_googleads_v14_common_policy_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_policy_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_policy_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PolicyTopicEvidence_DestinationNotWorking); i {
 			case 0:
 				return &v.state
@@ -1423,7 +1423,7 @@ func file_google_ads_googleads_v14_common_policy_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_policy_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_policy_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PolicyTopicConstraint_CountryConstraintList); i {
 			case 0:
 				return &v.state
@@ -1435,7 +1435,7 @@ func file_google_ads_googleads_v14_common_policy_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_policy_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_policy_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PolicyTopicConstraint_ResellerConstraint); i {
 			case 0:
 				return &v.state
@@ -1447,7 +1447,7 @@ func file_google_ads_googleads_v14_common_policy_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_policy_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_policy_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PolicyTopicConstraint_CountryConstraint); i {
 			case 0:
 				return &v.state
@@ -1460,9 +1460,9 @@ func file_google_ads_googleads_v14_common_policy_proto_init() {
 			}
 		}
 	}
-	file_google_ads_googleads_v14_common_policy_proto_msgTypes[0].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v14_common_policy_proto_msgTypes[2].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v14_common_policy_proto_msgTypes[3].OneofWrappers = []interface{}{
+	file_google_ads_googleads_v15_common_policy_proto_msgTypes[0].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_common_policy_proto_msgTypes[2].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_common_policy_proto_msgTypes[3].OneofWrappers = []interface{}{
 		(*PolicyTopicEvidence_WebsiteList_)(nil),
 		(*PolicyTopicEvidence_TextList_)(nil),
 		(*PolicyTopicEvidence_LanguageCode)(nil),
@@ -1470,34 +1470,34 @@ func file_google_ads_googleads_v14_common_policy_proto_init() {
 		(*PolicyTopicEvidence_DestinationMismatch_)(nil),
 		(*PolicyTopicEvidence_DestinationNotWorking_)(nil),
 	}
-	file_google_ads_googleads_v14_common_policy_proto_msgTypes[4].OneofWrappers = []interface{}{
+	file_google_ads_googleads_v15_common_policy_proto_msgTypes[4].OneofWrappers = []interface{}{
 		(*PolicyTopicConstraint_CountryConstraintList_)(nil),
 		(*PolicyTopicConstraint_ResellerConstraint_)(nil),
 		(*PolicyTopicConstraint_CertificateMissingInCountryList)(nil),
 		(*PolicyTopicConstraint_CertificateDomainMismatchInCountryList)(nil),
 	}
-	file_google_ads_googleads_v14_common_policy_proto_msgTypes[9].OneofWrappers = []interface{}{
+	file_google_ads_googleads_v15_common_policy_proto_msgTypes[9].OneofWrappers = []interface{}{
 		(*PolicyTopicEvidence_DestinationNotWorking_DnsErrorType)(nil),
 		(*PolicyTopicEvidence_DestinationNotWorking_HttpErrorCode)(nil),
 	}
-	file_google_ads_googleads_v14_common_policy_proto_msgTypes[10].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v14_common_policy_proto_msgTypes[12].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_common_policy_proto_msgTypes[10].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_common_policy_proto_msgTypes[12].OneofWrappers = []interface{}{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_google_ads_googleads_v14_common_policy_proto_rawDesc,
+			RawDescriptor: file_google_ads_googleads_v15_common_policy_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   13,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_google_ads_googleads_v14_common_policy_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v14_common_policy_proto_depIdxs,
-		MessageInfos:      file_google_ads_googleads_v14_common_policy_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v15_common_policy_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v15_common_policy_proto_depIdxs,
+		MessageInfos:      file_google_ads_googleads_v15_common_policy_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v14_common_policy_proto = out.File
-	file_google_ads_googleads_v14_common_policy_proto_rawDesc = nil
-	file_google_ads_googleads_v14_common_policy_proto_goTypes = nil
-	file_google_ads_googleads_v14_common_policy_proto_depIdxs = nil
+	File_google_ads_googleads_v15_common_policy_proto = out.File
+	file_google_ads_googleads_v15_common_policy_proto_rawDesc = nil
+	file_google_ads_googleads_v15_common_policy_proto_goTypes = nil
+	file_google_ads_googleads_v15_common_policy_proto_depIdxs = nil
 }

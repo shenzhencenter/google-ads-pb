@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.21.1
-// source: google/ads/googleads/v14/services/conversion_upload_service.proto
+// source: google/ads/googleads/v15/services/conversion_upload_service.proto
 
 package services
 
@@ -33,8 +33,8 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	ConversionUploadService_UploadClickConversions_FullMethodName = "/google.ads.googleads.v14.services.ConversionUploadService/UploadClickConversions"
-	ConversionUploadService_UploadCallConversions_FullMethodName  = "/google.ads.googleads.v14.services.ConversionUploadService/UploadCallConversions"
+	ConversionUploadService_UploadClickConversions_FullMethodName = "/google.ads.googleads.v15.services.ConversionUploadService/UploadClickConversions"
+	ConversionUploadService_UploadCallConversions_FullMethodName  = "/google.ads.googleads.v15.services.ConversionUploadService/UploadCallConversions"
 )
 
 // ConversionUploadServiceClient is the client API for ConversionUploadService service.
@@ -190,7 +190,7 @@ func _ConversionUploadService_UploadCallConversions_Handler(srv interface{}, ctx
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ConversionUploadService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v14.services.ConversionUploadService",
+	ServiceName: "google.ads.googleads.v15.services.ConversionUploadService",
 	HandlerType: (*ConversionUploadServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -203,5 +203,5 @@ var ConversionUploadService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v14/services/conversion_upload_service.proto",
+	Metadata: "google/ads/googleads/v15/services/conversion_upload_service.proto",
 }

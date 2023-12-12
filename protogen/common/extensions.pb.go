@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.31.0
 // 	protoc        v3.21.1
-// source: google/ads/googleads/v14/common/extensions.proto
+// source: google/ads/googleads/v15/common/extensions.proto
 
 package common
 
@@ -51,7 +51,7 @@ type AppFeedItem struct {
 	AppId *string `protobuf:"bytes,10,opt,name=app_id,json=appId,proto3,oneof" json:"app_id,omitempty"`
 	// The application store that the target application belongs to.
 	// This field is required.
-	AppStore enums.AppStoreEnum_AppStore `protobuf:"varint,3,opt,name=app_store,json=appStore,proto3,enum=google.ads.googleads.v14.enums.AppStoreEnum_AppStore" json:"app_store,omitempty"`
+	AppStore enums.AppStoreEnum_AppStore `protobuf:"varint,3,opt,name=app_store,json=appStore,proto3,enum=google.ads.googleads.v15.enums.AppStoreEnum_AppStore" json:"app_store,omitempty"`
 	// A list of possible final URLs after all cross domain redirects.
 	// This list must not be empty.
 	FinalUrls []string `protobuf:"bytes,11,rep,name=final_urls,json=finalUrls,proto3" json:"final_urls,omitempty"`
@@ -70,7 +70,7 @@ type AppFeedItem struct {
 func (x *AppFeedItem) Reset() {
 	*x = AppFeedItem{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_extensions_proto_msgTypes[0]
+		mi := &file_google_ads_googleads_v15_common_extensions_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -83,7 +83,7 @@ func (x *AppFeedItem) String() string {
 func (*AppFeedItem) ProtoMessage() {}
 
 func (x *AppFeedItem) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_extensions_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v15_common_extensions_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -96,7 +96,7 @@ func (x *AppFeedItem) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AppFeedItem.ProtoReflect.Descriptor instead.
 func (*AppFeedItem) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_extensions_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v15_common_extensions_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *AppFeedItem) GetLinkText() string {
@@ -180,13 +180,13 @@ type CallFeedItem struct {
 	// Enum value that indicates whether this call extension uses its own call
 	// conversion setting (or just have call conversion disabled), or following
 	// the account level setting.
-	CallConversionReportingState enums.CallConversionReportingStateEnum_CallConversionReportingState `protobuf:"varint,6,opt,name=call_conversion_reporting_state,json=callConversionReportingState,proto3,enum=google.ads.googleads.v14.enums.CallConversionReportingStateEnum_CallConversionReportingState" json:"call_conversion_reporting_state,omitempty"`
+	CallConversionReportingState enums.CallConversionReportingStateEnum_CallConversionReportingState `protobuf:"varint,6,opt,name=call_conversion_reporting_state,json=callConversionReportingState,proto3,enum=google.ads.googleads.v15.enums.CallConversionReportingStateEnum_CallConversionReportingState" json:"call_conversion_reporting_state,omitempty"`
 }
 
 func (x *CallFeedItem) Reset() {
 	*x = CallFeedItem{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_extensions_proto_msgTypes[1]
+		mi := &file_google_ads_googleads_v15_common_extensions_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -199,7 +199,7 @@ func (x *CallFeedItem) String() string {
 func (*CallFeedItem) ProtoMessage() {}
 
 func (x *CallFeedItem) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_extensions_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v15_common_extensions_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -212,7 +212,7 @@ func (x *CallFeedItem) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CallFeedItem.ProtoReflect.Descriptor instead.
 func (*CallFeedItem) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_extensions_proto_rawDescGZIP(), []int{1}
+	return file_google_ads_googleads_v15_common_extensions_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *CallFeedItem) GetPhoneNumber() string {
@@ -271,7 +271,7 @@ type CalloutFeedItem struct {
 func (x *CalloutFeedItem) Reset() {
 	*x = CalloutFeedItem{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_extensions_proto_msgTypes[2]
+		mi := &file_google_ads_googleads_v15_common_extensions_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -284,7 +284,7 @@ func (x *CalloutFeedItem) String() string {
 func (*CalloutFeedItem) ProtoMessage() {}
 
 func (x *CalloutFeedItem) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_extensions_proto_msgTypes[2]
+	mi := &file_google_ads_googleads_v15_common_extensions_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -297,7 +297,7 @@ func (x *CalloutFeedItem) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CalloutFeedItem.ProtoReflect.Descriptor instead.
 func (*CalloutFeedItem) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_extensions_proto_rawDescGZIP(), []int{2}
+	return file_google_ads_googleads_v15_common_extensions_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *CalloutFeedItem) GetCalloutText() string {
@@ -334,7 +334,7 @@ type LocationFeedItem struct {
 func (x *LocationFeedItem) Reset() {
 	*x = LocationFeedItem{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_extensions_proto_msgTypes[3]
+		mi := &file_google_ads_googleads_v15_common_extensions_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -347,7 +347,7 @@ func (x *LocationFeedItem) String() string {
 func (*LocationFeedItem) ProtoMessage() {}
 
 func (x *LocationFeedItem) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_extensions_proto_msgTypes[3]
+	mi := &file_google_ads_googleads_v15_common_extensions_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -360,7 +360,7 @@ func (x *LocationFeedItem) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LocationFeedItem.ProtoReflect.Descriptor instead.
 func (*LocationFeedItem) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_extensions_proto_rawDescGZIP(), []int{3}
+	return file_google_ads_googleads_v15_common_extensions_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *LocationFeedItem) GetBusinessName() string {
@@ -450,7 +450,7 @@ type AffiliateLocationFeedItem struct {
 func (x *AffiliateLocationFeedItem) Reset() {
 	*x = AffiliateLocationFeedItem{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_extensions_proto_msgTypes[4]
+		mi := &file_google_ads_googleads_v15_common_extensions_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -463,7 +463,7 @@ func (x *AffiliateLocationFeedItem) String() string {
 func (*AffiliateLocationFeedItem) ProtoMessage() {}
 
 func (x *AffiliateLocationFeedItem) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_extensions_proto_msgTypes[4]
+	mi := &file_google_ads_googleads_v15_common_extensions_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -476,7 +476,7 @@ func (x *AffiliateLocationFeedItem) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AffiliateLocationFeedItem.ProtoReflect.Descriptor instead.
 func (*AffiliateLocationFeedItem) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_extensions_proto_rawDescGZIP(), []int{4}
+	return file_google_ads_googleads_v15_common_extensions_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *AffiliateLocationFeedItem) GetBusinessName() string {
@@ -574,7 +574,7 @@ type TextMessageFeedItem struct {
 func (x *TextMessageFeedItem) Reset() {
 	*x = TextMessageFeedItem{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_extensions_proto_msgTypes[5]
+		mi := &file_google_ads_googleads_v15_common_extensions_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -587,7 +587,7 @@ func (x *TextMessageFeedItem) String() string {
 func (*TextMessageFeedItem) ProtoMessage() {}
 
 func (x *TextMessageFeedItem) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_extensions_proto_msgTypes[5]
+	mi := &file_google_ads_googleads_v15_common_extensions_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -600,7 +600,7 @@ func (x *TextMessageFeedItem) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TextMessageFeedItem.ProtoReflect.Descriptor instead.
 func (*TextMessageFeedItem) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_extensions_proto_rawDescGZIP(), []int{5}
+	return file_google_ads_googleads_v15_common_extensions_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *TextMessageFeedItem) GetBusinessName() string {
@@ -645,9 +645,9 @@ type PriceFeedItem struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Price extension type of this extension.
-	Type enums.PriceExtensionTypeEnum_PriceExtensionType `protobuf:"varint,1,opt,name=type,proto3,enum=google.ads.googleads.v14.enums.PriceExtensionTypeEnum_PriceExtensionType" json:"type,omitempty"`
+	Type enums.PriceExtensionTypeEnum_PriceExtensionType `protobuf:"varint,1,opt,name=type,proto3,enum=google.ads.googleads.v15.enums.PriceExtensionTypeEnum_PriceExtensionType" json:"type,omitempty"`
 	// Price qualifier for all offers of this price extension.
-	PriceQualifier enums.PriceExtensionPriceQualifierEnum_PriceExtensionPriceQualifier `protobuf:"varint,2,opt,name=price_qualifier,json=priceQualifier,proto3,enum=google.ads.googleads.v14.enums.PriceExtensionPriceQualifierEnum_PriceExtensionPriceQualifier" json:"price_qualifier,omitempty"`
+	PriceQualifier enums.PriceExtensionPriceQualifierEnum_PriceExtensionPriceQualifier `protobuf:"varint,2,opt,name=price_qualifier,json=priceQualifier,proto3,enum=google.ads.googleads.v15.enums.PriceExtensionPriceQualifierEnum_PriceExtensionPriceQualifier" json:"price_qualifier,omitempty"`
 	// Tracking URL template for all offers of this price extension.
 	TrackingUrlTemplate *string `protobuf:"bytes,7,opt,name=tracking_url_template,json=trackingUrlTemplate,proto3,oneof" json:"tracking_url_template,omitempty"`
 	// The code of the language used for this price extension.
@@ -661,7 +661,7 @@ type PriceFeedItem struct {
 func (x *PriceFeedItem) Reset() {
 	*x = PriceFeedItem{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_extensions_proto_msgTypes[6]
+		mi := &file_google_ads_googleads_v15_common_extensions_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -674,7 +674,7 @@ func (x *PriceFeedItem) String() string {
 func (*PriceFeedItem) ProtoMessage() {}
 
 func (x *PriceFeedItem) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_extensions_proto_msgTypes[6]
+	mi := &file_google_ads_googleads_v15_common_extensions_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -687,7 +687,7 @@ func (x *PriceFeedItem) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PriceFeedItem.ProtoReflect.Descriptor instead.
 func (*PriceFeedItem) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_extensions_proto_rawDescGZIP(), []int{6}
+	return file_google_ads_googleads_v15_common_extensions_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *PriceFeedItem) GetType() enums.PriceExtensionTypeEnum_PriceExtensionType {
@@ -745,7 +745,7 @@ type PriceOffer struct {
 	// Price value of this offer.
 	Price *Money `protobuf:"bytes,3,opt,name=price,proto3" json:"price,omitempty"`
 	// Price unit for this offer.
-	Unit enums.PriceExtensionPriceUnitEnum_PriceExtensionPriceUnit `protobuf:"varint,4,opt,name=unit,proto3,enum=google.ads.googleads.v14.enums.PriceExtensionPriceUnitEnum_PriceExtensionPriceUnit" json:"unit,omitempty"`
+	Unit enums.PriceExtensionPriceUnitEnum_PriceExtensionPriceUnit `protobuf:"varint,4,opt,name=unit,proto3,enum=google.ads.googleads.v15.enums.PriceExtensionPriceUnitEnum_PriceExtensionPriceUnit" json:"unit,omitempty"`
 	// A list of possible final URLs after all cross domain redirects.
 	FinalUrls []string `protobuf:"bytes,9,rep,name=final_urls,json=finalUrls,proto3" json:"final_urls,omitempty"`
 	// A list of possible final mobile URLs after all cross domain redirects.
@@ -755,7 +755,7 @@ type PriceOffer struct {
 func (x *PriceOffer) Reset() {
 	*x = PriceOffer{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_extensions_proto_msgTypes[7]
+		mi := &file_google_ads_googleads_v15_common_extensions_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -768,7 +768,7 @@ func (x *PriceOffer) String() string {
 func (*PriceOffer) ProtoMessage() {}
 
 func (x *PriceOffer) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_extensions_proto_msgTypes[7]
+	mi := &file_google_ads_googleads_v15_common_extensions_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -781,7 +781,7 @@ func (x *PriceOffer) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PriceOffer.ProtoReflect.Descriptor instead.
 func (*PriceOffer) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_extensions_proto_rawDescGZIP(), []int{7}
+	return file_google_ads_googleads_v15_common_extensions_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *PriceOffer) GetHeader() string {
@@ -836,7 +836,7 @@ type PromotionFeedItem struct {
 	// This field is required.
 	PromotionTarget *string `protobuf:"bytes,16,opt,name=promotion_target,json=promotionTarget,proto3,oneof" json:"promotion_target,omitempty"`
 	// Enum that modifies the qualification of the discount.
-	DiscountModifier enums.PromotionExtensionDiscountModifierEnum_PromotionExtensionDiscountModifier `protobuf:"varint,2,opt,name=discount_modifier,json=discountModifier,proto3,enum=google.ads.googleads.v14.enums.PromotionExtensionDiscountModifierEnum_PromotionExtensionDiscountModifier" json:"discount_modifier,omitempty"`
+	DiscountModifier enums.PromotionExtensionDiscountModifierEnum_PromotionExtensionDiscountModifier `protobuf:"varint,2,opt,name=discount_modifier,json=discountModifier,proto3,enum=google.ads.googleads.v15.enums.PromotionExtensionDiscountModifierEnum_PromotionExtensionDiscountModifier" json:"discount_modifier,omitempty"`
 	// Start date of when the promotion is eligible to be redeemed.
 	PromotionStartDate *string `protobuf:"bytes,19,opt,name=promotion_start_date,json=promotionStartDate,proto3,oneof" json:"promotion_start_date,omitempty"`
 	// Last date when the promotion is eligible to be redeemed.
@@ -844,7 +844,7 @@ type PromotionFeedItem struct {
 	// The occasion the promotion was intended for.
 	// If an occasion is set, the redemption window will need to fall within
 	// the date range associated with the occasion.
-	Occasion enums.PromotionExtensionOccasionEnum_PromotionExtensionOccasion `protobuf:"varint,9,opt,name=occasion,proto3,enum=google.ads.googleads.v14.enums.PromotionExtensionOccasionEnum_PromotionExtensionOccasion" json:"occasion,omitempty"`
+	Occasion enums.PromotionExtensionOccasionEnum_PromotionExtensionOccasion `protobuf:"varint,9,opt,name=occasion,proto3,enum=google.ads.googleads.v15.enums.PromotionExtensionOccasionEnum_PromotionExtensionOccasion" json:"occasion,omitempty"`
 	// A list of possible final URLs after all cross domain redirects.
 	// This field is required.
 	FinalUrls []string `protobuf:"bytes,21,rep,name=final_urls,json=finalUrls,proto3" json:"final_urls,omitempty"`
@@ -881,7 +881,7 @@ type PromotionFeedItem struct {
 func (x *PromotionFeedItem) Reset() {
 	*x = PromotionFeedItem{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_extensions_proto_msgTypes[8]
+		mi := &file_google_ads_googleads_v15_common_extensions_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -894,7 +894,7 @@ func (x *PromotionFeedItem) String() string {
 func (*PromotionFeedItem) ProtoMessage() {}
 
 func (x *PromotionFeedItem) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_extensions_proto_msgTypes[8]
+	mi := &file_google_ads_googleads_v15_common_extensions_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -907,7 +907,7 @@ func (x *PromotionFeedItem) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PromotionFeedItem.ProtoReflect.Descriptor instead.
 func (*PromotionFeedItem) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_extensions_proto_rawDescGZIP(), []int{8}
+	return file_google_ads_googleads_v15_common_extensions_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *PromotionFeedItem) GetPromotionTarget() string {
@@ -1086,7 +1086,7 @@ type StructuredSnippetFeedItem struct {
 func (x *StructuredSnippetFeedItem) Reset() {
 	*x = StructuredSnippetFeedItem{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_extensions_proto_msgTypes[9]
+		mi := &file_google_ads_googleads_v15_common_extensions_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1099,7 +1099,7 @@ func (x *StructuredSnippetFeedItem) String() string {
 func (*StructuredSnippetFeedItem) ProtoMessage() {}
 
 func (x *StructuredSnippetFeedItem) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_extensions_proto_msgTypes[9]
+	mi := &file_google_ads_googleads_v15_common_extensions_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1112,7 +1112,7 @@ func (x *StructuredSnippetFeedItem) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StructuredSnippetFeedItem.ProtoReflect.Descriptor instead.
 func (*StructuredSnippetFeedItem) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_extensions_proto_rawDescGZIP(), []int{9}
+	return file_google_ads_googleads_v15_common_extensions_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *StructuredSnippetFeedItem) GetHeader() string {
@@ -1163,7 +1163,7 @@ type SitelinkFeedItem struct {
 func (x *SitelinkFeedItem) Reset() {
 	*x = SitelinkFeedItem{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_extensions_proto_msgTypes[10]
+		mi := &file_google_ads_googleads_v15_common_extensions_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1176,7 +1176,7 @@ func (x *SitelinkFeedItem) String() string {
 func (*SitelinkFeedItem) ProtoMessage() {}
 
 func (x *SitelinkFeedItem) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_extensions_proto_msgTypes[10]
+	mi := &file_google_ads_googleads_v15_common_extensions_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1189,7 +1189,7 @@ func (x *SitelinkFeedItem) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SitelinkFeedItem.ProtoReflect.Descriptor instead.
 func (*SitelinkFeedItem) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_extensions_proto_rawDescGZIP(), []int{10}
+	return file_google_ads_googleads_v15_common_extensions_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *SitelinkFeedItem) GetLinkText() string {
@@ -1265,7 +1265,7 @@ type HotelCalloutFeedItem struct {
 func (x *HotelCalloutFeedItem) Reset() {
 	*x = HotelCalloutFeedItem{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_extensions_proto_msgTypes[11]
+		mi := &file_google_ads_googleads_v15_common_extensions_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1278,7 +1278,7 @@ func (x *HotelCalloutFeedItem) String() string {
 func (*HotelCalloutFeedItem) ProtoMessage() {}
 
 func (x *HotelCalloutFeedItem) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_extensions_proto_msgTypes[11]
+	mi := &file_google_ads_googleads_v15_common_extensions_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1291,7 +1291,7 @@ func (x *HotelCalloutFeedItem) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HotelCalloutFeedItem.ProtoReflect.Descriptor instead.
 func (*HotelCalloutFeedItem) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_extensions_proto_rawDescGZIP(), []int{11}
+	return file_google_ads_googleads_v15_common_extensions_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *HotelCalloutFeedItem) GetText() string {
@@ -1321,7 +1321,7 @@ type ImageFeedItem struct {
 func (x *ImageFeedItem) Reset() {
 	*x = ImageFeedItem{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_google_ads_googleads_v14_common_extensions_proto_msgTypes[12]
+		mi := &file_google_ads_googleads_v15_common_extensions_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1334,7 +1334,7 @@ func (x *ImageFeedItem) String() string {
 func (*ImageFeedItem) ProtoMessage() {}
 
 func (x *ImageFeedItem) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v14_common_extensions_proto_msgTypes[12]
+	mi := &file_google_ads_googleads_v15_common_extensions_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1347,7 +1347,7 @@ func (x *ImageFeedItem) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ImageFeedItem.ProtoReflect.Descriptor instead.
 func (*ImageFeedItem) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v14_common_extensions_proto_rawDescGZIP(), []int{12}
+	return file_google_ads_googleads_v15_common_extensions_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *ImageFeedItem) GetImageAsset() string {
@@ -1357,47 +1357,47 @@ func (x *ImageFeedItem) GetImageAsset() string {
 	return ""
 }
 
-var File_google_ads_googleads_v14_common_extensions_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v15_common_extensions_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v14_common_extensions_proto_rawDesc = []byte{
+var file_google_ads_googleads_v15_common_extensions_proto_rawDesc = []byte{
 	0x0a, 0x30, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
 	0x6e, 0x2f, 0x65, 0x78, 0x74, 0x65, 0x6e, 0x73, 0x69, 0x6f, 0x6e, 0x73, 0x2e, 0x70, 0x72, 0x6f,
 	0x74, 0x6f, 0x12, 0x1f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x63, 0x6f, 0x6d,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x63, 0x6f, 0x6d,
 	0x6d, 0x6f, 0x6e, 0x1a, 0x36, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x63, 0x6f,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x63, 0x6f,
 	0x6d, 0x6d, 0x6f, 0x6e, 0x2f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x5f, 0x70, 0x61, 0x72, 0x61,
 	0x6d, 0x65, 0x74, 0x65, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x31, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64,
-	0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2f, 0x66, 0x65, 0x65,
+	0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2f, 0x66, 0x65, 0x65,
 	0x64, 0x5f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x2e,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x61,
+	0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x61,
 	0x70, 0x70, 0x5f, 0x73, 0x74, 0x6f, 0x72, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x44,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x63,
+	0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x63,
 	0x61, 0x6c, 0x6c, 0x5f, 0x63, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x5f, 0x72,
 	0x65, 0x70, 0x6f, 0x72, 0x74, 0x69, 0x6e, 0x67, 0x5f, 0x73, 0x74, 0x61, 0x74, 0x65, 0x2e, 0x70,
 	0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x44, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73,
-	0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x65,
+	0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x65,
 	0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x70, 0x72, 0x69, 0x63, 0x65, 0x5f, 0x65, 0x78, 0x74, 0x65, 0x6e,
 	0x73, 0x69, 0x6f, 0x6e, 0x5f, 0x70, 0x72, 0x69, 0x63, 0x65, 0x5f, 0x71, 0x75, 0x61, 0x6c, 0x69,
 	0x66, 0x69, 0x65, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x3f, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
-	0x2f, 0x76, 0x31, 0x34, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x70, 0x72, 0x69, 0x63, 0x65,
+	0x2f, 0x76, 0x31, 0x35, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x70, 0x72, 0x69, 0x63, 0x65,
 	0x5f, 0x65, 0x78, 0x74, 0x65, 0x6e, 0x73, 0x69, 0x6f, 0x6e, 0x5f, 0x70, 0x72, 0x69, 0x63, 0x65,
 	0x5f, 0x75, 0x6e, 0x69, 0x74, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x39, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64,
-	0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x70, 0x72, 0x69, 0x63,
+	0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x70, 0x72, 0x69, 0x63,
 	0x65, 0x5f, 0x65, 0x78, 0x74, 0x65, 0x6e, 0x73, 0x69, 0x6f, 0x6e, 0x5f, 0x74, 0x79, 0x70, 0x65,
 	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x4a, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61,
-	0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34,
+	0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35,
 	0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x70, 0x72, 0x6f, 0x6d, 0x6f, 0x74, 0x69, 0x6f, 0x6e,
 	0x5f, 0x65, 0x78, 0x74, 0x65, 0x6e, 0x73, 0x69, 0x6f, 0x6e, 0x5f, 0x64, 0x69, 0x73, 0x63, 0x6f,
 	0x75, 0x6e, 0x74, 0x5f, 0x6d, 0x6f, 0x64, 0x69, 0x66, 0x69, 0x65, 0x72, 0x2e, 0x70, 0x72, 0x6f,
 	0x74, 0x6f, 0x1a, 0x41, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x65, 0x6e, 0x75,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x65, 0x6e, 0x75,
 	0x6d, 0x73, 0x2f, 0x70, 0x72, 0x6f, 0x6d, 0x6f, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x65, 0x78, 0x74,
 	0x65, 0x6e, 0x73, 0x69, 0x6f, 0x6e, 0x5f, 0x6f, 0x63, 0x63, 0x61, 0x73, 0x69, 0x6f, 0x6e, 0x2e,
 	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x1f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x70,
@@ -1411,7 +1411,7 @@ var file_google_ads_googleads_v14_common_extensions_proto_rawDesc = []byte{
 	0x01, 0x28, 0x09, 0x48, 0x01, 0x52, 0x05, 0x61, 0x70, 0x70, 0x49, 0x64, 0x88, 0x01, 0x01, 0x12,
 	0x52, 0x0a, 0x09, 0x61, 0x70, 0x70, 0x5f, 0x73, 0x74, 0x6f, 0x72, 0x65, 0x18, 0x03, 0x20, 0x01,
 	0x28, 0x0e, 0x32, 0x35, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x65, 0x6e,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x65, 0x6e,
 	0x75, 0x6d, 0x73, 0x2e, 0x41, 0x70, 0x70, 0x53, 0x74, 0x6f, 0x72, 0x65, 0x45, 0x6e, 0x75, 0x6d,
 	0x2e, 0x41, 0x70, 0x70, 0x53, 0x74, 0x6f, 0x72, 0x65, 0x52, 0x08, 0x61, 0x70, 0x70, 0x53, 0x74,
 	0x6f, 0x72, 0x65, 0x12, 0x1d, 0x0a, 0x0a, 0x66, 0x69, 0x6e, 0x61, 0x6c, 0x5f, 0x75, 0x72, 0x6c,
@@ -1426,7 +1426,7 @@ var file_google_ads_googleads_v14_common_extensions_proto_rawDesc = []byte{
 	0x75, 0x73, 0x74, 0x6f, 0x6d, 0x5f, 0x70, 0x61, 0x72, 0x61, 0x6d, 0x65, 0x74, 0x65, 0x72, 0x73,
 	0x18, 0x07, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x30, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
 	0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31,
-	0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x50,
+	0x35, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x50,
 	0x61, 0x72, 0x61, 0x6d, 0x65, 0x74, 0x65, 0x72, 0x52, 0x13, 0x75, 0x72, 0x6c, 0x43, 0x75, 0x73,
 	0x74, 0x6f, 0x6d, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x65, 0x74, 0x65, 0x72, 0x73, 0x12, 0x2d, 0x0a,
 	0x10, 0x66, 0x69, 0x6e, 0x61, 0x6c, 0x5f, 0x75, 0x72, 0x6c, 0x5f, 0x73, 0x75, 0x66, 0x66, 0x69,
@@ -1458,7 +1458,7 @@ var file_google_ads_googleads_v14_common_extensions_proto_rawDesc = []byte{
 	0x6c, 0x6c, 0x5f, 0x63, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x5f, 0x72, 0x65,
 	0x70, 0x6f, 0x72, 0x74, 0x69, 0x6e, 0x67, 0x5f, 0x73, 0x74, 0x61, 0x74, 0x65, 0x18, 0x06, 0x20,
 	0x01, 0x28, 0x0e, 0x32, 0x5d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73,
-	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x65,
+	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x65,
 	0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x43, 0x61, 0x6c, 0x6c, 0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73,
 	0x69, 0x6f, 0x6e, 0x52, 0x65, 0x70, 0x6f, 0x72, 0x74, 0x69, 0x6e, 0x67, 0x53, 0x74, 0x61, 0x74,
 	0x65, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x43, 0x61, 0x6c, 0x6c, 0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72,
@@ -1562,14 +1562,14 @@ var file_google_ads_googleads_v14_common_extensions_proto_rawDesc = []byte{
 	0x65, 0x78, 0x74, 0x22, 0xa0, 0x04, 0x0a, 0x0d, 0x50, 0x72, 0x69, 0x63, 0x65, 0x46, 0x65, 0x65,
 	0x64, 0x49, 0x74, 0x65, 0x6d, 0x12, 0x5d, 0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x01, 0x20,
 	0x01, 0x28, 0x0e, 0x32, 0x49, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73,
-	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x65,
+	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x65,
 	0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x50, 0x72, 0x69, 0x63, 0x65, 0x45, 0x78, 0x74, 0x65, 0x6e, 0x73,
 	0x69, 0x6f, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x50, 0x72, 0x69, 0x63,
 	0x65, 0x45, 0x78, 0x74, 0x65, 0x6e, 0x73, 0x69, 0x6f, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x52, 0x04,
 	0x74, 0x79, 0x70, 0x65, 0x12, 0x86, 0x01, 0x0a, 0x0f, 0x70, 0x72, 0x69, 0x63, 0x65, 0x5f, 0x71,
 	0x75, 0x61, 0x6c, 0x69, 0x66, 0x69, 0x65, 0x72, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x5d,
 	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e,
+	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e,
 	0x50, 0x72, 0x69, 0x63, 0x65, 0x45, 0x78, 0x74, 0x65, 0x6e, 0x73, 0x69, 0x6f, 0x6e, 0x50, 0x72,
 	0x69, 0x63, 0x65, 0x51, 0x75, 0x61, 0x6c, 0x69, 0x66, 0x69, 0x65, 0x72, 0x45, 0x6e, 0x75, 0x6d,
 	0x2e, 0x50, 0x72, 0x69, 0x63, 0x65, 0x45, 0x78, 0x74, 0x65, 0x6e, 0x73, 0x69, 0x6f, 0x6e, 0x50,
@@ -1584,7 +1584,7 @@ var file_google_ads_googleads_v14_common_extensions_proto_rawDesc = []byte{
 	0x12, 0x54, 0x0a, 0x0f, 0x70, 0x72, 0x69, 0x63, 0x65, 0x5f, 0x6f, 0x66, 0x66, 0x65, 0x72, 0x69,
 	0x6e, 0x67, 0x73, 0x18, 0x05, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x2b, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
-	0x2e, 0x76, 0x31, 0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x50, 0x72, 0x69, 0x63,
+	0x2e, 0x76, 0x31, 0x35, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x50, 0x72, 0x69, 0x63,
 	0x65, 0x4f, 0x66, 0x66, 0x65, 0x72, 0x52, 0x0e, 0x70, 0x72, 0x69, 0x63, 0x65, 0x4f, 0x66, 0x66,
 	0x65, 0x72, 0x69, 0x6e, 0x67, 0x73, 0x12, 0x2d, 0x0a, 0x10, 0x66, 0x69, 0x6e, 0x61, 0x6c, 0x5f,
 	0x75, 0x72, 0x6c, 0x5f, 0x73, 0x75, 0x66, 0x66, 0x69, 0x78, 0x18, 0x09, 0x20, 0x01, 0x28, 0x09,
@@ -1601,10 +1601,10 @@ var file_google_ads_googleads_v14_common_extensions_proto_rawDesc = []byte{
 	0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x88, 0x01, 0x01, 0x12, 0x3c, 0x0a, 0x05, 0x70, 0x72, 0x69,
 	0x63, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x26, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e,
-	0x76, 0x31, 0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x4d, 0x6f, 0x6e, 0x65, 0x79,
+	0x76, 0x31, 0x35, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x4d, 0x6f, 0x6e, 0x65, 0x79,
 	0x52, 0x05, 0x70, 0x72, 0x69, 0x63, 0x65, 0x12, 0x67, 0x0a, 0x04, 0x75, 0x6e, 0x69, 0x74, 0x18,
 	0x04, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x53, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61,
-	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34,
+	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35,
 	0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x50, 0x72, 0x69, 0x63, 0x65, 0x45, 0x78, 0x74, 0x65,
 	0x6e, 0x73, 0x69, 0x6f, 0x6e, 0x50, 0x72, 0x69, 0x63, 0x65, 0x55, 0x6e, 0x69, 0x74, 0x45, 0x6e,
 	0x75, 0x6d, 0x2e, 0x50, 0x72, 0x69, 0x63, 0x65, 0x45, 0x78, 0x74, 0x65, 0x6e, 0x73, 0x69, 0x6f,
@@ -1623,7 +1623,7 @@ var file_google_ads_googleads_v14_common_extensions_proto_rawDesc = []byte{
 	0x11, 0x64, 0x69, 0x73, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x5f, 0x6d, 0x6f, 0x64, 0x69, 0x66, 0x69,
 	0x65, 0x72, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x69, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e,
-	0x76, 0x31, 0x34, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x50, 0x72, 0x6f, 0x6d, 0x6f, 0x74,
+	0x76, 0x31, 0x35, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x50, 0x72, 0x6f, 0x6d, 0x6f, 0x74,
 	0x69, 0x6f, 0x6e, 0x45, 0x78, 0x74, 0x65, 0x6e, 0x73, 0x69, 0x6f, 0x6e, 0x44, 0x69, 0x73, 0x63,
 	0x6f, 0x75, 0x6e, 0x74, 0x4d, 0x6f, 0x64, 0x69, 0x66, 0x69, 0x65, 0x72, 0x45, 0x6e, 0x75, 0x6d,
 	0x2e, 0x50, 0x72, 0x6f, 0x6d, 0x6f, 0x74, 0x69, 0x6f, 0x6e, 0x45, 0x78, 0x74, 0x65, 0x6e, 0x73,
@@ -1638,7 +1638,7 @@ var file_google_ads_googleads_v14_common_extensions_proto_rawDesc = []byte{
 	0x6f, 0x74, 0x69, 0x6f, 0x6e, 0x45, 0x6e, 0x64, 0x44, 0x61, 0x74, 0x65, 0x88, 0x01, 0x01, 0x12,
 	0x75, 0x0a, 0x08, 0x6f, 0x63, 0x63, 0x61, 0x73, 0x69, 0x6f, 0x6e, 0x18, 0x09, 0x20, 0x01, 0x28,
 	0x0e, 0x32, 0x59, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x65, 0x6e, 0x75,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x65, 0x6e, 0x75,
 	0x6d, 0x73, 0x2e, 0x50, 0x72, 0x6f, 0x6d, 0x6f, 0x74, 0x69, 0x6f, 0x6e, 0x45, 0x78, 0x74, 0x65,
 	0x6e, 0x73, 0x69, 0x6f, 0x6e, 0x4f, 0x63, 0x63, 0x61, 0x73, 0x69, 0x6f, 0x6e, 0x45, 0x6e, 0x75,
 	0x6d, 0x2e, 0x50, 0x72, 0x6f, 0x6d, 0x6f, 0x74, 0x69, 0x6f, 0x6e, 0x45, 0x78, 0x74, 0x65, 0x6e,
@@ -1655,7 +1655,7 @@ var file_google_ads_googleads_v14_common_extensions_proto_rawDesc = []byte{
 	0x6c, 0x5f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x5f, 0x70, 0x61, 0x72, 0x61, 0x6d, 0x65, 0x74,
 	0x65, 0x72, 0x73, 0x18, 0x0d, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x30, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
-	0x2e, 0x76, 0x31, 0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x43, 0x75, 0x73, 0x74,
+	0x2e, 0x76, 0x31, 0x35, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x43, 0x75, 0x73, 0x74,
 	0x6f, 0x6d, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x65, 0x74, 0x65, 0x72, 0x52, 0x13, 0x75, 0x72, 0x6c,
 	0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x65, 0x74, 0x65, 0x72, 0x73,
 	0x12, 0x2d, 0x0a, 0x10, 0x66, 0x69, 0x6e, 0x61, 0x6c, 0x5f, 0x75, 0x72, 0x6c, 0x5f, 0x73, 0x75,
@@ -1669,14 +1669,14 @@ var file_google_ads_googleads_v14_common_extensions_proto_rawDesc = []byte{
 	0x6d, 0x6f, 0x6e, 0x65, 0x79, 0x5f, 0x61, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x5f, 0x6f, 0x66, 0x66,
 	0x18, 0x04, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x26, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
 	0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31,
-	0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x4d, 0x6f, 0x6e, 0x65, 0x79, 0x48, 0x00,
+	0x35, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x4d, 0x6f, 0x6e, 0x65, 0x79, 0x48, 0x00,
 	0x52, 0x0e, 0x6d, 0x6f, 0x6e, 0x65, 0x79, 0x41, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x4f, 0x66, 0x66,
 	0x12, 0x27, 0x0a, 0x0e, 0x70, 0x72, 0x6f, 0x6d, 0x6f, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x63, 0x6f,
 	0x64, 0x65, 0x18, 0x12, 0x20, 0x01, 0x28, 0x09, 0x48, 0x01, 0x52, 0x0d, 0x70, 0x72, 0x6f, 0x6d,
 	0x6f, 0x74, 0x69, 0x6f, 0x6e, 0x43, 0x6f, 0x64, 0x65, 0x12, 0x56, 0x0a, 0x12, 0x6f, 0x72, 0x64,
 	0x65, 0x72, 0x73, 0x5f, 0x6f, 0x76, 0x65, 0x72, 0x5f, 0x61, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x18,
 	0x06, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x26, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61,
-	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x34,
+	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x35,
 	0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x4d, 0x6f, 0x6e, 0x65, 0x79, 0x48, 0x01, 0x52,
 	0x10, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x73, 0x4f, 0x76, 0x65, 0x72, 0x41, 0x6d, 0x6f, 0x75, 0x6e,
 	0x74, 0x42, 0x0f, 0x0a, 0x0d, 0x64, 0x69, 0x73, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x5f, 0x74, 0x79,
@@ -1714,7 +1714,7 @@ var file_google_ads_googleads_v14_common_extensions_proto_rawDesc = []byte{
 	0x72, 0x6c, 0x5f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x5f, 0x70, 0x61, 0x72, 0x61, 0x6d, 0x65,
 	0x74, 0x65, 0x72, 0x73, 0x18, 0x07, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x30, 0x2e, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64,
-	0x73, 0x2e, 0x76, 0x31, 0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x43, 0x75, 0x73,
+	0x73, 0x2e, 0x76, 0x31, 0x35, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x43, 0x75, 0x73,
 	0x74, 0x6f, 0x6d, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x65, 0x74, 0x65, 0x72, 0x52, 0x13, 0x75, 0x72,
 	0x6c, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x65, 0x74, 0x65, 0x72,
 	0x73, 0x12, 0x2d, 0x0a, 0x10, 0x66, 0x69, 0x6e, 0x61, 0x6c, 0x5f, 0x75, 0x72, 0x6c, 0x5f, 0x73,
@@ -1740,74 +1740,74 @@ var file_google_ads_googleads_v14_common_extensions_proto_rawDesc = []byte{
 	0x41, 0x73, 0x73, 0x65, 0x74, 0x52, 0x0a, 0x69, 0x6d, 0x61, 0x67, 0x65, 0x41, 0x73, 0x73, 0x65,
 	0x74, 0x42, 0xef, 0x01, 0x0a, 0x23, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76,
-	0x31, 0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x42, 0x0f, 0x45, 0x78, 0x74, 0x65, 0x6e,
+	0x31, 0x35, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x42, 0x0f, 0x45, 0x78, 0x74, 0x65, 0x6e,
 	0x73, 0x69, 0x6f, 0x6e, 0x73, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x45, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x67, 0x6f, 0x6c, 0x61, 0x6e, 0x67, 0x2e, 0x6f, 0x72, 0x67, 0x2f,
 	0x67, 0x65, 0x6e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
 	0x70, 0x69, 0x73, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64,
-	0x73, 0x2f, 0x76, 0x31, 0x34, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x3b, 0x63, 0x6f, 0x6d,
+	0x73, 0x2f, 0x76, 0x31, 0x35, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x3b, 0x63, 0x6f, 0x6d,
 	0x6d, 0x6f, 0x6e, 0xa2, 0x02, 0x03, 0x47, 0x41, 0x41, 0xaa, 0x02, 0x1f, 0x47, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2e, 0x41, 0x64, 0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73,
-	0x2e, 0x56, 0x31, 0x34, 0x2e, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xca, 0x02, 0x1f, 0x47, 0x6f,
+	0x2e, 0x56, 0x31, 0x35, 0x2e, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xca, 0x02, 0x1f, 0x47, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x5c, 0x41, 0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41,
-	0x64, 0x73, 0x5c, 0x56, 0x31, 0x34, 0x5c, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xea, 0x02, 0x23,
+	0x64, 0x73, 0x5c, 0x56, 0x31, 0x35, 0x5c, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xea, 0x02, 0x23,
 	0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x3a, 0x3a, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x47, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x31, 0x34, 0x3a, 0x3a, 0x43, 0x6f, 0x6d,
+	0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x31, 0x35, 0x3a, 0x3a, 0x43, 0x6f, 0x6d,
 	0x6d, 0x6f, 0x6e, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
-	file_google_ads_googleads_v14_common_extensions_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v14_common_extensions_proto_rawDescData = file_google_ads_googleads_v14_common_extensions_proto_rawDesc
+	file_google_ads_googleads_v15_common_extensions_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v15_common_extensions_proto_rawDescData = file_google_ads_googleads_v15_common_extensions_proto_rawDesc
 )
 
-func file_google_ads_googleads_v14_common_extensions_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v14_common_extensions_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v14_common_extensions_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v14_common_extensions_proto_rawDescData)
+func file_google_ads_googleads_v15_common_extensions_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v15_common_extensions_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v15_common_extensions_proto_rawDescData = protoimpl.X.CompressGZIP(file_google_ads_googleads_v15_common_extensions_proto_rawDescData)
 	})
-	return file_google_ads_googleads_v14_common_extensions_proto_rawDescData
+	return file_google_ads_googleads_v15_common_extensions_proto_rawDescData
 }
 
-var file_google_ads_googleads_v14_common_extensions_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
-var file_google_ads_googleads_v14_common_extensions_proto_goTypes = []interface{}{
-	(*AppFeedItem)(nil),               // 0: google.ads.googleads.v14.common.AppFeedItem
-	(*CallFeedItem)(nil),              // 1: google.ads.googleads.v14.common.CallFeedItem
-	(*CalloutFeedItem)(nil),           // 2: google.ads.googleads.v14.common.CalloutFeedItem
-	(*LocationFeedItem)(nil),          // 3: google.ads.googleads.v14.common.LocationFeedItem
-	(*AffiliateLocationFeedItem)(nil), // 4: google.ads.googleads.v14.common.AffiliateLocationFeedItem
-	(*TextMessageFeedItem)(nil),       // 5: google.ads.googleads.v14.common.TextMessageFeedItem
-	(*PriceFeedItem)(nil),             // 6: google.ads.googleads.v14.common.PriceFeedItem
-	(*PriceOffer)(nil),                // 7: google.ads.googleads.v14.common.PriceOffer
-	(*PromotionFeedItem)(nil),         // 8: google.ads.googleads.v14.common.PromotionFeedItem
-	(*StructuredSnippetFeedItem)(nil), // 9: google.ads.googleads.v14.common.StructuredSnippetFeedItem
-	(*SitelinkFeedItem)(nil),          // 10: google.ads.googleads.v14.common.SitelinkFeedItem
-	(*HotelCalloutFeedItem)(nil),      // 11: google.ads.googleads.v14.common.HotelCalloutFeedItem
-	(*ImageFeedItem)(nil),             // 12: google.ads.googleads.v14.common.ImageFeedItem
-	(enums.AppStoreEnum_AppStore)(0),  // 13: google.ads.googleads.v14.enums.AppStoreEnum.AppStore
-	(*CustomParameter)(nil),           // 14: google.ads.googleads.v14.common.CustomParameter
-	(enums.CallConversionReportingStateEnum_CallConversionReportingState)(0), // 15: google.ads.googleads.v14.enums.CallConversionReportingStateEnum.CallConversionReportingState
-	(enums.PriceExtensionTypeEnum_PriceExtensionType)(0),                     // 16: google.ads.googleads.v14.enums.PriceExtensionTypeEnum.PriceExtensionType
-	(enums.PriceExtensionPriceQualifierEnum_PriceExtensionPriceQualifier)(0), // 17: google.ads.googleads.v14.enums.PriceExtensionPriceQualifierEnum.PriceExtensionPriceQualifier
-	(*Money)(nil), // 18: google.ads.googleads.v14.common.Money
-	(enums.PriceExtensionPriceUnitEnum_PriceExtensionPriceUnit)(0),                       // 19: google.ads.googleads.v14.enums.PriceExtensionPriceUnitEnum.PriceExtensionPriceUnit
-	(enums.PromotionExtensionDiscountModifierEnum_PromotionExtensionDiscountModifier)(0), // 20: google.ads.googleads.v14.enums.PromotionExtensionDiscountModifierEnum.PromotionExtensionDiscountModifier
-	(enums.PromotionExtensionOccasionEnum_PromotionExtensionOccasion)(0),                 // 21: google.ads.googleads.v14.enums.PromotionExtensionOccasionEnum.PromotionExtensionOccasion
+var file_google_ads_googleads_v15_common_extensions_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
+var file_google_ads_googleads_v15_common_extensions_proto_goTypes = []interface{}{
+	(*AppFeedItem)(nil),               // 0: google.ads.googleads.v15.common.AppFeedItem
+	(*CallFeedItem)(nil),              // 1: google.ads.googleads.v15.common.CallFeedItem
+	(*CalloutFeedItem)(nil),           // 2: google.ads.googleads.v15.common.CalloutFeedItem
+	(*LocationFeedItem)(nil),          // 3: google.ads.googleads.v15.common.LocationFeedItem
+	(*AffiliateLocationFeedItem)(nil), // 4: google.ads.googleads.v15.common.AffiliateLocationFeedItem
+	(*TextMessageFeedItem)(nil),       // 5: google.ads.googleads.v15.common.TextMessageFeedItem
+	(*PriceFeedItem)(nil),             // 6: google.ads.googleads.v15.common.PriceFeedItem
+	(*PriceOffer)(nil),                // 7: google.ads.googleads.v15.common.PriceOffer
+	(*PromotionFeedItem)(nil),         // 8: google.ads.googleads.v15.common.PromotionFeedItem
+	(*StructuredSnippetFeedItem)(nil), // 9: google.ads.googleads.v15.common.StructuredSnippetFeedItem
+	(*SitelinkFeedItem)(nil),          // 10: google.ads.googleads.v15.common.SitelinkFeedItem
+	(*HotelCalloutFeedItem)(nil),      // 11: google.ads.googleads.v15.common.HotelCalloutFeedItem
+	(*ImageFeedItem)(nil),             // 12: google.ads.googleads.v15.common.ImageFeedItem
+	(enums.AppStoreEnum_AppStore)(0),  // 13: google.ads.googleads.v15.enums.AppStoreEnum.AppStore
+	(*CustomParameter)(nil),           // 14: google.ads.googleads.v15.common.CustomParameter
+	(enums.CallConversionReportingStateEnum_CallConversionReportingState)(0), // 15: google.ads.googleads.v15.enums.CallConversionReportingStateEnum.CallConversionReportingState
+	(enums.PriceExtensionTypeEnum_PriceExtensionType)(0),                     // 16: google.ads.googleads.v15.enums.PriceExtensionTypeEnum.PriceExtensionType
+	(enums.PriceExtensionPriceQualifierEnum_PriceExtensionPriceQualifier)(0), // 17: google.ads.googleads.v15.enums.PriceExtensionPriceQualifierEnum.PriceExtensionPriceQualifier
+	(*Money)(nil), // 18: google.ads.googleads.v15.common.Money
+	(enums.PriceExtensionPriceUnitEnum_PriceExtensionPriceUnit)(0),                       // 19: google.ads.googleads.v15.enums.PriceExtensionPriceUnitEnum.PriceExtensionPriceUnit
+	(enums.PromotionExtensionDiscountModifierEnum_PromotionExtensionDiscountModifier)(0), // 20: google.ads.googleads.v15.enums.PromotionExtensionDiscountModifierEnum.PromotionExtensionDiscountModifier
+	(enums.PromotionExtensionOccasionEnum_PromotionExtensionOccasion)(0),                 // 21: google.ads.googleads.v15.enums.PromotionExtensionOccasionEnum.PromotionExtensionOccasion
 }
-var file_google_ads_googleads_v14_common_extensions_proto_depIdxs = []int32{
-	13, // 0: google.ads.googleads.v14.common.AppFeedItem.app_store:type_name -> google.ads.googleads.v14.enums.AppStoreEnum.AppStore
-	14, // 1: google.ads.googleads.v14.common.AppFeedItem.url_custom_parameters:type_name -> google.ads.googleads.v14.common.CustomParameter
-	15, // 2: google.ads.googleads.v14.common.CallFeedItem.call_conversion_reporting_state:type_name -> google.ads.googleads.v14.enums.CallConversionReportingStateEnum.CallConversionReportingState
-	16, // 3: google.ads.googleads.v14.common.PriceFeedItem.type:type_name -> google.ads.googleads.v14.enums.PriceExtensionTypeEnum.PriceExtensionType
-	17, // 4: google.ads.googleads.v14.common.PriceFeedItem.price_qualifier:type_name -> google.ads.googleads.v14.enums.PriceExtensionPriceQualifierEnum.PriceExtensionPriceQualifier
-	7,  // 5: google.ads.googleads.v14.common.PriceFeedItem.price_offerings:type_name -> google.ads.googleads.v14.common.PriceOffer
-	18, // 6: google.ads.googleads.v14.common.PriceOffer.price:type_name -> google.ads.googleads.v14.common.Money
-	19, // 7: google.ads.googleads.v14.common.PriceOffer.unit:type_name -> google.ads.googleads.v14.enums.PriceExtensionPriceUnitEnum.PriceExtensionPriceUnit
-	20, // 8: google.ads.googleads.v14.common.PromotionFeedItem.discount_modifier:type_name -> google.ads.googleads.v14.enums.PromotionExtensionDiscountModifierEnum.PromotionExtensionDiscountModifier
-	21, // 9: google.ads.googleads.v14.common.PromotionFeedItem.occasion:type_name -> google.ads.googleads.v14.enums.PromotionExtensionOccasionEnum.PromotionExtensionOccasion
-	14, // 10: google.ads.googleads.v14.common.PromotionFeedItem.url_custom_parameters:type_name -> google.ads.googleads.v14.common.CustomParameter
-	18, // 11: google.ads.googleads.v14.common.PromotionFeedItem.money_amount_off:type_name -> google.ads.googleads.v14.common.Money
-	18, // 12: google.ads.googleads.v14.common.PromotionFeedItem.orders_over_amount:type_name -> google.ads.googleads.v14.common.Money
-	14, // 13: google.ads.googleads.v14.common.SitelinkFeedItem.url_custom_parameters:type_name -> google.ads.googleads.v14.common.CustomParameter
+var file_google_ads_googleads_v15_common_extensions_proto_depIdxs = []int32{
+	13, // 0: google.ads.googleads.v15.common.AppFeedItem.app_store:type_name -> google.ads.googleads.v15.enums.AppStoreEnum.AppStore
+	14, // 1: google.ads.googleads.v15.common.AppFeedItem.url_custom_parameters:type_name -> google.ads.googleads.v15.common.CustomParameter
+	15, // 2: google.ads.googleads.v15.common.CallFeedItem.call_conversion_reporting_state:type_name -> google.ads.googleads.v15.enums.CallConversionReportingStateEnum.CallConversionReportingState
+	16, // 3: google.ads.googleads.v15.common.PriceFeedItem.type:type_name -> google.ads.googleads.v15.enums.PriceExtensionTypeEnum.PriceExtensionType
+	17, // 4: google.ads.googleads.v15.common.PriceFeedItem.price_qualifier:type_name -> google.ads.googleads.v15.enums.PriceExtensionPriceQualifierEnum.PriceExtensionPriceQualifier
+	7,  // 5: google.ads.googleads.v15.common.PriceFeedItem.price_offerings:type_name -> google.ads.googleads.v15.common.PriceOffer
+	18, // 6: google.ads.googleads.v15.common.PriceOffer.price:type_name -> google.ads.googleads.v15.common.Money
+	19, // 7: google.ads.googleads.v15.common.PriceOffer.unit:type_name -> google.ads.googleads.v15.enums.PriceExtensionPriceUnitEnum.PriceExtensionPriceUnit
+	20, // 8: google.ads.googleads.v15.common.PromotionFeedItem.discount_modifier:type_name -> google.ads.googleads.v15.enums.PromotionExtensionDiscountModifierEnum.PromotionExtensionDiscountModifier
+	21, // 9: google.ads.googleads.v15.common.PromotionFeedItem.occasion:type_name -> google.ads.googleads.v15.enums.PromotionExtensionOccasionEnum.PromotionExtensionOccasion
+	14, // 10: google.ads.googleads.v15.common.PromotionFeedItem.url_custom_parameters:type_name -> google.ads.googleads.v15.common.CustomParameter
+	18, // 11: google.ads.googleads.v15.common.PromotionFeedItem.money_amount_off:type_name -> google.ads.googleads.v15.common.Money
+	18, // 12: google.ads.googleads.v15.common.PromotionFeedItem.orders_over_amount:type_name -> google.ads.googleads.v15.common.Money
+	14, // 13: google.ads.googleads.v15.common.SitelinkFeedItem.url_custom_parameters:type_name -> google.ads.googleads.v15.common.CustomParameter
 	14, // [14:14] is the sub-list for method output_type
 	14, // [14:14] is the sub-list for method input_type
 	14, // [14:14] is the sub-list for extension type_name
@@ -1815,15 +1815,15 @@ var file_google_ads_googleads_v14_common_extensions_proto_depIdxs = []int32{
 	0,  // [0:14] is the sub-list for field type_name
 }
 
-func init() { file_google_ads_googleads_v14_common_extensions_proto_init() }
-func file_google_ads_googleads_v14_common_extensions_proto_init() {
-	if File_google_ads_googleads_v14_common_extensions_proto != nil {
+func init() { file_google_ads_googleads_v15_common_extensions_proto_init() }
+func file_google_ads_googleads_v15_common_extensions_proto_init() {
+	if File_google_ads_googleads_v15_common_extensions_proto != nil {
 		return
 	}
-	file_google_ads_googleads_v14_common_custom_parameter_proto_init()
-	file_google_ads_googleads_v14_common_feed_common_proto_init()
+	file_google_ads_googleads_v15_common_custom_parameter_proto_init()
+	file_google_ads_googleads_v15_common_feed_common_proto_init()
 	if !protoimpl.UnsafeEnabled {
-		file_google_ads_googleads_v14_common_extensions_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_extensions_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AppFeedItem); i {
 			case 0:
 				return &v.state
@@ -1835,7 +1835,7 @@ func file_google_ads_googleads_v14_common_extensions_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_extensions_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_extensions_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CallFeedItem); i {
 			case 0:
 				return &v.state
@@ -1847,7 +1847,7 @@ func file_google_ads_googleads_v14_common_extensions_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_extensions_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_extensions_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CalloutFeedItem); i {
 			case 0:
 				return &v.state
@@ -1859,7 +1859,7 @@ func file_google_ads_googleads_v14_common_extensions_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_extensions_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_extensions_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*LocationFeedItem); i {
 			case 0:
 				return &v.state
@@ -1871,7 +1871,7 @@ func file_google_ads_googleads_v14_common_extensions_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_extensions_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_extensions_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AffiliateLocationFeedItem); i {
 			case 0:
 				return &v.state
@@ -1883,7 +1883,7 @@ func file_google_ads_googleads_v14_common_extensions_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_extensions_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_extensions_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*TextMessageFeedItem); i {
 			case 0:
 				return &v.state
@@ -1895,7 +1895,7 @@ func file_google_ads_googleads_v14_common_extensions_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_extensions_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_extensions_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PriceFeedItem); i {
 			case 0:
 				return &v.state
@@ -1907,7 +1907,7 @@ func file_google_ads_googleads_v14_common_extensions_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_extensions_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_extensions_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PriceOffer); i {
 			case 0:
 				return &v.state
@@ -1919,7 +1919,7 @@ func file_google_ads_googleads_v14_common_extensions_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_extensions_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_extensions_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PromotionFeedItem); i {
 			case 0:
 				return &v.state
@@ -1931,7 +1931,7 @@ func file_google_ads_googleads_v14_common_extensions_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_extensions_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_extensions_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*StructuredSnippetFeedItem); i {
 			case 0:
 				return &v.state
@@ -1943,7 +1943,7 @@ func file_google_ads_googleads_v14_common_extensions_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_extensions_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_extensions_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SitelinkFeedItem); i {
 			case 0:
 				return &v.state
@@ -1955,7 +1955,7 @@ func file_google_ads_googleads_v14_common_extensions_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_extensions_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_extensions_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*HotelCalloutFeedItem); i {
 			case 0:
 				return &v.state
@@ -1967,7 +1967,7 @@ func file_google_ads_googleads_v14_common_extensions_proto_init() {
 				return nil
 			}
 		}
-		file_google_ads_googleads_v14_common_extensions_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_google_ads_googleads_v15_common_extensions_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ImageFeedItem); i {
 			case 0:
 				return &v.state
@@ -1980,39 +1980,39 @@ func file_google_ads_googleads_v14_common_extensions_proto_init() {
 			}
 		}
 	}
-	file_google_ads_googleads_v14_common_extensions_proto_msgTypes[0].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v14_common_extensions_proto_msgTypes[1].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v14_common_extensions_proto_msgTypes[2].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v14_common_extensions_proto_msgTypes[3].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v14_common_extensions_proto_msgTypes[4].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v14_common_extensions_proto_msgTypes[5].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v14_common_extensions_proto_msgTypes[6].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v14_common_extensions_proto_msgTypes[7].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v14_common_extensions_proto_msgTypes[8].OneofWrappers = []interface{}{
+	file_google_ads_googleads_v15_common_extensions_proto_msgTypes[0].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_common_extensions_proto_msgTypes[1].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_common_extensions_proto_msgTypes[2].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_common_extensions_proto_msgTypes[3].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_common_extensions_proto_msgTypes[4].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_common_extensions_proto_msgTypes[5].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_common_extensions_proto_msgTypes[6].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_common_extensions_proto_msgTypes[7].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_common_extensions_proto_msgTypes[8].OneofWrappers = []interface{}{
 		(*PromotionFeedItem_PercentOff)(nil),
 		(*PromotionFeedItem_MoneyAmountOff)(nil),
 		(*PromotionFeedItem_PromotionCode)(nil),
 		(*PromotionFeedItem_OrdersOverAmount)(nil),
 	}
-	file_google_ads_googleads_v14_common_extensions_proto_msgTypes[9].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v14_common_extensions_proto_msgTypes[10].OneofWrappers = []interface{}{}
-	file_google_ads_googleads_v14_common_extensions_proto_msgTypes[11].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_common_extensions_proto_msgTypes[9].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_common_extensions_proto_msgTypes[10].OneofWrappers = []interface{}{}
+	file_google_ads_googleads_v15_common_extensions_proto_msgTypes[11].OneofWrappers = []interface{}{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_google_ads_googleads_v14_common_extensions_proto_rawDesc,
+			RawDescriptor: file_google_ads_googleads_v15_common_extensions_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   13,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_google_ads_googleads_v14_common_extensions_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v14_common_extensions_proto_depIdxs,
-		MessageInfos:      file_google_ads_googleads_v14_common_extensions_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v15_common_extensions_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v15_common_extensions_proto_depIdxs,
+		MessageInfos:      file_google_ads_googleads_v15_common_extensions_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v14_common_extensions_proto = out.File
-	file_google_ads_googleads_v14_common_extensions_proto_rawDesc = nil
-	file_google_ads_googleads_v14_common_extensions_proto_goTypes = nil
-	file_google_ads_googleads_v14_common_extensions_proto_depIdxs = nil
+	File_google_ads_googleads_v15_common_extensions_proto = out.File
+	file_google_ads_googleads_v15_common_extensions_proto_rawDesc = nil
+	file_google_ads_googleads_v15_common_extensions_proto_goTypes = nil
+	file_google_ads_googleads_v15_common_extensions_proto_depIdxs = nil
 }

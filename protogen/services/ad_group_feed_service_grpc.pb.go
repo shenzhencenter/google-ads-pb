@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.21.1
-// source: google/ads/googleads/v14/services/ad_group_feed_service.proto
+// source: google/ads/googleads/v15/services/ad_group_feed_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	AdGroupFeedService_MutateAdGroupFeeds_FullMethodName = "/google.ads.googleads.v14.services.AdGroupFeedService/MutateAdGroupFeeds"
+	AdGroupFeedService_MutateAdGroupFeeds_FullMethodName = "/google.ads.googleads.v15.services.AdGroupFeedService/MutateAdGroupFeeds"
 )
 
 // AdGroupFeedServiceClient is the client API for AdGroupFeedService service.
@@ -164,7 +164,7 @@ func _AdGroupFeedService_MutateAdGroupFeeds_Handler(srv interface{}, ctx context
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AdGroupFeedService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v14.services.AdGroupFeedService",
+	ServiceName: "google.ads.googleads.v15.services.AdGroupFeedService",
 	HandlerType: (*AdGroupFeedServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -173,5 +173,5 @@ var AdGroupFeedService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v14/services/ad_group_feed_service.proto",
+	Metadata: "google/ads/googleads/v15/services/ad_group_feed_service.proto",
 }

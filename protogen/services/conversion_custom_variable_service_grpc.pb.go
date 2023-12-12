@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.21.1
-// source: google/ads/googleads/v14/services/conversion_custom_variable_service.proto
+// source: google/ads/googleads/v15/services/conversion_custom_variable_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	ConversionCustomVariableService_MutateConversionCustomVariables_FullMethodName = "/google.ads.googleads.v14.services.ConversionCustomVariableService/MutateConversionCustomVariables"
+	ConversionCustomVariableService_MutateConversionCustomVariables_FullMethodName = "/google.ads.googleads.v15.services.ConversionCustomVariableService/MutateConversionCustomVariables"
 )
 
 // ConversionCustomVariableServiceClient is the client API for ConversionCustomVariableService service.
@@ -137,7 +137,7 @@ func _ConversionCustomVariableService_MutateConversionCustomVariables_Handler(sr
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ConversionCustomVariableService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v14.services.ConversionCustomVariableService",
+	ServiceName: "google.ads.googleads.v15.services.ConversionCustomVariableService",
 	HandlerType: (*ConversionCustomVariableServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -146,5 +146,5 @@ var ConversionCustomVariableService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v14/services/conversion_custom_variable_service.proto",
+	Metadata: "google/ads/googleads/v15/services/conversion_custom_variable_service.proto",
 }

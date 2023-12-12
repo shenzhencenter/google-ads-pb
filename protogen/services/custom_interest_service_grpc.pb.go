@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.21.1
-// source: google/ads/googleads/v14/services/custom_interest_service.proto
+// source: google/ads/googleads/v15/services/custom_interest_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	CustomInterestService_MutateCustomInterests_FullMethodName = "/google.ads.googleads.v14.services.CustomInterestService/MutateCustomInterests"
+	CustomInterestService_MutateCustomInterests_FullMethodName = "/google.ads.googleads.v15.services.CustomInterestService/MutateCustomInterests"
 )
 
 // CustomInterestServiceClient is the client API for CustomInterestService service.
@@ -140,7 +140,7 @@ func _CustomInterestService_MutateCustomInterests_Handler(srv interface{}, ctx c
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CustomInterestService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v14.services.CustomInterestService",
+	ServiceName: "google.ads.googleads.v15.services.CustomInterestService",
 	HandlerType: (*CustomInterestServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -149,5 +149,5 @@ var CustomInterestService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v14/services/custom_interest_service.proto",
+	Metadata: "google/ads/googleads/v15/services/custom_interest_service.proto",
 }
