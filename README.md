@@ -98,7 +98,7 @@ requestBody, err := protojson.Marshal(&req)
 if err != nil {
   panic(err)
 }
-request, err := http.NewRequest("GET", "https://googleads.googleapis.com/v14/customers:listAccessibleCustomers", bytes.NewBuffer(requestBody))
+request, err := http.NewRequest("GET", "https://googleads.googleapis.com/v15/customers:listAccessibleCustomers", bytes.NewBuffer(requestBody))
 if err != nil {
   panic(err)
 }
