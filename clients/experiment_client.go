@@ -540,11 +540,6 @@ func (c *experimentGRPCClient) PromoteExperiment(ctx context.Context, req *servi
 	}, nil
 }
 
-// PromoteExperimentOperation manages a long-running operation from PromoteExperiment.
-type PromoteExperimentOperation struct {
-	lro *longrunning.Operation
-}
-
 // PromoteExperimentOperation returns a new PromoteExperimentOperation from a given name.
 // The name must be that of a previously created PromoteExperimentOperation, possibly from a different process.
 func (c *experimentGRPCClient) PromoteExperimentOperation(name string) *PromoteExperimentOperation {
@@ -553,105 +548,10 @@ func (c *experimentGRPCClient) PromoteExperimentOperation(name string) *PromoteE
 	}
 }
 
-// Wait blocks until the long-running operation is completed, returning the response and any errors encountered.
-//
-// See documentation of Poll for error-handling information.
-func (op *PromoteExperimentOperation) Wait(ctx context.Context, opts ...gax.CallOption) error {
-	return op.lro.WaitWithInterval(ctx, nil, time.Minute, opts...)
-}
-
-// Poll fetches the latest state of the long-running operation.
-//
-// Poll also fetches the latest metadata, which can be retrieved by Metadata.
-//
-// If Poll fails, the error is returned and op is unmodified. If Poll succeeds and
-// the operation has completed with failure, the error is returned and op.Done will return true.
-// If Poll succeeds and the operation has completed successfully,
-// op.Done will return true, and the response of the operation is returned.
-// If Poll succeeds and the operation has not completed, the returned response and error are both nil.
-func (op *PromoteExperimentOperation) Poll(ctx context.Context, opts ...gax.CallOption) error {
-	return op.lro.Poll(ctx, nil, opts...)
-}
-
-// Metadata returns metadata associated with the long-running operation.
-// Metadata itself does not contact the server, but Poll does.
-// To get the latest metadata, call this method after a successful call to Poll.
-// If the metadata is not available, the returned metadata and error are both nil.
-func (op *PromoteExperimentOperation) Metadata() (*servicespb.PromoteExperimentMetadata, error) {
-	var meta servicespb.PromoteExperimentMetadata
-	if err := op.lro.Metadata(&meta); err == longrunning.ErrNoMetadata {
-		return nil, nil
-	} else if err != nil {
-		return nil, err
-	}
-	return &meta, nil
-}
-
-// Done reports whether the long-running operation has completed.
-func (op *PromoteExperimentOperation) Done() bool {
-	return op.lro.Done()
-}
-
-// Name returns the name of the long-running operation.
-// The name is assigned by the server and is unique within the service from which the operation is created.
-func (op *PromoteExperimentOperation) Name() string {
-	return op.lro.Name()
-}
-
-// ScheduleExperimentOperation manages a long-running operation from ScheduleExperiment.
-type ScheduleExperimentOperation struct {
-	lro *longrunning.Operation
-}
-
 // ScheduleExperimentOperation returns a new ScheduleExperimentOperation from a given name.
 // The name must be that of a previously created ScheduleExperimentOperation, possibly from a different process.
 func (c *experimentGRPCClient) ScheduleExperimentOperation(name string) *ScheduleExperimentOperation {
 	return &ScheduleExperimentOperation{
 		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
-}
-
-// Wait blocks until the long-running operation is completed, returning the response and any errors encountered.
-//
-// See documentation of Poll for error-handling information.
-func (op *ScheduleExperimentOperation) Wait(ctx context.Context, opts ...gax.CallOption) error {
-	return op.lro.WaitWithInterval(ctx, nil, time.Minute, opts...)
-}
-
-// Poll fetches the latest state of the long-running operation.
-//
-// Poll also fetches the latest metadata, which can be retrieved by Metadata.
-//
-// If Poll fails, the error is returned and op is unmodified. If Poll succeeds and
-// the operation has completed with failure, the error is returned and op.Done will return true.
-// If Poll succeeds and the operation has completed successfully,
-// op.Done will return true, and the response of the operation is returned.
-// If Poll succeeds and the operation has not completed, the returned response and error are both nil.
-func (op *ScheduleExperimentOperation) Poll(ctx context.Context, opts ...gax.CallOption) error {
-	return op.lro.Poll(ctx, nil, opts...)
-}
-
-// Metadata returns metadata associated with the long-running operation.
-// Metadata itself does not contact the server, but Poll does.
-// To get the latest metadata, call this method after a successful call to Poll.
-// If the metadata is not available, the returned metadata and error are both nil.
-func (op *ScheduleExperimentOperation) Metadata() (*servicespb.ScheduleExperimentMetadata, error) {
-	var meta servicespb.ScheduleExperimentMetadata
-	if err := op.lro.Metadata(&meta); err == longrunning.ErrNoMetadata {
-		return nil, nil
-	} else if err != nil {
-		return nil, err
-	}
-	return &meta, nil
-}
-
-// Done reports whether the long-running operation has completed.
-func (op *ScheduleExperimentOperation) Done() bool {
-	return op.lro.Done()
-}
-
-// Name returns the name of the long-running operation.
-// The name is assigned by the server and is unique within the service from which the operation is created.
-func (op *ScheduleExperimentOperation) Name() string {
-	return op.lro.Name()
 }

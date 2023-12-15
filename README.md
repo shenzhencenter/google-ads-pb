@@ -21,11 +21,12 @@ Although this project isn't official, we deem it as low-risk due to its maturity
 
 | google-ads-pb     | Google Ads API   | Sunset date                  |
 | ----------------- | ---------------- | ---------------------------- |
-| v1.5.1            | v14.1            | End of May 2024              |
-| v1.5.0            | v14              | End of May 2024              |
-| v1.4.1            | v13.1            | End of January 2024          |
-| v1.4.0            | v13              | End of January 2024          |
-| v1.3.1            | v12              | <b>End of September 2023</b> |
+| v1.6.0            | v15              | September 2024	              |
+| v1.5.1            | v14.1            | May 2024	                    |
+| v1.5.0            | v14              | May 2024	                    |
+| v1.4.1            | v13.1            | January 2024	                |
+| v1.4.0            | v13              | January 2024	                |
+| <del>v1.3.1</del> | <del>v12</del>   | Deprecated                   |
 | <del>v1.2.1</del> | <del>v11.1</del> | Deprecated                   |
 | <del>v1.2.0</del> | <del>v11</del>   | Deprecated                   |
 | <del>v1.1.1</del> | <del>v10</del>   | Deprecated                   |
@@ -97,7 +98,7 @@ requestBody, err := protojson.Marshal(&req)
 if err != nil {
   panic(err)
 }
-request, err := http.NewRequest("GET", "https://googleads.googleapis.com/v14/customers:listAccessibleCustomers", bytes.NewBuffer(requestBody))
+request, err := http.NewRequest("GET", "https://googleads.googleapis.com/v15/customers:listAccessibleCustomers", bytes.NewBuffer(requestBody))
 if err != nil {
   panic(err)
 }
