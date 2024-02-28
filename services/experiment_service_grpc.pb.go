@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v4.24.4
-// source: google/ads/googleads/v15/services/experiment_service.proto
+// source: google/ads/googleads/v16/services/experiment_service.proto
 
 package services
 
@@ -35,12 +35,12 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	ExperimentService_MutateExperiments_FullMethodName         = "/google.ads.googleads.v15.services.ExperimentService/MutateExperiments"
-	ExperimentService_EndExperiment_FullMethodName             = "/google.ads.googleads.v15.services.ExperimentService/EndExperiment"
-	ExperimentService_ListExperimentAsyncErrors_FullMethodName = "/google.ads.googleads.v15.services.ExperimentService/ListExperimentAsyncErrors"
-	ExperimentService_GraduateExperiment_FullMethodName        = "/google.ads.googleads.v15.services.ExperimentService/GraduateExperiment"
-	ExperimentService_ScheduleExperiment_FullMethodName        = "/google.ads.googleads.v15.services.ExperimentService/ScheduleExperiment"
-	ExperimentService_PromoteExperiment_FullMethodName         = "/google.ads.googleads.v15.services.ExperimentService/PromoteExperiment"
+	ExperimentService_MutateExperiments_FullMethodName         = "/google.ads.googleads.v16.services.ExperimentService/MutateExperiments"
+	ExperimentService_EndExperiment_FullMethodName             = "/google.ads.googleads.v16.services.ExperimentService/EndExperiment"
+	ExperimentService_ListExperimentAsyncErrors_FullMethodName = "/google.ads.googleads.v16.services.ExperimentService/ListExperimentAsyncErrors"
+	ExperimentService_GraduateExperiment_FullMethodName        = "/google.ads.googleads.v16.services.ExperimentService/GraduateExperiment"
+	ExperimentService_ScheduleExperiment_FullMethodName        = "/google.ads.googleads.v16.services.ExperimentService/ScheduleExperiment"
+	ExperimentService_PromoteExperiment_FullMethodName         = "/google.ads.googleads.v16.services.ExperimentService/PromoteExperiment"
 )
 
 // ExperimentServiceClient is the client API for ExperimentService service.
@@ -457,7 +457,7 @@ func _ExperimentService_PromoteExperiment_Handler(srv interface{}, ctx context.C
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ExperimentService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v15.services.ExperimentService",
+	ServiceName: "google.ads.googleads.v16.services.ExperimentService",
 	HandlerType: (*ExperimentServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -486,5 +486,5 @@ var ExperimentService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v15/services/experiment_service.proto",
+	Metadata: "google/ads/googleads/v16/services/experiment_service.proto",
 }

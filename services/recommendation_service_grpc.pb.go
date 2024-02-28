@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v4.24.4
-// source: google/ads/googleads/v15/services/recommendation_service.proto
+// source: google/ads/googleads/v16/services/recommendation_service.proto
 
 package services
 
@@ -33,8 +33,9 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	RecommendationService_ApplyRecommendation_FullMethodName   = "/google.ads.googleads.v15.services.RecommendationService/ApplyRecommendation"
-	RecommendationService_DismissRecommendation_FullMethodName = "/google.ads.googleads.v15.services.RecommendationService/DismissRecommendation"
+	RecommendationService_ApplyRecommendation_FullMethodName     = "/google.ads.googleads.v16.services.RecommendationService/ApplyRecommendation"
+	RecommendationService_DismissRecommendation_FullMethodName   = "/google.ads.googleads.v16.services.RecommendationService/DismissRecommendation"
+	RecommendationService_GenerateRecommendations_FullMethodName = "/google.ads.googleads.v16.services.RecommendationService/GenerateRecommendations"
 )
 
 // RecommendationServiceClient is the client API for RecommendationService service.
@@ -69,6 +70,18 @@ type RecommendationServiceClient interface {
 	//	[RecommendationError]()
 	//	[RequestError]()
 	DismissRecommendation(ctx context.Context, in *DismissRecommendationRequest, opts ...grpc.CallOption) (*DismissRecommendationResponse, error)
+	// Generates Recommendations based off the requested recommendation_types.
+	//
+	// List of thrown errors:
+	//
+	//	[AuthenticationError]()
+	//	[AuthorizationError]()
+	//	[HeaderError]()
+	//	[InternalError]()
+	//	[QuotaError]()
+	//	[RecommendationError]()
+	//	[RequestError]()
+	GenerateRecommendations(ctx context.Context, in *GenerateRecommendationsRequest, opts ...grpc.CallOption) (*GenerateRecommendationsResponse, error)
 }
 
 type recommendationServiceClient struct {
@@ -91,6 +104,15 @@ func (c *recommendationServiceClient) ApplyRecommendation(ctx context.Context, i
 func (c *recommendationServiceClient) DismissRecommendation(ctx context.Context, in *DismissRecommendationRequest, opts ...grpc.CallOption) (*DismissRecommendationResponse, error) {
 	out := new(DismissRecommendationResponse)
 	err := c.cc.Invoke(ctx, RecommendationService_DismissRecommendation_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *recommendationServiceClient) GenerateRecommendations(ctx context.Context, in *GenerateRecommendationsRequest, opts ...grpc.CallOption) (*GenerateRecommendationsResponse, error) {
+	out := new(GenerateRecommendationsResponse)
+	err := c.cc.Invoke(ctx, RecommendationService_GenerateRecommendations_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -129,6 +151,18 @@ type RecommendationServiceServer interface {
 	//	[RecommendationError]()
 	//	[RequestError]()
 	DismissRecommendation(context.Context, *DismissRecommendationRequest) (*DismissRecommendationResponse, error)
+	// Generates Recommendations based off the requested recommendation_types.
+	//
+	// List of thrown errors:
+	//
+	//	[AuthenticationError]()
+	//	[AuthorizationError]()
+	//	[HeaderError]()
+	//	[InternalError]()
+	//	[QuotaError]()
+	//	[RecommendationError]()
+	//	[RequestError]()
+	GenerateRecommendations(context.Context, *GenerateRecommendationsRequest) (*GenerateRecommendationsResponse, error)
 	mustEmbedUnimplementedRecommendationServiceServer()
 }
 
@@ -141,6 +175,9 @@ func (UnimplementedRecommendationServiceServer) ApplyRecommendation(context.Cont
 }
 func (UnimplementedRecommendationServiceServer) DismissRecommendation(context.Context, *DismissRecommendationRequest) (*DismissRecommendationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DismissRecommendation not implemented")
+}
+func (UnimplementedRecommendationServiceServer) GenerateRecommendations(context.Context, *GenerateRecommendationsRequest) (*GenerateRecommendationsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GenerateRecommendations not implemented")
 }
 func (UnimplementedRecommendationServiceServer) mustEmbedUnimplementedRecommendationServiceServer() {}
 
@@ -191,11 +228,29 @@ func _RecommendationService_DismissRecommendation_Handler(srv interface{}, ctx c
 	return interceptor(ctx, in, info, handler)
 }
 
+func _RecommendationService_GenerateRecommendations_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenerateRecommendationsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RecommendationServiceServer).GenerateRecommendations(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: RecommendationService_GenerateRecommendations_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RecommendationServiceServer).GenerateRecommendations(ctx, req.(*GenerateRecommendationsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // RecommendationService_ServiceDesc is the grpc.ServiceDesc for RecommendationService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var RecommendationService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v15.services.RecommendationService",
+	ServiceName: "google.ads.googleads.v16.services.RecommendationService",
 	HandlerType: (*RecommendationServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -206,7 +261,11 @@ var RecommendationService_ServiceDesc = grpc.ServiceDesc{
 			MethodName: "DismissRecommendation",
 			Handler:    _RecommendationService_DismissRecommendation_Handler,
 		},
+		{
+			MethodName: "GenerateRecommendations",
+			Handler:    _RecommendationService_GenerateRecommendations_Handler,
+		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v15/services/recommendation_service.proto",
+	Metadata: "google/ads/googleads/v16/services/recommendation_service.proto",
 }

@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v4.24.4
-// source: google/ads/googleads/v15/services/campaign_shared_set_service.proto
+// source: google/ads/googleads/v16/services/campaign_shared_set_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	CampaignSharedSetService_MutateCampaignSharedSets_FullMethodName = "/google.ads.googleads.v15.services.CampaignSharedSetService/MutateCampaignSharedSets"
+	CampaignSharedSetService_MutateCampaignSharedSets_FullMethodName = "/google.ads.googleads.v16.services.CampaignSharedSetService/MutateCampaignSharedSets"
 )
 
 // CampaignSharedSetServiceClient is the client API for CampaignSharedSetService service.
@@ -163,7 +163,7 @@ func _CampaignSharedSetService_MutateCampaignSharedSets_Handler(srv interface{},
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CampaignSharedSetService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v15.services.CampaignSharedSetService",
+	ServiceName: "google.ads.googleads.v16.services.CampaignSharedSetService",
 	HandlerType: (*CampaignSharedSetServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -172,5 +172,5 @@ var CampaignSharedSetService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v15/services/campaign_shared_set_service.proto",
+	Metadata: "google/ads/googleads/v16/services/campaign_shared_set_service.proto",
 }

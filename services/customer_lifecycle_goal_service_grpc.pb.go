@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v4.24.4
-// source: google/ads/googleads/v15/services/customer_lifecycle_goal_service.proto
+// source: google/ads/googleads/v16/services/customer_lifecycle_goal_service.proto
 
 package services
 
@@ -33,13 +33,13 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	CustomerLifecycleService_ConfigureCustomerLifecycleGoals_FullMethodName = "/google.ads.googleads.v15.services.CustomerLifecycleService/ConfigureCustomerLifecycleGoals"
+	CustomerLifecycleGoalService_ConfigureCustomerLifecycleGoals_FullMethodName = "/google.ads.googleads.v16.services.CustomerLifecycleGoalService/ConfigureCustomerLifecycleGoals"
 )
 
-// CustomerLifecycleServiceClient is the client API for CustomerLifecycleService service.
+// CustomerLifecycleGoalServiceClient is the client API for CustomerLifecycleGoalService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type CustomerLifecycleServiceClient interface {
+type CustomerLifecycleGoalServiceClient interface {
 	// Process the given customer lifecycle configurations.
 	//
 	// List of thrown errors:
@@ -54,27 +54,27 @@ type CustomerLifecycleServiceClient interface {
 	ConfigureCustomerLifecycleGoals(ctx context.Context, in *ConfigureCustomerLifecycleGoalsRequest, opts ...grpc.CallOption) (*ConfigureCustomerLifecycleGoalsResponse, error)
 }
 
-type customerLifecycleServiceClient struct {
+type customerLifecycleGoalServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewCustomerLifecycleServiceClient(cc grpc.ClientConnInterface) CustomerLifecycleServiceClient {
-	return &customerLifecycleServiceClient{cc}
+func NewCustomerLifecycleGoalServiceClient(cc grpc.ClientConnInterface) CustomerLifecycleGoalServiceClient {
+	return &customerLifecycleGoalServiceClient{cc}
 }
 
-func (c *customerLifecycleServiceClient) ConfigureCustomerLifecycleGoals(ctx context.Context, in *ConfigureCustomerLifecycleGoalsRequest, opts ...grpc.CallOption) (*ConfigureCustomerLifecycleGoalsResponse, error) {
+func (c *customerLifecycleGoalServiceClient) ConfigureCustomerLifecycleGoals(ctx context.Context, in *ConfigureCustomerLifecycleGoalsRequest, opts ...grpc.CallOption) (*ConfigureCustomerLifecycleGoalsResponse, error) {
 	out := new(ConfigureCustomerLifecycleGoalsResponse)
-	err := c.cc.Invoke(ctx, CustomerLifecycleService_ConfigureCustomerLifecycleGoals_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, CustomerLifecycleGoalService_ConfigureCustomerLifecycleGoals_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// CustomerLifecycleServiceServer is the server API for CustomerLifecycleService service.
-// All implementations must embed UnimplementedCustomerLifecycleServiceServer
+// CustomerLifecycleGoalServiceServer is the server API for CustomerLifecycleGoalService service.
+// All implementations must embed UnimplementedCustomerLifecycleGoalServiceServer
 // for forward compatibility
-type CustomerLifecycleServiceServer interface {
+type CustomerLifecycleGoalServiceServer interface {
 	// Process the given customer lifecycle configurations.
 	//
 	// List of thrown errors:
@@ -87,60 +87,60 @@ type CustomerLifecycleServiceServer interface {
 	//	[QuotaError]()
 	//	[RequestError]()
 	ConfigureCustomerLifecycleGoals(context.Context, *ConfigureCustomerLifecycleGoalsRequest) (*ConfigureCustomerLifecycleGoalsResponse, error)
-	mustEmbedUnimplementedCustomerLifecycleServiceServer()
+	mustEmbedUnimplementedCustomerLifecycleGoalServiceServer()
 }
 
-// UnimplementedCustomerLifecycleServiceServer must be embedded to have forward compatible implementations.
-type UnimplementedCustomerLifecycleServiceServer struct {
+// UnimplementedCustomerLifecycleGoalServiceServer must be embedded to have forward compatible implementations.
+type UnimplementedCustomerLifecycleGoalServiceServer struct {
 }
 
-func (UnimplementedCustomerLifecycleServiceServer) ConfigureCustomerLifecycleGoals(context.Context, *ConfigureCustomerLifecycleGoalsRequest) (*ConfigureCustomerLifecycleGoalsResponse, error) {
+func (UnimplementedCustomerLifecycleGoalServiceServer) ConfigureCustomerLifecycleGoals(context.Context, *ConfigureCustomerLifecycleGoalsRequest) (*ConfigureCustomerLifecycleGoalsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ConfigureCustomerLifecycleGoals not implemented")
 }
-func (UnimplementedCustomerLifecycleServiceServer) mustEmbedUnimplementedCustomerLifecycleServiceServer() {
+func (UnimplementedCustomerLifecycleGoalServiceServer) mustEmbedUnimplementedCustomerLifecycleGoalServiceServer() {
 }
 
-// UnsafeCustomerLifecycleServiceServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to CustomerLifecycleServiceServer will
+// UnsafeCustomerLifecycleGoalServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to CustomerLifecycleGoalServiceServer will
 // result in compilation errors.
-type UnsafeCustomerLifecycleServiceServer interface {
-	mustEmbedUnimplementedCustomerLifecycleServiceServer()
+type UnsafeCustomerLifecycleGoalServiceServer interface {
+	mustEmbedUnimplementedCustomerLifecycleGoalServiceServer()
 }
 
-func RegisterCustomerLifecycleServiceServer(s grpc.ServiceRegistrar, srv CustomerLifecycleServiceServer) {
-	s.RegisterService(&CustomerLifecycleService_ServiceDesc, srv)
+func RegisterCustomerLifecycleGoalServiceServer(s grpc.ServiceRegistrar, srv CustomerLifecycleGoalServiceServer) {
+	s.RegisterService(&CustomerLifecycleGoalService_ServiceDesc, srv)
 }
 
-func _CustomerLifecycleService_ConfigureCustomerLifecycleGoals_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CustomerLifecycleGoalService_ConfigureCustomerLifecycleGoals_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ConfigureCustomerLifecycleGoalsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CustomerLifecycleServiceServer).ConfigureCustomerLifecycleGoals(ctx, in)
+		return srv.(CustomerLifecycleGoalServiceServer).ConfigureCustomerLifecycleGoals(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CustomerLifecycleService_ConfigureCustomerLifecycleGoals_FullMethodName,
+		FullMethod: CustomerLifecycleGoalService_ConfigureCustomerLifecycleGoals_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CustomerLifecycleServiceServer).ConfigureCustomerLifecycleGoals(ctx, req.(*ConfigureCustomerLifecycleGoalsRequest))
+		return srv.(CustomerLifecycleGoalServiceServer).ConfigureCustomerLifecycleGoals(ctx, req.(*ConfigureCustomerLifecycleGoalsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// CustomerLifecycleService_ServiceDesc is the grpc.ServiceDesc for CustomerLifecycleService service.
+// CustomerLifecycleGoalService_ServiceDesc is the grpc.ServiceDesc for CustomerLifecycleGoalService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var CustomerLifecycleService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v15.services.CustomerLifecycleService",
-	HandlerType: (*CustomerLifecycleServiceServer)(nil),
+var CustomerLifecycleGoalService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "google.ads.googleads.v16.services.CustomerLifecycleGoalService",
+	HandlerType: (*CustomerLifecycleGoalServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "ConfigureCustomerLifecycleGoals",
-			Handler:    _CustomerLifecycleService_ConfigureCustomerLifecycleGoals_Handler,
+			Handler:    _CustomerLifecycleGoalService_ConfigureCustomerLifecycleGoals_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v15/services/customer_lifecycle_goal_service.proto",
+	Metadata: "google/ads/googleads/v16/services/customer_lifecycle_goal_service.proto",
 }
