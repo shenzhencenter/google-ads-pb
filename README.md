@@ -21,11 +21,12 @@ Although this project isn't official, we deem it as low-risk due to its maturity
 
 | google-ads-pb     | Google Ads API   | Sunset date                  |
 | ----------------- | ---------------- | ---------------------------- |
+| v1.7.0            | v16              | January 2025	                |
 | v1.6.0            | v15              | September 2024	              |
-| v1.5.1            | v14.1            | May 2024	                    |
-| v1.5.0            | v14              | May 2024	                    |
-| v1.4.1            | v13.1            | January 2024	                |
-| v1.4.0            | v13              | January 2024	                |
+| v1.5.1            | v14.1            | June 5, 2024		              |
+| v1.5.0            | v14              | June 5, 2024	                |
+| <del>v1.4.1</del> | <del>v13.1</del> | Deprecated	                  |
+| <del>v1.4.0</del> | <del>v13</del>   | Deprecated	                  |
 | <del>v1.3.1</del> | <del>v12</del>   | Deprecated                   |
 | <del>v1.2.1</del> | <del>v11.1</del> | Deprecated                   |
 | <del>v1.2.0</del> | <del>v11</del>   | Deprecated                   |
