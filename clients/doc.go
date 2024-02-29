@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2024 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -41,7 +41,7 @@
 //	// - It may require correct/in-range values for request initialization.
 //	// - It may require specifying regional endpoints when creating the service client as shown in:
 //	//   https://pkg.go.dev/cloud.google.com/go#hdr-Client_Options
-//	c, err := clients.NewAdGroupBidModifierClient(ctx)
+//	c, err := clients.NewCustomerSkAdNetworkConversionValueSchemaClient(ctx)
 //	if err != nil {
 //		// TODO: Handle error.
 //	}
@@ -61,17 +61,17 @@
 //	// - It may require correct/in-range values for request initialization.
 //	// - It may require specifying regional endpoints when creating the service client as shown in:
 //	//   https://pkg.go.dev/cloud.google.com/go#hdr-Client_Options
-//	c, err := clients.NewAdGroupBidModifierClient(ctx)
+//	c, err := clients.NewCustomerSkAdNetworkConversionValueSchemaClient(ctx)
 //	if err != nil {
 //		// TODO: Handle error.
 //	}
 //	defer c.Close()
 //
-//	req := &servicespb.MutateAdGroupBidModifiersRequest{
+//	req := &servicespb.MutateCustomerSkAdNetworkConversionValueSchemaRequest{
 //		// TODO: Fill request struct fields.
-//		// See https://pkg.go.dev/github.com/shenzhencenter/google-ads-pb/services#MutateAdGroupBidModifiersRequest.
+//		// See https://pkg.go.dev/github.com/shenzhencenter/google-ads-pb/services#MutateCustomerSkAdNetworkConversionValueSchemaRequest.
 //	}
-//	resp, err := c.MutateAdGroupBidModifiers(ctx, req)
+//	resp, err := c.MutateCustomerSkAdNetworkConversionValueSchema(ctx, req)
 //	if err != nil {
 //		// TODO: Handle error.
 //	}
@@ -80,7 +80,7 @@
 //
 // # Use of Context
 //
-// The ctx passed to NewAdGroupBidModifierClient is used for authentication requests and
+// The ctx passed to NewCustomerSkAdNetworkConversionValueSchemaClient is used for authentication requests and
 // for creating the underlying connection, but is not used for subsequent calls.
 // Individual methods on the client use the ctx given to them.
 //

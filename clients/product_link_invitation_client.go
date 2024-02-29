@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2024 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -36,13 +36,17 @@ var newProductLinkInvitationClientHook clientHook
 
 // ProductLinkInvitationCallOptions contains the retry settings for each method of ProductLinkInvitationClient.
 type ProductLinkInvitationCallOptions struct {
+	CreateProductLinkInvitation []gax.CallOption
 	UpdateProductLinkInvitation []gax.CallOption
+	RemoveProductLinkInvitation []gax.CallOption
 }
 
 func defaultProductLinkInvitationGRPCClientOptions() []option.ClientOption {
 	return []option.ClientOption{
 		internaloption.WithDefaultEndpoint("googleads.googleapis.com:443"),
+		internaloption.WithDefaultEndpointTemplate("googleads.UNIVERSE_DOMAIN:443"),
 		internaloption.WithDefaultMTLSEndpoint("googleads.mtls.googleapis.com:443"),
+		internaloption.WithDefaultUniverseDomain("googleapis.com"),
 		internaloption.WithDefaultAudience("https://googleads.googleapis.com/"),
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
@@ -53,7 +57,33 @@ func defaultProductLinkInvitationGRPCClientOptions() []option.ClientOption {
 
 func defaultProductLinkInvitationCallOptions() *ProductLinkInvitationCallOptions {
 	return &ProductLinkInvitationCallOptions{
+		CreateProductLinkInvitation: []gax.CallOption{
+			gax.WithTimeout(14400000 * time.Millisecond),
+			gax.WithRetry(func() gax.Retryer {
+				return gax.OnCodes([]codes.Code{
+					codes.Unavailable,
+					codes.DeadlineExceeded,
+				}, gax.Backoff{
+					Initial:    5000 * time.Millisecond,
+					Max:        60000 * time.Millisecond,
+					Multiplier: 1.30,
+				})
+			}),
+		},
 		UpdateProductLinkInvitation: []gax.CallOption{
+			gax.WithTimeout(14400000 * time.Millisecond),
+			gax.WithRetry(func() gax.Retryer {
+				return gax.OnCodes([]codes.Code{
+					codes.Unavailable,
+					codes.DeadlineExceeded,
+				}, gax.Backoff{
+					Initial:    5000 * time.Millisecond,
+					Max:        60000 * time.Millisecond,
+					Multiplier: 1.30,
+				})
+			}),
+		},
+		RemoveProductLinkInvitation: []gax.CallOption{
 			gax.WithTimeout(14400000 * time.Millisecond),
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -74,7 +104,9 @@ type internalProductLinkInvitationClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
+	CreateProductLinkInvitation(context.Context, *servicespb.CreateProductLinkInvitationRequest, ...gax.CallOption) (*servicespb.CreateProductLinkInvitationResponse, error)
 	UpdateProductLinkInvitation(context.Context, *servicespb.UpdateProductLinkInvitationRequest, ...gax.CallOption) (*servicespb.UpdateProductLinkInvitationResponse, error)
+	RemoveProductLinkInvitation(context.Context, *servicespb.RemoveProductLinkInvitationRequest, ...gax.CallOption) (*servicespb.RemoveProductLinkInvitationResponse, error)
 }
 
 // ProductLinkInvitationClient is a client for interacting with Google Ads API.
@@ -113,9 +145,19 @@ func (c *ProductLinkInvitationClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
 }
 
+// CreateProductLinkInvitation creates a product link invitation.
+func (c *ProductLinkInvitationClient) CreateProductLinkInvitation(ctx context.Context, req *servicespb.CreateProductLinkInvitationRequest, opts ...gax.CallOption) (*servicespb.CreateProductLinkInvitationResponse, error) {
+	return c.internalClient.CreateProductLinkInvitation(ctx, req, opts...)
+}
+
 // UpdateProductLinkInvitation update a product link invitation.
 func (c *ProductLinkInvitationClient) UpdateProductLinkInvitation(ctx context.Context, req *servicespb.UpdateProductLinkInvitationRequest, opts ...gax.CallOption) (*servicespb.UpdateProductLinkInvitationResponse, error) {
 	return c.internalClient.UpdateProductLinkInvitation(ctx, req, opts...)
+}
+
+// RemoveProductLinkInvitation remove a product link invitation.
+func (c *ProductLinkInvitationClient) RemoveProductLinkInvitation(ctx context.Context, req *servicespb.RemoveProductLinkInvitationRequest, opts ...gax.CallOption) (*servicespb.RemoveProductLinkInvitationResponse, error) {
+	return c.internalClient.RemoveProductLinkInvitation(ctx, req, opts...)
 }
 
 // productLinkInvitationGRPCClient is a client for interacting with Google Ads API over gRPC transport.
@@ -191,6 +233,24 @@ func (c *productLinkInvitationGRPCClient) Close() error {
 	return c.connPool.Close()
 }
 
+func (c *productLinkInvitationGRPCClient) CreateProductLinkInvitation(ctx context.Context, req *servicespb.CreateProductLinkInvitationRequest, opts ...gax.CallOption) (*servicespb.CreateProductLinkInvitationResponse, error) {
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId()))}
+
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
+	opts = append((*c.CallOptions).CreateProductLinkInvitation[0:len((*c.CallOptions).CreateProductLinkInvitation):len((*c.CallOptions).CreateProductLinkInvitation)], opts...)
+	var resp *servicespb.CreateProductLinkInvitationResponse
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		resp, err = c.productLinkInvitationClient.CreateProductLinkInvitation(ctx, req, settings.GRPC...)
+		return err
+	}, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return resp, nil
+}
+
 func (c *productLinkInvitationGRPCClient) UpdateProductLinkInvitation(ctx context.Context, req *servicespb.UpdateProductLinkInvitationRequest, opts ...gax.CallOption) (*servicespb.UpdateProductLinkInvitationResponse, error) {
 	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId()))}
 
@@ -201,6 +261,24 @@ func (c *productLinkInvitationGRPCClient) UpdateProductLinkInvitation(ctx contex
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
 		resp, err = c.productLinkInvitationClient.UpdateProductLinkInvitation(ctx, req, settings.GRPC...)
+		return err
+	}, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return resp, nil
+}
+
+func (c *productLinkInvitationGRPCClient) RemoveProductLinkInvitation(ctx context.Context, req *servicespb.RemoveProductLinkInvitationRequest, opts ...gax.CallOption) (*servicespb.RemoveProductLinkInvitationResponse, error) {
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId()))}
+
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
+	opts = append((*c.CallOptions).RemoveProductLinkInvitation[0:len((*c.CallOptions).RemoveProductLinkInvitation):len((*c.CallOptions).RemoveProductLinkInvitation)], opts...)
+	var resp *servicespb.RemoveProductLinkInvitationResponse
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		resp, err = c.productLinkInvitationClient.RemoveProductLinkInvitation(ctx, req, settings.GRPC...)
 		return err
 	}, opts...)
 	if err != nil {

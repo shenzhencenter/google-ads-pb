@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v4.24.4
-// source: google/ads/googleads/v15/services/audience_insights_service.proto
+// source: google/ads/googleads/v16/services/audience_insights_service.proto
 
 package services
 
@@ -33,11 +33,11 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	AudienceInsightsService_GenerateInsightsFinderReport_FullMethodName        = "/google.ads.googleads.v15.services.AudienceInsightsService/GenerateInsightsFinderReport"
-	AudienceInsightsService_ListAudienceInsightsAttributes_FullMethodName      = "/google.ads.googleads.v15.services.AudienceInsightsService/ListAudienceInsightsAttributes"
-	AudienceInsightsService_ListInsightsEligibleDates_FullMethodName           = "/google.ads.googleads.v15.services.AudienceInsightsService/ListInsightsEligibleDates"
-	AudienceInsightsService_GenerateAudienceCompositionInsights_FullMethodName = "/google.ads.googleads.v15.services.AudienceInsightsService/GenerateAudienceCompositionInsights"
-	AudienceInsightsService_GenerateSuggestedTargetingInsights_FullMethodName  = "/google.ads.googleads.v15.services.AudienceInsightsService/GenerateSuggestedTargetingInsights"
+	AudienceInsightsService_GenerateInsightsFinderReport_FullMethodName        = "/google.ads.googleads.v16.services.AudienceInsightsService/GenerateInsightsFinderReport"
+	AudienceInsightsService_ListAudienceInsightsAttributes_FullMethodName      = "/google.ads.googleads.v16.services.AudienceInsightsService/ListAudienceInsightsAttributes"
+	AudienceInsightsService_ListInsightsEligibleDates_FullMethodName           = "/google.ads.googleads.v16.services.AudienceInsightsService/ListInsightsEligibleDates"
+	AudienceInsightsService_GenerateAudienceCompositionInsights_FullMethodName = "/google.ads.googleads.v16.services.AudienceInsightsService/GenerateAudienceCompositionInsights"
+	AudienceInsightsService_GenerateSuggestedTargetingInsights_FullMethodName  = "/google.ads.googleads.v16.services.AudienceInsightsService/GenerateSuggestedTargetingInsights"
 )
 
 // AudienceInsightsServiceClient is the client API for AudienceInsightsService service.
@@ -373,7 +373,7 @@ func _AudienceInsightsService_GenerateSuggestedTargetingInsights_Handler(srv int
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AudienceInsightsService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v15.services.AudienceInsightsService",
+	ServiceName: "google.ads.googleads.v16.services.AudienceInsightsService",
 	HandlerType: (*AudienceInsightsServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -398,5 +398,5 @@ var AudienceInsightsService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v15/services/audience_insights_service.proto",
+	Metadata: "google/ads/googleads/v16/services/audience_insights_service.proto",
 }

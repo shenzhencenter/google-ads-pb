@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2024 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -32,17 +32,19 @@ import (
 	"google.golang.org/grpc/codes"
 )
 
-var newCustomerLifecycleClientHook clientHook
+var newCampaignLifecycleGoalClientHook clientHook
 
-// CustomerLifecycleCallOptions contains the retry settings for each method of CustomerLifecycleClient.
-type CustomerLifecycleCallOptions struct {
-	ConfigureCustomerLifecycleGoals []gax.CallOption
+// CampaignLifecycleGoalCallOptions contains the retry settings for each method of CampaignLifecycleGoalClient.
+type CampaignLifecycleGoalCallOptions struct {
+	ConfigureCampaignLifecycleGoals []gax.CallOption
 }
 
-func defaultCustomerLifecycleGRPCClientOptions() []option.ClientOption {
+func defaultCampaignLifecycleGoalGRPCClientOptions() []option.ClientOption {
 	return []option.ClientOption{
 		internaloption.WithDefaultEndpoint("googleads.googleapis.com:443"),
+		internaloption.WithDefaultEndpointTemplate("googleads.UNIVERSE_DOMAIN:443"),
 		internaloption.WithDefaultMTLSEndpoint("googleads.mtls.googleapis.com:443"),
+		internaloption.WithDefaultUniverseDomain("googleapis.com"),
 		internaloption.WithDefaultAudience("https://googleads.googleapis.com/"),
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
@@ -51,9 +53,9 @@ func defaultCustomerLifecycleGRPCClientOptions() []option.ClientOption {
 	}
 }
 
-func defaultCustomerLifecycleCallOptions() *CustomerLifecycleCallOptions {
-	return &CustomerLifecycleCallOptions{
-		ConfigureCustomerLifecycleGoals: []gax.CallOption{
+func defaultCampaignLifecycleGoalCallOptions() *CampaignLifecycleGoalCallOptions {
+	return &CampaignLifecycleGoalCallOptions{
+		ConfigureCampaignLifecycleGoals: []gax.CallOption{
 			gax.WithTimeout(14400000 * time.Millisecond),
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -69,38 +71,38 @@ func defaultCustomerLifecycleCallOptions() *CustomerLifecycleCallOptions {
 	}
 }
 
-// internalCustomerLifecycleClient is an interface that defines the methods available from Google Ads API.
-type internalCustomerLifecycleClient interface {
+// internalCampaignLifecycleGoalClient is an interface that defines the methods available from Google Ads API.
+type internalCampaignLifecycleGoalClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	ConfigureCustomerLifecycleGoals(context.Context, *servicespb.ConfigureCustomerLifecycleGoalsRequest, ...gax.CallOption) (*servicespb.ConfigureCustomerLifecycleGoalsResponse, error)
+	ConfigureCampaignLifecycleGoals(context.Context, *servicespb.ConfigureCampaignLifecycleGoalsRequest, ...gax.CallOption) (*servicespb.ConfigureCampaignLifecycleGoalsResponse, error)
 }
 
-// CustomerLifecycleClient is a client for interacting with Google Ads API.
+// CampaignLifecycleGoalClient is a client for interacting with Google Ads API.
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 //
-// Service to configure customer lifecycle goals.
-type CustomerLifecycleClient struct {
+// Service to configure campaign lifecycle goals.
+type CampaignLifecycleGoalClient struct {
 	// The internal transport-dependent client.
-	internalClient internalCustomerLifecycleClient
+	internalClient internalCampaignLifecycleGoalClient
 
 	// The call options for this service.
-	CallOptions *CustomerLifecycleCallOptions
+	CallOptions *CampaignLifecycleGoalCallOptions
 }
 
 // Wrapper methods routed to the internal client.
 
 // Close closes the connection to the API service. The user should invoke this when
 // the client is no longer required.
-func (c *CustomerLifecycleClient) Close() error {
+func (c *CampaignLifecycleGoalClient) Close() error {
 	return c.internalClient.Close()
 }
 
 // setGoogleClientInfo sets the name and version of the application in
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
-func (c *CustomerLifecycleClient) setGoogleClientInfo(keyval ...string) {
+func (c *CampaignLifecycleGoalClient) setGoogleClientInfo(keyval ...string) {
 	c.internalClient.setGoogleClientInfo(keyval...)
 }
 
@@ -108,49 +110,49 @@ func (c *CustomerLifecycleClient) setGoogleClientInfo(keyval ...string) {
 //
 // Deprecated: Connections are now pooled so this method does not always
 // return the same resource.
-func (c *CustomerLifecycleClient) Connection() *grpc.ClientConn {
+func (c *CampaignLifecycleGoalClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
 }
 
-// ConfigureCustomerLifecycleGoals process the given customer lifecycle configurations.
+// ConfigureCampaignLifecycleGoals process the given campaign lifecycle configurations.
 //
 // List of thrown errors:
 // AuthenticationError (at )
 // AuthorizationError (at )
-// CustomerLifecycleGoalConfigError (at )
+// CampaignLifecycleGoalConfigError (at )
 // HeaderError (at )
 // InternalError (at )
 // QuotaError (at )
 // RequestError (at )
-func (c *CustomerLifecycleClient) ConfigureCustomerLifecycleGoals(ctx context.Context, req *servicespb.ConfigureCustomerLifecycleGoalsRequest, opts ...gax.CallOption) (*servicespb.ConfigureCustomerLifecycleGoalsResponse, error) {
-	return c.internalClient.ConfigureCustomerLifecycleGoals(ctx, req, opts...)
+func (c *CampaignLifecycleGoalClient) ConfigureCampaignLifecycleGoals(ctx context.Context, req *servicespb.ConfigureCampaignLifecycleGoalsRequest, opts ...gax.CallOption) (*servicespb.ConfigureCampaignLifecycleGoalsResponse, error) {
+	return c.internalClient.ConfigureCampaignLifecycleGoals(ctx, req, opts...)
 }
 
-// customerLifecycleGRPCClient is a client for interacting with Google Ads API over gRPC transport.
+// campaignLifecycleGoalGRPCClient is a client for interacting with Google Ads API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
-type customerLifecycleGRPCClient struct {
+type campaignLifecycleGoalGRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
 
-	// Points back to the CallOptions field of the containing CustomerLifecycleClient
-	CallOptions **CustomerLifecycleCallOptions
+	// Points back to the CallOptions field of the containing CampaignLifecycleGoalClient
+	CallOptions **CampaignLifecycleGoalCallOptions
 
 	// The gRPC API client.
-	customerLifecycleClient servicespb.CustomerLifecycleServiceClient
+	campaignLifecycleGoalClient servicespb.CampaignLifecycleGoalServiceClient
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogHeaders []string
 }
 
-// NewCustomerLifecycleClient creates a new customer lifecycle service client based on gRPC.
+// NewCampaignLifecycleGoalClient creates a new campaign lifecycle goal service client based on gRPC.
 // The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
-// Service to configure customer lifecycle goals.
-func NewCustomerLifecycleClient(ctx context.Context, opts ...option.ClientOption) (*CustomerLifecycleClient, error) {
-	clientOpts := defaultCustomerLifecycleGRPCClientOptions()
-	if newCustomerLifecycleClientHook != nil {
-		hookOpts, err := newCustomerLifecycleClientHook(ctx, clientHookParams{})
+// Service to configure campaign lifecycle goals.
+func NewCampaignLifecycleGoalClient(ctx context.Context, opts ...option.ClientOption) (*CampaignLifecycleGoalClient, error) {
+	clientOpts := defaultCampaignLifecycleGoalGRPCClientOptions()
+	if newCampaignLifecycleGoalClientHook != nil {
+		hookOpts, err := newCampaignLifecycleGoalClientHook(ctx, clientHookParams{})
 		if err != nil {
 			return nil, err
 		}
@@ -161,12 +163,12 @@ func NewCustomerLifecycleClient(ctx context.Context, opts ...option.ClientOption
 	if err != nil {
 		return nil, err
 	}
-	client := CustomerLifecycleClient{CallOptions: defaultCustomerLifecycleCallOptions()}
+	client := CampaignLifecycleGoalClient{CallOptions: defaultCampaignLifecycleGoalCallOptions()}
 
-	c := &customerLifecycleGRPCClient{
-		connPool:                connPool,
-		customerLifecycleClient: servicespb.NewCustomerLifecycleServiceClient(connPool),
-		CallOptions:             &client.CallOptions,
+	c := &campaignLifecycleGoalGRPCClient{
+		connPool:                    connPool,
+		campaignLifecycleGoalClient: servicespb.NewCampaignLifecycleGoalServiceClient(connPool),
+		CallOptions:                 &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
@@ -179,14 +181,14 @@ func NewCustomerLifecycleClient(ctx context.Context, opts ...option.ClientOption
 //
 // Deprecated: Connections are now pooled so this method does not always
 // return the same resource.
-func (c *customerLifecycleGRPCClient) Connection() *grpc.ClientConn {
+func (c *campaignLifecycleGoalGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
 }
 
 // setGoogleClientInfo sets the name and version of the application in
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
-func (c *customerLifecycleGRPCClient) setGoogleClientInfo(keyval ...string) {
+func (c *campaignLifecycleGoalGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", gax.GoVersion}, keyval...)
 	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogHeaders = []string{"x-goog-api-client", gax.XGoogHeader(kv...)}
@@ -194,20 +196,20 @@ func (c *customerLifecycleGRPCClient) setGoogleClientInfo(keyval ...string) {
 
 // Close closes the connection to the API service. The user should invoke this when
 // the client is no longer required.
-func (c *customerLifecycleGRPCClient) Close() error {
+func (c *campaignLifecycleGoalGRPCClient) Close() error {
 	return c.connPool.Close()
 }
 
-func (c *customerLifecycleGRPCClient) ConfigureCustomerLifecycleGoals(ctx context.Context, req *servicespb.ConfigureCustomerLifecycleGoalsRequest, opts ...gax.CallOption) (*servicespb.ConfigureCustomerLifecycleGoalsResponse, error) {
+func (c *campaignLifecycleGoalGRPCClient) ConfigureCampaignLifecycleGoals(ctx context.Context, req *servicespb.ConfigureCampaignLifecycleGoalsRequest, opts ...gax.CallOption) (*servicespb.ConfigureCampaignLifecycleGoalsResponse, error) {
 	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId()))}
 
 	hds = append(c.xGoogHeaders, hds...)
 	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
-	opts = append((*c.CallOptions).ConfigureCustomerLifecycleGoals[0:len((*c.CallOptions).ConfigureCustomerLifecycleGoals):len((*c.CallOptions).ConfigureCustomerLifecycleGoals)], opts...)
-	var resp *servicespb.ConfigureCustomerLifecycleGoalsResponse
+	opts = append((*c.CallOptions).ConfigureCampaignLifecycleGoals[0:len((*c.CallOptions).ConfigureCampaignLifecycleGoals):len((*c.CallOptions).ConfigureCampaignLifecycleGoals)], opts...)
+	var resp *servicespb.ConfigureCampaignLifecycleGoalsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.customerLifecycleClient.ConfigureCustomerLifecycleGoals(ctx, req, settings.GRPC...)
+		resp, err = c.campaignLifecycleGoalClient.ConfigureCampaignLifecycleGoals(ctx, req, settings.GRPC...)
 		return err
 	}, opts...)
 	if err != nil {
