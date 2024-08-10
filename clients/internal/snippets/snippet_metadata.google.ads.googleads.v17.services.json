@@ -242,6 +242,51 @@
       ]
     },
     {
+      "regionTag": "googleads_services_generated_AdGroupAdService_RemoveAutomaticallyCreatedAssets_sync",
+      "title": "googleads RemoveAutomaticallyCreatedAssets Sample",
+      "description": "RemoveAutomaticallyCreatedAssets remove automatically created assets from an ad.\n\nList of thrown errors: \n[AdError]()\n[AuthenticationError]()\n[AuthorizationError]()\n[AutomaticallyCreatedAssetRemovalError]()\n[HeaderError]()\n[InternalError]()\n[MutateError]()\n[QuotaError]()\n[RequestError]()",
+      "file": "AdGroupAdClient/RemoveAutomaticallyCreatedAssets/main.go",
+      "language": "GO",
+      "clientMethod": {
+        "shortName": "RemoveAutomaticallyCreatedAssets",
+        "fullName": "google.ads.googleads.v17.services.AdGroupAdClient.RemoveAutomaticallyCreatedAssets",
+        "parameters": [
+          {
+            "type": "context.Context",
+            "name": "ctx"
+          },
+          {
+            "type": "servicespb.RemoveAutomaticallyCreatedAssetsRequest",
+            "name": "req"
+          },
+          {
+            "type": "...gax.CallOption",
+            "name": "opts"
+          }
+        ],
+        "client": {
+          "shortName": "AdGroupAdClient",
+          "fullName": "google.ads.googleads.v17.services.AdGroupAdClient"
+        },
+        "method": {
+          "shortName": "RemoveAutomaticallyCreatedAssets",
+          "fullName": "google.ads.googleads.v17.services.AdGroupAdService.RemoveAutomaticallyCreatedAssets",
+          "service": {
+            "shortName": "AdGroupAdService",
+            "fullName": "google.ads.googleads.v17.services.AdGroupAdService"
+          }
+        }
+      },
+      "origin": "API_DEFINITION",
+      "segments": [
+        {
+          "start": 18,
+          "end": 51,
+          "type": "FULL"
+        }
+      ]
+    },
+    {
       "regionTag": "googleads_services_generated_AdGroupAssetService_MutateAdGroupAssets_sync",
       "title": "googleads MutateAdGroupAssets Sample",
       "description": "MutateAdGroupAssets creates, updates, or removes ad group assets. Operation statuses are\nreturned.\n\nList of thrown errors: \n[AssetLinkError]()\n[AuthenticationError]()\n[AuthorizationError]()\n[ContextError]()\n[FieldError]()\n[HeaderError]()\n[InternalError]()\n[MutateError]()\n[NotAllowlistedError]()\n[QuotaError]()\n[RequestError]()",
@@ -1192,6 +1237,52 @@
         "method": {
           "shortName": "GenerateAudienceCompositionInsights",
           "fullName": "google.ads.googleads.v17.services.AudienceInsightsService.GenerateAudienceCompositionInsights",
+          "service": {
+            "shortName": "AudienceInsightsService",
+            "fullName": "google.ads.googleads.v17.services.AudienceInsightsService"
+          }
+        }
+      },
+      "origin": "API_DEFINITION",
+      "segments": [
+        {
+          "start": 18,
+          "end": 53,
+          "type": "FULL"
+        }
+      ]
+    },
+    {
+      "regionTag": "googleads_services_generated_AudienceInsightsService_GenerateAudienceOverlapInsights_sync",
+      "title": "googleads GenerateAudienceOverlapInsights Sample",
+      "description": "GenerateAudienceOverlapInsights returns a collection of audience attributes along with estimates of the\noverlap between their potential YouTube reach and that of a given input\nattribute.\n\nList of thrown errors: \n[AudienceInsightsError]()\n[AuthenticationError]()\n[AuthorizationError]()\n[FieldError]()\n[HeaderError]()\n[InternalError]()\n[QuotaError]()\n[RangeError]()\n[RequestError]()",
+      "file": "AudienceInsightsClient/GenerateAudienceOverlapInsights/main.go",
+      "language": "GO",
+      "clientMethod": {
+        "shortName": "GenerateAudienceOverlapInsights",
+        "fullName": "google.ads.googleads.v17.services.AudienceInsightsClient.GenerateAudienceOverlapInsights",
+        "parameters": [
+          {
+            "type": "context.Context",
+            "name": "ctx"
+          },
+          {
+            "type": "servicespb.GenerateAudienceOverlapInsightsRequest",
+            "name": "req"
+          },
+          {
+            "type": "...gax.CallOption",
+            "name": "opts"
+          }
+        ],
+        "resultType": "*servicespb.GenerateAudienceOverlapInsightsResponse",
+        "client": {
+          "shortName": "AudienceInsightsClient",
+          "fullName": "google.ads.googleads.v17.services.AudienceInsightsClient"
+        },
+        "method": {
+          "shortName": "GenerateAudienceOverlapInsights",
+          "fullName": "google.ads.googleads.v17.services.AudienceInsightsService.GenerateAudienceOverlapInsights",
           "service": {
             "shortName": "AudienceInsightsService",
             "fullName": "google.ads.googleads.v17.services.AudienceInsightsService"
@@ -6344,6 +6435,52 @@
           "service": {
             "shortName": "RemarketingActionService",
             "fullName": "google.ads.googleads.v17.services.RemarketingActionService"
+          }
+        }
+      },
+      "origin": "API_DEFINITION",
+      "segments": [
+        {
+          "start": 18,
+          "end": 53,
+          "type": "FULL"
+        }
+      ]
+    },
+    {
+      "regionTag": "googleads_services_generated_ShareablePreviewService_GenerateShareablePreviews_sync",
+      "title": "googleads GenerateShareablePreviews Sample",
+      "description": "GenerateShareablePreviews returns the requested Shareable Preview.",
+      "file": "ShareablePreviewClient/GenerateShareablePreviews/main.go",
+      "language": "GO",
+      "clientMethod": {
+        "shortName": "GenerateShareablePreviews",
+        "fullName": "google.ads.googleads.v17.services.ShareablePreviewClient.GenerateShareablePreviews",
+        "parameters": [
+          {
+            "type": "context.Context",
+            "name": "ctx"
+          },
+          {
+            "type": "servicespb.GenerateShareablePreviewsRequest",
+            "name": "req"
+          },
+          {
+            "type": "...gax.CallOption",
+            "name": "opts"
+          }
+        ],
+        "resultType": "*servicespb.GenerateShareablePreviewsResponse",
+        "client": {
+          "shortName": "ShareablePreviewClient",
+          "fullName": "google.ads.googleads.v17.services.ShareablePreviewClient"
+        },
+        "method": {
+          "shortName": "GenerateShareablePreviews",
+          "fullName": "google.ads.googleads.v17.services.ShareablePreviewService.GenerateShareablePreviews",
+          "service": {
+            "shortName": "ShareablePreviewService",
+            "fullName": "google.ads.googleads.v17.services.ShareablePreviewService"
           }
         }
       },

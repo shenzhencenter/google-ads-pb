@@ -36,7 +36,8 @@ var newAdGroupAdClientHook clientHook
 
 // AdGroupAdCallOptions contains the retry settings for each method of AdGroupAdClient.
 type AdGroupAdCallOptions struct {
-	MutateAdGroupAds []gax.CallOption
+	MutateAdGroupAds                 []gax.CallOption
+	RemoveAutomaticallyCreatedAssets []gax.CallOption
 }
 
 func defaultAdGroupAdGRPCClientOptions() []option.ClientOption {
@@ -48,6 +49,7 @@ func defaultAdGroupAdGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultAudience("https://googleads.googleapis.com/"),
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
+		internaloption.EnableNewAuthLibrary(),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
 			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
@@ -56,6 +58,19 @@ func defaultAdGroupAdGRPCClientOptions() []option.ClientOption {
 func defaultAdGroupAdCallOptions() *AdGroupAdCallOptions {
 	return &AdGroupAdCallOptions{
 		MutateAdGroupAds: []gax.CallOption{
+			gax.WithTimeout(14400000 * time.Millisecond),
+			gax.WithRetry(func() gax.Retryer {
+				return gax.OnCodes([]codes.Code{
+					codes.Unavailable,
+					codes.DeadlineExceeded,
+				}, gax.Backoff{
+					Initial:    5000 * time.Millisecond,
+					Max:        60000 * time.Millisecond,
+					Multiplier: 1.30,
+				})
+			}),
+		},
+		RemoveAutomaticallyCreatedAssets: []gax.CallOption{
 			gax.WithTimeout(14400000 * time.Millisecond),
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -77,6 +92,7 @@ type internalAdGroupAdClient interface {
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
 	MutateAdGroupAds(context.Context, *servicespb.MutateAdGroupAdsRequest, ...gax.CallOption) (*servicespb.MutateAdGroupAdsResponse, error)
+	RemoveAutomaticallyCreatedAssets(context.Context, *servicespb.RemoveAutomaticallyCreatedAssetsRequest, ...gax.CallOption) error
 }
 
 // AdGroupAdClient is a client for interacting with Google Ads API.
@@ -162,6 +178,22 @@ func (c *AdGroupAdClient) Connection() *grpc.ClientConn {
 // UrlFieldError (at )
 func (c *AdGroupAdClient) MutateAdGroupAds(ctx context.Context, req *servicespb.MutateAdGroupAdsRequest, opts ...gax.CallOption) (*servicespb.MutateAdGroupAdsResponse, error) {
 	return c.internalClient.MutateAdGroupAds(ctx, req, opts...)
+}
+
+// RemoveAutomaticallyCreatedAssets remove automatically created assets from an ad.
+//
+// List of thrown errors:
+// AdError (at )
+// AuthenticationError (at )
+// AuthorizationError (at )
+// AutomaticallyCreatedAssetRemovalError (at )
+// HeaderError (at )
+// InternalError (at )
+// MutateError (at )
+// QuotaError (at )
+// RequestError (at )
+func (c *AdGroupAdClient) RemoveAutomaticallyCreatedAssets(ctx context.Context, req *servicespb.RemoveAutomaticallyCreatedAssetsRequest, opts ...gax.CallOption) error {
+	return c.internalClient.RemoveAutomaticallyCreatedAssets(ctx, req, opts...)
 }
 
 // adGroupAdGRPCClient is a client for interacting with Google Ads API over gRPC transport.
@@ -254,4 +286,18 @@ func (c *adGroupAdGRPCClient) MutateAdGroupAds(ctx context.Context, req *service
 		return nil, err
 	}
 	return resp, nil
+}
+
+func (c *adGroupAdGRPCClient) RemoveAutomaticallyCreatedAssets(ctx context.Context, req *servicespb.RemoveAutomaticallyCreatedAssetsRequest, opts ...gax.CallOption) error {
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "ad_group_ad", url.QueryEscape(req.GetAdGroupAd()))}
+
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
+	opts = append((*c.CallOptions).RemoveAutomaticallyCreatedAssets[0:len((*c.CallOptions).RemoveAutomaticallyCreatedAssets):len((*c.CallOptions).RemoveAutomaticallyCreatedAssets)], opts...)
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		_, err = c.adGroupAdClient.RemoveAutomaticallyCreatedAssets(ctx, req, settings.GRPC...)
+		return err
+	}, opts...)
+	return err
 }
