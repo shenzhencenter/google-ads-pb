@@ -21,10 +21,11 @@ Although this project isn't official, we deem it as low-risk due to its maturity
 
 | google-ads-pb     | Google Ads API   | Sunset date                  |
 | ----------------- | ---------------- | ---------------------------- |
+| v1.17.1           | v17.1            | May 2025	                    |
 | v1.17.0           | v17              | May 2025	                    |
 | v1.16.1           | v16.1            | January 2025	                |
 | v1.7.0            | v16              | January 2025	                |
-| v1.6.0            | v15              | September 25, 2024	          |
+| <del>v1.6.0</del> | <del>v15</del>   | Deprecated                   |
 | <del>v1.5.1</del> | <del>v14.1</del> | Deprecated                   |
 | <del>v1.5.0</del> | <del>v14</del>   | Deprecated                   |
 | <del>v1.4.1</del> | <del>v13.1</del> | Deprecated	                  |
@@ -101,7 +102,7 @@ requestBody, err := protojson.Marshal(&req)
 if err != nil {
   panic(err)
 }
-request, err := http.NewRequest("GET", "https://googleads.googleapis.com/v15/customers:listAccessibleCustomers", bytes.NewBuffer(requestBody))
+request, err := http.NewRequest("GET", "https://googleads.googleapis.com/v17/customers:listAccessibleCustomers", bytes.NewBuffer(requestBody))
 if err != nil {
   panic(err)
 }
@@ -121,7 +122,7 @@ if responseBody, err = io.ReadAll(response.Body); err != nil {
   panic(err)
 }
 listAccessibleCustomersResponse := new(services.ListAccessibleCustomersResponse)
-if err := protojson.Unmarshal(response, listAccessibleCustomersResponse); err != nil {
+if err := protojson.Unmarshal(responseBody, listAccessibleCustomersResponse); err != nil {
   panic(err)
 }
 for _, customer := range listAccessibleCustomersResponse.ResourceNames {
