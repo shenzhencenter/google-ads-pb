@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v17/services/campaign_lifecycle_goal_service.proto
+// source: google/ads/googleads/v18/services/campaign_lifecycle_goal_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	CampaignLifecycleGoalService_ConfigureCampaignLifecycleGoals_FullMethodName = "/google.ads.googleads.v17.services.CampaignLifecycleGoalService/ConfigureCampaignLifecycleGoals"
+	CampaignLifecycleGoalService_ConfigureCampaignLifecycleGoals_FullMethodName = "/google.ads.googleads.v18.services.CampaignLifecycleGoalService/ConfigureCampaignLifecycleGoals"
 )
 
 // CampaignLifecycleGoalServiceClient is the client API for CampaignLifecycleGoalService service.
@@ -149,7 +149,7 @@ func _CampaignLifecycleGoalService_ConfigureCampaignLifecycleGoals_Handler(srv i
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CampaignLifecycleGoalService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v17.services.CampaignLifecycleGoalService",
+	ServiceName: "google.ads.googleads.v18.services.CampaignLifecycleGoalService",
 	HandlerType: (*CampaignLifecycleGoalServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -158,5 +158,5 @@ var CampaignLifecycleGoalService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v17/services/campaign_lifecycle_goal_service.proto",
+	Metadata: "google/ads/googleads/v18/services/campaign_lifecycle_goal_service.proto",
 }

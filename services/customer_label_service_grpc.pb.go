@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v17/services/customer_label_service.proto
+// source: google/ads/googleads/v18/services/customer_label_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	CustomerLabelService_MutateCustomerLabels_FullMethodName = "/google.ads.googleads.v17.services.CustomerLabelService/MutateCustomerLabels"
+	CustomerLabelService_MutateCustomerLabels_FullMethodName = "/google.ads.googleads.v18.services.CustomerLabelService/MutateCustomerLabels"
 )
 
 // CustomerLabelServiceClient is the client API for CustomerLabelService service.
@@ -154,7 +154,7 @@ func _CustomerLabelService_MutateCustomerLabels_Handler(srv interface{}, ctx con
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CustomerLabelService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v17.services.CustomerLabelService",
+	ServiceName: "google.ads.googleads.v18.services.CustomerLabelService",
 	HandlerType: (*CustomerLabelServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -163,5 +163,5 @@ var CustomerLabelService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v17/services/customer_label_service.proto",
+	Metadata: "google/ads/googleads/v18/services/customer_label_service.proto",
 }

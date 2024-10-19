@@ -41,7 +41,7 @@
 //	// - It may require correct/in-range values for request initialization.
 //	// - It may require specifying regional endpoints when creating the service client as shown in:
 //	//   https://pkg.go.dev/cloud.google.com/go#hdr-Client_Options
-//	c, err := clients.NewGeoTargetConstantClient(ctx)
+//	c, err := clients.NewCustomerClientLinkClient(ctx)
 //	if err != nil {
 //		// TODO: Handle error.
 //	}
@@ -61,17 +61,17 @@
 //	// - It may require correct/in-range values for request initialization.
 //	// - It may require specifying regional endpoints when creating the service client as shown in:
 //	//   https://pkg.go.dev/cloud.google.com/go#hdr-Client_Options
-//	c, err := clients.NewGeoTargetConstantClient(ctx)
+//	c, err := clients.NewCustomerClientLinkClient(ctx)
 //	if err != nil {
 //		// TODO: Handle error.
 //	}
 //	defer c.Close()
 //
-//	req := &servicespb.SuggestGeoTargetConstantsRequest{
+//	req := &servicespb.MutateCustomerClientLinkRequest{
 //		// TODO: Fill request struct fields.
-//		// See https://pkg.go.dev/github.com/shenzhencenter/google-ads-pb/services#SuggestGeoTargetConstantsRequest.
+//		// See https://pkg.go.dev/github.com/shenzhencenter/google-ads-pb/services#MutateCustomerClientLinkRequest.
 //	}
-//	resp, err := c.SuggestGeoTargetConstants(ctx, req)
+//	resp, err := c.MutateCustomerClientLink(ctx, req)
 //	if err != nil {
 //		// TODO: Handle error.
 //	}
@@ -80,7 +80,7 @@
 //
 // # Use of Context
 //
-// The ctx passed to NewGeoTargetConstantClient is used for authentication requests and
+// The ctx passed to NewCustomerClientLinkClient is used for authentication requests and
 // for creating the underlying connection, but is not used for subsequent calls.
 // Individual methods on the client use the ctx given to them.
 //

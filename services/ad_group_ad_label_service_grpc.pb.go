@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v17/services/ad_group_ad_label_service.proto
+// source: google/ads/googleads/v18/services/ad_group_ad_label_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	AdGroupAdLabelService_MutateAdGroupAdLabels_FullMethodName = "/google.ads.googleads.v17.services.AdGroupAdLabelService/MutateAdGroupAdLabels"
+	AdGroupAdLabelService_MutateAdGroupAdLabels_FullMethodName = "/google.ads.googleads.v18.services.AdGroupAdLabelService/MutateAdGroupAdLabels"
 )
 
 // AdGroupAdLabelServiceClient is the client API for AdGroupAdLabelService service.
@@ -156,7 +156,7 @@ func _AdGroupAdLabelService_MutateAdGroupAdLabels_Handler(srv interface{}, ctx c
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AdGroupAdLabelService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v17.services.AdGroupAdLabelService",
+	ServiceName: "google.ads.googleads.v18.services.AdGroupAdLabelService",
 	HandlerType: (*AdGroupAdLabelServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -165,5 +165,5 @@ var AdGroupAdLabelService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v17/services/ad_group_ad_label_service.proto",
+	Metadata: "google/ads/googleads/v18/services/ad_group_ad_label_service.proto",
 }

@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v17/services/ad_group_criterion_customizer_service.proto
+// source: google/ads/googleads/v18/services/ad_group_criterion_customizer_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	AdGroupCriterionCustomizerService_MutateAdGroupCriterionCustomizers_FullMethodName = "/google.ads.googleads.v17.services.AdGroupCriterionCustomizerService/MutateAdGroupCriterionCustomizers"
+	AdGroupCriterionCustomizerService_MutateAdGroupCriterionCustomizers_FullMethodName = "/google.ads.googleads.v18.services.AdGroupCriterionCustomizerService/MutateAdGroupCriterionCustomizers"
 )
 
 // AdGroupCriterionCustomizerServiceClient is the client API for AdGroupCriterionCustomizerService service.
@@ -131,7 +131,7 @@ func _AdGroupCriterionCustomizerService_MutateAdGroupCriterionCustomizers_Handle
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AdGroupCriterionCustomizerService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v17.services.AdGroupCriterionCustomizerService",
+	ServiceName: "google.ads.googleads.v18.services.AdGroupCriterionCustomizerService",
 	HandlerType: (*AdGroupCriterionCustomizerServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -140,5 +140,5 @@ var AdGroupCriterionCustomizerService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v17/services/ad_group_criterion_customizer_service.proto",
+	Metadata: "google/ads/googleads/v18/services/ad_group_criterion_customizer_service.proto",
 }
