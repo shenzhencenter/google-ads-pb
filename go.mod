@@ -1,6 +1,6 @@
 module github.com/shenzhencenter/google-ads-pb
 
-go 1.22.8
+go 1.22
 
 require (
 	cloud.google.com/go/longrunning v0.6.1
