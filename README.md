@@ -21,20 +21,14 @@ Although this project isn't official, we deem it as low-risk due to its maturity
 
 | google-ads-pb     | Google Ads API   | Sunset date                  |
 | ----------------- | ---------------- | ---------------------------- |
-| v1.18.0           | v18              | September 2025	              |
-| v1.17.1           | v17.1            | May 2025	                    |
-| v1.17.0           | v17              | May 2025	                    |
-| v1.16.1           | v16.1            | January 2025	                |
-| v1.7.0            | v16              | January 2025	                |
+| v1.18.0           | v18              | September 2025               |
+| v1.17.1           | v17.1            | May 2025                     |
+| v1.17.0           | v17              | May 2025                     |
+| v1.16.1           | v16.1            | January 2025                 |
+| v1.7.0            | v16              | January 2025                 |
 | <del>v1.6.0</del> | <del>v15</del>   | Deprecated                   |
 | <del>v1.5.1</del> | <del>v14.1</del> | Deprecated                   |
 | <del>v1.5.0</del> | <del>v14</del>   | Deprecated                   |
-| <del>v1.4.1</del> | <del>v13.1</del> | Deprecated	                  |
-| <del>v1.4.0</del> | <del>v13</del>   | Deprecated	                  |
-| <del>v1.3.1</del> | <del>v12</del>   | Deprecated                   |
-| <del>v1.2.1</del> | <del>v11.1</del> | Deprecated                   |
-| <del>v1.2.0</del> | <del>v11</del>   | Deprecated                   |
-| <del>v1.1.1</del> | <del>v10</del>   | Deprecated                   |
 
 ## Requirements
 
@@ -45,7 +39,7 @@ Although this project isn't official, we deem it as low-risk due to its maturity
 ## Installation
 
 ```bash
-$ go get github.com/shenzhencenter/google-ads-pb
+go get github.com/shenzhencenter/google-ads-pb
 ```
     
 ## Getting started
@@ -53,27 +47,39 @@ $ go get github.com/shenzhencenter/google-ads-pb
 1. Set your environment variables.
 
 ```bash
-$ export ACCESS_TOKEN=<your access token>
-$ export DEVELOPER_TOKEN=<your developer token>
-$ export CUSTOMER_ID=<your customer id>
+export ACCESS_TOKEN=<your access token>
+export DEVELOPER_TOKEN=<your developer token>
+export CUSTOMER_ID=<your customer id>
+```
+
+If you're using gRPC, you should attach the access token, developer token, and customer ID to the context.
+
+```go
+ctx := context.Background()
+headers := metadata.Pairs(
+    "authorization", "Bearer "+os.Getenv("ACCESS_TOKEN"),
+    "developer-token", os.Getenv("DEVELOPER_TOKEN"),
+    "login-customer-id", os.Getenv("CUSTOMER_ID"),
+)
+ctx = metadata.NewOutgoingContext(ctx, headers)
+```
+
+If you're using HTTP, you should attach the access token, developer token, and customer ID to the header.
+
+```go
+header := make(http.Header)
+header.Set("content-type", "application/json")
+header.Set("authorization", os.Getenv("ACCESS_TOKEN"))
+header.Set("developer-token", os.Getenv("DEVELOPER_TOKEN"))
 ```
 
 2. Establish a GRPC connection.
 
 ```go
-ctx := context.Background()
-
-headers := metadata.Pairs(
-  "authorization", "Bearer "+os.Getenv("ACCESS_TOKEN"),
-  "developer-token", os.Getenv("DEVELOPER_TOKEN"),
-  "login-customer-id", os.Getenv("CUSTOMER_ID"),
-)
-ctx = metadata.NewOutgoingContext(ctx, headers)
-
 cred := grpc.WithTransportCredentials(credentials.NewClientTLSFromCert(nil, ""))
-conn, err := grpc.Dial("googleads.googleapis.com:443", cred)
+conn, err := grpc.NewClient("googleads.googleapis.com:443", cred)
 if err != nil {
-  panic(err)
+    panic(err)
 }
 defer conn.Close()
 ```
@@ -83,53 +89,46 @@ defer conn.Close()
 ```go
 customerServiceClient := services.NewCustomerServiceClient(conn)
 accessibleCustomers, err := customerServiceClient.ListAccessibleCustomers(
-  ctx, 
-  &services.ListAccessibleCustomersRequest{},
+    ctx, // be sure to use the context with the access token, developer token, and customer ID
+    &services.ListAccessibleCustomersRequest{},
 )
 if err != nil {
-  panic(err)
+    panic(err)
 }
 
 for _, customer := range accessibleCustomers.ResourceNames {
-  fmt.Println("ResourceName: " + customer)
+    fmt.Println("ResourceName: " + customer)
 }
 ```
 
 You can also make HTTP calls using [protojson](https://google.golang.org/protobuf/encoding/protojson), though it isn't recommended.
 
 ```go
+const endpoint = "https://googleads.googleapis.com/v18/customers:listAccessibleCustomers"
 req := services.ListAccessibleCustomersRequest{}
-requestBody, err := protojson.Marshal(&req)
-if err != nil {
-  panic(err)
-}
-request, err := http.NewRequest("GET", "https://googleads.googleapis.com/v17/customers:listAccessibleCustomers", bytes.NewBuffer(requestBody))
-if err != nil {
-  panic(err)
-}
+requestBody, _ := protojson.Marshal(&req)
+request, _ := http.NewRequest("GET", endpoint, bytes.NewBuffer(requestBody))
 header := make(http.Header)
 header.Set("content-type", "application/json")
 header.Set("authorization", os.Getenv("ACCESS_TOKEN"))
 header.Set("developer-token", os.Getenv("DEVELOPER_TOKEN"))
 request.Header = header
-client := &http.Client{}
-response, err := client.Do(request)
-if err != nil {
-  panic(err)
-}
+response, _ := http.DefaultClient.Do(request)
 defer response.Body.Close()
 var responseBody []byte
 if responseBody, err = io.ReadAll(response.Body); err != nil {
-  panic(err)
+    panic(err)
 }
 listAccessibleCustomersResponse := new(services.ListAccessibleCustomersResponse)
 if err := protojson.Unmarshal(responseBody, listAccessibleCustomersResponse); err != nil {
-  panic(err)
+    panic(err)
 }
 for _, customer := range listAccessibleCustomersResponse.ResourceNames {
-  fmt.Println("ResourceName: " + customer)
+    fmt.Println("ResourceName: " + customer)
 }
 ```
+
+> **Note**: The above examples are just a starting point. You should adjust them based on your needs.
 
 ## Examples
 
