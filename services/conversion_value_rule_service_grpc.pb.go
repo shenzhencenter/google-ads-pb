@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v17/services/conversion_value_rule_service.proto
+// source: google/ads/googleads/v18/services/conversion_value_rule_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	ConversionValueRuleService_MutateConversionValueRules_FullMethodName = "/google.ads.googleads.v17.services.ConversionValueRuleService/MutateConversionValueRules"
+	ConversionValueRuleService_MutateConversionValueRules_FullMethodName = "/google.ads.googleads.v18.services.ConversionValueRuleService/MutateConversionValueRules"
 )
 
 // ConversionValueRuleServiceClient is the client API for ConversionValueRuleService service.
@@ -131,7 +131,7 @@ func _ConversionValueRuleService_MutateConversionValueRules_Handler(srv interfac
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ConversionValueRuleService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v17.services.ConversionValueRuleService",
+	ServiceName: "google.ads.googleads.v18.services.ConversionValueRuleService",
 	HandlerType: (*ConversionValueRuleServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -140,5 +140,5 @@ var ConversionValueRuleService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v17/services/conversion_value_rule_service.proto",
+	Metadata: "google/ads/googleads/v18/services/conversion_value_rule_service.proto",
 }

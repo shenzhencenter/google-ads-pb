@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v17/services/bidding_strategy_service.proto
+// source: google/ads/googleads/v18/services/bidding_strategy_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	BiddingStrategyService_MutateBiddingStrategies_FullMethodName = "/google.ads.googleads.v17.services.BiddingStrategyService/MutateBiddingStrategies"
+	BiddingStrategyService_MutateBiddingStrategies_FullMethodName = "/google.ads.googleads.v18.services.BiddingStrategyService/MutateBiddingStrategies"
 )
 
 // BiddingStrategyServiceClient is the client API for BiddingStrategyService service.
@@ -189,7 +189,7 @@ func _BiddingStrategyService_MutateBiddingStrategies_Handler(srv interface{}, ct
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var BiddingStrategyService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v17.services.BiddingStrategyService",
+	ServiceName: "google.ads.googleads.v18.services.BiddingStrategyService",
 	HandlerType: (*BiddingStrategyServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -198,5 +198,5 @@ var BiddingStrategyService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v17/services/bidding_strategy_service.proto",
+	Metadata: "google/ads/googleads/v18/services/bidding_strategy_service.proto",
 }

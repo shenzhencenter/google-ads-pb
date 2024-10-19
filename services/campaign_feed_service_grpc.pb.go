@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v17/services/campaign_feed_service.proto
+// source: google/ads/googleads/v18/services/campaign_feed_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	CampaignFeedService_MutateCampaignFeeds_FullMethodName = "/google.ads.googleads.v17.services.CampaignFeedService/MutateCampaignFeeds"
+	CampaignFeedService_MutateCampaignFeeds_FullMethodName = "/google.ads.googleads.v18.services.CampaignFeedService/MutateCampaignFeeds"
 )
 
 // CampaignFeedServiceClient is the client API for CampaignFeedService service.
@@ -182,7 +182,7 @@ func _CampaignFeedService_MutateCampaignFeeds_Handler(srv interface{}, ctx conte
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CampaignFeedService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v17.services.CampaignFeedService",
+	ServiceName: "google.ads.googleads.v18.services.CampaignFeedService",
 	HandlerType: (*CampaignFeedServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -191,5 +191,5 @@ var CampaignFeedService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v17/services/campaign_feed_service.proto",
+	Metadata: "google/ads/googleads/v18/services/campaign_feed_service.proto",
 }

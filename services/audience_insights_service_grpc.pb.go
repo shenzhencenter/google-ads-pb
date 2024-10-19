@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v17/services/audience_insights_service.proto
+// source: google/ads/googleads/v18/services/audience_insights_service.proto
 
 package services
 
@@ -33,12 +33,13 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	AudienceInsightsService_GenerateInsightsFinderReport_FullMethodName        = "/google.ads.googleads.v17.services.AudienceInsightsService/GenerateInsightsFinderReport"
-	AudienceInsightsService_ListAudienceInsightsAttributes_FullMethodName      = "/google.ads.googleads.v17.services.AudienceInsightsService/ListAudienceInsightsAttributes"
-	AudienceInsightsService_ListInsightsEligibleDates_FullMethodName           = "/google.ads.googleads.v17.services.AudienceInsightsService/ListInsightsEligibleDates"
-	AudienceInsightsService_GenerateAudienceCompositionInsights_FullMethodName = "/google.ads.googleads.v17.services.AudienceInsightsService/GenerateAudienceCompositionInsights"
-	AudienceInsightsService_GenerateSuggestedTargetingInsights_FullMethodName  = "/google.ads.googleads.v17.services.AudienceInsightsService/GenerateSuggestedTargetingInsights"
-	AudienceInsightsService_GenerateAudienceOverlapInsights_FullMethodName     = "/google.ads.googleads.v17.services.AudienceInsightsService/GenerateAudienceOverlapInsights"
+	AudienceInsightsService_GenerateInsightsFinderReport_FullMethodName        = "/google.ads.googleads.v18.services.AudienceInsightsService/GenerateInsightsFinderReport"
+	AudienceInsightsService_ListAudienceInsightsAttributes_FullMethodName      = "/google.ads.googleads.v18.services.AudienceInsightsService/ListAudienceInsightsAttributes"
+	AudienceInsightsService_ListInsightsEligibleDates_FullMethodName           = "/google.ads.googleads.v18.services.AudienceInsightsService/ListInsightsEligibleDates"
+	AudienceInsightsService_GenerateAudienceCompositionInsights_FullMethodName = "/google.ads.googleads.v18.services.AudienceInsightsService/GenerateAudienceCompositionInsights"
+	AudienceInsightsService_GenerateSuggestedTargetingInsights_FullMethodName  = "/google.ads.googleads.v18.services.AudienceInsightsService/GenerateSuggestedTargetingInsights"
+	AudienceInsightsService_GenerateAudienceOverlapInsights_FullMethodName     = "/google.ads.googleads.v18.services.AudienceInsightsService/GenerateAudienceOverlapInsights"
+	AudienceInsightsService_GenerateTargetingSuggestionMetrics_FullMethodName  = "/google.ads.googleads.v18.services.AudienceInsightsService/GenerateTargetingSuggestionMetrics"
 )
 
 // AudienceInsightsServiceClient is the client API for AudienceInsightsService service.
@@ -135,6 +136,23 @@ type AudienceInsightsServiceClient interface {
 	//	[RangeError]()
 	//	[RequestError]()
 	GenerateAudienceOverlapInsights(ctx context.Context, in *GenerateAudienceOverlapInsightsRequest, opts ...grpc.CallOption) (*GenerateAudienceOverlapInsightsResponse, error)
+	// Returns potential reach metrics for targetable audiences.
+	//
+	// This method helps answer questions like "How many Men aged 18+ interested
+	// in Camping can be reached on YouTube?"
+	//
+	// List of thrown errors:
+	//
+	//	[AudienceInsightsError]()
+	//	[AuthenticationError]()
+	//	[AuthorizationError]()
+	//	[FieldError]()
+	//	[HeaderError]()
+	//	[InternalError]()
+	//	[QuotaError]()
+	//	[RangeError]()
+	//	[RequestError]()
+	GenerateTargetingSuggestionMetrics(ctx context.Context, in *GenerateTargetingSuggestionMetricsRequest, opts ...grpc.CallOption) (*GenerateTargetingSuggestionMetricsResponse, error)
 }
 
 type audienceInsightsServiceClient struct {
@@ -199,6 +217,16 @@ func (c *audienceInsightsServiceClient) GenerateAudienceOverlapInsights(ctx cont
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GenerateAudienceOverlapInsightsResponse)
 	err := c.cc.Invoke(ctx, AudienceInsightsService_GenerateAudienceOverlapInsights_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *audienceInsightsServiceClient) GenerateTargetingSuggestionMetrics(ctx context.Context, in *GenerateTargetingSuggestionMetricsRequest, opts ...grpc.CallOption) (*GenerateTargetingSuggestionMetricsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GenerateTargetingSuggestionMetricsResponse)
+	err := c.cc.Invoke(ctx, AudienceInsightsService_GenerateTargetingSuggestionMetrics_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -299,6 +327,23 @@ type AudienceInsightsServiceServer interface {
 	//	[RangeError]()
 	//	[RequestError]()
 	GenerateAudienceOverlapInsights(context.Context, *GenerateAudienceOverlapInsightsRequest) (*GenerateAudienceOverlapInsightsResponse, error)
+	// Returns potential reach metrics for targetable audiences.
+	//
+	// This method helps answer questions like "How many Men aged 18+ interested
+	// in Camping can be reached on YouTube?"
+	//
+	// List of thrown errors:
+	//
+	//	[AudienceInsightsError]()
+	//	[AuthenticationError]()
+	//	[AuthorizationError]()
+	//	[FieldError]()
+	//	[HeaderError]()
+	//	[InternalError]()
+	//	[QuotaError]()
+	//	[RangeError]()
+	//	[RequestError]()
+	GenerateTargetingSuggestionMetrics(context.Context, *GenerateTargetingSuggestionMetricsRequest) (*GenerateTargetingSuggestionMetricsResponse, error)
 	mustEmbedUnimplementedAudienceInsightsServiceServer()
 }
 
@@ -326,6 +371,9 @@ func (UnimplementedAudienceInsightsServiceServer) GenerateSuggestedTargetingInsi
 }
 func (UnimplementedAudienceInsightsServiceServer) GenerateAudienceOverlapInsights(context.Context, *GenerateAudienceOverlapInsightsRequest) (*GenerateAudienceOverlapInsightsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GenerateAudienceOverlapInsights not implemented")
+}
+func (UnimplementedAudienceInsightsServiceServer) GenerateTargetingSuggestionMetrics(context.Context, *GenerateTargetingSuggestionMetricsRequest) (*GenerateTargetingSuggestionMetricsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GenerateTargetingSuggestionMetrics not implemented")
 }
 func (UnimplementedAudienceInsightsServiceServer) mustEmbedUnimplementedAudienceInsightsServiceServer() {
 }
@@ -457,11 +505,29 @@ func _AudienceInsightsService_GenerateAudienceOverlapInsights_Handler(srv interf
 	return interceptor(ctx, in, info, handler)
 }
 
+func _AudienceInsightsService_GenerateTargetingSuggestionMetrics_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenerateTargetingSuggestionMetricsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AudienceInsightsServiceServer).GenerateTargetingSuggestionMetrics(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AudienceInsightsService_GenerateTargetingSuggestionMetrics_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AudienceInsightsServiceServer).GenerateTargetingSuggestionMetrics(ctx, req.(*GenerateTargetingSuggestionMetricsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // AudienceInsightsService_ServiceDesc is the grpc.ServiceDesc for AudienceInsightsService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AudienceInsightsService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v17.services.AudienceInsightsService",
+	ServiceName: "google.ads.googleads.v18.services.AudienceInsightsService",
 	HandlerType: (*AudienceInsightsServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -488,7 +554,11 @@ var AudienceInsightsService_ServiceDesc = grpc.ServiceDesc{
 			MethodName: "GenerateAudienceOverlapInsights",
 			Handler:    _AudienceInsightsService_GenerateAudienceOverlapInsights_Handler,
 		},
+		{
+			MethodName: "GenerateTargetingSuggestionMetrics",
+			Handler:    _AudienceInsightsService_GenerateTargetingSuggestionMetrics_Handler,
+		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v17/services/audience_insights_service.proto",
+	Metadata: "google/ads/googleads/v18/services/audience_insights_service.proto",
 }

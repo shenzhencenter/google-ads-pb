@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v17/services/feed_item_set_service.proto
+// source: google/ads/googleads/v18/services/feed_item_set_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	FeedItemSetService_MutateFeedItemSets_FullMethodName = "/google.ads.googleads.v17.services.FeedItemSetService/MutateFeedItemSets"
+	FeedItemSetService_MutateFeedItemSets_FullMethodName = "/google.ads.googleads.v18.services.FeedItemSetService/MutateFeedItemSets"
 )
 
 // FeedItemSetServiceClient is the client API for FeedItemSetService service.
@@ -150,7 +150,7 @@ func _FeedItemSetService_MutateFeedItemSets_Handler(srv interface{}, ctx context
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var FeedItemSetService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v17.services.FeedItemSetService",
+	ServiceName: "google.ads.googleads.v18.services.FeedItemSetService",
 	HandlerType: (*FeedItemSetServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -159,5 +159,5 @@ var FeedItemSetService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v17/services/feed_item_set_service.proto",
+	Metadata: "google/ads/googleads/v18/services/feed_item_set_service.proto",
 }

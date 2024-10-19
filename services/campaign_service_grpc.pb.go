@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v17/services/campaign_service.proto
+// source: google/ads/googleads/v18/services/campaign_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	CampaignService_MutateCampaigns_FullMethodName = "/google.ads.googleads.v17.services.CampaignService/MutateCampaigns"
+	CampaignService_MutateCampaigns_FullMethodName = "/google.ads.googleads.v18.services.CampaignService/MutateCampaigns"
 )
 
 // CampaignServiceClient is the client API for CampaignService service.
@@ -204,7 +204,7 @@ func _CampaignService_MutateCampaigns_Handler(srv interface{}, ctx context.Conte
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CampaignService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v17.services.CampaignService",
+	ServiceName: "google.ads.googleads.v18.services.CampaignService",
 	HandlerType: (*CampaignServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -213,5 +213,5 @@ var CampaignService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v17/services/campaign_service.proto",
+	Metadata: "google/ads/googleads/v18/services/campaign_service.proto",
 }

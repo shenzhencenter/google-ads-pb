@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v17/services/remarketing_action_service.proto
+// source: google/ads/googleads/v18/services/remarketing_action_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	RemarketingActionService_MutateRemarketingActions_FullMethodName = "/google.ads.googleads.v17.services.RemarketingActionService/MutateRemarketingActions"
+	RemarketingActionService_MutateRemarketingActions_FullMethodName = "/google.ads.googleads.v18.services.RemarketingActionService/MutateRemarketingActions"
 )
 
 // RemarketingActionServiceClient is the client API for RemarketingActionService service.
@@ -149,7 +149,7 @@ func _RemarketingActionService_MutateRemarketingActions_Handler(srv interface{},
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var RemarketingActionService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v17.services.RemarketingActionService",
+	ServiceName: "google.ads.googleads.v18.services.RemarketingActionService",
 	HandlerType: (*RemarketingActionServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -158,5 +158,5 @@ var RemarketingActionService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v17/services/remarketing_action_service.proto",
+	Metadata: "google/ads/googleads/v18/services/remarketing_action_service.proto",
 }

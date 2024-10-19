@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v17/services/bidding_seasonality_adjustment_service.proto
+// source: google/ads/googleads/v18/services/bidding_seasonality_adjustment_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	BiddingSeasonalityAdjustmentService_MutateBiddingSeasonalityAdjustments_FullMethodName = "/google.ads.googleads.v17.services.BiddingSeasonalityAdjustmentService/MutateBiddingSeasonalityAdjustments"
+	BiddingSeasonalityAdjustmentService_MutateBiddingSeasonalityAdjustments_FullMethodName = "/google.ads.googleads.v18.services.BiddingSeasonalityAdjustmentService/MutateBiddingSeasonalityAdjustments"
 )
 
 // BiddingSeasonalityAdjustmentServiceClient is the client API for BiddingSeasonalityAdjustmentService service.
@@ -131,7 +131,7 @@ func _BiddingSeasonalityAdjustmentService_MutateBiddingSeasonalityAdjustments_Ha
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var BiddingSeasonalityAdjustmentService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v17.services.BiddingSeasonalityAdjustmentService",
+	ServiceName: "google.ads.googleads.v18.services.BiddingSeasonalityAdjustmentService",
 	HandlerType: (*BiddingSeasonalityAdjustmentServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -140,5 +140,5 @@ var BiddingSeasonalityAdjustmentService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v17/services/bidding_seasonality_adjustment_service.proto",
+	Metadata: "google/ads/googleads/v18/services/bidding_seasonality_adjustment_service.proto",
 }

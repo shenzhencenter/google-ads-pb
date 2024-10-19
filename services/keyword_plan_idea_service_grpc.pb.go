@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v17/services/keyword_plan_idea_service.proto
+// source: google/ads/googleads/v18/services/keyword_plan_idea_service.proto
 
 package services
 
@@ -33,10 +33,10 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	KeywordPlanIdeaService_GenerateKeywordIdeas_FullMethodName             = "/google.ads.googleads.v17.services.KeywordPlanIdeaService/GenerateKeywordIdeas"
-	KeywordPlanIdeaService_GenerateKeywordHistoricalMetrics_FullMethodName = "/google.ads.googleads.v17.services.KeywordPlanIdeaService/GenerateKeywordHistoricalMetrics"
-	KeywordPlanIdeaService_GenerateAdGroupThemes_FullMethodName            = "/google.ads.googleads.v17.services.KeywordPlanIdeaService/GenerateAdGroupThemes"
-	KeywordPlanIdeaService_GenerateKeywordForecastMetrics_FullMethodName   = "/google.ads.googleads.v17.services.KeywordPlanIdeaService/GenerateKeywordForecastMetrics"
+	KeywordPlanIdeaService_GenerateKeywordIdeas_FullMethodName             = "/google.ads.googleads.v18.services.KeywordPlanIdeaService/GenerateKeywordIdeas"
+	KeywordPlanIdeaService_GenerateKeywordHistoricalMetrics_FullMethodName = "/google.ads.googleads.v18.services.KeywordPlanIdeaService/GenerateKeywordHistoricalMetrics"
+	KeywordPlanIdeaService_GenerateAdGroupThemes_FullMethodName            = "/google.ads.googleads.v18.services.KeywordPlanIdeaService/GenerateAdGroupThemes"
+	KeywordPlanIdeaService_GenerateKeywordForecastMetrics_FullMethodName   = "/google.ads.googleads.v18.services.KeywordPlanIdeaService/GenerateKeywordForecastMetrics"
 )
 
 // KeywordPlanIdeaServiceClient is the client API for KeywordPlanIdeaService service.
@@ -323,7 +323,7 @@ func _KeywordPlanIdeaService_GenerateKeywordForecastMetrics_Handler(srv interfac
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var KeywordPlanIdeaService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v17.services.KeywordPlanIdeaService",
+	ServiceName: "google.ads.googleads.v18.services.KeywordPlanIdeaService",
 	HandlerType: (*KeywordPlanIdeaServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -344,5 +344,5 @@ var KeywordPlanIdeaService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v17/services/keyword_plan_idea_service.proto",
+	Metadata: "google/ads/googleads/v18/services/keyword_plan_idea_service.proto",
 }

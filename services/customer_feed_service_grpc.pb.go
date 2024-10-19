@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v17/services/customer_feed_service.proto
+// source: google/ads/googleads/v18/services/customer_feed_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	CustomerFeedService_MutateCustomerFeeds_FullMethodName = "/google.ads.googleads.v17.services.CustomerFeedService/MutateCustomerFeeds"
+	CustomerFeedService_MutateCustomerFeeds_FullMethodName = "/google.ads.googleads.v18.services.CustomerFeedService/MutateCustomerFeeds"
 )
 
 // CustomerFeedServiceClient is the client API for CustomerFeedService service.
@@ -180,7 +180,7 @@ func _CustomerFeedService_MutateCustomerFeeds_Handler(srv interface{}, ctx conte
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CustomerFeedService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v17.services.CustomerFeedService",
+	ServiceName: "google.ads.googleads.v18.services.CustomerFeedService",
 	HandlerType: (*CustomerFeedServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -189,5 +189,5 @@ var CustomerFeedService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v17/services/customer_feed_service.proto",
+	Metadata: "google/ads/googleads/v18/services/customer_feed_service.proto",
 }
