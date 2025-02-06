@@ -8,7 +8,7 @@
 
 This library provides a Golang client for the [Google Ads API](https://developers.google.com/google-ads/api/docs/start). It's fully generated from the [googleapis](https://github.com/googleapis/googleapis/tree/master/google/ads/googleads) repository. More information on the generation process can be found [here](https://github.com/shenzhencenter/google-ads-pb/blob/main/.github/workflows/generator.yml).
 
-Although this project isn't official, we deem it as low-risk due to its maturity and our two years of using it in production. However, always consult the [sunset schedule](https://developers.google.com/google-ads/api/docs/sunset-dates) of the Google Ads API.
+Although this project isn't official, we deem it as low-risk due to its maturity and our many years of using it in production. However, always consult the [sunset schedule](https://developers.google.com/google-ads/api/docs/sunset-dates) of the Google Ads API.
 
 ## Features
 
@@ -19,16 +19,16 @@ Although this project isn't official, we deem it as low-risk due to its maturity
 
 ## Version support
 
-| google-ads-pb     | Google Ads API   | Sunset date                  |
-| ----------------- | ---------------- | ---------------------------- |
-| v1.18.0           | v18              | September 2025               |
-| v1.17.1           | v17.1            | May 2025                     |
-| v1.17.0           | v17              | May 2025                     |
-| v1.16.1           | v16.1            | January 2025                 |
-| v1.7.0            | v16              | January 2025                 |
-| <del>v1.6.0</del> | <del>v15</del>   | Deprecated                   |
-| <del>v1.5.1</del> | <del>v14.1</del> | Deprecated                   |
-| <del>v1.5.0</del> | <del>v14</del>   | Deprecated                   |
+| google-ads-pb      | Google Ads API   | Sunset date                  |
+| ------------------ | ---------------- | ---------------------------- |
+| v1.18.0            | v18              | September 2025               |
+| v1.17.1            | v17.1            | May 2025                     |
+| v1.17.0            | v17              | May 2025                     |
+| <del>v1.16.1</del> | <del>v16.1</del> | Deprecated                   |
+| <del>v1.7.0</del>  | <del>v16</del>   | Deprecated                   |
+| <del>v1.6.0</del>  | <del>v15</del>   | Deprecated                   |
+| <del>v1.5.1</del>  | <del>v14.1</del> | Deprecated                   |
+| <del>v1.5.0</del>  | <del>v14</del>   | Deprecated                   |
 
 ## Requirements
 
@@ -132,7 +132,7 @@ for _, customer := range listAccessibleCustomersResponse.ResourceNames {
 
 ## Examples
 
-See [clients/internal/snippets](https://github.com/shenzhencenter/google-ads-pb/tree/main/clients/internal/snippets).
+[TODO] See [clients/internal/snippets](https://github.com/shenzhencenter/google-ads-pb/tree/main/clients/internal/snippets).
 
 ## Related
 
