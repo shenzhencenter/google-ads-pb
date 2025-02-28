@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v18/services/ad_group_service.proto
+// source: google/ads/googleads/v19/services/ad_group_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	AdGroupService_MutateAdGroups_FullMethodName = "/google.ads.googleads.v18.services.AdGroupService/MutateAdGroups"
+	AdGroupService_MutateAdGroups_FullMethodName = "/google.ads.googleads.v19.services.AdGroupService/MutateAdGroups"
 )
 
 // AdGroupServiceClient is the client API for AdGroupService service.
@@ -196,7 +196,7 @@ func _AdGroupService_MutateAdGroups_Handler(srv interface{}, ctx context.Context
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AdGroupService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v18.services.AdGroupService",
+	ServiceName: "google.ads.googleads.v19.services.AdGroupService",
 	HandlerType: (*AdGroupServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -205,5 +205,5 @@ var AdGroupService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v18/services/ad_group_service.proto",
+	Metadata: "google/ads/googleads/v19/services/ad_group_service.proto",
 }

@@ -1,4 +1,4 @@
-// Copyright 2024 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package clients
 import (
 	"context"
 	"fmt"
+	"log/slog"
 	"math"
 	"net/url"
 	"time"
@@ -175,6 +176,8 @@ type googleAdsFieldGRPCClient struct {
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogHeaders []string
+
+	logger *slog.Logger
 }
 
 // NewGoogleAdsFieldClient creates a new google ads field service client based on gRPC.
@@ -201,6 +204,7 @@ func NewGoogleAdsFieldClient(ctx context.Context, opts ...option.ClientOption) (
 		connPool:             connPool,
 		googleAdsFieldClient: servicespb.NewGoogleAdsFieldServiceClient(connPool),
 		CallOptions:          &client.CallOptions,
+		logger:               internaloption.GetLogger(opts),
 	}
 	c.setGoogleClientInfo()
 
@@ -243,7 +247,7 @@ func (c *googleAdsFieldGRPCClient) GetGoogleAdsField(ctx context.Context, req *s
 	var resp *resourcespb.GoogleAdsField
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.googleAdsFieldClient.GetGoogleAdsField(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.googleAdsFieldClient.GetGoogleAdsField, req, settings.GRPC, c.logger, "GetGoogleAdsField")
 		return err
 	}, opts...)
 	if err != nil {
@@ -269,7 +273,7 @@ func (c *googleAdsFieldGRPCClient) SearchGoogleAdsFields(ctx context.Context, re
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 			var err error
-			resp, err = c.googleAdsFieldClient.SearchGoogleAdsFields(ctx, req, settings.GRPC...)
+			resp, err = executeRPC(ctx, c.googleAdsFieldClient.SearchGoogleAdsFields, req, settings.GRPC, c.logger, "SearchGoogleAdsFields")
 			return err
 		}, opts...)
 		if err != nil {

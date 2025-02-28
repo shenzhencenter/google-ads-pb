@@ -1,4 +1,4 @@
-// Copyright 2024 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package clients
 import (
 	"context"
 	"fmt"
+	"log/slog"
 	"math"
 	"net/url"
 	"time"
@@ -161,6 +162,8 @@ type adGroupBidModifierGRPCClient struct {
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogHeaders []string
+
+	logger *slog.Logger
 }
 
 // NewAdGroupBidModifierClient creates a new ad group bid modifier service client based on gRPC.
@@ -187,6 +190,7 @@ func NewAdGroupBidModifierClient(ctx context.Context, opts ...option.ClientOptio
 		connPool:                 connPool,
 		adGroupBidModifierClient: servicespb.NewAdGroupBidModifierServiceClient(connPool),
 		CallOptions:              &client.CallOptions,
+		logger:                   internaloption.GetLogger(opts),
 	}
 	c.setGoogleClientInfo()
 
@@ -229,7 +233,7 @@ func (c *adGroupBidModifierGRPCClient) MutateAdGroupBidModifiers(ctx context.Con
 	var resp *servicespb.MutateAdGroupBidModifiersResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.adGroupBidModifierClient.MutateAdGroupBidModifiers(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.adGroupBidModifierClient.MutateAdGroupBidModifiers, req, settings.GRPC, c.logger, "MutateAdGroupBidModifiers")
 		return err
 	}, opts...)
 	if err != nil {

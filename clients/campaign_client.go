@@ -1,4 +1,4 @@
-// Copyright 2024 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package clients
 import (
 	"context"
 	"fmt"
+	"log/slog"
 	"math"
 	"net/url"
 	"time"
@@ -36,7 +37,8 @@ var newCampaignClientHook clientHook
 
 // CampaignCallOptions contains the retry settings for each method of CampaignClient.
 type CampaignCallOptions struct {
-	MutateCampaigns []gax.CallOption
+	MutateCampaigns           []gax.CallOption
+	EnablePMaxBrandGuidelines []gax.CallOption
 }
 
 func defaultCampaignGRPCClientOptions() []option.ClientOption {
@@ -69,6 +71,19 @@ func defaultCampaignCallOptions() *CampaignCallOptions {
 				})
 			}),
 		},
+		EnablePMaxBrandGuidelines: []gax.CallOption{
+			gax.WithTimeout(14400000 * time.Millisecond),
+			gax.WithRetry(func() gax.Retryer {
+				return gax.OnCodes([]codes.Code{
+					codes.Unavailable,
+					codes.DeadlineExceeded,
+				}, gax.Backoff{
+					Initial:    5000 * time.Millisecond,
+					Max:        60000 * time.Millisecond,
+					Multiplier: 1.30,
+				})
+			}),
+		},
 	}
 }
 
@@ -78,6 +93,7 @@ type internalCampaignClient interface {
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
 	MutateCampaigns(context.Context, *servicespb.MutateCampaignsRequest, ...gax.CallOption) (*servicespb.MutateCampaignsResponse, error)
+	EnablePMaxBrandGuidelines(context.Context, *servicespb.EnablePMaxBrandGuidelinesRequest, ...gax.CallOption) (*servicespb.EnablePMaxBrandGuidelinesResponse, error)
 }
 
 // CampaignClient is a client for interacting with Google Ads API.
@@ -157,6 +173,25 @@ func (c *CampaignClient) MutateCampaigns(ctx context.Context, req *servicespb.Mu
 	return c.internalClient.MutateCampaigns(ctx, req, opts...)
 }
 
+// EnablePMaxBrandGuidelines enables Brand Guidelines for Performance Max campaigns.
+//
+// List of thrown errors:
+// AuthenticationError (at )
+// AssetError (at )
+// AssetLinkError (at )
+// AuthorizationError (at )
+// BrandGuidelinesMigrationError (at )
+// CampaignError (at )
+// HeaderError (at )
+// InternalError (at )
+// MutateError (at )
+// QuotaError (at )
+// RequestError (at )
+// ResourceCountLimitExceededError (at )
+func (c *CampaignClient) EnablePMaxBrandGuidelines(ctx context.Context, req *servicespb.EnablePMaxBrandGuidelinesRequest, opts ...gax.CallOption) (*servicespb.EnablePMaxBrandGuidelinesResponse, error) {
+	return c.internalClient.EnablePMaxBrandGuidelines(ctx, req, opts...)
+}
+
 // campaignGRPCClient is a client for interacting with Google Ads API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
@@ -172,6 +207,8 @@ type campaignGRPCClient struct {
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogHeaders []string
+
+	logger *slog.Logger
 }
 
 // NewCampaignClient creates a new campaign service client based on gRPC.
@@ -198,6 +235,7 @@ func NewCampaignClient(ctx context.Context, opts ...option.ClientOption) (*Campa
 		connPool:       connPool,
 		campaignClient: servicespb.NewCampaignServiceClient(connPool),
 		CallOptions:    &client.CallOptions,
+		logger:         internaloption.GetLogger(opts),
 	}
 	c.setGoogleClientInfo()
 
@@ -240,7 +278,25 @@ func (c *campaignGRPCClient) MutateCampaigns(ctx context.Context, req *servicesp
 	var resp *servicespb.MutateCampaignsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.campaignClient.MutateCampaigns(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.campaignClient.MutateCampaigns, req, settings.GRPC, c.logger, "MutateCampaigns")
+		return err
+	}, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return resp, nil
+}
+
+func (c *campaignGRPCClient) EnablePMaxBrandGuidelines(ctx context.Context, req *servicespb.EnablePMaxBrandGuidelinesRequest, opts ...gax.CallOption) (*servicespb.EnablePMaxBrandGuidelinesResponse, error) {
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId()))}
+
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
+	opts = append((*c.CallOptions).EnablePMaxBrandGuidelines[0:len((*c.CallOptions).EnablePMaxBrandGuidelines):len((*c.CallOptions).EnablePMaxBrandGuidelines)], opts...)
+	var resp *servicespb.EnablePMaxBrandGuidelinesResponse
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		resp, err = executeRPC(ctx, c.campaignClient.EnablePMaxBrandGuidelines, req, settings.GRPC, c.logger, "EnablePMaxBrandGuidelines")
 		return err
 	}, opts...)
 	if err != nil {

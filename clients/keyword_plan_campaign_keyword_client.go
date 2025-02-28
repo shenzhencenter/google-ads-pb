@@ -1,4 +1,4 @@
-// Copyright 2024 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package clients
 import (
 	"context"
 	"fmt"
+	"log/slog"
 	"math"
 	"net/url"
 	"time"
@@ -152,6 +153,8 @@ type keywordPlanCampaignKeywordGRPCClient struct {
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogHeaders []string
+
+	logger *slog.Logger
 }
 
 // NewKeywordPlanCampaignKeywordClient creates a new keyword plan campaign keyword service client based on gRPC.
@@ -181,6 +184,7 @@ func NewKeywordPlanCampaignKeywordClient(ctx context.Context, opts ...option.Cli
 		connPool:                         connPool,
 		keywordPlanCampaignKeywordClient: servicespb.NewKeywordPlanCampaignKeywordServiceClient(connPool),
 		CallOptions:                      &client.CallOptions,
+		logger:                           internaloption.GetLogger(opts),
 	}
 	c.setGoogleClientInfo()
 
@@ -223,7 +227,7 @@ func (c *keywordPlanCampaignKeywordGRPCClient) MutateKeywordPlanCampaignKeywords
 	var resp *servicespb.MutateKeywordPlanCampaignKeywordsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.keywordPlanCampaignKeywordClient.MutateKeywordPlanCampaignKeywords(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.keywordPlanCampaignKeywordClient.MutateKeywordPlanCampaignKeywords, req, settings.GRPC, c.logger, "MutateKeywordPlanCampaignKeywords")
 		return err
 	}, opts...)
 	if err != nil {

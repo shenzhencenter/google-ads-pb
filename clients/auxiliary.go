@@ -1,4 +1,4 @@
-// Copyright 2024 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -299,7 +299,7 @@ type BatchJobResultIterator struct {
 	InternalFetch func(pageSize int, pageToken string) (results []*servicespb.BatchJobResult, nextPageToken string, err error)
 }
 
-// PageInfo supports pagination. See the google.golang.org/api/iterator package for details.
+// PageInfo supports pagination. See the [google.golang.org/api/iterator] package for details.
 func (it *BatchJobResultIterator) PageInfo() *iterator.PageInfo {
 	return it.pageInfo
 }
@@ -346,7 +346,7 @@ type GenerateKeywordIdeaResultIterator struct {
 	InternalFetch func(pageSize int, pageToken string) (results []*servicespb.GenerateKeywordIdeaResult, nextPageToken string, err error)
 }
 
-// PageInfo supports pagination. See the google.golang.org/api/iterator package for details.
+// PageInfo supports pagination. See the [google.golang.org/api/iterator] package for details.
 func (it *GenerateKeywordIdeaResultIterator) PageInfo() *iterator.PageInfo {
 	return it.pageInfo
 }
@@ -393,7 +393,7 @@ type GoogleAdsFieldIterator struct {
 	InternalFetch func(pageSize int, pageToken string) (results []*resourcespb.GoogleAdsField, nextPageToken string, err error)
 }
 
-// PageInfo supports pagination. See the google.golang.org/api/iterator package for details.
+// PageInfo supports pagination. See the [google.golang.org/api/iterator] package for details.
 func (it *GoogleAdsFieldIterator) PageInfo() *iterator.PageInfo {
 	return it.pageInfo
 }
@@ -440,7 +440,7 @@ type GoogleAdsRowIterator struct {
 	InternalFetch func(pageSize int, pageToken string) (results []*servicespb.GoogleAdsRow, nextPageToken string, err error)
 }
 
-// PageInfo supports pagination. See the google.golang.org/api/iterator package for details.
+// PageInfo supports pagination. See the [google.golang.org/api/iterator] package for details.
 func (it *GoogleAdsRowIterator) PageInfo() *iterator.PageInfo {
 	return it.pageInfo
 }
@@ -487,7 +487,7 @@ type StatusIterator struct {
 	InternalFetch func(pageSize int, pageToken string) (results []*statuspb.Status, nextPageToken string, err error)
 }
 
-// PageInfo supports pagination. See the google.golang.org/api/iterator package for details.
+// PageInfo supports pagination. See the [google.golang.org/api/iterator] package for details.
 func (it *StatusIterator) PageInfo() *iterator.PageInfo {
 	return it.pageInfo
 }

@@ -1,4 +1,4 @@
-// Copyright 2024 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package clients
 import (
 	"context"
 	"fmt"
+	"log/slog"
 	"math"
 	"net/url"
 	"time"
@@ -155,6 +156,8 @@ type smartCampaignSettingGRPCClient struct {
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogHeaders []string
+
+	logger *slog.Logger
 }
 
 // NewSmartCampaignSettingClient creates a new smart campaign setting service client based on gRPC.
@@ -181,6 +184,7 @@ func NewSmartCampaignSettingClient(ctx context.Context, opts ...option.ClientOpt
 		connPool:                   connPool,
 		smartCampaignSettingClient: servicespb.NewSmartCampaignSettingServiceClient(connPool),
 		CallOptions:                &client.CallOptions,
+		logger:                     internaloption.GetLogger(opts),
 	}
 	c.setGoogleClientInfo()
 
@@ -223,7 +227,7 @@ func (c *smartCampaignSettingGRPCClient) GetSmartCampaignStatus(ctx context.Cont
 	var resp *servicespb.GetSmartCampaignStatusResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.smartCampaignSettingClient.GetSmartCampaignStatus(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.smartCampaignSettingClient.GetSmartCampaignStatus, req, settings.GRPC, c.logger, "GetSmartCampaignStatus")
 		return err
 	}, opts...)
 	if err != nil {
@@ -241,7 +245,7 @@ func (c *smartCampaignSettingGRPCClient) MutateSmartCampaignSettings(ctx context
 	var resp *servicespb.MutateSmartCampaignSettingsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.smartCampaignSettingClient.MutateSmartCampaignSettings(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.smartCampaignSettingClient.MutateSmartCampaignSettings, req, settings.GRPC, c.logger, "MutateSmartCampaignSettings")
 		return err
 	}, opts...)
 	if err != nil {

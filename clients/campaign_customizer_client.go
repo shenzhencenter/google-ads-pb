@@ -1,4 +1,4 @@
-// Copyright 2024 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package clients
 import (
 	"context"
 	"fmt"
+	"log/slog"
 	"math"
 	"net/url"
 	"time"
@@ -136,6 +137,8 @@ type campaignCustomizerGRPCClient struct {
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogHeaders []string
+
+	logger *slog.Logger
 }
 
 // NewCampaignCustomizerClient creates a new campaign customizer service client based on gRPC.
@@ -162,6 +165,7 @@ func NewCampaignCustomizerClient(ctx context.Context, opts ...option.ClientOptio
 		connPool:                 connPool,
 		campaignCustomizerClient: servicespb.NewCampaignCustomizerServiceClient(connPool),
 		CallOptions:              &client.CallOptions,
+		logger:                   internaloption.GetLogger(opts),
 	}
 	c.setGoogleClientInfo()
 
@@ -204,7 +208,7 @@ func (c *campaignCustomizerGRPCClient) MutateCampaignCustomizers(ctx context.Con
 	var resp *servicespb.MutateCampaignCustomizersResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.campaignCustomizerClient.MutateCampaignCustomizers(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.campaignCustomizerClient.MutateCampaignCustomizers, req, settings.GRPC, c.logger, "MutateCampaignCustomizers")
 		return err
 	}, opts...)
 	if err != nil {

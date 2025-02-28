@@ -1,4 +1,4 @@
-// Copyright 2024 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package clients
 import (
 	"context"
 	"fmt"
+	"log/slog"
 	"math"
 	"net/url"
 	"time"
@@ -159,6 +160,8 @@ type campaignSharedSetGRPCClient struct {
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogHeaders []string
+
+	logger *slog.Logger
 }
 
 // NewCampaignSharedSetClient creates a new campaign shared set service client based on gRPC.
@@ -185,6 +188,7 @@ func NewCampaignSharedSetClient(ctx context.Context, opts ...option.ClientOption
 		connPool:                connPool,
 		campaignSharedSetClient: servicespb.NewCampaignSharedSetServiceClient(connPool),
 		CallOptions:             &client.CallOptions,
+		logger:                  internaloption.GetLogger(opts),
 	}
 	c.setGoogleClientInfo()
 
@@ -227,7 +231,7 @@ func (c *campaignSharedSetGRPCClient) MutateCampaignSharedSets(ctx context.Conte
 	var resp *servicespb.MutateCampaignSharedSetsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.campaignSharedSetClient.MutateCampaignSharedSets(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.campaignSharedSetClient.MutateCampaignSharedSets, req, settings.GRPC, c.logger, "MutateCampaignSharedSets")
 		return err
 	}, opts...)
 	if err != nil {

@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v18/services/conversion_adjustment_upload_service.proto
+// source: google/ads/googleads/v19/services/conversion_adjustment_upload_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	ConversionAdjustmentUploadService_UploadConversionAdjustments_FullMethodName = "/google.ads.googleads.v18.services.ConversionAdjustmentUploadService/UploadConversionAdjustments"
+	ConversionAdjustmentUploadService_UploadConversionAdjustments_FullMethodName = "/google.ads.googleads.v19.services.ConversionAdjustmentUploadService/UploadConversionAdjustments"
 )
 
 // ConversionAdjustmentUploadServiceClient is the client API for ConversionAdjustmentUploadService service.
@@ -149,7 +149,7 @@ func _ConversionAdjustmentUploadService_UploadConversionAdjustments_Handler(srv 
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ConversionAdjustmentUploadService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v18.services.ConversionAdjustmentUploadService",
+	ServiceName: "google.ads.googleads.v19.services.ConversionAdjustmentUploadService",
 	HandlerType: (*ConversionAdjustmentUploadServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -158,5 +158,5 @@ var ConversionAdjustmentUploadService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v18/services/conversion_adjustment_upload_service.proto",
+	Metadata: "google/ads/googleads/v19/services/conversion_adjustment_upload_service.proto",
 }

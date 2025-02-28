@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v18/services/content_creator_insights_service.proto
+// source: google/ads/googleads/v19/services/content_creator_insights_service.proto
 
 package services
 
@@ -33,7 +33,8 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	ContentCreatorInsightsService_GenerateCreatorInsights_FullMethodName = "/google.ads.googleads.v18.services.ContentCreatorInsightsService/GenerateCreatorInsights"
+	ContentCreatorInsightsService_GenerateCreatorInsights_FullMethodName  = "/google.ads.googleads.v19.services.ContentCreatorInsightsService/GenerateCreatorInsights"
+	ContentCreatorInsightsService_GenerateTrendingInsights_FullMethodName = "/google.ads.googleads.v19.services.ContentCreatorInsightsService/GenerateTrendingInsights"
 )
 
 // ContentCreatorInsightsServiceClient is the client API for ContentCreatorInsightsService service.
@@ -57,6 +58,19 @@ type ContentCreatorInsightsServiceClient interface {
 	//	[RangeError]()
 	//	[RequestError]()
 	GenerateCreatorInsights(ctx context.Context, in *GenerateCreatorInsightsRequest, opts ...grpc.CallOption) (*GenerateCreatorInsightsResponse, error)
+	// Returns insights for trending content on YouTube.
+	//
+	// List of thrown errors:
+	//
+	//	[AuthenticationError]()
+	//	[AuthorizationError]()
+	//	[FieldError]()
+	//	[HeaderError]()
+	//	[InternalError]()
+	//	[QuotaError]()
+	//	[RangeError]()
+	//	[RequestError]()
+	GenerateTrendingInsights(ctx context.Context, in *GenerateTrendingInsightsRequest, opts ...grpc.CallOption) (*GenerateTrendingInsightsResponse, error)
 }
 
 type contentCreatorInsightsServiceClient struct {
@@ -71,6 +85,16 @@ func (c *contentCreatorInsightsServiceClient) GenerateCreatorInsights(ctx contex
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GenerateCreatorInsightsResponse)
 	err := c.cc.Invoke(ctx, ContentCreatorInsightsService_GenerateCreatorInsights_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *contentCreatorInsightsServiceClient) GenerateTrendingInsights(ctx context.Context, in *GenerateTrendingInsightsRequest, opts ...grpc.CallOption) (*GenerateTrendingInsightsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GenerateTrendingInsightsResponse)
+	err := c.cc.Invoke(ctx, ContentCreatorInsightsService_GenerateTrendingInsights_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -98,6 +122,19 @@ type ContentCreatorInsightsServiceServer interface {
 	//	[RangeError]()
 	//	[RequestError]()
 	GenerateCreatorInsights(context.Context, *GenerateCreatorInsightsRequest) (*GenerateCreatorInsightsResponse, error)
+	// Returns insights for trending content on YouTube.
+	//
+	// List of thrown errors:
+	//
+	//	[AuthenticationError]()
+	//	[AuthorizationError]()
+	//	[FieldError]()
+	//	[HeaderError]()
+	//	[InternalError]()
+	//	[QuotaError]()
+	//	[RangeError]()
+	//	[RequestError]()
+	GenerateTrendingInsights(context.Context, *GenerateTrendingInsightsRequest) (*GenerateTrendingInsightsResponse, error)
 	mustEmbedUnimplementedContentCreatorInsightsServiceServer()
 }
 
@@ -110,6 +147,9 @@ type UnimplementedContentCreatorInsightsServiceServer struct{}
 
 func (UnimplementedContentCreatorInsightsServiceServer) GenerateCreatorInsights(context.Context, *GenerateCreatorInsightsRequest) (*GenerateCreatorInsightsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GenerateCreatorInsights not implemented")
+}
+func (UnimplementedContentCreatorInsightsServiceServer) GenerateTrendingInsights(context.Context, *GenerateTrendingInsightsRequest) (*GenerateTrendingInsightsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GenerateTrendingInsights not implemented")
 }
 func (UnimplementedContentCreatorInsightsServiceServer) mustEmbedUnimplementedContentCreatorInsightsServiceServer() {
 }
@@ -151,18 +191,40 @@ func _ContentCreatorInsightsService_GenerateCreatorInsights_Handler(srv interfac
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ContentCreatorInsightsService_GenerateTrendingInsights_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenerateTrendingInsightsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ContentCreatorInsightsServiceServer).GenerateTrendingInsights(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ContentCreatorInsightsService_GenerateTrendingInsights_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ContentCreatorInsightsServiceServer).GenerateTrendingInsights(ctx, req.(*GenerateTrendingInsightsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // ContentCreatorInsightsService_ServiceDesc is the grpc.ServiceDesc for ContentCreatorInsightsService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ContentCreatorInsightsService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v18.services.ContentCreatorInsightsService",
+	ServiceName: "google.ads.googleads.v19.services.ContentCreatorInsightsService",
 	HandlerType: (*ContentCreatorInsightsServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "GenerateCreatorInsights",
 			Handler:    _ContentCreatorInsightsService_GenerateCreatorInsights_Handler,
 		},
+		{
+			MethodName: "GenerateTrendingInsights",
+			Handler:    _ContentCreatorInsightsService_GenerateTrendingInsights_Handler,
+		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v18/services/content_creator_insights_service.proto",
+	Metadata: "google/ads/googleads/v19/services/content_creator_insights_service.proto",
 }

@@ -1,4 +1,4 @@
-// Copyright 2024 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package clients
 import (
 	"context"
 	"fmt"
+	"log/slog"
 	"math"
 	"net/url"
 	"time"
@@ -339,6 +340,8 @@ type audienceInsightsGRPCClient struct {
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogHeaders []string
+
+	logger *slog.Logger
 }
 
 // NewAudienceInsightsClient creates a new audience insights service client based on gRPC.
@@ -367,6 +370,7 @@ func NewAudienceInsightsClient(ctx context.Context, opts ...option.ClientOption)
 		connPool:               connPool,
 		audienceInsightsClient: servicespb.NewAudienceInsightsServiceClient(connPool),
 		CallOptions:            &client.CallOptions,
+		logger:                 internaloption.GetLogger(opts),
 	}
 	c.setGoogleClientInfo()
 
@@ -409,7 +413,7 @@ func (c *audienceInsightsGRPCClient) GenerateInsightsFinderReport(ctx context.Co
 	var resp *servicespb.GenerateInsightsFinderReportResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.audienceInsightsClient.GenerateInsightsFinderReport(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.audienceInsightsClient.GenerateInsightsFinderReport, req, settings.GRPC, c.logger, "GenerateInsightsFinderReport")
 		return err
 	}, opts...)
 	if err != nil {
@@ -427,7 +431,7 @@ func (c *audienceInsightsGRPCClient) ListAudienceInsightsAttributes(ctx context.
 	var resp *servicespb.ListAudienceInsightsAttributesResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.audienceInsightsClient.ListAudienceInsightsAttributes(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.audienceInsightsClient.ListAudienceInsightsAttributes, req, settings.GRPC, c.logger, "ListAudienceInsightsAttributes")
 		return err
 	}, opts...)
 	if err != nil {
@@ -442,7 +446,7 @@ func (c *audienceInsightsGRPCClient) ListInsightsEligibleDates(ctx context.Conte
 	var resp *servicespb.ListInsightsEligibleDatesResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.audienceInsightsClient.ListInsightsEligibleDates(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.audienceInsightsClient.ListInsightsEligibleDates, req, settings.GRPC, c.logger, "ListInsightsEligibleDates")
 		return err
 	}, opts...)
 	if err != nil {
@@ -460,7 +464,7 @@ func (c *audienceInsightsGRPCClient) GenerateAudienceCompositionInsights(ctx con
 	var resp *servicespb.GenerateAudienceCompositionInsightsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.audienceInsightsClient.GenerateAudienceCompositionInsights(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.audienceInsightsClient.GenerateAudienceCompositionInsights, req, settings.GRPC, c.logger, "GenerateAudienceCompositionInsights")
 		return err
 	}, opts...)
 	if err != nil {
@@ -478,7 +482,7 @@ func (c *audienceInsightsGRPCClient) GenerateSuggestedTargetingInsights(ctx cont
 	var resp *servicespb.GenerateSuggestedTargetingInsightsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.audienceInsightsClient.GenerateSuggestedTargetingInsights(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.audienceInsightsClient.GenerateSuggestedTargetingInsights, req, settings.GRPC, c.logger, "GenerateSuggestedTargetingInsights")
 		return err
 	}, opts...)
 	if err != nil {
@@ -496,7 +500,7 @@ func (c *audienceInsightsGRPCClient) GenerateAudienceOverlapInsights(ctx context
 	var resp *servicespb.GenerateAudienceOverlapInsightsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.audienceInsightsClient.GenerateAudienceOverlapInsights(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.audienceInsightsClient.GenerateAudienceOverlapInsights, req, settings.GRPC, c.logger, "GenerateAudienceOverlapInsights")
 		return err
 	}, opts...)
 	if err != nil {
@@ -514,7 +518,7 @@ func (c *audienceInsightsGRPCClient) GenerateTargetingSuggestionMetrics(ctx cont
 	var resp *servicespb.GenerateTargetingSuggestionMetricsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.audienceInsightsClient.GenerateTargetingSuggestionMetrics(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.audienceInsightsClient.GenerateTargetingSuggestionMetrics, req, settings.GRPC, c.logger, "GenerateTargetingSuggestionMetrics")
 		return err
 	}, opts...)
 	if err != nil {

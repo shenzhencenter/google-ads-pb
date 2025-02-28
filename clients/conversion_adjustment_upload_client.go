@@ -1,4 +1,4 @@
-// Copyright 2024 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package clients
 import (
 	"context"
 	"fmt"
+	"log/slog"
 	"math"
 	"net/url"
 	"time"
@@ -144,6 +145,8 @@ type conversionAdjustmentUploadGRPCClient struct {
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogHeaders []string
+
+	logger *slog.Logger
 }
 
 // NewConversionAdjustmentUploadClient creates a new conversion adjustment upload service client based on gRPC.
@@ -170,6 +173,7 @@ func NewConversionAdjustmentUploadClient(ctx context.Context, opts ...option.Cli
 		connPool:                         connPool,
 		conversionAdjustmentUploadClient: servicespb.NewConversionAdjustmentUploadServiceClient(connPool),
 		CallOptions:                      &client.CallOptions,
+		logger:                           internaloption.GetLogger(opts),
 	}
 	c.setGoogleClientInfo()
 
@@ -212,7 +216,7 @@ func (c *conversionAdjustmentUploadGRPCClient) UploadConversionAdjustments(ctx c
 	var resp *servicespb.UploadConversionAdjustmentsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.conversionAdjustmentUploadClient.UploadConversionAdjustments(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.conversionAdjustmentUploadClient.UploadConversionAdjustments, req, settings.GRPC, c.logger, "UploadConversionAdjustments")
 		return err
 	}, opts...)
 	if err != nil {

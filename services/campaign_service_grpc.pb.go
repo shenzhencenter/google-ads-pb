@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v18/services/campaign_service.proto
+// source: google/ads/googleads/v19/services/campaign_service.proto
 
 package services
 
@@ -33,7 +33,8 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	CampaignService_MutateCampaigns_FullMethodName = "/google.ads.googleads.v18.services.CampaignService/MutateCampaigns"
+	CampaignService_MutateCampaigns_FullMethodName           = "/google.ads.googleads.v19.services.CampaignService/MutateCampaigns"
+	CampaignService_EnablePMaxBrandGuidelines_FullMethodName = "/google.ads.googleads.v19.services.CampaignService/EnablePMaxBrandGuidelines"
 )
 
 // CampaignServiceClient is the client API for CampaignService service.
@@ -82,6 +83,23 @@ type CampaignServiceClient interface {
 	//	[StringLengthError]()
 	//	[UrlFieldError]()
 	MutateCampaigns(ctx context.Context, in *MutateCampaignsRequest, opts ...grpc.CallOption) (*MutateCampaignsResponse, error)
+	// Enables Brand Guidelines for Performance Max campaigns.
+	//
+	// List of thrown errors:
+	//
+	//	[AuthenticationError]()
+	//	[AssetError]()
+	//	[AssetLinkError]()
+	//	[AuthorizationError]()
+	//	[BrandGuidelinesMigrationError]()
+	//	[CampaignError]()
+	//	[HeaderError]()
+	//	[InternalError]()
+	//	[MutateError]()
+	//	[QuotaError]()
+	//	[RequestError]()
+	//	[ResourceCountLimitExceededError]()
+	EnablePMaxBrandGuidelines(ctx context.Context, in *EnablePMaxBrandGuidelinesRequest, opts ...grpc.CallOption) (*EnablePMaxBrandGuidelinesResponse, error)
 }
 
 type campaignServiceClient struct {
@@ -96,6 +114,16 @@ func (c *campaignServiceClient) MutateCampaigns(ctx context.Context, in *MutateC
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(MutateCampaignsResponse)
 	err := c.cc.Invoke(ctx, CampaignService_MutateCampaigns_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *campaignServiceClient) EnablePMaxBrandGuidelines(ctx context.Context, in *EnablePMaxBrandGuidelinesRequest, opts ...grpc.CallOption) (*EnablePMaxBrandGuidelinesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(EnablePMaxBrandGuidelinesResponse)
+	err := c.cc.Invoke(ctx, CampaignService_EnablePMaxBrandGuidelines_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -148,6 +176,23 @@ type CampaignServiceServer interface {
 	//	[StringLengthError]()
 	//	[UrlFieldError]()
 	MutateCampaigns(context.Context, *MutateCampaignsRequest) (*MutateCampaignsResponse, error)
+	// Enables Brand Guidelines for Performance Max campaigns.
+	//
+	// List of thrown errors:
+	//
+	//	[AuthenticationError]()
+	//	[AssetError]()
+	//	[AssetLinkError]()
+	//	[AuthorizationError]()
+	//	[BrandGuidelinesMigrationError]()
+	//	[CampaignError]()
+	//	[HeaderError]()
+	//	[InternalError]()
+	//	[MutateError]()
+	//	[QuotaError]()
+	//	[RequestError]()
+	//	[ResourceCountLimitExceededError]()
+	EnablePMaxBrandGuidelines(context.Context, *EnablePMaxBrandGuidelinesRequest) (*EnablePMaxBrandGuidelinesResponse, error)
 	mustEmbedUnimplementedCampaignServiceServer()
 }
 
@@ -160,6 +205,9 @@ type UnimplementedCampaignServiceServer struct{}
 
 func (UnimplementedCampaignServiceServer) MutateCampaigns(context.Context, *MutateCampaignsRequest) (*MutateCampaignsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MutateCampaigns not implemented")
+}
+func (UnimplementedCampaignServiceServer) EnablePMaxBrandGuidelines(context.Context, *EnablePMaxBrandGuidelinesRequest) (*EnablePMaxBrandGuidelinesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method EnablePMaxBrandGuidelines not implemented")
 }
 func (UnimplementedCampaignServiceServer) mustEmbedUnimplementedCampaignServiceServer() {}
 func (UnimplementedCampaignServiceServer) testEmbeddedByValue()                         {}
@@ -200,18 +248,40 @@ func _CampaignService_MutateCampaigns_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CampaignService_EnablePMaxBrandGuidelines_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(EnablePMaxBrandGuidelinesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CampaignServiceServer).EnablePMaxBrandGuidelines(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: CampaignService_EnablePMaxBrandGuidelines_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CampaignServiceServer).EnablePMaxBrandGuidelines(ctx, req.(*EnablePMaxBrandGuidelinesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // CampaignService_ServiceDesc is the grpc.ServiceDesc for CampaignService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CampaignService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v18.services.CampaignService",
+	ServiceName: "google.ads.googleads.v19.services.CampaignService",
 	HandlerType: (*CampaignServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "MutateCampaigns",
 			Handler:    _CampaignService_MutateCampaigns_Handler,
 		},
+		{
+			MethodName: "EnablePMaxBrandGuidelines",
+			Handler:    _CampaignService_EnablePMaxBrandGuidelines_Handler,
+		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v18/services/campaign_service.proto",
+	Metadata: "google/ads/googleads/v19/services/campaign_service.proto",
 }

@@ -1,4 +1,4 @@
-// Copyright 2024 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package clients
 import (
 	"context"
 	"fmt"
+	"log/slog"
 	"math"
 	"net/url"
 	"time"
@@ -206,6 +207,8 @@ type recommendationGRPCClient struct {
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogHeaders []string
+
+	logger *slog.Logger
 }
 
 // NewRecommendationClient creates a new recommendation service client based on gRPC.
@@ -232,6 +235,7 @@ func NewRecommendationClient(ctx context.Context, opts ...option.ClientOption) (
 		connPool:             connPool,
 		recommendationClient: servicespb.NewRecommendationServiceClient(connPool),
 		CallOptions:          &client.CallOptions,
+		logger:               internaloption.GetLogger(opts),
 	}
 	c.setGoogleClientInfo()
 
@@ -274,7 +278,7 @@ func (c *recommendationGRPCClient) ApplyRecommendation(ctx context.Context, req 
 	var resp *servicespb.ApplyRecommendationResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.recommendationClient.ApplyRecommendation(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.recommendationClient.ApplyRecommendation, req, settings.GRPC, c.logger, "ApplyRecommendation")
 		return err
 	}, opts...)
 	if err != nil {
@@ -292,7 +296,7 @@ func (c *recommendationGRPCClient) DismissRecommendation(ctx context.Context, re
 	var resp *servicespb.DismissRecommendationResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.recommendationClient.DismissRecommendation(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.recommendationClient.DismissRecommendation, req, settings.GRPC, c.logger, "DismissRecommendation")
 		return err
 	}, opts...)
 	if err != nil {
@@ -310,7 +314,7 @@ func (c *recommendationGRPCClient) GenerateRecommendations(ctx context.Context, 
 	var resp *servicespb.GenerateRecommendationsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.recommendationClient.GenerateRecommendations(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.recommendationClient.GenerateRecommendations, req, settings.GRPC, c.logger, "GenerateRecommendations")
 		return err
 	}, opts...)
 	if err != nil {

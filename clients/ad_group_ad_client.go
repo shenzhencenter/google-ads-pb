@@ -1,4 +1,4 @@
-// Copyright 2024 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package clients
 import (
 	"context"
 	"fmt"
+	"log/slog"
 	"math"
 	"net/url"
 	"time"
@@ -211,6 +212,8 @@ type adGroupAdGRPCClient struct {
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogHeaders []string
+
+	logger *slog.Logger
 }
 
 // NewAdGroupAdClient creates a new ad group ad service client based on gRPC.
@@ -237,6 +240,7 @@ func NewAdGroupAdClient(ctx context.Context, opts ...option.ClientOption) (*AdGr
 		connPool:        connPool,
 		adGroupAdClient: servicespb.NewAdGroupAdServiceClient(connPool),
 		CallOptions:     &client.CallOptions,
+		logger:          internaloption.GetLogger(opts),
 	}
 	c.setGoogleClientInfo()
 
@@ -279,7 +283,7 @@ func (c *adGroupAdGRPCClient) MutateAdGroupAds(ctx context.Context, req *service
 	var resp *servicespb.MutateAdGroupAdsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.adGroupAdClient.MutateAdGroupAds(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.adGroupAdClient.MutateAdGroupAds, req, settings.GRPC, c.logger, "MutateAdGroupAds")
 		return err
 	}, opts...)
 	if err != nil {
@@ -296,7 +300,7 @@ func (c *adGroupAdGRPCClient) RemoveAutomaticallyCreatedAssets(ctx context.Conte
 	opts = append((*c.CallOptions).RemoveAutomaticallyCreatedAssets[0:len((*c.CallOptions).RemoveAutomaticallyCreatedAssets):len((*c.CallOptions).RemoveAutomaticallyCreatedAssets)], opts...)
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		_, err = c.adGroupAdClient.RemoveAutomaticallyCreatedAssets(ctx, req, settings.GRPC...)
+		_, err = executeRPC(ctx, c.adGroupAdClient.RemoveAutomaticallyCreatedAssets, req, settings.GRPC, c.logger, "RemoveAutomaticallyCreatedAssets")
 		return err
 	}, opts...)
 	return err

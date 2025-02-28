@@ -1,4 +1,4 @@
-// Copyright 2024 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package clients
 import (
 	"context"
 	"fmt"
+	"log/slog"
 	"math"
 	"net/url"
 	"time"
@@ -146,6 +147,8 @@ type conversionCustomVariableGRPCClient struct {
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogHeaders []string
+
+	logger *slog.Logger
 }
 
 // NewConversionCustomVariableClient creates a new conversion custom variable service client based on gRPC.
@@ -172,6 +175,7 @@ func NewConversionCustomVariableClient(ctx context.Context, opts ...option.Clien
 		connPool:                       connPool,
 		conversionCustomVariableClient: servicespb.NewConversionCustomVariableServiceClient(connPool),
 		CallOptions:                    &client.CallOptions,
+		logger:                         internaloption.GetLogger(opts),
 	}
 	c.setGoogleClientInfo()
 
@@ -214,7 +218,7 @@ func (c *conversionCustomVariableGRPCClient) MutateConversionCustomVariables(ctx
 	var resp *servicespb.MutateConversionCustomVariablesResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.conversionCustomVariableClient.MutateConversionCustomVariables(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.conversionCustomVariableClient.MutateConversionCustomVariables, req, settings.GRPC, c.logger, "MutateConversionCustomVariables")
 		return err
 	}, opts...)
 	if err != nil {

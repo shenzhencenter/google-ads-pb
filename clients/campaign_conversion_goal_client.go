@@ -1,4 +1,4 @@
-// Copyright 2024 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package clients
 import (
 	"context"
 	"fmt"
+	"log/slog"
 	"math"
 	"net/url"
 	"time"
@@ -136,6 +137,8 @@ type campaignConversionGoalGRPCClient struct {
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogHeaders []string
+
+	logger *slog.Logger
 }
 
 // NewCampaignConversionGoalClient creates a new campaign conversion goal service client based on gRPC.
@@ -162,6 +165,7 @@ func NewCampaignConversionGoalClient(ctx context.Context, opts ...option.ClientO
 		connPool:                     connPool,
 		campaignConversionGoalClient: servicespb.NewCampaignConversionGoalServiceClient(connPool),
 		CallOptions:                  &client.CallOptions,
+		logger:                       internaloption.GetLogger(opts),
 	}
 	c.setGoogleClientInfo()
 
@@ -204,7 +208,7 @@ func (c *campaignConversionGoalGRPCClient) MutateCampaignConversionGoals(ctx con
 	var resp *servicespb.MutateCampaignConversionGoalsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.campaignConversionGoalClient.MutateCampaignConversionGoals(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.campaignConversionGoalClient.MutateCampaignConversionGoals, req, settings.GRPC, c.logger, "MutateCampaignConversionGoals")
 		return err
 	}, opts...)
 	if err != nil {

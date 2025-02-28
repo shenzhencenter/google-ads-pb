@@ -1,4 +1,4 @@
-// Copyright 2024 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package clients
 import (
 	"context"
 	"fmt"
+	"log/slog"
 	"math"
 	"net/url"
 	"time"
@@ -36,7 +37,8 @@ var newContentCreatorInsightsClientHook clientHook
 
 // ContentCreatorInsightsCallOptions contains the retry settings for each method of ContentCreatorInsightsClient.
 type ContentCreatorInsightsCallOptions struct {
-	GenerateCreatorInsights []gax.CallOption
+	GenerateCreatorInsights  []gax.CallOption
+	GenerateTrendingInsights []gax.CallOption
 }
 
 func defaultContentCreatorInsightsGRPCClientOptions() []option.ClientOption {
@@ -69,6 +71,19 @@ func defaultContentCreatorInsightsCallOptions() *ContentCreatorInsightsCallOptio
 				})
 			}),
 		},
+		GenerateTrendingInsights: []gax.CallOption{
+			gax.WithTimeout(14400000 * time.Millisecond),
+			gax.WithRetry(func() gax.Retryer {
+				return gax.OnCodes([]codes.Code{
+					codes.Unavailable,
+					codes.DeadlineExceeded,
+				}, gax.Backoff{
+					Initial:    5000 * time.Millisecond,
+					Max:        60000 * time.Millisecond,
+					Multiplier: 1.30,
+				})
+			}),
+		},
 	}
 }
 
@@ -78,6 +93,7 @@ type internalContentCreatorInsightsClient interface {
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
 	GenerateCreatorInsights(context.Context, *servicespb.GenerateCreatorInsightsRequest, ...gax.CallOption) (*servicespb.GenerateCreatorInsightsResponse, error)
+	GenerateTrendingInsights(context.Context, *servicespb.GenerateTrendingInsightsRequest, ...gax.CallOption) (*servicespb.GenerateTrendingInsightsResponse, error)
 }
 
 // ContentCreatorInsightsClient is a client for interacting with Google Ads API.
@@ -132,6 +148,21 @@ func (c *ContentCreatorInsightsClient) GenerateCreatorInsights(ctx context.Conte
 	return c.internalClient.GenerateCreatorInsights(ctx, req, opts...)
 }
 
+// GenerateTrendingInsights returns insights for trending content on YouTube.
+//
+// List of thrown errors:
+// AuthenticationError (at )
+// AuthorizationError (at )
+// FieldError (at )
+// HeaderError (at )
+// InternalError (at )
+// QuotaError (at )
+// RangeError (at )
+// RequestError (at )
+func (c *ContentCreatorInsightsClient) GenerateTrendingInsights(ctx context.Context, req *servicespb.GenerateTrendingInsightsRequest, opts ...gax.CallOption) (*servicespb.GenerateTrendingInsightsResponse, error) {
+	return c.internalClient.GenerateTrendingInsights(ctx, req, opts...)
+}
+
 // contentCreatorInsightsGRPCClient is a client for interacting with Google Ads API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
@@ -147,6 +178,8 @@ type contentCreatorInsightsGRPCClient struct {
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogHeaders []string
+
+	logger *slog.Logger
 }
 
 // NewContentCreatorInsightsClient creates a new content creator insights service client based on gRPC.
@@ -175,6 +208,7 @@ func NewContentCreatorInsightsClient(ctx context.Context, opts ...option.ClientO
 		connPool:                     connPool,
 		contentCreatorInsightsClient: servicespb.NewContentCreatorInsightsServiceClient(connPool),
 		CallOptions:                  &client.CallOptions,
+		logger:                       internaloption.GetLogger(opts),
 	}
 	c.setGoogleClientInfo()
 
@@ -217,7 +251,25 @@ func (c *contentCreatorInsightsGRPCClient) GenerateCreatorInsights(ctx context.C
 	var resp *servicespb.GenerateCreatorInsightsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.contentCreatorInsightsClient.GenerateCreatorInsights(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.contentCreatorInsightsClient.GenerateCreatorInsights, req, settings.GRPC, c.logger, "GenerateCreatorInsights")
+		return err
+	}, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return resp, nil
+}
+
+func (c *contentCreatorInsightsGRPCClient) GenerateTrendingInsights(ctx context.Context, req *servicespb.GenerateTrendingInsightsRequest, opts ...gax.CallOption) (*servicespb.GenerateTrendingInsightsResponse, error) {
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId()))}
+
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
+	opts = append((*c.CallOptions).GenerateTrendingInsights[0:len((*c.CallOptions).GenerateTrendingInsights):len((*c.CallOptions).GenerateTrendingInsights)], opts...)
+	var resp *servicespb.GenerateTrendingInsightsResponse
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		resp, err = executeRPC(ctx, c.contentCreatorInsightsClient.GenerateTrendingInsights, req, settings.GRPC, c.logger, "GenerateTrendingInsights")
 		return err
 	}, opts...)
 	if err != nil {

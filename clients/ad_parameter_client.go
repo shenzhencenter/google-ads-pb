@@ -1,4 +1,4 @@
-// Copyright 2024 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package clients
 import (
 	"context"
 	"fmt"
+	"log/slog"
 	"math"
 	"net/url"
 	"time"
@@ -150,6 +151,8 @@ type adParameterGRPCClient struct {
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogHeaders []string
+
+	logger *slog.Logger
 }
 
 // NewAdParameterClient creates a new ad parameter service client based on gRPC.
@@ -176,6 +179,7 @@ func NewAdParameterClient(ctx context.Context, opts ...option.ClientOption) (*Ad
 		connPool:          connPool,
 		adParameterClient: servicespb.NewAdParameterServiceClient(connPool),
 		CallOptions:       &client.CallOptions,
+		logger:            internaloption.GetLogger(opts),
 	}
 	c.setGoogleClientInfo()
 
@@ -218,7 +222,7 @@ func (c *adParameterGRPCClient) MutateAdParameters(ctx context.Context, req *ser
 	var resp *servicespb.MutateAdParametersResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.adParameterClient.MutateAdParameters(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.adParameterClient.MutateAdParameters, req, settings.GRPC, c.logger, "MutateAdParameters")
 		return err
 	}, opts...)
 	if err != nil {

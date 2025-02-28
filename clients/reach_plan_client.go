@@ -1,4 +1,4 @@
-// Copyright 2024 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package clients
 import (
 	"context"
 	"fmt"
+	"log/slog"
 	"math"
 	"net/url"
 	"time"
@@ -207,6 +208,8 @@ type reachPlanGRPCClient struct {
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogHeaders []string
+
+	logger *slog.Logger
 }
 
 // NewReachPlanClient creates a new reach plan service client based on gRPC.
@@ -237,6 +240,7 @@ func NewReachPlanClient(ctx context.Context, opts ...option.ClientOption) (*Reac
 		connPool:        connPool,
 		reachPlanClient: servicespb.NewReachPlanServiceClient(connPool),
 		CallOptions:     &client.CallOptions,
+		logger:          internaloption.GetLogger(opts),
 	}
 	c.setGoogleClientInfo()
 
@@ -276,7 +280,7 @@ func (c *reachPlanGRPCClient) ListPlannableLocations(ctx context.Context, req *s
 	var resp *servicespb.ListPlannableLocationsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.reachPlanClient.ListPlannableLocations(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.reachPlanClient.ListPlannableLocations, req, settings.GRPC, c.logger, "ListPlannableLocations")
 		return err
 	}, opts...)
 	if err != nil {
@@ -291,7 +295,7 @@ func (c *reachPlanGRPCClient) ListPlannableProducts(ctx context.Context, req *se
 	var resp *servicespb.ListPlannableProductsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.reachPlanClient.ListPlannableProducts(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.reachPlanClient.ListPlannableProducts, req, settings.GRPC, c.logger, "ListPlannableProducts")
 		return err
 	}, opts...)
 	if err != nil {
@@ -309,7 +313,7 @@ func (c *reachPlanGRPCClient) GenerateReachForecast(ctx context.Context, req *se
 	var resp *servicespb.GenerateReachForecastResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.reachPlanClient.GenerateReachForecast(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.reachPlanClient.GenerateReachForecast, req, settings.GRPC, c.logger, "GenerateReachForecast")
 		return err
 	}, opts...)
 	if err != nil {
