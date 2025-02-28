@@ -1,4 +1,4 @@
-// Copyright 2024 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package clients
 import (
 	"context"
 	"fmt"
+	"log/slog"
 	"math"
 	"net/url"
 	"time"
@@ -159,6 +160,8 @@ type accountBudgetProposalGRPCClient struct {
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogHeaders []string
+
+	logger *slog.Logger
 }
 
 // NewAccountBudgetProposalClient creates a new account budget proposal service client based on gRPC.
@@ -193,6 +196,7 @@ func NewAccountBudgetProposalClient(ctx context.Context, opts ...option.ClientOp
 		connPool:                    connPool,
 		accountBudgetProposalClient: servicespb.NewAccountBudgetProposalServiceClient(connPool),
 		CallOptions:                 &client.CallOptions,
+		logger:                      internaloption.GetLogger(opts),
 	}
 	c.setGoogleClientInfo()
 
@@ -235,7 +239,7 @@ func (c *accountBudgetProposalGRPCClient) MutateAccountBudgetProposal(ctx contex
 	var resp *servicespb.MutateAccountBudgetProposalResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.accountBudgetProposalClient.MutateAccountBudgetProposal(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.accountBudgetProposalClient.MutateAccountBudgetProposal, req, settings.GRPC, c.logger, "MutateAccountBudgetProposal")
 		return err
 	}, opts...)
 	if err != nil {

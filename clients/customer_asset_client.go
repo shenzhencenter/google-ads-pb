@@ -1,4 +1,4 @@
-// Copyright 2024 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package clients
 import (
 	"context"
 	"fmt"
+	"log/slog"
 	"math"
 	"net/url"
 	"time"
@@ -147,6 +148,8 @@ type customerAssetGRPCClient struct {
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogHeaders []string
+
+	logger *slog.Logger
 }
 
 // NewCustomerAssetClient creates a new customer asset service client based on gRPC.
@@ -173,6 +176,7 @@ func NewCustomerAssetClient(ctx context.Context, opts ...option.ClientOption) (*
 		connPool:            connPool,
 		customerAssetClient: servicespb.NewCustomerAssetServiceClient(connPool),
 		CallOptions:         &client.CallOptions,
+		logger:              internaloption.GetLogger(opts),
 	}
 	c.setGoogleClientInfo()
 
@@ -215,7 +219,7 @@ func (c *customerAssetGRPCClient) MutateCustomerAssets(ctx context.Context, req 
 	var resp *servicespb.MutateCustomerAssetsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.customerAssetClient.MutateCustomerAssets(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.customerAssetClient.MutateCustomerAssets, req, settings.GRPC, c.logger, "MutateCustomerAssets")
 		return err
 	}, opts...)
 	if err != nil {

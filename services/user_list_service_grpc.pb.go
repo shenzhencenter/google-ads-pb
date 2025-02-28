@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v18/services/user_list_service.proto
+// source: google/ads/googleads/v19/services/user_list_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	UserListService_MutateUserLists_FullMethodName = "/google.ads.googleads.v18.services.UserListService/MutateUserLists"
+	UserListService_MutateUserLists_FullMethodName = "/google.ads.googleads.v19.services.UserListService/MutateUserLists"
 )
 
 // UserListServiceClient is the client API for UserListService service.
@@ -174,7 +174,7 @@ func _UserListService_MutateUserLists_Handler(srv interface{}, ctx context.Conte
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var UserListService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v18.services.UserListService",
+	ServiceName: "google.ads.googleads.v19.services.UserListService",
 	HandlerType: (*UserListServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -183,5 +183,5 @@ var UserListService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v18/services/user_list_service.proto",
+	Metadata: "google/ads/googleads/v19/services/user_list_service.proto",
 }

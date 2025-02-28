@@ -1,4 +1,4 @@
-// Copyright 2024 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package clients
 import (
 	"context"
 	"fmt"
+	"log/slog"
 	"math"
 	"net/url"
 	"time"
@@ -174,6 +175,8 @@ type conversionUploadGRPCClient struct {
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogHeaders []string
+
+	logger *slog.Logger
 }
 
 // NewConversionUploadClient creates a new conversion upload service client based on gRPC.
@@ -200,6 +203,7 @@ func NewConversionUploadClient(ctx context.Context, opts ...option.ClientOption)
 		connPool:               connPool,
 		conversionUploadClient: servicespb.NewConversionUploadServiceClient(connPool),
 		CallOptions:            &client.CallOptions,
+		logger:                 internaloption.GetLogger(opts),
 	}
 	c.setGoogleClientInfo()
 
@@ -242,7 +246,7 @@ func (c *conversionUploadGRPCClient) UploadClickConversions(ctx context.Context,
 	var resp *servicespb.UploadClickConversionsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.conversionUploadClient.UploadClickConversions(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.conversionUploadClient.UploadClickConversions, req, settings.GRPC, c.logger, "UploadClickConversions")
 		return err
 	}, opts...)
 	if err != nil {
@@ -260,7 +264,7 @@ func (c *conversionUploadGRPCClient) UploadCallConversions(ctx context.Context, 
 	var resp *servicespb.UploadCallConversionsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.conversionUploadClient.UploadCallConversions(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.conversionUploadClient.UploadCallConversions, req, settings.GRPC, c.logger, "UploadCallConversions")
 		return err
 	}, opts...)
 	if err != nil {

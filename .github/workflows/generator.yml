@@ -6,7 +6,6 @@ on:
       version:
         description: "version"
         required: true
-        default: "v17.1"
 
 jobs:
   build:
@@ -64,7 +63,8 @@ jobs:
           cp -r $BUILD_PATH/* $OUTPUT_PATH/ && rm -rf $OUTPUT_PATH/google.golang.org
           find $OUTPUT_PATH -name '*.go' -exec sed -i "s|${BUILD_PKG}|${PUBLISH_PKG}|g" '{}' \;
           find $OUTPUT_PATH/clients/internal/snippets -name '*.go' -exec sed -i "s|\"clients\"|\"${PUBLISH_PKG}/clients\"|g" '{}' \;
-          rm -rf $OUTPUT_PATH/clients/*_example_test.go
+          rm -rf $OUTPUT_PATH/clients/*_test.go
+          rm -rf $OUTPUT_PATH/clients/internal/snippets
 
       - name: Fix errors
         run: |

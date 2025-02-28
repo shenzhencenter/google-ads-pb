@@ -1,4 +1,4 @@
-// Copyright 2024 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package clients
 import (
 	"context"
 	"fmt"
+	"log/slog"
 	"math"
 	"net/url"
 	"time"
@@ -136,6 +137,8 @@ type brandSuggestionGRPCClient struct {
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogHeaders []string
+
+	logger *slog.Logger
 }
 
 // NewBrandSuggestionClient creates a new brand suggestion service client based on gRPC.
@@ -162,6 +165,7 @@ func NewBrandSuggestionClient(ctx context.Context, opts ...option.ClientOption) 
 		connPool:              connPool,
 		brandSuggestionClient: servicespb.NewBrandSuggestionServiceClient(connPool),
 		CallOptions:           &client.CallOptions,
+		logger:                internaloption.GetLogger(opts),
 	}
 	c.setGoogleClientInfo()
 
@@ -204,7 +208,7 @@ func (c *brandSuggestionGRPCClient) SuggestBrands(ctx context.Context, req *serv
 	var resp *servicespb.SuggestBrandsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.brandSuggestionClient.SuggestBrands(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.brandSuggestionClient.SuggestBrands, req, settings.GRPC, c.logger, "SuggestBrands")
 		return err
 	}, opts...)
 	if err != nil {

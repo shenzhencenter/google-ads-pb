@@ -1,4 +1,4 @@
-// Copyright 2024 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package clients
 import (
 	"context"
 	"fmt"
+	"log/slog"
 	"math"
 	"net/url"
 	"time"
@@ -135,6 +136,8 @@ type shareablePreviewGRPCClient struct {
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogHeaders []string
+
+	logger *slog.Logger
 }
 
 // NewShareablePreviewClient creates a new shareable preview service client based on gRPC.
@@ -161,6 +164,7 @@ func NewShareablePreviewClient(ctx context.Context, opts ...option.ClientOption)
 		connPool:               connPool,
 		shareablePreviewClient: servicespb.NewShareablePreviewServiceClient(connPool),
 		CallOptions:            &client.CallOptions,
+		logger:                 internaloption.GetLogger(opts),
 	}
 	c.setGoogleClientInfo()
 
@@ -203,7 +207,7 @@ func (c *shareablePreviewGRPCClient) GenerateShareablePreviews(ctx context.Conte
 	var resp *servicespb.GenerateShareablePreviewsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.shareablePreviewClient.GenerateShareablePreviews(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.shareablePreviewClient.GenerateShareablePreviews, req, settings.GRPC, c.logger, "GenerateShareablePreviews")
 		return err
 	}, opts...)
 	if err != nil {

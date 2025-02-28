@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v18/services/smart_campaign_suggest_service.proto
+// source: google/ads/googleads/v19/services/smart_campaign_suggest_service.proto
 
 package services
 
@@ -33,9 +33,9 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	SmartCampaignSuggestService_SuggestSmartCampaignBudgetOptions_FullMethodName = "/google.ads.googleads.v18.services.SmartCampaignSuggestService/SuggestSmartCampaignBudgetOptions"
-	SmartCampaignSuggestService_SuggestSmartCampaignAd_FullMethodName            = "/google.ads.googleads.v18.services.SmartCampaignSuggestService/SuggestSmartCampaignAd"
-	SmartCampaignSuggestService_SuggestKeywordThemes_FullMethodName              = "/google.ads.googleads.v18.services.SmartCampaignSuggestService/SuggestKeywordThemes"
+	SmartCampaignSuggestService_SuggestSmartCampaignBudgetOptions_FullMethodName = "/google.ads.googleads.v19.services.SmartCampaignSuggestService/SuggestSmartCampaignBudgetOptions"
+	SmartCampaignSuggestService_SuggestSmartCampaignAd_FullMethodName            = "/google.ads.googleads.v19.services.SmartCampaignSuggestService/SuggestSmartCampaignAd"
+	SmartCampaignSuggestService_SuggestKeywordThemes_FullMethodName              = "/google.ads.googleads.v19.services.SmartCampaignSuggestService/SuggestKeywordThemes"
 )
 
 // SmartCampaignSuggestServiceClient is the client API for SmartCampaignSuggestService service.
@@ -203,7 +203,7 @@ func _SmartCampaignSuggestService_SuggestKeywordThemes_Handler(srv interface{}, 
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var SmartCampaignSuggestService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v18.services.SmartCampaignSuggestService",
+	ServiceName: "google.ads.googleads.v19.services.SmartCampaignSuggestService",
 	HandlerType: (*SmartCampaignSuggestServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -220,5 +220,5 @@ var SmartCampaignSuggestService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v18/services/smart_campaign_suggest_service.proto",
+	Metadata: "google/ads/googleads/v19/services/smart_campaign_suggest_service.proto",
 }

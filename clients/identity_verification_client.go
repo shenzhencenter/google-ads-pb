@@ -1,4 +1,4 @@
-// Copyright 2024 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package clients
 import (
 	"context"
 	"fmt"
+	"log/slog"
 	"math"
 	"net/url"
 	"time"
@@ -172,6 +173,8 @@ type identityVerificationGRPCClient struct {
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogHeaders []string
+
+	logger *slog.Logger
 }
 
 // NewIdentityVerificationClient creates a new identity verification service client based on gRPC.
@@ -198,6 +201,7 @@ func NewIdentityVerificationClient(ctx context.Context, opts ...option.ClientOpt
 		connPool:                   connPool,
 		identityVerificationClient: servicespb.NewIdentityVerificationServiceClient(connPool),
 		CallOptions:                &client.CallOptions,
+		logger:                     internaloption.GetLogger(opts),
 	}
 	c.setGoogleClientInfo()
 
@@ -239,7 +243,7 @@ func (c *identityVerificationGRPCClient) StartIdentityVerification(ctx context.C
 	opts = append((*c.CallOptions).StartIdentityVerification[0:len((*c.CallOptions).StartIdentityVerification):len((*c.CallOptions).StartIdentityVerification)], opts...)
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		_, err = c.identityVerificationClient.StartIdentityVerification(ctx, req, settings.GRPC...)
+		_, err = executeRPC(ctx, c.identityVerificationClient.StartIdentityVerification, req, settings.GRPC, c.logger, "StartIdentityVerification")
 		return err
 	}, opts...)
 	return err
@@ -254,7 +258,7 @@ func (c *identityVerificationGRPCClient) GetIdentityVerification(ctx context.Con
 	var resp *servicespb.GetIdentityVerificationResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.identityVerificationClient.GetIdentityVerification(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.identityVerificationClient.GetIdentityVerification, req, settings.GRPC, c.logger, "GetIdentityVerification")
 		return err
 	}, opts...)
 	if err != nil {

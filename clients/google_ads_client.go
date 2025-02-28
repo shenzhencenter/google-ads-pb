@@ -1,4 +1,4 @@
-// Copyright 2024 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package clients
 import (
 	"context"
 	"fmt"
+	"log/slog"
 	"math"
 	"net/url"
 	"time"
@@ -310,6 +311,8 @@ type googleAdsGRPCClient struct {
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogHeaders []string
+
+	logger *slog.Logger
 }
 
 // NewGoogleAdsClient creates a new google ads service client based on gRPC.
@@ -336,6 +339,7 @@ func NewGoogleAdsClient(ctx context.Context, opts ...option.ClientOption) (*Goog
 		connPool:        connPool,
 		googleAdsClient: servicespb.NewGoogleAdsServiceClient(connPool),
 		CallOptions:     &client.CallOptions,
+		logger:          internaloption.GetLogger(opts),
 	}
 	c.setGoogleClientInfo()
 
@@ -389,7 +393,7 @@ func (c *googleAdsGRPCClient) Search(ctx context.Context, req *servicespb.Search
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 			var err error
-			resp, err = c.googleAdsClient.Search(ctx, req, settings.GRPC...)
+			resp, err = executeRPC(ctx, c.googleAdsClient.Search, req, settings.GRPC, c.logger, "Search")
 			return err
 		}, opts...)
 		if err != nil {
@@ -424,7 +428,9 @@ func (c *googleAdsGRPCClient) SearchStream(ctx context.Context, req *servicespb.
 	var resp servicespb.GoogleAdsService_SearchStreamClient
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
+		c.logger.DebugContext(ctx, "api streaming client request", "serviceName", serviceName, "rpcName", "SearchStream")
 		resp, err = c.googleAdsClient.SearchStream(ctx, req, settings.GRPC...)
+		c.logger.DebugContext(ctx, "api streaming client response", "serviceName", serviceName, "rpcName", "SearchStream")
 		return err
 	}, opts...)
 	if err != nil {
@@ -442,7 +448,7 @@ func (c *googleAdsGRPCClient) Mutate(ctx context.Context, req *servicespb.Mutate
 	var resp *servicespb.MutateGoogleAdsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.googleAdsClient.Mutate(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.googleAdsClient.Mutate, req, settings.GRPC, c.logger, "Mutate")
 		return err
 	}, opts...)
 	if err != nil {

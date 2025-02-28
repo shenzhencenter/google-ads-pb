@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v18/services/data_link_service.proto
+// source: google/ads/googleads/v19/services/data_link_service.proto
 
 package services
 
@@ -33,7 +33,9 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	DataLinkService_CreateDataLink_FullMethodName = "/google.ads.googleads.v18.services.DataLinkService/CreateDataLink"
+	DataLinkService_CreateDataLink_FullMethodName = "/google.ads.googleads.v19.services.DataLinkService/CreateDataLink"
+	DataLinkService_RemoveDataLink_FullMethodName = "/google.ads.googleads.v19.services.DataLinkService/RemoveDataLink"
+	DataLinkService_UpdateDataLink_FullMethodName = "/google.ads.googleads.v19.services.DataLinkService/UpdateDataLink"
 )
 
 // DataLinkServiceClient is the client API for DataLinkService service.
@@ -61,6 +63,36 @@ type DataLinkServiceClient interface {
 	//	[QuotaError]()
 	//	[RequestError]()
 	CreateDataLink(ctx context.Context, in *CreateDataLinkRequest, opts ...grpc.CallOption) (*CreateDataLinkResponse, error)
+	// Remove a data link.
+	//
+	// List of thrown errors:
+	//
+	//	[AuthenticationError]()
+	//	[AuthorizationError]()
+	//	[DatabaseError]()
+	//	[DataLinkError]()
+	//	[FieldError]()
+	//	[HeaderError]()
+	//	[InternalError]()
+	//	[MutateError]()
+	//	[QuotaError]()
+	//	[RequestError]()
+	RemoveDataLink(ctx context.Context, in *RemoveDataLinkRequest, opts ...grpc.CallOption) (*RemoveDataLinkResponse, error)
+	// Update a data link.
+	//
+	// List of thrown errors:
+	//
+	//	[AuthenticationError]()
+	//	[AuthorizationError]()
+	//	[DatabaseError]()
+	//	[DataLinkError]()
+	//	[FieldError]()
+	//	[HeaderError]()
+	//	[InternalError]()
+	//	[MutateError]()
+	//	[QuotaError]()
+	//	[RequestError]()
+	UpdateDataLink(ctx context.Context, in *UpdateDataLinkRequest, opts ...grpc.CallOption) (*UpdateDataLinkResponse, error)
 }
 
 type dataLinkServiceClient struct {
@@ -75,6 +107,26 @@ func (c *dataLinkServiceClient) CreateDataLink(ctx context.Context, in *CreateDa
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(CreateDataLinkResponse)
 	err := c.cc.Invoke(ctx, DataLinkService_CreateDataLink_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataLinkServiceClient) RemoveDataLink(ctx context.Context, in *RemoveDataLinkRequest, opts ...grpc.CallOption) (*RemoveDataLinkResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RemoveDataLinkResponse)
+	err := c.cc.Invoke(ctx, DataLinkService_RemoveDataLink_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataLinkServiceClient) UpdateDataLink(ctx context.Context, in *UpdateDataLinkRequest, opts ...grpc.CallOption) (*UpdateDataLinkResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateDataLinkResponse)
+	err := c.cc.Invoke(ctx, DataLinkService_UpdateDataLink_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -106,6 +158,36 @@ type DataLinkServiceServer interface {
 	//	[QuotaError]()
 	//	[RequestError]()
 	CreateDataLink(context.Context, *CreateDataLinkRequest) (*CreateDataLinkResponse, error)
+	// Remove a data link.
+	//
+	// List of thrown errors:
+	//
+	//	[AuthenticationError]()
+	//	[AuthorizationError]()
+	//	[DatabaseError]()
+	//	[DataLinkError]()
+	//	[FieldError]()
+	//	[HeaderError]()
+	//	[InternalError]()
+	//	[MutateError]()
+	//	[QuotaError]()
+	//	[RequestError]()
+	RemoveDataLink(context.Context, *RemoveDataLinkRequest) (*RemoveDataLinkResponse, error)
+	// Update a data link.
+	//
+	// List of thrown errors:
+	//
+	//	[AuthenticationError]()
+	//	[AuthorizationError]()
+	//	[DatabaseError]()
+	//	[DataLinkError]()
+	//	[FieldError]()
+	//	[HeaderError]()
+	//	[InternalError]()
+	//	[MutateError]()
+	//	[QuotaError]()
+	//	[RequestError]()
+	UpdateDataLink(context.Context, *UpdateDataLinkRequest) (*UpdateDataLinkResponse, error)
 	mustEmbedUnimplementedDataLinkServiceServer()
 }
 
@@ -118,6 +200,12 @@ type UnimplementedDataLinkServiceServer struct{}
 
 func (UnimplementedDataLinkServiceServer) CreateDataLink(context.Context, *CreateDataLinkRequest) (*CreateDataLinkResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateDataLink not implemented")
+}
+func (UnimplementedDataLinkServiceServer) RemoveDataLink(context.Context, *RemoveDataLinkRequest) (*RemoveDataLinkResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RemoveDataLink not implemented")
+}
+func (UnimplementedDataLinkServiceServer) UpdateDataLink(context.Context, *UpdateDataLinkRequest) (*UpdateDataLinkResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateDataLink not implemented")
 }
 func (UnimplementedDataLinkServiceServer) mustEmbedUnimplementedDataLinkServiceServer() {}
 func (UnimplementedDataLinkServiceServer) testEmbeddedByValue()                         {}
@@ -158,18 +246,62 @@ func _DataLinkService_CreateDataLink_Handler(srv interface{}, ctx context.Contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DataLinkService_RemoveDataLink_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RemoveDataLinkRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataLinkServiceServer).RemoveDataLink(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DataLinkService_RemoveDataLink_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataLinkServiceServer).RemoveDataLink(ctx, req.(*RemoveDataLinkRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DataLinkService_UpdateDataLink_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateDataLinkRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataLinkServiceServer).UpdateDataLink(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DataLinkService_UpdateDataLink_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataLinkServiceServer).UpdateDataLink(ctx, req.(*UpdateDataLinkRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // DataLinkService_ServiceDesc is the grpc.ServiceDesc for DataLinkService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var DataLinkService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v18.services.DataLinkService",
+	ServiceName: "google.ads.googleads.v19.services.DataLinkService",
 	HandlerType: (*DataLinkServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "CreateDataLink",
 			Handler:    _DataLinkService_CreateDataLink_Handler,
 		},
+		{
+			MethodName: "RemoveDataLink",
+			Handler:    _DataLinkService_RemoveDataLink_Handler,
+		},
+		{
+			MethodName: "UpdateDataLink",
+			Handler:    _DataLinkService_UpdateDataLink_Handler,
+		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v18/services/data_link_service.proto",
+	Metadata: "google/ads/googleads/v19/services/data_link_service.proto",
 }

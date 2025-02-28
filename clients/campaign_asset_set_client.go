@@ -1,4 +1,4 @@
-// Copyright 2024 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package clients
 import (
 	"context"
 	"fmt"
+	"log/slog"
 	"math"
 	"net/url"
 	"time"
@@ -136,6 +137,8 @@ type campaignAssetSetGRPCClient struct {
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogHeaders []string
+
+	logger *slog.Logger
 }
 
 // NewCampaignAssetSetClient creates a new campaign asset set service client based on gRPC.
@@ -162,6 +165,7 @@ func NewCampaignAssetSetClient(ctx context.Context, opts ...option.ClientOption)
 		connPool:               connPool,
 		campaignAssetSetClient: servicespb.NewCampaignAssetSetServiceClient(connPool),
 		CallOptions:            &client.CallOptions,
+		logger:                 internaloption.GetLogger(opts),
 	}
 	c.setGoogleClientInfo()
 
@@ -204,7 +208,7 @@ func (c *campaignAssetSetGRPCClient) MutateCampaignAssetSets(ctx context.Context
 	var resp *servicespb.MutateCampaignAssetSetsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.campaignAssetSetClient.MutateCampaignAssetSets(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.campaignAssetSetClient.MutateCampaignAssetSets, req, settings.GRPC, c.logger, "MutateCampaignAssetSets")
 		return err
 	}, opts...)
 	if err != nil {

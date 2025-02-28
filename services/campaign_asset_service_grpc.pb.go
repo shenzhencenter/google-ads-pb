@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v18/services/campaign_asset_service.proto
+// source: google/ads/googleads/v19/services/campaign_asset_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	CampaignAssetService_MutateCampaignAssets_FullMethodName = "/google.ads.googleads.v18.services.CampaignAssetService/MutateCampaignAssets"
+	CampaignAssetService_MutateCampaignAssets_FullMethodName = "/google.ads.googleads.v19.services.CampaignAssetService/MutateCampaignAssets"
 )
 
 // CampaignAssetServiceClient is the client API for CampaignAssetService service.
@@ -160,7 +160,7 @@ func _CampaignAssetService_MutateCampaignAssets_Handler(srv interface{}, ctx con
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CampaignAssetService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v18.services.CampaignAssetService",
+	ServiceName: "google.ads.googleads.v19.services.CampaignAssetService",
 	HandlerType: (*CampaignAssetServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -169,5 +169,5 @@ var CampaignAssetService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v18/services/campaign_asset_service.proto",
+	Metadata: "google/ads/googleads/v19/services/campaign_asset_service.proto",
 }

@@ -1,4 +1,4 @@
-// Copyright 2024 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package clients
 import (
 	"context"
 	"fmt"
+	"log/slog"
 	"math"
 	"net/url"
 	"time"
@@ -145,6 +146,8 @@ type thirdPartyAppAnalyticsLinkGRPCClient struct {
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogHeaders []string
+
+	logger *slog.Logger
 }
 
 // NewThirdPartyAppAnalyticsLinkClient creates a new third party app analytics link service client based on gRPC.
@@ -172,6 +175,7 @@ func NewThirdPartyAppAnalyticsLinkClient(ctx context.Context, opts ...option.Cli
 		connPool:                         connPool,
 		thirdPartyAppAnalyticsLinkClient: servicespb.NewThirdPartyAppAnalyticsLinkServiceClient(connPool),
 		CallOptions:                      &client.CallOptions,
+		logger:                           internaloption.GetLogger(opts),
 	}
 	c.setGoogleClientInfo()
 
@@ -214,7 +218,7 @@ func (c *thirdPartyAppAnalyticsLinkGRPCClient) RegenerateShareableLinkId(ctx con
 	var resp *servicespb.RegenerateShareableLinkIdResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.thirdPartyAppAnalyticsLinkClient.RegenerateShareableLinkId(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.thirdPartyAppAnalyticsLinkClient.RegenerateShareableLinkId, req, settings.GRPC, c.logger, "RegenerateShareableLinkId")
 		return err
 	}, opts...)
 	if err != nil {

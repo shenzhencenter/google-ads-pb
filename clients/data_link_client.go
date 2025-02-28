@@ -1,4 +1,4 @@
-// Copyright 2024 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package clients
 import (
 	"context"
 	"fmt"
+	"log/slog"
 	"math"
 	"net/url"
 	"time"
@@ -37,6 +38,8 @@ var newDataLinkClientHook clientHook
 // DataLinkCallOptions contains the retry settings for each method of DataLinkClient.
 type DataLinkCallOptions struct {
 	CreateDataLink []gax.CallOption
+	RemoveDataLink []gax.CallOption
+	UpdateDataLink []gax.CallOption
 }
 
 func defaultDataLinkGRPCClientOptions() []option.ClientOption {
@@ -69,6 +72,32 @@ func defaultDataLinkCallOptions() *DataLinkCallOptions {
 				})
 			}),
 		},
+		RemoveDataLink: []gax.CallOption{
+			gax.WithTimeout(14400000 * time.Millisecond),
+			gax.WithRetry(func() gax.Retryer {
+				return gax.OnCodes([]codes.Code{
+					codes.Unavailable,
+					codes.DeadlineExceeded,
+				}, gax.Backoff{
+					Initial:    5000 * time.Millisecond,
+					Max:        60000 * time.Millisecond,
+					Multiplier: 1.30,
+				})
+			}),
+		},
+		UpdateDataLink: []gax.CallOption{
+			gax.WithTimeout(14400000 * time.Millisecond),
+			gax.WithRetry(func() gax.Retryer {
+				return gax.OnCodes([]codes.Code{
+					codes.Unavailable,
+					codes.DeadlineExceeded,
+				}, gax.Backoff{
+					Initial:    5000 * time.Millisecond,
+					Max:        60000 * time.Millisecond,
+					Multiplier: 1.30,
+				})
+			}),
+		},
 	}
 }
 
@@ -78,6 +107,8 @@ type internalDataLinkClient interface {
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
 	CreateDataLink(context.Context, *servicespb.CreateDataLinkRequest, ...gax.CallOption) (*servicespb.CreateDataLinkResponse, error)
+	RemoveDataLink(context.Context, *servicespb.RemoveDataLinkRequest, ...gax.CallOption) (*servicespb.RemoveDataLinkResponse, error)
+	UpdateDataLink(context.Context, *servicespb.UpdateDataLinkRequest, ...gax.CallOption) (*servicespb.UpdateDataLinkResponse, error)
 }
 
 // DataLinkClient is a client for interacting with Google Ads API.
@@ -136,6 +167,40 @@ func (c *DataLinkClient) CreateDataLink(ctx context.Context, req *servicespb.Cre
 	return c.internalClient.CreateDataLink(ctx, req, opts...)
 }
 
+// RemoveDataLink remove a data link.
+//
+// List of thrown errors:
+// AuthenticationError (at )
+// AuthorizationError (at )
+// DatabaseError (at )
+// DataLinkError (at )
+// FieldError (at )
+// HeaderError (at )
+// InternalError (at )
+// MutateError (at )
+// QuotaError (at )
+// RequestError (at )
+func (c *DataLinkClient) RemoveDataLink(ctx context.Context, req *servicespb.RemoveDataLinkRequest, opts ...gax.CallOption) (*servicespb.RemoveDataLinkResponse, error) {
+	return c.internalClient.RemoveDataLink(ctx, req, opts...)
+}
+
+// UpdateDataLink update a data link.
+//
+// List of thrown errors:
+// AuthenticationError (at )
+// AuthorizationError (at )
+// DatabaseError (at )
+// DataLinkError (at )
+// FieldError (at )
+// HeaderError (at )
+// InternalError (at )
+// MutateError (at )
+// QuotaError (at )
+// RequestError (at )
+func (c *DataLinkClient) UpdateDataLink(ctx context.Context, req *servicespb.UpdateDataLinkRequest, opts ...gax.CallOption) (*servicespb.UpdateDataLinkResponse, error) {
+	return c.internalClient.UpdateDataLink(ctx, req, opts...)
+}
+
 // dataLinkGRPCClient is a client for interacting with Google Ads API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
@@ -151,6 +216,8 @@ type dataLinkGRPCClient struct {
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogHeaders []string
+
+	logger *slog.Logger
 }
 
 // NewDataLinkClient creates a new data link service client based on gRPC.
@@ -178,6 +245,7 @@ func NewDataLinkClient(ctx context.Context, opts ...option.ClientOption) (*DataL
 		connPool:       connPool,
 		dataLinkClient: servicespb.NewDataLinkServiceClient(connPool),
 		CallOptions:    &client.CallOptions,
+		logger:         internaloption.GetLogger(opts),
 	}
 	c.setGoogleClientInfo()
 
@@ -220,7 +288,43 @@ func (c *dataLinkGRPCClient) CreateDataLink(ctx context.Context, req *servicespb
 	var resp *servicespb.CreateDataLinkResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.dataLinkClient.CreateDataLink(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.dataLinkClient.CreateDataLink, req, settings.GRPC, c.logger, "CreateDataLink")
+		return err
+	}, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return resp, nil
+}
+
+func (c *dataLinkGRPCClient) RemoveDataLink(ctx context.Context, req *servicespb.RemoveDataLinkRequest, opts ...gax.CallOption) (*servicespb.RemoveDataLinkResponse, error) {
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId()))}
+
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
+	opts = append((*c.CallOptions).RemoveDataLink[0:len((*c.CallOptions).RemoveDataLink):len((*c.CallOptions).RemoveDataLink)], opts...)
+	var resp *servicespb.RemoveDataLinkResponse
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		resp, err = executeRPC(ctx, c.dataLinkClient.RemoveDataLink, req, settings.GRPC, c.logger, "RemoveDataLink")
+		return err
+	}, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return resp, nil
+}
+
+func (c *dataLinkGRPCClient) UpdateDataLink(ctx context.Context, req *servicespb.UpdateDataLinkRequest, opts ...gax.CallOption) (*servicespb.UpdateDataLinkResponse, error) {
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId()))}
+
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
+	opts = append((*c.CallOptions).UpdateDataLink[0:len((*c.CallOptions).UpdateDataLink):len((*c.CallOptions).UpdateDataLink)], opts...)
+	var resp *servicespb.UpdateDataLinkResponse
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		resp, err = executeRPC(ctx, c.dataLinkClient.UpdateDataLink, req, settings.GRPC, c.logger, "UpdateDataLink")
 		return err
 	}, opts...)
 	if err != nil {

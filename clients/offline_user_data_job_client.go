@@ -1,4 +1,4 @@
-// Copyright 2024 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package clients
 import (
 	"context"
 	"fmt"
+	"log/slog"
 	"math"
 	"net/url"
 	"time"
@@ -232,6 +233,8 @@ type offlineUserDataJobGRPCClient struct {
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogHeaders []string
+
+	logger *slog.Logger
 }
 
 // NewOfflineUserDataJobClient creates a new offline user data job service client based on gRPC.
@@ -258,6 +261,7 @@ func NewOfflineUserDataJobClient(ctx context.Context, opts ...option.ClientOptio
 		connPool:                 connPool,
 		offlineUserDataJobClient: servicespb.NewOfflineUserDataJobServiceClient(connPool),
 		CallOptions:              &client.CallOptions,
+		logger:                   internaloption.GetLogger(opts),
 	}
 	c.setGoogleClientInfo()
 
@@ -311,7 +315,7 @@ func (c *offlineUserDataJobGRPCClient) CreateOfflineUserDataJob(ctx context.Cont
 	var resp *servicespb.CreateOfflineUserDataJobResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.offlineUserDataJobClient.CreateOfflineUserDataJob(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.offlineUserDataJobClient.CreateOfflineUserDataJob, req, settings.GRPC, c.logger, "CreateOfflineUserDataJob")
 		return err
 	}, opts...)
 	if err != nil {
@@ -329,7 +333,7 @@ func (c *offlineUserDataJobGRPCClient) AddOfflineUserDataJobOperations(ctx conte
 	var resp *servicespb.AddOfflineUserDataJobOperationsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.offlineUserDataJobClient.AddOfflineUserDataJobOperations(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.offlineUserDataJobClient.AddOfflineUserDataJobOperations, req, settings.GRPC, c.logger, "AddOfflineUserDataJobOperations")
 		return err
 	}, opts...)
 	if err != nil {
@@ -347,7 +351,7 @@ func (c *offlineUserDataJobGRPCClient) RunOfflineUserDataJob(ctx context.Context
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.offlineUserDataJobClient.RunOfflineUserDataJob(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.offlineUserDataJobClient.RunOfflineUserDataJob, req, settings.GRPC, c.logger, "RunOfflineUserDataJob")
 		return err
 	}, opts...)
 	if err != nil {

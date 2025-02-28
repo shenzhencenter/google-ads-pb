@@ -1,4 +1,4 @@
-// Copyright 2024 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package clients
 import (
 	"context"
 	"fmt"
+	"log/slog"
 	"math"
 	"net/url"
 	"time"
@@ -153,6 +154,8 @@ type userDataGRPCClient struct {
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogHeaders []string
+
+	logger *slog.Logger
 }
 
 // NewUserDataClient creates a new user data service client based on gRPC.
@@ -184,6 +187,7 @@ func NewUserDataClient(ctx context.Context, opts ...option.ClientOption) (*UserD
 		connPool:       connPool,
 		userDataClient: servicespb.NewUserDataServiceClient(connPool),
 		CallOptions:    &client.CallOptions,
+		logger:         internaloption.GetLogger(opts),
 	}
 	c.setGoogleClientInfo()
 
@@ -226,7 +230,7 @@ func (c *userDataGRPCClient) UploadUserData(ctx context.Context, req *servicespb
 	var resp *servicespb.UploadUserDataResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.userDataClient.UploadUserData(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.userDataClient.UploadUserData, req, settings.GRPC, c.logger, "UploadUserData")
 		return err
 	}, opts...)
 	if err != nil {

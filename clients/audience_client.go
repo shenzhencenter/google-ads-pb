@@ -1,4 +1,4 @@
-// Copyright 2024 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package clients
 import (
 	"context"
 	"fmt"
+	"log/slog"
 	"math"
 	"net/url"
 	"time"
@@ -138,6 +139,8 @@ type audienceGRPCClient struct {
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogHeaders []string
+
+	logger *slog.Logger
 }
 
 // NewAudienceClient creates a new audience service client based on gRPC.
@@ -164,6 +167,7 @@ func NewAudienceClient(ctx context.Context, opts ...option.ClientOption) (*Audie
 		connPool:       connPool,
 		audienceClient: servicespb.NewAudienceServiceClient(connPool),
 		CallOptions:    &client.CallOptions,
+		logger:         internaloption.GetLogger(opts),
 	}
 	c.setGoogleClientInfo()
 
@@ -206,7 +210,7 @@ func (c *audienceGRPCClient) MutateAudiences(ctx context.Context, req *servicesp
 	var resp *servicespb.MutateAudiencesResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.audienceClient.MutateAudiences(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.audienceClient.MutateAudiences, req, settings.GRPC, c.logger, "MutateAudiences")
 		return err
 	}, opts...)
 	if err != nil {

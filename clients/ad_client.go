@@ -1,4 +1,4 @@
-// Copyright 2024 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package clients
 import (
 	"context"
 	"fmt"
+	"log/slog"
 	"math"
 	"net/url"
 	"time"
@@ -176,6 +177,8 @@ type adGRPCClient struct {
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogHeaders []string
+
+	logger *slog.Logger
 }
 
 // NewAdClient creates a new ad service client based on gRPC.
@@ -202,6 +205,7 @@ func NewAdClient(ctx context.Context, opts ...option.ClientOption) (*AdClient, e
 		connPool:    connPool,
 		adClient:    servicespb.NewAdServiceClient(connPool),
 		CallOptions: &client.CallOptions,
+		logger:      internaloption.GetLogger(opts),
 	}
 	c.setGoogleClientInfo()
 
@@ -244,7 +248,7 @@ func (c *adGRPCClient) MutateAds(ctx context.Context, req *servicespb.MutateAdsR
 	var resp *servicespb.MutateAdsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.adClient.MutateAds(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.adClient.MutateAds, req, settings.GRPC, c.logger, "MutateAds")
 		return err
 	}, opts...)
 	if err != nil {

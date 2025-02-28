@@ -8,31 +8,28 @@
 
 This library provides a Golang client for the [Google Ads API](https://developers.google.com/google-ads/api/docs/start). It's fully generated from the [googleapis](https://github.com/googleapis/googleapis/tree/master/google/ads/googleads) repository. More information on the generation process can be found [here](https://github.com/shenzhencenter/google-ads-pb/blob/main/.github/workflows/generator.yml).
 
-Although this project isn't official, we deem it as low-risk due to its maturity and our two years of using it in production. However, always consult the [sunset schedule](https://developers.google.com/google-ads/api/docs/sunset-dates) of the Google Ads API.
+Although this project isn't official, we deem it as low-risk due to its maturity and our many years of using it in production. However, always consult the [sunset schedule](https://developers.google.com/google-ads/api/docs/sunset-dates) of the Google Ads API.
 
 ## Features
 
 - Full support for Google Ads API.
+- Support for gRPC and REST Interface.
 - Source code generated from the official googleapis repository.
-- Support for GRPC and HTTP calls using [protojson](https://google.golang.org/protobuf/encoding/protojson).
-- Although we won't regularly update this based on the [official repository](https://github.com/googleapis/googleapis), we continually maintain it. Update frequency depends on our needs but usually occurs a month after the official release.
 
 ## Version support
 
-| google-ads-pb     | Google Ads API   | Sunset date                  |
-| ----------------- | ---------------- | ---------------------------- |
-| v1.18.0           | v18              | September 2025               |
-| v1.17.1           | v17.1            | May 2025                     |
-| v1.17.0           | v17              | May 2025                     |
-| v1.16.1           | v16.1            | January 2025                 |
-| v1.7.0            | v16              | January 2025                 |
-| <del>v1.6.0</del> | <del>v15</del>   | Deprecated                   |
-| <del>v1.5.1</del> | <del>v14.1</del> | Deprecated                   |
-| <del>v1.5.0</del> | <del>v14</del>   | Deprecated                   |
+| google-ads-pb      | Google Ads API   | Sunset date                  |
+| ------------------ | ---------------- | ---------------------------- |
+| v1.19.0            | v19              |                              |
+| v1.18.0            | v18              | September 2025               |
+| v1.17.1            | v17.1            | June 4, 2025                 |
+| v1.17.0            | v17              | June 4, 2025                 |
+| <del>v1.16.1</del> | <del>v16.1</del> | Deprecated                   |
+| <del>v1.7.0</del>  | <del>v16</del>   | Deprecated                   |
 
 ## Requirements
 
-- Go 1.22.
+- Go 1.23
 - Familiarize yourself with the [OAuth2 guide](https://developers.google.com/google-ads/api/docs/oauth/overview).
 - If needed, obtain a [developer token](https://developers.google.com/google-ads/api/docs/first-call/dev-token).
 
@@ -41,105 +38,113 @@ Although this project isn't official, we deem it as low-risk due to its maturity
 ```bash
 go get github.com/shenzhencenter/google-ads-pb
 ```
-    
+
 ## Getting started
 
-1. Set your environment variables.
+1. Prepare `ACCESS_TOKEN`, `DEVELOPER_TOKEN`, and `CUSTOMER_ID`.
 
-```bash
-export ACCESS_TOKEN=<your access token>
-export DEVELOPER_TOKEN=<your developer token>
-export CUSTOMER_ID=<your customer id>
-```
+> Tips: For testing purposes, you can use [google/oauth2l](https://github.com/google/oauth2l) to obtain an access token.
 
-If you're using gRPC, you should attach the access token, developer token, and customer ID to the context.
+2. gRPC example.
 
 ```go
-ctx := context.Background()
-headers := metadata.Pairs(
-    "authorization", "Bearer "+os.Getenv("ACCESS_TOKEN"),
-    "developer-token", os.Getenv("DEVELOPER_TOKEN"),
-    "login-customer-id", os.Getenv("CUSTOMER_ID"),
+var (
+    customerID     = os.Getenv("CUSTOMER_ID")
+    developerToken = os.Getenv("DEVELOPER_TOKEN")
+    accessToken    = os.Getenv("ACCESS_TOKEN")
 )
-ctx = metadata.NewOutgoingContext(ctx, headers)
-```
 
-If you're using HTTP, you should attach the access token, developer token, and customer ID to the header.
-
-```go
-header := make(http.Header)
-header.Set("content-type", "application/json")
-header.Set("authorization", os.Getenv("ACCESS_TOKEN"))
-header.Set("developer-token", os.Getenv("DEVELOPER_TOKEN"))
-```
-
-2. Establish a GRPC connection.
-
-```go
 cred := grpc.WithTransportCredentials(credentials.NewClientTLSFromCert(nil, ""))
 conn, err := grpc.NewClient("googleads.googleapis.com:443", cred)
 if err != nil {
     panic(err)
 }
 defer conn.Close()
-```
 
-3. Start making calls.
-
-```go
-customerServiceClient := services.NewCustomerServiceClient(conn)
-accessibleCustomers, err := customerServiceClient.ListAccessibleCustomers(
-    ctx, // be sure to use the context with the access token, developer token, and customer ID
-    &services.ListAccessibleCustomersRequest{},
+ctx := context.Background()
+headers := metadata.Pairs(
+    "authorization", "Bearer "+accessToken,
+    "developer-token", developerToken,
+    "login-customer-id", customerID,
 )
+ctx = metadata.NewOutgoingContext(ctx, headers)
+
+req := &services.SearchGoogleAdsRequest{
+    CustomerId: customerID,
+    Query: "SELECT user_list.name, user_list.resource_name FROM user_list",
+}
+svc := services.NewGoogleAdsServiceClient(conn)
+var header metadata.MD
+result, err := svc.Search(ctx, req, grpc.Header(&header))
+requestId := header.Get("request-id")
+log.Printf("request-id: %v, login-customer-id: %v", requestId[0], customerID)
 if err != nil {
-    panic(err)
+    apiErr := status.Convert(err)
+    log.Fatalf("code: %s, message: %s, details: %v", apiErr.Code(), apiErr.Message(), apiErr.Details())
 }
 
-for _, customer := range accessibleCustomers.ResourceNames {
-    fmt.Println("ResourceName: " + customer)
+for _, row := range result.Results {
+    if row.UserList == nil {
+        continue
+    }
+    log.Print("resource_name: ", row.UserList.GetResourceName(), " name: ", row.UserList.GetName())
 }
 ```
 
-You can also make HTTP calls using [protojson](https://google.golang.org/protobuf/encoding/protojson), though it isn't recommended.
+3. HTTP example.
 
 ```go
-const endpoint = "https://googleads.googleapis.com/v18/customers:listAccessibleCustomers"
-req := services.ListAccessibleCustomersRequest{}
-requestBody, _ := protojson.Marshal(&req)
-request, _ := http.NewRequest("GET", endpoint, bytes.NewBuffer(requestBody))
+var (
+    customerID     = os.Getenv("CUSTOMER_ID")
+    developerToken = os.Getenv("DEVELOPER_TOKEN")
+    accessToken    = os.Getenv("ACCESS_TOKEN")
+)
+
+var endpoint = fmt.Sprintf("https://googleads.googleapis.com/v18/customers/%s/googleAds:search", customerID)
+req := services.SearchGoogleAdsRequest{
+    Query: "SELECT user_list.name, user_list.resource_name FROM user_list",
+}
+reqBody, _ := protojson.Marshal(&req)
+
+reqHttp, _ := http.NewRequest("POST", endpoint, bytes.NewReader(reqBody))
 header := make(http.Header)
 header.Set("content-type", "application/json")
-header.Set("authorization", os.Getenv("ACCESS_TOKEN"))
-header.Set("developer-token", os.Getenv("DEVELOPER_TOKEN"))
-request.Header = header
-response, _ := http.DefaultClient.Do(request)
-defer response.Body.Close()
-var responseBody []byte
-if responseBody, err = io.ReadAll(response.Body); err != nil {
-    panic(err)
+header.Set("authorization", "Bearer "+accessToken)
+header.Set("developer-token", developerToken)
+header.Set("login-customer-id", customerID)
+reqHttp.Header = header
+
+httpResp, err := http.DefaultClient.Do(reqHttp)
+if os.Getenv("DEBUG") != "" {
+    reqId := httpResp.Header.Get("request-id")
+    log.Print("request-id: ", reqId, " login-customer-id: ", reqHttp.Header.Get("login-customer-id"))
 }
-listAccessibleCustomersResponse := new(services.ListAccessibleCustomersResponse)
-if err := protojson.Unmarshal(responseBody, listAccessibleCustomersResponse); err != nil {
-    panic(err)
+if err != nil {
+    log.Panic(err)
 }
-for _, customer := range listAccessibleCustomersResponse.ResourceNames {
-    fmt.Println("ResourceName: " + customer)
+defer httpResp.Body.Close()
+var httpRespBody []byte
+if httpRespBody, err = io.ReadAll(httpResp.Body); err != nil {
+    log.Panic(err)
+}
+result := new(services.SearchGoogleAdsResponse)
+if err := protojson.Unmarshal(httpRespBody, result); err != nil {
+    log.Fatal("failed to unmarshal response: ", err, "response: ", string(httpRespBody))
+}
+for _, row := range result.Results {
+    if row.UserList == nil {
+        continue
+    }
+    log.Print("resource_name: ", row.UserList.GetResourceName(), " name: ", row.UserList.GetName())
 }
 ```
 
-> **Note**: The above examples are just a starting point. You should adjust them based on your needs.
-
-## Examples
-
-See [clients/internal/snippets](https://github.com/shenzhencenter/google-ads-pb/tree/main/clients/internal/snippets).
-
-## Related
-
-Here are some related projects
+## References
 
 - [Google APIs](https://github.com/googleapis/googleapis)
 - [Google Ads API Client Library for PHP](https://github.com/googleads/google-ads-php)
+- [google/oauth2l](https://github.com/google/oauth2l)
+- [How to Use a Service Account to Call the Google Ads API with Golang](https://www.liaozhen.cn/posts/how-to-use-service-account-call-google-ads-api/)
 
 ## Contributing
 

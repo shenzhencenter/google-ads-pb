@@ -1,4 +1,4 @@
-// Copyright 2024 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package clients
 import (
 	"context"
 	"fmt"
+	"log/slog"
 	"math"
 	"net/url"
 	"time"
@@ -182,6 +183,8 @@ type accountLinkGRPCClient struct {
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogHeaders []string
+
+	logger *slog.Logger
 }
 
 // NewAccountLinkClient creates a new account link service client based on gRPC.
@@ -209,6 +212,7 @@ func NewAccountLinkClient(ctx context.Context, opts ...option.ClientOption) (*Ac
 		connPool:          connPool,
 		accountLinkClient: servicespb.NewAccountLinkServiceClient(connPool),
 		CallOptions:       &client.CallOptions,
+		logger:            internaloption.GetLogger(opts),
 	}
 	c.setGoogleClientInfo()
 
@@ -251,7 +255,7 @@ func (c *accountLinkGRPCClient) CreateAccountLink(ctx context.Context, req *serv
 	var resp *servicespb.CreateAccountLinkResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.accountLinkClient.CreateAccountLink(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.accountLinkClient.CreateAccountLink, req, settings.GRPC, c.logger, "CreateAccountLink")
 		return err
 	}, opts...)
 	if err != nil {
@@ -269,7 +273,7 @@ func (c *accountLinkGRPCClient) MutateAccountLink(ctx context.Context, req *serv
 	var resp *servicespb.MutateAccountLinkResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.accountLinkClient.MutateAccountLink(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.accountLinkClient.MutateAccountLink, req, settings.GRPC, c.logger, "MutateAccountLink")
 		return err
 	}, opts...)
 	if err != nil {

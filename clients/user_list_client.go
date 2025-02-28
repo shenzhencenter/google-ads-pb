@@ -1,4 +1,4 @@
-// Copyright 2024 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package clients
 import (
 	"context"
 	"fmt"
+	"log/slog"
 	"math"
 	"net/url"
 	"time"
@@ -157,6 +158,8 @@ type userListGRPCClient struct {
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogHeaders []string
+
+	logger *slog.Logger
 }
 
 // NewUserListClient creates a new user list service client based on gRPC.
@@ -183,6 +186,7 @@ func NewUserListClient(ctx context.Context, opts ...option.ClientOption) (*UserL
 		connPool:       connPool,
 		userListClient: servicespb.NewUserListServiceClient(connPool),
 		CallOptions:    &client.CallOptions,
+		logger:         internaloption.GetLogger(opts),
 	}
 	c.setGoogleClientInfo()
 
@@ -225,7 +229,7 @@ func (c *userListGRPCClient) MutateUserLists(ctx context.Context, req *servicesp
 	var resp *servicespb.MutateUserListsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = c.userListClient.MutateUserLists(ctx, req, settings.GRPC...)
+		resp, err = executeRPC(ctx, c.userListClient.MutateUserLists, req, settings.GRPC, c.logger, "MutateUserLists")
 		return err
 	}, opts...)
 	if err != nil {
