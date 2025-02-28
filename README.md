@@ -20,15 +20,16 @@ Although this project isn't official, we deem it as low-risk due to its maturity
 
 | google-ads-pb      | Google Ads API   | Sunset date                  |
 | ------------------ | ---------------- | ---------------------------- |
+| v1.19.0            | v19              |                              |
 | v1.18.0            | v18              | September 2025               |
-| v1.17.1            | v17.1            | May 2025                     |
-| v1.17.0            | v17              | May 2025                     |
+| v1.17.1            | v17.1            | June 4, 2025                 |
+| v1.17.0            | v17              | June 4, 2025                 |
 | <del>v1.16.1</del> | <del>v16.1</del> | Deprecated                   |
 | <del>v1.7.0</del>  | <del>v16</del>   | Deprecated                   |
 
 ## Requirements
 
-- Go 1.22.
+- Go 1.23
 - Familiarize yourself with the [OAuth2 guide](https://developers.google.com/google-ads/api/docs/oauth/overview).
 - If needed, obtain a [developer token](https://developers.google.com/google-ads/api/docs/first-call/dev-token).
 
@@ -37,16 +38,10 @@ Although this project isn't official, we deem it as low-risk due to its maturity
 ```bash
 go get github.com/shenzhencenter/google-ads-pb
 ```
-    
+
 ## Getting started
 
-1. (Optional) Set your environment variables.
-
-```bash
-export ACCESS_TOKEN=<your-access-token>
-export DEVELOPER_TOKEN=<your-developer-token>
-export CUSTOMER_ID=<your-customer-id>
-```
+1. Prepare `ACCESS_TOKEN`, `DEVELOPER_TOKEN`, and `CUSTOMER_ID`.
 
 > Tips: For testing purposes, you can use [google/oauth2l](https://github.com/google/oauth2l) to obtain an access token.
 
@@ -143,10 +138,6 @@ for _, row := range result.Results {
     log.Print("resource_name: ", row.UserList.GetResourceName(), " name: ", row.UserList.GetName())
 }
 ```
-
-## TODO
-
-[ ] [clients/internal/snippets](https://github.com/shenzhencenter/google-ads-pb/tree/main/clients/internal/snippets).
 
 ## References
 
