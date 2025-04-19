@@ -37,9 +37,10 @@ var newReachPlanClientHook clientHook
 
 // ReachPlanCallOptions contains the retry settings for each method of ReachPlanClient.
 type ReachPlanCallOptions struct {
-	ListPlannableLocations []gax.CallOption
-	ListPlannableProducts  []gax.CallOption
-	GenerateReachForecast  []gax.CallOption
+	GenerateConversionRates []gax.CallOption
+	ListPlannableLocations  []gax.CallOption
+	ListPlannableProducts   []gax.CallOption
+	GenerateReachForecast   []gax.CallOption
 }
 
 func defaultReachPlanGRPCClientOptions() []option.ClientOption {
@@ -59,6 +60,19 @@ func defaultReachPlanGRPCClientOptions() []option.ClientOption {
 
 func defaultReachPlanCallOptions() *ReachPlanCallOptions {
 	return &ReachPlanCallOptions{
+		GenerateConversionRates: []gax.CallOption{
+			gax.WithTimeout(14400000 * time.Millisecond),
+			gax.WithRetry(func() gax.Retryer {
+				return gax.OnCodes([]codes.Code{
+					codes.Unavailable,
+					codes.DeadlineExceeded,
+				}, gax.Backoff{
+					Initial:    5000 * time.Millisecond,
+					Max:        60000 * time.Millisecond,
+					Multiplier: 1.30,
+				})
+			}),
+		},
 		ListPlannableLocations: []gax.CallOption{
 			gax.WithTimeout(14400000 * time.Millisecond),
 			gax.WithRetry(func() gax.Retryer {
@@ -106,6 +120,7 @@ type internalReachPlanClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
+	GenerateConversionRates(context.Context, *servicespb.GenerateConversionRatesRequest, ...gax.CallOption) (*servicespb.GenerateConversionRatesResponse, error)
 	ListPlannableLocations(context.Context, *servicespb.ListPlannableLocationsRequest, ...gax.CallOption) (*servicespb.ListPlannableLocationsResponse, error)
 	ListPlannableProducts(context.Context, *servicespb.ListPlannableProductsRequest, ...gax.CallOption) (*servicespb.ListPlannableProductsResponse, error)
 	GenerateReachForecast(context.Context, *servicespb.GenerateReachForecastRequest, ...gax.CallOption) (*servicespb.GenerateReachForecastResponse, error)
@@ -148,6 +163,20 @@ func (c *ReachPlanClient) setGoogleClientInfo(keyval ...string) {
 // return the same resource.
 func (c *ReachPlanClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
+}
+
+// GenerateConversionRates returns a collection of conversion rate suggestions for supported plannable
+// products.
+//
+// List of thrown errors:
+// AuthenticationError (at )
+// AuthorizationError (at )
+// HeaderError (at )
+// InternalError (at )
+// QuotaError (at )
+// RequestError (at )
+func (c *ReachPlanClient) GenerateConversionRates(ctx context.Context, req *servicespb.GenerateConversionRatesRequest, opts ...gax.CallOption) (*servicespb.GenerateConversionRatesResponse, error) {
+	return c.internalClient.GenerateConversionRates(ctx, req, opts...)
 }
 
 // ListPlannableLocations returns the list of plannable locations (for example, countries).
@@ -272,6 +301,21 @@ func (c *reachPlanGRPCClient) setGoogleClientInfo(keyval ...string) {
 // the client is no longer required.
 func (c *reachPlanGRPCClient) Close() error {
 	return c.connPool.Close()
+}
+
+func (c *reachPlanGRPCClient) GenerateConversionRates(ctx context.Context, req *servicespb.GenerateConversionRatesRequest, opts ...gax.CallOption) (*servicespb.GenerateConversionRatesResponse, error) {
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, c.xGoogHeaders...)
+	opts = append((*c.CallOptions).GenerateConversionRates[0:len((*c.CallOptions).GenerateConversionRates):len((*c.CallOptions).GenerateConversionRates)], opts...)
+	var resp *servicespb.GenerateConversionRatesResponse
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		resp, err = executeRPC(ctx, c.reachPlanClient.GenerateConversionRates, req, settings.GRPC, c.logger, "GenerateConversionRates")
+		return err
+	}, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return resp, nil
 }
 
 func (c *reachPlanGRPCClient) ListPlannableLocations(ctx context.Context, req *servicespb.ListPlannableLocationsRequest, opts ...gax.CallOption) (*servicespb.ListPlannableLocationsResponse, error) {
