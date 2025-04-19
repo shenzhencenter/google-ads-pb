@@ -1,4 +1,4 @@
-// Copyright 2024 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ const _ = grpc.SupportPackageIsVersion9
 
 const (
 	LocalServicesLeadService_AppendLeadConversation_FullMethodName = "/google.ads.googleads.v19.services.LocalServicesLeadService/AppendLeadConversation"
+	LocalServicesLeadService_ProvideLeadFeedback_FullMethodName    = "/google.ads.googleads.v19.services.LocalServicesLeadService/ProvideLeadFeedback"
 )
 
 // LocalServicesLeadServiceClient is the client API for LocalServicesLeadService service.
@@ -45,6 +46,8 @@ type LocalServicesLeadServiceClient interface {
 	// RPC to append Local Services Lead Conversation resources to Local Services
 	// Lead resources.
 	AppendLeadConversation(ctx context.Context, in *AppendLeadConversationRequest, opts ...grpc.CallOption) (*AppendLeadConversationResponse, error)
+	// RPC to provide feedback on Local Services Lead resources.
+	ProvideLeadFeedback(ctx context.Context, in *ProvideLeadFeedbackRequest, opts ...grpc.CallOption) (*ProvideLeadFeedbackResponse, error)
 }
 
 type localServicesLeadServiceClient struct {
@@ -65,6 +68,16 @@ func (c *localServicesLeadServiceClient) AppendLeadConversation(ctx context.Cont
 	return out, nil
 }
 
+func (c *localServicesLeadServiceClient) ProvideLeadFeedback(ctx context.Context, in *ProvideLeadFeedbackRequest, opts ...grpc.CallOption) (*ProvideLeadFeedbackResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ProvideLeadFeedbackResponse)
+	err := c.cc.Invoke(ctx, LocalServicesLeadService_ProvideLeadFeedback_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // LocalServicesLeadServiceServer is the server API for LocalServicesLeadService service.
 // All implementations must embed UnimplementedLocalServicesLeadServiceServer
 // for forward compatibility.
@@ -74,6 +87,8 @@ type LocalServicesLeadServiceServer interface {
 	// RPC to append Local Services Lead Conversation resources to Local Services
 	// Lead resources.
 	AppendLeadConversation(context.Context, *AppendLeadConversationRequest) (*AppendLeadConversationResponse, error)
+	// RPC to provide feedback on Local Services Lead resources.
+	ProvideLeadFeedback(context.Context, *ProvideLeadFeedbackRequest) (*ProvideLeadFeedbackResponse, error)
 	mustEmbedUnimplementedLocalServicesLeadServiceServer()
 }
 
@@ -86,6 +101,9 @@ type UnimplementedLocalServicesLeadServiceServer struct{}
 
 func (UnimplementedLocalServicesLeadServiceServer) AppendLeadConversation(context.Context, *AppendLeadConversationRequest) (*AppendLeadConversationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AppendLeadConversation not implemented")
+}
+func (UnimplementedLocalServicesLeadServiceServer) ProvideLeadFeedback(context.Context, *ProvideLeadFeedbackRequest) (*ProvideLeadFeedbackResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ProvideLeadFeedback not implemented")
 }
 func (UnimplementedLocalServicesLeadServiceServer) mustEmbedUnimplementedLocalServicesLeadServiceServer() {
 }
@@ -127,6 +145,24 @@ func _LocalServicesLeadService_AppendLeadConversation_Handler(srv interface{}, c
 	return interceptor(ctx, in, info, handler)
 }
 
+func _LocalServicesLeadService_ProvideLeadFeedback_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ProvideLeadFeedbackRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LocalServicesLeadServiceServer).ProvideLeadFeedback(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LocalServicesLeadService_ProvideLeadFeedback_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LocalServicesLeadServiceServer).ProvideLeadFeedback(ctx, req.(*ProvideLeadFeedbackRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // LocalServicesLeadService_ServiceDesc is the grpc.ServiceDesc for LocalServicesLeadService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -137,6 +173,10 @@ var LocalServicesLeadService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "AppendLeadConversation",
 			Handler:    _LocalServicesLeadService_AppendLeadConversation_Handler,
+		},
+		{
+			MethodName: "ProvideLeadFeedback",
+			Handler:    _LocalServicesLeadService_ProvideLeadFeedback_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
