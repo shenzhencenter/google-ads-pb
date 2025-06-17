@@ -51,6 +51,7 @@ jobs:
 
       - name: Build
         run: |
+          export PATH=/usr/local/go/bin:/usr/local/bin:/root/go/bin:$PATH
           protoc -I=$INPUT_PATH \
             --go_out=$OUTPUT_PATH \
             --go-grpc_out=$OUTPUT_PATH \
@@ -79,6 +80,7 @@ jobs:
 
       - name: Format
         run: |
+          export PATH=/usr/local/go/bin:/usr/local/bin:/root/go/bin:$PATH
           cd $OUTPUT_PATH
           if [ ! -f go.mod ]; then
             go mod init github.com/shenzhencenter/google-ads-pb
