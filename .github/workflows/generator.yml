@@ -31,6 +31,7 @@ jobs:
           export PATH=$PATH:/usr/local/go/bin:/usr/local/bin:/root/go/bin
           echo "PATH=$PATH" >> $GITHUB_ENV
           go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.36.5
+          which protoc-gen-go
           go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.5.1
           go install github.com/googleapis/gapic-generator-go/cmd/protoc-gen-go_gapic@v0.53.1
           mkdir -p $OUTPUT_PATH
