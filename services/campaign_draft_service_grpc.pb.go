@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v19/services/campaign_draft_service.proto
+// source: google/ads/googleads/v20/services/campaign_draft_service.proto
 
 package services
 
@@ -34,9 +34,9 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	CampaignDraftService_MutateCampaignDrafts_FullMethodName         = "/google.ads.googleads.v19.services.CampaignDraftService/MutateCampaignDrafts"
-	CampaignDraftService_PromoteCampaignDraft_FullMethodName         = "/google.ads.googleads.v19.services.CampaignDraftService/PromoteCampaignDraft"
-	CampaignDraftService_ListCampaignDraftAsyncErrors_FullMethodName = "/google.ads.googleads.v19.services.CampaignDraftService/ListCampaignDraftAsyncErrors"
+	CampaignDraftService_MutateCampaignDrafts_FullMethodName         = "/google.ads.googleads.v20.services.CampaignDraftService/MutateCampaignDrafts"
+	CampaignDraftService_PromoteCampaignDraft_FullMethodName         = "/google.ads.googleads.v20.services.CampaignDraftService/PromoteCampaignDraft"
+	CampaignDraftService_ListCampaignDraftAsyncErrors_FullMethodName = "/google.ads.googleads.v20.services.CampaignDraftService/ListCampaignDraftAsyncErrors"
 )
 
 // CampaignDraftServiceClient is the client API for CampaignDraftService service.
@@ -68,7 +68,7 @@ type CampaignDraftServiceClient interface {
 	// is done. Only a done status is returned in the response. See the status
 	// in the Campaign Draft resource to determine if the promotion was
 	// successful. If the LRO failed, use
-	// [CampaignDraftService.ListCampaignDraftAsyncErrors][google.ads.googleads.v19.services.CampaignDraftService.ListCampaignDraftAsyncErrors]
+	// [CampaignDraftService.ListCampaignDraftAsyncErrors][google.ads.googleads.v20.services.CampaignDraftService.ListCampaignDraftAsyncErrors]
 	// to view the list of error reasons.
 	//
 	// List of thrown errors:
@@ -163,7 +163,7 @@ type CampaignDraftServiceServer interface {
 	// is done. Only a done status is returned in the response. See the status
 	// in the Campaign Draft resource to determine if the promotion was
 	// successful. If the LRO failed, use
-	// [CampaignDraftService.ListCampaignDraftAsyncErrors][google.ads.googleads.v19.services.CampaignDraftService.ListCampaignDraftAsyncErrors]
+	// [CampaignDraftService.ListCampaignDraftAsyncErrors][google.ads.googleads.v20.services.CampaignDraftService.ListCampaignDraftAsyncErrors]
 	// to view the list of error reasons.
 	//
 	// List of thrown errors:
@@ -287,7 +287,7 @@ func _CampaignDraftService_ListCampaignDraftAsyncErrors_Handler(srv interface{},
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CampaignDraftService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v19.services.CampaignDraftService",
+	ServiceName: "google.ads.googleads.v20.services.CampaignDraftService",
 	HandlerType: (*CampaignDraftServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -304,5 +304,5 @@ var CampaignDraftService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v19/services/campaign_draft_service.proto",
+	Metadata: "google/ads/googleads/v20/services/campaign_draft_service.proto",
 }

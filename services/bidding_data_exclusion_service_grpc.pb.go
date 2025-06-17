@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v19/services/bidding_data_exclusion_service.proto
+// source: google/ads/googleads/v20/services/bidding_data_exclusion_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	BiddingDataExclusionService_MutateBiddingDataExclusions_FullMethodName = "/google.ads.googleads.v19.services.BiddingDataExclusionService/MutateBiddingDataExclusions"
+	BiddingDataExclusionService_MutateBiddingDataExclusions_FullMethodName = "/google.ads.googleads.v20.services.BiddingDataExclusionService/MutateBiddingDataExclusions"
 )
 
 // BiddingDataExclusionServiceClient is the client API for BiddingDataExclusionService service.
@@ -131,7 +131,7 @@ func _BiddingDataExclusionService_MutateBiddingDataExclusions_Handler(srv interf
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var BiddingDataExclusionService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v19.services.BiddingDataExclusionService",
+	ServiceName: "google.ads.googleads.v20.services.BiddingDataExclusionService",
 	HandlerType: (*BiddingDataExclusionServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -140,5 +140,5 @@ var BiddingDataExclusionService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v19/services/bidding_data_exclusion_service.proto",
+	Metadata: "google/ads/googleads/v20/services/bidding_data_exclusion_service.proto",
 }

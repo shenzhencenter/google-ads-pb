@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v19/services/customer_negative_criterion_service.proto
+// source: google/ads/googleads/v20/services/customer_negative_criterion_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	CustomerNegativeCriterionService_MutateCustomerNegativeCriteria_FullMethodName = "/google.ads.googleads.v19.services.CustomerNegativeCriterionService/MutateCustomerNegativeCriteria"
+	CustomerNegativeCriterionService_MutateCustomerNegativeCriteria_FullMethodName = "/google.ads.googleads.v20.services.CustomerNegativeCriterionService/MutateCustomerNegativeCriteria"
 )
 
 // CustomerNegativeCriterionServiceClient is the client API for CustomerNegativeCriterionService service.
@@ -155,7 +155,7 @@ func _CustomerNegativeCriterionService_MutateCustomerNegativeCriteria_Handler(sr
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CustomerNegativeCriterionService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v19.services.CustomerNegativeCriterionService",
+	ServiceName: "google.ads.googleads.v20.services.CustomerNegativeCriterionService",
 	HandlerType: (*CustomerNegativeCriterionServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -164,5 +164,5 @@ var CustomerNegativeCriterionService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v19/services/customer_negative_criterion_service.proto",
+	Metadata: "google/ads/googleads/v20/services/customer_negative_criterion_service.proto",
 }

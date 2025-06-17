@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v19/services/account_link_service.proto
+// source: google/ads/googleads/v20/services/account_link_service.proto
 
 package services
 
@@ -33,8 +33,8 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	AccountLinkService_CreateAccountLink_FullMethodName = "/google.ads.googleads.v19.services.AccountLinkService/CreateAccountLink"
-	AccountLinkService_MutateAccountLink_FullMethodName = "/google.ads.googleads.v19.services.AccountLinkService/MutateAccountLink"
+	AccountLinkService_CreateAccountLink_FullMethodName = "/google.ads.googleads.v20.services.AccountLinkService/CreateAccountLink"
+	AccountLinkService_MutateAccountLink_FullMethodName = "/google.ads.googleads.v20.services.AccountLinkService/MutateAccountLink"
 )
 
 // AccountLinkServiceClient is the client API for AccountLinkService service.
@@ -222,7 +222,7 @@ func _AccountLinkService_MutateAccountLink_Handler(srv interface{}, ctx context.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AccountLinkService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v19.services.AccountLinkService",
+	ServiceName: "google.ads.googleads.v20.services.AccountLinkService",
 	HandlerType: (*AccountLinkServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -235,5 +235,5 @@ var AccountLinkService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v19/services/account_link_service.proto",
+	Metadata: "google/ads/googleads/v20/services/account_link_service.proto",
 }
