@@ -183,7 +183,7 @@ func (c *CampaignDraftClient) MutateCampaignDrafts(ctx context.Context, req *ser
 // is done. Only a done status is returned in the response. See the status
 // in the Campaign Draft resource to determine if the promotion was
 // successful. If the LRO failed, use
-// CampaignDraftService.ListCampaignDraftAsyncErrors
+// [CampaignDraftService.ListCampaignDraftAsyncErrors][google.ads.googleads.v20.services.CampaignDraftService.ListCampaignDraftAsyncErrors]
 // to view the list of error reasons.
 //
 // List of thrown errors:
@@ -300,7 +300,7 @@ func (c *campaignDraftGRPCClient) Connection() *grpc.ClientConn {
 // use by Google-written clients.
 func (c *campaignDraftGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", gax.GoVersion}, keyval...)
-	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version)
+	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version, "pb", protoVersion)
 	c.xGoogHeaders = []string{
 		"x-goog-api-client", gax.XGoogHeader(kv...),
 	}
