@@ -20,7 +20,6 @@ jobs:
         ADSLIB_PATH: /googleapis/google/ads/googleads/${{ github.event.inputs.version }}
         API_CONFIG_PATH: /googleapis/google/ads/googleads/${{ github.event.inputs.version }}/googleads_${{ github.event.inputs.version }}.yaml
         GRPC_CONFIG_PATH: /googleapis/google/ads/googleads/${{ github.event.inputs.version }}/googleads_grpc_service_config.json
-        PATH: ${{ env.PATH }}:/usr/local/go/bin:/usr/local/bin:/root/go/bin
 
     steps:
       - name: Install dependencies
@@ -28,6 +27,9 @@ jobs:
           apk add --no-cache git curl tar unzip
           curl -LO https://go.dev/dl/go1.23.6.linux-amd64.tar.gz && tar -C /usr/local -xzf go1.23.6.linux-amd64.tar.gz
           curl -LO https://github.com/protocolbuffers/protobuf/releases/download/v24.4/protoc-24.4-linux-x86_64.zip && unzip protoc-24.4-linux-x86_64.zip -d /usr/local && rm -rf protoc-24.4-linux-x86_64.zip
+          mkdir -p /root/go/bin
+          export PATH=/usr/local/go/bin:/usr/local/bin:/root/go/bin:$PATH
+          echo "PATH=$PATH" >> $GITHUB_ENV
           go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.36.5
           go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.5.1
           go install github.com/googleapis/gapic-generator-go/cmd/protoc-gen-go_gapic@v0.53.1
