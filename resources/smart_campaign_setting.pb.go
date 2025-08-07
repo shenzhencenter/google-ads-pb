@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.36.5
 // 	protoc        v4.24.4
-// source: google/ads/googleads/v20/resources/smart_campaign_setting.proto
+// source: google/ads/googleads/v21/resources/smart_campaign_setting.proto
 
 package resources
 
@@ -72,7 +72,7 @@ type SmartCampaignSetting struct {
 
 func (x *SmartCampaignSetting) Reset() {
 	*x = SmartCampaignSetting{}
-	mi := &file_google_ads_googleads_v20_resources_smart_campaign_setting_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v21_resources_smart_campaign_setting_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -84,7 +84,7 @@ func (x *SmartCampaignSetting) String() string {
 func (*SmartCampaignSetting) ProtoMessage() {}
 
 func (x *SmartCampaignSetting) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_resources_smart_campaign_setting_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v21_resources_smart_campaign_setting_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -97,7 +97,7 @@ func (x *SmartCampaignSetting) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SmartCampaignSetting.ProtoReflect.Descriptor instead.
 func (*SmartCampaignSetting) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_resources_smart_campaign_setting_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v21_resources_smart_campaign_setting_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *SmartCampaignSetting) GetResourceName() string {
@@ -238,7 +238,7 @@ type SmartCampaignSetting_PhoneNumber struct {
 
 func (x *SmartCampaignSetting_PhoneNumber) Reset() {
 	*x = SmartCampaignSetting_PhoneNumber{}
-	mi := &file_google_ads_googleads_v20_resources_smart_campaign_setting_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v21_resources_smart_campaign_setting_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -250,7 +250,7 @@ func (x *SmartCampaignSetting_PhoneNumber) String() string {
 func (*SmartCampaignSetting_PhoneNumber) ProtoMessage() {}
 
 func (x *SmartCampaignSetting_PhoneNumber) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_resources_smart_campaign_setting_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v21_resources_smart_campaign_setting_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -263,7 +263,7 @@ func (x *SmartCampaignSetting_PhoneNumber) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SmartCampaignSetting_PhoneNumber.ProtoReflect.Descriptor instead.
 func (*SmartCampaignSetting_PhoneNumber) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_resources_smart_campaign_setting_proto_rawDescGZIP(), []int{0, 0}
+	return file_google_ads_googleads_v21_resources_smart_campaign_setting_proto_rawDescGZIP(), []int{0, 0}
 }
 
 func (x *SmartCampaignSetting_PhoneNumber) GetPhoneNumber() string {
@@ -294,7 +294,7 @@ type SmartCampaignSetting_AdOptimizedBusinessProfileSetting struct {
 
 func (x *SmartCampaignSetting_AdOptimizedBusinessProfileSetting) Reset() {
 	*x = SmartCampaignSetting_AdOptimizedBusinessProfileSetting{}
-	mi := &file_google_ads_googleads_v20_resources_smart_campaign_setting_proto_msgTypes[2]
+	mi := &file_google_ads_googleads_v21_resources_smart_campaign_setting_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -306,7 +306,7 @@ func (x *SmartCampaignSetting_AdOptimizedBusinessProfileSetting) String() string
 func (*SmartCampaignSetting_AdOptimizedBusinessProfileSetting) ProtoMessage() {}
 
 func (x *SmartCampaignSetting_AdOptimizedBusinessProfileSetting) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_resources_smart_campaign_setting_proto_msgTypes[2]
+	mi := &file_google_ads_googleads_v21_resources_smart_campaign_setting_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -319,7 +319,7 @@ func (x *SmartCampaignSetting_AdOptimizedBusinessProfileSetting) ProtoReflect() 
 
 // Deprecated: Use SmartCampaignSetting_AdOptimizedBusinessProfileSetting.ProtoReflect.Descriptor instead.
 func (*SmartCampaignSetting_AdOptimizedBusinessProfileSetting) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_resources_smart_campaign_setting_proto_rawDescGZIP(), []int{0, 1}
+	return file_google_ads_googleads_v21_resources_smart_campaign_setting_proto_rawDescGZIP(), []int{0, 1}
 }
 
 func (x *SmartCampaignSetting_AdOptimizedBusinessProfileSetting) GetIncludeLeadForm() bool {
@@ -329,15 +329,15 @@ func (x *SmartCampaignSetting_AdOptimizedBusinessProfileSetting) GetIncludeLeadF
 	return false
 }
 
-var File_google_ads_googleads_v20_resources_smart_campaign_setting_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v21_resources_smart_campaign_setting_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v20_resources_smart_campaign_setting_proto_rawDesc = string([]byte{
+var file_google_ads_googleads_v21_resources_smart_campaign_setting_proto_rawDesc = string([]byte{
 	0x0a, 0x3f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x30, 0x2f, 0x72, 0x65, 0x73, 0x6f, 0x75,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x31, 0x2f, 0x72, 0x65, 0x73, 0x6f, 0x75,
 	0x72, 0x63, 0x65, 0x73, 0x2f, 0x73, 0x6d, 0x61, 0x72, 0x74, 0x5f, 0x63, 0x61, 0x6d, 0x70, 0x61,
 	0x69, 0x67, 0x6e, 0x5f, 0x73, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x2e, 0x70, 0x72, 0x6f, 0x74,
 	0x6f, 0x12, 0x22, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x72, 0x65, 0x73, 0x6f,
+	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x72, 0x65, 0x73, 0x6f,
 	0x75, 0x72, 0x63, 0x65, 0x73, 0x1a, 0x1f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x70,
 	0x69, 0x2f, 0x66, 0x69, 0x65, 0x6c, 0x64, 0x5f, 0x62, 0x65, 0x68, 0x61, 0x76, 0x69, 0x6f, 0x72,
 	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x19, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61,
@@ -356,7 +356,7 @@ var file_google_ads_googleads_v20_resources_smart_campaign_setting_proto_rawDesc
 	0x69, 0x67, 0x6e, 0x52, 0x08, 0x63, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x12, 0x67, 0x0a,
 	0x0c, 0x70, 0x68, 0x6f, 0x6e, 0x65, 0x5f, 0x6e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x18, 0x03, 0x20,
 	0x01, 0x28, 0x0b, 0x32, 0x44, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73,
-	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x72,
+	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x72,
 	0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e, 0x53, 0x6d, 0x61, 0x72, 0x74, 0x43, 0x61,
 	0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x53, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x2e, 0x50, 0x68,
 	0x6f, 0x6e, 0x65, 0x4e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x52, 0x0b, 0x70, 0x68, 0x6f, 0x6e, 0x65,
@@ -370,7 +370,7 @@ var file_google_ads_googleads_v20_resources_smart_campaign_setting_proto_rawDesc
 	0x65, 0x64, 0x5f, 0x62, 0x75, 0x73, 0x69, 0x6e, 0x65, 0x73, 0x73, 0x5f, 0x70, 0x72, 0x6f, 0x66,
 	0x69, 0x6c, 0x65, 0x5f, 0x73, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x18, 0x09, 0x20, 0x01, 0x28,
 	0x0b, 0x32, 0x5a, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x72, 0x65, 0x73,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x72, 0x65, 0x73,
 	0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e, 0x53, 0x6d, 0x61, 0x72, 0x74, 0x43, 0x61, 0x6d, 0x70,
 	0x61, 0x69, 0x67, 0x6e, 0x53, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x2e, 0x41, 0x64, 0x4f, 0x70,
 	0x74, 0x69, 0x6d, 0x69, 0x7a, 0x65, 0x64, 0x42, 0x75, 0x73, 0x69, 0x6e, 0x65, 0x73, 0x73, 0x50,
@@ -409,45 +409,45 @@ var file_google_ads_googleads_v20_resources_smart_campaign_setting_proto_rawDesc
 	0x5f, 0x70, 0x61, 0x67, 0x65, 0x42, 0x12, 0x0a, 0x10, 0x62, 0x75, 0x73, 0x69, 0x6e, 0x65, 0x73,
 	0x73, 0x5f, 0x73, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x42, 0x8b, 0x02, 0x0a, 0x26, 0x63, 0x6f,
 	0x6d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75,
 	0x72, 0x63, 0x65, 0x73, 0x42, 0x19, 0x53, 0x6d, 0x61, 0x72, 0x74, 0x43, 0x61, 0x6d, 0x70, 0x61,
 	0x69, 0x67, 0x6e, 0x53, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50,
 	0x01, 0x5a, 0x4b, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x67, 0x6f, 0x6c, 0x61, 0x6e, 0x67,
 	0x2e, 0x6f, 0x72, 0x67, 0x2f, 0x67, 0x65, 0x6e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x70, 0x69, 0x73, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x30, 0x2f, 0x72, 0x65, 0x73, 0x6f, 0x75,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x31, 0x2f, 0x72, 0x65, 0x73, 0x6f, 0x75,
 	0x72, 0x63, 0x65, 0x73, 0x3b, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0xa2, 0x02,
 	0x03, 0x47, 0x41, 0x41, 0xaa, 0x02, 0x22, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x41, 0x64,
-	0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e, 0x56, 0x32, 0x30, 0x2e,
+	0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e, 0x56, 0x32, 0x31, 0x2e,
 	0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0xca, 0x02, 0x22, 0x47, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x5c, 0x41, 0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73,
-	0x5c, 0x56, 0x32, 0x30, 0x5c, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0xea, 0x02,
+	0x5c, 0x56, 0x32, 0x31, 0x5c, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0xea, 0x02,
 	0x26, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x3a, 0x3a, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x47, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x32, 0x30, 0x3a, 0x3a, 0x52, 0x65,
+	0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x32, 0x31, 0x3a, 0x3a, 0x52, 0x65,
 	0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 })
 
 var (
-	file_google_ads_googleads_v20_resources_smart_campaign_setting_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v20_resources_smart_campaign_setting_proto_rawDescData []byte
+	file_google_ads_googleads_v21_resources_smart_campaign_setting_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v21_resources_smart_campaign_setting_proto_rawDescData []byte
 )
 
-func file_google_ads_googleads_v20_resources_smart_campaign_setting_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v20_resources_smart_campaign_setting_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v20_resources_smart_campaign_setting_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v20_resources_smart_campaign_setting_proto_rawDesc), len(file_google_ads_googleads_v20_resources_smart_campaign_setting_proto_rawDesc)))
+func file_google_ads_googleads_v21_resources_smart_campaign_setting_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v21_resources_smart_campaign_setting_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v21_resources_smart_campaign_setting_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v21_resources_smart_campaign_setting_proto_rawDesc), len(file_google_ads_googleads_v21_resources_smart_campaign_setting_proto_rawDesc)))
 	})
-	return file_google_ads_googleads_v20_resources_smart_campaign_setting_proto_rawDescData
+	return file_google_ads_googleads_v21_resources_smart_campaign_setting_proto_rawDescData
 }
 
-var file_google_ads_googleads_v20_resources_smart_campaign_setting_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
-var file_google_ads_googleads_v20_resources_smart_campaign_setting_proto_goTypes = []any{
-	(*SmartCampaignSetting)(nil),                                   // 0: google.ads.googleads.v20.resources.SmartCampaignSetting
-	(*SmartCampaignSetting_PhoneNumber)(nil),                       // 1: google.ads.googleads.v20.resources.SmartCampaignSetting.PhoneNumber
-	(*SmartCampaignSetting_AdOptimizedBusinessProfileSetting)(nil), // 2: google.ads.googleads.v20.resources.SmartCampaignSetting.AdOptimizedBusinessProfileSetting
+var file_google_ads_googleads_v21_resources_smart_campaign_setting_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_google_ads_googleads_v21_resources_smart_campaign_setting_proto_goTypes = []any{
+	(*SmartCampaignSetting)(nil),                                   // 0: google.ads.googleads.v21.resources.SmartCampaignSetting
+	(*SmartCampaignSetting_PhoneNumber)(nil),                       // 1: google.ads.googleads.v21.resources.SmartCampaignSetting.PhoneNumber
+	(*SmartCampaignSetting_AdOptimizedBusinessProfileSetting)(nil), // 2: google.ads.googleads.v21.resources.SmartCampaignSetting.AdOptimizedBusinessProfileSetting
 }
-var file_google_ads_googleads_v20_resources_smart_campaign_setting_proto_depIdxs = []int32{
-	1, // 0: google.ads.googleads.v20.resources.SmartCampaignSetting.phone_number:type_name -> google.ads.googleads.v20.resources.SmartCampaignSetting.PhoneNumber
-	2, // 1: google.ads.googleads.v20.resources.SmartCampaignSetting.ad_optimized_business_profile_setting:type_name -> google.ads.googleads.v20.resources.SmartCampaignSetting.AdOptimizedBusinessProfileSetting
+var file_google_ads_googleads_v21_resources_smart_campaign_setting_proto_depIdxs = []int32{
+	1, // 0: google.ads.googleads.v21.resources.SmartCampaignSetting.phone_number:type_name -> google.ads.googleads.v21.resources.SmartCampaignSetting.PhoneNumber
+	2, // 1: google.ads.googleads.v21.resources.SmartCampaignSetting.ad_optimized_business_profile_setting:type_name -> google.ads.googleads.v21.resources.SmartCampaignSetting.AdOptimizedBusinessProfileSetting
 	2, // [2:2] is the sub-list for method output_type
 	2, // [2:2] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name
@@ -455,34 +455,34 @@ var file_google_ads_googleads_v20_resources_smart_campaign_setting_proto_depIdxs
 	0, // [0:2] is the sub-list for field type_name
 }
 
-func init() { file_google_ads_googleads_v20_resources_smart_campaign_setting_proto_init() }
-func file_google_ads_googleads_v20_resources_smart_campaign_setting_proto_init() {
-	if File_google_ads_googleads_v20_resources_smart_campaign_setting_proto != nil {
+func init() { file_google_ads_googleads_v21_resources_smart_campaign_setting_proto_init() }
+func file_google_ads_googleads_v21_resources_smart_campaign_setting_proto_init() {
+	if File_google_ads_googleads_v21_resources_smart_campaign_setting_proto != nil {
 		return
 	}
-	file_google_ads_googleads_v20_resources_smart_campaign_setting_proto_msgTypes[0].OneofWrappers = []any{
+	file_google_ads_googleads_v21_resources_smart_campaign_setting_proto_msgTypes[0].OneofWrappers = []any{
 		(*SmartCampaignSetting_FinalUrl)(nil),
 		(*SmartCampaignSetting_AdOptimizedBusinessProfileSetting_)(nil),
 		(*SmartCampaignSetting_BusinessName)(nil),
 		(*SmartCampaignSetting_BusinessProfileLocation)(nil),
 	}
-	file_google_ads_googleads_v20_resources_smart_campaign_setting_proto_msgTypes[1].OneofWrappers = []any{}
-	file_google_ads_googleads_v20_resources_smart_campaign_setting_proto_msgTypes[2].OneofWrappers = []any{}
+	file_google_ads_googleads_v21_resources_smart_campaign_setting_proto_msgTypes[1].OneofWrappers = []any{}
+	file_google_ads_googleads_v21_resources_smart_campaign_setting_proto_msgTypes[2].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v20_resources_smart_campaign_setting_proto_rawDesc), len(file_google_ads_googleads_v20_resources_smart_campaign_setting_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v21_resources_smart_campaign_setting_proto_rawDesc), len(file_google_ads_googleads_v21_resources_smart_campaign_setting_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   3,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_google_ads_googleads_v20_resources_smart_campaign_setting_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v20_resources_smart_campaign_setting_proto_depIdxs,
-		MessageInfos:      file_google_ads_googleads_v20_resources_smart_campaign_setting_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v21_resources_smart_campaign_setting_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v21_resources_smart_campaign_setting_proto_depIdxs,
+		MessageInfos:      file_google_ads_googleads_v21_resources_smart_campaign_setting_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v20_resources_smart_campaign_setting_proto = out.File
-	file_google_ads_googleads_v20_resources_smart_campaign_setting_proto_goTypes = nil
-	file_google_ads_googleads_v20_resources_smart_campaign_setting_proto_depIdxs = nil
+	File_google_ads_googleads_v21_resources_smart_campaign_setting_proto = out.File
+	file_google_ads_googleads_v21_resources_smart_campaign_setting_proto_goTypes = nil
+	file_google_ads_googleads_v21_resources_smart_campaign_setting_proto_depIdxs = nil
 }

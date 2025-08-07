@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.36.5
 // 	protoc        v4.24.4
-// source: google/ads/googleads/v20/enums/video_ad_format_restriction.proto
+// source: google/ads/googleads/v21/enums/video_ad_format_restriction.proto
 
 package enums
 
@@ -43,7 +43,7 @@ const (
 	VideoAdFormatRestrictionEnum_UNSPECIFIED VideoAdFormatRestrictionEnum_VideoAdFormatRestriction = 0
 	// Used for return value only. Represents value unknown in this version.
 	VideoAdFormatRestrictionEnum_UNKNOWN VideoAdFormatRestrictionEnum_VideoAdFormatRestriction = 1
-	// Non-skippable in-stream Video Responsive Ad.
+	// Non-skippable in-stream video responsive ad.
 	VideoAdFormatRestrictionEnum_NON_SKIPPABLE_IN_STREAM VideoAdFormatRestrictionEnum_VideoAdFormatRestriction = 2
 )
 
@@ -72,11 +72,11 @@ func (x VideoAdFormatRestrictionEnum_VideoAdFormatRestriction) String() string {
 }
 
 func (VideoAdFormatRestrictionEnum_VideoAdFormatRestriction) Descriptor() protoreflect.EnumDescriptor {
-	return file_google_ads_googleads_v20_enums_video_ad_format_restriction_proto_enumTypes[0].Descriptor()
+	return file_google_ads_googleads_v21_enums_video_ad_format_restriction_proto_enumTypes[0].Descriptor()
 }
 
 func (VideoAdFormatRestrictionEnum_VideoAdFormatRestriction) Type() protoreflect.EnumType {
-	return &file_google_ads_googleads_v20_enums_video_ad_format_restriction_proto_enumTypes[0]
+	return &file_google_ads_googleads_v21_enums_video_ad_format_restriction_proto_enumTypes[0]
 }
 
 func (x VideoAdFormatRestrictionEnum_VideoAdFormatRestriction) Number() protoreflect.EnumNumber {
@@ -85,10 +85,10 @@ func (x VideoAdFormatRestrictionEnum_VideoAdFormatRestriction) Number() protoref
 
 // Deprecated: Use VideoAdFormatRestrictionEnum_VideoAdFormatRestriction.Descriptor instead.
 func (VideoAdFormatRestrictionEnum_VideoAdFormatRestriction) EnumDescriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_enums_video_ad_format_restriction_proto_rawDescGZIP(), []int{0, 0}
+	return file_google_ads_googleads_v21_enums_video_ad_format_restriction_proto_rawDescGZIP(), []int{0, 0}
 }
 
-// Container for enum describing format restrictions for Video Responsive Ads in
+// Container for enum describing format restrictions for video responsive ads in
 // video campaigns.
 type VideoAdFormatRestrictionEnum struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
@@ -98,7 +98,7 @@ type VideoAdFormatRestrictionEnum struct {
 
 func (x *VideoAdFormatRestrictionEnum) Reset() {
 	*x = VideoAdFormatRestrictionEnum{}
-	mi := &file_google_ads_googleads_v20_enums_video_ad_format_restriction_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v21_enums_video_ad_format_restriction_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -110,7 +110,7 @@ func (x *VideoAdFormatRestrictionEnum) String() string {
 func (*VideoAdFormatRestrictionEnum) ProtoMessage() {}
 
 func (x *VideoAdFormatRestrictionEnum) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_enums_video_ad_format_restriction_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v21_enums_video_ad_format_restriction_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -123,18 +123,18 @@ func (x *VideoAdFormatRestrictionEnum) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use VideoAdFormatRestrictionEnum.ProtoReflect.Descriptor instead.
 func (*VideoAdFormatRestrictionEnum) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_enums_video_ad_format_restriction_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v21_enums_video_ad_format_restriction_proto_rawDescGZIP(), []int{0}
 }
 
-var File_google_ads_googleads_v20_enums_video_ad_format_restriction_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v21_enums_video_ad_format_restriction_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v20_enums_video_ad_format_restriction_proto_rawDesc = string([]byte{
+var file_google_ads_googleads_v21_enums_video_ad_format_restriction_proto_rawDesc = string([]byte{
 	0x0a, 0x40, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x30, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x31, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73,
 	0x2f, 0x76, 0x69, 0x64, 0x65, 0x6f, 0x5f, 0x61, 0x64, 0x5f, 0x66, 0x6f, 0x72, 0x6d, 0x61, 0x74,
 	0x5f, 0x72, 0x65, 0x73, 0x74, 0x72, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x70, 0x72, 0x6f,
 	0x74, 0x6f, 0x12, 0x1e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x65, 0x6e, 0x75,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x65, 0x6e, 0x75,
 	0x6d, 0x73, 0x22, 0x75, 0x0a, 0x1c, 0x56, 0x69, 0x64, 0x65, 0x6f, 0x41, 0x64, 0x46, 0x6f, 0x72,
 	0x6d, 0x61, 0x74, 0x52, 0x65, 0x73, 0x74, 0x72, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x45, 0x6e,
 	0x75, 0x6d, 0x22, 0x55, 0x0a, 0x18, 0x56, 0x69, 0x64, 0x65, 0x6f, 0x41, 0x64, 0x46, 0x6f, 0x72,
@@ -144,42 +144,42 @@ var file_google_ads_googleads_v20_enums_video_ad_format_restriction_proto_rawDes
 	0x4e, 0x4f, 0x4e, 0x5f, 0x53, 0x4b, 0x49, 0x50, 0x50, 0x41, 0x42, 0x4c, 0x45, 0x5f, 0x49, 0x4e,
 	0x5f, 0x53, 0x54, 0x52, 0x45, 0x41, 0x4d, 0x10, 0x02, 0x42, 0xf7, 0x01, 0x0a, 0x22, 0x63, 0x6f,
 	0x6d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73,
 	0x42, 0x1d, 0x56, 0x69, 0x64, 0x65, 0x6f, 0x41, 0x64, 0x46, 0x6f, 0x72, 0x6d, 0x61, 0x74, 0x52,
 	0x65, 0x73, 0x74, 0x72, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50,
 	0x01, 0x5a, 0x43, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x67, 0x6f, 0x6c, 0x61, 0x6e, 0x67,
 	0x2e, 0x6f, 0x72, 0x67, 0x2f, 0x67, 0x65, 0x6e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x70, 0x69, 0x73, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x30, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x31, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73,
 	0x3b, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0xa2, 0x02, 0x03, 0x47, 0x41, 0x41, 0xaa, 0x02, 0x1e, 0x47,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x41, 0x64, 0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x41, 0x64, 0x73, 0x2e, 0x56, 0x32, 0x30, 0x2e, 0x45, 0x6e, 0x75, 0x6d, 0x73, 0xca, 0x02, 0x1e,
+	0x41, 0x64, 0x73, 0x2e, 0x56, 0x32, 0x31, 0x2e, 0x45, 0x6e, 0x75, 0x6d, 0x73, 0xca, 0x02, 0x1e,
 	0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x5c, 0x41, 0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x32, 0x30, 0x5c, 0x45, 0x6e, 0x75, 0x6d, 0x73, 0xea, 0x02,
+	0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x32, 0x31, 0x5c, 0x45, 0x6e, 0x75, 0x6d, 0x73, 0xea, 0x02,
 	0x22, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x3a, 0x3a, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x47, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x32, 0x30, 0x3a, 0x3a, 0x45, 0x6e,
+	0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x32, 0x31, 0x3a, 0x3a, 0x45, 0x6e,
 	0x75, 0x6d, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 })
 
 var (
-	file_google_ads_googleads_v20_enums_video_ad_format_restriction_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v20_enums_video_ad_format_restriction_proto_rawDescData []byte
+	file_google_ads_googleads_v21_enums_video_ad_format_restriction_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v21_enums_video_ad_format_restriction_proto_rawDescData []byte
 )
 
-func file_google_ads_googleads_v20_enums_video_ad_format_restriction_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v20_enums_video_ad_format_restriction_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v20_enums_video_ad_format_restriction_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v20_enums_video_ad_format_restriction_proto_rawDesc), len(file_google_ads_googleads_v20_enums_video_ad_format_restriction_proto_rawDesc)))
+func file_google_ads_googleads_v21_enums_video_ad_format_restriction_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v21_enums_video_ad_format_restriction_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v21_enums_video_ad_format_restriction_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v21_enums_video_ad_format_restriction_proto_rawDesc), len(file_google_ads_googleads_v21_enums_video_ad_format_restriction_proto_rawDesc)))
 	})
-	return file_google_ads_googleads_v20_enums_video_ad_format_restriction_proto_rawDescData
+	return file_google_ads_googleads_v21_enums_video_ad_format_restriction_proto_rawDescData
 }
 
-var file_google_ads_googleads_v20_enums_video_ad_format_restriction_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_google_ads_googleads_v20_enums_video_ad_format_restriction_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
-var file_google_ads_googleads_v20_enums_video_ad_format_restriction_proto_goTypes = []any{
-	(VideoAdFormatRestrictionEnum_VideoAdFormatRestriction)(0), // 0: google.ads.googleads.v20.enums.VideoAdFormatRestrictionEnum.VideoAdFormatRestriction
-	(*VideoAdFormatRestrictionEnum)(nil),                       // 1: google.ads.googleads.v20.enums.VideoAdFormatRestrictionEnum
+var file_google_ads_googleads_v21_enums_video_ad_format_restriction_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_google_ads_googleads_v21_enums_video_ad_format_restriction_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_google_ads_googleads_v21_enums_video_ad_format_restriction_proto_goTypes = []any{
+	(VideoAdFormatRestrictionEnum_VideoAdFormatRestriction)(0), // 0: google.ads.googleads.v21.enums.VideoAdFormatRestrictionEnum.VideoAdFormatRestriction
+	(*VideoAdFormatRestrictionEnum)(nil),                       // 1: google.ads.googleads.v21.enums.VideoAdFormatRestrictionEnum
 }
-var file_google_ads_googleads_v20_enums_video_ad_format_restriction_proto_depIdxs = []int32{
+var file_google_ads_googleads_v21_enums_video_ad_format_restriction_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type
 	0, // [0:0] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
@@ -187,27 +187,27 @@ var file_google_ads_googleads_v20_enums_video_ad_format_restriction_proto_depIdx
 	0, // [0:0] is the sub-list for field type_name
 }
 
-func init() { file_google_ads_googleads_v20_enums_video_ad_format_restriction_proto_init() }
-func file_google_ads_googleads_v20_enums_video_ad_format_restriction_proto_init() {
-	if File_google_ads_googleads_v20_enums_video_ad_format_restriction_proto != nil {
+func init() { file_google_ads_googleads_v21_enums_video_ad_format_restriction_proto_init() }
+func file_google_ads_googleads_v21_enums_video_ad_format_restriction_proto_init() {
+	if File_google_ads_googleads_v21_enums_video_ad_format_restriction_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v20_enums_video_ad_format_restriction_proto_rawDesc), len(file_google_ads_googleads_v20_enums_video_ad_format_restriction_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v21_enums_video_ad_format_restriction_proto_rawDesc), len(file_google_ads_googleads_v21_enums_video_ad_format_restriction_proto_rawDesc)),
 			NumEnums:      1,
 			NumMessages:   1,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_google_ads_googleads_v20_enums_video_ad_format_restriction_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v20_enums_video_ad_format_restriction_proto_depIdxs,
-		EnumInfos:         file_google_ads_googleads_v20_enums_video_ad_format_restriction_proto_enumTypes,
-		MessageInfos:      file_google_ads_googleads_v20_enums_video_ad_format_restriction_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v21_enums_video_ad_format_restriction_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v21_enums_video_ad_format_restriction_proto_depIdxs,
+		EnumInfos:         file_google_ads_googleads_v21_enums_video_ad_format_restriction_proto_enumTypes,
+		MessageInfos:      file_google_ads_googleads_v21_enums_video_ad_format_restriction_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v20_enums_video_ad_format_restriction_proto = out.File
-	file_google_ads_googleads_v20_enums_video_ad_format_restriction_proto_goTypes = nil
-	file_google_ads_googleads_v20_enums_video_ad_format_restriction_proto_depIdxs = nil
+	File_google_ads_googleads_v21_enums_video_ad_format_restriction_proto = out.File
+	file_google_ads_googleads_v21_enums_video_ad_format_restriction_proto_goTypes = nil
+	file_google_ads_googleads_v21_enums_video_ad_format_restriction_proto_depIdxs = nil
 }

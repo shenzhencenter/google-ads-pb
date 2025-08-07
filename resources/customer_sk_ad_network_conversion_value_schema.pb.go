@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.36.5
 // 	protoc        v4.24.4
-// source: google/ads/googleads/v20/resources/customer_sk_ad_network_conversion_value_schema.proto
+// source: google/ads/googleads/v21/resources/customer_sk_ad_network_conversion_value_schema.proto
 
 package resources
 
@@ -52,7 +52,7 @@ type CustomerSkAdNetworkConversionValueSchema struct {
 
 func (x *CustomerSkAdNetworkConversionValueSchema) Reset() {
 	*x = CustomerSkAdNetworkConversionValueSchema{}
-	mi := &file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -64,7 +64,7 @@ func (x *CustomerSkAdNetworkConversionValueSchema) String() string {
 func (*CustomerSkAdNetworkConversionValueSchema) ProtoMessage() {}
 
 func (x *CustomerSkAdNetworkConversionValueSchema) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -77,7 +77,7 @@ func (x *CustomerSkAdNetworkConversionValueSchema) ProtoReflect() protoreflect.M
 
 // Deprecated: Use CustomerSkAdNetworkConversionValueSchema.ProtoReflect.Descriptor instead.
 func (*CustomerSkAdNetworkConversionValueSchema) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *CustomerSkAdNetworkConversionValueSchema) GetResourceName() string {
@@ -119,7 +119,7 @@ type CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema s
 
 func (x *CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema) Reset() {
 	*x = CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema{}
-	mi := &file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -131,7 +131,7 @@ func (x *CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSche
 func (*CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema) ProtoMessage() {}
 
 func (x *CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -144,7 +144,7 @@ func (x *CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSche
 
 // Deprecated: Use CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema.ProtoReflect.Descriptor instead.
 func (*CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_rawDescGZIP(), []int{0, 0}
+	return file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_rawDescGZIP(), []int{0, 0}
 }
 
 func (x *CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema) GetAppId() string {
@@ -190,7 +190,7 @@ type CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_F
 
 func (x *CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_FineGrainedConversionValueMappings) Reset() {
 	*x = CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_FineGrainedConversionValueMappings{}
-	mi := &file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_msgTypes[2]
+	mi := &file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -203,7 +203,7 @@ func (*CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema
 }
 
 func (x *CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_FineGrainedConversionValueMappings) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_msgTypes[2]
+	mi := &file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -216,7 +216,7 @@ func (x *CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSche
 
 // Deprecated: Use CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_FineGrainedConversionValueMappings.ProtoReflect.Descriptor instead.
 func (*CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_FineGrainedConversionValueMappings) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_rawDescGZIP(), []int{0, 0, 0}
+	return file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_rawDescGZIP(), []int{0, 0, 0}
 }
 
 func (x *CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_FineGrainedConversionValueMappings) GetFineGrainedConversionValue() int32 {
@@ -256,7 +256,7 @@ type CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_P
 
 func (x *CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_PostbackMapping) Reset() {
 	*x = CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_PostbackMapping{}
-	mi := &file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_msgTypes[3]
+	mi := &file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -269,7 +269,7 @@ func (*CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema
 }
 
 func (x *CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_PostbackMapping) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_msgTypes[3]
+	mi := &file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -282,7 +282,7 @@ func (x *CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSche
 
 // Deprecated: Use CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_PostbackMapping.ProtoReflect.Descriptor instead.
 func (*CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_PostbackMapping) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_rawDescGZIP(), []int{0, 0, 1}
+	return file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_rawDescGZIP(), []int{0, 0, 1}
 }
 
 func (x *CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_PostbackMapping) GetPostbackSequenceIndex() int32 {
@@ -340,7 +340,7 @@ type isCustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema
 type CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_PostbackMapping_LockWindowCoarseConversionValue struct {
 	// Output only. Coarse grained conversion value that triggers conversion
 	// window lock.
-	LockWindowCoarseConversionValue enums.SkAdNetworkCoarseConversionValueEnum_SkAdNetworkCoarseConversionValue `protobuf:"varint,3,opt,name=lock_window_coarse_conversion_value,json=lockWindowCoarseConversionValue,proto3,enum=google.ads.googleads.v20.enums.SkAdNetworkCoarseConversionValueEnum_SkAdNetworkCoarseConversionValue,oneof"`
+	LockWindowCoarseConversionValue enums.SkAdNetworkCoarseConversionValueEnum_SkAdNetworkCoarseConversionValue `protobuf:"varint,3,opt,name=lock_window_coarse_conversion_value,json=lockWindowCoarseConversionValue,proto3,enum=google.ads.googleads.v21.enums.SkAdNetworkCoarseConversionValueEnum_SkAdNetworkCoarseConversionValue,oneof"`
 }
 
 type CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_PostbackMapping_LockWindowFineConversionValue struct {
@@ -378,7 +378,7 @@ type CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_C
 
 func (x *CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_CoarseGrainedConversionValueMappings) Reset() {
 	*x = CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_CoarseGrainedConversionValueMappings{}
-	mi := &file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_msgTypes[4]
+	mi := &file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -391,7 +391,7 @@ func (*CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema
 }
 
 func (x *CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_CoarseGrainedConversionValueMappings) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_msgTypes[4]
+	mi := &file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -404,7 +404,7 @@ func (x *CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSche
 
 // Deprecated: Use CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_CoarseGrainedConversionValueMappings.ProtoReflect.Descriptor instead.
 func (*CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_CoarseGrainedConversionValueMappings) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_rawDescGZIP(), []int{0, 0, 2}
+	return file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_rawDescGZIP(), []int{0, 0, 2}
 }
 
 func (x *CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_CoarseGrainedConversionValueMappings) GetLowConversionValueMapping() *CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_ConversionValueMapping {
@@ -447,7 +447,7 @@ type CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_C
 
 func (x *CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_ConversionValueMapping) Reset() {
 	*x = CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_ConversionValueMapping{}
-	mi := &file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_msgTypes[5]
+	mi := &file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -460,7 +460,7 @@ func (*CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema
 }
 
 func (x *CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_ConversionValueMapping) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_msgTypes[5]
+	mi := &file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -473,7 +473,7 @@ func (x *CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSche
 
 // Deprecated: Use CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_ConversionValueMapping.ProtoReflect.Descriptor instead.
 func (*CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_ConversionValueMapping) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_rawDescGZIP(), []int{0, 0, 3}
+	return file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_rawDescGZIP(), []int{0, 0, 3}
 }
 
 func (x *CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_ConversionValueMapping) GetMinTimePostInstallHours() int64 {
@@ -525,7 +525,7 @@ type CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_E
 
 func (x *CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_Event) Reset() {
 	*x = CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_Event{}
-	mi := &file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_msgTypes[6]
+	mi := &file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -538,7 +538,7 @@ func (*CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema
 }
 
 func (x *CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_Event) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_msgTypes[6]
+	mi := &file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -551,7 +551,7 @@ func (x *CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSche
 
 // Deprecated: Use CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_Event.ProtoReflect.Descriptor instead.
 func (*CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_Event) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_rawDescGZIP(), []int{0, 0, 4}
+	return file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_rawDescGZIP(), []int{0, 0, 4}
 }
 
 func (x *CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_Event) GetMappedEventName() string {
@@ -675,7 +675,7 @@ type CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_E
 
 func (x *CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_Event_RevenueRange) Reset() {
 	*x = CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_Event_RevenueRange{}
-	mi := &file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_msgTypes[7]
+	mi := &file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -688,7 +688,7 @@ func (*CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema
 }
 
 func (x *CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_Event_RevenueRange) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_msgTypes[7]
+	mi := &file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -701,7 +701,7 @@ func (x *CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSche
 
 // Deprecated: Use CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_Event_RevenueRange.ProtoReflect.Descriptor instead.
 func (*CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_Event_RevenueRange) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_rawDescGZIP(), []int{0, 0, 4, 0}
+	return file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_rawDescGZIP(), []int{0, 0, 4, 0}
 }
 
 func (x *CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_Event_RevenueRange) GetMinEventRevenue() float64 {
@@ -733,7 +733,7 @@ type CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_E
 
 func (x *CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_Event_EventOccurrenceRange) Reset() {
 	*x = CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_Event_EventOccurrenceRange{}
-	mi := &file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_msgTypes[8]
+	mi := &file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -746,7 +746,7 @@ func (*CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema
 }
 
 func (x *CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_Event_EventOccurrenceRange) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_msgTypes[8]
+	mi := &file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -759,7 +759,7 @@ func (x *CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSche
 
 // Deprecated: Use CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_Event_EventOccurrenceRange.ProtoReflect.Descriptor instead.
 func (*CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_Event_EventOccurrenceRange) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_rawDescGZIP(), []int{0, 0, 4, 1}
+	return file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_rawDescGZIP(), []int{0, 0, 4, 1}
 }
 
 func (x *CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_Event_EventOccurrenceRange) GetMinEventCount() int64 {
@@ -776,19 +776,19 @@ func (x *CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSche
 	return 0
 }
 
-var File_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_rawDesc = string([]byte{
+var file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_rawDesc = string([]byte{
 	0x0a, 0x57, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x30, 0x2f, 0x72, 0x65, 0x73, 0x6f, 0x75,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x31, 0x2f, 0x72, 0x65, 0x73, 0x6f, 0x75,
 	0x72, 0x63, 0x65, 0x73, 0x2f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x5f, 0x73, 0x6b,
 	0x5f, 0x61, 0x64, 0x5f, 0x6e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x5f, 0x63, 0x6f, 0x6e, 0x76,
 	0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x5f, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x5f, 0x73, 0x63, 0x68,
 	0x65, 0x6d, 0x61, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x22, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e,
-	0x76, 0x32, 0x30, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x1a, 0x4a, 0x67,
+	0x76, 0x32, 0x31, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x1a, 0x4a, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x30, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x73, 0x6b,
+	0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x31, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x73, 0x6b,
 	0x5f, 0x61, 0x64, 0x5f, 0x6e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x5f, 0x63, 0x6f, 0x61, 0x72,
 	0x73, 0x65, 0x5f, 0x63, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x5f, 0x76, 0x61,
 	0x6c, 0x75, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x1f, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
@@ -807,7 +807,7 @@ var file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_va
 	0x68, 0x65, 0x6d, 0x61, 0x52, 0x0c, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x4e, 0x61,
 	0x6d, 0x65, 0x12, 0x8a, 0x01, 0x0a, 0x06, 0x73, 0x63, 0x68, 0x65, 0x6d, 0x61, 0x18, 0x02, 0x20,
 	0x01, 0x28, 0x0b, 0x32, 0x6d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73,
-	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x72,
+	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x72,
 	0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65,
 	0x72, 0x53, 0x6b, 0x41, 0x64, 0x4e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x43, 0x6f, 0x6e, 0x76,
 	0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x53, 0x63, 0x68, 0x65, 0x6d,
@@ -826,7 +826,7 @@ var file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_va
 	0x6e, 0x65, 0x64, 0x5f, 0x63, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x5f, 0x76,
 	0x61, 0x6c, 0x75, 0x65, 0x5f, 0x6d, 0x61, 0x70, 0x70, 0x69, 0x6e, 0x67, 0x73, 0x18, 0x03, 0x20,
 	0x03, 0x28, 0x0b, 0x32, 0x90, 0x01, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64,
-	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e,
+	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e,
 	0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d,
 	0x65, 0x72, 0x53, 0x6b, 0x41, 0x64, 0x4e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x43, 0x6f, 0x6e,
 	0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x53, 0x63, 0x68, 0x65,
@@ -840,7 +840,7 @@ var file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_va
 	0xaf, 0x01, 0x0a, 0x11, 0x70, 0x6f, 0x73, 0x74, 0x62, 0x61, 0x63, 0x6b, 0x5f, 0x6d, 0x61, 0x70,
 	0x70, 0x69, 0x6e, 0x67, 0x73, 0x18, 0x04, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x7d, 0x2e, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73,
+	0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73,
 	0x2e, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x53, 0x6b, 0x41, 0x64, 0x4e, 0x65, 0x74,
 	0x77, 0x6f, 0x72, 0x6b, 0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x56, 0x61,
 	0x6c, 0x75, 0x65, 0x53, 0x63, 0x68, 0x65, 0x6d, 0x61, 0x2e, 0x53, 0x6b, 0x41, 0x64, 0x4e, 0x65,
@@ -858,7 +858,7 @@ var file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_va
 	0x12, 0xc4, 0x01, 0x0a, 0x18, 0x63, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x5f,
 	0x76, 0x61, 0x6c, 0x75, 0x65, 0x5f, 0x6d, 0x61, 0x70, 0x70, 0x69, 0x6e, 0x67, 0x18, 0x02, 0x20,
 	0x01, 0x28, 0x0b, 0x32, 0x84, 0x01, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64,
-	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e,
+	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e,
 	0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d,
 	0x65, 0x72, 0x53, 0x6b, 0x41, 0x64, 0x4e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x43, 0x6f, 0x6e,
 	0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x53, 0x63, 0x68, 0x65,
@@ -877,7 +877,7 @@ var file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_va
 	0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x5f, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x5f, 0x6d, 0x61, 0x70,
 	0x70, 0x69, 0x6e, 0x67, 0x73, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x92, 0x01, 0x2e, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65,
+	0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65,
 	0x73, 0x2e, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x53, 0x6b, 0x41, 0x64, 0x4e, 0x65,
 	0x74, 0x77, 0x6f, 0x72, 0x6b, 0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x56,
 	0x61, 0x6c, 0x75, 0x65, 0x53, 0x63, 0x68, 0x65, 0x6d, 0x61, 0x2e, 0x53, 0x6b, 0x41, 0x64, 0x4e,
@@ -892,7 +892,7 @@ var file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_va
 	0x73, 0x65, 0x5f, 0x63, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x5f, 0x76, 0x61,
 	0x6c, 0x75, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x65, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
-	0x2e, 0x76, 0x32, 0x30, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x53, 0x6b, 0x41, 0x64, 0x4e,
+	0x2e, 0x76, 0x32, 0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x53, 0x6b, 0x41, 0x64, 0x4e,
 	0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x43, 0x6f, 0x61, 0x72, 0x73, 0x65, 0x43, 0x6f, 0x6e, 0x76,
 	0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x45, 0x6e, 0x75, 0x6d, 0x2e,
 	0x53, 0x6b, 0x41, 0x64, 0x4e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x43, 0x6f, 0x61, 0x72, 0x73,
@@ -915,7 +915,7 @@ var file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_va
 	0x1c, 0x6c, 0x6f, 0x77, 0x5f, 0x63, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x5f,
 	0x76, 0x61, 0x6c, 0x75, 0x65, 0x5f, 0x6d, 0x61, 0x70, 0x70, 0x69, 0x6e, 0x67, 0x18, 0x01, 0x20,
 	0x01, 0x28, 0x0b, 0x32, 0x84, 0x01, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64,
-	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e,
+	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e,
 	0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d,
 	0x65, 0x72, 0x53, 0x6b, 0x41, 0x64, 0x4e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x43, 0x6f, 0x6e,
 	0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x53, 0x63, 0x68, 0x65,
@@ -928,7 +928,7 @@ var file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_va
 	0x65, 0x64, 0x69, 0x75, 0x6d, 0x5f, 0x63, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e,
 	0x5f, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x5f, 0x6d, 0x61, 0x70, 0x70, 0x69, 0x6e, 0x67, 0x18, 0x02,
 	0x20, 0x01, 0x28, 0x0b, 0x32, 0x84, 0x01, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61,
-	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30,
+	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31,
 	0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e, 0x43, 0x75, 0x73, 0x74, 0x6f,
 	0x6d, 0x65, 0x72, 0x53, 0x6b, 0x41, 0x64, 0x4e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x43, 0x6f,
 	0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x53, 0x63, 0x68,
@@ -942,7 +942,7 @@ var file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_va
 	0x6f, 0x6e, 0x5f, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x5f, 0x6d, 0x61, 0x70, 0x70, 0x69, 0x6e, 0x67,
 	0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x84, 0x01, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76,
-	0x32, 0x30, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e, 0x43, 0x75, 0x73,
+	0x32, 0x31, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e, 0x43, 0x75, 0x73,
 	0x74, 0x6f, 0x6d, 0x65, 0x72, 0x53, 0x6b, 0x41, 0x64, 0x4e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b,
 	0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x53,
 	0x63, 0x68, 0x65, 0x6d, 0x61, 0x2e, 0x53, 0x6b, 0x41, 0x64, 0x4e, 0x65, 0x74, 0x77, 0x6f, 0x72,
@@ -964,7 +964,7 @@ var file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_va
 	0x9d, 0x01, 0x0a, 0x0d, 0x6d, 0x61, 0x70, 0x70, 0x65, 0x64, 0x5f, 0x65, 0x76, 0x65, 0x6e, 0x74,
 	0x73, 0x18, 0x03, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76,
-	0x32, 0x30, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e, 0x43, 0x75, 0x73,
+	0x32, 0x31, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e, 0x43, 0x75, 0x73,
 	0x74, 0x6f, 0x6d, 0x65, 0x72, 0x53, 0x6b, 0x41, 0x64, 0x4e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b,
 	0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x53,
 	0x63, 0x68, 0x65, 0x6d, 0x61, 0x2e, 0x53, 0x6b, 0x41, 0x64, 0x4e, 0x65, 0x74, 0x77, 0x6f, 0x72,
@@ -980,7 +980,7 @@ var file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_va
 	0x43, 0x6f, 0x64, 0x65, 0x12, 0xb8, 0x01, 0x0a, 0x13, 0x65, 0x76, 0x65, 0x6e, 0x74, 0x5f, 0x72,
 	0x65, 0x76, 0x65, 0x6e, 0x75, 0x65, 0x5f, 0x72, 0x61, 0x6e, 0x67, 0x65, 0x18, 0x03, 0x20, 0x01,
 	0x28, 0x0b, 0x32, 0x80, 0x01, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73,
-	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x72,
+	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x72,
 	0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65,
 	0x72, 0x53, 0x6b, 0x41, 0x64, 0x4e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x43, 0x6f, 0x6e, 0x76,
 	0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x53, 0x63, 0x68, 0x65, 0x6d,
@@ -996,7 +996,7 @@ var file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_va
 	0x5f, 0x6f, 0x63, 0x63, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x5f, 0x72, 0x61, 0x6e, 0x67,
 	0x65, 0x18, 0x05, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x88, 0x01, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e,
-	0x76, 0x32, 0x30, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e, 0x43, 0x75,
+	0x76, 0x32, 0x31, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e, 0x43, 0x75,
 	0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x53, 0x6b, 0x41, 0x64, 0x4e, 0x65, 0x74, 0x77, 0x6f, 0x72,
 	0x6b, 0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x56, 0x61, 0x6c, 0x75, 0x65,
 	0x53, 0x63, 0x68, 0x65, 0x6d, 0x61, 0x2e, 0x53, 0x6b, 0x41, 0x64, 0x4e, 0x65, 0x74, 0x77, 0x6f,
@@ -1035,7 +1035,7 @@ var file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_va
 	0x6c, 0x75, 0x65, 0x53, 0x63, 0x68, 0x65, 0x6d, 0x61, 0x73, 0x2f, 0x7b, 0x61, 0x63, 0x63, 0x6f,
 	0x75, 0x6e, 0x74, 0x5f, 0x6c, 0x69, 0x6e, 0x6b, 0x5f, 0x69, 0x64, 0x7d, 0x42, 0x9f, 0x02, 0x0a,
 	0x26, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x72, 0x65,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x72, 0x65,
 	0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x42, 0x2d, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65,
 	0x72, 0x53, 0x6b, 0x41, 0x64, 0x4e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x43, 0x6f, 0x6e, 0x76,
 	0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x53, 0x63, 0x68, 0x65, 0x6d,
@@ -1043,56 +1043,56 @@ var file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_va
 	0x2e, 0x67, 0x6f, 0x6c, 0x61, 0x6e, 0x67, 0x2e, 0x6f, 0x72, 0x67, 0x2f, 0x67, 0x65, 0x6e, 0x70,
 	0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x70, 0x69, 0x73, 0x2f,
 	0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32,
-	0x30, 0x2f, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x3b, 0x72, 0x65, 0x73, 0x6f,
+	0x31, 0x2f, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x3b, 0x72, 0x65, 0x73, 0x6f,
 	0x75, 0x72, 0x63, 0x65, 0x73, 0xa2, 0x02, 0x03, 0x47, 0x41, 0x41, 0xaa, 0x02, 0x22, 0x47, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x41, 0x64, 0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41,
-	0x64, 0x73, 0x2e, 0x56, 0x32, 0x30, 0x2e, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73,
+	0x64, 0x73, 0x2e, 0x56, 0x32, 0x31, 0x2e, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73,
 	0xca, 0x02, 0x22, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x5c, 0x41, 0x64, 0x73, 0x5c, 0x47, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x32, 0x30, 0x5c, 0x52, 0x65, 0x73, 0x6f,
+	0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x32, 0x31, 0x5c, 0x52, 0x65, 0x73, 0x6f,
 	0x75, 0x72, 0x63, 0x65, 0x73, 0xea, 0x02, 0x26, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x3a, 0x3a,
 	0x41, 0x64, 0x73, 0x3a, 0x3a, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a,
-	0x56, 0x32, 0x30, 0x3a, 0x3a, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x62, 0x06,
+	0x56, 0x32, 0x31, 0x3a, 0x3a, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x62, 0x06,
 	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 })
 
 var (
-	file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_rawDescData []byte
+	file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_rawDescData []byte
 )
 
-func file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_rawDesc), len(file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_rawDesc)))
+func file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_rawDesc), len(file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_rawDesc)))
 	})
-	return file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_rawDescData
+	return file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_rawDescData
 }
 
-var file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
-var file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_goTypes = []any{
-	(*CustomerSkAdNetworkConversionValueSchema)(nil),                                                                       // 0: google.ads.googleads.v20.resources.CustomerSkAdNetworkConversionValueSchema
-	(*CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema)(nil),                                      // 1: google.ads.googleads.v20.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema
-	(*CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_FineGrainedConversionValueMappings)(nil),   // 2: google.ads.googleads.v20.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.FineGrainedConversionValueMappings
-	(*CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_PostbackMapping)(nil),                      // 3: google.ads.googleads.v20.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.PostbackMapping
-	(*CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_CoarseGrainedConversionValueMappings)(nil), // 4: google.ads.googleads.v20.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.CoarseGrainedConversionValueMappings
-	(*CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_ConversionValueMapping)(nil),               // 5: google.ads.googleads.v20.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.ConversionValueMapping
-	(*CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_Event)(nil),                                // 6: google.ads.googleads.v20.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.Event
-	(*CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_Event_RevenueRange)(nil),                   // 7: google.ads.googleads.v20.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.Event.RevenueRange
-	(*CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_Event_EventOccurrenceRange)(nil),           // 8: google.ads.googleads.v20.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.Event.EventOccurrenceRange
-	(enums.SkAdNetworkCoarseConversionValueEnum_SkAdNetworkCoarseConversionValue)(0),                                       // 9: google.ads.googleads.v20.enums.SkAdNetworkCoarseConversionValueEnum.SkAdNetworkCoarseConversionValue
+var file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
+var file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_goTypes = []any{
+	(*CustomerSkAdNetworkConversionValueSchema)(nil),                                                                       // 0: google.ads.googleads.v21.resources.CustomerSkAdNetworkConversionValueSchema
+	(*CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema)(nil),                                      // 1: google.ads.googleads.v21.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema
+	(*CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_FineGrainedConversionValueMappings)(nil),   // 2: google.ads.googleads.v21.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.FineGrainedConversionValueMappings
+	(*CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_PostbackMapping)(nil),                      // 3: google.ads.googleads.v21.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.PostbackMapping
+	(*CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_CoarseGrainedConversionValueMappings)(nil), // 4: google.ads.googleads.v21.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.CoarseGrainedConversionValueMappings
+	(*CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_ConversionValueMapping)(nil),               // 5: google.ads.googleads.v21.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.ConversionValueMapping
+	(*CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_Event)(nil),                                // 6: google.ads.googleads.v21.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.Event
+	(*CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_Event_RevenueRange)(nil),                   // 7: google.ads.googleads.v21.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.Event.RevenueRange
+	(*CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_Event_EventOccurrenceRange)(nil),           // 8: google.ads.googleads.v21.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.Event.EventOccurrenceRange
+	(enums.SkAdNetworkCoarseConversionValueEnum_SkAdNetworkCoarseConversionValue)(0),                                       // 9: google.ads.googleads.v21.enums.SkAdNetworkCoarseConversionValueEnum.SkAdNetworkCoarseConversionValue
 }
-var file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_depIdxs = []int32{
-	1,  // 0: google.ads.googleads.v20.resources.CustomerSkAdNetworkConversionValueSchema.schema:type_name -> google.ads.googleads.v20.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema
-	2,  // 1: google.ads.googleads.v20.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.fine_grained_conversion_value_mappings:type_name -> google.ads.googleads.v20.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.FineGrainedConversionValueMappings
-	3,  // 2: google.ads.googleads.v20.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.postback_mappings:type_name -> google.ads.googleads.v20.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.PostbackMapping
-	5,  // 3: google.ads.googleads.v20.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.FineGrainedConversionValueMappings.conversion_value_mapping:type_name -> google.ads.googleads.v20.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.ConversionValueMapping
-	4,  // 4: google.ads.googleads.v20.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.PostbackMapping.coarse_grained_conversion_value_mappings:type_name -> google.ads.googleads.v20.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.CoarseGrainedConversionValueMappings
-	9,  // 5: google.ads.googleads.v20.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.PostbackMapping.lock_window_coarse_conversion_value:type_name -> google.ads.googleads.v20.enums.SkAdNetworkCoarseConversionValueEnum.SkAdNetworkCoarseConversionValue
-	5,  // 6: google.ads.googleads.v20.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.CoarseGrainedConversionValueMappings.low_conversion_value_mapping:type_name -> google.ads.googleads.v20.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.ConversionValueMapping
-	5,  // 7: google.ads.googleads.v20.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.CoarseGrainedConversionValueMappings.medium_conversion_value_mapping:type_name -> google.ads.googleads.v20.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.ConversionValueMapping
-	5,  // 8: google.ads.googleads.v20.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.CoarseGrainedConversionValueMappings.high_conversion_value_mapping:type_name -> google.ads.googleads.v20.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.ConversionValueMapping
-	6,  // 9: google.ads.googleads.v20.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.ConversionValueMapping.mapped_events:type_name -> google.ads.googleads.v20.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.Event
-	7,  // 10: google.ads.googleads.v20.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.Event.event_revenue_range:type_name -> google.ads.googleads.v20.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.Event.RevenueRange
-	8,  // 11: google.ads.googleads.v20.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.Event.event_occurrence_range:type_name -> google.ads.googleads.v20.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.Event.EventOccurrenceRange
+var file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_depIdxs = []int32{
+	1,  // 0: google.ads.googleads.v21.resources.CustomerSkAdNetworkConversionValueSchema.schema:type_name -> google.ads.googleads.v21.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema
+	2,  // 1: google.ads.googleads.v21.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.fine_grained_conversion_value_mappings:type_name -> google.ads.googleads.v21.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.FineGrainedConversionValueMappings
+	3,  // 2: google.ads.googleads.v21.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.postback_mappings:type_name -> google.ads.googleads.v21.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.PostbackMapping
+	5,  // 3: google.ads.googleads.v21.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.FineGrainedConversionValueMappings.conversion_value_mapping:type_name -> google.ads.googleads.v21.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.ConversionValueMapping
+	4,  // 4: google.ads.googleads.v21.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.PostbackMapping.coarse_grained_conversion_value_mappings:type_name -> google.ads.googleads.v21.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.CoarseGrainedConversionValueMappings
+	9,  // 5: google.ads.googleads.v21.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.PostbackMapping.lock_window_coarse_conversion_value:type_name -> google.ads.googleads.v21.enums.SkAdNetworkCoarseConversionValueEnum.SkAdNetworkCoarseConversionValue
+	5,  // 6: google.ads.googleads.v21.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.CoarseGrainedConversionValueMappings.low_conversion_value_mapping:type_name -> google.ads.googleads.v21.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.ConversionValueMapping
+	5,  // 7: google.ads.googleads.v21.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.CoarseGrainedConversionValueMappings.medium_conversion_value_mapping:type_name -> google.ads.googleads.v21.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.ConversionValueMapping
+	5,  // 8: google.ads.googleads.v21.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.CoarseGrainedConversionValueMappings.high_conversion_value_mapping:type_name -> google.ads.googleads.v21.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.ConversionValueMapping
+	6,  // 9: google.ads.googleads.v21.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.ConversionValueMapping.mapped_events:type_name -> google.ads.googleads.v21.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.Event
+	7,  // 10: google.ads.googleads.v21.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.Event.event_revenue_range:type_name -> google.ads.googleads.v21.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.Event.RevenueRange
+	8,  // 11: google.ads.googleads.v21.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.Event.event_occurrence_range:type_name -> google.ads.googleads.v21.resources.CustomerSkAdNetworkConversionValueSchema.SkAdNetworkConversionValueSchema.Event.EventOccurrenceRange
 	12, // [12:12] is the sub-list for method output_type
 	12, // [12:12] is the sub-list for method input_type
 	12, // [12:12] is the sub-list for extension type_name
@@ -1101,18 +1101,18 @@ var file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_va
 }
 
 func init() {
-	file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_init()
+	file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_init()
 }
-func file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_init() {
-	if File_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto != nil {
+func file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_init() {
+	if File_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto != nil {
 		return
 	}
-	file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_msgTypes[3].OneofWrappers = []any{
+	file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_msgTypes[3].OneofWrappers = []any{
 		(*CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_PostbackMapping_LockWindowCoarseConversionValue)(nil),
 		(*CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_PostbackMapping_LockWindowFineConversionValue)(nil),
 		(*CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_PostbackMapping_LockWindowEvent)(nil),
 	}
-	file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_msgTypes[6].OneofWrappers = []any{
+	file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_msgTypes[6].OneofWrappers = []any{
 		(*CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_Event_EventRevenueRange)(nil),
 		(*CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_Event_EventRevenueValue)(nil),
 		(*CustomerSkAdNetworkConversionValueSchema_SkAdNetworkConversionValueSchema_Event_EventOccurrenceRange_)(nil),
@@ -1122,17 +1122,17 @@ func file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_v
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_rawDesc), len(file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_rawDesc), len(file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   9,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_depIdxs,
-		MessageInfos:      file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_depIdxs,
+		MessageInfos:      file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto = out.File
-	file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_goTypes = nil
-	file_google_ads_googleads_v20_resources_customer_sk_ad_network_conversion_value_schema_proto_depIdxs = nil
+	File_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto = out.File
+	file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_goTypes = nil
+	file_google_ads_googleads_v21_resources_customer_sk_ad_network_conversion_value_schema_proto_depIdxs = nil
 }

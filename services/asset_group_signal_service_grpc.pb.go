@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v20/services/asset_group_signal_service.proto
+// source: google/ads/googleads/v21/services/asset_group_signal_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	AssetGroupSignalService_MutateAssetGroupSignals_FullMethodName = "/google.ads.googleads.v20.services.AssetGroupSignalService/MutateAssetGroupSignals"
+	AssetGroupSignalService_MutateAssetGroupSignals_FullMethodName = "/google.ads.googleads.v21.services.AssetGroupSignalService/MutateAssetGroupSignals"
 )
 
 // AssetGroupSignalServiceClient is the client API for AssetGroupSignalService service.
@@ -131,7 +131,7 @@ func _AssetGroupSignalService_MutateAssetGroupSignals_Handler(srv interface{}, c
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AssetGroupSignalService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v20.services.AssetGroupSignalService",
+	ServiceName: "google.ads.googleads.v21.services.AssetGroupSignalService",
 	HandlerType: (*AssetGroupSignalServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -140,5 +140,5 @@ var AssetGroupSignalService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v20/services/asset_group_signal_service.proto",
+	Metadata: "google/ads/googleads/v21/services/asset_group_signal_service.proto",
 }

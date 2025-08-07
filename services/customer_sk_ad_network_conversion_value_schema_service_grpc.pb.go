@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v20/services/customer_sk_ad_network_conversion_value_schema_service.proto
+// source: google/ads/googleads/v21/services/customer_sk_ad_network_conversion_value_schema_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	CustomerSkAdNetworkConversionValueSchemaService_MutateCustomerSkAdNetworkConversionValueSchema_FullMethodName = "/google.ads.googleads.v20.services.CustomerSkAdNetworkConversionValueSchemaService/MutateCustomerSkAdNetworkConversionValueSchema"
+	CustomerSkAdNetworkConversionValueSchemaService_MutateCustomerSkAdNetworkConversionValueSchema_FullMethodName = "/google.ads.googleads.v21.services.CustomerSkAdNetworkConversionValueSchemaService/MutateCustomerSkAdNetworkConversionValueSchema"
 )
 
 // CustomerSkAdNetworkConversionValueSchemaServiceClient is the client API for CustomerSkAdNetworkConversionValueSchemaService service.
@@ -145,7 +145,7 @@ func _CustomerSkAdNetworkConversionValueSchemaService_MutateCustomerSkAdNetworkC
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CustomerSkAdNetworkConversionValueSchemaService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v20.services.CustomerSkAdNetworkConversionValueSchemaService",
+	ServiceName: "google.ads.googleads.v21.services.CustomerSkAdNetworkConversionValueSchemaService",
 	HandlerType: (*CustomerSkAdNetworkConversionValueSchemaServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -154,5 +154,5 @@ var CustomerSkAdNetworkConversionValueSchemaService_ServiceDesc = grpc.ServiceDe
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v20/services/customer_sk_ad_network_conversion_value_schema_service.proto",
+	Metadata: "google/ads/googleads/v21/services/customer_sk_ad_network_conversion_value_schema_service.proto",
 }

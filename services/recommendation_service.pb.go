@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.36.5
 // 	protoc        v4.24.4
-// source: google/ads/googleads/v20/services/recommendation_service.proto
+// source: google/ads/googleads/v21/services/recommendation_service.proto
 
 package services
 
@@ -81,11 +81,11 @@ func (x ApplyRecommendationOperation_AdAssetApplyParameters_ApplyScope) String()
 }
 
 func (ApplyRecommendationOperation_AdAssetApplyParameters_ApplyScope) Descriptor() protoreflect.EnumDescriptor {
-	return file_google_ads_googleads_v20_services_recommendation_service_proto_enumTypes[0].Descriptor()
+	return file_google_ads_googleads_v21_services_recommendation_service_proto_enumTypes[0].Descriptor()
 }
 
 func (ApplyRecommendationOperation_AdAssetApplyParameters_ApplyScope) Type() protoreflect.EnumType {
-	return &file_google_ads_googleads_v20_services_recommendation_service_proto_enumTypes[0]
+	return &file_google_ads_googleads_v21_services_recommendation_service_proto_enumTypes[0]
 }
 
 func (x ApplyRecommendationOperation_AdAssetApplyParameters_ApplyScope) Number() protoreflect.EnumNumber {
@@ -94,11 +94,11 @@ func (x ApplyRecommendationOperation_AdAssetApplyParameters_ApplyScope) Number()
 
 // Deprecated: Use ApplyRecommendationOperation_AdAssetApplyParameters_ApplyScope.Descriptor instead.
 func (ApplyRecommendationOperation_AdAssetApplyParameters_ApplyScope) EnumDescriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescGZIP(), []int{1, 14, 0}
+	return file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescGZIP(), []int{1, 14, 0}
 }
 
 // Request message for
-// [RecommendationService.ApplyRecommendation][google.ads.googleads.v20.services.RecommendationService.ApplyRecommendation].
+// [RecommendationService.ApplyRecommendation][google.ads.googleads.v21.services.RecommendationService.ApplyRecommendation].
 type ApplyRecommendationRequest struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Required. The ID of the customer with the recommendation.
@@ -118,7 +118,7 @@ type ApplyRecommendationRequest struct {
 
 func (x *ApplyRecommendationRequest) Reset() {
 	*x = ApplyRecommendationRequest{}
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -130,7 +130,7 @@ func (x *ApplyRecommendationRequest) String() string {
 func (*ApplyRecommendationRequest) ProtoMessage() {}
 
 func (x *ApplyRecommendationRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -143,7 +143,7 @@ func (x *ApplyRecommendationRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ApplyRecommendationRequest.ProtoReflect.Descriptor instead.
 func (*ApplyRecommendationRequest) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ApplyRecommendationRequest) GetCustomerId() string {
@@ -208,7 +208,7 @@ type ApplyRecommendationOperation struct {
 
 func (x *ApplyRecommendationOperation) Reset() {
 	*x = ApplyRecommendationOperation{}
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -220,7 +220,7 @@ func (x *ApplyRecommendationOperation) String() string {
 func (*ApplyRecommendationOperation) ProtoMessage() {}
 
 func (x *ApplyRecommendationOperation) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -233,7 +233,7 @@ func (x *ApplyRecommendationOperation) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ApplyRecommendationOperation.ProtoReflect.Descriptor instead.
 func (*ApplyRecommendationOperation) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescGZIP(), []int{1}
+	return file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ApplyRecommendationOperation) GetResourceName() string {
@@ -665,7 +665,7 @@ func (*ApplyRecommendationOperation_SetTargetRoas) isApplyRecommendationOperatio
 func (*ApplyRecommendationOperation_LeadFormAsset) isApplyRecommendationOperation_ApplyParameters() {}
 
 // Response message for
-// [RecommendationService.ApplyRecommendation][google.ads.googleads.v20.services.RecommendationService.ApplyRecommendation].
+// [RecommendationService.ApplyRecommendation][google.ads.googleads.v21.services.RecommendationService.ApplyRecommendation].
 type ApplyRecommendationResponse struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Results of operations to apply recommendations.
@@ -681,7 +681,7 @@ type ApplyRecommendationResponse struct {
 
 func (x *ApplyRecommendationResponse) Reset() {
 	*x = ApplyRecommendationResponse{}
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[2]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -693,7 +693,7 @@ func (x *ApplyRecommendationResponse) String() string {
 func (*ApplyRecommendationResponse) ProtoMessage() {}
 
 func (x *ApplyRecommendationResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[2]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -706,7 +706,7 @@ func (x *ApplyRecommendationResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ApplyRecommendationResponse.ProtoReflect.Descriptor instead.
 func (*ApplyRecommendationResponse) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescGZIP(), []int{2}
+	return file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *ApplyRecommendationResponse) GetResults() []*ApplyRecommendationResult {
@@ -734,7 +734,7 @@ type ApplyRecommendationResult struct {
 
 func (x *ApplyRecommendationResult) Reset() {
 	*x = ApplyRecommendationResult{}
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[3]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -746,7 +746,7 @@ func (x *ApplyRecommendationResult) String() string {
 func (*ApplyRecommendationResult) ProtoMessage() {}
 
 func (x *ApplyRecommendationResult) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[3]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -759,7 +759,7 @@ func (x *ApplyRecommendationResult) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ApplyRecommendationResult.ProtoReflect.Descriptor instead.
 func (*ApplyRecommendationResult) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescGZIP(), []int{3}
+	return file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *ApplyRecommendationResult) GetResourceName() string {
@@ -770,7 +770,7 @@ func (x *ApplyRecommendationResult) GetResourceName() string {
 }
 
 // Request message for
-// [RecommendationService.DismissRecommendation][google.ads.googleads.v20.services.RecommendationService.DismissRecommendation].
+// [RecommendationService.DismissRecommendation][google.ads.googleads.v21.services.RecommendationService.DismissRecommendation].
 type DismissRecommendationRequest struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Required. The ID of the customer with the recommendation.
@@ -790,7 +790,7 @@ type DismissRecommendationRequest struct {
 
 func (x *DismissRecommendationRequest) Reset() {
 	*x = DismissRecommendationRequest{}
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[4]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -802,7 +802,7 @@ func (x *DismissRecommendationRequest) String() string {
 func (*DismissRecommendationRequest) ProtoMessage() {}
 
 func (x *DismissRecommendationRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[4]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -815,7 +815,7 @@ func (x *DismissRecommendationRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DismissRecommendationRequest.ProtoReflect.Descriptor instead.
 func (*DismissRecommendationRequest) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescGZIP(), []int{4}
+	return file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *DismissRecommendationRequest) GetCustomerId() string {
@@ -840,7 +840,7 @@ func (x *DismissRecommendationRequest) GetPartialFailure() bool {
 }
 
 // Response message for
-// [RecommendationService.DismissRecommendation][google.ads.googleads.v20.services.RecommendationService.DismissRecommendation].
+// [RecommendationService.DismissRecommendation][google.ads.googleads.v21.services.RecommendationService.DismissRecommendation].
 type DismissRecommendationResponse struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Results of operations to dismiss recommendations.
@@ -856,7 +856,7 @@ type DismissRecommendationResponse struct {
 
 func (x *DismissRecommendationResponse) Reset() {
 	*x = DismissRecommendationResponse{}
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[5]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -868,7 +868,7 @@ func (x *DismissRecommendationResponse) String() string {
 func (*DismissRecommendationResponse) ProtoMessage() {}
 
 func (x *DismissRecommendationResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[5]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -881,7 +881,7 @@ func (x *DismissRecommendationResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DismissRecommendationResponse.ProtoReflect.Descriptor instead.
 func (*DismissRecommendationResponse) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescGZIP(), []int{5}
+	return file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *DismissRecommendationResponse) GetResults() []*DismissRecommendationResponse_DismissRecommendationResult {
@@ -899,7 +899,7 @@ func (x *DismissRecommendationResponse) GetPartialFailureError() *status.Status 
 }
 
 // Request message for
-// [RecommendationService.GenerateRecommendations][google.ads.googleads.v20.services.RecommendationService.GenerateRecommendations].
+// [RecommendationService.GenerateRecommendations][google.ads.googleads.v21.services.RecommendationService.GenerateRecommendations].
 type GenerateRecommendationsRequest struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Required. The ID of the customer generating recommendations.
@@ -917,12 +917,12 @@ type GenerateRecommendationsRequest struct {
 	// MAXIMIZE_CONVERSIONS_OPT_IN, MAXIMIZE_CONVERSION_VALUE_OPT_IN,
 	// SET_TARGET_CPA, SET_TARGET_ROAS, SITELINK_ASSET, TARGET_CPA_OPT_IN,
 	// TARGET_ROAS_OPT_IN
-	RecommendationTypes []enums.RecommendationTypeEnum_RecommendationType `protobuf:"varint,2,rep,packed,name=recommendation_types,json=recommendationTypes,proto3,enum=google.ads.googleads.v20.enums.RecommendationTypeEnum_RecommendationType" json:"recommendation_types,omitempty"`
+	RecommendationTypes []enums.RecommendationTypeEnum_RecommendationType `protobuf:"varint,2,rep,packed,name=recommendation_types,json=recommendationTypes,proto3,enum=google.ads.googleads.v21.enums.RecommendationTypeEnum_RecommendationType" json:"recommendation_types,omitempty"`
 	// Required. Advertising channel type of the campaign.
 	// The following advertising_channel_types are supported for recommendation
 	// generation:
 	// PERFORMANCE_MAX and SEARCH
-	AdvertisingChannelType enums.AdvertisingChannelTypeEnum_AdvertisingChannelType `protobuf:"varint,3,opt,name=advertising_channel_type,json=advertisingChannelType,proto3,enum=google.ads.googleads.v20.enums.AdvertisingChannelTypeEnum_AdvertisingChannelType" json:"advertising_channel_type,omitempty"`
+	AdvertisingChannelType enums.AdvertisingChannelTypeEnum_AdvertisingChannelType `protobuf:"varint,3,opt,name=advertising_channel_type,json=advertisingChannelType,proto3,enum=google.ads.googleads.v21.enums.AdvertisingChannelTypeEnum_AdvertisingChannelType" json:"advertising_channel_type,omitempty"`
 	// Optional. Number of sitelinks on the campaign.
 	// This field is necessary for the following recommendation_types:
 	// SITELINK_ASSET
@@ -932,7 +932,7 @@ type GenerateRecommendationsRequest struct {
 	// MAXIMIZE_CLICKS_OPT_IN, MAXIMIZE_CONVERSIONS_OPT_IN,
 	// MAXIMIZE_CONVERSION_VALUE_OPT_IN, SET_TARGET_CPA, SET_TARGET_ROAS,
 	// TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN
-	ConversionTrackingStatus *enums.ConversionTrackingStatusEnum_ConversionTrackingStatus `protobuf:"varint,5,opt,name=conversion_tracking_status,json=conversionTrackingStatus,proto3,enum=google.ads.googleads.v20.enums.ConversionTrackingStatusEnum_ConversionTrackingStatus,oneof" json:"conversion_tracking_status,omitempty"`
+	ConversionTrackingStatus *enums.ConversionTrackingStatusEnum_ConversionTrackingStatus `protobuf:"varint,5,opt,name=conversion_tracking_status,json=conversionTrackingStatus,proto3,enum=google.ads.googleads.v21.enums.ConversionTrackingStatusEnum_ConversionTrackingStatus,oneof" json:"conversion_tracking_status,omitempty"`
 	// Optional. Current bidding information of the campaign.
 	// This field is necessary for the following recommendation_types:
 	// CAMPAIGN_BUDGET, MAXIMIZE_CLICKS_OPT_IN, MAXIMIZE_CONVERSIONS_OPT_IN,
@@ -1004,7 +1004,7 @@ type GenerateRecommendationsRequest struct {
 
 func (x *GenerateRecommendationsRequest) Reset() {
 	*x = GenerateRecommendationsRequest{}
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[6]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1016,7 +1016,7 @@ func (x *GenerateRecommendationsRequest) String() string {
 func (*GenerateRecommendationsRequest) ProtoMessage() {}
 
 func (x *GenerateRecommendationsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[6]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1029,7 +1029,7 @@ func (x *GenerateRecommendationsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GenerateRecommendationsRequest.ProtoReflect.Descriptor instead.
 func (*GenerateRecommendationsRequest) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescGZIP(), []int{6}
+	return file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *GenerateRecommendationsRequest) GetCustomerId() string {
@@ -1166,7 +1166,7 @@ func (x *GenerateRecommendationsRequest) GetMerchantCenterAccountId() int64 {
 }
 
 // Response message for
-// [RecommendationService.GenerateRecommendations][google.ads.googleads.v20.services.RecommendationService.GenerateRecommendations].
+// [RecommendationService.GenerateRecommendations][google.ads.googleads.v21.services.RecommendationService.GenerateRecommendations].
 type GenerateRecommendationsResponse struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// List of generated recommendations from the passed in set of requested
@@ -1180,7 +1180,7 @@ type GenerateRecommendationsResponse struct {
 
 func (x *GenerateRecommendationsResponse) Reset() {
 	*x = GenerateRecommendationsResponse{}
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[7]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1192,7 +1192,7 @@ func (x *GenerateRecommendationsResponse) String() string {
 func (*GenerateRecommendationsResponse) ProtoMessage() {}
 
 func (x *GenerateRecommendationsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[7]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1205,7 +1205,7 @@ func (x *GenerateRecommendationsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GenerateRecommendationsResponse.ProtoReflect.Descriptor instead.
 func (*GenerateRecommendationsResponse) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescGZIP(), []int{7}
+	return file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GenerateRecommendationsResponse) GetRecommendations() []*resources.Recommendation {
@@ -1227,7 +1227,7 @@ type ApplyRecommendationOperation_CampaignBudgetParameters struct {
 
 func (x *ApplyRecommendationOperation_CampaignBudgetParameters) Reset() {
 	*x = ApplyRecommendationOperation_CampaignBudgetParameters{}
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[8]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1239,7 +1239,7 @@ func (x *ApplyRecommendationOperation_CampaignBudgetParameters) String() string 
 func (*ApplyRecommendationOperation_CampaignBudgetParameters) ProtoMessage() {}
 
 func (x *ApplyRecommendationOperation_CampaignBudgetParameters) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[8]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1252,7 +1252,7 @@ func (x *ApplyRecommendationOperation_CampaignBudgetParameters) ProtoReflect() p
 
 // Deprecated: Use ApplyRecommendationOperation_CampaignBudgetParameters.ProtoReflect.Descriptor instead.
 func (*ApplyRecommendationOperation_CampaignBudgetParameters) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescGZIP(), []int{1, 0}
+	return file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescGZIP(), []int{1, 0}
 }
 
 func (x *ApplyRecommendationOperation_CampaignBudgetParameters) GetNewBudgetAmountMicros() int64 {
@@ -1278,7 +1278,7 @@ type ApplyRecommendationOperation_ForecastingSetTargetRoasParameters struct {
 
 func (x *ApplyRecommendationOperation_ForecastingSetTargetRoasParameters) Reset() {
 	*x = ApplyRecommendationOperation_ForecastingSetTargetRoasParameters{}
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[9]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1290,7 +1290,7 @@ func (x *ApplyRecommendationOperation_ForecastingSetTargetRoasParameters) String
 func (*ApplyRecommendationOperation_ForecastingSetTargetRoasParameters) ProtoMessage() {}
 
 func (x *ApplyRecommendationOperation_ForecastingSetTargetRoasParameters) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[9]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1303,7 +1303,7 @@ func (x *ApplyRecommendationOperation_ForecastingSetTargetRoasParameters) ProtoR
 
 // Deprecated: Use ApplyRecommendationOperation_ForecastingSetTargetRoasParameters.ProtoReflect.Descriptor instead.
 func (*ApplyRecommendationOperation_ForecastingSetTargetRoasParameters) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescGZIP(), []int{1, 1}
+	return file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescGZIP(), []int{1, 1}
 }
 
 func (x *ApplyRecommendationOperation_ForecastingSetTargetRoasParameters) GetTargetRoas() float64 {
@@ -1332,7 +1332,7 @@ type ApplyRecommendationOperation_TextAdParameters struct {
 
 func (x *ApplyRecommendationOperation_TextAdParameters) Reset() {
 	*x = ApplyRecommendationOperation_TextAdParameters{}
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[10]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1344,7 +1344,7 @@ func (x *ApplyRecommendationOperation_TextAdParameters) String() string {
 func (*ApplyRecommendationOperation_TextAdParameters) ProtoMessage() {}
 
 func (x *ApplyRecommendationOperation_TextAdParameters) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[10]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1357,7 +1357,7 @@ func (x *ApplyRecommendationOperation_TextAdParameters) ProtoReflect() protorefl
 
 // Deprecated: Use ApplyRecommendationOperation_TextAdParameters.ProtoReflect.Descriptor instead.
 func (*ApplyRecommendationOperation_TextAdParameters) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescGZIP(), []int{1, 2}
+	return file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescGZIP(), []int{1, 2}
 }
 
 func (x *ApplyRecommendationOperation_TextAdParameters) GetAd() *resources.Ad {
@@ -1373,7 +1373,7 @@ type ApplyRecommendationOperation_KeywordParameters struct {
 	// The ad group resource to add keyword to. This is a required field.
 	AdGroup *string `protobuf:"bytes,4,opt,name=ad_group,json=adGroup,proto3,oneof" json:"ad_group,omitempty"`
 	// The match type of the keyword. This is a required field.
-	MatchType enums.KeywordMatchTypeEnum_KeywordMatchType `protobuf:"varint,2,opt,name=match_type,json=matchType,proto3,enum=google.ads.googleads.v20.enums.KeywordMatchTypeEnum_KeywordMatchType" json:"match_type,omitempty"`
+	MatchType enums.KeywordMatchTypeEnum_KeywordMatchType `protobuf:"varint,2,opt,name=match_type,json=matchType,proto3,enum=google.ads.googleads.v21.enums.KeywordMatchTypeEnum_KeywordMatchType" json:"match_type,omitempty"`
 	// Optional, CPC bid to set for the keyword. If not set, keyword will use
 	// bid based on bidding strategy used by target ad group.
 	CpcBidMicros  *int64 `protobuf:"varint,5,opt,name=cpc_bid_micros,json=cpcBidMicros,proto3,oneof" json:"cpc_bid_micros,omitempty"`
@@ -1383,7 +1383,7 @@ type ApplyRecommendationOperation_KeywordParameters struct {
 
 func (x *ApplyRecommendationOperation_KeywordParameters) Reset() {
 	*x = ApplyRecommendationOperation_KeywordParameters{}
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[11]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1395,7 +1395,7 @@ func (x *ApplyRecommendationOperation_KeywordParameters) String() string {
 func (*ApplyRecommendationOperation_KeywordParameters) ProtoMessage() {}
 
 func (x *ApplyRecommendationOperation_KeywordParameters) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[11]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1408,7 +1408,7 @@ func (x *ApplyRecommendationOperation_KeywordParameters) ProtoReflect() protoref
 
 // Deprecated: Use ApplyRecommendationOperation_KeywordParameters.ProtoReflect.Descriptor instead.
 func (*ApplyRecommendationOperation_KeywordParameters) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescGZIP(), []int{1, 3}
+	return file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescGZIP(), []int{1, 3}
 }
 
 func (x *ApplyRecommendationOperation_KeywordParameters) GetAdGroup() string {
@@ -1446,7 +1446,7 @@ type ApplyRecommendationOperation_TargetCpaOptInParameters struct {
 
 func (x *ApplyRecommendationOperation_TargetCpaOptInParameters) Reset() {
 	*x = ApplyRecommendationOperation_TargetCpaOptInParameters{}
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[12]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1458,7 +1458,7 @@ func (x *ApplyRecommendationOperation_TargetCpaOptInParameters) String() string 
 func (*ApplyRecommendationOperation_TargetCpaOptInParameters) ProtoMessage() {}
 
 func (x *ApplyRecommendationOperation_TargetCpaOptInParameters) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[12]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1471,7 +1471,7 @@ func (x *ApplyRecommendationOperation_TargetCpaOptInParameters) ProtoReflect() p
 
 // Deprecated: Use ApplyRecommendationOperation_TargetCpaOptInParameters.ProtoReflect.Descriptor instead.
 func (*ApplyRecommendationOperation_TargetCpaOptInParameters) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescGZIP(), []int{1, 4}
+	return file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescGZIP(), []int{1, 4}
 }
 
 func (x *ApplyRecommendationOperation_TargetCpaOptInParameters) GetTargetCpaMicros() int64 {
@@ -1503,7 +1503,7 @@ type ApplyRecommendationOperation_TargetRoasOptInParameters struct {
 
 func (x *ApplyRecommendationOperation_TargetRoasOptInParameters) Reset() {
 	*x = ApplyRecommendationOperation_TargetRoasOptInParameters{}
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[13]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[13]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1515,7 +1515,7 @@ func (x *ApplyRecommendationOperation_TargetRoasOptInParameters) String() string
 func (*ApplyRecommendationOperation_TargetRoasOptInParameters) ProtoMessage() {}
 
 func (x *ApplyRecommendationOperation_TargetRoasOptInParameters) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[13]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[13]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1528,7 +1528,7 @@ func (x *ApplyRecommendationOperation_TargetRoasOptInParameters) ProtoReflect() 
 
 // Deprecated: Use ApplyRecommendationOperation_TargetRoasOptInParameters.ProtoReflect.Descriptor instead.
 func (*ApplyRecommendationOperation_TargetRoasOptInParameters) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescGZIP(), []int{1, 5}
+	return file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescGZIP(), []int{1, 5}
 }
 
 func (x *ApplyRecommendationOperation_TargetRoasOptInParameters) GetTargetRoas() float64 {
@@ -1556,7 +1556,7 @@ type ApplyRecommendationOperation_CalloutExtensionParameters struct {
 
 func (x *ApplyRecommendationOperation_CalloutExtensionParameters) Reset() {
 	*x = ApplyRecommendationOperation_CalloutExtensionParameters{}
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[14]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[14]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1568,7 +1568,7 @@ func (x *ApplyRecommendationOperation_CalloutExtensionParameters) String() strin
 func (*ApplyRecommendationOperation_CalloutExtensionParameters) ProtoMessage() {}
 
 func (x *ApplyRecommendationOperation_CalloutExtensionParameters) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[14]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[14]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1581,7 +1581,7 @@ func (x *ApplyRecommendationOperation_CalloutExtensionParameters) ProtoReflect()
 
 // Deprecated: Use ApplyRecommendationOperation_CalloutExtensionParameters.ProtoReflect.Descriptor instead.
 func (*ApplyRecommendationOperation_CalloutExtensionParameters) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescGZIP(), []int{1, 6}
+	return file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescGZIP(), []int{1, 6}
 }
 
 func (x *ApplyRecommendationOperation_CalloutExtensionParameters) GetCalloutExtensions() []*common.CalloutFeedItem {
@@ -1602,7 +1602,7 @@ type ApplyRecommendationOperation_CallExtensionParameters struct {
 
 func (x *ApplyRecommendationOperation_CallExtensionParameters) Reset() {
 	*x = ApplyRecommendationOperation_CallExtensionParameters{}
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[15]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[15]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1614,7 +1614,7 @@ func (x *ApplyRecommendationOperation_CallExtensionParameters) String() string {
 func (*ApplyRecommendationOperation_CallExtensionParameters) ProtoMessage() {}
 
 func (x *ApplyRecommendationOperation_CallExtensionParameters) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[15]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[15]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1627,7 +1627,7 @@ func (x *ApplyRecommendationOperation_CallExtensionParameters) ProtoReflect() pr
 
 // Deprecated: Use ApplyRecommendationOperation_CallExtensionParameters.ProtoReflect.Descriptor instead.
 func (*ApplyRecommendationOperation_CallExtensionParameters) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescGZIP(), []int{1, 7}
+	return file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescGZIP(), []int{1, 7}
 }
 
 func (x *ApplyRecommendationOperation_CallExtensionParameters) GetCallExtensions() []*common.CallFeedItem {
@@ -1648,7 +1648,7 @@ type ApplyRecommendationOperation_SitelinkExtensionParameters struct {
 
 func (x *ApplyRecommendationOperation_SitelinkExtensionParameters) Reset() {
 	*x = ApplyRecommendationOperation_SitelinkExtensionParameters{}
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[16]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[16]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1660,7 +1660,7 @@ func (x *ApplyRecommendationOperation_SitelinkExtensionParameters) String() stri
 func (*ApplyRecommendationOperation_SitelinkExtensionParameters) ProtoMessage() {}
 
 func (x *ApplyRecommendationOperation_SitelinkExtensionParameters) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[16]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[16]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1673,7 +1673,7 @@ func (x *ApplyRecommendationOperation_SitelinkExtensionParameters) ProtoReflect(
 
 // Deprecated: Use ApplyRecommendationOperation_SitelinkExtensionParameters.ProtoReflect.Descriptor instead.
 func (*ApplyRecommendationOperation_SitelinkExtensionParameters) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescGZIP(), []int{1, 8}
+	return file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescGZIP(), []int{1, 8}
 }
 
 func (x *ApplyRecommendationOperation_SitelinkExtensionParameters) GetSitelinkExtensions() []*common.SitelinkFeedItem {
@@ -1694,7 +1694,7 @@ type ApplyRecommendationOperation_CalloutAssetParameters struct {
 
 func (x *ApplyRecommendationOperation_CalloutAssetParameters) Reset() {
 	*x = ApplyRecommendationOperation_CalloutAssetParameters{}
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[17]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[17]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1706,7 +1706,7 @@ func (x *ApplyRecommendationOperation_CalloutAssetParameters) String() string {
 func (*ApplyRecommendationOperation_CalloutAssetParameters) ProtoMessage() {}
 
 func (x *ApplyRecommendationOperation_CalloutAssetParameters) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[17]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[17]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1719,7 +1719,7 @@ func (x *ApplyRecommendationOperation_CalloutAssetParameters) ProtoReflect() pro
 
 // Deprecated: Use ApplyRecommendationOperation_CalloutAssetParameters.ProtoReflect.Descriptor instead.
 func (*ApplyRecommendationOperation_CalloutAssetParameters) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescGZIP(), []int{1, 9}
+	return file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescGZIP(), []int{1, 9}
 }
 
 func (x *ApplyRecommendationOperation_CalloutAssetParameters) GetAdAssetApplyParameters() *ApplyRecommendationOperation_AdAssetApplyParameters {
@@ -1740,7 +1740,7 @@ type ApplyRecommendationOperation_CallAssetParameters struct {
 
 func (x *ApplyRecommendationOperation_CallAssetParameters) Reset() {
 	*x = ApplyRecommendationOperation_CallAssetParameters{}
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[18]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[18]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1752,7 +1752,7 @@ func (x *ApplyRecommendationOperation_CallAssetParameters) String() string {
 func (*ApplyRecommendationOperation_CallAssetParameters) ProtoMessage() {}
 
 func (x *ApplyRecommendationOperation_CallAssetParameters) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[18]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[18]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1765,7 +1765,7 @@ func (x *ApplyRecommendationOperation_CallAssetParameters) ProtoReflect() protor
 
 // Deprecated: Use ApplyRecommendationOperation_CallAssetParameters.ProtoReflect.Descriptor instead.
 func (*ApplyRecommendationOperation_CallAssetParameters) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescGZIP(), []int{1, 10}
+	return file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescGZIP(), []int{1, 10}
 }
 
 func (x *ApplyRecommendationOperation_CallAssetParameters) GetAdAssetApplyParameters() *ApplyRecommendationOperation_AdAssetApplyParameters {
@@ -1786,7 +1786,7 @@ type ApplyRecommendationOperation_SitelinkAssetParameters struct {
 
 func (x *ApplyRecommendationOperation_SitelinkAssetParameters) Reset() {
 	*x = ApplyRecommendationOperation_SitelinkAssetParameters{}
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[19]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[19]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1798,7 +1798,7 @@ func (x *ApplyRecommendationOperation_SitelinkAssetParameters) String() string {
 func (*ApplyRecommendationOperation_SitelinkAssetParameters) ProtoMessage() {}
 
 func (x *ApplyRecommendationOperation_SitelinkAssetParameters) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[19]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[19]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1811,7 +1811,7 @@ func (x *ApplyRecommendationOperation_SitelinkAssetParameters) ProtoReflect() pr
 
 // Deprecated: Use ApplyRecommendationOperation_SitelinkAssetParameters.ProtoReflect.Descriptor instead.
 func (*ApplyRecommendationOperation_SitelinkAssetParameters) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescGZIP(), []int{1, 11}
+	return file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescGZIP(), []int{1, 11}
 }
 
 func (x *ApplyRecommendationOperation_SitelinkAssetParameters) GetAdAssetApplyParameters() *ApplyRecommendationOperation_AdAssetApplyParameters {
@@ -1832,7 +1832,7 @@ type ApplyRecommendationOperation_RaiseTargetCpaParameters struct {
 
 func (x *ApplyRecommendationOperation_RaiseTargetCpaParameters) Reset() {
 	*x = ApplyRecommendationOperation_RaiseTargetCpaParameters{}
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[20]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[20]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1844,7 +1844,7 @@ func (x *ApplyRecommendationOperation_RaiseTargetCpaParameters) String() string 
 func (*ApplyRecommendationOperation_RaiseTargetCpaParameters) ProtoMessage() {}
 
 func (x *ApplyRecommendationOperation_RaiseTargetCpaParameters) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[20]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[20]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1857,7 +1857,7 @@ func (x *ApplyRecommendationOperation_RaiseTargetCpaParameters) ProtoReflect() p
 
 // Deprecated: Use ApplyRecommendationOperation_RaiseTargetCpaParameters.ProtoReflect.Descriptor instead.
 func (*ApplyRecommendationOperation_RaiseTargetCpaParameters) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescGZIP(), []int{1, 12}
+	return file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescGZIP(), []int{1, 12}
 }
 
 func (x *ApplyRecommendationOperation_RaiseTargetCpaParameters) GetTargetCpaMultiplier() float64 {
@@ -1878,7 +1878,7 @@ type ApplyRecommendationOperation_LowerTargetRoasParameters struct {
 
 func (x *ApplyRecommendationOperation_LowerTargetRoasParameters) Reset() {
 	*x = ApplyRecommendationOperation_LowerTargetRoasParameters{}
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[21]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[21]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1890,7 +1890,7 @@ func (x *ApplyRecommendationOperation_LowerTargetRoasParameters) String() string
 func (*ApplyRecommendationOperation_LowerTargetRoasParameters) ProtoMessage() {}
 
 func (x *ApplyRecommendationOperation_LowerTargetRoasParameters) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[21]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[21]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1903,7 +1903,7 @@ func (x *ApplyRecommendationOperation_LowerTargetRoasParameters) ProtoReflect() 
 
 // Deprecated: Use ApplyRecommendationOperation_LowerTargetRoasParameters.ProtoReflect.Descriptor instead.
 func (*ApplyRecommendationOperation_LowerTargetRoasParameters) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescGZIP(), []int{1, 13}
+	return file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescGZIP(), []int{1, 13}
 }
 
 func (x *ApplyRecommendationOperation_LowerTargetRoasParameters) GetTargetRoasMultiplier() float64 {
@@ -1927,14 +1927,14 @@ type ApplyRecommendationOperation_AdAssetApplyParameters struct {
 	// recommendation. Assets at the customer scope will apply to the entire
 	// account. Assets at the campaign scope will override any attached at the
 	// customer scope.
-	Scope         ApplyRecommendationOperation_AdAssetApplyParameters_ApplyScope `protobuf:"varint,3,opt,name=scope,proto3,enum=google.ads.googleads.v20.services.ApplyRecommendationOperation_AdAssetApplyParameters_ApplyScope" json:"scope,omitempty"`
+	Scope         ApplyRecommendationOperation_AdAssetApplyParameters_ApplyScope `protobuf:"varint,3,opt,name=scope,proto3,enum=google.ads.googleads.v21.services.ApplyRecommendationOperation_AdAssetApplyParameters_ApplyScope" json:"scope,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *ApplyRecommendationOperation_AdAssetApplyParameters) Reset() {
 	*x = ApplyRecommendationOperation_AdAssetApplyParameters{}
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[22]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[22]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1946,7 +1946,7 @@ func (x *ApplyRecommendationOperation_AdAssetApplyParameters) String() string {
 func (*ApplyRecommendationOperation_AdAssetApplyParameters) ProtoMessage() {}
 
 func (x *ApplyRecommendationOperation_AdAssetApplyParameters) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[22]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[22]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1959,7 +1959,7 @@ func (x *ApplyRecommendationOperation_AdAssetApplyParameters) ProtoReflect() pro
 
 // Deprecated: Use ApplyRecommendationOperation_AdAssetApplyParameters.ProtoReflect.Descriptor instead.
 func (*ApplyRecommendationOperation_AdAssetApplyParameters) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescGZIP(), []int{1, 14}
+	return file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescGZIP(), []int{1, 14}
 }
 
 func (x *ApplyRecommendationOperation_AdAssetApplyParameters) GetNewAssets() []*resources.Asset {
@@ -1995,7 +1995,7 @@ type ApplyRecommendationOperation_MoveUnusedBudgetParameters struct {
 
 func (x *ApplyRecommendationOperation_MoveUnusedBudgetParameters) Reset() {
 	*x = ApplyRecommendationOperation_MoveUnusedBudgetParameters{}
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[23]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[23]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2007,7 +2007,7 @@ func (x *ApplyRecommendationOperation_MoveUnusedBudgetParameters) String() strin
 func (*ApplyRecommendationOperation_MoveUnusedBudgetParameters) ProtoMessage() {}
 
 func (x *ApplyRecommendationOperation_MoveUnusedBudgetParameters) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[23]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[23]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2020,7 +2020,7 @@ func (x *ApplyRecommendationOperation_MoveUnusedBudgetParameters) ProtoReflect()
 
 // Deprecated: Use ApplyRecommendationOperation_MoveUnusedBudgetParameters.ProtoReflect.Descriptor instead.
 func (*ApplyRecommendationOperation_MoveUnusedBudgetParameters) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescGZIP(), []int{1, 15}
+	return file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescGZIP(), []int{1, 15}
 }
 
 func (x *ApplyRecommendationOperation_MoveUnusedBudgetParameters) GetBudgetMicrosToMove() int64 {
@@ -2042,7 +2042,7 @@ type ApplyRecommendationOperation_ResponsiveSearchAdAssetParameters struct {
 
 func (x *ApplyRecommendationOperation_ResponsiveSearchAdAssetParameters) Reset() {
 	*x = ApplyRecommendationOperation_ResponsiveSearchAdAssetParameters{}
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[24]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[24]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2054,7 +2054,7 @@ func (x *ApplyRecommendationOperation_ResponsiveSearchAdAssetParameters) String(
 func (*ApplyRecommendationOperation_ResponsiveSearchAdAssetParameters) ProtoMessage() {}
 
 func (x *ApplyRecommendationOperation_ResponsiveSearchAdAssetParameters) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[24]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[24]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2067,7 +2067,7 @@ func (x *ApplyRecommendationOperation_ResponsiveSearchAdAssetParameters) ProtoRe
 
 // Deprecated: Use ApplyRecommendationOperation_ResponsiveSearchAdAssetParameters.ProtoReflect.Descriptor instead.
 func (*ApplyRecommendationOperation_ResponsiveSearchAdAssetParameters) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescGZIP(), []int{1, 16}
+	return file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescGZIP(), []int{1, 16}
 }
 
 func (x *ApplyRecommendationOperation_ResponsiveSearchAdAssetParameters) GetUpdatedAd() *resources.Ad {
@@ -2089,7 +2089,7 @@ type ApplyRecommendationOperation_ResponsiveSearchAdImproveAdStrengthParameters 
 
 func (x *ApplyRecommendationOperation_ResponsiveSearchAdImproveAdStrengthParameters) Reset() {
 	*x = ApplyRecommendationOperation_ResponsiveSearchAdImproveAdStrengthParameters{}
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[25]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[25]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2101,7 +2101,7 @@ func (x *ApplyRecommendationOperation_ResponsiveSearchAdImproveAdStrengthParamet
 func (*ApplyRecommendationOperation_ResponsiveSearchAdImproveAdStrengthParameters) ProtoMessage() {}
 
 func (x *ApplyRecommendationOperation_ResponsiveSearchAdImproveAdStrengthParameters) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[25]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[25]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2114,7 +2114,7 @@ func (x *ApplyRecommendationOperation_ResponsiveSearchAdImproveAdStrengthParamet
 
 // Deprecated: Use ApplyRecommendationOperation_ResponsiveSearchAdImproveAdStrengthParameters.ProtoReflect.Descriptor instead.
 func (*ApplyRecommendationOperation_ResponsiveSearchAdImproveAdStrengthParameters) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescGZIP(), []int{1, 17}
+	return file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescGZIP(), []int{1, 17}
 }
 
 func (x *ApplyRecommendationOperation_ResponsiveSearchAdImproveAdStrengthParameters) GetUpdatedAd() *resources.Ad {
@@ -2135,7 +2135,7 @@ type ApplyRecommendationOperation_ResponsiveSearchAdParameters struct {
 
 func (x *ApplyRecommendationOperation_ResponsiveSearchAdParameters) Reset() {
 	*x = ApplyRecommendationOperation_ResponsiveSearchAdParameters{}
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[26]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[26]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2147,7 +2147,7 @@ func (x *ApplyRecommendationOperation_ResponsiveSearchAdParameters) String() str
 func (*ApplyRecommendationOperation_ResponsiveSearchAdParameters) ProtoMessage() {}
 
 func (x *ApplyRecommendationOperation_ResponsiveSearchAdParameters) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[26]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[26]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2160,7 +2160,7 @@ func (x *ApplyRecommendationOperation_ResponsiveSearchAdParameters) ProtoReflect
 
 // Deprecated: Use ApplyRecommendationOperation_ResponsiveSearchAdParameters.ProtoReflect.Descriptor instead.
 func (*ApplyRecommendationOperation_ResponsiveSearchAdParameters) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescGZIP(), []int{1, 18}
+	return file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescGZIP(), []int{1, 18}
 }
 
 func (x *ApplyRecommendationOperation_ResponsiveSearchAdParameters) GetAd() *resources.Ad {
@@ -2184,7 +2184,7 @@ type ApplyRecommendationOperation_RaiseTargetCpaBidTooLowParameters struct {
 
 func (x *ApplyRecommendationOperation_RaiseTargetCpaBidTooLowParameters) Reset() {
 	*x = ApplyRecommendationOperation_RaiseTargetCpaBidTooLowParameters{}
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[27]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[27]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2196,7 +2196,7 @@ func (x *ApplyRecommendationOperation_RaiseTargetCpaBidTooLowParameters) String(
 func (*ApplyRecommendationOperation_RaiseTargetCpaBidTooLowParameters) ProtoMessage() {}
 
 func (x *ApplyRecommendationOperation_RaiseTargetCpaBidTooLowParameters) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[27]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[27]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2209,7 +2209,7 @@ func (x *ApplyRecommendationOperation_RaiseTargetCpaBidTooLowParameters) ProtoRe
 
 // Deprecated: Use ApplyRecommendationOperation_RaiseTargetCpaBidTooLowParameters.ProtoReflect.Descriptor instead.
 func (*ApplyRecommendationOperation_RaiseTargetCpaBidTooLowParameters) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescGZIP(), []int{1, 19}
+	return file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescGZIP(), []int{1, 19}
 }
 
 func (x *ApplyRecommendationOperation_RaiseTargetCpaBidTooLowParameters) GetTargetMultiplier() float64 {
@@ -2230,7 +2230,7 @@ type ApplyRecommendationOperation_UseBroadMatchKeywordParameters struct {
 
 func (x *ApplyRecommendationOperation_UseBroadMatchKeywordParameters) Reset() {
 	*x = ApplyRecommendationOperation_UseBroadMatchKeywordParameters{}
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[28]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[28]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2242,7 +2242,7 @@ func (x *ApplyRecommendationOperation_UseBroadMatchKeywordParameters) String() s
 func (*ApplyRecommendationOperation_UseBroadMatchKeywordParameters) ProtoMessage() {}
 
 func (x *ApplyRecommendationOperation_UseBroadMatchKeywordParameters) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[28]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[28]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2255,7 +2255,7 @@ func (x *ApplyRecommendationOperation_UseBroadMatchKeywordParameters) ProtoRefle
 
 // Deprecated: Use ApplyRecommendationOperation_UseBroadMatchKeywordParameters.ProtoReflect.Descriptor instead.
 func (*ApplyRecommendationOperation_UseBroadMatchKeywordParameters) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescGZIP(), []int{1, 20}
+	return file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescGZIP(), []int{1, 20}
 }
 
 func (x *ApplyRecommendationOperation_UseBroadMatchKeywordParameters) GetNewBudgetAmountMicros() int64 {
@@ -2278,7 +2278,7 @@ type ApplyRecommendationOperation_ForecastingSetTargetCpaParameters struct {
 
 func (x *ApplyRecommendationOperation_ForecastingSetTargetCpaParameters) Reset() {
 	*x = ApplyRecommendationOperation_ForecastingSetTargetCpaParameters{}
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[29]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[29]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2290,7 +2290,7 @@ func (x *ApplyRecommendationOperation_ForecastingSetTargetCpaParameters) String(
 func (*ApplyRecommendationOperation_ForecastingSetTargetCpaParameters) ProtoMessage() {}
 
 func (x *ApplyRecommendationOperation_ForecastingSetTargetCpaParameters) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[29]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[29]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2303,7 +2303,7 @@ func (x *ApplyRecommendationOperation_ForecastingSetTargetCpaParameters) ProtoRe
 
 // Deprecated: Use ApplyRecommendationOperation_ForecastingSetTargetCpaParameters.ProtoReflect.Descriptor instead.
 func (*ApplyRecommendationOperation_ForecastingSetTargetCpaParameters) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescGZIP(), []int{1, 21}
+	return file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescGZIP(), []int{1, 21}
 }
 
 func (x *ApplyRecommendationOperation_ForecastingSetTargetCpaParameters) GetTargetCpaMicros() int64 {
@@ -2336,7 +2336,7 @@ type ApplyRecommendationOperation_LeadFormAssetParameters struct {
 
 func (x *ApplyRecommendationOperation_LeadFormAssetParameters) Reset() {
 	*x = ApplyRecommendationOperation_LeadFormAssetParameters{}
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[30]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[30]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2348,7 +2348,7 @@ func (x *ApplyRecommendationOperation_LeadFormAssetParameters) String() string {
 func (*ApplyRecommendationOperation_LeadFormAssetParameters) ProtoMessage() {}
 
 func (x *ApplyRecommendationOperation_LeadFormAssetParameters) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[30]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[30]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2361,7 +2361,7 @@ func (x *ApplyRecommendationOperation_LeadFormAssetParameters) ProtoReflect() pr
 
 // Deprecated: Use ApplyRecommendationOperation_LeadFormAssetParameters.ProtoReflect.Descriptor instead.
 func (*ApplyRecommendationOperation_LeadFormAssetParameters) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescGZIP(), []int{1, 22}
+	return file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescGZIP(), []int{1, 22}
 }
 
 func (x *ApplyRecommendationOperation_LeadFormAssetParameters) GetAdAssetApplyParameters() *ApplyRecommendationOperation_AdAssetApplyParameters {
@@ -2389,7 +2389,7 @@ type DismissRecommendationRequest_DismissRecommendationOperation struct {
 
 func (x *DismissRecommendationRequest_DismissRecommendationOperation) Reset() {
 	*x = DismissRecommendationRequest_DismissRecommendationOperation{}
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[31]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[31]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2401,7 +2401,7 @@ func (x *DismissRecommendationRequest_DismissRecommendationOperation) String() s
 func (*DismissRecommendationRequest_DismissRecommendationOperation) ProtoMessage() {}
 
 func (x *DismissRecommendationRequest_DismissRecommendationOperation) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[31]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[31]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2414,7 +2414,7 @@ func (x *DismissRecommendationRequest_DismissRecommendationOperation) ProtoRefle
 
 // Deprecated: Use DismissRecommendationRequest_DismissRecommendationOperation.ProtoReflect.Descriptor instead.
 func (*DismissRecommendationRequest_DismissRecommendationOperation) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescGZIP(), []int{4, 0}
+	return file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescGZIP(), []int{4, 0}
 }
 
 func (x *DismissRecommendationRequest_DismissRecommendationOperation) GetResourceName() string {
@@ -2435,7 +2435,7 @@ type DismissRecommendationResponse_DismissRecommendationResult struct {
 
 func (x *DismissRecommendationResponse_DismissRecommendationResult) Reset() {
 	*x = DismissRecommendationResponse_DismissRecommendationResult{}
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[32]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[32]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2447,7 +2447,7 @@ func (x *DismissRecommendationResponse_DismissRecommendationResult) String() str
 func (*DismissRecommendationResponse_DismissRecommendationResult) ProtoMessage() {}
 
 func (x *DismissRecommendationResponse_DismissRecommendationResult) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[32]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[32]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2460,7 +2460,7 @@ func (x *DismissRecommendationResponse_DismissRecommendationResult) ProtoReflect
 
 // Deprecated: Use DismissRecommendationResponse_DismissRecommendationResult.ProtoReflect.Descriptor instead.
 func (*DismissRecommendationResponse_DismissRecommendationResult) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescGZIP(), []int{5, 0}
+	return file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescGZIP(), []int{5, 0}
 }
 
 func (x *DismissRecommendationResponse_DismissRecommendationResult) GetResourceName() string {
@@ -2479,7 +2479,7 @@ type GenerateRecommendationsRequest_BiddingInfo struct {
 	// CAMPAIGN_BUDGET, MAXIMIZE_CLICKS_OPT_IN, MAXIMIZE_CONVERSIONS_OPT_IN,
 	// MAXIMIZE_CONVERSION_VALUE_OPT_IN, SET_TARGET_CPA, SET_TARGET_ROAS,
 	// TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN
-	BiddingStrategyType *enums.BiddingStrategyTypeEnum_BiddingStrategyType `protobuf:"varint,1,opt,name=bidding_strategy_type,json=biddingStrategyType,proto3,enum=google.ads.googleads.v20.enums.BiddingStrategyTypeEnum_BiddingStrategyType,oneof" json:"bidding_strategy_type,omitempty"`
+	BiddingStrategyType *enums.BiddingStrategyTypeEnum_BiddingStrategyType `protobuf:"varint,1,opt,name=bidding_strategy_type,json=biddingStrategyType,proto3,enum=google.ads.googleads.v21.enums.BiddingStrategyTypeEnum_BiddingStrategyType,oneof" json:"bidding_strategy_type,omitempty"`
 	// Optional details related to the bidding_strategy_type.
 	//
 	// Types that are valid to be assigned to BiddingStrategyTargetInfo:
@@ -2494,7 +2494,7 @@ type GenerateRecommendationsRequest_BiddingInfo struct {
 
 func (x *GenerateRecommendationsRequest_BiddingInfo) Reset() {
 	*x = GenerateRecommendationsRequest_BiddingInfo{}
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[33]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[33]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2506,7 +2506,7 @@ func (x *GenerateRecommendationsRequest_BiddingInfo) String() string {
 func (*GenerateRecommendationsRequest_BiddingInfo) ProtoMessage() {}
 
 func (x *GenerateRecommendationsRequest_BiddingInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[33]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[33]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2519,7 +2519,7 @@ func (x *GenerateRecommendationsRequest_BiddingInfo) ProtoReflect() protoreflect
 
 // Deprecated: Use GenerateRecommendationsRequest_BiddingInfo.ProtoReflect.Descriptor instead.
 func (*GenerateRecommendationsRequest_BiddingInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescGZIP(), []int{6, 0}
+	return file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescGZIP(), []int{6, 0}
 }
 
 func (x *GenerateRecommendationsRequest_BiddingInfo) GetBiddingStrategyType() enums.BiddingStrategyTypeEnum_BiddingStrategyType {
@@ -2604,7 +2604,7 @@ type GenerateRecommendationsRequest_AdGroupInfo struct {
 	// This field is necessary for the following recommendation_types if
 	// ad_group_info is set:
 	// KEYWORD
-	AdGroupType *enums.AdGroupTypeEnum_AdGroupType `protobuf:"varint,1,opt,name=ad_group_type,json=adGroupType,proto3,enum=google.ads.googleads.v20.enums.AdGroupTypeEnum_AdGroupType,oneof" json:"ad_group_type,omitempty"`
+	AdGroupType *enums.AdGroupTypeEnum_AdGroupType `protobuf:"varint,1,opt,name=ad_group_type,json=adGroupType,proto3,enum=google.ads.googleads.v21.enums.AdGroupTypeEnum_AdGroupType,oneof" json:"ad_group_type,omitempty"`
 	// Optional. Current keywords.
 	// This field is optional for the following recommendation_types if
 	// ad_group_info is set:
@@ -2618,7 +2618,7 @@ type GenerateRecommendationsRequest_AdGroupInfo struct {
 
 func (x *GenerateRecommendationsRequest_AdGroupInfo) Reset() {
 	*x = GenerateRecommendationsRequest_AdGroupInfo{}
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[34]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[34]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2630,7 +2630,7 @@ func (x *GenerateRecommendationsRequest_AdGroupInfo) String() string {
 func (*GenerateRecommendationsRequest_AdGroupInfo) ProtoMessage() {}
 
 func (x *GenerateRecommendationsRequest_AdGroupInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[34]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[34]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2643,7 +2643,7 @@ func (x *GenerateRecommendationsRequest_AdGroupInfo) ProtoReflect() protoreflect
 
 // Deprecated: Use GenerateRecommendationsRequest_AdGroupInfo.ProtoReflect.Descriptor instead.
 func (*GenerateRecommendationsRequest_AdGroupInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescGZIP(), []int{6, 1}
+	return file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescGZIP(), []int{6, 1}
 }
 
 func (x *GenerateRecommendationsRequest_AdGroupInfo) GetAdGroupType() enums.AdGroupTypeEnum_AdGroupType {
@@ -2674,7 +2674,7 @@ type GenerateRecommendationsRequest_SeedInfo struct {
 
 func (x *GenerateRecommendationsRequest_SeedInfo) Reset() {
 	*x = GenerateRecommendationsRequest_SeedInfo{}
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[35]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[35]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2686,7 +2686,7 @@ func (x *GenerateRecommendationsRequest_SeedInfo) String() string {
 func (*GenerateRecommendationsRequest_SeedInfo) ProtoMessage() {}
 
 func (x *GenerateRecommendationsRequest_SeedInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[35]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[35]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2699,7 +2699,7 @@ func (x *GenerateRecommendationsRequest_SeedInfo) ProtoReflect() protoreflect.Me
 
 // Deprecated: Use GenerateRecommendationsRequest_SeedInfo.ProtoReflect.Descriptor instead.
 func (*GenerateRecommendationsRequest_SeedInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescGZIP(), []int{6, 2}
+	return file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescGZIP(), []int{6, 2}
 }
 
 func (x *GenerateRecommendationsRequest_SeedInfo) GetUrlSeed() string {
@@ -2730,7 +2730,7 @@ type GenerateRecommendationsRequest_BudgetInfo struct {
 
 func (x *GenerateRecommendationsRequest_BudgetInfo) Reset() {
 	*x = GenerateRecommendationsRequest_BudgetInfo{}
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[36]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[36]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2742,7 +2742,7 @@ func (x *GenerateRecommendationsRequest_BudgetInfo) String() string {
 func (*GenerateRecommendationsRequest_BudgetInfo) ProtoMessage() {}
 
 func (x *GenerateRecommendationsRequest_BudgetInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[36]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[36]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2755,7 +2755,7 @@ func (x *GenerateRecommendationsRequest_BudgetInfo) ProtoReflect() protoreflect.
 
 // Deprecated: Use GenerateRecommendationsRequest_BudgetInfo.ProtoReflect.Descriptor instead.
 func (*GenerateRecommendationsRequest_BudgetInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescGZIP(), []int{6, 3}
+	return file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescGZIP(), []int{6, 3}
 }
 
 func (x *GenerateRecommendationsRequest_BudgetInfo) GetCurrentBudget() int64 {
@@ -2789,7 +2789,7 @@ type GenerateRecommendationsRequest_AssetGroupInfo struct {
 
 func (x *GenerateRecommendationsRequest_AssetGroupInfo) Reset() {
 	*x = GenerateRecommendationsRequest_AssetGroupInfo{}
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[37]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[37]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2801,7 +2801,7 @@ func (x *GenerateRecommendationsRequest_AssetGroupInfo) String() string {
 func (*GenerateRecommendationsRequest_AssetGroupInfo) ProtoMessage() {}
 
 func (x *GenerateRecommendationsRequest_AssetGroupInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[37]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[37]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2814,7 +2814,7 @@ func (x *GenerateRecommendationsRequest_AssetGroupInfo) ProtoReflect() protorefl
 
 // Deprecated: Use GenerateRecommendationsRequest_AssetGroupInfo.ProtoReflect.Descriptor instead.
 func (*GenerateRecommendationsRequest_AssetGroupInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescGZIP(), []int{6, 4}
+	return file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescGZIP(), []int{6, 4}
 }
 
 func (x *GenerateRecommendationsRequest_AssetGroupInfo) GetFinalUrl() string {
@@ -2844,7 +2844,7 @@ type GenerateRecommendationsRequest_TargetImpressionShareInfo struct {
 	// Required. The targeted location on the search results page.
 	// This is required for campaigns where the AdvertisingChannelType is SEARCH
 	// and the bidding strategy type is TARGET_IMPRESSION_SHARE.
-	Location *enums.TargetImpressionShareLocationEnum_TargetImpressionShareLocation `protobuf:"varint,1,opt,name=location,proto3,enum=google.ads.googleads.v20.enums.TargetImpressionShareLocationEnum_TargetImpressionShareLocation,oneof" json:"location,omitempty"`
+	Location *enums.TargetImpressionShareLocationEnum_TargetImpressionShareLocation `protobuf:"varint,1,opt,name=location,proto3,enum=google.ads.googleads.v21.enums.TargetImpressionShareLocationEnum_TargetImpressionShareLocation,oneof" json:"location,omitempty"`
 	// Required. The chosen fraction of targeted impression share in micros. For
 	// example, 1% equals 10,000. It must be a value between 1 and 1,000,000.
 	// This is required for campaigns with an AdvertisingChannelType of SEARCH
@@ -2860,7 +2860,7 @@ type GenerateRecommendationsRequest_TargetImpressionShareInfo struct {
 
 func (x *GenerateRecommendationsRequest_TargetImpressionShareInfo) Reset() {
 	*x = GenerateRecommendationsRequest_TargetImpressionShareInfo{}
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[38]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[38]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2872,7 +2872,7 @@ func (x *GenerateRecommendationsRequest_TargetImpressionShareInfo) String() stri
 func (*GenerateRecommendationsRequest_TargetImpressionShareInfo) ProtoMessage() {}
 
 func (x *GenerateRecommendationsRequest_TargetImpressionShareInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[38]
+	mi := &file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[38]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2885,7 +2885,7 @@ func (x *GenerateRecommendationsRequest_TargetImpressionShareInfo) ProtoReflect(
 
 // Deprecated: Use GenerateRecommendationsRequest_TargetImpressionShareInfo.ProtoReflect.Descriptor instead.
 func (*GenerateRecommendationsRequest_TargetImpressionShareInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescGZIP(), []int{6, 5}
+	return file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescGZIP(), []int{6, 5}
 }
 
 func (x *GenerateRecommendationsRequest_TargetImpressionShareInfo) GetLocation() enums.TargetImpressionShareLocationEnum_TargetImpressionShareLocation {
@@ -2909,56 +2909,56 @@ func (x *GenerateRecommendationsRequest_TargetImpressionShareInfo) GetMaxCpcBidC
 	return 0
 }
 
-var File_google_ads_googleads_v20_services_recommendation_service_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v21_services_recommendation_service_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc = string([]byte{
+var file_google_ads_googleads_v21_services_recommendation_service_proto_rawDesc = string([]byte{
 	0x0a, 0x3e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x30, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x31, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69,
 	0x63, 0x65, 0x73, 0x2f, 0x72, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x61, 0x74, 0x69,
 	0x6f, 0x6e, 0x5f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
 	0x12, 0x21, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
 	0x63, 0x65, 0x73, 0x1a, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x30, 0x2f, 0x63, 0x6f,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x31, 0x2f, 0x63, 0x6f,
 	0x6d, 0x6d, 0x6f, 0x6e, 0x2f, 0x63, 0x72, 0x69, 0x74, 0x65, 0x72, 0x69, 0x61, 0x2e, 0x70, 0x72,
 	0x6f, 0x74, 0x6f, 0x1a, 0x30, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x30, 0x2f, 0x63, 0x6f,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x31, 0x2f, 0x63, 0x6f,
 	0x6d, 0x6d, 0x6f, 0x6e, 0x2f, 0x65, 0x78, 0x74, 0x65, 0x6e, 0x73, 0x69, 0x6f, 0x6e, 0x73, 0x2e,
 	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x32, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64,
-	0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x30, 0x2f,
+	0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x31, 0x2f,
 	0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x61, 0x64, 0x5f, 0x67, 0x72, 0x6f, 0x75, 0x70, 0x5f, 0x74,
 	0x79, 0x70, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x3d, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f,
-	0x76, 0x32, 0x30, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x61, 0x64, 0x76, 0x65, 0x72, 0x74,
+	0x76, 0x32, 0x31, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x61, 0x64, 0x76, 0x65, 0x72, 0x74,
 	0x69, 0x73, 0x69, 0x6e, 0x67, 0x5f, 0x63, 0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x5f, 0x74, 0x79,
 	0x70, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x3a, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76,
-	0x32, 0x30, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x62, 0x69, 0x64, 0x64, 0x69, 0x6e, 0x67,
+	0x32, 0x31, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x62, 0x69, 0x64, 0x64, 0x69, 0x6e, 0x67,
 	0x5f, 0x73, 0x74, 0x72, 0x61, 0x74, 0x65, 0x67, 0x79, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x2e, 0x70,
 	0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x44, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73,
-	0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x30, 0x2f, 0x65,
+	0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x31, 0x2f, 0x65,
 	0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x63, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x5f,
 	0x74, 0x72, 0x61, 0x63, 0x6b, 0x69, 0x6e, 0x67, 0x5f, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x5f,
 	0x65, 0x6e, 0x75, 0x6d, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x37, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
-	0x2f, 0x76, 0x32, 0x30, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x6b, 0x65, 0x79, 0x77, 0x6f,
+	0x2f, 0x76, 0x32, 0x31, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x6b, 0x65, 0x79, 0x77, 0x6f,
 	0x72, 0x64, 0x5f, 0x6d, 0x61, 0x74, 0x63, 0x68, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x2e, 0x70, 0x72,
 	0x6f, 0x74, 0x6f, 0x1a, 0x38, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x30, 0x2f, 0x65, 0x6e,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x31, 0x2f, 0x65, 0x6e,
 	0x75, 0x6d, 0x73, 0x2f, 0x72, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x61, 0x74, 0x69,
 	0x6f, 0x6e, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x45, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x30, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x74, 0x61,
+	0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x31, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x74, 0x61,
 	0x72, 0x67, 0x65, 0x74, 0x5f, 0x69, 0x6d, 0x70, 0x72, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x5f,
 	0x73, 0x68, 0x61, 0x72, 0x65, 0x5f, 0x6c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x70,
 	0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x2b, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73,
-	0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x30, 0x2f, 0x72,
+	0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x31, 0x2f, 0x72,
 	0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2f, 0x61, 0x64, 0x2e, 0x70, 0x72, 0x6f, 0x74,
 	0x6f, 0x1a, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x30, 0x2f, 0x72, 0x65, 0x73, 0x6f,
+	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x31, 0x2f, 0x72, 0x65, 0x73, 0x6f,
 	0x75, 0x72, 0x63, 0x65, 0x73, 0x2f, 0x61, 0x73, 0x73, 0x65, 0x74, 0x2e, 0x70, 0x72, 0x6f, 0x74,
 	0x6f, 0x1a, 0x37, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x30, 0x2f, 0x72, 0x65, 0x73, 0x6f,
+	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x31, 0x2f, 0x72, 0x65, 0x73, 0x6f,
 	0x75, 0x72, 0x63, 0x65, 0x73, 0x2f, 0x72, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x61,
 	0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x1c, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x6e, 0x6e, 0x6f, 0x74, 0x61, 0x74, 0x69, 0x6f,
@@ -2976,7 +2976,7 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x0a, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x49, 0x64, 0x12, 0x64, 0x0a, 0x0a, 0x6f,
 	0x70, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32,
 	0x3f, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
 	0x63, 0x65, 0x73, 0x2e, 0x41, 0x70, 0x70, 0x6c, 0x79, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65,
 	0x6e, 0x64, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e,
 	0x42, 0x03, 0xe0, 0x41, 0x02, 0x52, 0x0a, 0x6f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e,
@@ -2993,21 +2993,21 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x01, 0x0a, 0x0f, 0x63, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x5f, 0x62, 0x75, 0x64, 0x67,
 	0x65, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x58, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e,
-	0x76, 0x32, 0x30, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x41, 0x70, 0x70,
+	0x76, 0x32, 0x31, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x41, 0x70, 0x70,
 	0x6c, 0x79, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x61, 0x74, 0x69, 0x6f, 0x6e,
 	0x4f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x43, 0x61, 0x6d, 0x70, 0x61, 0x69,
 	0x67, 0x6e, 0x42, 0x75, 0x64, 0x67, 0x65, 0x74, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x65, 0x74, 0x65,
 	0x72, 0x73, 0x48, 0x00, 0x52, 0x0e, 0x63, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x42, 0x75,
 	0x64, 0x67, 0x65, 0x74, 0x12, 0x6b, 0x0a, 0x07, 0x74, 0x65, 0x78, 0x74, 0x5f, 0x61, 0x64, 0x18,
 	0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x50, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61,
-	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30,
+	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31,
 	0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x41, 0x70, 0x70, 0x6c, 0x79, 0x52,
 	0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4f, 0x70, 0x65,
 	0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x54, 0x65, 0x78, 0x74, 0x41, 0x64, 0x50, 0x61, 0x72,
 	0x61, 0x6d, 0x65, 0x74, 0x65, 0x72, 0x73, 0x48, 0x00, 0x52, 0x06, 0x74, 0x65, 0x78, 0x74, 0x41,
 	0x64, 0x12, 0x6d, 0x0a, 0x07, 0x6b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64, 0x18, 0x04, 0x20, 0x01,
 	0x28, 0x0b, 0x32, 0x51, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x73, 0x65,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x73, 0x65,
 	0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x41, 0x70, 0x70, 0x6c, 0x79, 0x52, 0x65, 0x63, 0x6f,
 	0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x74,
 	0x69, 0x6f, 0x6e, 0x2e, 0x4b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64, 0x50, 0x61, 0x72, 0x61, 0x6d,
@@ -3015,7 +3015,7 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x12, 0x85, 0x01, 0x0a, 0x11, 0x74, 0x61, 0x72, 0x67, 0x65, 0x74, 0x5f, 0x63, 0x70, 0x61, 0x5f,
 	0x6f, 0x70, 0x74, 0x5f, 0x69, 0x6e, 0x18, 0x05, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x58, 0x2e, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73,
+	0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73,
 	0x2e, 0x41, 0x70, 0x70, 0x6c, 0x79, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x61,
 	0x74, 0x69, 0x6f, 0x6e, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x54, 0x61,
 	0x72, 0x67, 0x65, 0x74, 0x43, 0x70, 0x61, 0x4f, 0x70, 0x74, 0x49, 0x6e, 0x50, 0x61, 0x72, 0x61,
@@ -3023,7 +3023,7 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x43, 0x70, 0x61, 0x4f, 0x70, 0x74, 0x49, 0x6e, 0x12, 0x88, 0x01, 0x0a, 0x12, 0x74, 0x61, 0x72,
 	0x67, 0x65, 0x74, 0x5f, 0x72, 0x6f, 0x61, 0x73, 0x5f, 0x6f, 0x70, 0x74, 0x5f, 0x69, 0x6e, 0x18,
 	0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x59, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61,
-	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30,
+	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31,
 	0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x41, 0x70, 0x70, 0x6c, 0x79, 0x52,
 	0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4f, 0x70, 0x65,
 	0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x52, 0x6f, 0x61,
@@ -3032,7 +3032,7 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x74, 0x49, 0x6e, 0x12, 0x89, 0x01, 0x0a, 0x11, 0x63, 0x61, 0x6c, 0x6c, 0x6f, 0x75, 0x74, 0x5f,
 	0x65, 0x78, 0x74, 0x65, 0x6e, 0x73, 0x69, 0x6f, 0x6e, 0x18, 0x06, 0x20, 0x01, 0x28, 0x0b, 0x32,
 	0x5a, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
 	0x63, 0x65, 0x73, 0x2e, 0x41, 0x70, 0x70, 0x6c, 0x79, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65,
 	0x6e, 0x64, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e,
 	0x2e, 0x43, 0x61, 0x6c, 0x6c, 0x6f, 0x75, 0x74, 0x45, 0x78, 0x74, 0x65, 0x6e, 0x73, 0x69, 0x6f,
@@ -3041,7 +3041,7 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x80, 0x01, 0x0a, 0x0e, 0x63, 0x61, 0x6c, 0x6c, 0x5f, 0x65, 0x78, 0x74, 0x65, 0x6e, 0x73, 0x69,
 	0x6f, 0x6e, 0x18, 0x07, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x57, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e,
-	0x76, 0x32, 0x30, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x41, 0x70, 0x70,
+	0x76, 0x32, 0x31, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x41, 0x70, 0x70,
 	0x6c, 0x79, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x61, 0x74, 0x69, 0x6f, 0x6e,
 	0x4f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x43, 0x61, 0x6c, 0x6c, 0x45, 0x78,
 	0x74, 0x65, 0x6e, 0x73, 0x69, 0x6f, 0x6e, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x65, 0x74, 0x65, 0x72,
@@ -3049,7 +3049,7 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x6f, 0x6e, 0x12, 0x8c, 0x01, 0x0a, 0x12, 0x73, 0x69, 0x74, 0x65, 0x6c, 0x69, 0x6e, 0x6b, 0x5f,
 	0x65, 0x78, 0x74, 0x65, 0x6e, 0x73, 0x69, 0x6f, 0x6e, 0x18, 0x08, 0x20, 0x01, 0x28, 0x0b, 0x32,
 	0x5b, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
 	0x63, 0x65, 0x73, 0x2e, 0x41, 0x70, 0x70, 0x6c, 0x79, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65,
 	0x6e, 0x64, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e,
 	0x2e, 0x53, 0x69, 0x74, 0x65, 0x6c, 0x69, 0x6e, 0x6b, 0x45, 0x78, 0x74, 0x65, 0x6e, 0x73, 0x69,
@@ -3058,7 +3058,7 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x6e, 0x12, 0x8a, 0x01, 0x0a, 0x12, 0x6d, 0x6f, 0x76, 0x65, 0x5f, 0x75, 0x6e, 0x75, 0x73, 0x65,
 	0x64, 0x5f, 0x62, 0x75, 0x64, 0x67, 0x65, 0x74, 0x18, 0x09, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x5a,
 	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
+	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
 	0x65, 0x73, 0x2e, 0x41, 0x70, 0x70, 0x6c, 0x79, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e,
 	0x64, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e,
 	0x4d, 0x6f, 0x76, 0x65, 0x55, 0x6e, 0x75, 0x73, 0x65, 0x64, 0x42, 0x75, 0x64, 0x67, 0x65, 0x74,
@@ -3067,7 +3067,7 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x01, 0x0a, 0x14, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x69, 0x76, 0x65, 0x5f, 0x73, 0x65,
 	0x61, 0x72, 0x63, 0x68, 0x5f, 0x61, 0x64, 0x18, 0x0b, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x5c, 0x2e,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
 	0x73, 0x2e, 0x41, 0x70, 0x70, 0x6c, 0x79, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64,
 	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x52,
 	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x69, 0x76, 0x65, 0x53, 0x65, 0x61, 0x72, 0x63, 0x68, 0x41,
@@ -3076,7 +3076,7 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x64, 0x12, 0x97, 0x01, 0x0a, 0x17, 0x75, 0x73, 0x65, 0x5f, 0x62, 0x72, 0x6f, 0x61, 0x64, 0x5f,
 	0x6d, 0x61, 0x74, 0x63, 0x68, 0x5f, 0x6b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64, 0x18, 0x0c, 0x20,
 	0x01, 0x28, 0x0b, 0x32, 0x5e, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73,
-	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x73,
+	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x73,
 	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x41, 0x70, 0x70, 0x6c, 0x79, 0x52, 0x65, 0x63,
 	0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4f, 0x70, 0x65, 0x72, 0x61,
 	0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x55, 0x73, 0x65, 0x42, 0x72, 0x6f, 0x61, 0x64, 0x4d, 0x61, 0x74,
@@ -3086,7 +3086,7 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x69, 0x76, 0x65, 0x5f, 0x73, 0x65, 0x61, 0x72, 0x63,
 	0x68, 0x5f, 0x61, 0x64, 0x5f, 0x61, 0x73, 0x73, 0x65, 0x74, 0x18, 0x0d, 0x20, 0x01, 0x28, 0x0b,
 	0x32, 0x61, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x73, 0x65, 0x72, 0x76,
+	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x73, 0x65, 0x72, 0x76,
 	0x69, 0x63, 0x65, 0x73, 0x2e, 0x41, 0x70, 0x70, 0x6c, 0x79, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d,
 	0x65, 0x6e, 0x64, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f,
 	0x6e, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x69, 0x76, 0x65, 0x53, 0x65, 0x61, 0x72,
@@ -3097,7 +3097,7 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x61, 0x72, 0x63, 0x68, 0x5f, 0x61, 0x64, 0x5f, 0x69, 0x6d, 0x70, 0x72, 0x6f, 0x76, 0x65, 0x5f,
 	0x61, 0x64, 0x5f, 0x73, 0x74, 0x72, 0x65, 0x6e, 0x67, 0x74, 0x68, 0x18, 0x0e, 0x20, 0x01, 0x28,
 	0x0b, 0x32, 0x6d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x73, 0x65, 0x72,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x73, 0x65, 0x72,
 	0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x41, 0x70, 0x70, 0x6c, 0x79, 0x52, 0x65, 0x63, 0x6f, 0x6d,
 	0x6d, 0x65, 0x6e, 0x64, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x69,
 	0x6f, 0x6e, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x69, 0x76, 0x65, 0x53, 0x65, 0x61,
@@ -3109,7 +3109,7 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x65, 0x5f, 0x74, 0x61, 0x72, 0x67, 0x65, 0x74, 0x5f, 0x63, 0x70, 0x61, 0x5f, 0x62, 0x69, 0x64,
 	0x5f, 0x74, 0x6f, 0x6f, 0x5f, 0x6c, 0x6f, 0x77, 0x18, 0x0f, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x61,
 	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
+	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
 	0x65, 0x73, 0x2e, 0x41, 0x70, 0x70, 0x6c, 0x79, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e,
 	0x64, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e,
 	0x52, 0x61, 0x69, 0x73, 0x65, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x43, 0x70, 0x61, 0x42, 0x69,
@@ -3119,7 +3119,7 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x1b, 0x66, 0x6f, 0x72, 0x65, 0x63, 0x61, 0x73, 0x74, 0x69, 0x6e, 0x67, 0x5f, 0x73, 0x65, 0x74,
 	0x5f, 0x74, 0x61, 0x72, 0x67, 0x65, 0x74, 0x5f, 0x72, 0x6f, 0x61, 0x73, 0x18, 0x10, 0x20, 0x01,
 	0x28, 0x0b, 0x32, 0x62, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x73, 0x65,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x73, 0x65,
 	0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x41, 0x70, 0x70, 0x6c, 0x79, 0x52, 0x65, 0x63, 0x6f,
 	0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x74,
 	0x69, 0x6f, 0x6e, 0x2e, 0x46, 0x6f, 0x72, 0x65, 0x63, 0x61, 0x73, 0x74, 0x69, 0x6e, 0x67, 0x53,
@@ -3129,14 +3129,14 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x61, 0x73, 0x12, 0x7d, 0x0a, 0x0d, 0x63, 0x61, 0x6c, 0x6c, 0x6f, 0x75, 0x74, 0x5f, 0x61, 0x73,
 	0x73, 0x65, 0x74, 0x18, 0x11, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x56, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
-	0x2e, 0x76, 0x32, 0x30, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x41, 0x70,
+	0x2e, 0x76, 0x32, 0x31, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x41, 0x70,
 	0x70, 0x6c, 0x79, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x61, 0x74, 0x69, 0x6f,
 	0x6e, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x43, 0x61, 0x6c, 0x6c, 0x6f,
 	0x75, 0x74, 0x41, 0x73, 0x73, 0x65, 0x74, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x65, 0x74, 0x65, 0x72,
 	0x73, 0x48, 0x00, 0x52, 0x0c, 0x63, 0x61, 0x6c, 0x6c, 0x6f, 0x75, 0x74, 0x41, 0x73, 0x73, 0x65,
 	0x74, 0x12, 0x74, 0x0a, 0x0a, 0x63, 0x61, 0x6c, 0x6c, 0x5f, 0x61, 0x73, 0x73, 0x65, 0x74, 0x18,
 	0x12, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x53, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61,
-	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30,
+	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31,
 	0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x41, 0x70, 0x70, 0x6c, 0x79, 0x52,
 	0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4f, 0x70, 0x65,
 	0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x43, 0x61, 0x6c, 0x6c, 0x41, 0x73, 0x73, 0x65, 0x74,
@@ -3144,7 +3144,7 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x6c, 0x6c, 0x41, 0x73, 0x73, 0x65, 0x74, 0x12, 0x80, 0x01, 0x0a, 0x0e, 0x73, 0x69, 0x74, 0x65,
 	0x6c, 0x69, 0x6e, 0x6b, 0x5f, 0x61, 0x73, 0x73, 0x65, 0x74, 0x18, 0x13, 0x20, 0x01, 0x28, 0x0b,
 	0x32, 0x57, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x73, 0x65, 0x72, 0x76,
+	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x73, 0x65, 0x72, 0x76,
 	0x69, 0x63, 0x65, 0x73, 0x2e, 0x41, 0x70, 0x70, 0x6c, 0x79, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d,
 	0x65, 0x6e, 0x64, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f,
 	0x6e, 0x2e, 0x53, 0x69, 0x74, 0x65, 0x6c, 0x69, 0x6e, 0x6b, 0x41, 0x73, 0x73, 0x65, 0x74, 0x50,
@@ -3152,7 +3152,7 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x65, 0x6c, 0x69, 0x6e, 0x6b, 0x41, 0x73, 0x73, 0x65, 0x74, 0x12, 0x84, 0x01, 0x0a, 0x10, 0x72,
 	0x61, 0x69, 0x73, 0x65, 0x5f, 0x74, 0x61, 0x72, 0x67, 0x65, 0x74, 0x5f, 0x63, 0x70, 0x61, 0x18,
 	0x14, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x58, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61,
-	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30,
+	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31,
 	0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x41, 0x70, 0x70, 0x6c, 0x79, 0x52,
 	0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4f, 0x70, 0x65,
 	0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x52, 0x61, 0x69, 0x73, 0x65, 0x54, 0x61, 0x72, 0x67,
@@ -3161,7 +3161,7 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x61, 0x12, 0x87, 0x01, 0x0a, 0x11, 0x6c, 0x6f, 0x77, 0x65, 0x72, 0x5f, 0x74, 0x61, 0x72, 0x67,
 	0x65, 0x74, 0x5f, 0x72, 0x6f, 0x61, 0x73, 0x18, 0x15, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x59, 0x2e,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
 	0x73, 0x2e, 0x41, 0x70, 0x70, 0x6c, 0x79, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64,
 	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x4c,
 	0x6f, 0x77, 0x65, 0x72, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x52, 0x6f, 0x61, 0x73, 0x50, 0x61,
@@ -3170,7 +3170,7 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x66, 0x6f, 0x72, 0x65, 0x63, 0x61, 0x73, 0x74, 0x69, 0x6e, 0x67, 0x5f, 0x73, 0x65, 0x74, 0x5f,
 	0x74, 0x61, 0x72, 0x67, 0x65, 0x74, 0x5f, 0x63, 0x70, 0x61, 0x18, 0x16, 0x20, 0x01, 0x28, 0x0b,
 	0x32, 0x61, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x73, 0x65, 0x72, 0x76,
+	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x73, 0x65, 0x72, 0x76,
 	0x69, 0x63, 0x65, 0x73, 0x2e, 0x41, 0x70, 0x70, 0x6c, 0x79, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d,
 	0x65, 0x6e, 0x64, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f,
 	0x6e, 0x2e, 0x46, 0x6f, 0x72, 0x65, 0x63, 0x61, 0x73, 0x74, 0x69, 0x6e, 0x67, 0x53, 0x65, 0x74,
@@ -3180,7 +3180,7 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x01, 0x0a, 0x0e, 0x73, 0x65, 0x74, 0x5f, 0x74, 0x61, 0x72, 0x67, 0x65, 0x74, 0x5f, 0x63, 0x70,
 	0x61, 0x18, 0x17, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x61, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76,
-	0x32, 0x30, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x41, 0x70, 0x70, 0x6c,
+	0x32, 0x31, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x41, 0x70, 0x70, 0x6c,
 	0x79, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4f,
 	0x70, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x46, 0x6f, 0x72, 0x65, 0x63, 0x61, 0x73,
 	0x74, 0x69, 0x6e, 0x67, 0x53, 0x65, 0x74, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x43, 0x70, 0x61,
@@ -3188,7 +3188,7 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x74, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x43, 0x70, 0x61, 0x12, 0x8c, 0x01, 0x0a, 0x0f, 0x73,
 	0x65, 0x74, 0x5f, 0x74, 0x61, 0x72, 0x67, 0x65, 0x74, 0x5f, 0x72, 0x6f, 0x61, 0x73, 0x18, 0x18,
 	0x20, 0x01, 0x28, 0x0b, 0x32, 0x62, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64,
-	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e,
+	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x41, 0x70, 0x70, 0x6c, 0x79, 0x52, 0x65,
 	0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4f, 0x70, 0x65, 0x72,
 	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x46, 0x6f, 0x72, 0x65, 0x63, 0x61, 0x73, 0x74, 0x69, 0x6e,
@@ -3197,7 +3197,7 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x61, 0x72, 0x67, 0x65, 0x74, 0x52, 0x6f, 0x61, 0x73, 0x12, 0x81, 0x01, 0x0a, 0x0f, 0x6c, 0x65,
 	0x61, 0x64, 0x5f, 0x66, 0x6f, 0x72, 0x6d, 0x5f, 0x61, 0x73, 0x73, 0x65, 0x74, 0x18, 0x19, 0x20,
 	0x01, 0x28, 0x0b, 0x32, 0x57, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73,
-	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x73,
+	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x73,
 	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x41, 0x70, 0x70, 0x6c, 0x79, 0x52, 0x65, 0x63,
 	0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4f, 0x70, 0x65, 0x72, 0x61,
 	0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x4c, 0x65, 0x61, 0x64, 0x46, 0x6f, 0x72, 0x6d, 0x41, 0x73, 0x73,
@@ -3226,14 +3226,14 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x65, 0x78, 0x74, 0x41, 0x64, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x65, 0x74, 0x65, 0x72, 0x73, 0x12,
 	0x36, 0x0a, 0x02, 0x61, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x26, 0x2e, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73,
+	0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73,
 	0x2e, 0x41, 0x64, 0x52, 0x02, 0x61, 0x64, 0x1a, 0xe4, 0x01, 0x0a, 0x11, 0x4b, 0x65, 0x79, 0x77,
 	0x6f, 0x72, 0x64, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x65, 0x74, 0x65, 0x72, 0x73, 0x12, 0x1e, 0x0a,
 	0x08, 0x61, 0x64, 0x5f, 0x67, 0x72, 0x6f, 0x75, 0x70, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x48,
 	0x00, 0x52, 0x07, 0x61, 0x64, 0x47, 0x72, 0x6f, 0x75, 0x70, 0x88, 0x01, 0x01, 0x12, 0x64, 0x0a,
 	0x0a, 0x6d, 0x61, 0x74, 0x63, 0x68, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28,
 	0x0e, 0x32, 0x45, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x65, 0x6e, 0x75,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x65, 0x6e, 0x75,
 	0x6d, 0x73, 0x2e, 0x4b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64, 0x4d, 0x61, 0x74, 0x63, 0x68, 0x54,
 	0x79, 0x70, 0x65, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x4b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64, 0x4d,
 	0x61, 0x74, 0x63, 0x68, 0x54, 0x79, 0x70, 0x65, 0x52, 0x09, 0x6d, 0x61, 0x74, 0x63, 0x68, 0x54,
@@ -3273,14 +3273,14 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x0a, 0x12, 0x63, 0x61, 0x6c, 0x6c, 0x6f, 0x75, 0x74, 0x5f, 0x65, 0x78, 0x74, 0x65, 0x6e, 0x73,
 	0x69, 0x6f, 0x6e, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x30, 0x2e, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64,
-	0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x43, 0x61, 0x6c,
+	0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x43, 0x61, 0x6c,
 	0x6c, 0x6f, 0x75, 0x74, 0x46, 0x65, 0x65, 0x64, 0x49, 0x74, 0x65, 0x6d, 0x52, 0x11, 0x63, 0x61,
 	0x6c, 0x6c, 0x6f, 0x75, 0x74, 0x45, 0x78, 0x74, 0x65, 0x6e, 0x73, 0x69, 0x6f, 0x6e, 0x73, 0x1a,
 	0x71, 0x0a, 0x17, 0x43, 0x61, 0x6c, 0x6c, 0x45, 0x78, 0x74, 0x65, 0x6e, 0x73, 0x69, 0x6f, 0x6e,
 	0x50, 0x61, 0x72, 0x61, 0x6d, 0x65, 0x74, 0x65, 0x72, 0x73, 0x12, 0x56, 0x0a, 0x0f, 0x63, 0x61,
 	0x6c, 0x6c, 0x5f, 0x65, 0x78, 0x74, 0x65, 0x6e, 0x73, 0x69, 0x6f, 0x6e, 0x73, 0x18, 0x01, 0x20,
 	0x03, 0x28, 0x0b, 0x32, 0x2d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73,
-	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x63,
+	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x63,
 	0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x43, 0x61, 0x6c, 0x6c, 0x46, 0x65, 0x65, 0x64, 0x49, 0x74,
 	0x65, 0x6d, 0x52, 0x0e, 0x63, 0x61, 0x6c, 0x6c, 0x45, 0x78, 0x74, 0x65, 0x6e, 0x73, 0x69, 0x6f,
 	0x6e, 0x73, 0x1a, 0x81, 0x01, 0x0a, 0x1b, 0x53, 0x69, 0x74, 0x65, 0x6c, 0x69, 0x6e, 0x6b, 0x45,
@@ -3288,7 +3288,7 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x72, 0x73, 0x12, 0x62, 0x0a, 0x13, 0x73, 0x69, 0x74, 0x65, 0x6c, 0x69, 0x6e, 0x6b, 0x5f, 0x65,
 	0x78, 0x74, 0x65, 0x6e, 0x73, 0x69, 0x6f, 0x6e, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32,
 	0x31, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
 	0x6e, 0x2e, 0x53, 0x69, 0x74, 0x65, 0x6c, 0x69, 0x6e, 0x6b, 0x46, 0x65, 0x65, 0x64, 0x49, 0x74,
 	0x65, 0x6d, 0x52, 0x12, 0x73, 0x69, 0x74, 0x65, 0x6c, 0x69, 0x6e, 0x6b, 0x45, 0x78, 0x74, 0x65,
 	0x6e, 0x73, 0x69, 0x6f, 0x6e, 0x73, 0x1a, 0xb1, 0x01, 0x0a, 0x16, 0x43, 0x61, 0x6c, 0x6c, 0x6f,
@@ -3296,7 +3296,7 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x73, 0x12, 0x96, 0x01, 0x0a, 0x19, 0x61, 0x64, 0x5f, 0x61, 0x73, 0x73, 0x65, 0x74, 0x5f, 0x61,
 	0x70, 0x70, 0x6c, 0x79, 0x5f, 0x70, 0x61, 0x72, 0x61, 0x6d, 0x65, 0x74, 0x65, 0x72, 0x73, 0x18,
 	0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x56, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61,
-	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30,
+	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31,
 	0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x41, 0x70, 0x70, 0x6c, 0x79, 0x52,
 	0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4f, 0x70, 0x65,
 	0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x41, 0x64, 0x41, 0x73, 0x73, 0x65, 0x74, 0x41, 0x70,
@@ -3308,7 +3308,7 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x61, 0x70, 0x70, 0x6c, 0x79, 0x5f, 0x70, 0x61, 0x72, 0x61, 0x6d, 0x65, 0x74, 0x65, 0x72, 0x73,
 	0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x56, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
 	0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32,
-	0x30, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x41, 0x70, 0x70, 0x6c, 0x79,
+	0x31, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x41, 0x70, 0x70, 0x6c, 0x79,
 	0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4f, 0x70,
 	0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x41, 0x64, 0x41, 0x73, 0x73, 0x65, 0x74, 0x41,
 	0x70, 0x70, 0x6c, 0x79, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x65, 0x74, 0x65, 0x72, 0x73, 0x42, 0x03,
@@ -3319,7 +3319,7 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x73, 0x73, 0x65, 0x74, 0x5f, 0x61, 0x70, 0x70, 0x6c, 0x79, 0x5f, 0x70, 0x61, 0x72, 0x61, 0x6d,
 	0x65, 0x74, 0x65, 0x72, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x56, 0x2e, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e,
+	0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e,
 	0x41, 0x70, 0x70, 0x6c, 0x79, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x61, 0x74,
 	0x69, 0x6f, 0x6e, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x41, 0x64, 0x41,
 	0x73, 0x73, 0x65, 0x74, 0x41, 0x70, 0x70, 0x6c, 0x79, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x65, 0x74,
@@ -3340,14 +3340,14 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x72, 0x61, 0x6d, 0x65, 0x74, 0x65, 0x72, 0x73, 0x12, 0x48, 0x0a, 0x0a, 0x6e, 0x65, 0x77, 0x5f,
 	0x61, 0x73, 0x73, 0x65, 0x74, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x29, 0x2e, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65,
+	0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65,
 	0x73, 0x2e, 0x41, 0x73, 0x73, 0x65, 0x74, 0x52, 0x09, 0x6e, 0x65, 0x77, 0x41, 0x73, 0x73, 0x65,
 	0x74, 0x73, 0x12, 0x27, 0x0a, 0x0f, 0x65, 0x78, 0x69, 0x73, 0x74, 0x69, 0x6e, 0x67, 0x5f, 0x61,
 	0x73, 0x73, 0x65, 0x74, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x09, 0x52, 0x0e, 0x65, 0x78, 0x69,
 	0x73, 0x74, 0x69, 0x6e, 0x67, 0x41, 0x73, 0x73, 0x65, 0x74, 0x73, 0x12, 0x7c, 0x0a, 0x05, 0x73,
 	0x63, 0x6f, 0x70, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x61, 0x2e, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64,
-	0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x41,
+	0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x41,
 	0x70, 0x70, 0x6c, 0x79, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x61, 0x74, 0x69,
 	0x6f, 0x6e, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x41, 0x64, 0x41, 0x73,
 	0x73, 0x65, 0x74, 0x41, 0x70, 0x70, 0x6c, 0x79, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x65, 0x74, 0x65,
@@ -3369,20 +3369,20 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x6d, 0x65, 0x74, 0x65, 0x72, 0x73, 0x12, 0x45, 0x0a, 0x0a, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65,
 	0x64, 0x5f, 0x61, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x26, 0x2e, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64,
-	0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e,
+	0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e,
 	0x41, 0x64, 0x52, 0x09, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x64, 0x41, 0x64, 0x1a, 0x76, 0x0a,
 	0x2d, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x69, 0x76, 0x65, 0x53, 0x65, 0x61, 0x72, 0x63,
 	0x68, 0x41, 0x64, 0x49, 0x6d, 0x70, 0x72, 0x6f, 0x76, 0x65, 0x41, 0x64, 0x53, 0x74, 0x72, 0x65,
 	0x6e, 0x67, 0x74, 0x68, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x65, 0x74, 0x65, 0x72, 0x73, 0x12, 0x45,
 	0x0a, 0x0a, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x64, 0x5f, 0x61, 0x64, 0x18, 0x01, 0x20, 0x01,
 	0x28, 0x0b, 0x32, 0x26, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x72, 0x65,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x72, 0x65,
 	0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e, 0x41, 0x64, 0x52, 0x09, 0x75, 0x70, 0x64, 0x61,
 	0x74, 0x65, 0x64, 0x41, 0x64, 0x1a, 0x5b, 0x0a, 0x1c, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
 	0x69, 0x76, 0x65, 0x53, 0x65, 0x61, 0x72, 0x63, 0x68, 0x41, 0x64, 0x50, 0x61, 0x72, 0x61, 0x6d,
 	0x65, 0x74, 0x65, 0x72, 0x73, 0x12, 0x3b, 0x0a, 0x02, 0x61, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28,
 	0x0b, 0x32, 0x26, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x72, 0x65, 0x73,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x72, 0x65, 0x73,
 	0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e, 0x41, 0x64, 0x42, 0x03, 0xe0, 0x41, 0x02, 0x52, 0x02,
 	0x61, 0x64, 0x1a, 0x55, 0x0a, 0x21, 0x52, 0x61, 0x69, 0x73, 0x65, 0x54, 0x61, 0x72, 0x67, 0x65,
 	0x74, 0x43, 0x70, 0x61, 0x42, 0x69, 0x64, 0x54, 0x6f, 0x6f, 0x4c, 0x6f, 0x77, 0x50, 0x61, 0x72,
@@ -3416,7 +3416,7 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x5f, 0x61, 0x73, 0x73, 0x65, 0x74, 0x5f, 0x61, 0x70, 0x70, 0x6c, 0x79, 0x5f, 0x70, 0x61, 0x72,
 	0x61, 0x6d, 0x65, 0x74, 0x65, 0x72, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x56, 0x2e,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
 	0x73, 0x2e, 0x41, 0x70, 0x70, 0x6c, 0x79, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64,
 	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x41,
 	0x64, 0x41, 0x73, 0x73, 0x65, 0x74, 0x41, 0x70, 0x70, 0x6c, 0x79, 0x50, 0x61, 0x72, 0x61, 0x6d,
@@ -3436,7 +3436,7 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x64, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x56,
 	0x0a, 0x07, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32,
 	0x3c, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
 	0x63, 0x65, 0x73, 0x2e, 0x41, 0x70, 0x70, 0x6c, 0x79, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65,
 	0x6e, 0x64, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x52, 0x07, 0x72,
 	0x65, 0x73, 0x75, 0x6c, 0x74, 0x73, 0x12, 0x46, 0x0a, 0x15, 0x70, 0x61, 0x72, 0x74, 0x69, 0x61,
@@ -3458,7 +3458,7 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x6d, 0x65, 0x72, 0x49, 0x64, 0x12, 0x83, 0x01, 0x0a, 0x0a, 0x6f, 0x70, 0x65, 0x72, 0x61, 0x74,
 	0x69, 0x6f, 0x6e, 0x73, 0x18, 0x03, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x5e, 0x2e, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64,
-	0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x44,
+	0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x44,
 	0x69, 0x73, 0x6d, 0x69, 0x73, 0x73, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x61,
 	0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2e, 0x44, 0x69, 0x73, 0x6d,
 	0x69, 0x73, 0x73, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x61, 0x74, 0x69, 0x6f,
@@ -3475,7 +3475,7 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x76, 0x0a,
 	0x07, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x5c,
 	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
+	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
 	0x65, 0x73, 0x2e, 0x44, 0x69, 0x73, 0x6d, 0x69, 0x73, 0x73, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d,
 	0x65, 0x6e, 0x64, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
 	0x2e, 0x44, 0x69, 0x73, 0x6d, 0x69, 0x73, 0x73, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e,
@@ -3497,7 +3497,7 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x74, 0x79,
 	0x70, 0x65, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0e, 0x32, 0x49, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
-	0x2e, 0x76, 0x32, 0x30, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x52, 0x65, 0x63, 0x6f, 0x6d,
+	0x2e, 0x76, 0x32, 0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x52, 0x65, 0x63, 0x6f, 0x6d,
 	0x6d, 0x65, 0x6e, 0x64, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x45, 0x6e, 0x75,
 	0x6d, 0x2e, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x61, 0x74, 0x69, 0x6f, 0x6e,
 	0x54, 0x79, 0x70, 0x65, 0x42, 0x03, 0xe0, 0x41, 0x02, 0x52, 0x13, 0x72, 0x65, 0x63, 0x6f, 0x6d,
@@ -3505,7 +3505,7 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x01, 0x0a, 0x18, 0x61, 0x64, 0x76, 0x65, 0x72, 0x74, 0x69, 0x73, 0x69, 0x6e, 0x67, 0x5f, 0x63,
 	0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28,
 	0x0e, 0x32, 0x51, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x65, 0x6e, 0x75,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x65, 0x6e, 0x75,
 	0x6d, 0x73, 0x2e, 0x41, 0x64, 0x76, 0x65, 0x72, 0x74, 0x69, 0x73, 0x69, 0x6e, 0x67, 0x43, 0x68,
 	0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x54, 0x79, 0x70, 0x65, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x41, 0x64,
 	0x76, 0x65, 0x72, 0x74, 0x69, 0x73, 0x69, 0x6e, 0x67, 0x43, 0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c,
@@ -3519,7 +3519,7 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x6f, 0x6e, 0x5f, 0x74, 0x72, 0x61, 0x63, 0x6b, 0x69, 0x6e, 0x67, 0x5f, 0x73, 0x74, 0x61, 0x74,
 	0x75, 0x73, 0x18, 0x05, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x55, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e,
-	0x76, 0x32, 0x30, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72,
+	0x76, 0x32, 0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72,
 	0x73, 0x69, 0x6f, 0x6e, 0x54, 0x72, 0x61, 0x63, 0x6b, 0x69, 0x6e, 0x67, 0x53, 0x74, 0x61, 0x74,
 	0x75, 0x73, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f,
 	0x6e, 0x54, 0x72, 0x61, 0x63, 0x6b, 0x69, 0x6e, 0x67, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x42,
@@ -3528,7 +3528,7 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x88, 0x01, 0x01, 0x12, 0x7a, 0x0a, 0x0c, 0x62, 0x69, 0x64, 0x64, 0x69, 0x6e, 0x67, 0x5f, 0x69,
 	0x6e, 0x66, 0x6f, 0x18, 0x06, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x4d, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
-	0x2e, 0x76, 0x32, 0x30, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x47, 0x65,
+	0x2e, 0x76, 0x32, 0x31, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x47, 0x65,
 	0x6e, 0x65, 0x72, 0x61, 0x74, 0x65, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x61,
 	0x74, 0x69, 0x6f, 0x6e, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2e, 0x42, 0x69, 0x64,
 	0x64, 0x69, 0x6e, 0x67, 0x49, 0x6e, 0x66, 0x6f, 0x42, 0x03, 0xe0, 0x41, 0x01, 0x48, 0x02, 0x52,
@@ -3536,21 +3536,21 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x76, 0x0a, 0x0d, 0x61, 0x64, 0x5f, 0x67, 0x72, 0x6f, 0x75, 0x70, 0x5f, 0x69, 0x6e, 0x66, 0x6f,
 	0x18, 0x07, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x4d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
 	0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32,
-	0x30, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72,
+	0x31, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72,
 	0x61, 0x74, 0x65, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x61, 0x74, 0x69, 0x6f,
 	0x6e, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2e, 0x41, 0x64, 0x47, 0x72, 0x6f, 0x75,
 	0x70, 0x49, 0x6e, 0x66, 0x6f, 0x42, 0x03, 0xe0, 0x41, 0x01, 0x52, 0x0b, 0x61, 0x64, 0x47, 0x72,
 	0x6f, 0x75, 0x70, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x71, 0x0a, 0x09, 0x73, 0x65, 0x65, 0x64, 0x5f,
 	0x69, 0x6e, 0x66, 0x6f, 0x18, 0x08, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x4a, 0x2e, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64,
-	0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x47,
+	0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x47,
 	0x65, 0x6e, 0x65, 0x72, 0x61, 0x74, 0x65, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64,
 	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2e, 0x53, 0x65,
 	0x65, 0x64, 0x49, 0x6e, 0x66, 0x6f, 0x42, 0x03, 0xe0, 0x41, 0x01, 0x48, 0x03, 0x52, 0x08, 0x73,
 	0x65, 0x65, 0x64, 0x49, 0x6e, 0x66, 0x6f, 0x88, 0x01, 0x01, 0x12, 0x77, 0x0a, 0x0b, 0x62, 0x75,
 	0x64, 0x67, 0x65, 0x74, 0x5f, 0x69, 0x6e, 0x66, 0x6f, 0x18, 0x09, 0x20, 0x01, 0x28, 0x0b, 0x32,
 	0x4c, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
 	0x63, 0x65, 0x73, 0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x74, 0x65, 0x52, 0x65, 0x63, 0x6f,
 	0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65,
 	0x73, 0x74, 0x2e, 0x42, 0x75, 0x64, 0x67, 0x65, 0x74, 0x49, 0x6e, 0x66, 0x6f, 0x42, 0x03, 0xe0,
@@ -3579,7 +3579,7 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x49, 0x64, 0x73, 0x12, 0x7f, 0x0a, 0x10, 0x61,
 	0x73, 0x73, 0x65, 0x74, 0x5f, 0x67, 0x72, 0x6f, 0x75, 0x70, 0x5f, 0x69, 0x6e, 0x66, 0x6f, 0x18,
 	0x11, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x50, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61,
-	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30,
+	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31,
 	0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x61,
 	0x74, 0x65, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x61, 0x74, 0x69, 0x6f, 0x6e,
 	0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2e, 0x41, 0x73, 0x73, 0x65, 0x74, 0x47, 0x72,
@@ -3602,7 +3602,7 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x12, 0x84, 0x01, 0x0a, 0x15, 0x62, 0x69, 0x64, 0x64, 0x69, 0x6e, 0x67, 0x5f, 0x73, 0x74, 0x72,
 	0x61, 0x74, 0x65, 0x67, 0x79, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e,
 	0x32, 0x4b, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x65, 0x6e, 0x75, 0x6d,
+	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d,
 	0x73, 0x2e, 0x42, 0x69, 0x64, 0x64, 0x69, 0x6e, 0x67, 0x53, 0x74, 0x72, 0x61, 0x74, 0x65, 0x67,
 	0x79, 0x54, 0x79, 0x70, 0x65, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x42, 0x69, 0x64, 0x64, 0x69, 0x6e,
 	0x67, 0x53, 0x74, 0x72, 0x61, 0x74, 0x65, 0x67, 0x79, 0x54, 0x79, 0x70, 0x65, 0x48, 0x01, 0x52,
@@ -3616,7 +3616,7 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x67, 0x65, 0x74, 0x5f, 0x69, 0x6d, 0x70, 0x72, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x5f, 0x73,
 	0x68, 0x61, 0x72, 0x65, 0x5f, 0x69, 0x6e, 0x66, 0x6f, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0b, 0x32,
 	0x5b, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
 	0x63, 0x65, 0x73, 0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x74, 0x65, 0x52, 0x65, 0x63, 0x6f,
 	0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65,
 	0x73, 0x74, 0x2e, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x49, 0x6d, 0x70, 0x72, 0x65, 0x73, 0x73,
@@ -3630,13 +3630,13 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x72, 0x6f, 0x75, 0x70, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x69, 0x0a, 0x0d, 0x61, 0x64, 0x5f, 0x67,
 	0x72, 0x6f, 0x75, 0x70, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32,
 	0x3b, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73,
 	0x2e, 0x41, 0x64, 0x47, 0x72, 0x6f, 0x75, 0x70, 0x54, 0x79, 0x70, 0x65, 0x45, 0x6e, 0x75, 0x6d,
 	0x2e, 0x41, 0x64, 0x47, 0x72, 0x6f, 0x75, 0x70, 0x54, 0x79, 0x70, 0x65, 0x42, 0x03, 0xe0, 0x41,
 	0x01, 0x48, 0x00, 0x52, 0x0b, 0x61, 0x64, 0x47, 0x72, 0x6f, 0x75, 0x70, 0x54, 0x79, 0x70, 0x65,
 	0x88, 0x01, 0x01, 0x12, 0x4d, 0x0a, 0x08, 0x6b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64, 0x73, 0x18,
 	0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x2c, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61,
-	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30,
+	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31,
 	0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x4b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64, 0x49,
 	0x6e, 0x66, 0x6f, 0x42, 0x03, 0xe0, 0x41, 0x01, 0x52, 0x08, 0x6b, 0x65, 0x79, 0x77, 0x6f, 0x72,
 	0x64, 0x73, 0x42, 0x10, 0x0a, 0x0e, 0x5f, 0x61, 0x64, 0x5f, 0x67, 0x72, 0x6f, 0x75, 0x70, 0x5f,
@@ -3665,7 +3665,7 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x61, 0x72, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x85, 0x01, 0x0a, 0x08, 0x6c, 0x6f, 0x63, 0x61,
 	0x74, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x5f, 0x2e, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64,
-	0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x54, 0x61, 0x72, 0x67,
+	0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x54, 0x61, 0x72, 0x67,
 	0x65, 0x74, 0x49, 0x6d, 0x70, 0x72, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x53, 0x68, 0x61, 0x72,
 	0x65, 0x4c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x54, 0x61,
 	0x72, 0x67, 0x65, 0x74, 0x49, 0x6d, 0x70, 0x72, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x53, 0x68,
@@ -3705,57 +3705,57 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x5c, 0x0a, 0x0f, 0x72, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65,
 	0x6e, 0x64, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x32,
 	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72,
+	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72,
 	0x63, 0x65, 0x73, 0x2e, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x61, 0x74, 0x69,
 	0x6f, 0x6e, 0x52, 0x0f, 0x72, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x61, 0x74, 0x69,
 	0x6f, 0x6e, 0x73, 0x32, 0xeb, 0x06, 0x0a, 0x15, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e,
 	0x64, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0xee, 0x01,
 	0x0a, 0x13, 0x41, 0x70, 0x70, 0x6c, 0x79, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64,
 	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x3d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61,
-	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30,
+	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31,
 	0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x41, 0x70, 0x70, 0x6c, 0x79, 0x52,
 	0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71,
 	0x75, 0x65, 0x73, 0x74, 0x1a, 0x3e, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64,
-	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e,
+	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x41, 0x70, 0x70, 0x6c, 0x79, 0x52, 0x65,
 	0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70,
 	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x58, 0xda, 0x41, 0x16, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65,
 	0x72, 0x5f, 0x69, 0x64, 0x2c, 0x6f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x82,
-	0xd3, 0xe4, 0x93, 0x02, 0x39, 0x3a, 0x01, 0x2a, 0x22, 0x34, 0x2f, 0x76, 0x32, 0x30, 0x2f, 0x63,
+	0xd3, 0xe4, 0x93, 0x02, 0x39, 0x3a, 0x01, 0x2a, 0x22, 0x34, 0x2f, 0x76, 0x32, 0x31, 0x2f, 0x63,
 	0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x73, 0x2f, 0x7b, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d,
 	0x65, 0x72, 0x5f, 0x69, 0x64, 0x3d, 0x2a, 0x7d, 0x2f, 0x72, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65,
 	0x6e, 0x64, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x3a, 0x61, 0x70, 0x70, 0x6c, 0x79, 0x12, 0xf6,
 	0x01, 0x0a, 0x15, 0x44, 0x69, 0x73, 0x6d, 0x69, 0x73, 0x73, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d,
 	0x65, 0x6e, 0x64, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x3f, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e,
-	0x76, 0x32, 0x30, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x44, 0x69, 0x73,
+	0x76, 0x32, 0x31, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x44, 0x69, 0x73,
 	0x6d, 0x69, 0x73, 0x73, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x61, 0x74, 0x69,
 	0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x40, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
-	0x2e, 0x76, 0x32, 0x30, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x44, 0x69,
+	0x2e, 0x76, 0x32, 0x31, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x44, 0x69,
 	0x73, 0x6d, 0x69, 0x73, 0x73, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x61, 0x74,
 	0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x5a, 0xda, 0x41, 0x16,
 	0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x2c, 0x6f, 0x70, 0x65, 0x72,
 	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x3b, 0x3a, 0x01, 0x2a, 0x22,
-	0x36, 0x2f, 0x76, 0x32, 0x30, 0x2f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x73, 0x2f,
+	0x36, 0x2f, 0x76, 0x32, 0x31, 0x2f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x73, 0x2f,
 	0x7b, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x3d, 0x2a, 0x7d, 0x2f,
 	0x72, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x3a,
 	0x64, 0x69, 0x73, 0x6d, 0x69, 0x73, 0x73, 0x12, 0xa0, 0x02, 0x0a, 0x17, 0x47, 0x65, 0x6e, 0x65,
 	0x72, 0x61, 0x74, 0x65, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x61, 0x74, 0x69,
 	0x6f, 0x6e, 0x73, 0x12, 0x41, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73,
-	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x73,
+	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x73,
 	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x74, 0x65,
 	0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x52,
 	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x42, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
 	0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32,
-	0x30, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72,
+	0x31, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72,
 	0x61, 0x74, 0x65, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x61, 0x74, 0x69, 0x6f,
 	0x6e, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x7e, 0xda, 0x41, 0x39, 0x63,
 	0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x2c, 0x72, 0x65, 0x63, 0x6f, 0x6d,
 	0x6d, 0x65, 0x6e, 0x64, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2c,
 	0x61, 0x64, 0x76, 0x65, 0x72, 0x74, 0x69, 0x73, 0x69, 0x6e, 0x67, 0x5f, 0x63, 0x68, 0x61, 0x6e,
 	0x6e, 0x65, 0x6c, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x3c, 0x3a, 0x01,
-	0x2a, 0x22, 0x37, 0x2f, 0x76, 0x32, 0x30, 0x2f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72,
+	0x2a, 0x22, 0x37, 0x2f, 0x76, 0x32, 0x31, 0x2f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72,
 	0x73, 0x2f, 0x7b, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x3d, 0x2a,
 	0x7d, 0x2f, 0x72, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x61, 0x74, 0x69, 0x6f, 0x6e,
 	0x73, 0x3a, 0x67, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x74, 0x65, 0x1a, 0x45, 0xca, 0x41, 0x18, 0x67,
@@ -3765,160 +3765,160 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc 
 	0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x61, 0x75, 0x74, 0x68, 0x2f, 0x61, 0x64, 0x77, 0x6f, 0x72, 0x64,
 	0x73, 0x42, 0x86, 0x02, 0x0a, 0x25, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76,
-	0x32, 0x30, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x42, 0x1a, 0x52, 0x65, 0x63,
+	0x32, 0x31, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x42, 0x1a, 0x52, 0x65, 0x63,
 	0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x53, 0x65, 0x72, 0x76, 0x69,
 	0x63, 0x65, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x49, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2e, 0x67, 0x6f, 0x6c, 0x61, 0x6e, 0x67, 0x2e, 0x6f, 0x72, 0x67, 0x2f, 0x67, 0x65, 0x6e,
 	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x70, 0x69, 0x73,
 	0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76,
-	0x32, 0x30, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x3b, 0x73, 0x65, 0x72, 0x76,
+	0x32, 0x31, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x3b, 0x73, 0x65, 0x72, 0x76,
 	0x69, 0x63, 0x65, 0x73, 0xa2, 0x02, 0x03, 0x47, 0x41, 0x41, 0xaa, 0x02, 0x21, 0x47, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2e, 0x41, 0x64, 0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64,
-	0x73, 0x2e, 0x56, 0x32, 0x30, 0x2e, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0xca, 0x02,
+	0x73, 0x2e, 0x56, 0x32, 0x31, 0x2e, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0xca, 0x02,
 	0x21, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x5c, 0x41, 0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x32, 0x30, 0x5c, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63,
+	0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x32, 0x31, 0x5c, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63,
 	0x65, 0x73, 0xea, 0x02, 0x25, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x3a, 0x3a, 0x41, 0x64, 0x73,
-	0x3a, 0x3a, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x32, 0x30,
+	0x3a, 0x3a, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x32, 0x31,
 	0x3a, 0x3a, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
 	0x6f, 0x33,
 })
 
 var (
-	file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescData []byte
+	file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescData []byte
 )
 
-func file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc), len(file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc)))
+func file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v21_services_recommendation_service_proto_rawDesc), len(file_google_ads_googleads_v21_services_recommendation_service_proto_rawDesc)))
 	})
-	return file_google_ads_googleads_v20_services_recommendation_service_proto_rawDescData
+	return file_google_ads_googleads_v21_services_recommendation_service_proto_rawDescData
 }
 
-var file_google_ads_googleads_v20_services_recommendation_service_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes = make([]protoimpl.MessageInfo, 39)
-var file_google_ads_googleads_v20_services_recommendation_service_proto_goTypes = []any{
-	(ApplyRecommendationOperation_AdAssetApplyParameters_ApplyScope)(0),                // 0: google.ads.googleads.v20.services.ApplyRecommendationOperation.AdAssetApplyParameters.ApplyScope
-	(*ApplyRecommendationRequest)(nil),                                                 // 1: google.ads.googleads.v20.services.ApplyRecommendationRequest
-	(*ApplyRecommendationOperation)(nil),                                               // 2: google.ads.googleads.v20.services.ApplyRecommendationOperation
-	(*ApplyRecommendationResponse)(nil),                                                // 3: google.ads.googleads.v20.services.ApplyRecommendationResponse
-	(*ApplyRecommendationResult)(nil),                                                  // 4: google.ads.googleads.v20.services.ApplyRecommendationResult
-	(*DismissRecommendationRequest)(nil),                                               // 5: google.ads.googleads.v20.services.DismissRecommendationRequest
-	(*DismissRecommendationResponse)(nil),                                              // 6: google.ads.googleads.v20.services.DismissRecommendationResponse
-	(*GenerateRecommendationsRequest)(nil),                                             // 7: google.ads.googleads.v20.services.GenerateRecommendationsRequest
-	(*GenerateRecommendationsResponse)(nil),                                            // 8: google.ads.googleads.v20.services.GenerateRecommendationsResponse
-	(*ApplyRecommendationOperation_CampaignBudgetParameters)(nil),                      // 9: google.ads.googleads.v20.services.ApplyRecommendationOperation.CampaignBudgetParameters
-	(*ApplyRecommendationOperation_ForecastingSetTargetRoasParameters)(nil),            // 10: google.ads.googleads.v20.services.ApplyRecommendationOperation.ForecastingSetTargetRoasParameters
-	(*ApplyRecommendationOperation_TextAdParameters)(nil),                              // 11: google.ads.googleads.v20.services.ApplyRecommendationOperation.TextAdParameters
-	(*ApplyRecommendationOperation_KeywordParameters)(nil),                             // 12: google.ads.googleads.v20.services.ApplyRecommendationOperation.KeywordParameters
-	(*ApplyRecommendationOperation_TargetCpaOptInParameters)(nil),                      // 13: google.ads.googleads.v20.services.ApplyRecommendationOperation.TargetCpaOptInParameters
-	(*ApplyRecommendationOperation_TargetRoasOptInParameters)(nil),                     // 14: google.ads.googleads.v20.services.ApplyRecommendationOperation.TargetRoasOptInParameters
-	(*ApplyRecommendationOperation_CalloutExtensionParameters)(nil),                    // 15: google.ads.googleads.v20.services.ApplyRecommendationOperation.CalloutExtensionParameters
-	(*ApplyRecommendationOperation_CallExtensionParameters)(nil),                       // 16: google.ads.googleads.v20.services.ApplyRecommendationOperation.CallExtensionParameters
-	(*ApplyRecommendationOperation_SitelinkExtensionParameters)(nil),                   // 17: google.ads.googleads.v20.services.ApplyRecommendationOperation.SitelinkExtensionParameters
-	(*ApplyRecommendationOperation_CalloutAssetParameters)(nil),                        // 18: google.ads.googleads.v20.services.ApplyRecommendationOperation.CalloutAssetParameters
-	(*ApplyRecommendationOperation_CallAssetParameters)(nil),                           // 19: google.ads.googleads.v20.services.ApplyRecommendationOperation.CallAssetParameters
-	(*ApplyRecommendationOperation_SitelinkAssetParameters)(nil),                       // 20: google.ads.googleads.v20.services.ApplyRecommendationOperation.SitelinkAssetParameters
-	(*ApplyRecommendationOperation_RaiseTargetCpaParameters)(nil),                      // 21: google.ads.googleads.v20.services.ApplyRecommendationOperation.RaiseTargetCpaParameters
-	(*ApplyRecommendationOperation_LowerTargetRoasParameters)(nil),                     // 22: google.ads.googleads.v20.services.ApplyRecommendationOperation.LowerTargetRoasParameters
-	(*ApplyRecommendationOperation_AdAssetApplyParameters)(nil),                        // 23: google.ads.googleads.v20.services.ApplyRecommendationOperation.AdAssetApplyParameters
-	(*ApplyRecommendationOperation_MoveUnusedBudgetParameters)(nil),                    // 24: google.ads.googleads.v20.services.ApplyRecommendationOperation.MoveUnusedBudgetParameters
-	(*ApplyRecommendationOperation_ResponsiveSearchAdAssetParameters)(nil),             // 25: google.ads.googleads.v20.services.ApplyRecommendationOperation.ResponsiveSearchAdAssetParameters
-	(*ApplyRecommendationOperation_ResponsiveSearchAdImproveAdStrengthParameters)(nil), // 26: google.ads.googleads.v20.services.ApplyRecommendationOperation.ResponsiveSearchAdImproveAdStrengthParameters
-	(*ApplyRecommendationOperation_ResponsiveSearchAdParameters)(nil),                  // 27: google.ads.googleads.v20.services.ApplyRecommendationOperation.ResponsiveSearchAdParameters
-	(*ApplyRecommendationOperation_RaiseTargetCpaBidTooLowParameters)(nil),             // 28: google.ads.googleads.v20.services.ApplyRecommendationOperation.RaiseTargetCpaBidTooLowParameters
-	(*ApplyRecommendationOperation_UseBroadMatchKeywordParameters)(nil),                // 29: google.ads.googleads.v20.services.ApplyRecommendationOperation.UseBroadMatchKeywordParameters
-	(*ApplyRecommendationOperation_ForecastingSetTargetCpaParameters)(nil),             // 30: google.ads.googleads.v20.services.ApplyRecommendationOperation.ForecastingSetTargetCpaParameters
-	(*ApplyRecommendationOperation_LeadFormAssetParameters)(nil),                       // 31: google.ads.googleads.v20.services.ApplyRecommendationOperation.LeadFormAssetParameters
-	(*DismissRecommendationRequest_DismissRecommendationOperation)(nil),                // 32: google.ads.googleads.v20.services.DismissRecommendationRequest.DismissRecommendationOperation
-	(*DismissRecommendationResponse_DismissRecommendationResult)(nil),                  // 33: google.ads.googleads.v20.services.DismissRecommendationResponse.DismissRecommendationResult
-	(*GenerateRecommendationsRequest_BiddingInfo)(nil),                                 // 34: google.ads.googleads.v20.services.GenerateRecommendationsRequest.BiddingInfo
-	(*GenerateRecommendationsRequest_AdGroupInfo)(nil),                                 // 35: google.ads.googleads.v20.services.GenerateRecommendationsRequest.AdGroupInfo
-	(*GenerateRecommendationsRequest_SeedInfo)(nil),                                    // 36: google.ads.googleads.v20.services.GenerateRecommendationsRequest.SeedInfo
-	(*GenerateRecommendationsRequest_BudgetInfo)(nil),                                  // 37: google.ads.googleads.v20.services.GenerateRecommendationsRequest.BudgetInfo
-	(*GenerateRecommendationsRequest_AssetGroupInfo)(nil),                              // 38: google.ads.googleads.v20.services.GenerateRecommendationsRequest.AssetGroupInfo
-	(*GenerateRecommendationsRequest_TargetImpressionShareInfo)(nil),                   // 39: google.ads.googleads.v20.services.GenerateRecommendationsRequest.TargetImpressionShareInfo
+var file_google_ads_googleads_v21_services_recommendation_service_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes = make([]protoimpl.MessageInfo, 39)
+var file_google_ads_googleads_v21_services_recommendation_service_proto_goTypes = []any{
+	(ApplyRecommendationOperation_AdAssetApplyParameters_ApplyScope)(0),                // 0: google.ads.googleads.v21.services.ApplyRecommendationOperation.AdAssetApplyParameters.ApplyScope
+	(*ApplyRecommendationRequest)(nil),                                                 // 1: google.ads.googleads.v21.services.ApplyRecommendationRequest
+	(*ApplyRecommendationOperation)(nil),                                               // 2: google.ads.googleads.v21.services.ApplyRecommendationOperation
+	(*ApplyRecommendationResponse)(nil),                                                // 3: google.ads.googleads.v21.services.ApplyRecommendationResponse
+	(*ApplyRecommendationResult)(nil),                                                  // 4: google.ads.googleads.v21.services.ApplyRecommendationResult
+	(*DismissRecommendationRequest)(nil),                                               // 5: google.ads.googleads.v21.services.DismissRecommendationRequest
+	(*DismissRecommendationResponse)(nil),                                              // 6: google.ads.googleads.v21.services.DismissRecommendationResponse
+	(*GenerateRecommendationsRequest)(nil),                                             // 7: google.ads.googleads.v21.services.GenerateRecommendationsRequest
+	(*GenerateRecommendationsResponse)(nil),                                            // 8: google.ads.googleads.v21.services.GenerateRecommendationsResponse
+	(*ApplyRecommendationOperation_CampaignBudgetParameters)(nil),                      // 9: google.ads.googleads.v21.services.ApplyRecommendationOperation.CampaignBudgetParameters
+	(*ApplyRecommendationOperation_ForecastingSetTargetRoasParameters)(nil),            // 10: google.ads.googleads.v21.services.ApplyRecommendationOperation.ForecastingSetTargetRoasParameters
+	(*ApplyRecommendationOperation_TextAdParameters)(nil),                              // 11: google.ads.googleads.v21.services.ApplyRecommendationOperation.TextAdParameters
+	(*ApplyRecommendationOperation_KeywordParameters)(nil),                             // 12: google.ads.googleads.v21.services.ApplyRecommendationOperation.KeywordParameters
+	(*ApplyRecommendationOperation_TargetCpaOptInParameters)(nil),                      // 13: google.ads.googleads.v21.services.ApplyRecommendationOperation.TargetCpaOptInParameters
+	(*ApplyRecommendationOperation_TargetRoasOptInParameters)(nil),                     // 14: google.ads.googleads.v21.services.ApplyRecommendationOperation.TargetRoasOptInParameters
+	(*ApplyRecommendationOperation_CalloutExtensionParameters)(nil),                    // 15: google.ads.googleads.v21.services.ApplyRecommendationOperation.CalloutExtensionParameters
+	(*ApplyRecommendationOperation_CallExtensionParameters)(nil),                       // 16: google.ads.googleads.v21.services.ApplyRecommendationOperation.CallExtensionParameters
+	(*ApplyRecommendationOperation_SitelinkExtensionParameters)(nil),                   // 17: google.ads.googleads.v21.services.ApplyRecommendationOperation.SitelinkExtensionParameters
+	(*ApplyRecommendationOperation_CalloutAssetParameters)(nil),                        // 18: google.ads.googleads.v21.services.ApplyRecommendationOperation.CalloutAssetParameters
+	(*ApplyRecommendationOperation_CallAssetParameters)(nil),                           // 19: google.ads.googleads.v21.services.ApplyRecommendationOperation.CallAssetParameters
+	(*ApplyRecommendationOperation_SitelinkAssetParameters)(nil),                       // 20: google.ads.googleads.v21.services.ApplyRecommendationOperation.SitelinkAssetParameters
+	(*ApplyRecommendationOperation_RaiseTargetCpaParameters)(nil),                      // 21: google.ads.googleads.v21.services.ApplyRecommendationOperation.RaiseTargetCpaParameters
+	(*ApplyRecommendationOperation_LowerTargetRoasParameters)(nil),                     // 22: google.ads.googleads.v21.services.ApplyRecommendationOperation.LowerTargetRoasParameters
+	(*ApplyRecommendationOperation_AdAssetApplyParameters)(nil),                        // 23: google.ads.googleads.v21.services.ApplyRecommendationOperation.AdAssetApplyParameters
+	(*ApplyRecommendationOperation_MoveUnusedBudgetParameters)(nil),                    // 24: google.ads.googleads.v21.services.ApplyRecommendationOperation.MoveUnusedBudgetParameters
+	(*ApplyRecommendationOperation_ResponsiveSearchAdAssetParameters)(nil),             // 25: google.ads.googleads.v21.services.ApplyRecommendationOperation.ResponsiveSearchAdAssetParameters
+	(*ApplyRecommendationOperation_ResponsiveSearchAdImproveAdStrengthParameters)(nil), // 26: google.ads.googleads.v21.services.ApplyRecommendationOperation.ResponsiveSearchAdImproveAdStrengthParameters
+	(*ApplyRecommendationOperation_ResponsiveSearchAdParameters)(nil),                  // 27: google.ads.googleads.v21.services.ApplyRecommendationOperation.ResponsiveSearchAdParameters
+	(*ApplyRecommendationOperation_RaiseTargetCpaBidTooLowParameters)(nil),             // 28: google.ads.googleads.v21.services.ApplyRecommendationOperation.RaiseTargetCpaBidTooLowParameters
+	(*ApplyRecommendationOperation_UseBroadMatchKeywordParameters)(nil),                // 29: google.ads.googleads.v21.services.ApplyRecommendationOperation.UseBroadMatchKeywordParameters
+	(*ApplyRecommendationOperation_ForecastingSetTargetCpaParameters)(nil),             // 30: google.ads.googleads.v21.services.ApplyRecommendationOperation.ForecastingSetTargetCpaParameters
+	(*ApplyRecommendationOperation_LeadFormAssetParameters)(nil),                       // 31: google.ads.googleads.v21.services.ApplyRecommendationOperation.LeadFormAssetParameters
+	(*DismissRecommendationRequest_DismissRecommendationOperation)(nil),                // 32: google.ads.googleads.v21.services.DismissRecommendationRequest.DismissRecommendationOperation
+	(*DismissRecommendationResponse_DismissRecommendationResult)(nil),                  // 33: google.ads.googleads.v21.services.DismissRecommendationResponse.DismissRecommendationResult
+	(*GenerateRecommendationsRequest_BiddingInfo)(nil),                                 // 34: google.ads.googleads.v21.services.GenerateRecommendationsRequest.BiddingInfo
+	(*GenerateRecommendationsRequest_AdGroupInfo)(nil),                                 // 35: google.ads.googleads.v21.services.GenerateRecommendationsRequest.AdGroupInfo
+	(*GenerateRecommendationsRequest_SeedInfo)(nil),                                    // 36: google.ads.googleads.v21.services.GenerateRecommendationsRequest.SeedInfo
+	(*GenerateRecommendationsRequest_BudgetInfo)(nil),                                  // 37: google.ads.googleads.v21.services.GenerateRecommendationsRequest.BudgetInfo
+	(*GenerateRecommendationsRequest_AssetGroupInfo)(nil),                              // 38: google.ads.googleads.v21.services.GenerateRecommendationsRequest.AssetGroupInfo
+	(*GenerateRecommendationsRequest_TargetImpressionShareInfo)(nil),                   // 39: google.ads.googleads.v21.services.GenerateRecommendationsRequest.TargetImpressionShareInfo
 	(*status.Status)(nil),                                                      // 40: google.rpc.Status
-	(enums.RecommendationTypeEnum_RecommendationType)(0),                       // 41: google.ads.googleads.v20.enums.RecommendationTypeEnum.RecommendationType
-	(enums.AdvertisingChannelTypeEnum_AdvertisingChannelType)(0),               // 42: google.ads.googleads.v20.enums.AdvertisingChannelTypeEnum.AdvertisingChannelType
-	(enums.ConversionTrackingStatusEnum_ConversionTrackingStatus)(0),           // 43: google.ads.googleads.v20.enums.ConversionTrackingStatusEnum.ConversionTrackingStatus
-	(*resources.Recommendation)(nil),                                           // 44: google.ads.googleads.v20.resources.Recommendation
-	(*resources.Ad)(nil),                                                       // 45: google.ads.googleads.v20.resources.Ad
-	(enums.KeywordMatchTypeEnum_KeywordMatchType)(0),                           // 46: google.ads.googleads.v20.enums.KeywordMatchTypeEnum.KeywordMatchType
-	(*common.CalloutFeedItem)(nil),                                             // 47: google.ads.googleads.v20.common.CalloutFeedItem
-	(*common.CallFeedItem)(nil),                                                // 48: google.ads.googleads.v20.common.CallFeedItem
-	(*common.SitelinkFeedItem)(nil),                                            // 49: google.ads.googleads.v20.common.SitelinkFeedItem
-	(*resources.Asset)(nil),                                                    // 50: google.ads.googleads.v20.resources.Asset
-	(enums.BiddingStrategyTypeEnum_BiddingStrategyType)(0),                     // 51: google.ads.googleads.v20.enums.BiddingStrategyTypeEnum.BiddingStrategyType
-	(enums.AdGroupTypeEnum_AdGroupType)(0),                                     // 52: google.ads.googleads.v20.enums.AdGroupTypeEnum.AdGroupType
-	(*common.KeywordInfo)(nil),                                                 // 53: google.ads.googleads.v20.common.KeywordInfo
-	(enums.TargetImpressionShareLocationEnum_TargetImpressionShareLocation)(0), // 54: google.ads.googleads.v20.enums.TargetImpressionShareLocationEnum.TargetImpressionShareLocation
+	(enums.RecommendationTypeEnum_RecommendationType)(0),                       // 41: google.ads.googleads.v21.enums.RecommendationTypeEnum.RecommendationType
+	(enums.AdvertisingChannelTypeEnum_AdvertisingChannelType)(0),               // 42: google.ads.googleads.v21.enums.AdvertisingChannelTypeEnum.AdvertisingChannelType
+	(enums.ConversionTrackingStatusEnum_ConversionTrackingStatus)(0),           // 43: google.ads.googleads.v21.enums.ConversionTrackingStatusEnum.ConversionTrackingStatus
+	(*resources.Recommendation)(nil),                                           // 44: google.ads.googleads.v21.resources.Recommendation
+	(*resources.Ad)(nil),                                                       // 45: google.ads.googleads.v21.resources.Ad
+	(enums.KeywordMatchTypeEnum_KeywordMatchType)(0),                           // 46: google.ads.googleads.v21.enums.KeywordMatchTypeEnum.KeywordMatchType
+	(*common.CalloutFeedItem)(nil),                                             // 47: google.ads.googleads.v21.common.CalloutFeedItem
+	(*common.CallFeedItem)(nil),                                                // 48: google.ads.googleads.v21.common.CallFeedItem
+	(*common.SitelinkFeedItem)(nil),                                            // 49: google.ads.googleads.v21.common.SitelinkFeedItem
+	(*resources.Asset)(nil),                                                    // 50: google.ads.googleads.v21.resources.Asset
+	(enums.BiddingStrategyTypeEnum_BiddingStrategyType)(0),                     // 51: google.ads.googleads.v21.enums.BiddingStrategyTypeEnum.BiddingStrategyType
+	(enums.AdGroupTypeEnum_AdGroupType)(0),                                     // 52: google.ads.googleads.v21.enums.AdGroupTypeEnum.AdGroupType
+	(*common.KeywordInfo)(nil),                                                 // 53: google.ads.googleads.v21.common.KeywordInfo
+	(enums.TargetImpressionShareLocationEnum_TargetImpressionShareLocation)(0), // 54: google.ads.googleads.v21.enums.TargetImpressionShareLocationEnum.TargetImpressionShareLocation
 }
-var file_google_ads_googleads_v20_services_recommendation_service_proto_depIdxs = []int32{
-	2,  // 0: google.ads.googleads.v20.services.ApplyRecommendationRequest.operations:type_name -> google.ads.googleads.v20.services.ApplyRecommendationOperation
-	9,  // 1: google.ads.googleads.v20.services.ApplyRecommendationOperation.campaign_budget:type_name -> google.ads.googleads.v20.services.ApplyRecommendationOperation.CampaignBudgetParameters
-	11, // 2: google.ads.googleads.v20.services.ApplyRecommendationOperation.text_ad:type_name -> google.ads.googleads.v20.services.ApplyRecommendationOperation.TextAdParameters
-	12, // 3: google.ads.googleads.v20.services.ApplyRecommendationOperation.keyword:type_name -> google.ads.googleads.v20.services.ApplyRecommendationOperation.KeywordParameters
-	13, // 4: google.ads.googleads.v20.services.ApplyRecommendationOperation.target_cpa_opt_in:type_name -> google.ads.googleads.v20.services.ApplyRecommendationOperation.TargetCpaOptInParameters
-	14, // 5: google.ads.googleads.v20.services.ApplyRecommendationOperation.target_roas_opt_in:type_name -> google.ads.googleads.v20.services.ApplyRecommendationOperation.TargetRoasOptInParameters
-	15, // 6: google.ads.googleads.v20.services.ApplyRecommendationOperation.callout_extension:type_name -> google.ads.googleads.v20.services.ApplyRecommendationOperation.CalloutExtensionParameters
-	16, // 7: google.ads.googleads.v20.services.ApplyRecommendationOperation.call_extension:type_name -> google.ads.googleads.v20.services.ApplyRecommendationOperation.CallExtensionParameters
-	17, // 8: google.ads.googleads.v20.services.ApplyRecommendationOperation.sitelink_extension:type_name -> google.ads.googleads.v20.services.ApplyRecommendationOperation.SitelinkExtensionParameters
-	24, // 9: google.ads.googleads.v20.services.ApplyRecommendationOperation.move_unused_budget:type_name -> google.ads.googleads.v20.services.ApplyRecommendationOperation.MoveUnusedBudgetParameters
-	27, // 10: google.ads.googleads.v20.services.ApplyRecommendationOperation.responsive_search_ad:type_name -> google.ads.googleads.v20.services.ApplyRecommendationOperation.ResponsiveSearchAdParameters
-	29, // 11: google.ads.googleads.v20.services.ApplyRecommendationOperation.use_broad_match_keyword:type_name -> google.ads.googleads.v20.services.ApplyRecommendationOperation.UseBroadMatchKeywordParameters
-	25, // 12: google.ads.googleads.v20.services.ApplyRecommendationOperation.responsive_search_ad_asset:type_name -> google.ads.googleads.v20.services.ApplyRecommendationOperation.ResponsiveSearchAdAssetParameters
-	26, // 13: google.ads.googleads.v20.services.ApplyRecommendationOperation.responsive_search_ad_improve_ad_strength:type_name -> google.ads.googleads.v20.services.ApplyRecommendationOperation.ResponsiveSearchAdImproveAdStrengthParameters
-	28, // 14: google.ads.googleads.v20.services.ApplyRecommendationOperation.raise_target_cpa_bid_too_low:type_name -> google.ads.googleads.v20.services.ApplyRecommendationOperation.RaiseTargetCpaBidTooLowParameters
-	10, // 15: google.ads.googleads.v20.services.ApplyRecommendationOperation.forecasting_set_target_roas:type_name -> google.ads.googleads.v20.services.ApplyRecommendationOperation.ForecastingSetTargetRoasParameters
-	18, // 16: google.ads.googleads.v20.services.ApplyRecommendationOperation.callout_asset:type_name -> google.ads.googleads.v20.services.ApplyRecommendationOperation.CalloutAssetParameters
-	19, // 17: google.ads.googleads.v20.services.ApplyRecommendationOperation.call_asset:type_name -> google.ads.googleads.v20.services.ApplyRecommendationOperation.CallAssetParameters
-	20, // 18: google.ads.googleads.v20.services.ApplyRecommendationOperation.sitelink_asset:type_name -> google.ads.googleads.v20.services.ApplyRecommendationOperation.SitelinkAssetParameters
-	21, // 19: google.ads.googleads.v20.services.ApplyRecommendationOperation.raise_target_cpa:type_name -> google.ads.googleads.v20.services.ApplyRecommendationOperation.RaiseTargetCpaParameters
-	22, // 20: google.ads.googleads.v20.services.ApplyRecommendationOperation.lower_target_roas:type_name -> google.ads.googleads.v20.services.ApplyRecommendationOperation.LowerTargetRoasParameters
-	30, // 21: google.ads.googleads.v20.services.ApplyRecommendationOperation.forecasting_set_target_cpa:type_name -> google.ads.googleads.v20.services.ApplyRecommendationOperation.ForecastingSetTargetCpaParameters
-	30, // 22: google.ads.googleads.v20.services.ApplyRecommendationOperation.set_target_cpa:type_name -> google.ads.googleads.v20.services.ApplyRecommendationOperation.ForecastingSetTargetCpaParameters
-	10, // 23: google.ads.googleads.v20.services.ApplyRecommendationOperation.set_target_roas:type_name -> google.ads.googleads.v20.services.ApplyRecommendationOperation.ForecastingSetTargetRoasParameters
-	31, // 24: google.ads.googleads.v20.services.ApplyRecommendationOperation.lead_form_asset:type_name -> google.ads.googleads.v20.services.ApplyRecommendationOperation.LeadFormAssetParameters
-	4,  // 25: google.ads.googleads.v20.services.ApplyRecommendationResponse.results:type_name -> google.ads.googleads.v20.services.ApplyRecommendationResult
-	40, // 26: google.ads.googleads.v20.services.ApplyRecommendationResponse.partial_failure_error:type_name -> google.rpc.Status
-	32, // 27: google.ads.googleads.v20.services.DismissRecommendationRequest.operations:type_name -> google.ads.googleads.v20.services.DismissRecommendationRequest.DismissRecommendationOperation
-	33, // 28: google.ads.googleads.v20.services.DismissRecommendationResponse.results:type_name -> google.ads.googleads.v20.services.DismissRecommendationResponse.DismissRecommendationResult
-	40, // 29: google.ads.googleads.v20.services.DismissRecommendationResponse.partial_failure_error:type_name -> google.rpc.Status
-	41, // 30: google.ads.googleads.v20.services.GenerateRecommendationsRequest.recommendation_types:type_name -> google.ads.googleads.v20.enums.RecommendationTypeEnum.RecommendationType
-	42, // 31: google.ads.googleads.v20.services.GenerateRecommendationsRequest.advertising_channel_type:type_name -> google.ads.googleads.v20.enums.AdvertisingChannelTypeEnum.AdvertisingChannelType
-	43, // 32: google.ads.googleads.v20.services.GenerateRecommendationsRequest.conversion_tracking_status:type_name -> google.ads.googleads.v20.enums.ConversionTrackingStatusEnum.ConversionTrackingStatus
-	34, // 33: google.ads.googleads.v20.services.GenerateRecommendationsRequest.bidding_info:type_name -> google.ads.googleads.v20.services.GenerateRecommendationsRequest.BiddingInfo
-	35, // 34: google.ads.googleads.v20.services.GenerateRecommendationsRequest.ad_group_info:type_name -> google.ads.googleads.v20.services.GenerateRecommendationsRequest.AdGroupInfo
-	36, // 35: google.ads.googleads.v20.services.GenerateRecommendationsRequest.seed_info:type_name -> google.ads.googleads.v20.services.GenerateRecommendationsRequest.SeedInfo
-	37, // 36: google.ads.googleads.v20.services.GenerateRecommendationsRequest.budget_info:type_name -> google.ads.googleads.v20.services.GenerateRecommendationsRequest.BudgetInfo
-	38, // 37: google.ads.googleads.v20.services.GenerateRecommendationsRequest.asset_group_info:type_name -> google.ads.googleads.v20.services.GenerateRecommendationsRequest.AssetGroupInfo
-	44, // 38: google.ads.googleads.v20.services.GenerateRecommendationsResponse.recommendations:type_name -> google.ads.googleads.v20.resources.Recommendation
-	45, // 39: google.ads.googleads.v20.services.ApplyRecommendationOperation.TextAdParameters.ad:type_name -> google.ads.googleads.v20.resources.Ad
-	46, // 40: google.ads.googleads.v20.services.ApplyRecommendationOperation.KeywordParameters.match_type:type_name -> google.ads.googleads.v20.enums.KeywordMatchTypeEnum.KeywordMatchType
-	47, // 41: google.ads.googleads.v20.services.ApplyRecommendationOperation.CalloutExtensionParameters.callout_extensions:type_name -> google.ads.googleads.v20.common.CalloutFeedItem
-	48, // 42: google.ads.googleads.v20.services.ApplyRecommendationOperation.CallExtensionParameters.call_extensions:type_name -> google.ads.googleads.v20.common.CallFeedItem
-	49, // 43: google.ads.googleads.v20.services.ApplyRecommendationOperation.SitelinkExtensionParameters.sitelink_extensions:type_name -> google.ads.googleads.v20.common.SitelinkFeedItem
-	23, // 44: google.ads.googleads.v20.services.ApplyRecommendationOperation.CalloutAssetParameters.ad_asset_apply_parameters:type_name -> google.ads.googleads.v20.services.ApplyRecommendationOperation.AdAssetApplyParameters
-	23, // 45: google.ads.googleads.v20.services.ApplyRecommendationOperation.CallAssetParameters.ad_asset_apply_parameters:type_name -> google.ads.googleads.v20.services.ApplyRecommendationOperation.AdAssetApplyParameters
-	23, // 46: google.ads.googleads.v20.services.ApplyRecommendationOperation.SitelinkAssetParameters.ad_asset_apply_parameters:type_name -> google.ads.googleads.v20.services.ApplyRecommendationOperation.AdAssetApplyParameters
-	50, // 47: google.ads.googleads.v20.services.ApplyRecommendationOperation.AdAssetApplyParameters.new_assets:type_name -> google.ads.googleads.v20.resources.Asset
-	0,  // 48: google.ads.googleads.v20.services.ApplyRecommendationOperation.AdAssetApplyParameters.scope:type_name -> google.ads.googleads.v20.services.ApplyRecommendationOperation.AdAssetApplyParameters.ApplyScope
-	45, // 49: google.ads.googleads.v20.services.ApplyRecommendationOperation.ResponsiveSearchAdAssetParameters.updated_ad:type_name -> google.ads.googleads.v20.resources.Ad
-	45, // 50: google.ads.googleads.v20.services.ApplyRecommendationOperation.ResponsiveSearchAdImproveAdStrengthParameters.updated_ad:type_name -> google.ads.googleads.v20.resources.Ad
-	45, // 51: google.ads.googleads.v20.services.ApplyRecommendationOperation.ResponsiveSearchAdParameters.ad:type_name -> google.ads.googleads.v20.resources.Ad
-	23, // 52: google.ads.googleads.v20.services.ApplyRecommendationOperation.LeadFormAssetParameters.ad_asset_apply_parameters:type_name -> google.ads.googleads.v20.services.ApplyRecommendationOperation.AdAssetApplyParameters
-	51, // 53: google.ads.googleads.v20.services.GenerateRecommendationsRequest.BiddingInfo.bidding_strategy_type:type_name -> google.ads.googleads.v20.enums.BiddingStrategyTypeEnum.BiddingStrategyType
-	39, // 54: google.ads.googleads.v20.services.GenerateRecommendationsRequest.BiddingInfo.target_impression_share_info:type_name -> google.ads.googleads.v20.services.GenerateRecommendationsRequest.TargetImpressionShareInfo
-	52, // 55: google.ads.googleads.v20.services.GenerateRecommendationsRequest.AdGroupInfo.ad_group_type:type_name -> google.ads.googleads.v20.enums.AdGroupTypeEnum.AdGroupType
-	53, // 56: google.ads.googleads.v20.services.GenerateRecommendationsRequest.AdGroupInfo.keywords:type_name -> google.ads.googleads.v20.common.KeywordInfo
-	54, // 57: google.ads.googleads.v20.services.GenerateRecommendationsRequest.TargetImpressionShareInfo.location:type_name -> google.ads.googleads.v20.enums.TargetImpressionShareLocationEnum.TargetImpressionShareLocation
-	1,  // 58: google.ads.googleads.v20.services.RecommendationService.ApplyRecommendation:input_type -> google.ads.googleads.v20.services.ApplyRecommendationRequest
-	5,  // 59: google.ads.googleads.v20.services.RecommendationService.DismissRecommendation:input_type -> google.ads.googleads.v20.services.DismissRecommendationRequest
-	7,  // 60: google.ads.googleads.v20.services.RecommendationService.GenerateRecommendations:input_type -> google.ads.googleads.v20.services.GenerateRecommendationsRequest
-	3,  // 61: google.ads.googleads.v20.services.RecommendationService.ApplyRecommendation:output_type -> google.ads.googleads.v20.services.ApplyRecommendationResponse
-	6,  // 62: google.ads.googleads.v20.services.RecommendationService.DismissRecommendation:output_type -> google.ads.googleads.v20.services.DismissRecommendationResponse
-	8,  // 63: google.ads.googleads.v20.services.RecommendationService.GenerateRecommendations:output_type -> google.ads.googleads.v20.services.GenerateRecommendationsResponse
+var file_google_ads_googleads_v21_services_recommendation_service_proto_depIdxs = []int32{
+	2,  // 0: google.ads.googleads.v21.services.ApplyRecommendationRequest.operations:type_name -> google.ads.googleads.v21.services.ApplyRecommendationOperation
+	9,  // 1: google.ads.googleads.v21.services.ApplyRecommendationOperation.campaign_budget:type_name -> google.ads.googleads.v21.services.ApplyRecommendationOperation.CampaignBudgetParameters
+	11, // 2: google.ads.googleads.v21.services.ApplyRecommendationOperation.text_ad:type_name -> google.ads.googleads.v21.services.ApplyRecommendationOperation.TextAdParameters
+	12, // 3: google.ads.googleads.v21.services.ApplyRecommendationOperation.keyword:type_name -> google.ads.googleads.v21.services.ApplyRecommendationOperation.KeywordParameters
+	13, // 4: google.ads.googleads.v21.services.ApplyRecommendationOperation.target_cpa_opt_in:type_name -> google.ads.googleads.v21.services.ApplyRecommendationOperation.TargetCpaOptInParameters
+	14, // 5: google.ads.googleads.v21.services.ApplyRecommendationOperation.target_roas_opt_in:type_name -> google.ads.googleads.v21.services.ApplyRecommendationOperation.TargetRoasOptInParameters
+	15, // 6: google.ads.googleads.v21.services.ApplyRecommendationOperation.callout_extension:type_name -> google.ads.googleads.v21.services.ApplyRecommendationOperation.CalloutExtensionParameters
+	16, // 7: google.ads.googleads.v21.services.ApplyRecommendationOperation.call_extension:type_name -> google.ads.googleads.v21.services.ApplyRecommendationOperation.CallExtensionParameters
+	17, // 8: google.ads.googleads.v21.services.ApplyRecommendationOperation.sitelink_extension:type_name -> google.ads.googleads.v21.services.ApplyRecommendationOperation.SitelinkExtensionParameters
+	24, // 9: google.ads.googleads.v21.services.ApplyRecommendationOperation.move_unused_budget:type_name -> google.ads.googleads.v21.services.ApplyRecommendationOperation.MoveUnusedBudgetParameters
+	27, // 10: google.ads.googleads.v21.services.ApplyRecommendationOperation.responsive_search_ad:type_name -> google.ads.googleads.v21.services.ApplyRecommendationOperation.ResponsiveSearchAdParameters
+	29, // 11: google.ads.googleads.v21.services.ApplyRecommendationOperation.use_broad_match_keyword:type_name -> google.ads.googleads.v21.services.ApplyRecommendationOperation.UseBroadMatchKeywordParameters
+	25, // 12: google.ads.googleads.v21.services.ApplyRecommendationOperation.responsive_search_ad_asset:type_name -> google.ads.googleads.v21.services.ApplyRecommendationOperation.ResponsiveSearchAdAssetParameters
+	26, // 13: google.ads.googleads.v21.services.ApplyRecommendationOperation.responsive_search_ad_improve_ad_strength:type_name -> google.ads.googleads.v21.services.ApplyRecommendationOperation.ResponsiveSearchAdImproveAdStrengthParameters
+	28, // 14: google.ads.googleads.v21.services.ApplyRecommendationOperation.raise_target_cpa_bid_too_low:type_name -> google.ads.googleads.v21.services.ApplyRecommendationOperation.RaiseTargetCpaBidTooLowParameters
+	10, // 15: google.ads.googleads.v21.services.ApplyRecommendationOperation.forecasting_set_target_roas:type_name -> google.ads.googleads.v21.services.ApplyRecommendationOperation.ForecastingSetTargetRoasParameters
+	18, // 16: google.ads.googleads.v21.services.ApplyRecommendationOperation.callout_asset:type_name -> google.ads.googleads.v21.services.ApplyRecommendationOperation.CalloutAssetParameters
+	19, // 17: google.ads.googleads.v21.services.ApplyRecommendationOperation.call_asset:type_name -> google.ads.googleads.v21.services.ApplyRecommendationOperation.CallAssetParameters
+	20, // 18: google.ads.googleads.v21.services.ApplyRecommendationOperation.sitelink_asset:type_name -> google.ads.googleads.v21.services.ApplyRecommendationOperation.SitelinkAssetParameters
+	21, // 19: google.ads.googleads.v21.services.ApplyRecommendationOperation.raise_target_cpa:type_name -> google.ads.googleads.v21.services.ApplyRecommendationOperation.RaiseTargetCpaParameters
+	22, // 20: google.ads.googleads.v21.services.ApplyRecommendationOperation.lower_target_roas:type_name -> google.ads.googleads.v21.services.ApplyRecommendationOperation.LowerTargetRoasParameters
+	30, // 21: google.ads.googleads.v21.services.ApplyRecommendationOperation.forecasting_set_target_cpa:type_name -> google.ads.googleads.v21.services.ApplyRecommendationOperation.ForecastingSetTargetCpaParameters
+	30, // 22: google.ads.googleads.v21.services.ApplyRecommendationOperation.set_target_cpa:type_name -> google.ads.googleads.v21.services.ApplyRecommendationOperation.ForecastingSetTargetCpaParameters
+	10, // 23: google.ads.googleads.v21.services.ApplyRecommendationOperation.set_target_roas:type_name -> google.ads.googleads.v21.services.ApplyRecommendationOperation.ForecastingSetTargetRoasParameters
+	31, // 24: google.ads.googleads.v21.services.ApplyRecommendationOperation.lead_form_asset:type_name -> google.ads.googleads.v21.services.ApplyRecommendationOperation.LeadFormAssetParameters
+	4,  // 25: google.ads.googleads.v21.services.ApplyRecommendationResponse.results:type_name -> google.ads.googleads.v21.services.ApplyRecommendationResult
+	40, // 26: google.ads.googleads.v21.services.ApplyRecommendationResponse.partial_failure_error:type_name -> google.rpc.Status
+	32, // 27: google.ads.googleads.v21.services.DismissRecommendationRequest.operations:type_name -> google.ads.googleads.v21.services.DismissRecommendationRequest.DismissRecommendationOperation
+	33, // 28: google.ads.googleads.v21.services.DismissRecommendationResponse.results:type_name -> google.ads.googleads.v21.services.DismissRecommendationResponse.DismissRecommendationResult
+	40, // 29: google.ads.googleads.v21.services.DismissRecommendationResponse.partial_failure_error:type_name -> google.rpc.Status
+	41, // 30: google.ads.googleads.v21.services.GenerateRecommendationsRequest.recommendation_types:type_name -> google.ads.googleads.v21.enums.RecommendationTypeEnum.RecommendationType
+	42, // 31: google.ads.googleads.v21.services.GenerateRecommendationsRequest.advertising_channel_type:type_name -> google.ads.googleads.v21.enums.AdvertisingChannelTypeEnum.AdvertisingChannelType
+	43, // 32: google.ads.googleads.v21.services.GenerateRecommendationsRequest.conversion_tracking_status:type_name -> google.ads.googleads.v21.enums.ConversionTrackingStatusEnum.ConversionTrackingStatus
+	34, // 33: google.ads.googleads.v21.services.GenerateRecommendationsRequest.bidding_info:type_name -> google.ads.googleads.v21.services.GenerateRecommendationsRequest.BiddingInfo
+	35, // 34: google.ads.googleads.v21.services.GenerateRecommendationsRequest.ad_group_info:type_name -> google.ads.googleads.v21.services.GenerateRecommendationsRequest.AdGroupInfo
+	36, // 35: google.ads.googleads.v21.services.GenerateRecommendationsRequest.seed_info:type_name -> google.ads.googleads.v21.services.GenerateRecommendationsRequest.SeedInfo
+	37, // 36: google.ads.googleads.v21.services.GenerateRecommendationsRequest.budget_info:type_name -> google.ads.googleads.v21.services.GenerateRecommendationsRequest.BudgetInfo
+	38, // 37: google.ads.googleads.v21.services.GenerateRecommendationsRequest.asset_group_info:type_name -> google.ads.googleads.v21.services.GenerateRecommendationsRequest.AssetGroupInfo
+	44, // 38: google.ads.googleads.v21.services.GenerateRecommendationsResponse.recommendations:type_name -> google.ads.googleads.v21.resources.Recommendation
+	45, // 39: google.ads.googleads.v21.services.ApplyRecommendationOperation.TextAdParameters.ad:type_name -> google.ads.googleads.v21.resources.Ad
+	46, // 40: google.ads.googleads.v21.services.ApplyRecommendationOperation.KeywordParameters.match_type:type_name -> google.ads.googleads.v21.enums.KeywordMatchTypeEnum.KeywordMatchType
+	47, // 41: google.ads.googleads.v21.services.ApplyRecommendationOperation.CalloutExtensionParameters.callout_extensions:type_name -> google.ads.googleads.v21.common.CalloutFeedItem
+	48, // 42: google.ads.googleads.v21.services.ApplyRecommendationOperation.CallExtensionParameters.call_extensions:type_name -> google.ads.googleads.v21.common.CallFeedItem
+	49, // 43: google.ads.googleads.v21.services.ApplyRecommendationOperation.SitelinkExtensionParameters.sitelink_extensions:type_name -> google.ads.googleads.v21.common.SitelinkFeedItem
+	23, // 44: google.ads.googleads.v21.services.ApplyRecommendationOperation.CalloutAssetParameters.ad_asset_apply_parameters:type_name -> google.ads.googleads.v21.services.ApplyRecommendationOperation.AdAssetApplyParameters
+	23, // 45: google.ads.googleads.v21.services.ApplyRecommendationOperation.CallAssetParameters.ad_asset_apply_parameters:type_name -> google.ads.googleads.v21.services.ApplyRecommendationOperation.AdAssetApplyParameters
+	23, // 46: google.ads.googleads.v21.services.ApplyRecommendationOperation.SitelinkAssetParameters.ad_asset_apply_parameters:type_name -> google.ads.googleads.v21.services.ApplyRecommendationOperation.AdAssetApplyParameters
+	50, // 47: google.ads.googleads.v21.services.ApplyRecommendationOperation.AdAssetApplyParameters.new_assets:type_name -> google.ads.googleads.v21.resources.Asset
+	0,  // 48: google.ads.googleads.v21.services.ApplyRecommendationOperation.AdAssetApplyParameters.scope:type_name -> google.ads.googleads.v21.services.ApplyRecommendationOperation.AdAssetApplyParameters.ApplyScope
+	45, // 49: google.ads.googleads.v21.services.ApplyRecommendationOperation.ResponsiveSearchAdAssetParameters.updated_ad:type_name -> google.ads.googleads.v21.resources.Ad
+	45, // 50: google.ads.googleads.v21.services.ApplyRecommendationOperation.ResponsiveSearchAdImproveAdStrengthParameters.updated_ad:type_name -> google.ads.googleads.v21.resources.Ad
+	45, // 51: google.ads.googleads.v21.services.ApplyRecommendationOperation.ResponsiveSearchAdParameters.ad:type_name -> google.ads.googleads.v21.resources.Ad
+	23, // 52: google.ads.googleads.v21.services.ApplyRecommendationOperation.LeadFormAssetParameters.ad_asset_apply_parameters:type_name -> google.ads.googleads.v21.services.ApplyRecommendationOperation.AdAssetApplyParameters
+	51, // 53: google.ads.googleads.v21.services.GenerateRecommendationsRequest.BiddingInfo.bidding_strategy_type:type_name -> google.ads.googleads.v21.enums.BiddingStrategyTypeEnum.BiddingStrategyType
+	39, // 54: google.ads.googleads.v21.services.GenerateRecommendationsRequest.BiddingInfo.target_impression_share_info:type_name -> google.ads.googleads.v21.services.GenerateRecommendationsRequest.TargetImpressionShareInfo
+	52, // 55: google.ads.googleads.v21.services.GenerateRecommendationsRequest.AdGroupInfo.ad_group_type:type_name -> google.ads.googleads.v21.enums.AdGroupTypeEnum.AdGroupType
+	53, // 56: google.ads.googleads.v21.services.GenerateRecommendationsRequest.AdGroupInfo.keywords:type_name -> google.ads.googleads.v21.common.KeywordInfo
+	54, // 57: google.ads.googleads.v21.services.GenerateRecommendationsRequest.TargetImpressionShareInfo.location:type_name -> google.ads.googleads.v21.enums.TargetImpressionShareLocationEnum.TargetImpressionShareLocation
+	1,  // 58: google.ads.googleads.v21.services.RecommendationService.ApplyRecommendation:input_type -> google.ads.googleads.v21.services.ApplyRecommendationRequest
+	5,  // 59: google.ads.googleads.v21.services.RecommendationService.DismissRecommendation:input_type -> google.ads.googleads.v21.services.DismissRecommendationRequest
+	7,  // 60: google.ads.googleads.v21.services.RecommendationService.GenerateRecommendations:input_type -> google.ads.googleads.v21.services.GenerateRecommendationsRequest
+	3,  // 61: google.ads.googleads.v21.services.RecommendationService.ApplyRecommendation:output_type -> google.ads.googleads.v21.services.ApplyRecommendationResponse
+	6,  // 62: google.ads.googleads.v21.services.RecommendationService.DismissRecommendation:output_type -> google.ads.googleads.v21.services.DismissRecommendationResponse
+	8,  // 63: google.ads.googleads.v21.services.RecommendationService.GenerateRecommendations:output_type -> google.ads.googleads.v21.services.GenerateRecommendationsResponse
 	61, // [61:64] is the sub-list for method output_type
 	58, // [58:61] is the sub-list for method input_type
 	58, // [58:58] is the sub-list for extension type_name
@@ -3926,12 +3926,12 @@ var file_google_ads_googleads_v20_services_recommendation_service_proto_depIdxs 
 	0,  // [0:58] is the sub-list for field type_name
 }
 
-func init() { file_google_ads_googleads_v20_services_recommendation_service_proto_init() }
-func file_google_ads_googleads_v20_services_recommendation_service_proto_init() {
-	if File_google_ads_googleads_v20_services_recommendation_service_proto != nil {
+func init() { file_google_ads_googleads_v21_services_recommendation_service_proto_init() }
+func file_google_ads_googleads_v21_services_recommendation_service_proto_init() {
+	if File_google_ads_googleads_v21_services_recommendation_service_proto != nil {
 		return
 	}
-	file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[1].OneofWrappers = []any{
+	file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[1].OneofWrappers = []any{
 		(*ApplyRecommendationOperation_CampaignBudget)(nil),
 		(*ApplyRecommendationOperation_TextAd)(nil),
 		(*ApplyRecommendationOperation_Keyword)(nil),
@@ -3957,42 +3957,42 @@ func file_google_ads_googleads_v20_services_recommendation_service_proto_init() 
 		(*ApplyRecommendationOperation_SetTargetRoas)(nil),
 		(*ApplyRecommendationOperation_LeadFormAsset)(nil),
 	}
-	file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[6].OneofWrappers = []any{}
-	file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[8].OneofWrappers = []any{}
-	file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[9].OneofWrappers = []any{}
-	file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[11].OneofWrappers = []any{}
-	file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[12].OneofWrappers = []any{}
-	file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[13].OneofWrappers = []any{}
-	file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[23].OneofWrappers = []any{}
-	file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[28].OneofWrappers = []any{}
-	file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[29].OneofWrappers = []any{}
-	file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[30].OneofWrappers = []any{}
-	file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[33].OneofWrappers = []any{
+	file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[6].OneofWrappers = []any{}
+	file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[8].OneofWrappers = []any{}
+	file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[9].OneofWrappers = []any{}
+	file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[11].OneofWrappers = []any{}
+	file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[12].OneofWrappers = []any{}
+	file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[13].OneofWrappers = []any{}
+	file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[23].OneofWrappers = []any{}
+	file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[28].OneofWrappers = []any{}
+	file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[29].OneofWrappers = []any{}
+	file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[30].OneofWrappers = []any{}
+	file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[33].OneofWrappers = []any{
 		(*GenerateRecommendationsRequest_BiddingInfo_TargetCpaMicros)(nil),
 		(*GenerateRecommendationsRequest_BiddingInfo_TargetRoas)(nil),
 		(*GenerateRecommendationsRequest_BiddingInfo_TargetImpressionShareInfo)(nil),
 	}
-	file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[34].OneofWrappers = []any{}
-	file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[35].OneofWrappers = []any{}
-	file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[36].OneofWrappers = []any{}
-	file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[37].OneofWrappers = []any{}
-	file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes[38].OneofWrappers = []any{}
+	file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[34].OneofWrappers = []any{}
+	file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[35].OneofWrappers = []any{}
+	file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[36].OneofWrappers = []any{}
+	file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[37].OneofWrappers = []any{}
+	file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes[38].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc), len(file_google_ads_googleads_v20_services_recommendation_service_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v21_services_recommendation_service_proto_rawDesc), len(file_google_ads_googleads_v21_services_recommendation_service_proto_rawDesc)),
 			NumEnums:      1,
 			NumMessages:   39,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_google_ads_googleads_v20_services_recommendation_service_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v20_services_recommendation_service_proto_depIdxs,
-		EnumInfos:         file_google_ads_googleads_v20_services_recommendation_service_proto_enumTypes,
-		MessageInfos:      file_google_ads_googleads_v20_services_recommendation_service_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v21_services_recommendation_service_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v21_services_recommendation_service_proto_depIdxs,
+		EnumInfos:         file_google_ads_googleads_v21_services_recommendation_service_proto_enumTypes,
+		MessageInfos:      file_google_ads_googleads_v21_services_recommendation_service_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v20_services_recommendation_service_proto = out.File
-	file_google_ads_googleads_v20_services_recommendation_service_proto_goTypes = nil
-	file_google_ads_googleads_v20_services_recommendation_service_proto_depIdxs = nil
+	File_google_ads_googleads_v21_services_recommendation_service_proto = out.File
+	file_google_ads_googleads_v21_services_recommendation_service_proto_goTypes = nil
+	file_google_ads_googleads_v21_services_recommendation_service_proto_depIdxs = nil
 }

@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v20/services/customer_client_link_service.proto
+// source: google/ads/googleads/v21/services/customer_client_link_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	CustomerClientLinkService_MutateCustomerClientLink_FullMethodName = "/google.ads.googleads.v20.services.CustomerClientLinkService/MutateCustomerClientLink"
+	CustomerClientLinkService_MutateCustomerClientLink_FullMethodName = "/google.ads.googleads.v21.services.CustomerClientLinkService/MutateCustomerClientLink"
 )
 
 // CustomerClientLinkServiceClient is the client API for CustomerClientLinkService service.
@@ -159,7 +159,7 @@ func _CustomerClientLinkService_MutateCustomerClientLink_Handler(srv interface{}
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CustomerClientLinkService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v20.services.CustomerClientLinkService",
+	ServiceName: "google.ads.googleads.v21.services.CustomerClientLinkService",
 	HandlerType: (*CustomerClientLinkServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -168,5 +168,5 @@ var CustomerClientLinkService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v20/services/customer_client_link_service.proto",
+	Metadata: "google/ads/googleads/v21/services/customer_client_link_service.proto",
 }

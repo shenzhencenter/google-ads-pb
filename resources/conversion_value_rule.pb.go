@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.36.5
 // 	protoc        v4.24.4
-// source: google/ads/googleads/v20/resources/conversion_value_rule.proto
+// source: google/ads/googleads/v21/resources/conversion_value_rule.proto
 
 package resources
 
@@ -66,14 +66,14 @@ type ConversionValueRule struct {
 	// ** Read-only **
 	OwnerCustomer string `protobuf:"bytes,7,opt,name=owner_customer,json=ownerCustomer,proto3" json:"owner_customer,omitempty"`
 	// The status of the conversion value rule.
-	Status        enums.ConversionValueRuleStatusEnum_ConversionValueRuleStatus `protobuf:"varint,8,opt,name=status,proto3,enum=google.ads.googleads.v20.enums.ConversionValueRuleStatusEnum_ConversionValueRuleStatus" json:"status,omitempty"`
+	Status        enums.ConversionValueRuleStatusEnum_ConversionValueRuleStatus `protobuf:"varint,8,opt,name=status,proto3,enum=google.ads.googleads.v21.enums.ConversionValueRuleStatusEnum_ConversionValueRuleStatus" json:"status,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *ConversionValueRule) Reset() {
 	*x = ConversionValueRule{}
-	mi := &file_google_ads_googleads_v20_resources_conversion_value_rule_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v21_resources_conversion_value_rule_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -85,7 +85,7 @@ func (x *ConversionValueRule) String() string {
 func (*ConversionValueRule) ProtoMessage() {}
 
 func (x *ConversionValueRule) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_resources_conversion_value_rule_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v21_resources_conversion_value_rule_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -98,7 +98,7 @@ func (x *ConversionValueRule) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConversionValueRule.ProtoReflect.Descriptor instead.
 func (*ConversionValueRule) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_resources_conversion_value_rule_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v21_resources_conversion_value_rule_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ConversionValueRule) GetResourceName() string {
@@ -168,7 +168,7 @@ func (x *ConversionValueRule) GetStatus() enums.ConversionValueRuleStatusEnum_Co
 type ConversionValueRule_ValueRuleAction struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Specifies applied operation.
-	Operation enums.ValueRuleOperationEnum_ValueRuleOperation `protobuf:"varint,1,opt,name=operation,proto3,enum=google.ads.googleads.v20.enums.ValueRuleOperationEnum_ValueRuleOperation" json:"operation,omitempty"`
+	Operation enums.ValueRuleOperationEnum_ValueRuleOperation `protobuf:"varint,1,opt,name=operation,proto3,enum=google.ads.googleads.v21.enums.ValueRuleOperationEnum_ValueRuleOperation" json:"operation,omitempty"`
 	// Specifies applied value.
 	Value         float64 `protobuf:"fixed64,2,opt,name=value,proto3" json:"value,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -177,7 +177,7 @@ type ConversionValueRule_ValueRuleAction struct {
 
 func (x *ConversionValueRule_ValueRuleAction) Reset() {
 	*x = ConversionValueRule_ValueRuleAction{}
-	mi := &file_google_ads_googleads_v20_resources_conversion_value_rule_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v21_resources_conversion_value_rule_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -189,7 +189,7 @@ func (x *ConversionValueRule_ValueRuleAction) String() string {
 func (*ConversionValueRule_ValueRuleAction) ProtoMessage() {}
 
 func (x *ConversionValueRule_ValueRuleAction) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_resources_conversion_value_rule_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v21_resources_conversion_value_rule_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -202,7 +202,7 @@ func (x *ConversionValueRule_ValueRuleAction) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use ConversionValueRule_ValueRuleAction.ProtoReflect.Descriptor instead.
 func (*ConversionValueRule_ValueRuleAction) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_resources_conversion_value_rule_proto_rawDescGZIP(), []int{0, 0}
+	return file_google_ads_googleads_v21_resources_conversion_value_rule_proto_rawDescGZIP(), []int{0, 0}
 }
 
 func (x *ConversionValueRule_ValueRuleAction) GetOperation() enums.ValueRuleOperationEnum_ValueRuleOperation {
@@ -225,18 +225,18 @@ type ConversionValueRule_ValueRuleGeoLocationCondition struct {
 	// Geo locations that advertisers want to exclude.
 	ExcludedGeoTargetConstants []string `protobuf:"bytes,1,rep,name=excluded_geo_target_constants,json=excludedGeoTargetConstants,proto3" json:"excluded_geo_target_constants,omitempty"`
 	// Excluded Geo location match type.
-	ExcludedGeoMatchType enums.ValueRuleGeoLocationMatchTypeEnum_ValueRuleGeoLocationMatchType `protobuf:"varint,2,opt,name=excluded_geo_match_type,json=excludedGeoMatchType,proto3,enum=google.ads.googleads.v20.enums.ValueRuleGeoLocationMatchTypeEnum_ValueRuleGeoLocationMatchType" json:"excluded_geo_match_type,omitempty"`
+	ExcludedGeoMatchType enums.ValueRuleGeoLocationMatchTypeEnum_ValueRuleGeoLocationMatchType `protobuf:"varint,2,opt,name=excluded_geo_match_type,json=excludedGeoMatchType,proto3,enum=google.ads.googleads.v21.enums.ValueRuleGeoLocationMatchTypeEnum_ValueRuleGeoLocationMatchType" json:"excluded_geo_match_type,omitempty"`
 	// Geo locations that advertisers want to include.
 	GeoTargetConstants []string `protobuf:"bytes,3,rep,name=geo_target_constants,json=geoTargetConstants,proto3" json:"geo_target_constants,omitempty"`
 	// Included Geo location match type.
-	GeoMatchType  enums.ValueRuleGeoLocationMatchTypeEnum_ValueRuleGeoLocationMatchType `protobuf:"varint,4,opt,name=geo_match_type,json=geoMatchType,proto3,enum=google.ads.googleads.v20.enums.ValueRuleGeoLocationMatchTypeEnum_ValueRuleGeoLocationMatchType" json:"geo_match_type,omitempty"`
+	GeoMatchType  enums.ValueRuleGeoLocationMatchTypeEnum_ValueRuleGeoLocationMatchType `protobuf:"varint,4,opt,name=geo_match_type,json=geoMatchType,proto3,enum=google.ads.googleads.v21.enums.ValueRuleGeoLocationMatchTypeEnum_ValueRuleGeoLocationMatchType" json:"geo_match_type,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *ConversionValueRule_ValueRuleGeoLocationCondition) Reset() {
 	*x = ConversionValueRule_ValueRuleGeoLocationCondition{}
-	mi := &file_google_ads_googleads_v20_resources_conversion_value_rule_proto_msgTypes[2]
+	mi := &file_google_ads_googleads_v21_resources_conversion_value_rule_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -248,7 +248,7 @@ func (x *ConversionValueRule_ValueRuleGeoLocationCondition) String() string {
 func (*ConversionValueRule_ValueRuleGeoLocationCondition) ProtoMessage() {}
 
 func (x *ConversionValueRule_ValueRuleGeoLocationCondition) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_resources_conversion_value_rule_proto_msgTypes[2]
+	mi := &file_google_ads_googleads_v21_resources_conversion_value_rule_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -261,7 +261,7 @@ func (x *ConversionValueRule_ValueRuleGeoLocationCondition) ProtoReflect() proto
 
 // Deprecated: Use ConversionValueRule_ValueRuleGeoLocationCondition.ProtoReflect.Descriptor instead.
 func (*ConversionValueRule_ValueRuleGeoLocationCondition) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_resources_conversion_value_rule_proto_rawDescGZIP(), []int{0, 1}
+	return file_google_ads_googleads_v21_resources_conversion_value_rule_proto_rawDescGZIP(), []int{0, 1}
 }
 
 func (x *ConversionValueRule_ValueRuleGeoLocationCondition) GetExcludedGeoTargetConstants() []string {
@@ -296,14 +296,14 @@ func (x *ConversionValueRule_ValueRuleGeoLocationCondition) GetGeoMatchType() en
 type ConversionValueRule_ValueRuleDeviceCondition struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Value for device type condition.
-	DeviceTypes   []enums.ValueRuleDeviceTypeEnum_ValueRuleDeviceType `protobuf:"varint,1,rep,packed,name=device_types,json=deviceTypes,proto3,enum=google.ads.googleads.v20.enums.ValueRuleDeviceTypeEnum_ValueRuleDeviceType" json:"device_types,omitempty"`
+	DeviceTypes   []enums.ValueRuleDeviceTypeEnum_ValueRuleDeviceType `protobuf:"varint,1,rep,packed,name=device_types,json=deviceTypes,proto3,enum=google.ads.googleads.v21.enums.ValueRuleDeviceTypeEnum_ValueRuleDeviceType" json:"device_types,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *ConversionValueRule_ValueRuleDeviceCondition) Reset() {
 	*x = ConversionValueRule_ValueRuleDeviceCondition{}
-	mi := &file_google_ads_googleads_v20_resources_conversion_value_rule_proto_msgTypes[3]
+	mi := &file_google_ads_googleads_v21_resources_conversion_value_rule_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -315,7 +315,7 @@ func (x *ConversionValueRule_ValueRuleDeviceCondition) String() string {
 func (*ConversionValueRule_ValueRuleDeviceCondition) ProtoMessage() {}
 
 func (x *ConversionValueRule_ValueRuleDeviceCondition) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_resources_conversion_value_rule_proto_msgTypes[3]
+	mi := &file_google_ads_googleads_v21_resources_conversion_value_rule_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -328,7 +328,7 @@ func (x *ConversionValueRule_ValueRuleDeviceCondition) ProtoReflect() protorefle
 
 // Deprecated: Use ConversionValueRule_ValueRuleDeviceCondition.ProtoReflect.Descriptor instead.
 func (*ConversionValueRule_ValueRuleDeviceCondition) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_resources_conversion_value_rule_proto_rawDescGZIP(), []int{0, 2}
+	return file_google_ads_googleads_v21_resources_conversion_value_rule_proto_rawDescGZIP(), []int{0, 2}
 }
 
 func (x *ConversionValueRule_ValueRuleDeviceCondition) GetDeviceTypes() []enums.ValueRuleDeviceTypeEnum_ValueRuleDeviceType {
@@ -351,7 +351,7 @@ type ConversionValueRule_ValueRuleAudienceCondition struct {
 
 func (x *ConversionValueRule_ValueRuleAudienceCondition) Reset() {
 	*x = ConversionValueRule_ValueRuleAudienceCondition{}
-	mi := &file_google_ads_googleads_v20_resources_conversion_value_rule_proto_msgTypes[4]
+	mi := &file_google_ads_googleads_v21_resources_conversion_value_rule_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -363,7 +363,7 @@ func (x *ConversionValueRule_ValueRuleAudienceCondition) String() string {
 func (*ConversionValueRule_ValueRuleAudienceCondition) ProtoMessage() {}
 
 func (x *ConversionValueRule_ValueRuleAudienceCondition) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_resources_conversion_value_rule_proto_msgTypes[4]
+	mi := &file_google_ads_googleads_v21_resources_conversion_value_rule_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -376,7 +376,7 @@ func (x *ConversionValueRule_ValueRuleAudienceCondition) ProtoReflect() protoref
 
 // Deprecated: Use ConversionValueRule_ValueRuleAudienceCondition.ProtoReflect.Descriptor instead.
 func (*ConversionValueRule_ValueRuleAudienceCondition) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_resources_conversion_value_rule_proto_rawDescGZIP(), []int{0, 3}
+	return file_google_ads_googleads_v21_resources_conversion_value_rule_proto_rawDescGZIP(), []int{0, 3}
 }
 
 func (x *ConversionValueRule_ValueRuleAudienceCondition) GetUserLists() []string {
@@ -409,7 +409,7 @@ type ConversionValueRule_ValueRuleItineraryCondition struct {
 
 func (x *ConversionValueRule_ValueRuleItineraryCondition) Reset() {
 	*x = ConversionValueRule_ValueRuleItineraryCondition{}
-	mi := &file_google_ads_googleads_v20_resources_conversion_value_rule_proto_msgTypes[5]
+	mi := &file_google_ads_googleads_v21_resources_conversion_value_rule_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -421,7 +421,7 @@ func (x *ConversionValueRule_ValueRuleItineraryCondition) String() string {
 func (*ConversionValueRule_ValueRuleItineraryCondition) ProtoMessage() {}
 
 func (x *ConversionValueRule_ValueRuleItineraryCondition) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_resources_conversion_value_rule_proto_msgTypes[5]
+	mi := &file_google_ads_googleads_v21_resources_conversion_value_rule_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -434,7 +434,7 @@ func (x *ConversionValueRule_ValueRuleItineraryCondition) ProtoReflect() protore
 
 // Deprecated: Use ConversionValueRule_ValueRuleItineraryCondition.ProtoReflect.Descriptor instead.
 func (*ConversionValueRule_ValueRuleItineraryCondition) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_resources_conversion_value_rule_proto_rawDescGZIP(), []int{0, 4}
+	return file_google_ads_googleads_v21_resources_conversion_value_rule_proto_rawDescGZIP(), []int{0, 4}
 }
 
 func (x *ConversionValueRule_ValueRuleItineraryCondition) GetAdvanceBookingWindow() *ConversionValueRule_ValueRuleItineraryAdvanceBookingWindow {
@@ -472,7 +472,7 @@ type ConversionValueRule_ValueRuleItineraryAdvanceBookingWindow struct {
 
 func (x *ConversionValueRule_ValueRuleItineraryAdvanceBookingWindow) Reset() {
 	*x = ConversionValueRule_ValueRuleItineraryAdvanceBookingWindow{}
-	mi := &file_google_ads_googleads_v20_resources_conversion_value_rule_proto_msgTypes[6]
+	mi := &file_google_ads_googleads_v21_resources_conversion_value_rule_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -484,7 +484,7 @@ func (x *ConversionValueRule_ValueRuleItineraryAdvanceBookingWindow) String() st
 func (*ConversionValueRule_ValueRuleItineraryAdvanceBookingWindow) ProtoMessage() {}
 
 func (x *ConversionValueRule_ValueRuleItineraryAdvanceBookingWindow) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_resources_conversion_value_rule_proto_msgTypes[6]
+	mi := &file_google_ads_googleads_v21_resources_conversion_value_rule_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -497,7 +497,7 @@ func (x *ConversionValueRule_ValueRuleItineraryAdvanceBookingWindow) ProtoReflec
 
 // Deprecated: Use ConversionValueRule_ValueRuleItineraryAdvanceBookingWindow.ProtoReflect.Descriptor instead.
 func (*ConversionValueRule_ValueRuleItineraryAdvanceBookingWindow) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_resources_conversion_value_rule_proto_rawDescGZIP(), []int{0, 5}
+	return file_google_ads_googleads_v21_resources_conversion_value_rule_proto_rawDescGZIP(), []int{0, 5}
 }
 
 func (x *ConversionValueRule_ValueRuleItineraryAdvanceBookingWindow) GetMinDays() int32 {
@@ -527,7 +527,7 @@ type ConversionValueRule_ValueRuleItineraryTravelLength struct {
 
 func (x *ConversionValueRule_ValueRuleItineraryTravelLength) Reset() {
 	*x = ConversionValueRule_ValueRuleItineraryTravelLength{}
-	mi := &file_google_ads_googleads_v20_resources_conversion_value_rule_proto_msgTypes[7]
+	mi := &file_google_ads_googleads_v21_resources_conversion_value_rule_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -539,7 +539,7 @@ func (x *ConversionValueRule_ValueRuleItineraryTravelLength) String() string {
 func (*ConversionValueRule_ValueRuleItineraryTravelLength) ProtoMessage() {}
 
 func (x *ConversionValueRule_ValueRuleItineraryTravelLength) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_resources_conversion_value_rule_proto_msgTypes[7]
+	mi := &file_google_ads_googleads_v21_resources_conversion_value_rule_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -552,7 +552,7 @@ func (x *ConversionValueRule_ValueRuleItineraryTravelLength) ProtoReflect() prot
 
 // Deprecated: Use ConversionValueRule_ValueRuleItineraryTravelLength.ProtoReflect.Descriptor instead.
 func (*ConversionValueRule_ValueRuleItineraryTravelLength) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_resources_conversion_value_rule_proto_rawDescGZIP(), []int{0, 6}
+	return file_google_ads_googleads_v21_resources_conversion_value_rule_proto_rawDescGZIP(), []int{0, 6}
 }
 
 func (x *ConversionValueRule_ValueRuleItineraryTravelLength) GetMinNights() int32 {
@@ -592,7 +592,7 @@ type ConversionValueRule_ValueRuleItineraryTravelStartDay struct {
 
 func (x *ConversionValueRule_ValueRuleItineraryTravelStartDay) Reset() {
 	*x = ConversionValueRule_ValueRuleItineraryTravelStartDay{}
-	mi := &file_google_ads_googleads_v20_resources_conversion_value_rule_proto_msgTypes[8]
+	mi := &file_google_ads_googleads_v21_resources_conversion_value_rule_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -604,7 +604,7 @@ func (x *ConversionValueRule_ValueRuleItineraryTravelStartDay) String() string {
 func (*ConversionValueRule_ValueRuleItineraryTravelStartDay) ProtoMessage() {}
 
 func (x *ConversionValueRule_ValueRuleItineraryTravelStartDay) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_resources_conversion_value_rule_proto_msgTypes[8]
+	mi := &file_google_ads_googleads_v21_resources_conversion_value_rule_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -617,7 +617,7 @@ func (x *ConversionValueRule_ValueRuleItineraryTravelStartDay) ProtoReflect() pr
 
 // Deprecated: Use ConversionValueRule_ValueRuleItineraryTravelStartDay.ProtoReflect.Descriptor instead.
 func (*ConversionValueRule_ValueRuleItineraryTravelStartDay) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_resources_conversion_value_rule_proto_rawDescGZIP(), []int{0, 7}
+	return file_google_ads_googleads_v21_resources_conversion_value_rule_proto_rawDescGZIP(), []int{0, 7}
 }
 
 func (x *ConversionValueRule_ValueRuleItineraryTravelStartDay) GetMonday() bool {
@@ -669,30 +669,30 @@ func (x *ConversionValueRule_ValueRuleItineraryTravelStartDay) GetSunday() bool 
 	return false
 }
 
-var File_google_ads_googleads_v20_resources_conversion_value_rule_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v21_resources_conversion_value_rule_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v20_resources_conversion_value_rule_proto_rawDesc = string([]byte{
+var file_google_ads_googleads_v21_resources_conversion_value_rule_proto_rawDesc = string([]byte{
 	0x0a, 0x3e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x30, 0x2f, 0x72, 0x65, 0x73, 0x6f, 0x75,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x31, 0x2f, 0x72, 0x65, 0x73, 0x6f, 0x75,
 	0x72, 0x63, 0x65, 0x73, 0x2f, 0x63, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x5f,
 	0x76, 0x61, 0x6c, 0x75, 0x65, 0x5f, 0x72, 0x75, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
 	0x12, 0x22, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75,
 	0x72, 0x63, 0x65, 0x73, 0x1a, 0x41, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73,
-	0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x30, 0x2f, 0x65,
+	0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x31, 0x2f, 0x65,
 	0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x63, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x5f,
 	0x76, 0x61, 0x6c, 0x75, 0x65, 0x5f, 0x72, 0x75, 0x6c, 0x65, 0x5f, 0x73, 0x74, 0x61, 0x74, 0x75,
 	0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x3b, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f,
 	0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32,
-	0x30, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x5f, 0x72, 0x75,
+	0x31, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x5f, 0x72, 0x75,
 	0x6c, 0x65, 0x5f, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x2e, 0x70,
 	0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x47, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73,
-	0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x30, 0x2f, 0x65,
+	0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x31, 0x2f, 0x65,
 	0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x5f, 0x72, 0x75, 0x6c, 0x65, 0x5f,
 	0x67, 0x65, 0x6f, 0x5f, 0x6c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x6d, 0x61, 0x74,
 	0x63, 0x68, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x39, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x30, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x76, 0x61,
+	0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x31, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x76, 0x61,
 	0x6c, 0x75, 0x65, 0x5f, 0x72, 0x75, 0x6c, 0x65, 0x5f, 0x6f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x69,
 	0x6f, 0x6e, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x1f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2f, 0x61, 0x70, 0x69, 0x2f, 0x66, 0x69, 0x65, 0x6c, 0x64, 0x5f, 0x62, 0x65, 0x68, 0x61, 0x76,
@@ -709,14 +709,14 @@ var file_google_ads_googleads_v20_resources_conversion_value_rule_proto_rawDesc 
 	0x01, 0x28, 0x03, 0x42, 0x03, 0xe0, 0x41, 0x03, 0x52, 0x02, 0x69, 0x64, 0x12, 0x5f, 0x0a, 0x06,
 	0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x47, 0x2e, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65,
+	0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65,
 	0x73, 0x2e, 0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x56, 0x61, 0x6c, 0x75,
 	0x65, 0x52, 0x75, 0x6c, 0x65, 0x2e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x52, 0x75, 0x6c, 0x65, 0x41,
 	0x63, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x06, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x8b, 0x01,
 	0x0a, 0x16, 0x67, 0x65, 0x6f, 0x5f, 0x6c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x63,
 	0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x55,
 	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72,
+	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72,
 	0x63, 0x65, 0x73, 0x2e, 0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x56, 0x61,
 	0x6c, 0x75, 0x65, 0x52, 0x75, 0x6c, 0x65, 0x2e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x52, 0x75, 0x6c,
 	0x65, 0x47, 0x65, 0x6f, 0x4c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x43, 0x6f, 0x6e, 0x64,
@@ -724,7 +724,7 @@ var file_google_ads_googleads_v20_resources_conversion_value_rule_proto_rawDesc 
 	0x6f, 0x6e, 0x43, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x7b, 0x0a, 0x10, 0x64,
 	0x65, 0x76, 0x69, 0x63, 0x65, 0x5f, 0x63, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x18,
 	0x05, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x50, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61,
-	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30,
+	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31,
 	0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e, 0x43, 0x6f, 0x6e, 0x76, 0x65,
 	0x72, 0x73, 0x69, 0x6f, 0x6e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x52, 0x75, 0x6c, 0x65, 0x2e, 0x56,
 	0x61, 0x6c, 0x75, 0x65, 0x52, 0x75, 0x6c, 0x65, 0x44, 0x65, 0x76, 0x69, 0x63, 0x65, 0x43, 0x6f,
@@ -732,7 +732,7 @@ var file_google_ads_googleads_v20_resources_conversion_value_rule_proto_rawDesc 
 	0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x81, 0x01, 0x0a, 0x12, 0x61, 0x75, 0x64,
 	0x69, 0x65, 0x6e, 0x63, 0x65, 0x5f, 0x63, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x18,
 	0x06, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x52, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61,
-	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30,
+	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31,
 	0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e, 0x43, 0x6f, 0x6e, 0x76, 0x65,
 	0x72, 0x73, 0x69, 0x6f, 0x6e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x52, 0x75, 0x6c, 0x65, 0x2e, 0x56,
 	0x61, 0x6c, 0x75, 0x65, 0x52, 0x75, 0x6c, 0x65, 0x41, 0x75, 0x64, 0x69, 0x65, 0x6e, 0x63, 0x65,
@@ -741,7 +741,7 @@ var file_google_ads_googleads_v20_resources_conversion_value_rule_proto_rawDesc 
 	0x13, 0x69, 0x74, 0x69, 0x6e, 0x65, 0x72, 0x61, 0x72, 0x79, 0x5f, 0x63, 0x6f, 0x6e, 0x64, 0x69,
 	0x74, 0x69, 0x6f, 0x6e, 0x18, 0x09, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x53, 0x2e, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64,
-	0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e,
+	0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e,
 	0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x52,
 	0x75, 0x6c, 0x65, 0x2e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x52, 0x75, 0x6c, 0x65, 0x49, 0x74, 0x69,
 	0x6e, 0x65, 0x72, 0x61, 0x72, 0x79, 0x43, 0x6f, 0x6e, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x52,
@@ -753,7 +753,7 @@ var file_google_ads_googleads_v20_resources_conversion_value_rule_proto_rawDesc 
 	0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x52, 0x0d, 0x6f, 0x77, 0x6e, 0x65, 0x72, 0x43, 0x75, 0x73,
 	0x74, 0x6f, 0x6d, 0x65, 0x72, 0x12, 0x6f, 0x0a, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x18,
 	0x08, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x57, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61,
-	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30,
+	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31,
 	0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f,
 	0x6e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x52, 0x75, 0x6c, 0x65, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73,
 	0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x56,
@@ -762,7 +762,7 @@ var file_google_ads_googleads_v20_resources_conversion_value_rule_proto_rawDesc 
 	0x52, 0x75, 0x6c, 0x65, 0x41, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x67, 0x0a, 0x09, 0x6f, 0x70,
 	0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x49, 0x2e,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x56,
+	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x56,
 	0x61, 0x6c, 0x75, 0x65, 0x52, 0x75, 0x6c, 0x65, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f,
 	0x6e, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x52, 0x75, 0x6c, 0x65, 0x4f,
 	0x70, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x09, 0x6f, 0x70, 0x65, 0x72, 0x61, 0x74,
@@ -780,7 +780,7 @@ var file_google_ads_googleads_v20_resources_conversion_value_rule_proto_rawDesc 
 	0x96, 0x01, 0x0a, 0x17, 0x65, 0x78, 0x63, 0x6c, 0x75, 0x64, 0x65, 0x64, 0x5f, 0x67, 0x65, 0x6f,
 	0x5f, 0x6d, 0x61, 0x74, 0x63, 0x68, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28,
 	0x0e, 0x32, 0x5f, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x65, 0x6e, 0x75,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x65, 0x6e, 0x75,
 	0x6d, 0x73, 0x2e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x52, 0x75, 0x6c, 0x65, 0x47, 0x65, 0x6f, 0x4c,
 	0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4d, 0x61, 0x74, 0x63, 0x68, 0x54, 0x79, 0x70, 0x65,
 	0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x52, 0x75, 0x6c, 0x65, 0x47, 0x65,
@@ -795,7 +795,7 @@ var file_google_ads_googleads_v20_resources_conversion_value_rule_proto_rawDesc 
 	0x65, 0x74, 0x43, 0x6f, 0x6e, 0x73, 0x74, 0x61, 0x6e, 0x74, 0x73, 0x12, 0x85, 0x01, 0x0a, 0x0e,
 	0x67, 0x65, 0x6f, 0x5f, 0x6d, 0x61, 0x74, 0x63, 0x68, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x18, 0x04,
 	0x20, 0x01, 0x28, 0x0e, 0x32, 0x5f, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64,
-	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e,
+	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e,
 	0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x52, 0x75, 0x6c, 0x65, 0x47,
 	0x65, 0x6f, 0x4c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4d, 0x61, 0x74, 0x63, 0x68, 0x54,
 	0x79, 0x70, 0x65, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x52, 0x75, 0x6c,
@@ -806,7 +806,7 @@ var file_google_ads_googleads_v20_resources_conversion_value_rule_proto_rawDesc 
 	0x12, 0x6e, 0x0a, 0x0c, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x73,
 	0x18, 0x01, 0x20, 0x03, 0x28, 0x0e, 0x32, 0x4b, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
 	0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32,
-	0x30, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x52, 0x75, 0x6c,
+	0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x52, 0x75, 0x6c,
 	0x65, 0x44, 0x65, 0x76, 0x69, 0x63, 0x65, 0x54, 0x79, 0x70, 0x65, 0x45, 0x6e, 0x75, 0x6d, 0x2e,
 	0x56, 0x61, 0x6c, 0x75, 0x65, 0x52, 0x75, 0x6c, 0x65, 0x44, 0x65, 0x76, 0x69, 0x63, 0x65, 0x54,
 	0x79, 0x70, 0x65, 0x52, 0x0b, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x54, 0x79, 0x70, 0x65, 0x73,
@@ -827,7 +827,7 @@ var file_google_ads_googleads_v20_resources_conversion_value_rule_proto_rawDesc 
 	0x76, 0x61, 0x6e, 0x63, 0x65, 0x5f, 0x62, 0x6f, 0x6f, 0x6b, 0x69, 0x6e, 0x67, 0x5f, 0x77, 0x69,
 	0x6e, 0x64, 0x6f, 0x77, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x5e, 0x2e, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64,
-	0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e,
+	0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e,
 	0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x52,
 	0x75, 0x6c, 0x65, 0x2e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x52, 0x75, 0x6c, 0x65, 0x49, 0x74, 0x69,
 	0x6e, 0x65, 0x72, 0x61, 0x72, 0x79, 0x41, 0x64, 0x76, 0x61, 0x6e, 0x63, 0x65, 0x42, 0x6f, 0x6f,
@@ -836,7 +836,7 @@ var file_google_ads_googleads_v20_resources_conversion_value_rule_proto_rawDesc 
 	0x12, 0x7b, 0x0a, 0x0d, 0x74, 0x72, 0x61, 0x76, 0x65, 0x6c, 0x5f, 0x6c, 0x65, 0x6e, 0x67, 0x74,
 	0x68, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x56, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76,
-	0x32, 0x30, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e, 0x43, 0x6f, 0x6e,
+	0x32, 0x31, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e, 0x43, 0x6f, 0x6e,
 	0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x52, 0x75, 0x6c, 0x65,
 	0x2e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x52, 0x75, 0x6c, 0x65, 0x49, 0x74, 0x69, 0x6e, 0x65, 0x72,
 	0x61, 0x72, 0x79, 0x54, 0x72, 0x61, 0x76, 0x65, 0x6c, 0x4c, 0x65, 0x6e, 0x67, 0x74, 0x68, 0x52,
@@ -844,7 +844,7 @@ var file_google_ads_googleads_v20_resources_conversion_value_rule_proto_rawDesc 
 	0x0a, 0x10, 0x74, 0x72, 0x61, 0x76, 0x65, 0x6c, 0x5f, 0x73, 0x74, 0x61, 0x72, 0x74, 0x5f, 0x64,
 	0x61, 0x79, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x58, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e,
-	0x76, 0x32, 0x30, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e, 0x43, 0x6f,
+	0x76, 0x32, 0x31, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e, 0x43, 0x6f,
 	0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x52, 0x75, 0x6c,
 	0x65, 0x2e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x52, 0x75, 0x6c, 0x65, 0x49, 0x74, 0x69, 0x6e, 0x65,
 	0x72, 0x61, 0x72, 0x79, 0x54, 0x72, 0x61, 0x76, 0x65, 0x6c, 0x53, 0x74, 0x61, 0x72, 0x74, 0x44,
@@ -887,66 +887,66 @@ var file_google_ads_googleads_v20_resources_conversion_value_rule_proto_rawDesc 
 	0x6e, 0x5f, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x5f, 0x72, 0x75, 0x6c, 0x65, 0x5f, 0x69, 0x64, 0x7d,
 	0x42, 0x8a, 0x02, 0x0a, 0x26, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
 	0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32,
-	0x30, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x42, 0x18, 0x43, 0x6f, 0x6e,
+	0x31, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x42, 0x18, 0x43, 0x6f, 0x6e,
 	0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x52, 0x75, 0x6c, 0x65,
 	0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x4b, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
 	0x67, 0x6f, 0x6c, 0x61, 0x6e, 0x67, 0x2e, 0x6f, 0x72, 0x67, 0x2f, 0x67, 0x65, 0x6e, 0x70, 0x72,
 	0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x70, 0x69, 0x73, 0x2f, 0x61,
-	0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x30,
+	0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x31,
 	0x2f, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x3b, 0x72, 0x65, 0x73, 0x6f, 0x75,
 	0x72, 0x63, 0x65, 0x73, 0xa2, 0x02, 0x03, 0x47, 0x41, 0x41, 0xaa, 0x02, 0x22, 0x47, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2e, 0x41, 0x64, 0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64,
-	0x73, 0x2e, 0x56, 0x32, 0x30, 0x2e, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0xca,
+	0x73, 0x2e, 0x56, 0x32, 0x31, 0x2e, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0xca,
 	0x02, 0x22, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x5c, 0x41, 0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x32, 0x30, 0x5c, 0x52, 0x65, 0x73, 0x6f, 0x75,
+	0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x32, 0x31, 0x5c, 0x52, 0x65, 0x73, 0x6f, 0x75,
 	0x72, 0x63, 0x65, 0x73, 0xea, 0x02, 0x26, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x3a, 0x3a, 0x41,
 	0x64, 0x73, 0x3a, 0x3a, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56,
-	0x32, 0x30, 0x3a, 0x3a, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x62, 0x06, 0x70,
+	0x32, 0x31, 0x3a, 0x3a, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x62, 0x06, 0x70,
 	0x72, 0x6f, 0x74, 0x6f, 0x33,
 })
 
 var (
-	file_google_ads_googleads_v20_resources_conversion_value_rule_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v20_resources_conversion_value_rule_proto_rawDescData []byte
+	file_google_ads_googleads_v21_resources_conversion_value_rule_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v21_resources_conversion_value_rule_proto_rawDescData []byte
 )
 
-func file_google_ads_googleads_v20_resources_conversion_value_rule_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v20_resources_conversion_value_rule_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v20_resources_conversion_value_rule_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v20_resources_conversion_value_rule_proto_rawDesc), len(file_google_ads_googleads_v20_resources_conversion_value_rule_proto_rawDesc)))
+func file_google_ads_googleads_v21_resources_conversion_value_rule_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v21_resources_conversion_value_rule_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v21_resources_conversion_value_rule_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v21_resources_conversion_value_rule_proto_rawDesc), len(file_google_ads_googleads_v21_resources_conversion_value_rule_proto_rawDesc)))
 	})
-	return file_google_ads_googleads_v20_resources_conversion_value_rule_proto_rawDescData
+	return file_google_ads_googleads_v21_resources_conversion_value_rule_proto_rawDescData
 }
 
-var file_google_ads_googleads_v20_resources_conversion_value_rule_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
-var file_google_ads_googleads_v20_resources_conversion_value_rule_proto_goTypes = []any{
-	(*ConversionValueRule)(nil),                                                // 0: google.ads.googleads.v20.resources.ConversionValueRule
-	(*ConversionValueRule_ValueRuleAction)(nil),                                // 1: google.ads.googleads.v20.resources.ConversionValueRule.ValueRuleAction
-	(*ConversionValueRule_ValueRuleGeoLocationCondition)(nil),                  // 2: google.ads.googleads.v20.resources.ConversionValueRule.ValueRuleGeoLocationCondition
-	(*ConversionValueRule_ValueRuleDeviceCondition)(nil),                       // 3: google.ads.googleads.v20.resources.ConversionValueRule.ValueRuleDeviceCondition
-	(*ConversionValueRule_ValueRuleAudienceCondition)(nil),                     // 4: google.ads.googleads.v20.resources.ConversionValueRule.ValueRuleAudienceCondition
-	(*ConversionValueRule_ValueRuleItineraryCondition)(nil),                    // 5: google.ads.googleads.v20.resources.ConversionValueRule.ValueRuleItineraryCondition
-	(*ConversionValueRule_ValueRuleItineraryAdvanceBookingWindow)(nil),         // 6: google.ads.googleads.v20.resources.ConversionValueRule.ValueRuleItineraryAdvanceBookingWindow
-	(*ConversionValueRule_ValueRuleItineraryTravelLength)(nil),                 // 7: google.ads.googleads.v20.resources.ConversionValueRule.ValueRuleItineraryTravelLength
-	(*ConversionValueRule_ValueRuleItineraryTravelStartDay)(nil),               // 8: google.ads.googleads.v20.resources.ConversionValueRule.ValueRuleItineraryTravelStartDay
-	(enums.ConversionValueRuleStatusEnum_ConversionValueRuleStatus)(0),         // 9: google.ads.googleads.v20.enums.ConversionValueRuleStatusEnum.ConversionValueRuleStatus
-	(enums.ValueRuleOperationEnum_ValueRuleOperation)(0),                       // 10: google.ads.googleads.v20.enums.ValueRuleOperationEnum.ValueRuleOperation
-	(enums.ValueRuleGeoLocationMatchTypeEnum_ValueRuleGeoLocationMatchType)(0), // 11: google.ads.googleads.v20.enums.ValueRuleGeoLocationMatchTypeEnum.ValueRuleGeoLocationMatchType
-	(enums.ValueRuleDeviceTypeEnum_ValueRuleDeviceType)(0),                     // 12: google.ads.googleads.v20.enums.ValueRuleDeviceTypeEnum.ValueRuleDeviceType
+var file_google_ads_googleads_v21_resources_conversion_value_rule_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
+var file_google_ads_googleads_v21_resources_conversion_value_rule_proto_goTypes = []any{
+	(*ConversionValueRule)(nil),                                                // 0: google.ads.googleads.v21.resources.ConversionValueRule
+	(*ConversionValueRule_ValueRuleAction)(nil),                                // 1: google.ads.googleads.v21.resources.ConversionValueRule.ValueRuleAction
+	(*ConversionValueRule_ValueRuleGeoLocationCondition)(nil),                  // 2: google.ads.googleads.v21.resources.ConversionValueRule.ValueRuleGeoLocationCondition
+	(*ConversionValueRule_ValueRuleDeviceCondition)(nil),                       // 3: google.ads.googleads.v21.resources.ConversionValueRule.ValueRuleDeviceCondition
+	(*ConversionValueRule_ValueRuleAudienceCondition)(nil),                     // 4: google.ads.googleads.v21.resources.ConversionValueRule.ValueRuleAudienceCondition
+	(*ConversionValueRule_ValueRuleItineraryCondition)(nil),                    // 5: google.ads.googleads.v21.resources.ConversionValueRule.ValueRuleItineraryCondition
+	(*ConversionValueRule_ValueRuleItineraryAdvanceBookingWindow)(nil),         // 6: google.ads.googleads.v21.resources.ConversionValueRule.ValueRuleItineraryAdvanceBookingWindow
+	(*ConversionValueRule_ValueRuleItineraryTravelLength)(nil),                 // 7: google.ads.googleads.v21.resources.ConversionValueRule.ValueRuleItineraryTravelLength
+	(*ConversionValueRule_ValueRuleItineraryTravelStartDay)(nil),               // 8: google.ads.googleads.v21.resources.ConversionValueRule.ValueRuleItineraryTravelStartDay
+	(enums.ConversionValueRuleStatusEnum_ConversionValueRuleStatus)(0),         // 9: google.ads.googleads.v21.enums.ConversionValueRuleStatusEnum.ConversionValueRuleStatus
+	(enums.ValueRuleOperationEnum_ValueRuleOperation)(0),                       // 10: google.ads.googleads.v21.enums.ValueRuleOperationEnum.ValueRuleOperation
+	(enums.ValueRuleGeoLocationMatchTypeEnum_ValueRuleGeoLocationMatchType)(0), // 11: google.ads.googleads.v21.enums.ValueRuleGeoLocationMatchTypeEnum.ValueRuleGeoLocationMatchType
+	(enums.ValueRuleDeviceTypeEnum_ValueRuleDeviceType)(0),                     // 12: google.ads.googleads.v21.enums.ValueRuleDeviceTypeEnum.ValueRuleDeviceType
 }
-var file_google_ads_googleads_v20_resources_conversion_value_rule_proto_depIdxs = []int32{
-	1,  // 0: google.ads.googleads.v20.resources.ConversionValueRule.action:type_name -> google.ads.googleads.v20.resources.ConversionValueRule.ValueRuleAction
-	2,  // 1: google.ads.googleads.v20.resources.ConversionValueRule.geo_location_condition:type_name -> google.ads.googleads.v20.resources.ConversionValueRule.ValueRuleGeoLocationCondition
-	3,  // 2: google.ads.googleads.v20.resources.ConversionValueRule.device_condition:type_name -> google.ads.googleads.v20.resources.ConversionValueRule.ValueRuleDeviceCondition
-	4,  // 3: google.ads.googleads.v20.resources.ConversionValueRule.audience_condition:type_name -> google.ads.googleads.v20.resources.ConversionValueRule.ValueRuleAudienceCondition
-	5,  // 4: google.ads.googleads.v20.resources.ConversionValueRule.itinerary_condition:type_name -> google.ads.googleads.v20.resources.ConversionValueRule.ValueRuleItineraryCondition
-	9,  // 5: google.ads.googleads.v20.resources.ConversionValueRule.status:type_name -> google.ads.googleads.v20.enums.ConversionValueRuleStatusEnum.ConversionValueRuleStatus
-	10, // 6: google.ads.googleads.v20.resources.ConversionValueRule.ValueRuleAction.operation:type_name -> google.ads.googleads.v20.enums.ValueRuleOperationEnum.ValueRuleOperation
-	11, // 7: google.ads.googleads.v20.resources.ConversionValueRule.ValueRuleGeoLocationCondition.excluded_geo_match_type:type_name -> google.ads.googleads.v20.enums.ValueRuleGeoLocationMatchTypeEnum.ValueRuleGeoLocationMatchType
-	11, // 8: google.ads.googleads.v20.resources.ConversionValueRule.ValueRuleGeoLocationCondition.geo_match_type:type_name -> google.ads.googleads.v20.enums.ValueRuleGeoLocationMatchTypeEnum.ValueRuleGeoLocationMatchType
-	12, // 9: google.ads.googleads.v20.resources.ConversionValueRule.ValueRuleDeviceCondition.device_types:type_name -> google.ads.googleads.v20.enums.ValueRuleDeviceTypeEnum.ValueRuleDeviceType
-	6,  // 10: google.ads.googleads.v20.resources.ConversionValueRule.ValueRuleItineraryCondition.advance_booking_window:type_name -> google.ads.googleads.v20.resources.ConversionValueRule.ValueRuleItineraryAdvanceBookingWindow
-	7,  // 11: google.ads.googleads.v20.resources.ConversionValueRule.ValueRuleItineraryCondition.travel_length:type_name -> google.ads.googleads.v20.resources.ConversionValueRule.ValueRuleItineraryTravelLength
-	8,  // 12: google.ads.googleads.v20.resources.ConversionValueRule.ValueRuleItineraryCondition.travel_start_day:type_name -> google.ads.googleads.v20.resources.ConversionValueRule.ValueRuleItineraryTravelStartDay
+var file_google_ads_googleads_v21_resources_conversion_value_rule_proto_depIdxs = []int32{
+	1,  // 0: google.ads.googleads.v21.resources.ConversionValueRule.action:type_name -> google.ads.googleads.v21.resources.ConversionValueRule.ValueRuleAction
+	2,  // 1: google.ads.googleads.v21.resources.ConversionValueRule.geo_location_condition:type_name -> google.ads.googleads.v21.resources.ConversionValueRule.ValueRuleGeoLocationCondition
+	3,  // 2: google.ads.googleads.v21.resources.ConversionValueRule.device_condition:type_name -> google.ads.googleads.v21.resources.ConversionValueRule.ValueRuleDeviceCondition
+	4,  // 3: google.ads.googleads.v21.resources.ConversionValueRule.audience_condition:type_name -> google.ads.googleads.v21.resources.ConversionValueRule.ValueRuleAudienceCondition
+	5,  // 4: google.ads.googleads.v21.resources.ConversionValueRule.itinerary_condition:type_name -> google.ads.googleads.v21.resources.ConversionValueRule.ValueRuleItineraryCondition
+	9,  // 5: google.ads.googleads.v21.resources.ConversionValueRule.status:type_name -> google.ads.googleads.v21.enums.ConversionValueRuleStatusEnum.ConversionValueRuleStatus
+	10, // 6: google.ads.googleads.v21.resources.ConversionValueRule.ValueRuleAction.operation:type_name -> google.ads.googleads.v21.enums.ValueRuleOperationEnum.ValueRuleOperation
+	11, // 7: google.ads.googleads.v21.resources.ConversionValueRule.ValueRuleGeoLocationCondition.excluded_geo_match_type:type_name -> google.ads.googleads.v21.enums.ValueRuleGeoLocationMatchTypeEnum.ValueRuleGeoLocationMatchType
+	11, // 8: google.ads.googleads.v21.resources.ConversionValueRule.ValueRuleGeoLocationCondition.geo_match_type:type_name -> google.ads.googleads.v21.enums.ValueRuleGeoLocationMatchTypeEnum.ValueRuleGeoLocationMatchType
+	12, // 9: google.ads.googleads.v21.resources.ConversionValueRule.ValueRuleDeviceCondition.device_types:type_name -> google.ads.googleads.v21.enums.ValueRuleDeviceTypeEnum.ValueRuleDeviceType
+	6,  // 10: google.ads.googleads.v21.resources.ConversionValueRule.ValueRuleItineraryCondition.advance_booking_window:type_name -> google.ads.googleads.v21.resources.ConversionValueRule.ValueRuleItineraryAdvanceBookingWindow
+	7,  // 11: google.ads.googleads.v21.resources.ConversionValueRule.ValueRuleItineraryCondition.travel_length:type_name -> google.ads.googleads.v21.resources.ConversionValueRule.ValueRuleItineraryTravelLength
+	8,  // 12: google.ads.googleads.v21.resources.ConversionValueRule.ValueRuleItineraryCondition.travel_start_day:type_name -> google.ads.googleads.v21.resources.ConversionValueRule.ValueRuleItineraryTravelStartDay
 	13, // [13:13] is the sub-list for method output_type
 	13, // [13:13] is the sub-list for method input_type
 	13, // [13:13] is the sub-list for extension type_name
@@ -954,27 +954,27 @@ var file_google_ads_googleads_v20_resources_conversion_value_rule_proto_depIdxs 
 	0,  // [0:13] is the sub-list for field type_name
 }
 
-func init() { file_google_ads_googleads_v20_resources_conversion_value_rule_proto_init() }
-func file_google_ads_googleads_v20_resources_conversion_value_rule_proto_init() {
-	if File_google_ads_googleads_v20_resources_conversion_value_rule_proto != nil {
+func init() { file_google_ads_googleads_v21_resources_conversion_value_rule_proto_init() }
+func file_google_ads_googleads_v21_resources_conversion_value_rule_proto_init() {
+	if File_google_ads_googleads_v21_resources_conversion_value_rule_proto != nil {
 		return
 	}
-	file_google_ads_googleads_v20_resources_conversion_value_rule_proto_msgTypes[6].OneofWrappers = []any{}
+	file_google_ads_googleads_v21_resources_conversion_value_rule_proto_msgTypes[6].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v20_resources_conversion_value_rule_proto_rawDesc), len(file_google_ads_googleads_v20_resources_conversion_value_rule_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v21_resources_conversion_value_rule_proto_rawDesc), len(file_google_ads_googleads_v21_resources_conversion_value_rule_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   9,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_google_ads_googleads_v20_resources_conversion_value_rule_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v20_resources_conversion_value_rule_proto_depIdxs,
-		MessageInfos:      file_google_ads_googleads_v20_resources_conversion_value_rule_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v21_resources_conversion_value_rule_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v21_resources_conversion_value_rule_proto_depIdxs,
+		MessageInfos:      file_google_ads_googleads_v21_resources_conversion_value_rule_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v20_resources_conversion_value_rule_proto = out.File
-	file_google_ads_googleads_v20_resources_conversion_value_rule_proto_goTypes = nil
-	file_google_ads_googleads_v20_resources_conversion_value_rule_proto_depIdxs = nil
+	File_google_ads_googleads_v21_resources_conversion_value_rule_proto = out.File
+	file_google_ads_googleads_v21_resources_conversion_value_rule_proto_goTypes = nil
+	file_google_ads_googleads_v21_resources_conversion_value_rule_proto_depIdxs = nil
 }

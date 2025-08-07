@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.36.5
 // 	protoc        v4.24.4
-// source: google/ads/googleads/v20/errors/customer_client_link_error.proto
+// source: google/ads/googleads/v21/errors/customer_client_link_error.proto
 
 package errors
 
@@ -100,11 +100,11 @@ func (x CustomerClientLinkErrorEnum_CustomerClientLinkError) String() string {
 }
 
 func (CustomerClientLinkErrorEnum_CustomerClientLinkError) Descriptor() protoreflect.EnumDescriptor {
-	return file_google_ads_googleads_v20_errors_customer_client_link_error_proto_enumTypes[0].Descriptor()
+	return file_google_ads_googleads_v21_errors_customer_client_link_error_proto_enumTypes[0].Descriptor()
 }
 
 func (CustomerClientLinkErrorEnum_CustomerClientLinkError) Type() protoreflect.EnumType {
-	return &file_google_ads_googleads_v20_errors_customer_client_link_error_proto_enumTypes[0]
+	return &file_google_ads_googleads_v21_errors_customer_client_link_error_proto_enumTypes[0]
 }
 
 func (x CustomerClientLinkErrorEnum_CustomerClientLinkError) Number() protoreflect.EnumNumber {
@@ -113,7 +113,7 @@ func (x CustomerClientLinkErrorEnum_CustomerClientLinkError) Number() protorefle
 
 // Deprecated: Use CustomerClientLinkErrorEnum_CustomerClientLinkError.Descriptor instead.
 func (CustomerClientLinkErrorEnum_CustomerClientLinkError) EnumDescriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_errors_customer_client_link_error_proto_rawDescGZIP(), []int{0, 0}
+	return file_google_ads_googleads_v21_errors_customer_client_link_error_proto_rawDescGZIP(), []int{0, 0}
 }
 
 // Container for enum describing possible CustomeClientLink errors.
@@ -125,7 +125,7 @@ type CustomerClientLinkErrorEnum struct {
 
 func (x *CustomerClientLinkErrorEnum) Reset() {
 	*x = CustomerClientLinkErrorEnum{}
-	mi := &file_google_ads_googleads_v20_errors_customer_client_link_error_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v21_errors_customer_client_link_error_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -137,7 +137,7 @@ func (x *CustomerClientLinkErrorEnum) String() string {
 func (*CustomerClientLinkErrorEnum) ProtoMessage() {}
 
 func (x *CustomerClientLinkErrorEnum) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v20_errors_customer_client_link_error_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v21_errors_customer_client_link_error_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -150,18 +150,18 @@ func (x *CustomerClientLinkErrorEnum) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CustomerClientLinkErrorEnum.ProtoReflect.Descriptor instead.
 func (*CustomerClientLinkErrorEnum) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v20_errors_customer_client_link_error_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v21_errors_customer_client_link_error_proto_rawDescGZIP(), []int{0}
 }
 
-var File_google_ads_googleads_v20_errors_customer_client_link_error_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v21_errors_customer_client_link_error_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v20_errors_customer_client_link_error_proto_rawDesc = string([]byte{
+var file_google_ads_googleads_v21_errors_customer_client_link_error_proto_rawDesc = string([]byte{
 	0x0a, 0x40, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x30, 0x2f, 0x65, 0x72, 0x72, 0x6f, 0x72,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x31, 0x2f, 0x65, 0x72, 0x72, 0x6f, 0x72,
 	0x73, 0x2f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x5f, 0x63, 0x6c, 0x69, 0x65, 0x6e,
 	0x74, 0x5f, 0x6c, 0x69, 0x6e, 0x6b, 0x5f, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x2e, 0x70, 0x72, 0x6f,
 	0x74, 0x6f, 0x12, 0x1f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x65, 0x72, 0x72,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x65, 0x72, 0x72,
 	0x6f, 0x72, 0x73, 0x22, 0x8f, 0x03, 0x0a, 0x1b, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72,
 	0x43, 0x6c, 0x69, 0x65, 0x6e, 0x74, 0x4c, 0x69, 0x6e, 0x6b, 0x45, 0x72, 0x72, 0x6f, 0x72, 0x45,
 	0x6e, 0x75, 0x6d, 0x22, 0xef, 0x02, 0x0a, 0x17, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72,
@@ -189,42 +189,42 @@ var file_google_ads_googleads_v20_errors_customer_client_link_error_proto_rawDes
 	0x53, 0x5f, 0x54, 0x4f, 0x4f, 0x5f, 0x4d, 0x41, 0x4e, 0x59, 0x5f, 0x4d, 0x41, 0x4e, 0x41, 0x47,
 	0x45, 0x52, 0x53, 0x10, 0x09, 0x42, 0xfc, 0x01, 0x0a, 0x23, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x64, 0x73, 0x2e, 0x76, 0x32, 0x30, 0x2e, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x73, 0x42, 0x1c, 0x43,
+	0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x73, 0x42, 0x1c, 0x43,
 	0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x43, 0x6c, 0x69, 0x65, 0x6e, 0x74, 0x4c, 0x69, 0x6e,
 	0x6b, 0x45, 0x72, 0x72, 0x6f, 0x72, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x45, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x67, 0x6f, 0x6c, 0x61, 0x6e, 0x67, 0x2e, 0x6f, 0x72, 0x67,
 	0x2f, 0x67, 0x65, 0x6e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x61, 0x70, 0x69, 0x73, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x64, 0x73, 0x2f, 0x76, 0x32, 0x30, 0x2f, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x73, 0x3b, 0x65, 0x72,
+	0x64, 0x73, 0x2f, 0x76, 0x32, 0x31, 0x2f, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x73, 0x3b, 0x65, 0x72,
 	0x72, 0x6f, 0x72, 0x73, 0xa2, 0x02, 0x03, 0x47, 0x41, 0x41, 0xaa, 0x02, 0x1f, 0x47, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2e, 0x41, 0x64, 0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64,
-	0x73, 0x2e, 0x56, 0x32, 0x30, 0x2e, 0x45, 0x72, 0x72, 0x6f, 0x72, 0x73, 0xca, 0x02, 0x1f, 0x47,
+	0x73, 0x2e, 0x56, 0x32, 0x31, 0x2e, 0x45, 0x72, 0x72, 0x6f, 0x72, 0x73, 0xca, 0x02, 0x1f, 0x47,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x5c, 0x41, 0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x41, 0x64, 0x73, 0x5c, 0x56, 0x32, 0x30, 0x5c, 0x45, 0x72, 0x72, 0x6f, 0x72, 0x73, 0xea, 0x02,
+	0x41, 0x64, 0x73, 0x5c, 0x56, 0x32, 0x31, 0x5c, 0x45, 0x72, 0x72, 0x6f, 0x72, 0x73, 0xea, 0x02,
 	0x23, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x3a, 0x3a, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x47, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x32, 0x30, 0x3a, 0x3a, 0x45, 0x72,
+	0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x32, 0x31, 0x3a, 0x3a, 0x45, 0x72,
 	0x72, 0x6f, 0x72, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 })
 
 var (
-	file_google_ads_googleads_v20_errors_customer_client_link_error_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v20_errors_customer_client_link_error_proto_rawDescData []byte
+	file_google_ads_googleads_v21_errors_customer_client_link_error_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v21_errors_customer_client_link_error_proto_rawDescData []byte
 )
 
-func file_google_ads_googleads_v20_errors_customer_client_link_error_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v20_errors_customer_client_link_error_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v20_errors_customer_client_link_error_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v20_errors_customer_client_link_error_proto_rawDesc), len(file_google_ads_googleads_v20_errors_customer_client_link_error_proto_rawDesc)))
+func file_google_ads_googleads_v21_errors_customer_client_link_error_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v21_errors_customer_client_link_error_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v21_errors_customer_client_link_error_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v21_errors_customer_client_link_error_proto_rawDesc), len(file_google_ads_googleads_v21_errors_customer_client_link_error_proto_rawDesc)))
 	})
-	return file_google_ads_googleads_v20_errors_customer_client_link_error_proto_rawDescData
+	return file_google_ads_googleads_v21_errors_customer_client_link_error_proto_rawDescData
 }
 
-var file_google_ads_googleads_v20_errors_customer_client_link_error_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_google_ads_googleads_v20_errors_customer_client_link_error_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
-var file_google_ads_googleads_v20_errors_customer_client_link_error_proto_goTypes = []any{
-	(CustomerClientLinkErrorEnum_CustomerClientLinkError)(0), // 0: google.ads.googleads.v20.errors.CustomerClientLinkErrorEnum.CustomerClientLinkError
-	(*CustomerClientLinkErrorEnum)(nil),                      // 1: google.ads.googleads.v20.errors.CustomerClientLinkErrorEnum
+var file_google_ads_googleads_v21_errors_customer_client_link_error_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_google_ads_googleads_v21_errors_customer_client_link_error_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_google_ads_googleads_v21_errors_customer_client_link_error_proto_goTypes = []any{
+	(CustomerClientLinkErrorEnum_CustomerClientLinkError)(0), // 0: google.ads.googleads.v21.errors.CustomerClientLinkErrorEnum.CustomerClientLinkError
+	(*CustomerClientLinkErrorEnum)(nil),                      // 1: google.ads.googleads.v21.errors.CustomerClientLinkErrorEnum
 }
-var file_google_ads_googleads_v20_errors_customer_client_link_error_proto_depIdxs = []int32{
+var file_google_ads_googleads_v21_errors_customer_client_link_error_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type
 	0, // [0:0] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
@@ -232,27 +232,27 @@ var file_google_ads_googleads_v20_errors_customer_client_link_error_proto_depIdx
 	0, // [0:0] is the sub-list for field type_name
 }
 
-func init() { file_google_ads_googleads_v20_errors_customer_client_link_error_proto_init() }
-func file_google_ads_googleads_v20_errors_customer_client_link_error_proto_init() {
-	if File_google_ads_googleads_v20_errors_customer_client_link_error_proto != nil {
+func init() { file_google_ads_googleads_v21_errors_customer_client_link_error_proto_init() }
+func file_google_ads_googleads_v21_errors_customer_client_link_error_proto_init() {
+	if File_google_ads_googleads_v21_errors_customer_client_link_error_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v20_errors_customer_client_link_error_proto_rawDesc), len(file_google_ads_googleads_v20_errors_customer_client_link_error_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v21_errors_customer_client_link_error_proto_rawDesc), len(file_google_ads_googleads_v21_errors_customer_client_link_error_proto_rawDesc)),
 			NumEnums:      1,
 			NumMessages:   1,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_google_ads_googleads_v20_errors_customer_client_link_error_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v20_errors_customer_client_link_error_proto_depIdxs,
-		EnumInfos:         file_google_ads_googleads_v20_errors_customer_client_link_error_proto_enumTypes,
-		MessageInfos:      file_google_ads_googleads_v20_errors_customer_client_link_error_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v21_errors_customer_client_link_error_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v21_errors_customer_client_link_error_proto_depIdxs,
+		EnumInfos:         file_google_ads_googleads_v21_errors_customer_client_link_error_proto_enumTypes,
+		MessageInfos:      file_google_ads_googleads_v21_errors_customer_client_link_error_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v20_errors_customer_client_link_error_proto = out.File
-	file_google_ads_googleads_v20_errors_customer_client_link_error_proto_goTypes = nil
-	file_google_ads_googleads_v20_errors_customer_client_link_error_proto_depIdxs = nil
+	File_google_ads_googleads_v21_errors_customer_client_link_error_proto = out.File
+	file_google_ads_googleads_v21_errors_customer_client_link_error_proto_goTypes = nil
+	file_google_ads_googleads_v21_errors_customer_client_link_error_proto_depIdxs = nil
 }
