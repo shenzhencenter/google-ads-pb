@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v20/services/third_party_app_analytics_link_service.proto
+// source: google/ads/googleads/v21/services/third_party_app_analytics_link_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	ThirdPartyAppAnalyticsLinkService_RegenerateShareableLinkId_FullMethodName = "/google.ads.googleads.v20.services.ThirdPartyAppAnalyticsLinkService/RegenerateShareableLinkId"
+	ThirdPartyAppAnalyticsLinkService_RegenerateShareableLinkId_FullMethodName = "/google.ads.googleads.v21.services.ThirdPartyAppAnalyticsLinkService/RegenerateShareableLinkId"
 )
 
 // ThirdPartyAppAnalyticsLinkServiceClient is the client API for ThirdPartyAppAnalyticsLinkService service.
@@ -151,7 +151,7 @@ func _ThirdPartyAppAnalyticsLinkService_RegenerateShareableLinkId_Handler(srv in
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ThirdPartyAppAnalyticsLinkService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v20.services.ThirdPartyAppAnalyticsLinkService",
+	ServiceName: "google.ads.googleads.v21.services.ThirdPartyAppAnalyticsLinkService",
 	HandlerType: (*ThirdPartyAppAnalyticsLinkServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -160,5 +160,5 @@ var ThirdPartyAppAnalyticsLinkService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v20/services/third_party_app_analytics_link_service.proto",
+	Metadata: "google/ads/googleads/v21/services/third_party_app_analytics_link_service.proto",
 }

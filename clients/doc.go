@@ -42,7 +42,7 @@
 //	// - It may require correct/in-range values for request initialization.
 //	// - It may require specifying regional endpoints when creating the service client as shown in:
 //	//   https://pkg.go.dev/cloud.google.com/go#hdr-Client_Options
-//	c, err := clients.NewAudienceInsightsClient(ctx)
+//	c, err := clients.NewAssetGroupSignalClient(ctx)
 //	if err != nil {
 //		// TODO: Handle error.
 //	}
@@ -56,11 +56,11 @@
 //
 // The following is an example of making an API call with the newly created client, mentioned above.
 //
-//	req := &servicespb.GenerateAudienceCompositionInsightsRequest{
+//	req := &servicespb.MutateAssetGroupSignalsRequest{
 //		// TODO: Fill request struct fields.
-//		// See https://pkg.go.dev/github.com/shenzhencenter/google-ads-pb/services#GenerateAudienceCompositionInsightsRequest.
+//		// See https://pkg.go.dev/github.com/shenzhencenter/google-ads-pb/services#MutateAssetGroupSignalsRequest.
 //	}
-//	resp, err := c.GenerateAudienceCompositionInsights(ctx, req)
+//	resp, err := c.MutateAssetGroupSignals(ctx, req)
 //	if err != nil {
 //		// TODO: Handle error.
 //	}
@@ -69,7 +69,7 @@
 //
 // # Use of Context
 //
-// The ctx passed to NewAudienceInsightsClient is used for authentication requests and
+// The ctx passed to NewAssetGroupSignalClient is used for authentication requests and
 // for creating the underlying connection, but is not used for subsequent calls.
 // Individual methods on the client use the ctx given to them.
 //

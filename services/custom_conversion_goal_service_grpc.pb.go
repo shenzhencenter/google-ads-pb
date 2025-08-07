@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v20/services/custom_conversion_goal_service.proto
+// source: google/ads/googleads/v21/services/custom_conversion_goal_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	CustomConversionGoalService_MutateCustomConversionGoals_FullMethodName = "/google.ads.googleads.v20.services.CustomConversionGoalService/MutateCustomConversionGoals"
+	CustomConversionGoalService_MutateCustomConversionGoals_FullMethodName = "/google.ads.googleads.v21.services.CustomConversionGoalService/MutateCustomConversionGoals"
 )
 
 // CustomConversionGoalServiceClient is the client API for CustomConversionGoalService service.
@@ -131,7 +131,7 @@ func _CustomConversionGoalService_MutateCustomConversionGoals_Handler(srv interf
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CustomConversionGoalService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v20.services.CustomConversionGoalService",
+	ServiceName: "google.ads.googleads.v21.services.CustomConversionGoalService",
 	HandlerType: (*CustomConversionGoalServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -140,5 +140,5 @@ var CustomConversionGoalService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v20/services/custom_conversion_goal_service.proto",
+	Metadata: "google/ads/googleads/v21/services/custom_conversion_goal_service.proto",
 }

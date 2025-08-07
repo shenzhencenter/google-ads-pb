@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v20/services/customer_manager_link_service.proto
+// source: google/ads/googleads/v21/services/customer_manager_link_service.proto
 
 package services
 
@@ -33,8 +33,8 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	CustomerManagerLinkService_MutateCustomerManagerLink_FullMethodName = "/google.ads.googleads.v20.services.CustomerManagerLinkService/MutateCustomerManagerLink"
-	CustomerManagerLinkService_MoveManagerLink_FullMethodName           = "/google.ads.googleads.v20.services.CustomerManagerLinkService/MoveManagerLink"
+	CustomerManagerLinkService_MutateCustomerManagerLink_FullMethodName = "/google.ads.googleads.v21.services.CustomerManagerLinkService/MutateCustomerManagerLink"
+	CustomerManagerLinkService_MoveManagerLink_FullMethodName           = "/google.ads.googleads.v21.services.CustomerManagerLinkService/MoveManagerLink"
 )
 
 // CustomerManagerLinkServiceClient is the client API for CustomerManagerLinkService service.
@@ -225,7 +225,7 @@ func _CustomerManagerLinkService_MoveManagerLink_Handler(srv interface{}, ctx co
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CustomerManagerLinkService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v20.services.CustomerManagerLinkService",
+	ServiceName: "google.ads.googleads.v21.services.CustomerManagerLinkService",
 	HandlerType: (*CustomerManagerLinkServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -238,5 +238,5 @@ var CustomerManagerLinkService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v20/services/customer_manager_link_service.proto",
+	Metadata: "google/ads/googleads/v21/services/customer_manager_link_service.proto",
 }

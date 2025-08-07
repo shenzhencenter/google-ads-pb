@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v20/services/content_creator_insights_service.proto
+// source: google/ads/googleads/v21/services/content_creator_insights_service.proto
 
 package services
 
@@ -33,8 +33,8 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	ContentCreatorInsightsService_GenerateCreatorInsights_FullMethodName  = "/google.ads.googleads.v20.services.ContentCreatorInsightsService/GenerateCreatorInsights"
-	ContentCreatorInsightsService_GenerateTrendingInsights_FullMethodName = "/google.ads.googleads.v20.services.ContentCreatorInsightsService/GenerateTrendingInsights"
+	ContentCreatorInsightsService_GenerateCreatorInsights_FullMethodName  = "/google.ads.googleads.v21.services.ContentCreatorInsightsService/GenerateCreatorInsights"
+	ContentCreatorInsightsService_GenerateTrendingInsights_FullMethodName = "/google.ads.googleads.v21.services.ContentCreatorInsightsService/GenerateTrendingInsights"
 )
 
 // ContentCreatorInsightsServiceClient is the client API for ContentCreatorInsightsService service.
@@ -213,7 +213,7 @@ func _ContentCreatorInsightsService_GenerateTrendingInsights_Handler(srv interfa
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ContentCreatorInsightsService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v20.services.ContentCreatorInsightsService",
+	ServiceName: "google.ads.googleads.v21.services.ContentCreatorInsightsService",
 	HandlerType: (*ContentCreatorInsightsServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -226,5 +226,5 @@ var ContentCreatorInsightsService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v20/services/content_creator_insights_service.proto",
+	Metadata: "google/ads/googleads/v21/services/content_creator_insights_service.proto",
 }
