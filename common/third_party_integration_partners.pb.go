@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.36.5
 // 	protoc        v4.24.4
-// source: google/ads/googleads/v21/common/third_party_integration_partners.proto
+// source: google/ads/googleads/v22/common/third_party_integration_partners.proto
 
 package common
 
@@ -37,7 +37,6 @@ const (
 )
 
 // Container for Customer level third party integration partners.
-// Next Id = 5
 type CustomerThirdPartyIntegrationPartners struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Allowed third party integration partners for YouTube viewability
@@ -55,7 +54,7 @@ type CustomerThirdPartyIntegrationPartners struct {
 
 func (x *CustomerThirdPartyIntegrationPartners) Reset() {
 	*x = CustomerThirdPartyIntegrationPartners{}
-	mi := &file_google_ads_googleads_v21_common_third_party_integration_partners_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v22_common_third_party_integration_partners_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -67,7 +66,7 @@ func (x *CustomerThirdPartyIntegrationPartners) String() string {
 func (*CustomerThirdPartyIntegrationPartners) ProtoMessage() {}
 
 func (x *CustomerThirdPartyIntegrationPartners) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v21_common_third_party_integration_partners_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v22_common_third_party_integration_partners_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -80,7 +79,7 @@ func (x *CustomerThirdPartyIntegrationPartners) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use CustomerThirdPartyIntegrationPartners.ProtoReflect.Descriptor instead.
 func (*CustomerThirdPartyIntegrationPartners) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v21_common_third_party_integration_partners_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v22_common_third_party_integration_partners_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *CustomerThirdPartyIntegrationPartners) GetViewabilityIntegrationPartners() []*CustomerThirdPartyViewabilityIntegrationPartner {
@@ -112,12 +111,11 @@ func (x *CustomerThirdPartyIntegrationPartners) GetReachIntegrationPartners() []
 }
 
 // Container for third party viewability integration data for Customer.
-// Next Id = 3
 type CustomerThirdPartyViewabilityIntegrationPartner struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Allowed third party integration partners for YouTube viewability
 	// verification.
-	ViewabilityIntegrationPartner enums.ThirdPartyViewabilityIntegrationPartnerEnum_ThirdPartyViewabilityIntegrationPartner `protobuf:"varint,1,opt,name=viewability_integration_partner,json=viewabilityIntegrationPartner,proto3,enum=google.ads.googleads.v21.enums.ThirdPartyViewabilityIntegrationPartnerEnum_ThirdPartyViewabilityIntegrationPartner" json:"viewability_integration_partner,omitempty"`
+	ViewabilityIntegrationPartner enums.ThirdPartyViewabilityIntegrationPartnerEnum_ThirdPartyViewabilityIntegrationPartner `protobuf:"varint,1,opt,name=viewability_integration_partner,json=viewabilityIntegrationPartner,proto3,enum=google.ads.googleads.v22.enums.ThirdPartyViewabilityIntegrationPartnerEnum_ThirdPartyViewabilityIntegrationPartner" json:"viewability_integration_partner,omitempty"`
 	// If true, cost data can be shared with this vendor.
 	AllowShareCost bool `protobuf:"varint,2,opt,name=allow_share_cost,json=allowShareCost,proto3" json:"allow_share_cost,omitempty"`
 	unknownFields  protoimpl.UnknownFields
@@ -126,7 +124,7 @@ type CustomerThirdPartyViewabilityIntegrationPartner struct {
 
 func (x *CustomerThirdPartyViewabilityIntegrationPartner) Reset() {
 	*x = CustomerThirdPartyViewabilityIntegrationPartner{}
-	mi := &file_google_ads_googleads_v21_common_third_party_integration_partners_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v22_common_third_party_integration_partners_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -138,7 +136,7 @@ func (x *CustomerThirdPartyViewabilityIntegrationPartner) String() string {
 func (*CustomerThirdPartyViewabilityIntegrationPartner) ProtoMessage() {}
 
 func (x *CustomerThirdPartyViewabilityIntegrationPartner) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v21_common_third_party_integration_partners_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v22_common_third_party_integration_partners_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -151,7 +149,7 @@ func (x *CustomerThirdPartyViewabilityIntegrationPartner) ProtoReflect() protore
 
 // Deprecated: Use CustomerThirdPartyViewabilityIntegrationPartner.ProtoReflect.Descriptor instead.
 func (*CustomerThirdPartyViewabilityIntegrationPartner) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v21_common_third_party_integration_partners_proto_rawDescGZIP(), []int{1}
+	return file_google_ads_googleads_v22_common_third_party_integration_partners_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *CustomerThirdPartyViewabilityIntegrationPartner) GetViewabilityIntegrationPartner() enums.ThirdPartyViewabilityIntegrationPartnerEnum_ThirdPartyViewabilityIntegrationPartner {
@@ -169,18 +167,17 @@ func (x *CustomerThirdPartyViewabilityIntegrationPartner) GetAllowShareCost() bo
 }
 
 // Container for third party brand safety integration data for Customer.
-// Next Id = 2
 type CustomerThirdPartyBrandSafetyIntegrationPartner struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Allowed third party integration partners for brand safety verification.
-	BrandSafetyIntegrationPartner enums.ThirdPartyBrandSafetyIntegrationPartnerEnum_ThirdPartyBrandSafetyIntegrationPartner `protobuf:"varint,1,opt,name=brand_safety_integration_partner,json=brandSafetyIntegrationPartner,proto3,enum=google.ads.googleads.v21.enums.ThirdPartyBrandSafetyIntegrationPartnerEnum_ThirdPartyBrandSafetyIntegrationPartner" json:"brand_safety_integration_partner,omitempty"`
+	BrandSafetyIntegrationPartner enums.ThirdPartyBrandSafetyIntegrationPartnerEnum_ThirdPartyBrandSafetyIntegrationPartner `protobuf:"varint,1,opt,name=brand_safety_integration_partner,json=brandSafetyIntegrationPartner,proto3,enum=google.ads.googleads.v22.enums.ThirdPartyBrandSafetyIntegrationPartnerEnum_ThirdPartyBrandSafetyIntegrationPartner" json:"brand_safety_integration_partner,omitempty"`
 	unknownFields                 protoimpl.UnknownFields
 	sizeCache                     protoimpl.SizeCache
 }
 
 func (x *CustomerThirdPartyBrandSafetyIntegrationPartner) Reset() {
 	*x = CustomerThirdPartyBrandSafetyIntegrationPartner{}
-	mi := &file_google_ads_googleads_v21_common_third_party_integration_partners_proto_msgTypes[2]
+	mi := &file_google_ads_googleads_v22_common_third_party_integration_partners_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -192,7 +189,7 @@ func (x *CustomerThirdPartyBrandSafetyIntegrationPartner) String() string {
 func (*CustomerThirdPartyBrandSafetyIntegrationPartner) ProtoMessage() {}
 
 func (x *CustomerThirdPartyBrandSafetyIntegrationPartner) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v21_common_third_party_integration_partners_proto_msgTypes[2]
+	mi := &file_google_ads_googleads_v22_common_third_party_integration_partners_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -205,7 +202,7 @@ func (x *CustomerThirdPartyBrandSafetyIntegrationPartner) ProtoReflect() protore
 
 // Deprecated: Use CustomerThirdPartyBrandSafetyIntegrationPartner.ProtoReflect.Descriptor instead.
 func (*CustomerThirdPartyBrandSafetyIntegrationPartner) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v21_common_third_party_integration_partners_proto_rawDescGZIP(), []int{2}
+	return file_google_ads_googleads_v22_common_third_party_integration_partners_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *CustomerThirdPartyBrandSafetyIntegrationPartner) GetBrandSafetyIntegrationPartner() enums.ThirdPartyBrandSafetyIntegrationPartnerEnum_ThirdPartyBrandSafetyIntegrationPartner {
@@ -216,11 +213,10 @@ func (x *CustomerThirdPartyBrandSafetyIntegrationPartner) GetBrandSafetyIntegrat
 }
 
 // Container for third party Brand Lift integration data for Customer.
-// Next Id = 3
 type CustomerThirdPartyBrandLiftIntegrationPartner struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Allowed Third Party integration partners for Brand Lift verification.
-	BrandLiftIntegrationPartner enums.ThirdPartyBrandLiftIntegrationPartnerEnum_ThirdPartyBrandLiftIntegrationPartner `protobuf:"varint,1,opt,name=brand_lift_integration_partner,json=brandLiftIntegrationPartner,proto3,enum=google.ads.googleads.v21.enums.ThirdPartyBrandLiftIntegrationPartnerEnum_ThirdPartyBrandLiftIntegrationPartner" json:"brand_lift_integration_partner,omitempty"`
+	BrandLiftIntegrationPartner enums.ThirdPartyBrandLiftIntegrationPartnerEnum_ThirdPartyBrandLiftIntegrationPartner `protobuf:"varint,1,opt,name=brand_lift_integration_partner,json=brandLiftIntegrationPartner,proto3,enum=google.ads.googleads.v22.enums.ThirdPartyBrandLiftIntegrationPartnerEnum_ThirdPartyBrandLiftIntegrationPartner" json:"brand_lift_integration_partner,omitempty"`
 	// If true, cost data can be shared with this vendor.
 	AllowShareCost bool `protobuf:"varint,2,opt,name=allow_share_cost,json=allowShareCost,proto3" json:"allow_share_cost,omitempty"`
 	unknownFields  protoimpl.UnknownFields
@@ -229,7 +225,7 @@ type CustomerThirdPartyBrandLiftIntegrationPartner struct {
 
 func (x *CustomerThirdPartyBrandLiftIntegrationPartner) Reset() {
 	*x = CustomerThirdPartyBrandLiftIntegrationPartner{}
-	mi := &file_google_ads_googleads_v21_common_third_party_integration_partners_proto_msgTypes[3]
+	mi := &file_google_ads_googleads_v22_common_third_party_integration_partners_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -241,7 +237,7 @@ func (x *CustomerThirdPartyBrandLiftIntegrationPartner) String() string {
 func (*CustomerThirdPartyBrandLiftIntegrationPartner) ProtoMessage() {}
 
 func (x *CustomerThirdPartyBrandLiftIntegrationPartner) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v21_common_third_party_integration_partners_proto_msgTypes[3]
+	mi := &file_google_ads_googleads_v22_common_third_party_integration_partners_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -254,7 +250,7 @@ func (x *CustomerThirdPartyBrandLiftIntegrationPartner) ProtoReflect() protorefl
 
 // Deprecated: Use CustomerThirdPartyBrandLiftIntegrationPartner.ProtoReflect.Descriptor instead.
 func (*CustomerThirdPartyBrandLiftIntegrationPartner) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v21_common_third_party_integration_partners_proto_rawDescGZIP(), []int{3}
+	return file_google_ads_googleads_v22_common_third_party_integration_partners_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *CustomerThirdPartyBrandLiftIntegrationPartner) GetBrandLiftIntegrationPartner() enums.ThirdPartyBrandLiftIntegrationPartnerEnum_ThirdPartyBrandLiftIntegrationPartner {
@@ -272,11 +268,10 @@ func (x *CustomerThirdPartyBrandLiftIntegrationPartner) GetAllowShareCost() bool
 }
 
 // Container for third party reach integration data for Customer.
-// Next Id = 3
 type CustomerThirdPartyReachIntegrationPartner struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Allowed Third Party integration partners for reach verification.
-	ReachIntegrationPartner enums.ThirdPartyReachIntegrationPartnerEnum_ThirdPartyReachIntegrationPartner `protobuf:"varint,1,opt,name=reach_integration_partner,json=reachIntegrationPartner,proto3,enum=google.ads.googleads.v21.enums.ThirdPartyReachIntegrationPartnerEnum_ThirdPartyReachIntegrationPartner" json:"reach_integration_partner,omitempty"`
+	ReachIntegrationPartner enums.ThirdPartyReachIntegrationPartnerEnum_ThirdPartyReachIntegrationPartner `protobuf:"varint,1,opt,name=reach_integration_partner,json=reachIntegrationPartner,proto3,enum=google.ads.googleads.v22.enums.ThirdPartyReachIntegrationPartnerEnum_ThirdPartyReachIntegrationPartner" json:"reach_integration_partner,omitempty"`
 	// If true, cost data can be shared with this vendor.
 	AllowShareCost bool `protobuf:"varint,2,opt,name=allow_share_cost,json=allowShareCost,proto3" json:"allow_share_cost,omitempty"`
 	unknownFields  protoimpl.UnknownFields
@@ -285,7 +280,7 @@ type CustomerThirdPartyReachIntegrationPartner struct {
 
 func (x *CustomerThirdPartyReachIntegrationPartner) Reset() {
 	*x = CustomerThirdPartyReachIntegrationPartner{}
-	mi := &file_google_ads_googleads_v21_common_third_party_integration_partners_proto_msgTypes[4]
+	mi := &file_google_ads_googleads_v22_common_third_party_integration_partners_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -297,7 +292,7 @@ func (x *CustomerThirdPartyReachIntegrationPartner) String() string {
 func (*CustomerThirdPartyReachIntegrationPartner) ProtoMessage() {}
 
 func (x *CustomerThirdPartyReachIntegrationPartner) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v21_common_third_party_integration_partners_proto_msgTypes[4]
+	mi := &file_google_ads_googleads_v22_common_third_party_integration_partners_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -310,7 +305,7 @@ func (x *CustomerThirdPartyReachIntegrationPartner) ProtoReflect() protoreflect.
 
 // Deprecated: Use CustomerThirdPartyReachIntegrationPartner.ProtoReflect.Descriptor instead.
 func (*CustomerThirdPartyReachIntegrationPartner) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v21_common_third_party_integration_partners_proto_rawDescGZIP(), []int{4}
+	return file_google_ads_googleads_v22_common_third_party_integration_partners_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *CustomerThirdPartyReachIntegrationPartner) GetReachIntegrationPartner() enums.ThirdPartyReachIntegrationPartnerEnum_ThirdPartyReachIntegrationPartner {
@@ -328,7 +323,6 @@ func (x *CustomerThirdPartyReachIntegrationPartner) GetAllowShareCost() bool {
 }
 
 // Container for Campaign level third party integration partners.
-// Next Id = 5
 type CampaignThirdPartyIntegrationPartners struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Third party integration partners for YouTube viewability
@@ -348,7 +342,7 @@ type CampaignThirdPartyIntegrationPartners struct {
 
 func (x *CampaignThirdPartyIntegrationPartners) Reset() {
 	*x = CampaignThirdPartyIntegrationPartners{}
-	mi := &file_google_ads_googleads_v21_common_third_party_integration_partners_proto_msgTypes[5]
+	mi := &file_google_ads_googleads_v22_common_third_party_integration_partners_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -360,7 +354,7 @@ func (x *CampaignThirdPartyIntegrationPartners) String() string {
 func (*CampaignThirdPartyIntegrationPartners) ProtoMessage() {}
 
 func (x *CampaignThirdPartyIntegrationPartners) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v21_common_third_party_integration_partners_proto_msgTypes[5]
+	mi := &file_google_ads_googleads_v22_common_third_party_integration_partners_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -373,7 +367,7 @@ func (x *CampaignThirdPartyIntegrationPartners) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use CampaignThirdPartyIntegrationPartners.ProtoReflect.Descriptor instead.
 func (*CampaignThirdPartyIntegrationPartners) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v21_common_third_party_integration_partners_proto_rawDescGZIP(), []int{5}
+	return file_google_ads_googleads_v22_common_third_party_integration_partners_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *CampaignThirdPartyIntegrationPartners) GetViewabilityIntegrationPartners() []*CampaignThirdPartyViewabilityIntegrationPartner {
@@ -405,12 +399,11 @@ func (x *CampaignThirdPartyIntegrationPartners) GetReachIntegrationPartners() []
 }
 
 // Container for third party viewability integration data for Campaign.
-// Next Id = 4
 type CampaignThirdPartyViewabilityIntegrationPartner struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Allowed third party integration partners for YouTube viewability
 	// verification.
-	ViewabilityIntegrationPartner enums.ThirdPartyViewabilityIntegrationPartnerEnum_ThirdPartyViewabilityIntegrationPartner `protobuf:"varint,1,opt,name=viewability_integration_partner,json=viewabilityIntegrationPartner,proto3,enum=google.ads.googleads.v21.enums.ThirdPartyViewabilityIntegrationPartnerEnum_ThirdPartyViewabilityIntegrationPartner" json:"viewability_integration_partner,omitempty"`
+	ViewabilityIntegrationPartner enums.ThirdPartyViewabilityIntegrationPartnerEnum_ThirdPartyViewabilityIntegrationPartner `protobuf:"varint,1,opt,name=viewability_integration_partner,json=viewabilityIntegrationPartner,proto3,enum=google.ads.googleads.v22.enums.ThirdPartyViewabilityIntegrationPartnerEnum_ThirdPartyViewabilityIntegrationPartner" json:"viewability_integration_partner,omitempty"`
 	// Third party partner data for YouTube viewability verification. This is
 	// optional metadata for partners to join or attach data to Ads campaigns.
 	ViewabilityIntegrationPartnerData *ThirdPartyIntegrationPartnerData `protobuf:"bytes,2,opt,name=viewability_integration_partner_data,json=viewabilityIntegrationPartnerData,proto3" json:"viewability_integration_partner_data,omitempty"`
@@ -422,7 +415,7 @@ type CampaignThirdPartyViewabilityIntegrationPartner struct {
 
 func (x *CampaignThirdPartyViewabilityIntegrationPartner) Reset() {
 	*x = CampaignThirdPartyViewabilityIntegrationPartner{}
-	mi := &file_google_ads_googleads_v21_common_third_party_integration_partners_proto_msgTypes[6]
+	mi := &file_google_ads_googleads_v22_common_third_party_integration_partners_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -434,7 +427,7 @@ func (x *CampaignThirdPartyViewabilityIntegrationPartner) String() string {
 func (*CampaignThirdPartyViewabilityIntegrationPartner) ProtoMessage() {}
 
 func (x *CampaignThirdPartyViewabilityIntegrationPartner) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v21_common_third_party_integration_partners_proto_msgTypes[6]
+	mi := &file_google_ads_googleads_v22_common_third_party_integration_partners_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -447,7 +440,7 @@ func (x *CampaignThirdPartyViewabilityIntegrationPartner) ProtoReflect() protore
 
 // Deprecated: Use CampaignThirdPartyViewabilityIntegrationPartner.ProtoReflect.Descriptor instead.
 func (*CampaignThirdPartyViewabilityIntegrationPartner) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v21_common_third_party_integration_partners_proto_rawDescGZIP(), []int{6}
+	return file_google_ads_googleads_v22_common_third_party_integration_partners_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *CampaignThirdPartyViewabilityIntegrationPartner) GetViewabilityIntegrationPartner() enums.ThirdPartyViewabilityIntegrationPartnerEnum_ThirdPartyViewabilityIntegrationPartner {
@@ -472,11 +465,10 @@ func (x *CampaignThirdPartyViewabilityIntegrationPartner) GetShareCost() bool {
 }
 
 // Container for third party brand safety integration data for Campaign.
-// Next Id = 3
 type CampaignThirdPartyBrandSafetyIntegrationPartner struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Allowed third party integration partners for brand safety verification.
-	BrandSafetyIntegrationPartner enums.ThirdPartyBrandSafetyIntegrationPartnerEnum_ThirdPartyBrandSafetyIntegrationPartner `protobuf:"varint,1,opt,name=brand_safety_integration_partner,json=brandSafetyIntegrationPartner,proto3,enum=google.ads.googleads.v21.enums.ThirdPartyBrandSafetyIntegrationPartnerEnum_ThirdPartyBrandSafetyIntegrationPartner" json:"brand_safety_integration_partner,omitempty"`
+	BrandSafetyIntegrationPartner enums.ThirdPartyBrandSafetyIntegrationPartnerEnum_ThirdPartyBrandSafetyIntegrationPartner `protobuf:"varint,1,opt,name=brand_safety_integration_partner,json=brandSafetyIntegrationPartner,proto3,enum=google.ads.googleads.v22.enums.ThirdPartyBrandSafetyIntegrationPartnerEnum_ThirdPartyBrandSafetyIntegrationPartner" json:"brand_safety_integration_partner,omitempty"`
 	// Third party partner data for YouTube brand safety verification. This is
 	// optional metadata for partners to join or attach data to Ads campaigns.
 	BrandSafetyIntegrationPartnerData *ThirdPartyIntegrationPartnerData `protobuf:"bytes,2,opt,name=brand_safety_integration_partner_data,json=brandSafetyIntegrationPartnerData,proto3" json:"brand_safety_integration_partner_data,omitempty"`
@@ -486,7 +478,7 @@ type CampaignThirdPartyBrandSafetyIntegrationPartner struct {
 
 func (x *CampaignThirdPartyBrandSafetyIntegrationPartner) Reset() {
 	*x = CampaignThirdPartyBrandSafetyIntegrationPartner{}
-	mi := &file_google_ads_googleads_v21_common_third_party_integration_partners_proto_msgTypes[7]
+	mi := &file_google_ads_googleads_v22_common_third_party_integration_partners_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -498,7 +490,7 @@ func (x *CampaignThirdPartyBrandSafetyIntegrationPartner) String() string {
 func (*CampaignThirdPartyBrandSafetyIntegrationPartner) ProtoMessage() {}
 
 func (x *CampaignThirdPartyBrandSafetyIntegrationPartner) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v21_common_third_party_integration_partners_proto_msgTypes[7]
+	mi := &file_google_ads_googleads_v22_common_third_party_integration_partners_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -511,7 +503,7 @@ func (x *CampaignThirdPartyBrandSafetyIntegrationPartner) ProtoReflect() protore
 
 // Deprecated: Use CampaignThirdPartyBrandSafetyIntegrationPartner.ProtoReflect.Descriptor instead.
 func (*CampaignThirdPartyBrandSafetyIntegrationPartner) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v21_common_third_party_integration_partners_proto_rawDescGZIP(), []int{7}
+	return file_google_ads_googleads_v22_common_third_party_integration_partners_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *CampaignThirdPartyBrandSafetyIntegrationPartner) GetBrandSafetyIntegrationPartner() enums.ThirdPartyBrandSafetyIntegrationPartnerEnum_ThirdPartyBrandSafetyIntegrationPartner {
@@ -529,11 +521,10 @@ func (x *CampaignThirdPartyBrandSafetyIntegrationPartner) GetBrandSafetyIntegrat
 }
 
 // Container for third party Brand Lift integration data for Campaign.
-// Next Id = 4
 type CampaignThirdPartyBrandLiftIntegrationPartner struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Allowed third party integration partners for Brand Lift verification.
-	BrandLiftIntegrationPartner enums.ThirdPartyBrandLiftIntegrationPartnerEnum_ThirdPartyBrandLiftIntegrationPartner `protobuf:"varint,1,opt,name=brand_lift_integration_partner,json=brandLiftIntegrationPartner,proto3,enum=google.ads.googleads.v21.enums.ThirdPartyBrandLiftIntegrationPartnerEnum_ThirdPartyBrandLiftIntegrationPartner" json:"brand_lift_integration_partner,omitempty"`
+	BrandLiftIntegrationPartner enums.ThirdPartyBrandLiftIntegrationPartnerEnum_ThirdPartyBrandLiftIntegrationPartner `protobuf:"varint,1,opt,name=brand_lift_integration_partner,json=brandLiftIntegrationPartner,proto3,enum=google.ads.googleads.v22.enums.ThirdPartyBrandLiftIntegrationPartnerEnum_ThirdPartyBrandLiftIntegrationPartner" json:"brand_lift_integration_partner,omitempty"`
 	// Third party partner data for YouTube Brand Lift verification. This is
 	// optional metadata for partners to join or attach data to Ads campaigns.
 	BrandLiftIntegrationPartnerData *ThirdPartyIntegrationPartnerData `protobuf:"bytes,2,opt,name=brand_lift_integration_partner_data,json=brandLiftIntegrationPartnerData,proto3" json:"brand_lift_integration_partner_data,omitempty"`
@@ -545,7 +536,7 @@ type CampaignThirdPartyBrandLiftIntegrationPartner struct {
 
 func (x *CampaignThirdPartyBrandLiftIntegrationPartner) Reset() {
 	*x = CampaignThirdPartyBrandLiftIntegrationPartner{}
-	mi := &file_google_ads_googleads_v21_common_third_party_integration_partners_proto_msgTypes[8]
+	mi := &file_google_ads_googleads_v22_common_third_party_integration_partners_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -557,7 +548,7 @@ func (x *CampaignThirdPartyBrandLiftIntegrationPartner) String() string {
 func (*CampaignThirdPartyBrandLiftIntegrationPartner) ProtoMessage() {}
 
 func (x *CampaignThirdPartyBrandLiftIntegrationPartner) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v21_common_third_party_integration_partners_proto_msgTypes[8]
+	mi := &file_google_ads_googleads_v22_common_third_party_integration_partners_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -570,7 +561,7 @@ func (x *CampaignThirdPartyBrandLiftIntegrationPartner) ProtoReflect() protorefl
 
 // Deprecated: Use CampaignThirdPartyBrandLiftIntegrationPartner.ProtoReflect.Descriptor instead.
 func (*CampaignThirdPartyBrandLiftIntegrationPartner) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v21_common_third_party_integration_partners_proto_rawDescGZIP(), []int{8}
+	return file_google_ads_googleads_v22_common_third_party_integration_partners_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *CampaignThirdPartyBrandLiftIntegrationPartner) GetBrandLiftIntegrationPartner() enums.ThirdPartyBrandLiftIntegrationPartnerEnum_ThirdPartyBrandLiftIntegrationPartner {
@@ -595,11 +586,10 @@ func (x *CampaignThirdPartyBrandLiftIntegrationPartner) GetShareCost() bool {
 }
 
 // Container for third party reach integration data for Campaign.
-// Next Id = 4
 type CampaignThirdPartyReachIntegrationPartner struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Allowed third party integration partners for reach verification.
-	ReachIntegrationPartner enums.ThirdPartyReachIntegrationPartnerEnum_ThirdPartyReachIntegrationPartner `protobuf:"varint,1,opt,name=reach_integration_partner,json=reachIntegrationPartner,proto3,enum=google.ads.googleads.v21.enums.ThirdPartyReachIntegrationPartnerEnum_ThirdPartyReachIntegrationPartner" json:"reach_integration_partner,omitempty"`
+	ReachIntegrationPartner enums.ThirdPartyReachIntegrationPartnerEnum_ThirdPartyReachIntegrationPartner `protobuf:"varint,1,opt,name=reach_integration_partner,json=reachIntegrationPartner,proto3,enum=google.ads.googleads.v22.enums.ThirdPartyReachIntegrationPartnerEnum_ThirdPartyReachIntegrationPartner" json:"reach_integration_partner,omitempty"`
 	// Third party partner data for YouTube Reach verification. This is
 	// optional metadata for partners to join or attach data to Ads campaigns.
 	ReachIntegrationPartnerData *ThirdPartyIntegrationPartnerData `protobuf:"bytes,2,opt,name=reach_integration_partner_data,json=reachIntegrationPartnerData,proto3" json:"reach_integration_partner_data,omitempty"`
@@ -611,7 +601,7 @@ type CampaignThirdPartyReachIntegrationPartner struct {
 
 func (x *CampaignThirdPartyReachIntegrationPartner) Reset() {
 	*x = CampaignThirdPartyReachIntegrationPartner{}
-	mi := &file_google_ads_googleads_v21_common_third_party_integration_partners_proto_msgTypes[9]
+	mi := &file_google_ads_googleads_v22_common_third_party_integration_partners_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -623,7 +613,7 @@ func (x *CampaignThirdPartyReachIntegrationPartner) String() string {
 func (*CampaignThirdPartyReachIntegrationPartner) ProtoMessage() {}
 
 func (x *CampaignThirdPartyReachIntegrationPartner) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v21_common_third_party_integration_partners_proto_msgTypes[9]
+	mi := &file_google_ads_googleads_v22_common_third_party_integration_partners_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -636,7 +626,7 @@ func (x *CampaignThirdPartyReachIntegrationPartner) ProtoReflect() protoreflect.
 
 // Deprecated: Use CampaignThirdPartyReachIntegrationPartner.ProtoReflect.Descriptor instead.
 func (*CampaignThirdPartyReachIntegrationPartner) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v21_common_third_party_integration_partners_proto_rawDescGZIP(), []int{9}
+	return file_google_ads_googleads_v22_common_third_party_integration_partners_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *CampaignThirdPartyReachIntegrationPartner) GetReachIntegrationPartner() enums.ThirdPartyReachIntegrationPartnerEnum_ThirdPartyReachIntegrationPartner {
@@ -661,7 +651,6 @@ func (x *CampaignThirdPartyReachIntegrationPartner) GetShareCost() bool {
 }
 
 // Contains third party measurement partner related data for video campaigns.
-// Next Id = 3
 type ThirdPartyIntegrationPartnerData struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// The client ID that allows the measurement partner to join multiple
@@ -676,7 +665,7 @@ type ThirdPartyIntegrationPartnerData struct {
 
 func (x *ThirdPartyIntegrationPartnerData) Reset() {
 	*x = ThirdPartyIntegrationPartnerData{}
-	mi := &file_google_ads_googleads_v21_common_third_party_integration_partners_proto_msgTypes[10]
+	mi := &file_google_ads_googleads_v22_common_third_party_integration_partners_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -688,7 +677,7 @@ func (x *ThirdPartyIntegrationPartnerData) String() string {
 func (*ThirdPartyIntegrationPartnerData) ProtoMessage() {}
 
 func (x *ThirdPartyIntegrationPartnerData) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v21_common_third_party_integration_partners_proto_msgTypes[10]
+	mi := &file_google_ads_googleads_v22_common_third_party_integration_partners_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -701,7 +690,7 @@ func (x *ThirdPartyIntegrationPartnerData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ThirdPartyIntegrationPartnerData.ProtoReflect.Descriptor instead.
 func (*ThirdPartyIntegrationPartnerData) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v21_common_third_party_integration_partners_proto_rawDescGZIP(), []int{10}
+	return file_google_ads_googleads_v22_common_third_party_integration_partners_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *ThirdPartyIntegrationPartnerData) GetClientId() string {
@@ -718,33 +707,33 @@ func (x *ThirdPartyIntegrationPartnerData) GetThirdPartyPlacementId() string {
 	return ""
 }
 
-var File_google_ads_googleads_v21_common_third_party_integration_partners_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v22_common_third_party_integration_partners_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v21_common_third_party_integration_partners_proto_rawDesc = string([]byte{
+var file_google_ads_googleads_v22_common_third_party_integration_partners_proto_rawDesc = string([]byte{
 	0x0a, 0x46, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x31, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x32, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
 	0x6e, 0x2f, 0x74, 0x68, 0x69, 0x72, 0x64, 0x5f, 0x70, 0x61, 0x72, 0x74, 0x79, 0x5f, 0x69, 0x6e,
 	0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x70, 0x61, 0x72, 0x74, 0x6e, 0x65,
 	0x72, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x1f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76,
-	0x32, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x1a, 0x4f, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
+	0x32, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x1a, 0x4f, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f,
-	0x76, 0x32, 0x31, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x74, 0x68, 0x69, 0x72, 0x64, 0x5f,
+	0x76, 0x32, 0x32, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x74, 0x68, 0x69, 0x72, 0x64, 0x5f,
 	0x70, 0x61, 0x72, 0x74, 0x79, 0x5f, 0x62, 0x72, 0x61, 0x6e, 0x64, 0x5f, 0x6c, 0x69, 0x66, 0x74,
 	0x5f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x70, 0x61, 0x72,
 	0x74, 0x6e, 0x65, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x51, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
-	0x2f, 0x76, 0x32, 0x31, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x74, 0x68, 0x69, 0x72, 0x64,
+	0x2f, 0x76, 0x32, 0x32, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x74, 0x68, 0x69, 0x72, 0x64,
 	0x5f, 0x70, 0x61, 0x72, 0x74, 0x79, 0x5f, 0x62, 0x72, 0x61, 0x6e, 0x64, 0x5f, 0x73, 0x61, 0x66,
 	0x65, 0x74, 0x79, 0x5f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f,
 	0x70, 0x61, 0x72, 0x74, 0x6e, 0x65, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x4a, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x31, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x74, 0x68,
+	0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x32, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x74, 0x68,
 	0x69, 0x72, 0x64, 0x5f, 0x70, 0x61, 0x72, 0x74, 0x79, 0x5f, 0x72, 0x65, 0x61, 0x63, 0x68, 0x5f,
 	0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x70, 0x61, 0x72, 0x74,
 	0x6e, 0x65, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x50, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f,
-	0x76, 0x32, 0x31, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x74, 0x68, 0x69, 0x72, 0x64, 0x5f,
+	0x76, 0x32, 0x32, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x74, 0x68, 0x69, 0x72, 0x64, 0x5f,
 	0x70, 0x61, 0x72, 0x74, 0x79, 0x5f, 0x76, 0x69, 0x65, 0x77, 0x61, 0x62, 0x69, 0x6c, 0x69, 0x74,
 	0x79, 0x5f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x70, 0x61,
 	0x72, 0x74, 0x6e, 0x65, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x85, 0x05, 0x0a, 0x25,
@@ -754,7 +743,7 @@ var file_google_ads_googleads_v21_common_third_party_integration_partners_proto_
 	0x69, 0x6c, 0x69, 0x74, 0x79, 0x5f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f,
 	0x6e, 0x5f, 0x70, 0x61, 0x72, 0x74, 0x6e, 0x65, 0x72, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b,
 	0x32, 0x50, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d,
+	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d,
 	0x6f, 0x6e, 0x2e, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x54, 0x68, 0x69, 0x72, 0x64,
 	0x50, 0x61, 0x72, 0x74, 0x79, 0x56, 0x69, 0x65, 0x77, 0x61, 0x62, 0x69, 0x6c, 0x69, 0x74, 0x79,
 	0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x50, 0x61, 0x72, 0x74, 0x6e,
@@ -764,7 +753,7 @@ var file_google_ads_googleads_v21_common_third_party_integration_partners_proto_
 	0x74, 0x5f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x70, 0x61,
 	0x72, 0x74, 0x6e, 0x65, 0x72, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x4e, 0x2e, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x43,
+	0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x43,
 	0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x54, 0x68, 0x69, 0x72, 0x64, 0x50, 0x61, 0x72, 0x74,
 	0x79, 0x42, 0x72, 0x61, 0x6e, 0x64, 0x4c, 0x69, 0x66, 0x74, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72,
 	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x50, 0x61, 0x72, 0x74, 0x6e, 0x65, 0x72, 0x52, 0x1c, 0x62, 0x72,
@@ -774,7 +763,7 @@ var file_google_ads_googleads_v21_common_third_party_integration_partners_proto_
 	0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x70, 0x61, 0x72, 0x74, 0x6e, 0x65, 0x72, 0x73,
 	0x18, 0x03, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x50, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
 	0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32,
-	0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65,
+	0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65,
 	0x72, 0x54, 0x68, 0x69, 0x72, 0x64, 0x50, 0x61, 0x72, 0x74, 0x79, 0x42, 0x72, 0x61, 0x6e, 0x64,
 	0x53, 0x61, 0x66, 0x65, 0x74, 0x79, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f,
 	0x6e, 0x50, 0x61, 0x72, 0x74, 0x6e, 0x65, 0x72, 0x52, 0x1e, 0x62, 0x72, 0x61, 0x6e, 0x64, 0x53,
@@ -783,7 +772,7 @@ var file_google_ads_googleads_v21_common_third_party_integration_partners_proto_
 	0x63, 0x68, 0x5f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x70,
 	0x61, 0x72, 0x74, 0x6e, 0x65, 0x72, 0x73, 0x18, 0x04, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x4a, 0x2e,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e,
+	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e,
 	0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x54, 0x68, 0x69, 0x72, 0x64, 0x50, 0x61, 0x72,
 	0x74, 0x79, 0x52, 0x65, 0x61, 0x63, 0x68, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69,
 	0x6f, 0x6e, 0x50, 0x61, 0x72, 0x74, 0x6e, 0x65, 0x72, 0x52, 0x18, 0x72, 0x65, 0x61, 0x63, 0x68,
@@ -795,7 +784,7 @@ var file_google_ads_googleads_v21_common_third_party_integration_partners_proto_
 	0x61, 0x62, 0x69, 0x6c, 0x69, 0x74, 0x79, 0x5f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74,
 	0x69, 0x6f, 0x6e, 0x5f, 0x70, 0x61, 0x72, 0x74, 0x6e, 0x65, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28,
 	0x0e, 0x32, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x65, 0x6e, 0x75,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x32, 0x2e, 0x65, 0x6e, 0x75,
 	0x6d, 0x73, 0x2e, 0x54, 0x68, 0x69, 0x72, 0x64, 0x50, 0x61, 0x72, 0x74, 0x79, 0x56, 0x69, 0x65,
 	0x77, 0x61, 0x62, 0x69, 0x6c, 0x69, 0x74, 0x79, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74,
 	0x69, 0x6f, 0x6e, 0x50, 0x61, 0x72, 0x74, 0x6e, 0x65, 0x72, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x54,
@@ -813,7 +802,7 @@ var file_google_ads_googleads_v21_common_third_party_integration_partners_proto_
 	0x66, 0x65, 0x74, 0x79, 0x5f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e,
 	0x5f, 0x70, 0x61, 0x72, 0x74, 0x6e, 0x65, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x73,
 	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e,
+	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e,
 	0x54, 0x68, 0x69, 0x72, 0x64, 0x50, 0x61, 0x72, 0x74, 0x79, 0x42, 0x72, 0x61, 0x6e, 0x64, 0x53,
 	0x61, 0x66, 0x65, 0x74, 0x79, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e,
 	0x50, 0x61, 0x72, 0x74, 0x6e, 0x65, 0x72, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x54, 0x68, 0x69, 0x72,
@@ -828,7 +817,7 @@ var file_google_ads_googleads_v21_common_third_party_integration_partners_proto_
 	0x69, 0x66, 0x74, 0x5f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f,
 	0x70, 0x61, 0x72, 0x74, 0x6e, 0x65, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x6f, 0x2e,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x54,
+	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x54,
 	0x68, 0x69, 0x72, 0x64, 0x50, 0x61, 0x72, 0x74, 0x79, 0x42, 0x72, 0x61, 0x6e, 0x64, 0x4c, 0x69,
 	0x66, 0x74, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x50, 0x61, 0x72,
 	0x74, 0x6e, 0x65, 0x72, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x54, 0x68, 0x69, 0x72, 0x64, 0x50, 0x61,
@@ -845,7 +834,7 @@ var file_google_ads_googleads_v21_common_third_party_integration_partners_proto_
 	0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x70, 0x61, 0x72, 0x74, 0x6e, 0x65,
 	0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x67, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76,
-	0x32, 0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x54, 0x68, 0x69, 0x72, 0x64, 0x50, 0x61,
+	0x32, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x54, 0x68, 0x69, 0x72, 0x64, 0x50, 0x61,
 	0x72, 0x74, 0x79, 0x52, 0x65, 0x61, 0x63, 0x68, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74,
 	0x69, 0x6f, 0x6e, 0x50, 0x61, 0x72, 0x74, 0x6e, 0x65, 0x72, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x54,
 	0x68, 0x69, 0x72, 0x64, 0x50, 0x61, 0x72, 0x74, 0x79, 0x52, 0x65, 0x61, 0x63, 0x68, 0x49, 0x6e,
@@ -861,7 +850,7 @@ var file_google_ads_googleads_v21_common_third_party_integration_partners_proto_
 	0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x70, 0x61, 0x72, 0x74, 0x6e, 0x65,
 	0x72, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x50, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e,
-	0x76, 0x32, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x43, 0x61, 0x6d, 0x70, 0x61,
+	0x76, 0x32, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x43, 0x61, 0x6d, 0x70, 0x61,
 	0x69, 0x67, 0x6e, 0x54, 0x68, 0x69, 0x72, 0x64, 0x50, 0x61, 0x72, 0x74, 0x79, 0x56, 0x69, 0x65,
 	0x77, 0x61, 0x62, 0x69, 0x6c, 0x69, 0x74, 0x79, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74,
 	0x69, 0x6f, 0x6e, 0x50, 0x61, 0x72, 0x74, 0x6e, 0x65, 0x72, 0x52, 0x1e, 0x76, 0x69, 0x65, 0x77,
@@ -870,7 +859,7 @@ var file_google_ads_googleads_v21_common_third_party_integration_partners_proto_
 	0x72, 0x61, 0x6e, 0x64, 0x5f, 0x6c, 0x69, 0x66, 0x74, 0x5f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72,
 	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x70, 0x61, 0x72, 0x74, 0x6e, 0x65, 0x72, 0x73, 0x18, 0x02,
 	0x20, 0x03, 0x28, 0x0b, 0x32, 0x4e, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64,
-	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e,
+	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x32, 0x2e,
 	0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x43, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x54,
 	0x68, 0x69, 0x72, 0x64, 0x50, 0x61, 0x72, 0x74, 0x79, 0x42, 0x72, 0x61, 0x6e, 0x64, 0x4c, 0x69,
 	0x66, 0x74, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x50, 0x61, 0x72,
@@ -880,7 +869,7 @@ var file_google_ads_googleads_v21_common_third_party_integration_partners_proto_
 	0x65, 0x74, 0x79, 0x5f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f,
 	0x70, 0x61, 0x72, 0x74, 0x6e, 0x65, 0x72, 0x73, 0x18, 0x03, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x50,
 	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e,
+	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e,
 	0x2e, 0x43, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x54, 0x68, 0x69, 0x72, 0x64, 0x50, 0x61,
 	0x72, 0x74, 0x79, 0x42, 0x72, 0x61, 0x6e, 0x64, 0x53, 0x61, 0x66, 0x65, 0x74, 0x79, 0x49, 0x6e,
 	0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x50, 0x61, 0x72, 0x74, 0x6e, 0x65, 0x72,
@@ -889,7 +878,7 @@ var file_google_ads_googleads_v21_common_third_party_integration_partners_proto_
 	0x12, 0x88, 0x01, 0x0a, 0x1a, 0x72, 0x65, 0x61, 0x63, 0x68, 0x5f, 0x69, 0x6e, 0x74, 0x65, 0x67,
 	0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x70, 0x61, 0x72, 0x74, 0x6e, 0x65, 0x72, 0x73, 0x18,
 	0x04, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x4a, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61,
-	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31,
+	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x32,
 	0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x43, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e,
 	0x54, 0x68, 0x69, 0x72, 0x64, 0x50, 0x61, 0x72, 0x74, 0x79, 0x52, 0x65, 0x61, 0x63, 0x68, 0x49,
 	0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x50, 0x61, 0x72, 0x74, 0x6e, 0x65,
@@ -902,7 +891,7 @@ var file_google_ads_googleads_v21_common_third_party_integration_partners_proto_
 	0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x70, 0x61, 0x72, 0x74,
 	0x6e, 0x65, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
-	0x2e, 0x76, 0x32, 0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x54, 0x68, 0x69, 0x72, 0x64,
+	0x2e, 0x76, 0x32, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x54, 0x68, 0x69, 0x72, 0x64,
 	0x50, 0x61, 0x72, 0x74, 0x79, 0x56, 0x69, 0x65, 0x77, 0x61, 0x62, 0x69, 0x6c, 0x69, 0x74, 0x79,
 	0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x50, 0x61, 0x72, 0x74, 0x6e,
 	0x65, 0x72, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x54, 0x68, 0x69, 0x72, 0x64, 0x50, 0x61, 0x72, 0x74,
@@ -914,7 +903,7 @@ var file_google_ads_googleads_v21_common_third_party_integration_partners_proto_
 	0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x70, 0x61, 0x72, 0x74, 0x6e, 0x65,
 	0x72, 0x5f, 0x64, 0x61, 0x74, 0x61, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x41, 0x2e, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x54,
+	0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x54,
 	0x68, 0x69, 0x72, 0x64, 0x50, 0x61, 0x72, 0x74, 0x79, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61,
 	0x74, 0x69, 0x6f, 0x6e, 0x50, 0x61, 0x72, 0x74, 0x6e, 0x65, 0x72, 0x44, 0x61, 0x74, 0x61, 0x52,
 	0x21, 0x76, 0x69, 0x65, 0x77, 0x61, 0x62, 0x69, 0x6c, 0x69, 0x74, 0x79, 0x49, 0x6e, 0x74, 0x65,
@@ -928,7 +917,7 @@ var file_google_ads_googleads_v21_common_third_party_integration_partners_proto_
 	0x73, 0x61, 0x66, 0x65, 0x74, 0x79, 0x5f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69,
 	0x6f, 0x6e, 0x5f, 0x70, 0x61, 0x72, 0x74, 0x6e, 0x65, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e,
 	0x32, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d,
+	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d,
 	0x73, 0x2e, 0x54, 0x68, 0x69, 0x72, 0x64, 0x50, 0x61, 0x72, 0x74, 0x79, 0x42, 0x72, 0x61, 0x6e,
 	0x64, 0x53, 0x61, 0x66, 0x65, 0x74, 0x79, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69,
 	0x6f, 0x6e, 0x50, 0x61, 0x72, 0x74, 0x6e, 0x65, 0x72, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x54, 0x68,
@@ -940,7 +929,7 @@ var file_google_ads_googleads_v21_common_third_party_integration_partners_proto_
 	0x61, 0x66, 0x65, 0x74, 0x79, 0x5f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f,
 	0x6e, 0x5f, 0x70, 0x61, 0x72, 0x74, 0x6e, 0x65, 0x72, 0x5f, 0x64, 0x61, 0x74, 0x61, 0x18, 0x02,
 	0x20, 0x01, 0x28, 0x0b, 0x32, 0x41, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64,
-	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e,
+	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x32, 0x2e,
 	0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x54, 0x68, 0x69, 0x72, 0x64, 0x50, 0x61, 0x72, 0x74,
 	0x79, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x50, 0x61, 0x72, 0x74,
 	0x6e, 0x65, 0x72, 0x44, 0x61, 0x74, 0x61, 0x52, 0x21, 0x62, 0x72, 0x61, 0x6e, 0x64, 0x53, 0x61,
@@ -952,7 +941,7 @@ var file_google_ads_googleads_v21_common_third_party_integration_partners_proto_
 	0x1e, 0x62, 0x72, 0x61, 0x6e, 0x64, 0x5f, 0x6c, 0x69, 0x66, 0x74, 0x5f, 0x69, 0x6e, 0x74, 0x65,
 	0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x70, 0x61, 0x72, 0x74, 0x6e, 0x65, 0x72, 0x18,
 	0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x6f, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61,
-	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31,
+	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x32,
 	0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x54, 0x68, 0x69, 0x72, 0x64, 0x50, 0x61, 0x72, 0x74,
 	0x79, 0x42, 0x72, 0x61, 0x6e, 0x64, 0x4c, 0x69, 0x66, 0x74, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72,
 	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x50, 0x61, 0x72, 0x74, 0x6e, 0x65, 0x72, 0x45, 0x6e, 0x75, 0x6d,
@@ -964,7 +953,7 @@ var file_google_ads_googleads_v21_common_third_party_integration_partners_proto_
 	0x66, 0x74, 0x5f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x70,
 	0x61, 0x72, 0x74, 0x6e, 0x65, 0x72, 0x5f, 0x64, 0x61, 0x74, 0x61, 0x18, 0x02, 0x20, 0x01, 0x28,
 	0x0b, 0x32, 0x41, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x63, 0x6f, 0x6d,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x32, 0x2e, 0x63, 0x6f, 0x6d,
 	0x6d, 0x6f, 0x6e, 0x2e, 0x54, 0x68, 0x69, 0x72, 0x64, 0x50, 0x61, 0x72, 0x74, 0x79, 0x49, 0x6e,
 	0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x50, 0x61, 0x72, 0x74, 0x6e, 0x65, 0x72,
 	0x44, 0x61, 0x74, 0x61, 0x52, 0x1f, 0x62, 0x72, 0x61, 0x6e, 0x64, 0x4c, 0x69, 0x66, 0x74, 0x49,
@@ -978,7 +967,7 @@ var file_google_ads_googleads_v21_common_third_party_integration_partners_proto_
 	0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x70, 0x61, 0x72, 0x74, 0x6e, 0x65, 0x72,
 	0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x67, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
 	0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32,
-	0x31, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x54, 0x68, 0x69, 0x72, 0x64, 0x50, 0x61, 0x72,
+	0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x54, 0x68, 0x69, 0x72, 0x64, 0x50, 0x61, 0x72,
 	0x74, 0x79, 0x52, 0x65, 0x61, 0x63, 0x68, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69,
 	0x6f, 0x6e, 0x50, 0x61, 0x72, 0x74, 0x6e, 0x65, 0x72, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x54, 0x68,
 	0x69, 0x72, 0x64, 0x50, 0x61, 0x72, 0x74, 0x79, 0x52, 0x65, 0x61, 0x63, 0x68, 0x49, 0x6e, 0x74,
@@ -988,7 +977,7 @@ var file_google_ads_googleads_v21_common_third_party_integration_partners_proto_
 	0x63, 0x68, 0x5f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x70,
 	0x61, 0x72, 0x74, 0x6e, 0x65, 0x72, 0x5f, 0x64, 0x61, 0x74, 0x61, 0x18, 0x02, 0x20, 0x01, 0x28,
 	0x0b, 0x32, 0x41, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x63, 0x6f, 0x6d,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x32, 0x2e, 0x63, 0x6f, 0x6d,
 	0x6d, 0x6f, 0x6e, 0x2e, 0x54, 0x68, 0x69, 0x72, 0x64, 0x50, 0x61, 0x72, 0x74, 0x79, 0x49, 0x6e,
 	0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x50, 0x61, 0x72, 0x74, 0x6e, 0x65, 0x72,
 	0x44, 0x61, 0x74, 0x61, 0x52, 0x1b, 0x72, 0x65, 0x61, 0x63, 0x68, 0x49, 0x6e, 0x74, 0x65, 0x67,
@@ -1004,75 +993,75 @@ var file_google_ads_googleads_v21_common_third_party_integration_partners_proto_
 	0x01, 0x28, 0x09, 0x52, 0x15, 0x74, 0x68, 0x69, 0x72, 0x64, 0x50, 0x61, 0x72, 0x74, 0x79, 0x50,
 	0x6c, 0x61, 0x63, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x49, 0x64, 0x42, 0x82, 0x02, 0x0a, 0x23, 0x63,
 	0x6f, 0x6d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x6d,
+	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d,
 	0x6f, 0x6e, 0x42, 0x22, 0x54, 0x68, 0x69, 0x72, 0x64, 0x50, 0x61, 0x72, 0x74, 0x79, 0x49, 0x6e,
 	0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x50, 0x61, 0x72, 0x74, 0x6e, 0x65, 0x72,
 	0x73, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x45, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x67, 0x6f, 0x6c, 0x61, 0x6e, 0x67, 0x2e, 0x6f, 0x72, 0x67, 0x2f, 0x67, 0x65, 0x6e, 0x70,
 	0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x70, 0x69, 0x73, 0x2f,
 	0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32,
-	0x31, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x3b, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xa2,
+	0x32, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x3b, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xa2,
 	0x02, 0x03, 0x47, 0x41, 0x41, 0xaa, 0x02, 0x1f, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x41,
-	0x64, 0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e, 0x56, 0x32, 0x31,
+	0x64, 0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e, 0x56, 0x32, 0x32,
 	0x2e, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xca, 0x02, 0x1f, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x5c, 0x41, 0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56,
-	0x32, 0x31, 0x5c, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xea, 0x02, 0x23, 0x47, 0x6f, 0x6f, 0x67,
+	0x32, 0x32, 0x5c, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xea, 0x02, 0x23, 0x47, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x3a, 0x3a, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41,
-	0x64, 0x73, 0x3a, 0x3a, 0x56, 0x32, 0x31, 0x3a, 0x3a, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x62,
+	0x64, 0x73, 0x3a, 0x3a, 0x56, 0x32, 0x32, 0x3a, 0x3a, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x62,
 	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 })
 
 var (
-	file_google_ads_googleads_v21_common_third_party_integration_partners_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v21_common_third_party_integration_partners_proto_rawDescData []byte
+	file_google_ads_googleads_v22_common_third_party_integration_partners_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v22_common_third_party_integration_partners_proto_rawDescData []byte
 )
 
-func file_google_ads_googleads_v21_common_third_party_integration_partners_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v21_common_third_party_integration_partners_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v21_common_third_party_integration_partners_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v21_common_third_party_integration_partners_proto_rawDesc), len(file_google_ads_googleads_v21_common_third_party_integration_partners_proto_rawDesc)))
+func file_google_ads_googleads_v22_common_third_party_integration_partners_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v22_common_third_party_integration_partners_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v22_common_third_party_integration_partners_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v22_common_third_party_integration_partners_proto_rawDesc), len(file_google_ads_googleads_v22_common_third_party_integration_partners_proto_rawDesc)))
 	})
-	return file_google_ads_googleads_v21_common_third_party_integration_partners_proto_rawDescData
+	return file_google_ads_googleads_v22_common_third_party_integration_partners_proto_rawDescData
 }
 
-var file_google_ads_googleads_v21_common_third_party_integration_partners_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
-var file_google_ads_googleads_v21_common_third_party_integration_partners_proto_goTypes = []any{
-	(*CustomerThirdPartyIntegrationPartners)(nil),                                                  // 0: google.ads.googleads.v21.common.CustomerThirdPartyIntegrationPartners
-	(*CustomerThirdPartyViewabilityIntegrationPartner)(nil),                                        // 1: google.ads.googleads.v21.common.CustomerThirdPartyViewabilityIntegrationPartner
-	(*CustomerThirdPartyBrandSafetyIntegrationPartner)(nil),                                        // 2: google.ads.googleads.v21.common.CustomerThirdPartyBrandSafetyIntegrationPartner
-	(*CustomerThirdPartyBrandLiftIntegrationPartner)(nil),                                          // 3: google.ads.googleads.v21.common.CustomerThirdPartyBrandLiftIntegrationPartner
-	(*CustomerThirdPartyReachIntegrationPartner)(nil),                                              // 4: google.ads.googleads.v21.common.CustomerThirdPartyReachIntegrationPartner
-	(*CampaignThirdPartyIntegrationPartners)(nil),                                                  // 5: google.ads.googleads.v21.common.CampaignThirdPartyIntegrationPartners
-	(*CampaignThirdPartyViewabilityIntegrationPartner)(nil),                                        // 6: google.ads.googleads.v21.common.CampaignThirdPartyViewabilityIntegrationPartner
-	(*CampaignThirdPartyBrandSafetyIntegrationPartner)(nil),                                        // 7: google.ads.googleads.v21.common.CampaignThirdPartyBrandSafetyIntegrationPartner
-	(*CampaignThirdPartyBrandLiftIntegrationPartner)(nil),                                          // 8: google.ads.googleads.v21.common.CampaignThirdPartyBrandLiftIntegrationPartner
-	(*CampaignThirdPartyReachIntegrationPartner)(nil),                                              // 9: google.ads.googleads.v21.common.CampaignThirdPartyReachIntegrationPartner
-	(*ThirdPartyIntegrationPartnerData)(nil),                                                       // 10: google.ads.googleads.v21.common.ThirdPartyIntegrationPartnerData
-	(enums.ThirdPartyViewabilityIntegrationPartnerEnum_ThirdPartyViewabilityIntegrationPartner)(0), // 11: google.ads.googleads.v21.enums.ThirdPartyViewabilityIntegrationPartnerEnum.ThirdPartyViewabilityIntegrationPartner
-	(enums.ThirdPartyBrandSafetyIntegrationPartnerEnum_ThirdPartyBrandSafetyIntegrationPartner)(0), // 12: google.ads.googleads.v21.enums.ThirdPartyBrandSafetyIntegrationPartnerEnum.ThirdPartyBrandSafetyIntegrationPartner
-	(enums.ThirdPartyBrandLiftIntegrationPartnerEnum_ThirdPartyBrandLiftIntegrationPartner)(0),     // 13: google.ads.googleads.v21.enums.ThirdPartyBrandLiftIntegrationPartnerEnum.ThirdPartyBrandLiftIntegrationPartner
-	(enums.ThirdPartyReachIntegrationPartnerEnum_ThirdPartyReachIntegrationPartner)(0),             // 14: google.ads.googleads.v21.enums.ThirdPartyReachIntegrationPartnerEnum.ThirdPartyReachIntegrationPartner
+var file_google_ads_googleads_v22_common_third_party_integration_partners_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
+var file_google_ads_googleads_v22_common_third_party_integration_partners_proto_goTypes = []any{
+	(*CustomerThirdPartyIntegrationPartners)(nil),                                                  // 0: google.ads.googleads.v22.common.CustomerThirdPartyIntegrationPartners
+	(*CustomerThirdPartyViewabilityIntegrationPartner)(nil),                                        // 1: google.ads.googleads.v22.common.CustomerThirdPartyViewabilityIntegrationPartner
+	(*CustomerThirdPartyBrandSafetyIntegrationPartner)(nil),                                        // 2: google.ads.googleads.v22.common.CustomerThirdPartyBrandSafetyIntegrationPartner
+	(*CustomerThirdPartyBrandLiftIntegrationPartner)(nil),                                          // 3: google.ads.googleads.v22.common.CustomerThirdPartyBrandLiftIntegrationPartner
+	(*CustomerThirdPartyReachIntegrationPartner)(nil),                                              // 4: google.ads.googleads.v22.common.CustomerThirdPartyReachIntegrationPartner
+	(*CampaignThirdPartyIntegrationPartners)(nil),                                                  // 5: google.ads.googleads.v22.common.CampaignThirdPartyIntegrationPartners
+	(*CampaignThirdPartyViewabilityIntegrationPartner)(nil),                                        // 6: google.ads.googleads.v22.common.CampaignThirdPartyViewabilityIntegrationPartner
+	(*CampaignThirdPartyBrandSafetyIntegrationPartner)(nil),                                        // 7: google.ads.googleads.v22.common.CampaignThirdPartyBrandSafetyIntegrationPartner
+	(*CampaignThirdPartyBrandLiftIntegrationPartner)(nil),                                          // 8: google.ads.googleads.v22.common.CampaignThirdPartyBrandLiftIntegrationPartner
+	(*CampaignThirdPartyReachIntegrationPartner)(nil),                                              // 9: google.ads.googleads.v22.common.CampaignThirdPartyReachIntegrationPartner
+	(*ThirdPartyIntegrationPartnerData)(nil),                                                       // 10: google.ads.googleads.v22.common.ThirdPartyIntegrationPartnerData
+	(enums.ThirdPartyViewabilityIntegrationPartnerEnum_ThirdPartyViewabilityIntegrationPartner)(0), // 11: google.ads.googleads.v22.enums.ThirdPartyViewabilityIntegrationPartnerEnum.ThirdPartyViewabilityIntegrationPartner
+	(enums.ThirdPartyBrandSafetyIntegrationPartnerEnum_ThirdPartyBrandSafetyIntegrationPartner)(0), // 12: google.ads.googleads.v22.enums.ThirdPartyBrandSafetyIntegrationPartnerEnum.ThirdPartyBrandSafetyIntegrationPartner
+	(enums.ThirdPartyBrandLiftIntegrationPartnerEnum_ThirdPartyBrandLiftIntegrationPartner)(0),     // 13: google.ads.googleads.v22.enums.ThirdPartyBrandLiftIntegrationPartnerEnum.ThirdPartyBrandLiftIntegrationPartner
+	(enums.ThirdPartyReachIntegrationPartnerEnum_ThirdPartyReachIntegrationPartner)(0),             // 14: google.ads.googleads.v22.enums.ThirdPartyReachIntegrationPartnerEnum.ThirdPartyReachIntegrationPartner
 }
-var file_google_ads_googleads_v21_common_third_party_integration_partners_proto_depIdxs = []int32{
-	1,  // 0: google.ads.googleads.v21.common.CustomerThirdPartyIntegrationPartners.viewability_integration_partners:type_name -> google.ads.googleads.v21.common.CustomerThirdPartyViewabilityIntegrationPartner
-	3,  // 1: google.ads.googleads.v21.common.CustomerThirdPartyIntegrationPartners.brand_lift_integration_partners:type_name -> google.ads.googleads.v21.common.CustomerThirdPartyBrandLiftIntegrationPartner
-	2,  // 2: google.ads.googleads.v21.common.CustomerThirdPartyIntegrationPartners.brand_safety_integration_partners:type_name -> google.ads.googleads.v21.common.CustomerThirdPartyBrandSafetyIntegrationPartner
-	4,  // 3: google.ads.googleads.v21.common.CustomerThirdPartyIntegrationPartners.reach_integration_partners:type_name -> google.ads.googleads.v21.common.CustomerThirdPartyReachIntegrationPartner
-	11, // 4: google.ads.googleads.v21.common.CustomerThirdPartyViewabilityIntegrationPartner.viewability_integration_partner:type_name -> google.ads.googleads.v21.enums.ThirdPartyViewabilityIntegrationPartnerEnum.ThirdPartyViewabilityIntegrationPartner
-	12, // 5: google.ads.googleads.v21.common.CustomerThirdPartyBrandSafetyIntegrationPartner.brand_safety_integration_partner:type_name -> google.ads.googleads.v21.enums.ThirdPartyBrandSafetyIntegrationPartnerEnum.ThirdPartyBrandSafetyIntegrationPartner
-	13, // 6: google.ads.googleads.v21.common.CustomerThirdPartyBrandLiftIntegrationPartner.brand_lift_integration_partner:type_name -> google.ads.googleads.v21.enums.ThirdPartyBrandLiftIntegrationPartnerEnum.ThirdPartyBrandLiftIntegrationPartner
-	14, // 7: google.ads.googleads.v21.common.CustomerThirdPartyReachIntegrationPartner.reach_integration_partner:type_name -> google.ads.googleads.v21.enums.ThirdPartyReachIntegrationPartnerEnum.ThirdPartyReachIntegrationPartner
-	6,  // 8: google.ads.googleads.v21.common.CampaignThirdPartyIntegrationPartners.viewability_integration_partners:type_name -> google.ads.googleads.v21.common.CampaignThirdPartyViewabilityIntegrationPartner
-	8,  // 9: google.ads.googleads.v21.common.CampaignThirdPartyIntegrationPartners.brand_lift_integration_partners:type_name -> google.ads.googleads.v21.common.CampaignThirdPartyBrandLiftIntegrationPartner
-	7,  // 10: google.ads.googleads.v21.common.CampaignThirdPartyIntegrationPartners.brand_safety_integration_partners:type_name -> google.ads.googleads.v21.common.CampaignThirdPartyBrandSafetyIntegrationPartner
-	9,  // 11: google.ads.googleads.v21.common.CampaignThirdPartyIntegrationPartners.reach_integration_partners:type_name -> google.ads.googleads.v21.common.CampaignThirdPartyReachIntegrationPartner
-	11, // 12: google.ads.googleads.v21.common.CampaignThirdPartyViewabilityIntegrationPartner.viewability_integration_partner:type_name -> google.ads.googleads.v21.enums.ThirdPartyViewabilityIntegrationPartnerEnum.ThirdPartyViewabilityIntegrationPartner
-	10, // 13: google.ads.googleads.v21.common.CampaignThirdPartyViewabilityIntegrationPartner.viewability_integration_partner_data:type_name -> google.ads.googleads.v21.common.ThirdPartyIntegrationPartnerData
-	12, // 14: google.ads.googleads.v21.common.CampaignThirdPartyBrandSafetyIntegrationPartner.brand_safety_integration_partner:type_name -> google.ads.googleads.v21.enums.ThirdPartyBrandSafetyIntegrationPartnerEnum.ThirdPartyBrandSafetyIntegrationPartner
-	10, // 15: google.ads.googleads.v21.common.CampaignThirdPartyBrandSafetyIntegrationPartner.brand_safety_integration_partner_data:type_name -> google.ads.googleads.v21.common.ThirdPartyIntegrationPartnerData
-	13, // 16: google.ads.googleads.v21.common.CampaignThirdPartyBrandLiftIntegrationPartner.brand_lift_integration_partner:type_name -> google.ads.googleads.v21.enums.ThirdPartyBrandLiftIntegrationPartnerEnum.ThirdPartyBrandLiftIntegrationPartner
-	10, // 17: google.ads.googleads.v21.common.CampaignThirdPartyBrandLiftIntegrationPartner.brand_lift_integration_partner_data:type_name -> google.ads.googleads.v21.common.ThirdPartyIntegrationPartnerData
-	14, // 18: google.ads.googleads.v21.common.CampaignThirdPartyReachIntegrationPartner.reach_integration_partner:type_name -> google.ads.googleads.v21.enums.ThirdPartyReachIntegrationPartnerEnum.ThirdPartyReachIntegrationPartner
-	10, // 19: google.ads.googleads.v21.common.CampaignThirdPartyReachIntegrationPartner.reach_integration_partner_data:type_name -> google.ads.googleads.v21.common.ThirdPartyIntegrationPartnerData
+var file_google_ads_googleads_v22_common_third_party_integration_partners_proto_depIdxs = []int32{
+	1,  // 0: google.ads.googleads.v22.common.CustomerThirdPartyIntegrationPartners.viewability_integration_partners:type_name -> google.ads.googleads.v22.common.CustomerThirdPartyViewabilityIntegrationPartner
+	3,  // 1: google.ads.googleads.v22.common.CustomerThirdPartyIntegrationPartners.brand_lift_integration_partners:type_name -> google.ads.googleads.v22.common.CustomerThirdPartyBrandLiftIntegrationPartner
+	2,  // 2: google.ads.googleads.v22.common.CustomerThirdPartyIntegrationPartners.brand_safety_integration_partners:type_name -> google.ads.googleads.v22.common.CustomerThirdPartyBrandSafetyIntegrationPartner
+	4,  // 3: google.ads.googleads.v22.common.CustomerThirdPartyIntegrationPartners.reach_integration_partners:type_name -> google.ads.googleads.v22.common.CustomerThirdPartyReachIntegrationPartner
+	11, // 4: google.ads.googleads.v22.common.CustomerThirdPartyViewabilityIntegrationPartner.viewability_integration_partner:type_name -> google.ads.googleads.v22.enums.ThirdPartyViewabilityIntegrationPartnerEnum.ThirdPartyViewabilityIntegrationPartner
+	12, // 5: google.ads.googleads.v22.common.CustomerThirdPartyBrandSafetyIntegrationPartner.brand_safety_integration_partner:type_name -> google.ads.googleads.v22.enums.ThirdPartyBrandSafetyIntegrationPartnerEnum.ThirdPartyBrandSafetyIntegrationPartner
+	13, // 6: google.ads.googleads.v22.common.CustomerThirdPartyBrandLiftIntegrationPartner.brand_lift_integration_partner:type_name -> google.ads.googleads.v22.enums.ThirdPartyBrandLiftIntegrationPartnerEnum.ThirdPartyBrandLiftIntegrationPartner
+	14, // 7: google.ads.googleads.v22.common.CustomerThirdPartyReachIntegrationPartner.reach_integration_partner:type_name -> google.ads.googleads.v22.enums.ThirdPartyReachIntegrationPartnerEnum.ThirdPartyReachIntegrationPartner
+	6,  // 8: google.ads.googleads.v22.common.CampaignThirdPartyIntegrationPartners.viewability_integration_partners:type_name -> google.ads.googleads.v22.common.CampaignThirdPartyViewabilityIntegrationPartner
+	8,  // 9: google.ads.googleads.v22.common.CampaignThirdPartyIntegrationPartners.brand_lift_integration_partners:type_name -> google.ads.googleads.v22.common.CampaignThirdPartyBrandLiftIntegrationPartner
+	7,  // 10: google.ads.googleads.v22.common.CampaignThirdPartyIntegrationPartners.brand_safety_integration_partners:type_name -> google.ads.googleads.v22.common.CampaignThirdPartyBrandSafetyIntegrationPartner
+	9,  // 11: google.ads.googleads.v22.common.CampaignThirdPartyIntegrationPartners.reach_integration_partners:type_name -> google.ads.googleads.v22.common.CampaignThirdPartyReachIntegrationPartner
+	11, // 12: google.ads.googleads.v22.common.CampaignThirdPartyViewabilityIntegrationPartner.viewability_integration_partner:type_name -> google.ads.googleads.v22.enums.ThirdPartyViewabilityIntegrationPartnerEnum.ThirdPartyViewabilityIntegrationPartner
+	10, // 13: google.ads.googleads.v22.common.CampaignThirdPartyViewabilityIntegrationPartner.viewability_integration_partner_data:type_name -> google.ads.googleads.v22.common.ThirdPartyIntegrationPartnerData
+	12, // 14: google.ads.googleads.v22.common.CampaignThirdPartyBrandSafetyIntegrationPartner.brand_safety_integration_partner:type_name -> google.ads.googleads.v22.enums.ThirdPartyBrandSafetyIntegrationPartnerEnum.ThirdPartyBrandSafetyIntegrationPartner
+	10, // 15: google.ads.googleads.v22.common.CampaignThirdPartyBrandSafetyIntegrationPartner.brand_safety_integration_partner_data:type_name -> google.ads.googleads.v22.common.ThirdPartyIntegrationPartnerData
+	13, // 16: google.ads.googleads.v22.common.CampaignThirdPartyBrandLiftIntegrationPartner.brand_lift_integration_partner:type_name -> google.ads.googleads.v22.enums.ThirdPartyBrandLiftIntegrationPartnerEnum.ThirdPartyBrandLiftIntegrationPartner
+	10, // 17: google.ads.googleads.v22.common.CampaignThirdPartyBrandLiftIntegrationPartner.brand_lift_integration_partner_data:type_name -> google.ads.googleads.v22.common.ThirdPartyIntegrationPartnerData
+	14, // 18: google.ads.googleads.v22.common.CampaignThirdPartyReachIntegrationPartner.reach_integration_partner:type_name -> google.ads.googleads.v22.enums.ThirdPartyReachIntegrationPartnerEnum.ThirdPartyReachIntegrationPartner
+	10, // 19: google.ads.googleads.v22.common.CampaignThirdPartyReachIntegrationPartner.reach_integration_partner_data:type_name -> google.ads.googleads.v22.common.ThirdPartyIntegrationPartnerData
 	20, // [20:20] is the sub-list for method output_type
 	20, // [20:20] is the sub-list for method input_type
 	20, // [20:20] is the sub-list for extension type_name
@@ -1080,26 +1069,26 @@ var file_google_ads_googleads_v21_common_third_party_integration_partners_proto_
 	0,  // [0:20] is the sub-list for field type_name
 }
 
-func init() { file_google_ads_googleads_v21_common_third_party_integration_partners_proto_init() }
-func file_google_ads_googleads_v21_common_third_party_integration_partners_proto_init() {
-	if File_google_ads_googleads_v21_common_third_party_integration_partners_proto != nil {
+func init() { file_google_ads_googleads_v22_common_third_party_integration_partners_proto_init() }
+func file_google_ads_googleads_v22_common_third_party_integration_partners_proto_init() {
+	if File_google_ads_googleads_v22_common_third_party_integration_partners_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v21_common_third_party_integration_partners_proto_rawDesc), len(file_google_ads_googleads_v21_common_third_party_integration_partners_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v22_common_third_party_integration_partners_proto_rawDesc), len(file_google_ads_googleads_v22_common_third_party_integration_partners_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   11,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_google_ads_googleads_v21_common_third_party_integration_partners_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v21_common_third_party_integration_partners_proto_depIdxs,
-		MessageInfos:      file_google_ads_googleads_v21_common_third_party_integration_partners_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v22_common_third_party_integration_partners_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v22_common_third_party_integration_partners_proto_depIdxs,
+		MessageInfos:      file_google_ads_googleads_v22_common_third_party_integration_partners_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v21_common_third_party_integration_partners_proto = out.File
-	file_google_ads_googleads_v21_common_third_party_integration_partners_proto_goTypes = nil
-	file_google_ads_googleads_v21_common_third_party_integration_partners_proto_depIdxs = nil
+	File_google_ads_googleads_v22_common_third_party_integration_partners_proto = out.File
+	file_google_ads_googleads_v22_common_third_party_integration_partners_proto_goTypes = nil
+	file_google_ads_googleads_v22_common_third_party_integration_partners_proto_depIdxs = nil
 }
