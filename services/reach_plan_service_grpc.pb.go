@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v21/services/reach_plan_service.proto
+// source: google/ads/googleads/v22/services/reach_plan_service.proto
 
 package services
 
@@ -33,12 +33,12 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	ReachPlanService_GenerateConversionRates_FullMethodName    = "/google.ads.googleads.v21.services.ReachPlanService/GenerateConversionRates"
-	ReachPlanService_ListPlannableLocations_FullMethodName     = "/google.ads.googleads.v21.services.ReachPlanService/ListPlannableLocations"
-	ReachPlanService_ListPlannableProducts_FullMethodName      = "/google.ads.googleads.v21.services.ReachPlanService/ListPlannableProducts"
-	ReachPlanService_GenerateReachForecast_FullMethodName      = "/google.ads.googleads.v21.services.ReachPlanService/GenerateReachForecast"
-	ReachPlanService_ListPlannableUserLists_FullMethodName     = "/google.ads.googleads.v21.services.ReachPlanService/ListPlannableUserLists"
-	ReachPlanService_ListPlannableUserInterests_FullMethodName = "/google.ads.googleads.v21.services.ReachPlanService/ListPlannableUserInterests"
+	ReachPlanService_GenerateConversionRates_FullMethodName    = "/google.ads.googleads.v22.services.ReachPlanService/GenerateConversionRates"
+	ReachPlanService_ListPlannableLocations_FullMethodName     = "/google.ads.googleads.v22.services.ReachPlanService/ListPlannableLocations"
+	ReachPlanService_ListPlannableProducts_FullMethodName      = "/google.ads.googleads.v22.services.ReachPlanService/ListPlannableProducts"
+	ReachPlanService_GenerateReachForecast_FullMethodName      = "/google.ads.googleads.v22.services.ReachPlanService/GenerateReachForecast"
+	ReachPlanService_ListPlannableUserLists_FullMethodName     = "/google.ads.googleads.v22.services.ReachPlanService/ListPlannableUserLists"
+	ReachPlanService_ListPlannableUserInterests_FullMethodName = "/google.ads.googleads.v22.services.ReachPlanService/ListPlannableUserInterests"
 )
 
 // ReachPlanServiceClient is the client API for ReachPlanService service.
@@ -121,7 +121,7 @@ type ReachPlanServiceClient interface {
 	// Returns the list of plannable user interests.
 	// A plannable user interest is one that can be targeted in a reach forecast
 	// using
-	// [ReachPlanService.GenerateReachForecast][google.ads.googleads.v21.services.ReachPlanService.GenerateReachForecast].
+	// [ReachPlanService.GenerateReachForecast][google.ads.googleads.v22.services.ReachPlanService.GenerateReachForecast].
 	//
 	// List of thrown errors:
 	//
@@ -285,7 +285,7 @@ type ReachPlanServiceServer interface {
 	// Returns the list of plannable user interests.
 	// A plannable user interest is one that can be targeted in a reach forecast
 	// using
-	// [ReachPlanService.GenerateReachForecast][google.ads.googleads.v21.services.ReachPlanService.GenerateReachForecast].
+	// [ReachPlanService.GenerateReachForecast][google.ads.googleads.v22.services.ReachPlanService.GenerateReachForecast].
 	//
 	// List of thrown errors:
 	//
@@ -460,7 +460,7 @@ func _ReachPlanService_ListPlannableUserInterests_Handler(srv interface{}, ctx c
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ReachPlanService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v21.services.ReachPlanService",
+	ServiceName: "google.ads.googleads.v22.services.ReachPlanService",
 	HandlerType: (*ReachPlanServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -489,5 +489,5 @@ var ReachPlanService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v21/services/reach_plan_service.proto",
+	Metadata: "google/ads/googleads/v22/services/reach_plan_service.proto",
 }
