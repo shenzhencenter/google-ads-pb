@@ -20,10 +20,10 @@ Although this project isn't official, we deem it as low-risk due to its maturity
 
 | google-ads-pb      | Google Ads API   | Sunset date                  |
 | ------------------ | ---------------- | ---------------------------- |
-| v1.21.0            | v21              |                              |
+| v1.22.0            | v22              | October 2026 (tentative)     |
+| v1.21.0            | v21              | August 2026 (tentative)      |
 | v1.20.0            | v20              | June 2026 (tentative)        |
 | v1.19.0            | v19              | February 2026 (tentative)    |
-| v1.18.0            | v18              | August 20, 2025              |
 
 ## Requirements
 
@@ -98,7 +98,7 @@ var (
     accessToken    = os.Getenv("ACCESS_TOKEN")
 )
 
-var endpoint = fmt.Sprintf("https://googleads.googleapis.com/v18/customers/%s/googleAds:search", customerID)
+var endpoint = fmt.Sprintf("https://googleads.googleapis.com/v22/customers/%s/googleAds:search", customerID)
 req := services.SearchGoogleAdsRequest{
     Query: "SELECT user_list.name, user_list.resource_name FROM user_list",
 }
