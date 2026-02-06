@@ -1,4 +1,4 @@
-// Copyright 2025 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v22/services/offline_user_data_job_service.proto
+// source: google/ads/googleads/v23/services/offline_user_data_job_service.proto
 
 package services
 
@@ -34,9 +34,9 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	OfflineUserDataJobService_CreateOfflineUserDataJob_FullMethodName        = "/google.ads.googleads.v22.services.OfflineUserDataJobService/CreateOfflineUserDataJob"
-	OfflineUserDataJobService_AddOfflineUserDataJobOperations_FullMethodName = "/google.ads.googleads.v22.services.OfflineUserDataJobService/AddOfflineUserDataJobOperations"
-	OfflineUserDataJobService_RunOfflineUserDataJob_FullMethodName           = "/google.ads.googleads.v22.services.OfflineUserDataJobService/RunOfflineUserDataJob"
+	OfflineUserDataJobService_CreateOfflineUserDataJob_FullMethodName        = "/google.ads.googleads.v23.services.OfflineUserDataJobService/CreateOfflineUserDataJob"
+	OfflineUserDataJobService_AddOfflineUserDataJobOperations_FullMethodName = "/google.ads.googleads.v23.services.OfflineUserDataJobService/AddOfflineUserDataJobOperations"
+	OfflineUserDataJobService_RunOfflineUserDataJob_FullMethodName           = "/google.ads.googleads.v23.services.OfflineUserDataJobService/RunOfflineUserDataJob"
 )
 
 // OfflineUserDataJobServiceClient is the client API for OfflineUserDataJobService service.
@@ -282,7 +282,7 @@ func _OfflineUserDataJobService_RunOfflineUserDataJob_Handler(srv interface{}, c
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var OfflineUserDataJobService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v22.services.OfflineUserDataJobService",
+	ServiceName: "google.ads.googleads.v23.services.OfflineUserDataJobService",
 	HandlerType: (*OfflineUserDataJobServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -299,5 +299,5 @@ var OfflineUserDataJobService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v22/services/offline_user_data_job_service.proto",
+	Metadata: "google/ads/googleads/v23/services/offline_user_data_job_service.proto",
 }

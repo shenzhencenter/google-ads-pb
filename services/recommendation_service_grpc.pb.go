@@ -1,4 +1,4 @@
-// Copyright 2025 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v22/services/recommendation_service.proto
+// source: google/ads/googleads/v23/services/recommendation_service.proto
 
 package services
 
@@ -33,9 +33,9 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	RecommendationService_ApplyRecommendation_FullMethodName     = "/google.ads.googleads.v22.services.RecommendationService/ApplyRecommendation"
-	RecommendationService_DismissRecommendation_FullMethodName   = "/google.ads.googleads.v22.services.RecommendationService/DismissRecommendation"
-	RecommendationService_GenerateRecommendations_FullMethodName = "/google.ads.googleads.v22.services.RecommendationService/GenerateRecommendations"
+	RecommendationService_ApplyRecommendation_FullMethodName     = "/google.ads.googleads.v23.services.RecommendationService/ApplyRecommendation"
+	RecommendationService_DismissRecommendation_FullMethodName   = "/google.ads.googleads.v23.services.RecommendationService/DismissRecommendation"
+	RecommendationService_GenerateRecommendations_FullMethodName = "/google.ads.googleads.v23.services.RecommendationService/GenerateRecommendations"
 )
 
 // RecommendationServiceClient is the client API for RecommendationService service.
@@ -268,7 +268,7 @@ func _RecommendationService_GenerateRecommendations_Handler(srv interface{}, ctx
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var RecommendationService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v22.services.RecommendationService",
+	ServiceName: "google.ads.googleads.v23.services.RecommendationService",
 	HandlerType: (*RecommendationServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -285,5 +285,5 @@ var RecommendationService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v22/services/recommendation_service.proto",
+	Metadata: "google/ads/googleads/v23/services/recommendation_service.proto",
 }

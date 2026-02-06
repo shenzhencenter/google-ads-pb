@@ -1,4 +1,4 @@
-// Copyright 2025 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.36.5
 // 	protoc        v4.24.4
-// source: google/ads/googleads/v22/services/asset_generation_service.proto
+// source: google/ads/googleads/v23/services/asset_generation_service.proto
 
 package services
 
@@ -38,14 +38,14 @@ const (
 )
 
 // Request message for
-// [AssetGenerationService.GenerateText][google.ads.googleads.v22.services.AssetGenerationService.GenerateText]
+// [AssetGenerationService.GenerateText][google.ads.googleads.v23.services.AssetGenerationService.GenerateText]
 type GenerateTextRequest struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Required. The ID of the customer to generate assets for. Required.
 	CustomerId string `protobuf:"bytes,1,opt,name=customer_id,json=customerId,proto3" json:"customer_id,omitempty"`
 	// Required. Which field types text is being generated for. Supported values
 	// are: HEADLINE, LONG_HEADLINE, DESCRIPTION. Required.
-	AssetFieldTypes []enums.AssetFieldTypeEnum_AssetFieldType `protobuf:"varint,2,rep,packed,name=asset_field_types,json=assetFieldTypes,proto3,enum=google.ads.googleads.v22.enums.AssetFieldTypeEnum_AssetFieldType" json:"asset_field_types,omitempty"`
+	AssetFieldTypes []enums.AssetFieldTypeEnum_AssetFieldType `protobuf:"varint,2,rep,packed,name=asset_field_types,json=assetFieldTypes,proto3,enum=google.ads.googleads.v23.enums.AssetFieldTypeEnum_AssetFieldType" json:"asset_field_types,omitempty"`
 	// Optional. Final url to use as a source for generating assets.
 	// Required if existing_generation_context is not provided
 	// or does not have a final url associated with it.
@@ -69,7 +69,7 @@ type GenerateTextRequest struct {
 
 func (x *GenerateTextRequest) Reset() {
 	*x = GenerateTextRequest{}
-	mi := &file_google_ads_googleads_v22_services_asset_generation_service_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v23_services_asset_generation_service_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -81,7 +81,7 @@ func (x *GenerateTextRequest) String() string {
 func (*GenerateTextRequest) ProtoMessage() {}
 
 func (x *GenerateTextRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v22_services_asset_generation_service_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v23_services_asset_generation_service_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -94,7 +94,7 @@ func (x *GenerateTextRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GenerateTextRequest.ProtoReflect.Descriptor instead.
 func (*GenerateTextRequest) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v22_services_asset_generation_service_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v23_services_asset_generation_service_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *GenerateTextRequest) GetCustomerId() string {
@@ -173,7 +173,7 @@ type GenerateTextRequest_AdvertisingChannelType struct {
 	//
 	// Supported channel types:
 	// SEARCH, PERFORMANCE_MAX, DISPLAY, and DEMAND_GEN
-	AdvertisingChannelType enums.AdvertisingChannelTypeEnum_AdvertisingChannelType `protobuf:"varint,4,opt,name=advertising_channel_type,json=advertisingChannelType,proto3,enum=google.ads.googleads.v22.enums.AdvertisingChannelTypeEnum_AdvertisingChannelType,oneof"`
+	AdvertisingChannelType enums.AdvertisingChannelTypeEnum_AdvertisingChannelType `protobuf:"varint,4,opt,name=advertising_channel_type,json=advertisingChannelType,proto3,enum=google.ads.googleads.v23.enums.AdvertisingChannelTypeEnum_AdvertisingChannelType,oneof"`
 }
 
 func (*GenerateTextRequest_ExistingGenerationContext) isGenerateTextRequest_Context() {}
@@ -181,7 +181,7 @@ func (*GenerateTextRequest_ExistingGenerationContext) isGenerateTextRequest_Cont
 func (*GenerateTextRequest_AdvertisingChannelType) isGenerateTextRequest_Context() {}
 
 // Response message for
-// [AssetGenerationService.GenerateText][google.ads.googleads.v22.services.AssetGenerationService.GenerateText]
+// [AssetGenerationService.GenerateText][google.ads.googleads.v23.services.AssetGenerationService.GenerateText]
 type GenerateTextResponse struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// List of text that was generated and the field type to use it as.
@@ -192,7 +192,7 @@ type GenerateTextResponse struct {
 
 func (x *GenerateTextResponse) Reset() {
 	*x = GenerateTextResponse{}
-	mi := &file_google_ads_googleads_v22_services_asset_generation_service_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v23_services_asset_generation_service_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -204,7 +204,7 @@ func (x *GenerateTextResponse) String() string {
 func (*GenerateTextResponse) ProtoMessage() {}
 
 func (x *GenerateTextResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v22_services_asset_generation_service_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v23_services_asset_generation_service_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -217,7 +217,7 @@ func (x *GenerateTextResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GenerateTextResponse.ProtoReflect.Descriptor instead.
 func (*GenerateTextResponse) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v22_services_asset_generation_service_proto_rawDescGZIP(), []int{1}
+	return file_google_ads_googleads_v23_services_asset_generation_service_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *GenerateTextResponse) GetGeneratedText() []*GeneratedText {
@@ -233,14 +233,14 @@ type GeneratedText struct {
 	// A string of text that was generated.
 	Text string `protobuf:"bytes,1,opt,name=text,proto3" json:"text,omitempty"`
 	// The type of asset this text is intended to be used as.
-	AssetFieldType enums.AssetFieldTypeEnum_AssetFieldType `protobuf:"varint,2,opt,name=asset_field_type,json=assetFieldType,proto3,enum=google.ads.googleads.v22.enums.AssetFieldTypeEnum_AssetFieldType" json:"asset_field_type,omitempty"`
+	AssetFieldType enums.AssetFieldTypeEnum_AssetFieldType `protobuf:"varint,2,opt,name=asset_field_type,json=assetFieldType,proto3,enum=google.ads.googleads.v23.enums.AssetFieldTypeEnum_AssetFieldType" json:"asset_field_type,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
 
 func (x *GeneratedText) Reset() {
 	*x = GeneratedText{}
-	mi := &file_google_ads_googleads_v22_services_asset_generation_service_proto_msgTypes[2]
+	mi := &file_google_ads_googleads_v23_services_asset_generation_service_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -252,7 +252,7 @@ func (x *GeneratedText) String() string {
 func (*GeneratedText) ProtoMessage() {}
 
 func (x *GeneratedText) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v22_services_asset_generation_service_proto_msgTypes[2]
+	mi := &file_google_ads_googleads_v23_services_asset_generation_service_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -265,7 +265,7 @@ func (x *GeneratedText) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GeneratedText.ProtoReflect.Descriptor instead.
 func (*GeneratedText) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v22_services_asset_generation_service_proto_rawDescGZIP(), []int{2}
+	return file_google_ads_googleads_v23_services_asset_generation_service_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *GeneratedText) GetText() string {
@@ -283,7 +283,7 @@ func (x *GeneratedText) GetAssetFieldType() enums.AssetFieldTypeEnum_AssetFieldT
 }
 
 // Request message for
-// [AssetGenerationService.GenerateImages][google.ads.googleads.v22.services.AssetGenerationService.GenerateImages]
+// [AssetGenerationService.GenerateImages][google.ads.googleads.v23.services.AssetGenerationService.GenerateImages]
 type GenerateImagesRequest struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Required. The ID of the customer for whom the images are being generated.
@@ -295,7 +295,7 @@ type GenerateImagesRequest struct {
 	// compatible with the `advertising_channel_type` or
 	// `existing_generation_context` (whichever is set). If no field types are
 	// provided, images will be generated for all compatible field types.
-	AssetFieldTypes []enums.AssetFieldTypeEnum_AssetFieldType `protobuf:"varint,4,rep,packed,name=asset_field_types,json=assetFieldTypes,proto3,enum=google.ads.googleads.v22.enums.AssetFieldTypeEnum_AssetFieldType" json:"asset_field_types,omitempty"`
+	AssetFieldTypes []enums.AssetFieldTypeEnum_AssetFieldType `protobuf:"varint,4,rep,packed,name=asset_field_types,json=assetFieldTypes,proto3,enum=google.ads.googleads.v23.enums.AssetFieldTypeEnum_AssetFieldType" json:"asset_field_types,omitempty"`
 	// Additional context to guide image generation.
 	//
 	// Types that are valid to be assigned to Context:
@@ -316,7 +316,7 @@ type GenerateImagesRequest struct {
 
 func (x *GenerateImagesRequest) Reset() {
 	*x = GenerateImagesRequest{}
-	mi := &file_google_ads_googleads_v22_services_asset_generation_service_proto_msgTypes[3]
+	mi := &file_google_ads_googleads_v23_services_asset_generation_service_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -328,7 +328,7 @@ func (x *GenerateImagesRequest) String() string {
 func (*GenerateImagesRequest) ProtoMessage() {}
 
 func (x *GenerateImagesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v22_services_asset_generation_service_proto_msgTypes[3]
+	mi := &file_google_ads_googleads_v23_services_asset_generation_service_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -341,7 +341,7 @@ func (x *GenerateImagesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GenerateImagesRequest.ProtoReflect.Descriptor instead.
 func (*GenerateImagesRequest) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v22_services_asset_generation_service_proto_rawDescGZIP(), []int{3}
+	return file_google_ads_googleads_v23_services_asset_generation_service_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *GenerateImagesRequest) GetCustomerId() string {
@@ -417,7 +417,7 @@ type GenerateImagesRequest_AdvertisingChannelType struct {
 	// generated. This field is required if `existing_generation_context` is not
 	// provided. Supported channel types include SEARCH, PERFORMANCE_MAX,
 	// DISPLAY, and DEMAND_GEN.
-	AdvertisingChannelType enums.AdvertisingChannelTypeEnum_AdvertisingChannelType `protobuf:"varint,2,opt,name=advertising_channel_type,json=advertisingChannelType,proto3,enum=google.ads.googleads.v22.enums.AdvertisingChannelTypeEnum_AdvertisingChannelType,oneof"`
+	AdvertisingChannelType enums.AdvertisingChannelTypeEnum_AdvertisingChannelType `protobuf:"varint,2,opt,name=advertising_channel_type,json=advertisingChannelType,proto3,enum=google.ads.googleads.v23.enums.AdvertisingChannelTypeEnum_AdvertisingChannelType,oneof"`
 }
 
 func (*GenerateImagesRequest_AdvertisingChannelType) isGenerateImagesRequest_Context() {}
@@ -459,7 +459,7 @@ type FinalUrlImageGenerationInput struct {
 
 func (x *FinalUrlImageGenerationInput) Reset() {
 	*x = FinalUrlImageGenerationInput{}
-	mi := &file_google_ads_googleads_v22_services_asset_generation_service_proto_msgTypes[4]
+	mi := &file_google_ads_googleads_v23_services_asset_generation_service_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -471,7 +471,7 @@ func (x *FinalUrlImageGenerationInput) String() string {
 func (*FinalUrlImageGenerationInput) ProtoMessage() {}
 
 func (x *FinalUrlImageGenerationInput) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v22_services_asset_generation_service_proto_msgTypes[4]
+	mi := &file_google_ads_googleads_v23_services_asset_generation_service_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -484,7 +484,7 @@ func (x *FinalUrlImageGenerationInput) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FinalUrlImageGenerationInput.ProtoReflect.Descriptor instead.
 func (*FinalUrlImageGenerationInput) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v22_services_asset_generation_service_proto_rawDescGZIP(), []int{4}
+	return file_google_ads_googleads_v23_services_asset_generation_service_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *FinalUrlImageGenerationInput) GetFinalUrl() string {
@@ -506,7 +506,7 @@ type FreeformImageGenerationInput struct {
 
 func (x *FreeformImageGenerationInput) Reset() {
 	*x = FreeformImageGenerationInput{}
-	mi := &file_google_ads_googleads_v22_services_asset_generation_service_proto_msgTypes[5]
+	mi := &file_google_ads_googleads_v23_services_asset_generation_service_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -518,7 +518,7 @@ func (x *FreeformImageGenerationInput) String() string {
 func (*FreeformImageGenerationInput) ProtoMessage() {}
 
 func (x *FreeformImageGenerationInput) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v22_services_asset_generation_service_proto_msgTypes[5]
+	mi := &file_google_ads_googleads_v23_services_asset_generation_service_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -531,7 +531,7 @@ func (x *FreeformImageGenerationInput) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FreeformImageGenerationInput.ProtoReflect.Descriptor instead.
 func (*FreeformImageGenerationInput) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v22_services_asset_generation_service_proto_rawDescGZIP(), []int{5}
+	return file_google_ads_googleads_v23_services_asset_generation_service_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *FreeformImageGenerationInput) GetFreeformPrompt() string {
@@ -556,7 +556,7 @@ type ProductRecontextGenerationImageInput struct {
 
 func (x *ProductRecontextGenerationImageInput) Reset() {
 	*x = ProductRecontextGenerationImageInput{}
-	mi := &file_google_ads_googleads_v22_services_asset_generation_service_proto_msgTypes[6]
+	mi := &file_google_ads_googleads_v23_services_asset_generation_service_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -568,7 +568,7 @@ func (x *ProductRecontextGenerationImageInput) String() string {
 func (*ProductRecontextGenerationImageInput) ProtoMessage() {}
 
 func (x *ProductRecontextGenerationImageInput) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v22_services_asset_generation_service_proto_msgTypes[6]
+	mi := &file_google_ads_googleads_v23_services_asset_generation_service_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -581,7 +581,7 @@ func (x *ProductRecontextGenerationImageInput) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use ProductRecontextGenerationImageInput.ProtoReflect.Descriptor instead.
 func (*ProductRecontextGenerationImageInput) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v22_services_asset_generation_service_proto_rawDescGZIP(), []int{6}
+	return file_google_ads_googleads_v23_services_asset_generation_service_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *ProductRecontextGenerationImageInput) GetPrompt() string {
@@ -599,7 +599,7 @@ func (x *ProductRecontextGenerationImageInput) GetSourceImages() []*SourceImage 
 }
 
 // Response message for
-// [AssetGenerationService.GenerateImages][google.ads.googleads.v22.services.AssetGenerationService.GenerateImages]
+// [AssetGenerationService.GenerateImages][google.ads.googleads.v23.services.AssetGenerationService.GenerateImages]
 type GenerateImagesResponse struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Successfully generated images.
@@ -610,7 +610,7 @@ type GenerateImagesResponse struct {
 
 func (x *GenerateImagesResponse) Reset() {
 	*x = GenerateImagesResponse{}
-	mi := &file_google_ads_googleads_v22_services_asset_generation_service_proto_msgTypes[7]
+	mi := &file_google_ads_googleads_v23_services_asset_generation_service_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -622,7 +622,7 @@ func (x *GenerateImagesResponse) String() string {
 func (*GenerateImagesResponse) ProtoMessage() {}
 
 func (x *GenerateImagesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v22_services_asset_generation_service_proto_msgTypes[7]
+	mi := &file_google_ads_googleads_v23_services_asset_generation_service_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -635,7 +635,7 @@ func (x *GenerateImagesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GenerateImagesResponse.ProtoReflect.Descriptor instead.
 func (*GenerateImagesResponse) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v22_services_asset_generation_service_proto_rawDescGZIP(), []int{7}
+	return file_google_ads_googleads_v23_services_asset_generation_service_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GenerateImagesResponse) GetGeneratedImages() []*GeneratedImage {
@@ -660,7 +660,7 @@ type SourceImage struct {
 
 func (x *SourceImage) Reset() {
 	*x = SourceImage{}
-	mi := &file_google_ads_googleads_v22_services_asset_generation_service_proto_msgTypes[8]
+	mi := &file_google_ads_googleads_v23_services_asset_generation_service_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -672,7 +672,7 @@ func (x *SourceImage) String() string {
 func (*SourceImage) ProtoMessage() {}
 
 func (x *SourceImage) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v22_services_asset_generation_service_proto_msgTypes[8]
+	mi := &file_google_ads_googleads_v23_services_asset_generation_service_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -685,7 +685,7 @@ func (x *SourceImage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SourceImage.ProtoReflect.Descriptor instead.
 func (*SourceImage) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v22_services_asset_generation_service_proto_rawDescGZIP(), []int{8}
+	return file_google_ads_googleads_v23_services_asset_generation_service_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *SourceImage) GetImage() isSourceImage_Image {
@@ -721,14 +721,14 @@ type GeneratedImage struct {
 	// A temporary URL for the generated image.
 	ImageTemporaryUrl string `protobuf:"bytes,1,opt,name=image_temporary_url,json=imageTemporaryUrl,proto3" json:"image_temporary_url,omitempty"`
 	// The intended field type for this generated image.
-	AssetFieldType enums.AssetFieldTypeEnum_AssetFieldType `protobuf:"varint,2,opt,name=asset_field_type,json=assetFieldType,proto3,enum=google.ads.googleads.v22.enums.AssetFieldTypeEnum_AssetFieldType" json:"asset_field_type,omitempty"`
+	AssetFieldType enums.AssetFieldTypeEnum_AssetFieldType `protobuf:"varint,2,opt,name=asset_field_type,json=assetFieldType,proto3,enum=google.ads.googleads.v23.enums.AssetFieldTypeEnum_AssetFieldType" json:"asset_field_type,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
 
 func (x *GeneratedImage) Reset() {
 	*x = GeneratedImage{}
-	mi := &file_google_ads_googleads_v22_services_asset_generation_service_proto_msgTypes[9]
+	mi := &file_google_ads_googleads_v23_services_asset_generation_service_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -740,7 +740,7 @@ func (x *GeneratedImage) String() string {
 func (*GeneratedImage) ProtoMessage() {}
 
 func (x *GeneratedImage) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v22_services_asset_generation_service_proto_msgTypes[9]
+	mi := &file_google_ads_googleads_v23_services_asset_generation_service_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -753,7 +753,7 @@ func (x *GeneratedImage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GeneratedImage.ProtoReflect.Descriptor instead.
 func (*GeneratedImage) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v22_services_asset_generation_service_proto_rawDescGZIP(), []int{9}
+	return file_google_ads_googleads_v23_services_asset_generation_service_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *GeneratedImage) GetImageTemporaryUrl() string {
@@ -787,7 +787,7 @@ type AssetGenerationExistingContext struct {
 
 func (x *AssetGenerationExistingContext) Reset() {
 	*x = AssetGenerationExistingContext{}
-	mi := &file_google_ads_googleads_v22_services_asset_generation_service_proto_msgTypes[10]
+	mi := &file_google_ads_googleads_v23_services_asset_generation_service_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -799,7 +799,7 @@ func (x *AssetGenerationExistingContext) String() string {
 func (*AssetGenerationExistingContext) ProtoMessage() {}
 
 func (x *AssetGenerationExistingContext) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v22_services_asset_generation_service_proto_msgTypes[10]
+	mi := &file_google_ads_googleads_v23_services_asset_generation_service_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -812,7 +812,7 @@ func (x *AssetGenerationExistingContext) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AssetGenerationExistingContext.ProtoReflect.Descriptor instead.
 func (*AssetGenerationExistingContext) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v22_services_asset_generation_service_proto_rawDescGZIP(), []int{10}
+	return file_google_ads_googleads_v23_services_asset_generation_service_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *AssetGenerationExistingContext) GetExistingContext() isAssetGenerationExistingContext_ExistingContext {
@@ -862,21 +862,21 @@ func (*AssetGenerationExistingContext_ExistingAssetGroup) isAssetGenerationExist
 func (*AssetGenerationExistingContext_ExistingAdGroupAd) isAssetGenerationExistingContext_ExistingContext() {
 }
 
-var File_google_ads_googleads_v22_services_asset_generation_service_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v23_services_asset_generation_service_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v22_services_asset_generation_service_proto_rawDesc = string([]byte{
+var file_google_ads_googleads_v23_services_asset_generation_service_proto_rawDesc = string([]byte{
 	0x0a, 0x40, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x32, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x33, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69,
 	0x63, 0x65, 0x73, 0x2f, 0x61, 0x73, 0x73, 0x65, 0x74, 0x5f, 0x67, 0x65, 0x6e, 0x65, 0x72, 0x61,
 	0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x70, 0x72, 0x6f,
 	0x74, 0x6f, 0x12, 0x21, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x32, 0x2e, 0x73, 0x65, 0x72,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e, 0x73, 0x65, 0x72,
 	0x76, 0x69, 0x63, 0x65, 0x73, 0x1a, 0x3d, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64,
-	0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x32, 0x2f,
+	0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x33, 0x2f,
 	0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x61, 0x64, 0x76, 0x65, 0x72, 0x74, 0x69, 0x73, 0x69, 0x6e,
 	0x67, 0x5f, 0x63, 0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x2e, 0x70,
 	0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x35, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73,
-	0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x32, 0x2f, 0x65,
+	0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x33, 0x2f, 0x65,
 	0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x61, 0x73, 0x73, 0x65, 0x74, 0x5f, 0x66, 0x69, 0x65, 0x6c, 0x64,
 	0x5f, 0x74, 0x79, 0x70, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x1c, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x6e, 0x6e, 0x6f, 0x74, 0x61, 0x74, 0x69,
@@ -893,7 +893,7 @@ var file_google_ads_googleads_v22_services_asset_generation_service_proto_rawDes
 	0x61, 0x73, 0x73, 0x65, 0x74, 0x5f, 0x66, 0x69, 0x65, 0x6c, 0x64, 0x5f, 0x74, 0x79, 0x70, 0x65,
 	0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0e, 0x32, 0x41, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76,
-	0x32, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x41, 0x73, 0x73, 0x65, 0x74, 0x46, 0x69,
+	0x32, 0x33, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x41, 0x73, 0x73, 0x65, 0x74, 0x46, 0x69,
 	0x65, 0x6c, 0x64, 0x54, 0x79, 0x70, 0x65, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x41, 0x73, 0x73, 0x65,
 	0x74, 0x46, 0x69, 0x65, 0x6c, 0x64, 0x54, 0x79, 0x70, 0x65, 0x42, 0x03, 0xe0, 0x41, 0x02, 0x52,
 	0x0f, 0x61, 0x73, 0x73, 0x65, 0x74, 0x46, 0x69, 0x65, 0x6c, 0x64, 0x54, 0x79, 0x70, 0x65, 0x73,
@@ -908,7 +908,7 @@ var file_google_ads_googleads_v22_services_asset_generation_service_proto_rawDes
 	0x65, 0x6e, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x63, 0x6f, 0x6e, 0x74, 0x65, 0x78,
 	0x74, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x41, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76,
-	0x32, 0x32, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x41, 0x73, 0x73, 0x65,
+	0x32, 0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x41, 0x73, 0x73, 0x65,
 	0x74, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x45, 0x78, 0x69, 0x73, 0x74,
 	0x69, 0x6e, 0x67, 0x43, 0x6f, 0x6e, 0x74, 0x65, 0x78, 0x74, 0x42, 0x03, 0xe0, 0x41, 0x01, 0x48,
 	0x00, 0x52, 0x19, 0x65, 0x78, 0x69, 0x73, 0x74, 0x69, 0x6e, 0x67, 0x47, 0x65, 0x6e, 0x65, 0x72,
@@ -916,7 +916,7 @@ var file_google_ads_googleads_v22_services_asset_generation_service_proto_rawDes
 	0x18, 0x61, 0x64, 0x76, 0x65, 0x72, 0x74, 0x69, 0x73, 0x69, 0x6e, 0x67, 0x5f, 0x63, 0x68, 0x61,
 	0x6e, 0x6e, 0x65, 0x6c, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0e, 0x32,
 	0x51, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73,
 	0x2e, 0x41, 0x64, 0x76, 0x65, 0x72, 0x74, 0x69, 0x73, 0x69, 0x6e, 0x67, 0x43, 0x68, 0x61, 0x6e,
 	0x6e, 0x65, 0x6c, 0x54, 0x79, 0x70, 0x65, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x41, 0x64, 0x76, 0x65,
 	0x72, 0x74, 0x69, 0x73, 0x69, 0x6e, 0x67, 0x43, 0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x54, 0x79,
@@ -927,7 +927,7 @@ var file_google_ads_googleads_v22_services_asset_generation_service_proto_rawDes
 	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x57, 0x0a, 0x0e, 0x67, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x74, 0x65,
 	0x64, 0x5f, 0x74, 0x65, 0x78, 0x74, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x30, 0x2e, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x32, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73,
+	0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73,
 	0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x74, 0x65, 0x64, 0x54, 0x65, 0x78, 0x74, 0x52, 0x0d,
 	0x67, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x74, 0x65, 0x64, 0x54, 0x65, 0x78, 0x74, 0x22, 0x90, 0x01,
 	0x0a, 0x0d, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x74, 0x65, 0x64, 0x54, 0x65, 0x78, 0x74, 0x12,
@@ -935,7 +935,7 @@ var file_google_ads_googleads_v22_services_asset_generation_service_proto_rawDes
 	0x65, 0x78, 0x74, 0x12, 0x6b, 0x0a, 0x10, 0x61, 0x73, 0x73, 0x65, 0x74, 0x5f, 0x66, 0x69, 0x65,
 	0x6c, 0x64, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x41, 0x2e,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x41,
+	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x41,
 	0x73, 0x73, 0x65, 0x74, 0x46, 0x69, 0x65, 0x6c, 0x64, 0x54, 0x79, 0x70, 0x65, 0x45, 0x6e, 0x75,
 	0x6d, 0x2e, 0x41, 0x73, 0x73, 0x65, 0x74, 0x46, 0x69, 0x65, 0x6c, 0x64, 0x54, 0x79, 0x70, 0x65,
 	0x52, 0x0e, 0x61, 0x73, 0x73, 0x65, 0x74, 0x46, 0x69, 0x65, 0x6c, 0x64, 0x54, 0x79, 0x70, 0x65,
@@ -946,7 +946,7 @@ var file_google_ads_googleads_v22_services_asset_generation_service_proto_rawDes
 	0x12, 0x72, 0x0a, 0x11, 0x61, 0x73, 0x73, 0x65, 0x74, 0x5f, 0x66, 0x69, 0x65, 0x6c, 0x64, 0x5f,
 	0x74, 0x79, 0x70, 0x65, 0x73, 0x18, 0x04, 0x20, 0x03, 0x28, 0x0e, 0x32, 0x41, 0x2e, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x64, 0x73, 0x2e, 0x76, 0x32, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x41, 0x73, 0x73,
+	0x64, 0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x41, 0x73, 0x73,
 	0x65, 0x74, 0x46, 0x69, 0x65, 0x6c, 0x64, 0x54, 0x79, 0x70, 0x65, 0x45, 0x6e, 0x75, 0x6d, 0x2e,
 	0x41, 0x73, 0x73, 0x65, 0x74, 0x46, 0x69, 0x65, 0x6c, 0x64, 0x54, 0x79, 0x70, 0x65, 0x42, 0x03,
 	0xe0, 0x41, 0x01, 0x52, 0x0f, 0x61, 0x73, 0x73, 0x65, 0x74, 0x46, 0x69, 0x65, 0x6c, 0x64, 0x54,
@@ -954,7 +954,7 @@ var file_google_ads_googleads_v22_services_asset_generation_service_proto_rawDes
 	0x73, 0x69, 0x6e, 0x67, 0x5f, 0x63, 0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x5f, 0x74, 0x79, 0x70,
 	0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x51, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76,
-	0x32, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x41, 0x64, 0x76, 0x65, 0x72, 0x74, 0x69,
+	0x32, 0x33, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x41, 0x64, 0x76, 0x65, 0x72, 0x74, 0x69,
 	0x73, 0x69, 0x6e, 0x67, 0x43, 0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x54, 0x79, 0x70, 0x65, 0x45,
 	0x6e, 0x75, 0x6d, 0x2e, 0x41, 0x64, 0x76, 0x65, 0x72, 0x74, 0x69, 0x73, 0x69, 0x6e, 0x67, 0x43,
 	0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x54, 0x79, 0x70, 0x65, 0x42, 0x03, 0xe0, 0x41, 0x01, 0x48,
@@ -963,14 +963,14 @@ var file_google_ads_googleads_v22_services_asset_generation_service_proto_rawDes
 	0x61, 0x6c, 0x5f, 0x75, 0x72, 0x6c, 0x5f, 0x67, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f,
 	0x6e, 0x18, 0x05, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x3f, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76,
-	0x32, 0x32, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x46, 0x69, 0x6e, 0x61,
+	0x32, 0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x46, 0x69, 0x6e, 0x61,
 	0x6c, 0x55, 0x72, 0x6c, 0x49, 0x6d, 0x61, 0x67, 0x65, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x74,
 	0x69, 0x6f, 0x6e, 0x49, 0x6e, 0x70, 0x75, 0x74, 0x42, 0x03, 0xe0, 0x41, 0x01, 0x48, 0x01, 0x52,
 	0x12, 0x66, 0x69, 0x6e, 0x61, 0x6c, 0x55, 0x72, 0x6c, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x74,
 	0x69, 0x6f, 0x6e, 0x12, 0x77, 0x0a, 0x13, 0x66, 0x72, 0x65, 0x65, 0x66, 0x6f, 0x72, 0x6d, 0x5f,
 	0x67, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x06, 0x20, 0x01, 0x28, 0x0b,
 	0x32, 0x3f, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x32, 0x2e, 0x73, 0x65, 0x72, 0x76,
+	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e, 0x73, 0x65, 0x72, 0x76,
 	0x69, 0x63, 0x65, 0x73, 0x2e, 0x46, 0x72, 0x65, 0x65, 0x66, 0x6f, 0x72, 0x6d, 0x49, 0x6d, 0x61,
 	0x67, 0x65, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x6e, 0x70, 0x75,
 	0x74, 0x42, 0x03, 0xe0, 0x41, 0x01, 0x48, 0x01, 0x52, 0x12, 0x66, 0x72, 0x65, 0x65, 0x66, 0x6f,
@@ -978,7 +978,7 @@ var file_google_ads_googleads_v22_services_asset_generation_service_proto_rawDes
 	0x1c, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x5f, 0x72, 0x65, 0x63, 0x6f, 0x6e, 0x74, 0x65,
 	0x78, 0x74, 0x5f, 0x67, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x07, 0x20,
 	0x01, 0x28, 0x0b, 0x32, 0x47, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73,
-	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x32, 0x2e, 0x73,
+	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e, 0x73,
 	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x52,
 	0x65, 0x63, 0x6f, 0x6e, 0x74, 0x65, 0x78, 0x74, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x74, 0x69,
 	0x6f, 0x6e, 0x49, 0x6d, 0x61, 0x67, 0x65, 0x49, 0x6e, 0x70, 0x75, 0x74, 0x42, 0x03, 0xe0, 0x41,
@@ -1002,14 +1002,14 @@ var file_google_ads_googleads_v22_services_asset_generation_service_proto_rawDes
 	0x6d, 0x70, 0x74, 0x12, 0x58, 0x0a, 0x0d, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x5f, 0x69, 0x6d,
 	0x61, 0x67, 0x65, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x2e, 0x2e, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64,
-	0x73, 0x2e, 0x76, 0x32, 0x32, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x53,
+	0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x53,
 	0x6f, 0x75, 0x72, 0x63, 0x65, 0x49, 0x6d, 0x61, 0x67, 0x65, 0x42, 0x03, 0xe0, 0x41, 0x02, 0x52,
 	0x0c, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x49, 0x6d, 0x61, 0x67, 0x65, 0x73, 0x22, 0x76, 0x0a,
 	0x16, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x74, 0x65, 0x49, 0x6d, 0x61, 0x67, 0x65, 0x73, 0x52,
 	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x5c, 0x0a, 0x10, 0x67, 0x65, 0x6e, 0x65, 0x72,
 	0x61, 0x74, 0x65, 0x64, 0x5f, 0x69, 0x6d, 0x61, 0x67, 0x65, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28,
 	0x0b, 0x32, 0x31, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x32, 0x2e, 0x73, 0x65, 0x72,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e, 0x73, 0x65, 0x72,
 	0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x74, 0x65, 0x64, 0x49,
 	0x6d, 0x61, 0x67, 0x65, 0x52, 0x0f, 0x67, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x74, 0x65, 0x64, 0x49,
 	0x6d, 0x61, 0x67, 0x65, 0x73, 0x22, 0x3c, 0x0a, 0x0b, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x49,
@@ -1023,7 +1023,7 @@ var file_google_ads_googleads_v22_services_asset_generation_service_proto_rawDes
 	0x61, 0x72, 0x79, 0x55, 0x72, 0x6c, 0x12, 0x6b, 0x0a, 0x10, 0x61, 0x73, 0x73, 0x65, 0x74, 0x5f,
 	0x66, 0x69, 0x65, 0x6c, 0x64, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0e,
 	0x32, 0x41, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d,
+	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e, 0x65, 0x6e, 0x75, 0x6d,
 	0x73, 0x2e, 0x41, 0x73, 0x73, 0x65, 0x74, 0x46, 0x69, 0x65, 0x6c, 0x64, 0x54, 0x79, 0x70, 0x65,
 	0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x41, 0x73, 0x73, 0x65, 0x74, 0x46, 0x69, 0x65, 0x6c, 0x64, 0x54,
 	0x79, 0x70, 0x65, 0x52, 0x0e, 0x61, 0x73, 0x73, 0x65, 0x74, 0x46, 0x69, 0x65, 0x6c, 0x64, 0x54,
@@ -1046,27 +1046,27 @@ var file_google_ads_googleads_v22_services_asset_generation_service_proto_rawDes
 	0x6e, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12,
 	0xc8, 0x01, 0x0a, 0x0c, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x74, 0x65, 0x54, 0x65, 0x78, 0x74,
 	0x12, 0x36, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x32, 0x2e, 0x73, 0x65, 0x72, 0x76,
+	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e, 0x73, 0x65, 0x72, 0x76,
 	0x69, 0x63, 0x65, 0x73, 0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x74, 0x65, 0x54, 0x65, 0x78,
 	0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x37, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e,
-	0x76, 0x32, 0x32, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x47, 0x65, 0x6e,
+	0x76, 0x32, 0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x47, 0x65, 0x6e,
 	0x65, 0x72, 0x61, 0x74, 0x65, 0x54, 0x65, 0x78, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
 	0x65, 0x22, 0x47, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x41, 0x3a, 0x01, 0x2a, 0x22, 0x3c, 0x2f, 0x76,
-	0x32, 0x32, 0x2f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x73, 0x2f, 0x7b, 0x63, 0x75,
+	0x32, 0x33, 0x2f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x73, 0x2f, 0x7b, 0x63, 0x75,
 	0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x3d, 0x2a, 0x7d, 0x2f, 0x61, 0x73, 0x73,
 	0x65, 0x74, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x3a, 0x67, 0x65,
 	0x6e, 0x65, 0x72, 0x61, 0x74, 0x65, 0x54, 0x65, 0x78, 0x74, 0x12, 0xd0, 0x01, 0x0a, 0x0e, 0x47,
 	0x65, 0x6e, 0x65, 0x72, 0x61, 0x74, 0x65, 0x49, 0x6d, 0x61, 0x67, 0x65, 0x73, 0x12, 0x38, 0x2e,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x32, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
 	0x73, 0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x74, 0x65, 0x49, 0x6d, 0x61, 0x67, 0x65, 0x73,
 	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x39, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76,
-	0x32, 0x32, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x47, 0x65, 0x6e, 0x65,
+	0x32, 0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x47, 0x65, 0x6e, 0x65,
 	0x72, 0x61, 0x74, 0x65, 0x49, 0x6d, 0x61, 0x67, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
 	0x73, 0x65, 0x22, 0x49, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x43, 0x3a, 0x01, 0x2a, 0x22, 0x3e, 0x2f,
-	0x76, 0x32, 0x32, 0x2f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x73, 0x2f, 0x7b, 0x63,
+	0x76, 0x32, 0x33, 0x2f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x73, 0x2f, 0x7b, 0x63,
 	0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x3d, 0x2a, 0x7d, 0x2f, 0x61, 0x73,
 	0x73, 0x65, 0x74, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x3a, 0x67,
 	0x65, 0x6e, 0x65, 0x72, 0x61, 0x74, 0x65, 0x49, 0x6d, 0x61, 0x67, 0x65, 0x73, 0x1a, 0x45, 0xca,
@@ -1076,70 +1076,70 @@ var file_google_ads_googleads_v22_services_asset_generation_service_proto_rawDes
 	0x70, 0x69, 0x73, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x61, 0x75, 0x74, 0x68, 0x2f, 0x61, 0x64, 0x77,
 	0x6f, 0x72, 0x64, 0x73, 0x42, 0x87, 0x02, 0x0a, 0x25, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64,
-	0x73, 0x2e, 0x76, 0x32, 0x32, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x42, 0x1b,
+	0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x42, 0x1b,
 	0x41, 0x73, 0x73, 0x65, 0x74, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x53,
 	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x49, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x67, 0x6f, 0x6c, 0x61, 0x6e, 0x67, 0x2e, 0x6f, 0x72, 0x67,
 	0x2f, 0x67, 0x65, 0x6e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x61, 0x70, 0x69, 0x73, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x64, 0x73, 0x2f, 0x76, 0x32, 0x32, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x3b,
+	0x64, 0x73, 0x2f, 0x76, 0x32, 0x33, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x3b,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0xa2, 0x02, 0x03, 0x47, 0x41, 0x41, 0xaa, 0x02,
 	0x21, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x41, 0x64, 0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e, 0x56, 0x32, 0x32, 0x2e, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63,
+	0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e, 0x56, 0x32, 0x33, 0x2e, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63,
 	0x65, 0x73, 0xca, 0x02, 0x21, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x5c, 0x41, 0x64, 0x73, 0x5c,
-	0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x32, 0x32, 0x5c, 0x53, 0x65,
+	0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x32, 0x33, 0x5c, 0x53, 0x65,
 	0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0xea, 0x02, 0x25, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x3a,
 	0x3a, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a,
-	0x3a, 0x56, 0x32, 0x32, 0x3a, 0x3a, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x62, 0x06,
+	0x3a, 0x56, 0x32, 0x33, 0x3a, 0x3a, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x62, 0x06,
 	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 })
 
 var (
-	file_google_ads_googleads_v22_services_asset_generation_service_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v22_services_asset_generation_service_proto_rawDescData []byte
+	file_google_ads_googleads_v23_services_asset_generation_service_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v23_services_asset_generation_service_proto_rawDescData []byte
 )
 
-func file_google_ads_googleads_v22_services_asset_generation_service_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v22_services_asset_generation_service_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v22_services_asset_generation_service_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v22_services_asset_generation_service_proto_rawDesc), len(file_google_ads_googleads_v22_services_asset_generation_service_proto_rawDesc)))
+func file_google_ads_googleads_v23_services_asset_generation_service_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v23_services_asset_generation_service_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v23_services_asset_generation_service_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v23_services_asset_generation_service_proto_rawDesc), len(file_google_ads_googleads_v23_services_asset_generation_service_proto_rawDesc)))
 	})
-	return file_google_ads_googleads_v22_services_asset_generation_service_proto_rawDescData
+	return file_google_ads_googleads_v23_services_asset_generation_service_proto_rawDescData
 }
 
-var file_google_ads_googleads_v22_services_asset_generation_service_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
-var file_google_ads_googleads_v22_services_asset_generation_service_proto_goTypes = []any{
-	(*GenerateTextRequest)(nil),                                  // 0: google.ads.googleads.v22.services.GenerateTextRequest
-	(*GenerateTextResponse)(nil),                                 // 1: google.ads.googleads.v22.services.GenerateTextResponse
-	(*GeneratedText)(nil),                                        // 2: google.ads.googleads.v22.services.GeneratedText
-	(*GenerateImagesRequest)(nil),                                // 3: google.ads.googleads.v22.services.GenerateImagesRequest
-	(*FinalUrlImageGenerationInput)(nil),                         // 4: google.ads.googleads.v22.services.FinalUrlImageGenerationInput
-	(*FreeformImageGenerationInput)(nil),                         // 5: google.ads.googleads.v22.services.FreeformImageGenerationInput
-	(*ProductRecontextGenerationImageInput)(nil),                 // 6: google.ads.googleads.v22.services.ProductRecontextGenerationImageInput
-	(*GenerateImagesResponse)(nil),                               // 7: google.ads.googleads.v22.services.GenerateImagesResponse
-	(*SourceImage)(nil),                                          // 8: google.ads.googleads.v22.services.SourceImage
-	(*GeneratedImage)(nil),                                       // 9: google.ads.googleads.v22.services.GeneratedImage
-	(*AssetGenerationExistingContext)(nil),                       // 10: google.ads.googleads.v22.services.AssetGenerationExistingContext
-	(enums.AssetFieldTypeEnum_AssetFieldType)(0),                 // 11: google.ads.googleads.v22.enums.AssetFieldTypeEnum.AssetFieldType
-	(enums.AdvertisingChannelTypeEnum_AdvertisingChannelType)(0), // 12: google.ads.googleads.v22.enums.AdvertisingChannelTypeEnum.AdvertisingChannelType
+var file_google_ads_googleads_v23_services_asset_generation_service_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
+var file_google_ads_googleads_v23_services_asset_generation_service_proto_goTypes = []any{
+	(*GenerateTextRequest)(nil),                                  // 0: google.ads.googleads.v23.services.GenerateTextRequest
+	(*GenerateTextResponse)(nil),                                 // 1: google.ads.googleads.v23.services.GenerateTextResponse
+	(*GeneratedText)(nil),                                        // 2: google.ads.googleads.v23.services.GeneratedText
+	(*GenerateImagesRequest)(nil),                                // 3: google.ads.googleads.v23.services.GenerateImagesRequest
+	(*FinalUrlImageGenerationInput)(nil),                         // 4: google.ads.googleads.v23.services.FinalUrlImageGenerationInput
+	(*FreeformImageGenerationInput)(nil),                         // 5: google.ads.googleads.v23.services.FreeformImageGenerationInput
+	(*ProductRecontextGenerationImageInput)(nil),                 // 6: google.ads.googleads.v23.services.ProductRecontextGenerationImageInput
+	(*GenerateImagesResponse)(nil),                               // 7: google.ads.googleads.v23.services.GenerateImagesResponse
+	(*SourceImage)(nil),                                          // 8: google.ads.googleads.v23.services.SourceImage
+	(*GeneratedImage)(nil),                                       // 9: google.ads.googleads.v23.services.GeneratedImage
+	(*AssetGenerationExistingContext)(nil),                       // 10: google.ads.googleads.v23.services.AssetGenerationExistingContext
+	(enums.AssetFieldTypeEnum_AssetFieldType)(0),                 // 11: google.ads.googleads.v23.enums.AssetFieldTypeEnum.AssetFieldType
+	(enums.AdvertisingChannelTypeEnum_AdvertisingChannelType)(0), // 12: google.ads.googleads.v23.enums.AdvertisingChannelTypeEnum.AdvertisingChannelType
 }
-var file_google_ads_googleads_v22_services_asset_generation_service_proto_depIdxs = []int32{
-	11, // 0: google.ads.googleads.v22.services.GenerateTextRequest.asset_field_types:type_name -> google.ads.googleads.v22.enums.AssetFieldTypeEnum.AssetFieldType
-	10, // 1: google.ads.googleads.v22.services.GenerateTextRequest.existing_generation_context:type_name -> google.ads.googleads.v22.services.AssetGenerationExistingContext
-	12, // 2: google.ads.googleads.v22.services.GenerateTextRequest.advertising_channel_type:type_name -> google.ads.googleads.v22.enums.AdvertisingChannelTypeEnum.AdvertisingChannelType
-	2,  // 3: google.ads.googleads.v22.services.GenerateTextResponse.generated_text:type_name -> google.ads.googleads.v22.services.GeneratedText
-	11, // 4: google.ads.googleads.v22.services.GeneratedText.asset_field_type:type_name -> google.ads.googleads.v22.enums.AssetFieldTypeEnum.AssetFieldType
-	11, // 5: google.ads.googleads.v22.services.GenerateImagesRequest.asset_field_types:type_name -> google.ads.googleads.v22.enums.AssetFieldTypeEnum.AssetFieldType
-	12, // 6: google.ads.googleads.v22.services.GenerateImagesRequest.advertising_channel_type:type_name -> google.ads.googleads.v22.enums.AdvertisingChannelTypeEnum.AdvertisingChannelType
-	4,  // 7: google.ads.googleads.v22.services.GenerateImagesRequest.final_url_generation:type_name -> google.ads.googleads.v22.services.FinalUrlImageGenerationInput
-	5,  // 8: google.ads.googleads.v22.services.GenerateImagesRequest.freeform_generation:type_name -> google.ads.googleads.v22.services.FreeformImageGenerationInput
-	6,  // 9: google.ads.googleads.v22.services.GenerateImagesRequest.product_recontext_generation:type_name -> google.ads.googleads.v22.services.ProductRecontextGenerationImageInput
-	8,  // 10: google.ads.googleads.v22.services.ProductRecontextGenerationImageInput.source_images:type_name -> google.ads.googleads.v22.services.SourceImage
-	9,  // 11: google.ads.googleads.v22.services.GenerateImagesResponse.generated_images:type_name -> google.ads.googleads.v22.services.GeneratedImage
-	11, // 12: google.ads.googleads.v22.services.GeneratedImage.asset_field_type:type_name -> google.ads.googleads.v22.enums.AssetFieldTypeEnum.AssetFieldType
-	0,  // 13: google.ads.googleads.v22.services.AssetGenerationService.GenerateText:input_type -> google.ads.googleads.v22.services.GenerateTextRequest
-	3,  // 14: google.ads.googleads.v22.services.AssetGenerationService.GenerateImages:input_type -> google.ads.googleads.v22.services.GenerateImagesRequest
-	1,  // 15: google.ads.googleads.v22.services.AssetGenerationService.GenerateText:output_type -> google.ads.googleads.v22.services.GenerateTextResponse
-	7,  // 16: google.ads.googleads.v22.services.AssetGenerationService.GenerateImages:output_type -> google.ads.googleads.v22.services.GenerateImagesResponse
+var file_google_ads_googleads_v23_services_asset_generation_service_proto_depIdxs = []int32{
+	11, // 0: google.ads.googleads.v23.services.GenerateTextRequest.asset_field_types:type_name -> google.ads.googleads.v23.enums.AssetFieldTypeEnum.AssetFieldType
+	10, // 1: google.ads.googleads.v23.services.GenerateTextRequest.existing_generation_context:type_name -> google.ads.googleads.v23.services.AssetGenerationExistingContext
+	12, // 2: google.ads.googleads.v23.services.GenerateTextRequest.advertising_channel_type:type_name -> google.ads.googleads.v23.enums.AdvertisingChannelTypeEnum.AdvertisingChannelType
+	2,  // 3: google.ads.googleads.v23.services.GenerateTextResponse.generated_text:type_name -> google.ads.googleads.v23.services.GeneratedText
+	11, // 4: google.ads.googleads.v23.services.GeneratedText.asset_field_type:type_name -> google.ads.googleads.v23.enums.AssetFieldTypeEnum.AssetFieldType
+	11, // 5: google.ads.googleads.v23.services.GenerateImagesRequest.asset_field_types:type_name -> google.ads.googleads.v23.enums.AssetFieldTypeEnum.AssetFieldType
+	12, // 6: google.ads.googleads.v23.services.GenerateImagesRequest.advertising_channel_type:type_name -> google.ads.googleads.v23.enums.AdvertisingChannelTypeEnum.AdvertisingChannelType
+	4,  // 7: google.ads.googleads.v23.services.GenerateImagesRequest.final_url_generation:type_name -> google.ads.googleads.v23.services.FinalUrlImageGenerationInput
+	5,  // 8: google.ads.googleads.v23.services.GenerateImagesRequest.freeform_generation:type_name -> google.ads.googleads.v23.services.FreeformImageGenerationInput
+	6,  // 9: google.ads.googleads.v23.services.GenerateImagesRequest.product_recontext_generation:type_name -> google.ads.googleads.v23.services.ProductRecontextGenerationImageInput
+	8,  // 10: google.ads.googleads.v23.services.ProductRecontextGenerationImageInput.source_images:type_name -> google.ads.googleads.v23.services.SourceImage
+	9,  // 11: google.ads.googleads.v23.services.GenerateImagesResponse.generated_images:type_name -> google.ads.googleads.v23.services.GeneratedImage
+	11, // 12: google.ads.googleads.v23.services.GeneratedImage.asset_field_type:type_name -> google.ads.googleads.v23.enums.AssetFieldTypeEnum.AssetFieldType
+	0,  // 13: google.ads.googleads.v23.services.AssetGenerationService.GenerateText:input_type -> google.ads.googleads.v23.services.GenerateTextRequest
+	3,  // 14: google.ads.googleads.v23.services.AssetGenerationService.GenerateImages:input_type -> google.ads.googleads.v23.services.GenerateImagesRequest
+	1,  // 15: google.ads.googleads.v23.services.AssetGenerationService.GenerateText:output_type -> google.ads.googleads.v23.services.GenerateTextResponse
+	7,  // 16: google.ads.googleads.v23.services.AssetGenerationService.GenerateImages:output_type -> google.ads.googleads.v23.services.GenerateImagesResponse
 	15, // [15:17] is the sub-list for method output_type
 	13, // [13:15] is the sub-list for method input_type
 	13, // [13:13] is the sub-list for extension type_name
@@ -1147,25 +1147,25 @@ var file_google_ads_googleads_v22_services_asset_generation_service_proto_depIdx
 	0,  // [0:13] is the sub-list for field type_name
 }
 
-func init() { file_google_ads_googleads_v22_services_asset_generation_service_proto_init() }
-func file_google_ads_googleads_v22_services_asset_generation_service_proto_init() {
-	if File_google_ads_googleads_v22_services_asset_generation_service_proto != nil {
+func init() { file_google_ads_googleads_v23_services_asset_generation_service_proto_init() }
+func file_google_ads_googleads_v23_services_asset_generation_service_proto_init() {
+	if File_google_ads_googleads_v23_services_asset_generation_service_proto != nil {
 		return
 	}
-	file_google_ads_googleads_v22_services_asset_generation_service_proto_msgTypes[0].OneofWrappers = []any{
+	file_google_ads_googleads_v23_services_asset_generation_service_proto_msgTypes[0].OneofWrappers = []any{
 		(*GenerateTextRequest_ExistingGenerationContext)(nil),
 		(*GenerateTextRequest_AdvertisingChannelType)(nil),
 	}
-	file_google_ads_googleads_v22_services_asset_generation_service_proto_msgTypes[3].OneofWrappers = []any{
+	file_google_ads_googleads_v23_services_asset_generation_service_proto_msgTypes[3].OneofWrappers = []any{
 		(*GenerateImagesRequest_AdvertisingChannelType)(nil),
 		(*GenerateImagesRequest_FinalUrlGeneration)(nil),
 		(*GenerateImagesRequest_FreeformGeneration)(nil),
 		(*GenerateImagesRequest_ProductRecontextGeneration)(nil),
 	}
-	file_google_ads_googleads_v22_services_asset_generation_service_proto_msgTypes[8].OneofWrappers = []any{
+	file_google_ads_googleads_v23_services_asset_generation_service_proto_msgTypes[8].OneofWrappers = []any{
 		(*SourceImage_ImageData)(nil),
 	}
-	file_google_ads_googleads_v22_services_asset_generation_service_proto_msgTypes[10].OneofWrappers = []any{
+	file_google_ads_googleads_v23_services_asset_generation_service_proto_msgTypes[10].OneofWrappers = []any{
 		(*AssetGenerationExistingContext_ExistingAssetGroup)(nil),
 		(*AssetGenerationExistingContext_ExistingAdGroupAd)(nil),
 	}
@@ -1173,17 +1173,17 @@ func file_google_ads_googleads_v22_services_asset_generation_service_proto_init(
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v22_services_asset_generation_service_proto_rawDesc), len(file_google_ads_googleads_v22_services_asset_generation_service_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v23_services_asset_generation_service_proto_rawDesc), len(file_google_ads_googleads_v23_services_asset_generation_service_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   11,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_google_ads_googleads_v22_services_asset_generation_service_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v22_services_asset_generation_service_proto_depIdxs,
-		MessageInfos:      file_google_ads_googleads_v22_services_asset_generation_service_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v23_services_asset_generation_service_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v23_services_asset_generation_service_proto_depIdxs,
+		MessageInfos:      file_google_ads_googleads_v23_services_asset_generation_service_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v22_services_asset_generation_service_proto = out.File
-	file_google_ads_googleads_v22_services_asset_generation_service_proto_goTypes = nil
-	file_google_ads_googleads_v22_services_asset_generation_service_proto_depIdxs = nil
+	File_google_ads_googleads_v23_services_asset_generation_service_proto = out.File
+	file_google_ads_googleads_v23_services_asset_generation_service_proto_goTypes = nil
+	file_google_ads_googleads_v23_services_asset_generation_service_proto_depIdxs = nil
 }

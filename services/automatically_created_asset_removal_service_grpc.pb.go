@@ -1,4 +1,4 @@
-// Copyright 2025 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v22/services/automatically_created_asset_removal_service.proto
+// source: google/ads/googleads/v23/services/automatically_created_asset_removal_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	AutomaticallyCreatedAssetRemovalService_RemoveCampaignAutomaticallyCreatedAsset_FullMethodName = "/google.ads.googleads.v22.services.AutomaticallyCreatedAssetRemovalService/RemoveCampaignAutomaticallyCreatedAsset"
+	AutomaticallyCreatedAssetRemovalService_RemoveCampaignAutomaticallyCreatedAsset_FullMethodName = "/google.ads.googleads.v23.services.AutomaticallyCreatedAssetRemovalService/RemoveCampaignAutomaticallyCreatedAsset"
 )
 
 // AutomaticallyCreatedAssetRemovalServiceClient is the client API for AutomaticallyCreatedAssetRemovalService service.
@@ -153,7 +153,7 @@ func _AutomaticallyCreatedAssetRemovalService_RemoveCampaignAutomaticallyCreated
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AutomaticallyCreatedAssetRemovalService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v22.services.AutomaticallyCreatedAssetRemovalService",
+	ServiceName: "google.ads.googleads.v23.services.AutomaticallyCreatedAssetRemovalService",
 	HandlerType: (*AutomaticallyCreatedAssetRemovalServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -162,5 +162,5 @@ var AutomaticallyCreatedAssetRemovalService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v22/services/automatically_created_asset_removal_service.proto",
+	Metadata: "google/ads/googleads/v23/services/automatically_created_asset_removal_service.proto",
 }
