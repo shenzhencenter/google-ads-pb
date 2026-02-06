@@ -1,4 +1,4 @@
-// Copyright 2025 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v22/services/brand_suggestion_service.proto
+// source: google/ads/googleads/v23/services/brand_suggestion_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	BrandSuggestionService_SuggestBrands_FullMethodName = "/google.ads.googleads.v22.services.BrandSuggestionService/SuggestBrands"
+	BrandSuggestionService_SuggestBrands_FullMethodName = "/google.ads.googleads.v23.services.BrandSuggestionService/SuggestBrands"
 )
 
 // BrandSuggestionServiceClient is the client API for BrandSuggestionService service.
@@ -131,7 +131,7 @@ func _BrandSuggestionService_SuggestBrands_Handler(srv interface{}, ctx context.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var BrandSuggestionService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v22.services.BrandSuggestionService",
+	ServiceName: "google.ads.googleads.v23.services.BrandSuggestionService",
 	HandlerType: (*BrandSuggestionServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -140,5 +140,5 @@ var BrandSuggestionService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v22/services/brand_suggestion_service.proto",
+	Metadata: "google/ads/googleads/v23/services/brand_suggestion_service.proto",
 }

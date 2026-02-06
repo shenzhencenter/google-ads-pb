@@ -1,4 +1,4 @@
-// Copyright 2025 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.36.5
 // 	protoc        v4.24.4
-// source: google/ads/googleads/v22/common/bidding.proto
+// source: google/ads/googleads/v23/common/bidding.proto
 
 package common
 
@@ -51,7 +51,7 @@ type Commission struct {
 
 func (x *Commission) Reset() {
 	*x = Commission{}
-	mi := &file_google_ads_googleads_v22_common_bidding_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v23_common_bidding_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -63,7 +63,7 @@ func (x *Commission) String() string {
 func (*Commission) ProtoMessage() {}
 
 func (x *Commission) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v22_common_bidding_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v23_common_bidding_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -76,7 +76,7 @@ func (x *Commission) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Commission.ProtoReflect.Descriptor instead.
 func (*Commission) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v22_common_bidding_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v23_common_bidding_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *Commission) GetCommissionRateMicros() int64 {
@@ -100,7 +100,7 @@ type EnhancedCpc struct {
 
 func (x *EnhancedCpc) Reset() {
 	*x = EnhancedCpc{}
-	mi := &file_google_ads_googleads_v22_common_bidding_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v23_common_bidding_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -112,7 +112,7 @@ func (x *EnhancedCpc) String() string {
 func (*EnhancedCpc) ProtoMessage() {}
 
 func (x *EnhancedCpc) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v22_common_bidding_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v23_common_bidding_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -125,7 +125,7 @@ func (x *EnhancedCpc) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EnhancedCpc.ProtoReflect.Descriptor instead.
 func (*EnhancedCpc) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v22_common_bidding_proto_rawDescGZIP(), []int{1}
+	return file_google_ads_googleads_v23_common_bidding_proto_rawDescGZIP(), []int{1}
 }
 
 // Manual bidding strategy that allows advertiser to set the bid per
@@ -138,7 +138,7 @@ type ManualCpa struct {
 
 func (x *ManualCpa) Reset() {
 	*x = ManualCpa{}
-	mi := &file_google_ads_googleads_v22_common_bidding_proto_msgTypes[2]
+	mi := &file_google_ads_googleads_v23_common_bidding_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -150,7 +150,7 @@ func (x *ManualCpa) String() string {
 func (*ManualCpa) ProtoMessage() {}
 
 func (x *ManualCpa) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v22_common_bidding_proto_msgTypes[2]
+	mi := &file_google_ads_googleads_v23_common_bidding_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -163,7 +163,7 @@ func (x *ManualCpa) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ManualCpa.ProtoReflect.Descriptor instead.
 func (*ManualCpa) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v22_common_bidding_proto_rawDescGZIP(), []int{2}
+	return file_google_ads_googleads_v23_common_bidding_proto_rawDescGZIP(), []int{2}
 }
 
 // Manual click-based bidding where user pays per click.
@@ -177,7 +177,7 @@ type ManualCpc struct {
 
 func (x *ManualCpc) Reset() {
 	*x = ManualCpc{}
-	mi := &file_google_ads_googleads_v22_common_bidding_proto_msgTypes[3]
+	mi := &file_google_ads_googleads_v23_common_bidding_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -189,7 +189,7 @@ func (x *ManualCpc) String() string {
 func (*ManualCpc) ProtoMessage() {}
 
 func (x *ManualCpc) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v22_common_bidding_proto_msgTypes[3]
+	mi := &file_google_ads_googleads_v23_common_bidding_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -202,7 +202,7 @@ func (x *ManualCpc) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ManualCpc.ProtoReflect.Descriptor instead.
 func (*ManualCpc) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v22_common_bidding_proto_rawDescGZIP(), []int{3}
+	return file_google_ads_googleads_v23_common_bidding_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *ManualCpc) GetEnhancedCpcEnabled() bool {
@@ -221,7 +221,7 @@ type ManualCpm struct {
 
 func (x *ManualCpm) Reset() {
 	*x = ManualCpm{}
-	mi := &file_google_ads_googleads_v22_common_bidding_proto_msgTypes[4]
+	mi := &file_google_ads_googleads_v23_common_bidding_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -233,7 +233,7 @@ func (x *ManualCpm) String() string {
 func (*ManualCpm) ProtoMessage() {}
 
 func (x *ManualCpm) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v22_common_bidding_proto_msgTypes[4]
+	mi := &file_google_ads_googleads_v23_common_bidding_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -246,7 +246,7 @@ func (x *ManualCpm) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ManualCpm.ProtoReflect.Descriptor instead.
 func (*ManualCpm) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v22_common_bidding_proto_rawDescGZIP(), []int{4}
+	return file_google_ads_googleads_v23_common_bidding_proto_rawDescGZIP(), []int{4}
 }
 
 // View based bidding where user pays per video view.
@@ -258,7 +258,7 @@ type ManualCpv struct {
 
 func (x *ManualCpv) Reset() {
 	*x = ManualCpv{}
-	mi := &file_google_ads_googleads_v22_common_bidding_proto_msgTypes[5]
+	mi := &file_google_ads_googleads_v23_common_bidding_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -270,7 +270,7 @@ func (x *ManualCpv) String() string {
 func (*ManualCpv) ProtoMessage() {}
 
 func (x *ManualCpv) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v22_common_bidding_proto_msgTypes[5]
+	mi := &file_google_ads_googleads_v23_common_bidding_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -283,7 +283,7 @@ func (x *ManualCpv) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ManualCpv.ProtoReflect.Descriptor instead.
 func (*ManualCpv) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v22_common_bidding_proto_rawDescGZIP(), []int{5}
+	return file_google_ads_googleads_v23_common_bidding_proto_rawDescGZIP(), []int{5}
 }
 
 // An automated bidding strategy to help get the most conversions for your
@@ -311,7 +311,7 @@ type MaximizeConversions struct {
 
 func (x *MaximizeConversions) Reset() {
 	*x = MaximizeConversions{}
-	mi := &file_google_ads_googleads_v22_common_bidding_proto_msgTypes[6]
+	mi := &file_google_ads_googleads_v23_common_bidding_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -323,7 +323,7 @@ func (x *MaximizeConversions) String() string {
 func (*MaximizeConversions) ProtoMessage() {}
 
 func (x *MaximizeConversions) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v22_common_bidding_proto_msgTypes[6]
+	mi := &file_google_ads_googleads_v23_common_bidding_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -336,7 +336,7 @@ func (x *MaximizeConversions) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MaximizeConversions.ProtoReflect.Descriptor instead.
 func (*MaximizeConversions) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v22_common_bidding_proto_rawDescGZIP(), []int{6}
+	return file_google_ads_googleads_v23_common_bidding_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *MaximizeConversions) GetCpcBidCeilingMicros() int64 {
@@ -390,7 +390,7 @@ type MaximizeConversionValue struct {
 
 func (x *MaximizeConversionValue) Reset() {
 	*x = MaximizeConversionValue{}
-	mi := &file_google_ads_googleads_v22_common_bidding_proto_msgTypes[7]
+	mi := &file_google_ads_googleads_v23_common_bidding_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -402,7 +402,7 @@ func (x *MaximizeConversionValue) String() string {
 func (*MaximizeConversionValue) ProtoMessage() {}
 
 func (x *MaximizeConversionValue) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v22_common_bidding_proto_msgTypes[7]
+	mi := &file_google_ads_googleads_v23_common_bidding_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -415,7 +415,7 @@ func (x *MaximizeConversionValue) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MaximizeConversionValue.ProtoReflect.Descriptor instead.
 func (*MaximizeConversionValue) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v22_common_bidding_proto_rawDescGZIP(), []int{7}
+	return file_google_ads_googleads_v23_common_bidding_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *MaximizeConversionValue) GetTargetRoas() float64 {
@@ -468,7 +468,7 @@ type TargetCpa struct {
 
 func (x *TargetCpa) Reset() {
 	*x = TargetCpa{}
-	mi := &file_google_ads_googleads_v22_common_bidding_proto_msgTypes[8]
+	mi := &file_google_ads_googleads_v23_common_bidding_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -480,7 +480,7 @@ func (x *TargetCpa) String() string {
 func (*TargetCpa) ProtoMessage() {}
 
 func (x *TargetCpa) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v22_common_bidding_proto_msgTypes[8]
+	mi := &file_google_ads_googleads_v23_common_bidding_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -493,7 +493,7 @@ func (x *TargetCpa) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TargetCpa.ProtoReflect.Descriptor instead.
 func (*TargetCpa) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v22_common_bidding_proto_rawDescGZIP(), []int{8}
+	return file_google_ads_googleads_v23_common_bidding_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *TargetCpa) GetTargetCpaMicros() int64 {
@@ -533,7 +533,7 @@ type TargetCpm struct {
 
 func (x *TargetCpm) Reset() {
 	*x = TargetCpm{}
-	mi := &file_google_ads_googleads_v22_common_bidding_proto_msgTypes[9]
+	mi := &file_google_ads_googleads_v23_common_bidding_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -545,7 +545,7 @@ func (x *TargetCpm) String() string {
 func (*TargetCpm) ProtoMessage() {}
 
 func (x *TargetCpm) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v22_common_bidding_proto_msgTypes[9]
+	mi := &file_google_ads_googleads_v23_common_bidding_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -558,7 +558,7 @@ func (x *TargetCpm) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TargetCpm.ProtoReflect.Descriptor instead.
 func (*TargetCpm) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v22_common_bidding_proto_rawDescGZIP(), []int{9}
+	return file_google_ads_googleads_v23_common_bidding_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *TargetCpm) GetGoal() isTargetCpm_Goal {
@@ -596,14 +596,14 @@ type TargetCpmTargetFrequencyGoal struct {
 	TargetCount int64 `protobuf:"varint,1,opt,name=target_count,json=targetCount,proto3" json:"target_count,omitempty"`
 	// Time window expressing the period over which you want to reach
 	// the specified target_count.
-	TimeUnit      enums.TargetFrequencyTimeUnitEnum_TargetFrequencyTimeUnit `protobuf:"varint,2,opt,name=time_unit,json=timeUnit,proto3,enum=google.ads.googleads.v22.enums.TargetFrequencyTimeUnitEnum_TargetFrequencyTimeUnit" json:"time_unit,omitempty"`
+	TimeUnit      enums.TargetFrequencyTimeUnitEnum_TargetFrequencyTimeUnit `protobuf:"varint,2,opt,name=time_unit,json=timeUnit,proto3,enum=google.ads.googleads.v23.enums.TargetFrequencyTimeUnitEnum_TargetFrequencyTimeUnit" json:"time_unit,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *TargetCpmTargetFrequencyGoal) Reset() {
 	*x = TargetCpmTargetFrequencyGoal{}
-	mi := &file_google_ads_googleads_v22_common_bidding_proto_msgTypes[10]
+	mi := &file_google_ads_googleads_v23_common_bidding_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -615,7 +615,7 @@ func (x *TargetCpmTargetFrequencyGoal) String() string {
 func (*TargetCpmTargetFrequencyGoal) ProtoMessage() {}
 
 func (x *TargetCpmTargetFrequencyGoal) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v22_common_bidding_proto_msgTypes[10]
+	mi := &file_google_ads_googleads_v23_common_bidding_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -628,7 +628,7 @@ func (x *TargetCpmTargetFrequencyGoal) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TargetCpmTargetFrequencyGoal.ProtoReflect.Descriptor instead.
 func (*TargetCpmTargetFrequencyGoal) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v22_common_bidding_proto_rawDescGZIP(), []int{10}
+	return file_google_ads_googleads_v23_common_bidding_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *TargetCpmTargetFrequencyGoal) GetTargetCount() int64 {
@@ -651,7 +651,7 @@ func (x *TargetCpmTargetFrequencyGoal) GetTimeUnit() enums.TargetFrequencyTimeUn
 type TargetImpressionShare struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// The targeted location on the search results page.
-	Location enums.TargetImpressionShareLocationEnum_TargetImpressionShareLocation `protobuf:"varint,1,opt,name=location,proto3,enum=google.ads.googleads.v22.enums.TargetImpressionShareLocationEnum_TargetImpressionShareLocation" json:"location,omitempty"`
+	Location enums.TargetImpressionShareLocationEnum_TargetImpressionShareLocation `protobuf:"varint,1,opt,name=location,proto3,enum=google.ads.googleads.v23.enums.TargetImpressionShareLocationEnum_TargetImpressionShareLocation" json:"location,omitempty"`
 	// The chosen fraction of ads to be shown in the targeted location in micros.
 	// For example, 1% equals 10,000.
 	LocationFractionMicros *int64 `protobuf:"varint,4,opt,name=location_fraction_micros,json=locationFractionMicros,proto3,oneof" json:"location_fraction_micros,omitempty"`
@@ -665,7 +665,7 @@ type TargetImpressionShare struct {
 
 func (x *TargetImpressionShare) Reset() {
 	*x = TargetImpressionShare{}
-	mi := &file_google_ads_googleads_v22_common_bidding_proto_msgTypes[11]
+	mi := &file_google_ads_googleads_v23_common_bidding_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -677,7 +677,7 @@ func (x *TargetImpressionShare) String() string {
 func (*TargetImpressionShare) ProtoMessage() {}
 
 func (x *TargetImpressionShare) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v22_common_bidding_proto_msgTypes[11]
+	mi := &file_google_ads_googleads_v23_common_bidding_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -690,7 +690,7 @@ func (x *TargetImpressionShare) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TargetImpressionShare.ProtoReflect.Descriptor instead.
 func (*TargetImpressionShare) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v22_common_bidding_proto_rawDescGZIP(), []int{11}
+	return file_google_ads_googleads_v23_common_bidding_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *TargetImpressionShare) GetLocation() enums.TargetImpressionShareLocationEnum_TargetImpressionShareLocation {
@@ -741,7 +741,7 @@ type TargetRoas struct {
 
 func (x *TargetRoas) Reset() {
 	*x = TargetRoas{}
-	mi := &file_google_ads_googleads_v22_common_bidding_proto_msgTypes[12]
+	mi := &file_google_ads_googleads_v23_common_bidding_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -753,7 +753,7 @@ func (x *TargetRoas) String() string {
 func (*TargetRoas) ProtoMessage() {}
 
 func (x *TargetRoas) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v22_common_bidding_proto_msgTypes[12]
+	mi := &file_google_ads_googleads_v23_common_bidding_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -766,7 +766,7 @@ func (x *TargetRoas) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TargetRoas.ProtoReflect.Descriptor instead.
 func (*TargetRoas) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v22_common_bidding_proto_rawDescGZIP(), []int{12}
+	return file_google_ads_googleads_v23_common_bidding_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *TargetRoas) GetTargetRoas() float64 {
@@ -809,7 +809,7 @@ type TargetSpend struct {
 	// https://ads-developers.googleblog.com/2020/05/reminder-about-sunset-creation-of.html
 	// for details.
 	//
-	// Deprecated: Marked as deprecated in google/ads/googleads/v22/common/bidding.proto.
+	// Deprecated: Marked as deprecated in google/ads/googleads/v23/common/bidding.proto.
 	TargetSpendMicros *int64 `protobuf:"varint,3,opt,name=target_spend_micros,json=targetSpendMicros,proto3,oneof" json:"target_spend_micros,omitempty"`
 	// Maximum bid limit that can be set by the bid strategy.
 	// The limit applies to all keywords managed by the strategy.
@@ -820,7 +820,7 @@ type TargetSpend struct {
 
 func (x *TargetSpend) Reset() {
 	*x = TargetSpend{}
-	mi := &file_google_ads_googleads_v22_common_bidding_proto_msgTypes[13]
+	mi := &file_google_ads_googleads_v23_common_bidding_proto_msgTypes[13]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -832,7 +832,7 @@ func (x *TargetSpend) String() string {
 func (*TargetSpend) ProtoMessage() {}
 
 func (x *TargetSpend) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v22_common_bidding_proto_msgTypes[13]
+	mi := &file_google_ads_googleads_v23_common_bidding_proto_msgTypes[13]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -845,10 +845,10 @@ func (x *TargetSpend) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TargetSpend.ProtoReflect.Descriptor instead.
 func (*TargetSpend) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v22_common_bidding_proto_rawDescGZIP(), []int{13}
+	return file_google_ads_googleads_v23_common_bidding_proto_rawDescGZIP(), []int{13}
 }
 
-// Deprecated: Marked as deprecated in google/ads/googleads/v22/common/bidding.proto.
+// Deprecated: Marked as deprecated in google/ads/googleads/v23/common/bidding.proto.
 func (x *TargetSpend) GetTargetSpendMicros() int64 {
 	if x != nil && x.TargetSpendMicros != nil {
 		return *x.TargetSpendMicros
@@ -883,7 +883,7 @@ type PercentCpc struct {
 
 func (x *PercentCpc) Reset() {
 	*x = PercentCpc{}
-	mi := &file_google_ads_googleads_v22_common_bidding_proto_msgTypes[14]
+	mi := &file_google_ads_googleads_v23_common_bidding_proto_msgTypes[14]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -895,7 +895,7 @@ func (x *PercentCpc) String() string {
 func (*PercentCpc) ProtoMessage() {}
 
 func (x *PercentCpc) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v22_common_bidding_proto_msgTypes[14]
+	mi := &file_google_ads_googleads_v23_common_bidding_proto_msgTypes[14]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -908,7 +908,7 @@ func (x *PercentCpc) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PercentCpc.ProtoReflect.Descriptor instead.
 func (*PercentCpc) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v22_common_bidding_proto_rawDescGZIP(), []int{14}
+	return file_google_ads_googleads_v23_common_bidding_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *PercentCpc) GetCpcBidCeilingMicros() int64 {
@@ -931,7 +931,7 @@ type FixedCpm struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Fixed CPM bidding goal. Determines the exact bidding optimization
 	// parameters.
-	Goal enums.FixedCpmGoalEnum_FixedCpmGoal `protobuf:"varint,1,opt,name=goal,proto3,enum=google.ads.googleads.v22.enums.FixedCpmGoalEnum_FixedCpmGoal" json:"goal,omitempty"`
+	Goal enums.FixedCpmGoalEnum_FixedCpmGoal `protobuf:"varint,1,opt,name=goal,proto3,enum=google.ads.googleads.v23.enums.FixedCpmGoalEnum_FixedCpmGoal" json:"goal,omitempty"`
 	// Additional information related to bidding goal.
 	//
 	// Types that are valid to be assigned to GoalInfo:
@@ -944,7 +944,7 @@ type FixedCpm struct {
 
 func (x *FixedCpm) Reset() {
 	*x = FixedCpm{}
-	mi := &file_google_ads_googleads_v22_common_bidding_proto_msgTypes[15]
+	mi := &file_google_ads_googleads_v23_common_bidding_proto_msgTypes[15]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -956,7 +956,7 @@ func (x *FixedCpm) String() string {
 func (*FixedCpm) ProtoMessage() {}
 
 func (x *FixedCpm) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v22_common_bidding_proto_msgTypes[15]
+	mi := &file_google_ads_googleads_v23_common_bidding_proto_msgTypes[15]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -969,7 +969,7 @@ func (x *FixedCpm) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FixedCpm.ProtoReflect.Descriptor instead.
 func (*FixedCpm) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v22_common_bidding_proto_rawDescGZIP(), []int{15}
+	return file_google_ads_googleads_v23_common_bidding_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *FixedCpm) GetGoal() enums.FixedCpmGoalEnum_FixedCpmGoal {
@@ -1015,14 +1015,14 @@ type FixedCpmTargetFrequencyGoalInfo struct {
 	TargetCount int64 `protobuf:"varint,1,opt,name=target_count,json=targetCount,proto3" json:"target_count,omitempty"`
 	// Time window expressing the period over which you want to reach
 	// the specified target_count.
-	TimeUnit      enums.FixedCpmTargetFrequencyTimeUnitEnum_FixedCpmTargetFrequencyTimeUnit `protobuf:"varint,2,opt,name=time_unit,json=timeUnit,proto3,enum=google.ads.googleads.v22.enums.FixedCpmTargetFrequencyTimeUnitEnum_FixedCpmTargetFrequencyTimeUnit" json:"time_unit,omitempty"`
+	TimeUnit      enums.FixedCpmTargetFrequencyTimeUnitEnum_FixedCpmTargetFrequencyTimeUnit `protobuf:"varint,2,opt,name=time_unit,json=timeUnit,proto3,enum=google.ads.googleads.v23.enums.FixedCpmTargetFrequencyTimeUnitEnum_FixedCpmTargetFrequencyTimeUnit" json:"time_unit,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *FixedCpmTargetFrequencyGoalInfo) Reset() {
 	*x = FixedCpmTargetFrequencyGoalInfo{}
-	mi := &file_google_ads_googleads_v22_common_bidding_proto_msgTypes[16]
+	mi := &file_google_ads_googleads_v23_common_bidding_proto_msgTypes[16]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1034,7 +1034,7 @@ func (x *FixedCpmTargetFrequencyGoalInfo) String() string {
 func (*FixedCpmTargetFrequencyGoalInfo) ProtoMessage() {}
 
 func (x *FixedCpmTargetFrequencyGoalInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v22_common_bidding_proto_msgTypes[16]
+	mi := &file_google_ads_googleads_v23_common_bidding_proto_msgTypes[16]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1047,7 +1047,7 @@ func (x *FixedCpmTargetFrequencyGoalInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FixedCpmTargetFrequencyGoalInfo.ProtoReflect.Descriptor instead.
 func (*FixedCpmTargetFrequencyGoalInfo) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v22_common_bidding_proto_rawDescGZIP(), []int{16}
+	return file_google_ads_googleads_v23_common_bidding_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *FixedCpmTargetFrequencyGoalInfo) GetTargetCount() int64 {
@@ -1074,7 +1074,7 @@ type TargetCpv struct {
 
 func (x *TargetCpv) Reset() {
 	*x = TargetCpv{}
-	mi := &file_google_ads_googleads_v22_common_bidding_proto_msgTypes[17]
+	mi := &file_google_ads_googleads_v23_common_bidding_proto_msgTypes[17]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1086,7 +1086,7 @@ func (x *TargetCpv) String() string {
 func (*TargetCpv) ProtoMessage() {}
 
 func (x *TargetCpv) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v22_common_bidding_proto_msgTypes[17]
+	mi := &file_google_ads_googleads_v23_common_bidding_proto_msgTypes[17]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1099,7 +1099,7 @@ func (x *TargetCpv) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TargetCpv.ProtoReflect.Descriptor instead.
 func (*TargetCpv) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v22_common_bidding_proto_rawDescGZIP(), []int{17}
+	return file_google_ads_googleads_v23_common_bidding_proto_rawDescGZIP(), []int{17}
 }
 
 // An automated bidding strategy that sets bids to help get as many clicks
@@ -1116,7 +1116,7 @@ type TargetCpc struct {
 
 func (x *TargetCpc) Reset() {
 	*x = TargetCpc{}
-	mi := &file_google_ads_googleads_v22_common_bidding_proto_msgTypes[18]
+	mi := &file_google_ads_googleads_v23_common_bidding_proto_msgTypes[18]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1128,7 +1128,7 @@ func (x *TargetCpc) String() string {
 func (*TargetCpc) ProtoMessage() {}
 
 func (x *TargetCpc) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v22_common_bidding_proto_msgTypes[18]
+	mi := &file_google_ads_googleads_v23_common_bidding_proto_msgTypes[18]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1141,7 +1141,7 @@ func (x *TargetCpc) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TargetCpc.ProtoReflect.Descriptor instead.
 func (*TargetCpc) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v22_common_bidding_proto_rawDescGZIP(), []int{18}
+	return file_google_ads_googleads_v23_common_bidding_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *TargetCpc) GetTargetCpcMicros() int64 {
@@ -1151,28 +1151,28 @@ func (x *TargetCpc) GetTargetCpcMicros() int64 {
 	return 0
 }
 
-var File_google_ads_googleads_v22_common_bidding_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v23_common_bidding_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v22_common_bidding_proto_rawDesc = string([]byte{
+var file_google_ads_googleads_v23_common_bidding_proto_rawDesc = string([]byte{
 	0x0a, 0x2d, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x32, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x33, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
 	0x6e, 0x2f, 0x62, 0x69, 0x64, 0x64, 0x69, 0x6e, 0x67, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12,
 	0x1f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e,
+	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e,
 	0x1a, 0x33, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x32, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x33, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73,
 	0x2f, 0x66, 0x69, 0x78, 0x65, 0x64, 0x5f, 0x63, 0x70, 0x6d, 0x5f, 0x67, 0x6f, 0x61, 0x6c, 0x2e,
 	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x49, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64,
-	0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x32, 0x2f,
+	0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x33, 0x2f,
 	0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x66, 0x69, 0x78, 0x65, 0x64, 0x5f, 0x63, 0x70, 0x6d, 0x5f,
 	0x74, 0x61, 0x72, 0x67, 0x65, 0x74, 0x5f, 0x66, 0x72, 0x65, 0x71, 0x75, 0x65, 0x6e, 0x63, 0x79,
 	0x5f, 0x74, 0x69, 0x6d, 0x65, 0x5f, 0x75, 0x6e, 0x69, 0x74, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
 	0x1a, 0x3f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x32, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x33, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73,
 	0x2f, 0x74, 0x61, 0x72, 0x67, 0x65, 0x74, 0x5f, 0x66, 0x72, 0x65, 0x71, 0x75, 0x65, 0x6e, 0x63,
 	0x79, 0x5f, 0x74, 0x69, 0x6d, 0x65, 0x5f, 0x75, 0x6e, 0x69, 0x74, 0x2e, 0x70, 0x72, 0x6f, 0x74,
 	0x6f, 0x1a, 0x45, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x32, 0x2f, 0x65, 0x6e, 0x75, 0x6d,
+	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x33, 0x2f, 0x65, 0x6e, 0x75, 0x6d,
 	0x73, 0x2f, 0x74, 0x61, 0x72, 0x67, 0x65, 0x74, 0x5f, 0x69, 0x6d, 0x70, 0x72, 0x65, 0x73, 0x73,
 	0x69, 0x6f, 0x6e, 0x5f, 0x73, 0x68, 0x61, 0x72, 0x65, 0x5f, 0x6c, 0x6f, 0x63, 0x61, 0x74, 0x69,
 	0x6f, 0x6e, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x62, 0x0a, 0x0a, 0x43, 0x6f, 0x6d, 0x6d,
@@ -1239,7 +1239,7 @@ var file_google_ads_googleads_v22_common_bidding_proto_rawDesc = string([]byte{
 	0x6d, 0x12, 0x73, 0x0a, 0x15, 0x74, 0x61, 0x72, 0x67, 0x65, 0x74, 0x5f, 0x66, 0x72, 0x65, 0x71,
 	0x75, 0x65, 0x6e, 0x63, 0x79, 0x5f, 0x67, 0x6f, 0x61, 0x6c, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b,
 	0x32, 0x3d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d,
+	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e, 0x63, 0x6f, 0x6d, 0x6d,
 	0x6f, 0x6e, 0x2e, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x43, 0x70, 0x6d, 0x54, 0x61, 0x72, 0x67,
 	0x65, 0x74, 0x46, 0x72, 0x65, 0x71, 0x75, 0x65, 0x6e, 0x63, 0x79, 0x47, 0x6f, 0x61, 0x6c, 0x48,
 	0x00, 0x52, 0x13, 0x74, 0x61, 0x72, 0x67, 0x65, 0x74, 0x46, 0x72, 0x65, 0x71, 0x75, 0x65, 0x6e,
@@ -1250,7 +1250,7 @@ var file_google_ads_googleads_v22_common_bidding_proto_rawDesc = string([]byte{
 	0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x0b, 0x74, 0x61, 0x72, 0x67, 0x65, 0x74, 0x43, 0x6f, 0x75,
 	0x6e, 0x74, 0x12, 0x70, 0x0a, 0x09, 0x74, 0x69, 0x6d, 0x65, 0x5f, 0x75, 0x6e, 0x69, 0x74, 0x18,
 	0x02, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x53, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61,
-	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x32,
+	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x33,
 	0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x46, 0x72, 0x65,
 	0x71, 0x75, 0x65, 0x6e, 0x63, 0x79, 0x54, 0x69, 0x6d, 0x65, 0x55, 0x6e, 0x69, 0x74, 0x45, 0x6e,
 	0x75, 0x6d, 0x2e, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x46, 0x72, 0x65, 0x71, 0x75, 0x65, 0x6e,
@@ -1259,7 +1259,7 @@ var file_google_ads_googleads_v22_common_bidding_proto_rawDesc = string([]byte{
 	0x6d, 0x70, 0x72, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x53, 0x68, 0x61, 0x72, 0x65, 0x12, 0x7b,
 	0x0a, 0x08, 0x6c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e,
 	0x32, 0x5f, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d,
+	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e, 0x65, 0x6e, 0x75, 0x6d,
 	0x73, 0x2e, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x49, 0x6d, 0x70, 0x72, 0x65, 0x73, 0x73, 0x69,
 	0x6f, 0x6e, 0x53, 0x68, 0x61, 0x72, 0x65, 0x4c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x45,
 	0x6e, 0x75, 0x6d, 0x2e, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x49, 0x6d, 0x70, 0x72, 0x65, 0x73,
@@ -1324,13 +1324,13 @@ var file_google_ads_googleads_v22_common_bidding_proto_rawDesc = string([]byte{
 	0x0a, 0x08, 0x46, 0x69, 0x78, 0x65, 0x64, 0x43, 0x70, 0x6d, 0x12, 0x51, 0x0a, 0x04, 0x67, 0x6f,
 	0x61, 0x6c, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x3d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e,
-	0x76, 0x32, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x46, 0x69, 0x78, 0x65, 0x64, 0x43,
+	0x76, 0x32, 0x33, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x46, 0x69, 0x78, 0x65, 0x64, 0x43,
 	0x70, 0x6d, 0x47, 0x6f, 0x61, 0x6c, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x46, 0x69, 0x78, 0x65, 0x64,
 	0x43, 0x70, 0x6d, 0x47, 0x6f, 0x61, 0x6c, 0x52, 0x04, 0x67, 0x6f, 0x61, 0x6c, 0x12, 0x76, 0x0a,
 	0x15, 0x74, 0x61, 0x72, 0x67, 0x65, 0x74, 0x5f, 0x66, 0x72, 0x65, 0x71, 0x75, 0x65, 0x6e, 0x63,
 	0x79, 0x5f, 0x69, 0x6e, 0x66, 0x6f, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x40, 0x2e, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x46,
+	0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x46,
 	0x69, 0x78, 0x65, 0x64, 0x43, 0x70, 0x6d, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x46, 0x72, 0x65,
 	0x71, 0x75, 0x65, 0x6e, 0x63, 0x79, 0x47, 0x6f, 0x61, 0x6c, 0x49, 0x6e, 0x66, 0x6f, 0x48, 0x00,
 	0x52, 0x13, 0x74, 0x61, 0x72, 0x67, 0x65, 0x74, 0x46, 0x72, 0x65, 0x71, 0x75, 0x65, 0x6e, 0x63,
@@ -1342,7 +1342,7 @@ var file_google_ads_googleads_v22_common_bidding_proto_rawDesc = string([]byte{
 	0x72, 0x67, 0x65, 0x74, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x12, 0x80, 0x01, 0x0a, 0x09, 0x74, 0x69,
 	0x6d, 0x65, 0x5f, 0x75, 0x6e, 0x69, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x63, 0x2e,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x46,
+	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x46,
 	0x69, 0x78, 0x65, 0x64, 0x43, 0x70, 0x6d, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x46, 0x72, 0x65,
 	0x71, 0x75, 0x65, 0x6e, 0x63, 0x79, 0x54, 0x69, 0x6d, 0x65, 0x55, 0x6e, 0x69, 0x74, 0x45, 0x6e,
 	0x75, 0x6d, 0x2e, 0x46, 0x69, 0x78, 0x65, 0x64, 0x43, 0x70, 0x6d, 0x54, 0x61, 0x72, 0x67, 0x65,
@@ -1354,67 +1354,67 @@ var file_google_ads_googleads_v22_common_bidding_proto_rawDesc = string([]byte{
 	0x03, 0x52, 0x0f, 0x74, 0x61, 0x72, 0x67, 0x65, 0x74, 0x43, 0x70, 0x63, 0x4d, 0x69, 0x63, 0x72,
 	0x6f, 0x73, 0x42, 0xec, 0x01, 0x0a, 0x23, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e,
-	0x76, 0x32, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x42, 0x0c, 0x42, 0x69, 0x64, 0x64,
+	0x76, 0x32, 0x33, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x42, 0x0c, 0x42, 0x69, 0x64, 0x64,
 	0x69, 0x6e, 0x67, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x45, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2e, 0x67, 0x6f, 0x6c, 0x61, 0x6e, 0x67, 0x2e, 0x6f, 0x72, 0x67, 0x2f, 0x67, 0x65,
 	0x6e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x70, 0x69,
 	0x73, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f,
-	0x76, 0x32, 0x32, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x3b, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
+	0x76, 0x32, 0x33, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x3b, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
 	0x6e, 0xa2, 0x02, 0x03, 0x47, 0x41, 0x41, 0xaa, 0x02, 0x1f, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x41, 0x64, 0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e, 0x56,
-	0x32, 0x32, 0x2e, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xca, 0x02, 0x1f, 0x47, 0x6f, 0x6f, 0x67,
+	0x32, 0x33, 0x2e, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xca, 0x02, 0x1f, 0x47, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x5c, 0x41, 0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73,
-	0x5c, 0x56, 0x32, 0x32, 0x5c, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xea, 0x02, 0x23, 0x47, 0x6f,
+	0x5c, 0x56, 0x32, 0x33, 0x5c, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xea, 0x02, 0x23, 0x47, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x3a, 0x3a, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x47, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x32, 0x32, 0x3a, 0x3a, 0x43, 0x6f, 0x6d, 0x6d, 0x6f,
+	0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x32, 0x33, 0x3a, 0x3a, 0x43, 0x6f, 0x6d, 0x6d, 0x6f,
 	0x6e, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 })
 
 var (
-	file_google_ads_googleads_v22_common_bidding_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v22_common_bidding_proto_rawDescData []byte
+	file_google_ads_googleads_v23_common_bidding_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v23_common_bidding_proto_rawDescData []byte
 )
 
-func file_google_ads_googleads_v22_common_bidding_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v22_common_bidding_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v22_common_bidding_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v22_common_bidding_proto_rawDesc), len(file_google_ads_googleads_v22_common_bidding_proto_rawDesc)))
+func file_google_ads_googleads_v23_common_bidding_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v23_common_bidding_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v23_common_bidding_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v23_common_bidding_proto_rawDesc), len(file_google_ads_googleads_v23_common_bidding_proto_rawDesc)))
 	})
-	return file_google_ads_googleads_v22_common_bidding_proto_rawDescData
+	return file_google_ads_googleads_v23_common_bidding_proto_rawDescData
 }
 
-var file_google_ads_googleads_v22_common_bidding_proto_msgTypes = make([]protoimpl.MessageInfo, 19)
-var file_google_ads_googleads_v22_common_bidding_proto_goTypes = []any{
-	(*Commission)(nil),                      // 0: google.ads.googleads.v22.common.Commission
-	(*EnhancedCpc)(nil),                     // 1: google.ads.googleads.v22.common.EnhancedCpc
-	(*ManualCpa)(nil),                       // 2: google.ads.googleads.v22.common.ManualCpa
-	(*ManualCpc)(nil),                       // 3: google.ads.googleads.v22.common.ManualCpc
-	(*ManualCpm)(nil),                       // 4: google.ads.googleads.v22.common.ManualCpm
-	(*ManualCpv)(nil),                       // 5: google.ads.googleads.v22.common.ManualCpv
-	(*MaximizeConversions)(nil),             // 6: google.ads.googleads.v22.common.MaximizeConversions
-	(*MaximizeConversionValue)(nil),         // 7: google.ads.googleads.v22.common.MaximizeConversionValue
-	(*TargetCpa)(nil),                       // 8: google.ads.googleads.v22.common.TargetCpa
-	(*TargetCpm)(nil),                       // 9: google.ads.googleads.v22.common.TargetCpm
-	(*TargetCpmTargetFrequencyGoal)(nil),    // 10: google.ads.googleads.v22.common.TargetCpmTargetFrequencyGoal
-	(*TargetImpressionShare)(nil),           // 11: google.ads.googleads.v22.common.TargetImpressionShare
-	(*TargetRoas)(nil),                      // 12: google.ads.googleads.v22.common.TargetRoas
-	(*TargetSpend)(nil),                     // 13: google.ads.googleads.v22.common.TargetSpend
-	(*PercentCpc)(nil),                      // 14: google.ads.googleads.v22.common.PercentCpc
-	(*FixedCpm)(nil),                        // 15: google.ads.googleads.v22.common.FixedCpm
-	(*FixedCpmTargetFrequencyGoalInfo)(nil), // 16: google.ads.googleads.v22.common.FixedCpmTargetFrequencyGoalInfo
-	(*TargetCpv)(nil),                       // 17: google.ads.googleads.v22.common.TargetCpv
-	(*TargetCpc)(nil),                       // 18: google.ads.googleads.v22.common.TargetCpc
-	(enums.TargetFrequencyTimeUnitEnum_TargetFrequencyTimeUnit)(0),                 // 19: google.ads.googleads.v22.enums.TargetFrequencyTimeUnitEnum.TargetFrequencyTimeUnit
-	(enums.TargetImpressionShareLocationEnum_TargetImpressionShareLocation)(0),     // 20: google.ads.googleads.v22.enums.TargetImpressionShareLocationEnum.TargetImpressionShareLocation
-	(enums.FixedCpmGoalEnum_FixedCpmGoal)(0),                                       // 21: google.ads.googleads.v22.enums.FixedCpmGoalEnum.FixedCpmGoal
-	(enums.FixedCpmTargetFrequencyTimeUnitEnum_FixedCpmTargetFrequencyTimeUnit)(0), // 22: google.ads.googleads.v22.enums.FixedCpmTargetFrequencyTimeUnitEnum.FixedCpmTargetFrequencyTimeUnit
+var file_google_ads_googleads_v23_common_bidding_proto_msgTypes = make([]protoimpl.MessageInfo, 19)
+var file_google_ads_googleads_v23_common_bidding_proto_goTypes = []any{
+	(*Commission)(nil),                      // 0: google.ads.googleads.v23.common.Commission
+	(*EnhancedCpc)(nil),                     // 1: google.ads.googleads.v23.common.EnhancedCpc
+	(*ManualCpa)(nil),                       // 2: google.ads.googleads.v23.common.ManualCpa
+	(*ManualCpc)(nil),                       // 3: google.ads.googleads.v23.common.ManualCpc
+	(*ManualCpm)(nil),                       // 4: google.ads.googleads.v23.common.ManualCpm
+	(*ManualCpv)(nil),                       // 5: google.ads.googleads.v23.common.ManualCpv
+	(*MaximizeConversions)(nil),             // 6: google.ads.googleads.v23.common.MaximizeConversions
+	(*MaximizeConversionValue)(nil),         // 7: google.ads.googleads.v23.common.MaximizeConversionValue
+	(*TargetCpa)(nil),                       // 8: google.ads.googleads.v23.common.TargetCpa
+	(*TargetCpm)(nil),                       // 9: google.ads.googleads.v23.common.TargetCpm
+	(*TargetCpmTargetFrequencyGoal)(nil),    // 10: google.ads.googleads.v23.common.TargetCpmTargetFrequencyGoal
+	(*TargetImpressionShare)(nil),           // 11: google.ads.googleads.v23.common.TargetImpressionShare
+	(*TargetRoas)(nil),                      // 12: google.ads.googleads.v23.common.TargetRoas
+	(*TargetSpend)(nil),                     // 13: google.ads.googleads.v23.common.TargetSpend
+	(*PercentCpc)(nil),                      // 14: google.ads.googleads.v23.common.PercentCpc
+	(*FixedCpm)(nil),                        // 15: google.ads.googleads.v23.common.FixedCpm
+	(*FixedCpmTargetFrequencyGoalInfo)(nil), // 16: google.ads.googleads.v23.common.FixedCpmTargetFrequencyGoalInfo
+	(*TargetCpv)(nil),                       // 17: google.ads.googleads.v23.common.TargetCpv
+	(*TargetCpc)(nil),                       // 18: google.ads.googleads.v23.common.TargetCpc
+	(enums.TargetFrequencyTimeUnitEnum_TargetFrequencyTimeUnit)(0),                 // 19: google.ads.googleads.v23.enums.TargetFrequencyTimeUnitEnum.TargetFrequencyTimeUnit
+	(enums.TargetImpressionShareLocationEnum_TargetImpressionShareLocation)(0),     // 20: google.ads.googleads.v23.enums.TargetImpressionShareLocationEnum.TargetImpressionShareLocation
+	(enums.FixedCpmGoalEnum_FixedCpmGoal)(0),                                       // 21: google.ads.googleads.v23.enums.FixedCpmGoalEnum.FixedCpmGoal
+	(enums.FixedCpmTargetFrequencyTimeUnitEnum_FixedCpmTargetFrequencyTimeUnit)(0), // 22: google.ads.googleads.v23.enums.FixedCpmTargetFrequencyTimeUnitEnum.FixedCpmTargetFrequencyTimeUnit
 }
-var file_google_ads_googleads_v22_common_bidding_proto_depIdxs = []int32{
-	10, // 0: google.ads.googleads.v22.common.TargetCpm.target_frequency_goal:type_name -> google.ads.googleads.v22.common.TargetCpmTargetFrequencyGoal
-	19, // 1: google.ads.googleads.v22.common.TargetCpmTargetFrequencyGoal.time_unit:type_name -> google.ads.googleads.v22.enums.TargetFrequencyTimeUnitEnum.TargetFrequencyTimeUnit
-	20, // 2: google.ads.googleads.v22.common.TargetImpressionShare.location:type_name -> google.ads.googleads.v22.enums.TargetImpressionShareLocationEnum.TargetImpressionShareLocation
-	21, // 3: google.ads.googleads.v22.common.FixedCpm.goal:type_name -> google.ads.googleads.v22.enums.FixedCpmGoalEnum.FixedCpmGoal
-	16, // 4: google.ads.googleads.v22.common.FixedCpm.target_frequency_info:type_name -> google.ads.googleads.v22.common.FixedCpmTargetFrequencyGoalInfo
-	22, // 5: google.ads.googleads.v22.common.FixedCpmTargetFrequencyGoalInfo.time_unit:type_name -> google.ads.googleads.v22.enums.FixedCpmTargetFrequencyTimeUnitEnum.FixedCpmTargetFrequencyTimeUnit
+var file_google_ads_googleads_v23_common_bidding_proto_depIdxs = []int32{
+	10, // 0: google.ads.googleads.v23.common.TargetCpm.target_frequency_goal:type_name -> google.ads.googleads.v23.common.TargetCpmTargetFrequencyGoal
+	19, // 1: google.ads.googleads.v23.common.TargetCpmTargetFrequencyGoal.time_unit:type_name -> google.ads.googleads.v23.enums.TargetFrequencyTimeUnitEnum.TargetFrequencyTimeUnit
+	20, // 2: google.ads.googleads.v23.common.TargetImpressionShare.location:type_name -> google.ads.googleads.v23.enums.TargetImpressionShareLocationEnum.TargetImpressionShareLocation
+	21, // 3: google.ads.googleads.v23.common.FixedCpm.goal:type_name -> google.ads.googleads.v23.enums.FixedCpmGoalEnum.FixedCpmGoal
+	16, // 4: google.ads.googleads.v23.common.FixedCpm.target_frequency_info:type_name -> google.ads.googleads.v23.common.FixedCpmTargetFrequencyGoalInfo
+	22, // 5: google.ads.googleads.v23.common.FixedCpmTargetFrequencyGoalInfo.time_unit:type_name -> google.ads.googleads.v23.enums.FixedCpmTargetFrequencyTimeUnitEnum.FixedCpmTargetFrequencyTimeUnit
 	6,  // [6:6] is the sub-list for method output_type
 	6,  // [6:6] is the sub-list for method input_type
 	6,  // [6:6] is the sub-list for extension type_name
@@ -1422,40 +1422,40 @@ var file_google_ads_googleads_v22_common_bidding_proto_depIdxs = []int32{
 	0,  // [0:6] is the sub-list for field type_name
 }
 
-func init() { file_google_ads_googleads_v22_common_bidding_proto_init() }
-func file_google_ads_googleads_v22_common_bidding_proto_init() {
-	if File_google_ads_googleads_v22_common_bidding_proto != nil {
+func init() { file_google_ads_googleads_v23_common_bidding_proto_init() }
+func file_google_ads_googleads_v23_common_bidding_proto_init() {
+	if File_google_ads_googleads_v23_common_bidding_proto != nil {
 		return
 	}
-	file_google_ads_googleads_v22_common_bidding_proto_msgTypes[0].OneofWrappers = []any{}
-	file_google_ads_googleads_v22_common_bidding_proto_msgTypes[3].OneofWrappers = []any{}
-	file_google_ads_googleads_v22_common_bidding_proto_msgTypes[7].OneofWrappers = []any{}
-	file_google_ads_googleads_v22_common_bidding_proto_msgTypes[8].OneofWrappers = []any{}
-	file_google_ads_googleads_v22_common_bidding_proto_msgTypes[9].OneofWrappers = []any{
+	file_google_ads_googleads_v23_common_bidding_proto_msgTypes[0].OneofWrappers = []any{}
+	file_google_ads_googleads_v23_common_bidding_proto_msgTypes[3].OneofWrappers = []any{}
+	file_google_ads_googleads_v23_common_bidding_proto_msgTypes[7].OneofWrappers = []any{}
+	file_google_ads_googleads_v23_common_bidding_proto_msgTypes[8].OneofWrappers = []any{}
+	file_google_ads_googleads_v23_common_bidding_proto_msgTypes[9].OneofWrappers = []any{
 		(*TargetCpm_TargetFrequencyGoal)(nil),
 	}
-	file_google_ads_googleads_v22_common_bidding_proto_msgTypes[11].OneofWrappers = []any{}
-	file_google_ads_googleads_v22_common_bidding_proto_msgTypes[12].OneofWrappers = []any{}
-	file_google_ads_googleads_v22_common_bidding_proto_msgTypes[13].OneofWrappers = []any{}
-	file_google_ads_googleads_v22_common_bidding_proto_msgTypes[14].OneofWrappers = []any{}
-	file_google_ads_googleads_v22_common_bidding_proto_msgTypes[15].OneofWrappers = []any{
+	file_google_ads_googleads_v23_common_bidding_proto_msgTypes[11].OneofWrappers = []any{}
+	file_google_ads_googleads_v23_common_bidding_proto_msgTypes[12].OneofWrappers = []any{}
+	file_google_ads_googleads_v23_common_bidding_proto_msgTypes[13].OneofWrappers = []any{}
+	file_google_ads_googleads_v23_common_bidding_proto_msgTypes[14].OneofWrappers = []any{}
+	file_google_ads_googleads_v23_common_bidding_proto_msgTypes[15].OneofWrappers = []any{
 		(*FixedCpm_TargetFrequencyInfo)(nil),
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v22_common_bidding_proto_rawDesc), len(file_google_ads_googleads_v22_common_bidding_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v23_common_bidding_proto_rawDesc), len(file_google_ads_googleads_v23_common_bidding_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   19,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_google_ads_googleads_v22_common_bidding_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v22_common_bidding_proto_depIdxs,
-		MessageInfos:      file_google_ads_googleads_v22_common_bidding_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v23_common_bidding_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v23_common_bidding_proto_depIdxs,
+		MessageInfos:      file_google_ads_googleads_v23_common_bidding_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v22_common_bidding_proto = out.File
-	file_google_ads_googleads_v22_common_bidding_proto_goTypes = nil
-	file_google_ads_googleads_v22_common_bidding_proto_depIdxs = nil
+	File_google_ads_googleads_v23_common_bidding_proto = out.File
+	file_google_ads_googleads_v23_common_bidding_proto_goTypes = nil
+	file_google_ads_googleads_v23_common_bidding_proto_depIdxs = nil
 }

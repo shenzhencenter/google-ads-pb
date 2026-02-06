@@ -1,4 +1,4 @@
-// Copyright 2025 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v22/services/google_ads_service.proto
+// source: google/ads/googleads/v23/services/google_ads_service.proto
 
 package services
 
@@ -33,9 +33,9 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	GoogleAdsService_Search_FullMethodName       = "/google.ads.googleads.v22.services.GoogleAdsService/Search"
-	GoogleAdsService_SearchStream_FullMethodName = "/google.ads.googleads.v22.services.GoogleAdsService/SearchStream"
-	GoogleAdsService_Mutate_FullMethodName       = "/google.ads.googleads.v22.services.GoogleAdsService/Mutate"
+	GoogleAdsService_Search_FullMethodName       = "/google.ads.googleads.v23.services.GoogleAdsService/Search"
+	GoogleAdsService_SearchStream_FullMethodName = "/google.ads.googleads.v23.services.GoogleAdsService/SearchStream"
+	GoogleAdsService_Mutate_FullMethodName       = "/google.ads.googleads.v23.services.GoogleAdsService/Mutate"
 )
 
 // GoogleAdsServiceClient is the client API for GoogleAdsService service.
@@ -478,7 +478,7 @@ func _GoogleAdsService_Mutate_Handler(srv interface{}, ctx context.Context, dec 
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var GoogleAdsService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v22.services.GoogleAdsService",
+	ServiceName: "google.ads.googleads.v23.services.GoogleAdsService",
 	HandlerType: (*GoogleAdsServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -497,5 +497,5 @@ var GoogleAdsService_ServiceDesc = grpc.ServiceDesc{
 			ServerStreams: true,
 		},
 	},
-	Metadata: "google/ads/googleads/v22/services/google_ads_service.proto",
+	Metadata: "google/ads/googleads/v23/services/google_ads_service.proto",
 }

@@ -1,4 +1,4 @@
-// Copyright 2025 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v22/services/conversion_value_rule_set_service.proto
+// source: google/ads/googleads/v23/services/conversion_value_rule_set_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	ConversionValueRuleSetService_MutateConversionValueRuleSets_FullMethodName = "/google.ads.googleads.v22.services.ConversionValueRuleSetService/MutateConversionValueRuleSets"
+	ConversionValueRuleSetService_MutateConversionValueRuleSets_FullMethodName = "/google.ads.googleads.v23.services.ConversionValueRuleSetService/MutateConversionValueRuleSets"
 )
 
 // ConversionValueRuleSetServiceClient is the client API for ConversionValueRuleSetService service.
@@ -131,7 +131,7 @@ func _ConversionValueRuleSetService_MutateConversionValueRuleSets_Handler(srv in
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ConversionValueRuleSetService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v22.services.ConversionValueRuleSetService",
+	ServiceName: "google.ads.googleads.v23.services.ConversionValueRuleSetService",
 	HandlerType: (*ConversionValueRuleSetServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -140,5 +140,5 @@ var ConversionValueRuleSetService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v22/services/conversion_value_rule_set_service.proto",
+	Metadata: "google/ads/googleads/v23/services/conversion_value_rule_set_service.proto",
 }

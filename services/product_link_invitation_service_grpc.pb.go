@@ -1,4 +1,4 @@
-// Copyright 2025 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v22/services/product_link_invitation_service.proto
+// source: google/ads/googleads/v23/services/product_link_invitation_service.proto
 
 package services
 
@@ -33,9 +33,9 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	ProductLinkInvitationService_CreateProductLinkInvitation_FullMethodName = "/google.ads.googleads.v22.services.ProductLinkInvitationService/CreateProductLinkInvitation"
-	ProductLinkInvitationService_UpdateProductLinkInvitation_FullMethodName = "/google.ads.googleads.v22.services.ProductLinkInvitationService/UpdateProductLinkInvitation"
-	ProductLinkInvitationService_RemoveProductLinkInvitation_FullMethodName = "/google.ads.googleads.v22.services.ProductLinkInvitationService/RemoveProductLinkInvitation"
+	ProductLinkInvitationService_CreateProductLinkInvitation_FullMethodName = "/google.ads.googleads.v23.services.ProductLinkInvitationService/CreateProductLinkInvitation"
+	ProductLinkInvitationService_UpdateProductLinkInvitation_FullMethodName = "/google.ads.googleads.v23.services.ProductLinkInvitationService/UpdateProductLinkInvitation"
+	ProductLinkInvitationService_RemoveProductLinkInvitation_FullMethodName = "/google.ads.googleads.v23.services.ProductLinkInvitationService/RemoveProductLinkInvitation"
 )
 
 // ProductLinkInvitationServiceClient is the client API for ProductLinkInvitationService service.
@@ -203,7 +203,7 @@ func _ProductLinkInvitationService_RemoveProductLinkInvitation_Handler(srv inter
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ProductLinkInvitationService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v22.services.ProductLinkInvitationService",
+	ServiceName: "google.ads.googleads.v23.services.ProductLinkInvitationService",
 	HandlerType: (*ProductLinkInvitationServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -220,5 +220,5 @@ var ProductLinkInvitationService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v22/services/product_link_invitation_service.proto",
+	Metadata: "google/ads/googleads/v23/services/product_link_invitation_service.proto",
 }

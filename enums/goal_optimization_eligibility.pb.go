@@ -1,4 +1,4 @@
-// Copyright 2025 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.36.5
 // 	protoc        v4.24.4
-// source: google/ads/googleads/v22/enums/goal_optimization_eligibility.proto
+// source: google/ads/googleads/v23/enums/goal_optimization_eligibility.proto
 
 package enums
 
@@ -76,11 +76,11 @@ func (x GoalOptimizationEligibilityEnum_GoalOptimizationEligibility) String() st
 }
 
 func (GoalOptimizationEligibilityEnum_GoalOptimizationEligibility) Descriptor() protoreflect.EnumDescriptor {
-	return file_google_ads_googleads_v22_enums_goal_optimization_eligibility_proto_enumTypes[0].Descriptor()
+	return file_google_ads_googleads_v23_enums_goal_optimization_eligibility_proto_enumTypes[0].Descriptor()
 }
 
 func (GoalOptimizationEligibilityEnum_GoalOptimizationEligibility) Type() protoreflect.EnumType {
-	return &file_google_ads_googleads_v22_enums_goal_optimization_eligibility_proto_enumTypes[0]
+	return &file_google_ads_googleads_v23_enums_goal_optimization_eligibility_proto_enumTypes[0]
 }
 
 func (x GoalOptimizationEligibilityEnum_GoalOptimizationEligibility) Number() protoreflect.EnumNumber {
@@ -89,7 +89,7 @@ func (x GoalOptimizationEligibilityEnum_GoalOptimizationEligibility) Number() pr
 
 // Deprecated: Use GoalOptimizationEligibilityEnum_GoalOptimizationEligibility.Descriptor instead.
 func (GoalOptimizationEligibilityEnum_GoalOptimizationEligibility) EnumDescriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v22_enums_goal_optimization_eligibility_proto_rawDescGZIP(), []int{0, 0}
+	return file_google_ads_googleads_v23_enums_goal_optimization_eligibility_proto_rawDescGZIP(), []int{0, 0}
 }
 
 // Container for enum describing possible goal optimization eligibility.
@@ -101,7 +101,7 @@ type GoalOptimizationEligibilityEnum struct {
 
 func (x *GoalOptimizationEligibilityEnum) Reset() {
 	*x = GoalOptimizationEligibilityEnum{}
-	mi := &file_google_ads_googleads_v22_enums_goal_optimization_eligibility_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v23_enums_goal_optimization_eligibility_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -113,7 +113,7 @@ func (x *GoalOptimizationEligibilityEnum) String() string {
 func (*GoalOptimizationEligibilityEnum) ProtoMessage() {}
 
 func (x *GoalOptimizationEligibilityEnum) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v22_enums_goal_optimization_eligibility_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v23_enums_goal_optimization_eligibility_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -126,18 +126,18 @@ func (x *GoalOptimizationEligibilityEnum) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GoalOptimizationEligibilityEnum.ProtoReflect.Descriptor instead.
 func (*GoalOptimizationEligibilityEnum) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v22_enums_goal_optimization_eligibility_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v23_enums_goal_optimization_eligibility_proto_rawDescGZIP(), []int{0}
 }
 
-var File_google_ads_googleads_v22_enums_goal_optimization_eligibility_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v23_enums_goal_optimization_eligibility_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v22_enums_goal_optimization_eligibility_proto_rawDesc = string([]byte{
+var file_google_ads_googleads_v23_enums_goal_optimization_eligibility_proto_rawDesc = string([]byte{
 	0x0a, 0x42, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x32, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x33, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73,
 	0x2f, 0x67, 0x6f, 0x61, 0x6c, 0x5f, 0x6f, 0x70, 0x74, 0x69, 0x6d, 0x69, 0x7a, 0x61, 0x74, 0x69,
 	0x6f, 0x6e, 0x5f, 0x65, 0x6c, 0x69, 0x67, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x74, 0x79, 0x2e, 0x70,
 	0x72, 0x6f, 0x74, 0x6f, 0x12, 0x1e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73,
-	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x32, 0x2e, 0x65,
+	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e, 0x65,
 	0x6e, 0x75, 0x6d, 0x73, 0x22, 0x7c, 0x0a, 0x1f, 0x47, 0x6f, 0x61, 0x6c, 0x4f, 0x70, 0x74, 0x69,
 	0x6d, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x45, 0x6c, 0x69, 0x67, 0x69, 0x62, 0x69, 0x6c,
 	0x69, 0x74, 0x79, 0x45, 0x6e, 0x75, 0x6d, 0x22, 0x59, 0x0a, 0x1b, 0x47, 0x6f, 0x61, 0x6c, 0x4f,
@@ -148,42 +148,42 @@ var file_google_ads_googleads_v22_enums_goal_optimization_eligibility_proto_rawD
 	0x10, 0x02, 0x12, 0x0e, 0x0a, 0x0a, 0x49, 0x4e, 0x45, 0x4c, 0x49, 0x47, 0x49, 0x42, 0x4c, 0x45,
 	0x10, 0x03, 0x42, 0xfa, 0x01, 0x0a, 0x22, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e,
-	0x76, 0x32, 0x32, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x42, 0x20, 0x47, 0x6f, 0x61, 0x6c, 0x4f,
+	0x76, 0x32, 0x33, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x42, 0x20, 0x47, 0x6f, 0x61, 0x6c, 0x4f,
 	0x70, 0x74, 0x69, 0x6d, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x45, 0x6c, 0x69, 0x67, 0x69,
 	0x62, 0x69, 0x6c, 0x69, 0x74, 0x79, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x43, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x67, 0x6f, 0x6c, 0x61, 0x6e, 0x67, 0x2e, 0x6f, 0x72, 0x67,
 	0x2f, 0x67, 0x65, 0x6e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x61, 0x70, 0x69, 0x73, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x64, 0x73, 0x2f, 0x76, 0x32, 0x32, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x3b, 0x65, 0x6e, 0x75,
+	0x64, 0x73, 0x2f, 0x76, 0x32, 0x33, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x3b, 0x65, 0x6e, 0x75,
 	0x6d, 0x73, 0xa2, 0x02, 0x03, 0x47, 0x41, 0x41, 0xaa, 0x02, 0x1e, 0x47, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2e, 0x41, 0x64, 0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e,
-	0x56, 0x32, 0x32, 0x2e, 0x45, 0x6e, 0x75, 0x6d, 0x73, 0xca, 0x02, 0x1e, 0x47, 0x6f, 0x6f, 0x67,
+	0x56, 0x32, 0x33, 0x2e, 0x45, 0x6e, 0x75, 0x6d, 0x73, 0xca, 0x02, 0x1e, 0x47, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x5c, 0x41, 0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73,
-	0x5c, 0x56, 0x32, 0x32, 0x5c, 0x45, 0x6e, 0x75, 0x6d, 0x73, 0xea, 0x02, 0x22, 0x47, 0x6f, 0x6f,
+	0x5c, 0x56, 0x32, 0x33, 0x5c, 0x45, 0x6e, 0x75, 0x6d, 0x73, 0xea, 0x02, 0x22, 0x47, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x3a, 0x3a, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x32, 0x32, 0x3a, 0x3a, 0x45, 0x6e, 0x75, 0x6d, 0x73, 0x62,
+	0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x32, 0x33, 0x3a, 0x3a, 0x45, 0x6e, 0x75, 0x6d, 0x73, 0x62,
 	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 })
 
 var (
-	file_google_ads_googleads_v22_enums_goal_optimization_eligibility_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v22_enums_goal_optimization_eligibility_proto_rawDescData []byte
+	file_google_ads_googleads_v23_enums_goal_optimization_eligibility_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v23_enums_goal_optimization_eligibility_proto_rawDescData []byte
 )
 
-func file_google_ads_googleads_v22_enums_goal_optimization_eligibility_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v22_enums_goal_optimization_eligibility_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v22_enums_goal_optimization_eligibility_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v22_enums_goal_optimization_eligibility_proto_rawDesc), len(file_google_ads_googleads_v22_enums_goal_optimization_eligibility_proto_rawDesc)))
+func file_google_ads_googleads_v23_enums_goal_optimization_eligibility_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v23_enums_goal_optimization_eligibility_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v23_enums_goal_optimization_eligibility_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v23_enums_goal_optimization_eligibility_proto_rawDesc), len(file_google_ads_googleads_v23_enums_goal_optimization_eligibility_proto_rawDesc)))
 	})
-	return file_google_ads_googleads_v22_enums_goal_optimization_eligibility_proto_rawDescData
+	return file_google_ads_googleads_v23_enums_goal_optimization_eligibility_proto_rawDescData
 }
 
-var file_google_ads_googleads_v22_enums_goal_optimization_eligibility_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_google_ads_googleads_v22_enums_goal_optimization_eligibility_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
-var file_google_ads_googleads_v22_enums_goal_optimization_eligibility_proto_goTypes = []any{
-	(GoalOptimizationEligibilityEnum_GoalOptimizationEligibility)(0), // 0: google.ads.googleads.v22.enums.GoalOptimizationEligibilityEnum.GoalOptimizationEligibility
-	(*GoalOptimizationEligibilityEnum)(nil),                          // 1: google.ads.googleads.v22.enums.GoalOptimizationEligibilityEnum
+var file_google_ads_googleads_v23_enums_goal_optimization_eligibility_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_google_ads_googleads_v23_enums_goal_optimization_eligibility_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_google_ads_googleads_v23_enums_goal_optimization_eligibility_proto_goTypes = []any{
+	(GoalOptimizationEligibilityEnum_GoalOptimizationEligibility)(0), // 0: google.ads.googleads.v23.enums.GoalOptimizationEligibilityEnum.GoalOptimizationEligibility
+	(*GoalOptimizationEligibilityEnum)(nil),                          // 1: google.ads.googleads.v23.enums.GoalOptimizationEligibilityEnum
 }
-var file_google_ads_googleads_v22_enums_goal_optimization_eligibility_proto_depIdxs = []int32{
+var file_google_ads_googleads_v23_enums_goal_optimization_eligibility_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type
 	0, // [0:0] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
@@ -191,27 +191,27 @@ var file_google_ads_googleads_v22_enums_goal_optimization_eligibility_proto_depI
 	0, // [0:0] is the sub-list for field type_name
 }
 
-func init() { file_google_ads_googleads_v22_enums_goal_optimization_eligibility_proto_init() }
-func file_google_ads_googleads_v22_enums_goal_optimization_eligibility_proto_init() {
-	if File_google_ads_googleads_v22_enums_goal_optimization_eligibility_proto != nil {
+func init() { file_google_ads_googleads_v23_enums_goal_optimization_eligibility_proto_init() }
+func file_google_ads_googleads_v23_enums_goal_optimization_eligibility_proto_init() {
+	if File_google_ads_googleads_v23_enums_goal_optimization_eligibility_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v22_enums_goal_optimization_eligibility_proto_rawDesc), len(file_google_ads_googleads_v22_enums_goal_optimization_eligibility_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v23_enums_goal_optimization_eligibility_proto_rawDesc), len(file_google_ads_googleads_v23_enums_goal_optimization_eligibility_proto_rawDesc)),
 			NumEnums:      1,
 			NumMessages:   1,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_google_ads_googleads_v22_enums_goal_optimization_eligibility_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v22_enums_goal_optimization_eligibility_proto_depIdxs,
-		EnumInfos:         file_google_ads_googleads_v22_enums_goal_optimization_eligibility_proto_enumTypes,
-		MessageInfos:      file_google_ads_googleads_v22_enums_goal_optimization_eligibility_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v23_enums_goal_optimization_eligibility_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v23_enums_goal_optimization_eligibility_proto_depIdxs,
+		EnumInfos:         file_google_ads_googleads_v23_enums_goal_optimization_eligibility_proto_enumTypes,
+		MessageInfos:      file_google_ads_googleads_v23_enums_goal_optimization_eligibility_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v22_enums_goal_optimization_eligibility_proto = out.File
-	file_google_ads_googleads_v22_enums_goal_optimization_eligibility_proto_goTypes = nil
-	file_google_ads_googleads_v22_enums_goal_optimization_eligibility_proto_depIdxs = nil
+	File_google_ads_googleads_v23_enums_goal_optimization_eligibility_proto = out.File
+	file_google_ads_googleads_v23_enums_goal_optimization_eligibility_proto_goTypes = nil
+	file_google_ads_googleads_v23_enums_goal_optimization_eligibility_proto_depIdxs = nil
 }

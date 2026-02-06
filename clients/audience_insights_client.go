@@ -1,4 +1,4 @@
-// Copyright 2025 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -41,6 +41,7 @@ type AudienceInsightsCallOptions struct {
 	ListAudienceInsightsAttributes      []gax.CallOption
 	ListInsightsEligibleDates           []gax.CallOption
 	GenerateAudienceCompositionInsights []gax.CallOption
+	GenerateAudienceDefinition          []gax.CallOption
 	GenerateSuggestedTargetingInsights  []gax.CallOption
 	GenerateAudienceOverlapInsights     []gax.CallOption
 	GenerateTargetingSuggestionMetrics  []gax.CallOption
@@ -115,6 +116,19 @@ func defaultAudienceInsightsCallOptions() *AudienceInsightsCallOptions {
 				})
 			}),
 		},
+		GenerateAudienceDefinition: []gax.CallOption{
+			gax.WithTimeout(14400000 * time.Millisecond),
+			gax.WithRetry(func() gax.Retryer {
+				return gax.OnCodes([]codes.Code{
+					codes.Unavailable,
+					codes.DeadlineExceeded,
+				}, gax.Backoff{
+					Initial:    5000 * time.Millisecond,
+					Max:        60000 * time.Millisecond,
+					Multiplier: 1.30,
+				})
+			}),
+		},
 		GenerateSuggestedTargetingInsights: []gax.CallOption{
 			gax.WithTimeout(14400000 * time.Millisecond),
 			gax.WithRetry(func() gax.Retryer {
@@ -166,6 +180,7 @@ type internalAudienceInsightsClient interface {
 	ListAudienceInsightsAttributes(context.Context, *servicespb.ListAudienceInsightsAttributesRequest, ...gax.CallOption) (*servicespb.ListAudienceInsightsAttributesResponse, error)
 	ListInsightsEligibleDates(context.Context, *servicespb.ListInsightsEligibleDatesRequest, ...gax.CallOption) (*servicespb.ListInsightsEligibleDatesResponse, error)
 	GenerateAudienceCompositionInsights(context.Context, *servicespb.GenerateAudienceCompositionInsightsRequest, ...gax.CallOption) (*servicespb.GenerateAudienceCompositionInsightsResponse, error)
+	GenerateAudienceDefinition(context.Context, *servicespb.GenerateAudienceDefinitionRequest, ...gax.CallOption) (*servicespb.GenerateAudienceDefinitionResponse, error)
 	GenerateSuggestedTargetingInsights(context.Context, *servicespb.GenerateSuggestedTargetingInsightsRequest, ...gax.CallOption) (*servicespb.GenerateSuggestedTargetingInsightsResponse, error)
 	GenerateAudienceOverlapInsights(context.Context, *servicespb.GenerateAudienceOverlapInsightsRequest, ...gax.CallOption) (*servicespb.GenerateAudienceOverlapInsightsResponse, error)
 	GenerateTargetingSuggestionMetrics(context.Context, *servicespb.GenerateTargetingSuggestionMetricsRequest, ...gax.CallOption) (*servicespb.GenerateTargetingSuggestionMetricsResponse, error)
@@ -269,6 +284,22 @@ func (c *AudienceInsightsClient) ListInsightsEligibleDates(ctx context.Context, 
 // RequestError (at )
 func (c *AudienceInsightsClient) GenerateAudienceCompositionInsights(ctx context.Context, req *servicespb.GenerateAudienceCompositionInsightsRequest, opts ...gax.CallOption) (*servicespb.GenerateAudienceCompositionInsightsResponse, error) {
 	return c.internalClient.GenerateAudienceCompositionInsights(ctx, req, opts...)
+}
+
+// GenerateAudienceDefinition returns a collection of audience attributes using generative AI based on
+// the provided audience description.
+//
+// List of thrown errors:
+// AudienceInsightsError (at )
+// AuthenticationError (at )
+// AuthorizationError (at )
+// FieldError (at )
+// HeaderError (at )
+// InternalError (at )
+// QuotaError (at )
+// RequestError (at )
+func (c *AudienceInsightsClient) GenerateAudienceDefinition(ctx context.Context, req *servicespb.GenerateAudienceDefinitionRequest, opts ...gax.CallOption) (*servicespb.GenerateAudienceDefinitionResponse, error) {
+	return c.internalClient.GenerateAudienceDefinition(ctx, req, opts...)
 }
 
 // GenerateSuggestedTargetingInsights returns a collection of targeting insights (e.g. targetable audiences) that
@@ -465,6 +496,24 @@ func (c *audienceInsightsGRPCClient) GenerateAudienceCompositionInsights(ctx con
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
 		resp, err = executeRPC(ctx, c.audienceInsightsClient.GenerateAudienceCompositionInsights, req, settings.GRPC, c.logger, "GenerateAudienceCompositionInsights")
+		return err
+	}, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return resp, nil
+}
+
+func (c *audienceInsightsGRPCClient) GenerateAudienceDefinition(ctx context.Context, req *servicespb.GenerateAudienceDefinitionRequest, opts ...gax.CallOption) (*servicespb.GenerateAudienceDefinitionResponse, error) {
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId()))}
+
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
+	opts = append((*c.CallOptions).GenerateAudienceDefinition[0:len((*c.CallOptions).GenerateAudienceDefinition):len((*c.CallOptions).GenerateAudienceDefinition)], opts...)
+	var resp *servicespb.GenerateAudienceDefinitionResponse
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		resp, err = executeRPC(ctx, c.audienceInsightsClient.GenerateAudienceDefinition, req, settings.GRPC, c.logger, "GenerateAudienceDefinition")
 		return err
 	}, opts...)
 	if err != nil {
