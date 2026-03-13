@@ -42,7 +42,7 @@
 //	// - It may require correct/in-range values for request initialization.
 //	// - It may require specifying regional endpoints when creating the service client as shown in:
 //	//   https://pkg.go.dev/cloud.google.com/go#hdr-Client_Options
-//	c, err := clients.NewCustomerClientLinkClient(ctx)
+//	c, err := clients.NewAdGroupAssetClient(ctx)
 //	if err != nil {
 //		// TODO: Handle error.
 //	}
@@ -56,11 +56,11 @@
 //
 // The following is an example of making an API call with the newly created client, mentioned above.
 //
-//	req := &servicespb.MutateCustomerClientLinkRequest{
+//	req := &servicespb.MutateAdGroupAssetsRequest{
 //		// TODO: Fill request struct fields.
-//		// See https://pkg.go.dev/github.com/shenzhencenter/google-ads-pb/services#MutateCustomerClientLinkRequest.
+//		// See https://pkg.go.dev/github.com/shenzhencenter/google-ads-pb/services#MutateAdGroupAssetsRequest.
 //	}
-//	resp, err := c.MutateCustomerClientLink(ctx, req)
+//	resp, err := c.MutateAdGroupAssets(ctx, req)
 //	if err != nil {
 //		// TODO: Handle error.
 //	}
@@ -69,7 +69,7 @@
 //
 // # Use of Context
 //
-// The ctx passed to NewCustomerClientLinkClient is used for authentication requests and
+// The ctx passed to NewAdGroupAssetClient is used for authentication requests and
 // for creating the underlying connection, but is not used for subsequent calls.
 // Individual methods on the client use the ctx given to them.
 //

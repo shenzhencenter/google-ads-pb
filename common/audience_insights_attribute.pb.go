@@ -1031,7 +1031,8 @@ func (x *UserInterestAttributeMetadata) GetUserInterestDescription() string {
 // Metadata associated with a Knowledge Graph Entity attribute.
 type KnowledgeGraphAttributeMetadata struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	// The capabilities of the entity used in [ContentCreatorInsightsService][].
+	// The capabilities of the entity used in
+	// [ContentCreatorInsightsService][google.ads.googleads.v23.services.ContentCreatorInsightsService].
 	EntityCapabilities []enums.InsightsKnowledgeGraphEntityCapabilitiesEnum_InsightsKnowledgeGraphEntityCapabilities `protobuf:"varint,1,rep,packed,name=entity_capabilities,json=entityCapabilities,proto3,enum=google.ads.googleads.v23.enums.InsightsKnowledgeGraphEntityCapabilitiesEnum_InsightsKnowledgeGraphEntityCapabilities" json:"entity_capabilities,omitempty"`
 	// A list of CATEGORY attributes related to this entity.
 	RelatedCategories []*AudienceInsightsAttributeMetadata `protobuf:"bytes,2,rep,name=related_categories,json=relatedCategories,proto3" json:"related_categories,omitempty"`

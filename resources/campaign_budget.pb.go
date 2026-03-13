@@ -62,13 +62,26 @@ type CampaignBudget struct {
 	// The length of this string must be between 1 and 255, inclusive,
 	// in UTF-8 bytes, (trimmed).
 	Name *string `protobuf:"bytes,20,opt,name=name,proto3,oneof" json:"name,omitempty"`
-	// The amount of the budget, in the local currency for the account.
-	// Amount is specified in micros, where one million is equivalent to one
-	// currency unit. Monthly spend is capped at 30.4 times this amount.
+	// The average daily amount to be spent by the campaign.
+	// This field is used when the CampaignBudget `period` is set to `DAILY`,
+	// which is the default.
+	//
+	// Amount is specified in micros in the account's local currency.
+	// One million micros is equivalent to one currency unit.
+	// The effective monthly spend is capped at 30.4 times this daily amount.
+	//
+	// This field is mutually exclusive with 'total_amount_micros'. Only one
+	// of 'amount_micros' or 'total_amount_micros' should be set.
 	AmountMicros *int64 `protobuf:"varint,21,opt,name=amount_micros,json=amountMicros,proto3,oneof" json:"amount_micros,omitempty"`
-	// The lifetime amount of the budget, in the local currency for the account.
-	// Amount is specified in micros, where one million is equivalent to one
-	// currency unit.
+	// The total amount to be spent by the campaign over its entire duration.
+	// This field is used *only* when the CampaignBudget `period` is set to
+	// `CUSTOM_PERIOD`. It represents the budget cap for the campaign's lifetime,
+	// rather than a daily limit. The amount is specified in micros in the
+	// account's local currency. One million micros is equivalent to one currency
+	// unit.
+	//
+	// This field is mutually exclusive with 'amount_micros'. Only one of
+	// 'total_amount_micros' or 'amount_micros' should be set.
 	TotalAmountMicros *int64 `protobuf:"varint,22,opt,name=total_amount_micros,json=totalAmountMicros,proto3,oneof" json:"total_amount_micros,omitempty"`
 	// Output only. The status of this campaign budget. This field is read-only.
 	Status enums.BudgetStatusEnum_BudgetStatus `protobuf:"varint,6,opt,name=status,proto3,enum=google.ads.googleads.v23.enums.BudgetStatusEnum_BudgetStatus" json:"status,omitempty"`

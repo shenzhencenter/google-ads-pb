@@ -209,7 +209,10 @@ func (x *LocalServicesLead) GetLeadFeedbackSubmitted() bool {
 // Fields containing consumer contact details.
 type ContactDetails struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	// Output only. Consumer phone number in E164 format.
+	// Output only. Phone number of the consumer for the lead. This can be a real
+	// phone number or a tracking number. The phone number is returned in E164
+	// format. See https://support.google.com/google-ads/answer/16355235?hl=en to
+	// learn more. Example: +16504519489.
 	PhoneNumber string `protobuf:"bytes,1,opt,name=phone_number,json=phoneNumber,proto3" json:"phone_number,omitempty"`
 	// Output only. Consumer email address.
 	Email string `protobuf:"bytes,2,opt,name=email,proto3" json:"email,omitempty"`
