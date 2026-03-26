@@ -181,10 +181,11 @@ func (c *GoogleAdsClient) SearchStream(ctx context.Context, req *servicespb.Sear
 	return c.internalClient.SearchStream(ctx, req, opts...)
 }
 
-// Mutate creates, updates, or removes resources. This method supports atomic
-// transactions with multiple types of resources. For example, you can
-// atomically create a campaign and a campaign budget, or perform up to
-// thousands of mutates atomically.
+// Mutate executes mutate and actions operations. Mutate operations create, update,
+// or remove resources. Actions perform custom operations. This method
+// supports atomic transactions with multiple types of resources and
+// actions. For example, you can atomically create a campaign and a campaign
+// budget, or perform up to thousands of mutates atomically.
 //
 // This method is essentially a wrapper around a series of mutate methods. The
 // only features it offers over calling those methods directly are:
