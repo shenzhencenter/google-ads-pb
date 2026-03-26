@@ -37,6 +37,10 @@ const (
 )
 
 // A video.
+//
+// If the video has any enhancements, the stats on all of them will be
+// aggregated and displayed on this video resource. To get stats for a specific
+// enhancement, use the VideoEnhancement resource instead.
 type Video struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Output only. The resource name of the video.

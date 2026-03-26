@@ -43,14 +43,14 @@ const (
 	AssetErrorEnum_UNSPECIFIED AssetErrorEnum_AssetError = 0
 	// The received error code is not known in this version.
 	AssetErrorEnum_UNKNOWN AssetErrorEnum_AssetError = 1
-	// The customer is not is not on the allow-list for this asset type.
+	// The customer is not on the allow-list for this asset type.
 	AssetErrorEnum_CUSTOMER_NOT_ON_ALLOWLIST_FOR_ASSET_TYPE AssetErrorEnum_AssetError = 13
 	// Assets are duplicated across operations.
 	AssetErrorEnum_DUPLICATE_ASSET AssetErrorEnum_AssetError = 3
 	// The asset name is duplicated, either across operations or with an
 	// existing asset.
 	AssetErrorEnum_DUPLICATE_ASSET_NAME AssetErrorEnum_AssetError = 4
-	// The Asset.asset_data oneof is empty.
+	// The `Asset.asset_data` oneof is empty.
 	AssetErrorEnum_ASSET_DATA_IS_MISSING AssetErrorEnum_AssetError = 5
 	// The asset has a name which is different from an existing duplicate that
 	// represents the same content.
@@ -78,19 +78,19 @@ const (
 	AssetErrorEnum_PROMOTION_CANNOT_SET_PROMOTION_CODE_AND_ORDERS_OVER_AMOUNT AssetErrorEnum_AssetError = 16
 	// The field has too many decimal places specified.
 	AssetErrorEnum_TOO_MANY_DECIMAL_PLACES_SPECIFIED AssetErrorEnum_AssetError = 17
-	// Duplicate assets across operations, which have identical Asset.asset_data
-	// oneof, cannot have different asset level fields for asset types which are
-	// deduped.
+	// Duplicate assets across operations, which have identical
+	// `Asset.asset_data` oneof, cannot have different asset level fields for
+	// asset types which are deduped.
 	AssetErrorEnum_DUPLICATE_ASSETS_WITH_DIFFERENT_FIELD_VALUE AssetErrorEnum_AssetError = 18
-	// Carrier specific short number is not allowed.
+	// Carrier-specific short number is not allowed.
 	AssetErrorEnum_CALL_CARRIER_SPECIFIC_SHORT_NUMBER_NOT_ALLOWED AssetErrorEnum_AssetError = 19
 	// Customer consent required for call recording Terms of Service.
 	AssetErrorEnum_CALL_CUSTOMER_CONSENT_FOR_CALL_RECORDING_REQUIRED AssetErrorEnum_AssetError = 20
 	// The type of the specified phone number is not allowed.
 	AssetErrorEnum_CALL_DISALLOWED_NUMBER_TYPE AssetErrorEnum_AssetError = 21
-	// If the default call_conversion_action is not used, the customer must have
-	// a ConversionAction with the same id and the ConversionAction must be call
-	// conversion type.
+	// If the default `call_conversion_action` is not used, the customer must
+	// have a `ConversionAction` with the same id and the `ConversionAction`
+	// must be call conversion type.
 	AssetErrorEnum_CALL_INVALID_CONVERSION_ACTION AssetErrorEnum_AssetError = 22
 	// The country code of the phone number is invalid.
 	AssetErrorEnum_CALL_INVALID_COUNTRY_CODE AssetErrorEnum_AssetError = 23
@@ -98,15 +98,15 @@ const (
 	AssetErrorEnum_CALL_INVALID_DOMESTIC_PHONE_NUMBER_FORMAT AssetErrorEnum_AssetError = 24
 	// The input phone number is not a valid phone number.
 	AssetErrorEnum_CALL_INVALID_PHONE_NUMBER AssetErrorEnum_AssetError = 25
-	// The phone number is not supported for country.
+	// The phone number is not supported for this country.
 	AssetErrorEnum_CALL_PHONE_NUMBER_NOT_SUPPORTED_FOR_COUNTRY AssetErrorEnum_AssetError = 26
 	// Premium rate phone number is not allowed.
 	AssetErrorEnum_CALL_PREMIUM_RATE_NUMBER_NOT_ALLOWED AssetErrorEnum_AssetError = 27
 	// Vanity phone number is not allowed.
 	AssetErrorEnum_CALL_VANITY_PHONE_NUMBER_NOT_ALLOWED AssetErrorEnum_AssetError = 28
-	// PriceOffering cannot have the same value for header and description.
+	// `PriceOffering` cannot have the same value for header and description.
 	AssetErrorEnum_PRICE_HEADER_SAME_AS_DESCRIPTION AssetErrorEnum_AssetError = 29
-	// AppId is invalid.
+	// `AppId` is invalid.
 	AssetErrorEnum_MOBILE_APP_INVALID_APP_ID AssetErrorEnum_AssetError = 30
 	// Invalid App download URL in final URLs.
 	AssetErrorEnum_MOBILE_APP_INVALID_FINAL_URL_FOR_APP_DOWNLOAD_URL AssetErrorEnum_AssetError = 31
@@ -121,13 +121,13 @@ const (
 	AssetErrorEnum_CANNOT_MODIFY_ASSET_SOURCE AssetErrorEnum_AssetError = 35
 	// User can not modify the automatically created asset.
 	AssetErrorEnum_CANNOT_MODIFY_AUTOMATICALLY_CREATED_ASSET AssetErrorEnum_AssetError = 36
-	// Lead Form is disallowed to use "LOCATION" answer type.
+	// Lead Form is disallowed to use `LOCATION` answer type.
 	AssetErrorEnum_LEAD_FORM_LOCATION_ANSWER_TYPE_DISALLOWED AssetErrorEnum_AssetError = 37
 	// Page Feed label text contains invalid characters.
 	AssetErrorEnum_PAGE_FEED_INVALID_LABEL_TEXT AssetErrorEnum_AssetError = 38
 	// The customer is not in the allow-list for whatsapp message asset type.
 	AssetErrorEnum_CUSTOMER_NOT_ON_ALLOWLIST_FOR_WHATSAPP_MESSAGE_ASSETS AssetErrorEnum_AssetError = 39
-	// Only customers on the allowlist can create AppDeepLinkAsset.
+	// Only customers on the allowlist can create `AppDeepLinkAsset`.
 	AssetErrorEnum_CUSTOMER_NOT_ON_ALLOWLIST_FOR_APP_DEEP_LINK_ASSETS AssetErrorEnum_AssetError = 40
 	// Promotion barcode cannot contain links.
 	AssetErrorEnum_PROMOTION_BARCODE_CANNOT_CONTAIN_LINKS AssetErrorEnum_AssetError = 41

@@ -1177,6 +1177,55 @@ func (x *AudienceInsightsAttributeMetadataGroup) GetAttributes() []*AudienceInsi
 	return nil
 }
 
+// A list of AudienceInsightsAttributes.
+type InsightsAudienceAttributeGroup struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Required. A collection of audience attributes combined with logical OR.
+	// Attributes need not all be the same dimension. Only Knowledge Graph
+	// entities, Product & Service Categories, and user interests are supported in
+	// this context.
+	Attributes    []*AudienceInsightsAttribute `protobuf:"bytes,1,rep,name=attributes,proto3" json:"attributes,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *InsightsAudienceAttributeGroup) Reset() {
+	*x = InsightsAudienceAttributeGroup{}
+	mi := &file_google_ads_googleads_v23_common_audience_insights_attribute_proto_msgTypes[13]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *InsightsAudienceAttributeGroup) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*InsightsAudienceAttributeGroup) ProtoMessage() {}
+
+func (x *InsightsAudienceAttributeGroup) ProtoReflect() protoreflect.Message {
+	mi := &file_google_ads_googleads_v23_common_audience_insights_attribute_proto_msgTypes[13]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use InsightsAudienceAttributeGroup.ProtoReflect.Descriptor instead.
+func (*InsightsAudienceAttributeGroup) Descriptor() ([]byte, []int) {
+	return file_google_ads_googleads_v23_common_audience_insights_attribute_proto_rawDescGZIP(), []int{13}
+}
+
+func (x *InsightsAudienceAttributeGroup) GetAttributes() []*AudienceInsightsAttribute {
+	if x != nil {
+		return x.Attributes
+	}
+	return nil
+}
+
 // A YouTube channel returned as an example of the content in a lineup.
 type LineupAttributeMetadata_SampleChannel struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
@@ -1192,7 +1241,7 @@ type LineupAttributeMetadata_SampleChannel struct {
 
 func (x *LineupAttributeMetadata_SampleChannel) Reset() {
 	*x = LineupAttributeMetadata_SampleChannel{}
-	mi := &file_google_ads_googleads_v23_common_audience_insights_attribute_proto_msgTypes[13]
+	mi := &file_google_ads_googleads_v23_common_audience_insights_attribute_proto_msgTypes[14]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1204,7 +1253,7 @@ func (x *LineupAttributeMetadata_SampleChannel) String() string {
 func (*LineupAttributeMetadata_SampleChannel) ProtoMessage() {}
 
 func (x *LineupAttributeMetadata_SampleChannel) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v23_common_audience_insights_attribute_proto_msgTypes[13]
+	mi := &file_google_ads_googleads_v23_common_audience_insights_attribute_proto_msgTypes[14]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1569,23 +1618,31 @@ var file_google_ads_googleads_v23_common_audience_insights_attribute_proto_rawDe
 	0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x41, 0x75, 0x64, 0x69, 0x65, 0x6e, 0x63, 0x65, 0x49, 0x6e, 0x73,
 	0x69, 0x67, 0x68, 0x74, 0x73, 0x41, 0x74, 0x74, 0x72, 0x69, 0x62, 0x75, 0x74, 0x65, 0x4d, 0x65,
 	0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0x52, 0x0a, 0x61, 0x74, 0x74, 0x72, 0x69, 0x62, 0x75, 0x74,
-	0x65, 0x73, 0x42, 0xfe, 0x01, 0x0a, 0x23, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e,
-	0x76, 0x32, 0x33, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x42, 0x1e, 0x41, 0x75, 0x64, 0x69,
+	0x65, 0x73, 0x22, 0x81, 0x01, 0x0a, 0x1e, 0x49, 0x6e, 0x73, 0x69, 0x67, 0x68, 0x74, 0x73, 0x41,
+	0x75, 0x64, 0x69, 0x65, 0x6e, 0x63, 0x65, 0x41, 0x74, 0x74, 0x72, 0x69, 0x62, 0x75, 0x74, 0x65,
+	0x47, 0x72, 0x6f, 0x75, 0x70, 0x12, 0x5f, 0x0a, 0x0a, 0x61, 0x74, 0x74, 0x72, 0x69, 0x62, 0x75,
+	0x74, 0x65, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x3a, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
+	0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
+	0x2e, 0x76, 0x32, 0x33, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x41, 0x75, 0x64, 0x69,
 	0x65, 0x6e, 0x63, 0x65, 0x49, 0x6e, 0x73, 0x69, 0x67, 0x68, 0x74, 0x73, 0x41, 0x74, 0x74, 0x72,
-	0x69, 0x62, 0x75, 0x74, 0x65, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x45, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x67, 0x6f, 0x6c, 0x61, 0x6e, 0x67, 0x2e, 0x6f, 0x72, 0x67, 0x2f,
-	0x67, 0x65, 0x6e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x70, 0x69, 0x73, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64,
-	0x73, 0x2f, 0x76, 0x32, 0x33, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x3b, 0x63, 0x6f, 0x6d,
-	0x6d, 0x6f, 0x6e, 0xa2, 0x02, 0x03, 0x47, 0x41, 0x41, 0xaa, 0x02, 0x1f, 0x47, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x2e, 0x41, 0x64, 0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73,
-	0x2e, 0x56, 0x32, 0x33, 0x2e, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xca, 0x02, 0x1f, 0x47, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x5c, 0x41, 0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41,
-	0x64, 0x73, 0x5c, 0x56, 0x32, 0x33, 0x5c, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xea, 0x02, 0x23,
-	0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x3a, 0x3a, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x47, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x32, 0x33, 0x3a, 0x3a, 0x43, 0x6f, 0x6d,
-	0x6d, 0x6f, 0x6e, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x69, 0x62, 0x75, 0x74, 0x65, 0x42, 0x03, 0xe0, 0x41, 0x02, 0x52, 0x0a, 0x61, 0x74, 0x74, 0x72,
+	0x69, 0x62, 0x75, 0x74, 0x65, 0x73, 0x42, 0xfe, 0x01, 0x0a, 0x23, 0x63, 0x6f, 0x6d, 0x2e, 0x67,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
+	0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x42, 0x1e,
+	0x41, 0x75, 0x64, 0x69, 0x65, 0x6e, 0x63, 0x65, 0x49, 0x6e, 0x73, 0x69, 0x67, 0x68, 0x74, 0x73,
+	0x41, 0x74, 0x74, 0x72, 0x69, 0x62, 0x75, 0x74, 0x65, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01,
+	0x5a, 0x45, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x67, 0x6f, 0x6c, 0x61, 0x6e, 0x67, 0x2e,
+	0x6f, 0x72, 0x67, 0x2f, 0x67, 0x65, 0x6e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x6f, 0x6f,
+	0x67, 0x6c, 0x65, 0x61, 0x70, 0x69, 0x73, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67,
+	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x33, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e,
+	0x3b, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xa2, 0x02, 0x03, 0x47, 0x41, 0x41, 0xaa, 0x02, 0x1f,
+	0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x41, 0x64, 0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c,
+	0x65, 0x41, 0x64, 0x73, 0x2e, 0x56, 0x32, 0x33, 0x2e, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xca,
+	0x02, 0x1f, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x5c, 0x41, 0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f,
+	0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x32, 0x33, 0x5c, 0x43, 0x6f, 0x6d, 0x6d, 0x6f,
+	0x6e, 0xea, 0x02, 0x23, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x3a, 0x3a, 0x41, 0x64, 0x73, 0x3a,
+	0x3a, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x32, 0x33, 0x3a,
+	0x3a, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 })
 
 var (
@@ -1600,7 +1657,7 @@ func file_google_ads_googleads_v23_common_audience_insights_attribute_proto_rawD
 	return file_google_ads_googleads_v23_common_audience_insights_attribute_proto_rawDescData
 }
 
-var file_google_ads_googleads_v23_common_audience_insights_attribute_proto_msgTypes = make([]protoimpl.MessageInfo, 14)
+var file_google_ads_googleads_v23_common_audience_insights_attribute_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
 var file_google_ads_googleads_v23_common_audience_insights_attribute_proto_goTypes = []any{
 	(*AudienceInsightsAttributeMetadata)(nil),                          // 0: google.ads.googleads.v23.common.AudienceInsightsAttributeMetadata
 	(*AudienceInsightsAttribute)(nil),                                  // 1: google.ads.googleads.v23.common.AudienceInsightsAttribute
@@ -1615,24 +1672,25 @@ var file_google_ads_googleads_v23_common_audience_insights_attribute_proto_goTyp
 	(*KnowledgeGraphAttributeMetadata)(nil),                            // 10: google.ads.googleads.v23.common.KnowledgeGraphAttributeMetadata
 	(*UserListAttributeMetadata)(nil),                                  // 11: google.ads.googleads.v23.common.UserListAttributeMetadata
 	(*AudienceInsightsAttributeMetadataGroup)(nil),                     // 12: google.ads.googleads.v23.common.AudienceInsightsAttributeMetadataGroup
-	(*LineupAttributeMetadata_SampleChannel)(nil),                      // 13: google.ads.googleads.v23.common.LineupAttributeMetadata.SampleChannel
-	(enums.AudienceInsightsDimensionEnum_AudienceInsightsDimension)(0), // 14: google.ads.googleads.v23.enums.AudienceInsightsDimensionEnum.AudienceInsightsDimension
-	(*AgeRangeInfo)(nil),                                               // 15: google.ads.googleads.v23.common.AgeRangeInfo
-	(*GenderInfo)(nil),                                                 // 16: google.ads.googleads.v23.common.GenderInfo
-	(*LocationInfo)(nil),                                               // 17: google.ads.googleads.v23.common.LocationInfo
-	(*UserInterestInfo)(nil),                                           // 18: google.ads.googleads.v23.common.UserInterestInfo
-	(*ParentalStatusInfo)(nil),                                         // 19: google.ads.googleads.v23.common.ParentalStatusInfo
-	(*IncomeRangeInfo)(nil),                                            // 20: google.ads.googleads.v23.common.IncomeRangeInfo
-	(*YouTubeChannelInfo)(nil),                                         // 21: google.ads.googleads.v23.common.YouTubeChannelInfo
-	(*YouTubeVideoInfo)(nil),                                           // 22: google.ads.googleads.v23.common.YouTubeVideoInfo
-	(*DeviceInfo)(nil),                                                 // 23: google.ads.googleads.v23.common.DeviceInfo
-	(*UserListInfo)(nil),                                               // 24: google.ads.googleads.v23.common.UserListInfo
-	(enums.YouTubeVideoPropertyEnum_YouTubeVideoProperty)(0),           // 25: google.ads.googleads.v23.enums.YouTubeVideoPropertyEnum.YouTubeVideoProperty
-	(enums.InsightsKnowledgeGraphEntityCapabilitiesEnum_InsightsKnowledgeGraphEntityCapabilities)(0), // 26: google.ads.googleads.v23.enums.InsightsKnowledgeGraphEntityCapabilitiesEnum.InsightsKnowledgeGraphEntityCapabilities
-	(enums.UserListTypeEnum_UserListType)(0),                                                         // 27: google.ads.googleads.v23.enums.UserListTypeEnum.UserListType
+	(*InsightsAudienceAttributeGroup)(nil),                             // 13: google.ads.googleads.v23.common.InsightsAudienceAttributeGroup
+	(*LineupAttributeMetadata_SampleChannel)(nil),                      // 14: google.ads.googleads.v23.common.LineupAttributeMetadata.SampleChannel
+	(enums.AudienceInsightsDimensionEnum_AudienceInsightsDimension)(0), // 15: google.ads.googleads.v23.enums.AudienceInsightsDimensionEnum.AudienceInsightsDimension
+	(*AgeRangeInfo)(nil),                                               // 16: google.ads.googleads.v23.common.AgeRangeInfo
+	(*GenderInfo)(nil),                                                 // 17: google.ads.googleads.v23.common.GenderInfo
+	(*LocationInfo)(nil),                                               // 18: google.ads.googleads.v23.common.LocationInfo
+	(*UserInterestInfo)(nil),                                           // 19: google.ads.googleads.v23.common.UserInterestInfo
+	(*ParentalStatusInfo)(nil),                                         // 20: google.ads.googleads.v23.common.ParentalStatusInfo
+	(*IncomeRangeInfo)(nil),                                            // 21: google.ads.googleads.v23.common.IncomeRangeInfo
+	(*YouTubeChannelInfo)(nil),                                         // 22: google.ads.googleads.v23.common.YouTubeChannelInfo
+	(*YouTubeVideoInfo)(nil),                                           // 23: google.ads.googleads.v23.common.YouTubeVideoInfo
+	(*DeviceInfo)(nil),                                                 // 24: google.ads.googleads.v23.common.DeviceInfo
+	(*UserListInfo)(nil),                                               // 25: google.ads.googleads.v23.common.UserListInfo
+	(enums.YouTubeVideoPropertyEnum_YouTubeVideoProperty)(0),           // 26: google.ads.googleads.v23.enums.YouTubeVideoPropertyEnum.YouTubeVideoProperty
+	(enums.InsightsKnowledgeGraphEntityCapabilitiesEnum_InsightsKnowledgeGraphEntityCapabilities)(0), // 27: google.ads.googleads.v23.enums.InsightsKnowledgeGraphEntityCapabilitiesEnum.InsightsKnowledgeGraphEntityCapabilities
+	(enums.UserListTypeEnum_UserListType)(0),                                                         // 28: google.ads.googleads.v23.enums.UserListTypeEnum.UserListType
 }
 var file_google_ads_googleads_v23_common_audience_insights_attribute_proto_depIdxs = []int32{
-	14, // 0: google.ads.googleads.v23.common.AudienceInsightsAttributeMetadata.dimension:type_name -> google.ads.googleads.v23.enums.AudienceInsightsDimensionEnum.AudienceInsightsDimension
+	15, // 0: google.ads.googleads.v23.common.AudienceInsightsAttributeMetadata.dimension:type_name -> google.ads.googleads.v23.enums.AudienceInsightsDimensionEnum.AudienceInsightsDimension
 	1,  // 1: google.ads.googleads.v23.common.AudienceInsightsAttributeMetadata.attribute:type_name -> google.ads.googleads.v23.common.AudienceInsightsAttribute
 	5,  // 2: google.ads.googleads.v23.common.AudienceInsightsAttributeMetadata.youtube_channel_metadata:type_name -> google.ads.googleads.v23.common.YouTubeChannelAttributeMetadata
 	6,  // 3: google.ads.googleads.v23.common.AudienceInsightsAttributeMetadata.youtube_video_metadata:type_name -> google.ads.googleads.v23.common.YouTubeVideoAttributeMetadata
@@ -1641,34 +1699,35 @@ var file_google_ads_googleads_v23_common_audience_insights_attribute_proto_depId
 	9,  // 6: google.ads.googleads.v23.common.AudienceInsightsAttributeMetadata.user_interest_attribute_metadata:type_name -> google.ads.googleads.v23.common.UserInterestAttributeMetadata
 	10, // 7: google.ads.googleads.v23.common.AudienceInsightsAttributeMetadata.knowledge_graph_attribute_metadata:type_name -> google.ads.googleads.v23.common.KnowledgeGraphAttributeMetadata
 	11, // 8: google.ads.googleads.v23.common.AudienceInsightsAttributeMetadata.user_list_attribute_metadata:type_name -> google.ads.googleads.v23.common.UserListAttributeMetadata
-	15, // 9: google.ads.googleads.v23.common.AudienceInsightsAttribute.age_range:type_name -> google.ads.googleads.v23.common.AgeRangeInfo
-	16, // 10: google.ads.googleads.v23.common.AudienceInsightsAttribute.gender:type_name -> google.ads.googleads.v23.common.GenderInfo
-	17, // 11: google.ads.googleads.v23.common.AudienceInsightsAttribute.location:type_name -> google.ads.googleads.v23.common.LocationInfo
-	18, // 12: google.ads.googleads.v23.common.AudienceInsightsAttribute.user_interest:type_name -> google.ads.googleads.v23.common.UserInterestInfo
+	16, // 9: google.ads.googleads.v23.common.AudienceInsightsAttribute.age_range:type_name -> google.ads.googleads.v23.common.AgeRangeInfo
+	17, // 10: google.ads.googleads.v23.common.AudienceInsightsAttribute.gender:type_name -> google.ads.googleads.v23.common.GenderInfo
+	18, // 11: google.ads.googleads.v23.common.AudienceInsightsAttribute.location:type_name -> google.ads.googleads.v23.common.LocationInfo
+	19, // 12: google.ads.googleads.v23.common.AudienceInsightsAttribute.user_interest:type_name -> google.ads.googleads.v23.common.UserInterestInfo
 	2,  // 13: google.ads.googleads.v23.common.AudienceInsightsAttribute.entity:type_name -> google.ads.googleads.v23.common.AudienceInsightsEntity
 	3,  // 14: google.ads.googleads.v23.common.AudienceInsightsAttribute.category:type_name -> google.ads.googleads.v23.common.AudienceInsightsCategory
 	4,  // 15: google.ads.googleads.v23.common.AudienceInsightsAttribute.lineup:type_name -> google.ads.googleads.v23.common.AudienceInsightsLineup
-	19, // 16: google.ads.googleads.v23.common.AudienceInsightsAttribute.parental_status:type_name -> google.ads.googleads.v23.common.ParentalStatusInfo
-	20, // 17: google.ads.googleads.v23.common.AudienceInsightsAttribute.income_range:type_name -> google.ads.googleads.v23.common.IncomeRangeInfo
-	21, // 18: google.ads.googleads.v23.common.AudienceInsightsAttribute.youtube_channel:type_name -> google.ads.googleads.v23.common.YouTubeChannelInfo
-	22, // 19: google.ads.googleads.v23.common.AudienceInsightsAttribute.youtube_video:type_name -> google.ads.googleads.v23.common.YouTubeVideoInfo
-	23, // 20: google.ads.googleads.v23.common.AudienceInsightsAttribute.device:type_name -> google.ads.googleads.v23.common.DeviceInfo
-	24, // 21: google.ads.googleads.v23.common.AudienceInsightsAttribute.user_list:type_name -> google.ads.googleads.v23.common.UserListInfo
-	25, // 22: google.ads.googleads.v23.common.YouTubeVideoAttributeMetadata.video_properties:type_name -> google.ads.googleads.v23.enums.YouTubeVideoPropertyEnum.YouTubeVideoProperty
-	17, // 23: google.ads.googleads.v23.common.LineupAttributeMetadata.inventory_country:type_name -> google.ads.googleads.v23.common.LocationInfo
-	13, // 24: google.ads.googleads.v23.common.LineupAttributeMetadata.sample_channels:type_name -> google.ads.googleads.v23.common.LineupAttributeMetadata.SampleChannel
-	17, // 25: google.ads.googleads.v23.common.LocationAttributeMetadata.country_location:type_name -> google.ads.googleads.v23.common.LocationInfo
-	26, // 26: google.ads.googleads.v23.common.KnowledgeGraphAttributeMetadata.entity_capabilities:type_name -> google.ads.googleads.v23.enums.InsightsKnowledgeGraphEntityCapabilitiesEnum.InsightsKnowledgeGraphEntityCapabilities
+	20, // 16: google.ads.googleads.v23.common.AudienceInsightsAttribute.parental_status:type_name -> google.ads.googleads.v23.common.ParentalStatusInfo
+	21, // 17: google.ads.googleads.v23.common.AudienceInsightsAttribute.income_range:type_name -> google.ads.googleads.v23.common.IncomeRangeInfo
+	22, // 18: google.ads.googleads.v23.common.AudienceInsightsAttribute.youtube_channel:type_name -> google.ads.googleads.v23.common.YouTubeChannelInfo
+	23, // 19: google.ads.googleads.v23.common.AudienceInsightsAttribute.youtube_video:type_name -> google.ads.googleads.v23.common.YouTubeVideoInfo
+	24, // 20: google.ads.googleads.v23.common.AudienceInsightsAttribute.device:type_name -> google.ads.googleads.v23.common.DeviceInfo
+	25, // 21: google.ads.googleads.v23.common.AudienceInsightsAttribute.user_list:type_name -> google.ads.googleads.v23.common.UserListInfo
+	26, // 22: google.ads.googleads.v23.common.YouTubeVideoAttributeMetadata.video_properties:type_name -> google.ads.googleads.v23.enums.YouTubeVideoPropertyEnum.YouTubeVideoProperty
+	18, // 23: google.ads.googleads.v23.common.LineupAttributeMetadata.inventory_country:type_name -> google.ads.googleads.v23.common.LocationInfo
+	14, // 24: google.ads.googleads.v23.common.LineupAttributeMetadata.sample_channels:type_name -> google.ads.googleads.v23.common.LineupAttributeMetadata.SampleChannel
+	18, // 25: google.ads.googleads.v23.common.LocationAttributeMetadata.country_location:type_name -> google.ads.googleads.v23.common.LocationInfo
+	27, // 26: google.ads.googleads.v23.common.KnowledgeGraphAttributeMetadata.entity_capabilities:type_name -> google.ads.googleads.v23.enums.InsightsKnowledgeGraphEntityCapabilitiesEnum.InsightsKnowledgeGraphEntityCapabilities
 	0,  // 27: google.ads.googleads.v23.common.KnowledgeGraphAttributeMetadata.related_categories:type_name -> google.ads.googleads.v23.common.AudienceInsightsAttributeMetadata
-	27, // 28: google.ads.googleads.v23.common.UserListAttributeMetadata.user_list_type:type_name -> google.ads.googleads.v23.enums.UserListTypeEnum.UserListType
+	28, // 28: google.ads.googleads.v23.common.UserListAttributeMetadata.user_list_type:type_name -> google.ads.googleads.v23.enums.UserListTypeEnum.UserListType
 	0,  // 29: google.ads.googleads.v23.common.AudienceInsightsAttributeMetadataGroup.attributes:type_name -> google.ads.googleads.v23.common.AudienceInsightsAttributeMetadata
-	21, // 30: google.ads.googleads.v23.common.LineupAttributeMetadata.SampleChannel.youtube_channel:type_name -> google.ads.googleads.v23.common.YouTubeChannelInfo
-	5,  // 31: google.ads.googleads.v23.common.LineupAttributeMetadata.SampleChannel.youtube_channel_metadata:type_name -> google.ads.googleads.v23.common.YouTubeChannelAttributeMetadata
-	32, // [32:32] is the sub-list for method output_type
-	32, // [32:32] is the sub-list for method input_type
-	32, // [32:32] is the sub-list for extension type_name
-	32, // [32:32] is the sub-list for extension extendee
-	0,  // [0:32] is the sub-list for field type_name
+	1,  // 30: google.ads.googleads.v23.common.InsightsAudienceAttributeGroup.attributes:type_name -> google.ads.googleads.v23.common.AudienceInsightsAttribute
+	22, // 31: google.ads.googleads.v23.common.LineupAttributeMetadata.SampleChannel.youtube_channel:type_name -> google.ads.googleads.v23.common.YouTubeChannelInfo
+	5,  // 32: google.ads.googleads.v23.common.LineupAttributeMetadata.SampleChannel.youtube_channel_metadata:type_name -> google.ads.googleads.v23.common.YouTubeChannelAttributeMetadata
+	33, // [33:33] is the sub-list for method output_type
+	33, // [33:33] is the sub-list for method input_type
+	33, // [33:33] is the sub-list for extension type_name
+	33, // [33:33] is the sub-list for extension extendee
+	0,  // [0:33] is the sub-list for field type_name
 }
 
 func init() { file_google_ads_googleads_v23_common_audience_insights_attribute_proto_init() }
@@ -1708,7 +1767,7 @@ func file_google_ads_googleads_v23_common_audience_insights_attribute_proto_init
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v23_common_audience_insights_attribute_proto_rawDesc), len(file_google_ads_googleads_v23_common_audience_insights_attribute_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   14,
+			NumMessages:   15,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
