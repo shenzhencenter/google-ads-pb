@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.36.5
 // 	protoc        v4.24.4
-// source: google/ads/googleads/v23/enums/criterion_type.proto
+// source: google/ads/googleads/v24/enums/criterion_type.proto
 
 package enums
 
@@ -133,58 +133,66 @@ const (
 	CriterionTypeEnum_VERTICAL_ADS_ITEM_GROUP_RULE_LIST CriterionTypeEnum_CriterionType = 45
 	// A rule for an item group in Vertical Ads.
 	CriterionTypeEnum_VERTICAL_ADS_ITEM_GROUP_RULE CriterionTypeEnum_CriterionType = 46
+	// Retail Filter Bundle for linking a retail filter shared set to an ad
+	// group.
+	CriterionTypeEnum_RETAIL_FILTER_BUNDLE CriterionTypeEnum_CriterionType = 180
+	// Retail Filter for defining individual tag rules or expressions within a
+	// shared set.
+	CriterionTypeEnum_RETAIL_FILTER CriterionTypeEnum_CriterionType = 181
 )
 
 // Enum value maps for CriterionTypeEnum_CriterionType.
 var (
 	CriterionTypeEnum_CriterionType_name = map[int32]string{
-		0:  "UNSPECIFIED",
-		1:  "UNKNOWN",
-		2:  "KEYWORD",
-		3:  "PLACEMENT",
-		4:  "MOBILE_APP_CATEGORY",
-		5:  "MOBILE_APPLICATION",
-		6:  "DEVICE",
-		7:  "LOCATION",
-		8:  "LISTING_GROUP",
-		9:  "AD_SCHEDULE",
-		10: "AGE_RANGE",
-		11: "GENDER",
-		12: "INCOME_RANGE",
-		13: "PARENTAL_STATUS",
-		14: "YOUTUBE_VIDEO",
-		15: "YOUTUBE_CHANNEL",
-		16: "USER_LIST",
-		17: "PROXIMITY",
-		18: "TOPIC",
-		19: "LISTING_SCOPE",
-		20: "LANGUAGE",
-		21: "IP_BLOCK",
-		22: "CONTENT_LABEL",
-		23: "CARRIER",
-		24: "USER_INTEREST",
-		25: "WEBPAGE",
-		26: "OPERATING_SYSTEM_VERSION",
-		27: "APP_PAYMENT_MODEL",
-		28: "MOBILE_DEVICE",
-		29: "CUSTOM_AFFINITY",
-		30: "CUSTOM_INTENT",
-		31: "LOCATION_GROUP",
-		32: "CUSTOM_AUDIENCE",
-		33: "COMBINED_AUDIENCE",
-		34: "KEYWORD_THEME",
-		35: "AUDIENCE",
-		36: "NEGATIVE_KEYWORD_LIST",
-		37: "LOCAL_SERVICE_ID",
-		38: "SEARCH_THEME",
-		39: "BRAND",
-		40: "BRAND_LIST",
-		41: "LIFE_EVENT",
-		42: "WEBPAGE_LIST",
-		43: "VIDEO_LINEUP",
-		44: "PLACEMENT_LIST",
-		45: "VERTICAL_ADS_ITEM_GROUP_RULE_LIST",
-		46: "VERTICAL_ADS_ITEM_GROUP_RULE",
+		0:   "UNSPECIFIED",
+		1:   "UNKNOWN",
+		2:   "KEYWORD",
+		3:   "PLACEMENT",
+		4:   "MOBILE_APP_CATEGORY",
+		5:   "MOBILE_APPLICATION",
+		6:   "DEVICE",
+		7:   "LOCATION",
+		8:   "LISTING_GROUP",
+		9:   "AD_SCHEDULE",
+		10:  "AGE_RANGE",
+		11:  "GENDER",
+		12:  "INCOME_RANGE",
+		13:  "PARENTAL_STATUS",
+		14:  "YOUTUBE_VIDEO",
+		15:  "YOUTUBE_CHANNEL",
+		16:  "USER_LIST",
+		17:  "PROXIMITY",
+		18:  "TOPIC",
+		19:  "LISTING_SCOPE",
+		20:  "LANGUAGE",
+		21:  "IP_BLOCK",
+		22:  "CONTENT_LABEL",
+		23:  "CARRIER",
+		24:  "USER_INTEREST",
+		25:  "WEBPAGE",
+		26:  "OPERATING_SYSTEM_VERSION",
+		27:  "APP_PAYMENT_MODEL",
+		28:  "MOBILE_DEVICE",
+		29:  "CUSTOM_AFFINITY",
+		30:  "CUSTOM_INTENT",
+		31:  "LOCATION_GROUP",
+		32:  "CUSTOM_AUDIENCE",
+		33:  "COMBINED_AUDIENCE",
+		34:  "KEYWORD_THEME",
+		35:  "AUDIENCE",
+		36:  "NEGATIVE_KEYWORD_LIST",
+		37:  "LOCAL_SERVICE_ID",
+		38:  "SEARCH_THEME",
+		39:  "BRAND",
+		40:  "BRAND_LIST",
+		41:  "LIFE_EVENT",
+		42:  "WEBPAGE_LIST",
+		43:  "VIDEO_LINEUP",
+		44:  "PLACEMENT_LIST",
+		45:  "VERTICAL_ADS_ITEM_GROUP_RULE_LIST",
+		46:  "VERTICAL_ADS_ITEM_GROUP_RULE",
+		180: "RETAIL_FILTER_BUNDLE",
+		181: "RETAIL_FILTER",
 	}
 	CriterionTypeEnum_CriterionType_value = map[string]int32{
 		"UNSPECIFIED":                       0,
@@ -234,6 +242,8 @@ var (
 		"PLACEMENT_LIST":                    44,
 		"VERTICAL_ADS_ITEM_GROUP_RULE_LIST": 45,
 		"VERTICAL_ADS_ITEM_GROUP_RULE":      46,
+		"RETAIL_FILTER_BUNDLE":              180,
+		"RETAIL_FILTER":                     181,
 	}
 )
 
@@ -248,11 +258,11 @@ func (x CriterionTypeEnum_CriterionType) String() string {
 }
 
 func (CriterionTypeEnum_CriterionType) Descriptor() protoreflect.EnumDescriptor {
-	return file_google_ads_googleads_v23_enums_criterion_type_proto_enumTypes[0].Descriptor()
+	return file_google_ads_googleads_v24_enums_criterion_type_proto_enumTypes[0].Descriptor()
 }
 
 func (CriterionTypeEnum_CriterionType) Type() protoreflect.EnumType {
-	return &file_google_ads_googleads_v23_enums_criterion_type_proto_enumTypes[0]
+	return &file_google_ads_googleads_v24_enums_criterion_type_proto_enumTypes[0]
 }
 
 func (x CriterionTypeEnum_CriterionType) Number() protoreflect.EnumNumber {
@@ -261,7 +271,7 @@ func (x CriterionTypeEnum_CriterionType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use CriterionTypeEnum_CriterionType.Descriptor instead.
 func (CriterionTypeEnum_CriterionType) EnumDescriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v23_enums_criterion_type_proto_rawDescGZIP(), []int{0, 0}
+	return file_google_ads_googleads_v24_enums_criterion_type_proto_rawDescGZIP(), []int{0, 0}
 }
 
 // The possible types of a criterion.
@@ -273,7 +283,7 @@ type CriterionTypeEnum struct {
 
 func (x *CriterionTypeEnum) Reset() {
 	*x = CriterionTypeEnum{}
-	mi := &file_google_ads_googleads_v23_enums_criterion_type_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v24_enums_criterion_type_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -285,7 +295,7 @@ func (x *CriterionTypeEnum) String() string {
 func (*CriterionTypeEnum) ProtoMessage() {}
 
 func (x *CriterionTypeEnum) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v23_enums_criterion_type_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v24_enums_criterion_type_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -298,19 +308,19 @@ func (x *CriterionTypeEnum) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CriterionTypeEnum.ProtoReflect.Descriptor instead.
 func (*CriterionTypeEnum) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v23_enums_criterion_type_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v24_enums_criterion_type_proto_rawDescGZIP(), []int{0}
 }
 
-var File_google_ads_googleads_v23_enums_criterion_type_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v24_enums_criterion_type_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v23_enums_criterion_type_proto_rawDesc = string([]byte{
+var file_google_ads_googleads_v24_enums_criterion_type_proto_rawDesc = string([]byte{
 	0x0a, 0x33, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x33, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x34, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73,
 	0x2f, 0x63, 0x72, 0x69, 0x74, 0x65, 0x72, 0x69, 0x6f, 0x6e, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x2e,
 	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x1e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64,
-	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e,
-	0x65, 0x6e, 0x75, 0x6d, 0x73, 0x22, 0x90, 0x07, 0x0a, 0x11, 0x43, 0x72, 0x69, 0x74, 0x65, 0x72,
-	0x69, 0x6f, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x45, 0x6e, 0x75, 0x6d, 0x22, 0xfa, 0x06, 0x0a, 0x0d,
+	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e,
+	0x65, 0x6e, 0x75, 0x6d, 0x73, 0x22, 0xbf, 0x07, 0x0a, 0x11, 0x43, 0x72, 0x69, 0x74, 0x65, 0x72,
+	0x69, 0x6f, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x45, 0x6e, 0x75, 0x6d, 0x22, 0xa9, 0x07, 0x0a, 0x0d,
 	0x43, 0x72, 0x69, 0x74, 0x65, 0x72, 0x69, 0x6f, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x12, 0x0f, 0x0a,
 	0x0b, 0x55, 0x4e, 0x53, 0x50, 0x45, 0x43, 0x49, 0x46, 0x49, 0x45, 0x44, 0x10, 0x00, 0x12, 0x0b,
 	0x0a, 0x07, 0x55, 0x4e, 0x4b, 0x4e, 0x4f, 0x57, 0x4e, 0x10, 0x01, 0x12, 0x0b, 0x0a, 0x07, 0x4b,
@@ -366,43 +376,46 @@ var file_google_ads_googleads_v23_enums_criterion_type_proto_rawDesc = string([]
 	0x49, 0x54, 0x45, 0x4d, 0x5f, 0x47, 0x52, 0x4f, 0x55, 0x50, 0x5f, 0x52, 0x55, 0x4c, 0x45, 0x5f,
 	0x4c, 0x49, 0x53, 0x54, 0x10, 0x2d, 0x12, 0x20, 0x0a, 0x1c, 0x56, 0x45, 0x52, 0x54, 0x49, 0x43,
 	0x41, 0x4c, 0x5f, 0x41, 0x44, 0x53, 0x5f, 0x49, 0x54, 0x45, 0x4d, 0x5f, 0x47, 0x52, 0x4f, 0x55,
-	0x50, 0x5f, 0x52, 0x55, 0x4c, 0x45, 0x10, 0x2e, 0x42, 0xec, 0x01, 0x0a, 0x22, 0x63, 0x6f, 0x6d,
-	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x42,
-	0x12, 0x43, 0x72, 0x69, 0x74, 0x65, 0x72, 0x69, 0x6f, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x50, 0x72,
-	0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x43, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x67, 0x6f,
-	0x6c, 0x61, 0x6e, 0x67, 0x2e, 0x6f, 0x72, 0x67, 0x2f, 0x67, 0x65, 0x6e, 0x70, 0x72, 0x6f, 0x74,
-	0x6f, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x70, 0x69, 0x73, 0x2f, 0x61, 0x64, 0x73,
-	0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x33, 0x2f, 0x65,
-	0x6e, 0x75, 0x6d, 0x73, 0x3b, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0xa2, 0x02, 0x03, 0x47, 0x41, 0x41,
-	0xaa, 0x02, 0x1e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x41, 0x64, 0x73, 0x2e, 0x47, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e, 0x56, 0x32, 0x33, 0x2e, 0x45, 0x6e, 0x75, 0x6d,
-	0x73, 0xca, 0x02, 0x1e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x5c, 0x41, 0x64, 0x73, 0x5c, 0x47,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x32, 0x33, 0x5c, 0x45, 0x6e, 0x75,
-	0x6d, 0x73, 0xea, 0x02, 0x22, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x3a, 0x3a, 0x41, 0x64, 0x73,
-	0x3a, 0x3a, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x32, 0x33,
-	0x3a, 0x3a, 0x45, 0x6e, 0x75, 0x6d, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x50, 0x5f, 0x52, 0x55, 0x4c, 0x45, 0x10, 0x2e, 0x12, 0x19, 0x0a, 0x14, 0x52, 0x45, 0x54, 0x41,
+	0x49, 0x4c, 0x5f, 0x46, 0x49, 0x4c, 0x54, 0x45, 0x52, 0x5f, 0x42, 0x55, 0x4e, 0x44, 0x4c, 0x45,
+	0x10, 0xb4, 0x01, 0x12, 0x12, 0x0a, 0x0d, 0x52, 0x45, 0x54, 0x41, 0x49, 0x4c, 0x5f, 0x46, 0x49,
+	0x4c, 0x54, 0x45, 0x52, 0x10, 0xb5, 0x01, 0x42, 0xec, 0x01, 0x0a, 0x22, 0x63, 0x6f, 0x6d, 0x2e,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
+	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x42, 0x12,
+	0x43, 0x72, 0x69, 0x74, 0x65, 0x72, 0x69, 0x6f, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x50, 0x72, 0x6f,
+	0x74, 0x6f, 0x50, 0x01, 0x5a, 0x43, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x67, 0x6f, 0x6c,
+	0x61, 0x6e, 0x67, 0x2e, 0x6f, 0x72, 0x67, 0x2f, 0x67, 0x65, 0x6e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
+	0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x70, 0x69, 0x73, 0x2f, 0x61, 0x64, 0x73, 0x2f,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x34, 0x2f, 0x65, 0x6e,
+	0x75, 0x6d, 0x73, 0x3b, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0xa2, 0x02, 0x03, 0x47, 0x41, 0x41, 0xaa,
+	0x02, 0x1e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x41, 0x64, 0x73, 0x2e, 0x47, 0x6f, 0x6f,
+	0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e, 0x56, 0x32, 0x34, 0x2e, 0x45, 0x6e, 0x75, 0x6d, 0x73,
+	0xca, 0x02, 0x1e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x5c, 0x41, 0x64, 0x73, 0x5c, 0x47, 0x6f,
+	0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x32, 0x34, 0x5c, 0x45, 0x6e, 0x75, 0x6d,
+	0x73, 0xea, 0x02, 0x22, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x3a, 0x3a, 0x41, 0x64, 0x73, 0x3a,
+	0x3a, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x32, 0x34, 0x3a,
+	0x3a, 0x45, 0x6e, 0x75, 0x6d, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 })
 
 var (
-	file_google_ads_googleads_v23_enums_criterion_type_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v23_enums_criterion_type_proto_rawDescData []byte
+	file_google_ads_googleads_v24_enums_criterion_type_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v24_enums_criterion_type_proto_rawDescData []byte
 )
 
-func file_google_ads_googleads_v23_enums_criterion_type_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v23_enums_criterion_type_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v23_enums_criterion_type_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v23_enums_criterion_type_proto_rawDesc), len(file_google_ads_googleads_v23_enums_criterion_type_proto_rawDesc)))
+func file_google_ads_googleads_v24_enums_criterion_type_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v24_enums_criterion_type_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v24_enums_criterion_type_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v24_enums_criterion_type_proto_rawDesc), len(file_google_ads_googleads_v24_enums_criterion_type_proto_rawDesc)))
 	})
-	return file_google_ads_googleads_v23_enums_criterion_type_proto_rawDescData
+	return file_google_ads_googleads_v24_enums_criterion_type_proto_rawDescData
 }
 
-var file_google_ads_googleads_v23_enums_criterion_type_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_google_ads_googleads_v23_enums_criterion_type_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
-var file_google_ads_googleads_v23_enums_criterion_type_proto_goTypes = []any{
-	(CriterionTypeEnum_CriterionType)(0), // 0: google.ads.googleads.v23.enums.CriterionTypeEnum.CriterionType
-	(*CriterionTypeEnum)(nil),            // 1: google.ads.googleads.v23.enums.CriterionTypeEnum
+var file_google_ads_googleads_v24_enums_criterion_type_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_google_ads_googleads_v24_enums_criterion_type_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_google_ads_googleads_v24_enums_criterion_type_proto_goTypes = []any{
+	(CriterionTypeEnum_CriterionType)(0), // 0: google.ads.googleads.v24.enums.CriterionTypeEnum.CriterionType
+	(*CriterionTypeEnum)(nil),            // 1: google.ads.googleads.v24.enums.CriterionTypeEnum
 }
-var file_google_ads_googleads_v23_enums_criterion_type_proto_depIdxs = []int32{
+var file_google_ads_googleads_v24_enums_criterion_type_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type
 	0, // [0:0] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
@@ -410,27 +423,27 @@ var file_google_ads_googleads_v23_enums_criterion_type_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for field type_name
 }
 
-func init() { file_google_ads_googleads_v23_enums_criterion_type_proto_init() }
-func file_google_ads_googleads_v23_enums_criterion_type_proto_init() {
-	if File_google_ads_googleads_v23_enums_criterion_type_proto != nil {
+func init() { file_google_ads_googleads_v24_enums_criterion_type_proto_init() }
+func file_google_ads_googleads_v24_enums_criterion_type_proto_init() {
+	if File_google_ads_googleads_v24_enums_criterion_type_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v23_enums_criterion_type_proto_rawDesc), len(file_google_ads_googleads_v23_enums_criterion_type_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v24_enums_criterion_type_proto_rawDesc), len(file_google_ads_googleads_v24_enums_criterion_type_proto_rawDesc)),
 			NumEnums:      1,
 			NumMessages:   1,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_google_ads_googleads_v23_enums_criterion_type_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v23_enums_criterion_type_proto_depIdxs,
-		EnumInfos:         file_google_ads_googleads_v23_enums_criterion_type_proto_enumTypes,
-		MessageInfos:      file_google_ads_googleads_v23_enums_criterion_type_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v24_enums_criterion_type_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v24_enums_criterion_type_proto_depIdxs,
+		EnumInfos:         file_google_ads_googleads_v24_enums_criterion_type_proto_enumTypes,
+		MessageInfos:      file_google_ads_googleads_v24_enums_criterion_type_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v23_enums_criterion_type_proto = out.File
-	file_google_ads_googleads_v23_enums_criterion_type_proto_goTypes = nil
-	file_google_ads_googleads_v23_enums_criterion_type_proto_depIdxs = nil
+	File_google_ads_googleads_v24_enums_criterion_type_proto = out.File
+	file_google_ads_googleads_v24_enums_criterion_type_proto_goTypes = nil
+	file_google_ads_googleads_v24_enums_criterion_type_proto_depIdxs = nil
 }

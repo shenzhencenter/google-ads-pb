@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.36.5
 // 	protoc        v4.24.4
-// source: google/ads/googleads/v23/services/conversion_upload_service.proto
+// source: google/ads/googleads/v24/services/conversion_upload_service.proto
 
 package services
 
@@ -40,22 +40,23 @@ const (
 )
 
 // Request message for
-// [ConversionUploadService.UploadClickConversions][google.ads.googleads.v23.services.ConversionUploadService.UploadClickConversions].
+// [ConversionUploadService.UploadClickConversions][google.ads.googleads.v24.services.ConversionUploadService.UploadClickConversions].
 type UploadClickConversionsRequest struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Required. The ID of the customer performing the upload.
 	CustomerId string `protobuf:"bytes,1,opt,name=customer_id,json=customerId,proto3" json:"customer_id,omitempty"`
 	// Required. The conversions that are being uploaded.
 	Conversions []*ClickConversion `protobuf:"bytes,2,rep,name=conversions,proto3" json:"conversions,omitempty"`
-	// Required. If true, successful operations will be carried out and invalid
-	// operations will return errors. If false, all operations will be carried
+	// Required. If `true`, successful operations will be carried out and invalid
+	// operations will return errors. If `false`, all operations will be carried
 	// out in one transaction if and only if they are all valid.
-	// This should always be set to true.
+	// This should always be set to `true`.
+	//
 	// See
-	// https://developers.google.com/google-ads/api/docs/best-practices/partial-failures
-	// for more information about partial failure.
+	// [Best practices for partial
+	// failures](/google-ads/api/docs/best-practices/partial-failures).
 	PartialFailure bool `protobuf:"varint,3,opt,name=partial_failure,json=partialFailure,proto3" json:"partial_failure,omitempty"`
-	// If true, the request is validated but not executed. Only errors are
+	// If `true`, the request is validated but not executed. Only errors are
 	// returned, not results.
 	ValidateOnly bool `protobuf:"varint,4,opt,name=validate_only,json=validateOnly,proto3" json:"validate_only,omitempty"`
 	// Optional. Optional input to set job ID. Must be a non-negative number that
@@ -70,7 +71,7 @@ type UploadClickConversionsRequest struct {
 
 func (x *UploadClickConversionsRequest) Reset() {
 	*x = UploadClickConversionsRequest{}
-	mi := &file_google_ads_googleads_v23_services_conversion_upload_service_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v24_services_conversion_upload_service_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -82,7 +83,7 @@ func (x *UploadClickConversionsRequest) String() string {
 func (*UploadClickConversionsRequest) ProtoMessage() {}
 
 func (x *UploadClickConversionsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v23_services_conversion_upload_service_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v24_services_conversion_upload_service_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -95,7 +96,7 @@ func (x *UploadClickConversionsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UploadClickConversionsRequest.ProtoReflect.Descriptor instead.
 func (*UploadClickConversionsRequest) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v23_services_conversion_upload_service_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v24_services_conversion_upload_service_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *UploadClickConversionsRequest) GetCustomerId() string {
@@ -134,19 +135,21 @@ func (x *UploadClickConversionsRequest) GetJobId() int32 {
 }
 
 // Response message for
-// [ConversionUploadService.UploadClickConversions][google.ads.googleads.v23.services.ConversionUploadService.UploadClickConversions].
+// [ConversionUploadService.UploadClickConversions][google.ads.googleads.v24.services.ConversionUploadService.UploadClickConversions].
 type UploadClickConversionsResponse struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Errors that pertain to conversion failures in the partial failure mode.
 	// Returned when all errors occur inside the conversions. If any errors occur
 	// outside the conversions (for example, auth errors), we return an RPC level
-	// error. See
-	// https://developers.google.com/google-ads/api/docs/best-practices/partial-failures
-	// for more information about partial failure.
+	// error.
+	//
+	// See
+	// [Best practices for partial
+	// failures](/google-ads/api/docs/best-practices/partial-failures).
 	PartialFailureError *status.Status `protobuf:"bytes,1,opt,name=partial_failure_error,json=partialFailureError,proto3" json:"partial_failure_error,omitempty"`
 	// Returned for successfully processed conversions. Proto will be empty for
-	// rows that received an error. Results are not returned when validate_only is
-	// true.
+	// rows that received an error. Results are not returned when `validate_only`
+	// is `true`.
 	Results []*ClickConversionResult `protobuf:"bytes,2,rep,name=results,proto3" json:"results,omitempty"`
 	// Job ID for the upload batch.
 	JobId         int64 `protobuf:"varint,3,opt,name=job_id,json=jobId,proto3" json:"job_id,omitempty"`
@@ -156,7 +159,7 @@ type UploadClickConversionsResponse struct {
 
 func (x *UploadClickConversionsResponse) Reset() {
 	*x = UploadClickConversionsResponse{}
-	mi := &file_google_ads_googleads_v23_services_conversion_upload_service_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v24_services_conversion_upload_service_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -168,7 +171,7 @@ func (x *UploadClickConversionsResponse) String() string {
 func (*UploadClickConversionsResponse) ProtoMessage() {}
 
 func (x *UploadClickConversionsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v23_services_conversion_upload_service_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v24_services_conversion_upload_service_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -181,7 +184,7 @@ func (x *UploadClickConversionsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UploadClickConversionsResponse.ProtoReflect.Descriptor instead.
 func (*UploadClickConversionsResponse) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v23_services_conversion_upload_service_proto_rawDescGZIP(), []int{1}
+	return file_google_ads_googleads_v24_services_conversion_upload_service_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *UploadClickConversionsResponse) GetPartialFailureError() *status.Status {
@@ -206,20 +209,22 @@ func (x *UploadClickConversionsResponse) GetJobId() int64 {
 }
 
 // Request message for
-// [ConversionUploadService.UploadCallConversions][google.ads.googleads.v23.services.ConversionUploadService.UploadCallConversions].
+// [ConversionUploadService.UploadCallConversions][google.ads.googleads.v24.services.ConversionUploadService.UploadCallConversions].
 type UploadCallConversionsRequest struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Required. The ID of the customer performing the upload.
 	CustomerId string `protobuf:"bytes,1,opt,name=customer_id,json=customerId,proto3" json:"customer_id,omitempty"`
 	// Required. The conversions that are being uploaded.
 	Conversions []*CallConversion `protobuf:"bytes,2,rep,name=conversions,proto3" json:"conversions,omitempty"`
-	// Required. If true, successful operations will be carried out and invalid
-	// operations will return errors. If false, all operations will be carried
+	// Required. If `true`, successful operations will be carried out and invalid
+	// operations will return errors. If `false`, all operations will be carried
 	// out in one transaction if and only if they are all valid.
-	// This should always be set to true.
+	//
+	// This should always be set to `true`.
+	//
 	// See
-	// https://developers.google.com/google-ads/api/docs/best-practices/partial-failures
-	// for more information about partial failure.
+	// [Best practices for partial
+	// failures](/google-ads/api/docs/best-practices/partial-failures).
 	PartialFailure bool `protobuf:"varint,3,opt,name=partial_failure,json=partialFailure,proto3" json:"partial_failure,omitempty"`
 	// If true, the request is validated but not executed. Only errors are
 	// returned, not results.
@@ -230,7 +235,7 @@ type UploadCallConversionsRequest struct {
 
 func (x *UploadCallConversionsRequest) Reset() {
 	*x = UploadCallConversionsRequest{}
-	mi := &file_google_ads_googleads_v23_services_conversion_upload_service_proto_msgTypes[2]
+	mi := &file_google_ads_googleads_v24_services_conversion_upload_service_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -242,7 +247,7 @@ func (x *UploadCallConversionsRequest) String() string {
 func (*UploadCallConversionsRequest) ProtoMessage() {}
 
 func (x *UploadCallConversionsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v23_services_conversion_upload_service_proto_msgTypes[2]
+	mi := &file_google_ads_googleads_v24_services_conversion_upload_service_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -255,7 +260,7 @@ func (x *UploadCallConversionsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UploadCallConversionsRequest.ProtoReflect.Descriptor instead.
 func (*UploadCallConversionsRequest) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v23_services_conversion_upload_service_proto_rawDescGZIP(), []int{2}
+	return file_google_ads_googleads_v24_services_conversion_upload_service_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *UploadCallConversionsRequest) GetCustomerId() string {
@@ -287,19 +292,21 @@ func (x *UploadCallConversionsRequest) GetValidateOnly() bool {
 }
 
 // Response message for
-// [ConversionUploadService.UploadCallConversions][google.ads.googleads.v23.services.ConversionUploadService.UploadCallConversions].
+// [ConversionUploadService.UploadCallConversions][google.ads.googleads.v24.services.ConversionUploadService.UploadCallConversions].
 type UploadCallConversionsResponse struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Errors that pertain to conversion failures in the partial failure mode.
 	// Returned when all errors occur inside the conversions. If any errors occur
 	// outside the conversions (for example, auth errors), we return an RPC level
-	// error. See
-	// https://developers.google.com/google-ads/api/docs/best-practices/partial-failures
-	// for more information about partial failure.
+	// error.
+	//
+	// See
+	// [Best practices for partial
+	// failures](/google-ads/api/docs/best-practices/partial-failures).
 	PartialFailureError *status.Status `protobuf:"bytes,1,opt,name=partial_failure_error,json=partialFailureError,proto3" json:"partial_failure_error,omitempty"`
 	// Returned for successfully processed conversions. Proto will be empty for
-	// rows that received an error. Results are not returned when validate_only is
-	// true.
+	// rows that received an error. Results are not returned when `validate_only`
+	// is `true`.
 	Results       []*CallConversionResult `protobuf:"bytes,2,rep,name=results,proto3" json:"results,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -307,7 +314,7 @@ type UploadCallConversionsResponse struct {
 
 func (x *UploadCallConversionsResponse) Reset() {
 	*x = UploadCallConversionsResponse{}
-	mi := &file_google_ads_googleads_v23_services_conversion_upload_service_proto_msgTypes[3]
+	mi := &file_google_ads_googleads_v24_services_conversion_upload_service_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -319,7 +326,7 @@ func (x *UploadCallConversionsResponse) String() string {
 func (*UploadCallConversionsResponse) ProtoMessage() {}
 
 func (x *UploadCallConversionsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v23_services_conversion_upload_service_proto_msgTypes[3]
+	mi := &file_google_ads_googleads_v24_services_conversion_upload_service_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -332,7 +339,7 @@ func (x *UploadCallConversionsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UploadCallConversionsResponse.ProtoReflect.Descriptor instead.
 func (*UploadCallConversionsResponse) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v23_services_conversion_upload_service_proto_rawDescGZIP(), []int{3}
+	return file_google_ads_googleads_v24_services_conversion_upload_service_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *UploadCallConversionsResponse) GetPartialFailureError() *status.Status {
@@ -359,6 +366,7 @@ type ClickConversion struct {
 	// The URL parameter for clicks associated with web conversions.
 	Wbraid string `protobuf:"bytes,19,opt,name=wbraid,proto3" json:"wbraid,omitempty"`
 	// Resource name of the conversion action associated with this conversion.
+	//
 	// Note: Although this resource name consists of a customer id and a
 	// conversion action id, validation will ignore the customer id and use the
 	// conversion action id as the sole identifier of the conversion action.
@@ -388,12 +396,11 @@ type ClickConversion struct {
 	// number of user identifiers for each conversion is 5.
 	UserIdentifiers []*common.UserIdentifier `protobuf:"bytes,17,rep,name=user_identifiers,json=userIdentifiers,proto3" json:"user_identifiers,omitempty"`
 	// The environment this conversion was recorded on, for example, App or Web.
-	ConversionEnvironment enums.ConversionEnvironmentEnum_ConversionEnvironment `protobuf:"varint,20,opt,name=conversion_environment,json=conversionEnvironment,proto3,enum=google.ads.googleads.v23.enums.ConversionEnvironmentEnum_ConversionEnvironment" json:"conversion_environment,omitempty"`
+	ConversionEnvironment enums.ConversionEnvironmentEnum_ConversionEnvironment `protobuf:"varint,20,opt,name=conversion_environment,json=conversionEnvironment,proto3,enum=google.ads.googleads.v24.enums.ConversionEnvironmentEnum_ConversionEnvironment" json:"conversion_environment,omitempty"`
 	// The consent setting for the event.
 	Consent *common.Consent `protobuf:"bytes,23,opt,name=consent,proto3" json:"consent,omitempty"`
 	// Type of the customer associated with the conversion (new or returning).
-	// Accessible only to customers on the allow-list.
-	CustomerType enums.ConversionCustomerTypeEnum_ConversionCustomerType `protobuf:"varint,26,opt,name=customer_type,json=customerType,proto3,enum=google.ads.googleads.v23.enums.ConversionCustomerTypeEnum_ConversionCustomerType" json:"customer_type,omitempty"`
+	CustomerType enums.ConversionCustomerTypeEnum_ConversionCustomerType `protobuf:"varint,26,opt,name=customer_type,json=customerType,proto3,enum=google.ads.googleads.v24.enums.ConversionCustomerTypeEnum_ConversionCustomerType" json:"customer_type,omitempty"`
 	// The IP address of the customer when they arrived on the landing page after
 	// an ad click but before a conversion event. This is the IP address of the
 	// customer's device, not the advertiser's server. Google Ads does not support
@@ -402,8 +409,11 @@ type ClickConversion struct {
 	// exclude sharing IP addresses from users from these regions and ensure that
 	// you provide users with clear and comprehensive information about the data
 	// you collect on your sites, apps, and other properties and get consent where
-	// required by law or any applicable Google policies. See the
-	// https://support.google.com/google-ads/answer/2998031 page for more details.
+	// required by law or any applicable Google policies. See
+	// [About offline conversion
+	// imports](//support.google.com/google-ads/answer/2998031) page for more
+	// details.
+	//
 	// This field is only available to allowlisted users. To include this field in
 	// conversion imports, upgrade to the Data Manager API.
 	UserIpAddress *string `protobuf:"bytes,27,opt,name=user_ip_address,json=userIpAddress,proto3,oneof" json:"user_ip_address,omitempty"`
@@ -420,7 +430,7 @@ type ClickConversion struct {
 
 func (x *ClickConversion) Reset() {
 	*x = ClickConversion{}
-	mi := &file_google_ads_googleads_v23_services_conversion_upload_service_proto_msgTypes[4]
+	mi := &file_google_ads_googleads_v24_services_conversion_upload_service_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -432,7 +442,7 @@ func (x *ClickConversion) String() string {
 func (*ClickConversion) ProtoMessage() {}
 
 func (x *ClickConversion) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v23_services_conversion_upload_service_proto_msgTypes[4]
+	mi := &file_google_ads_googleads_v24_services_conversion_upload_service_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -445,7 +455,7 @@ func (x *ClickConversion) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ClickConversion.ProtoReflect.Descriptor instead.
 func (*ClickConversion) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v23_services_conversion_upload_service_proto_rawDescGZIP(), []int{4}
+	return file_google_ads_googleads_v24_services_conversion_upload_service_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *ClickConversion) GetGclid() string {
@@ -621,6 +631,7 @@ type CallConversion struct {
 	// for example, "2019-01-01 12:32:45-08:00".
 	CallStartDateTime *string `protobuf:"bytes,8,opt,name=call_start_date_time,json=callStartDateTime,proto3,oneof" json:"call_start_date_time,omitempty"`
 	// Resource name of the conversion action associated with this conversion.
+	//
 	// Note: Although this resource name consists of a customer id and a
 	// conversion action id, validation will ignore the customer id and use the
 	// conversion action id as the sole identifier of the conversion action.
@@ -644,7 +655,7 @@ type CallConversion struct {
 
 func (x *CallConversion) Reset() {
 	*x = CallConversion{}
-	mi := &file_google_ads_googleads_v23_services_conversion_upload_service_proto_msgTypes[5]
+	mi := &file_google_ads_googleads_v24_services_conversion_upload_service_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -656,7 +667,7 @@ func (x *CallConversion) String() string {
 func (*CallConversion) ProtoMessage() {}
 
 func (x *CallConversion) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v23_services_conversion_upload_service_proto_msgTypes[5]
+	mi := &file_google_ads_googleads_v24_services_conversion_upload_service_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -669,7 +680,7 @@ func (x *CallConversion) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CallConversion.ProtoReflect.Descriptor instead.
 func (*CallConversion) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v23_services_conversion_upload_service_proto_rawDescGZIP(), []int{5}
+	return file_google_ads_googleads_v24_services_conversion_upload_service_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *CallConversion) GetCallerId() string {
@@ -742,7 +753,7 @@ type ExternalAttributionData struct {
 
 func (x *ExternalAttributionData) Reset() {
 	*x = ExternalAttributionData{}
-	mi := &file_google_ads_googleads_v23_services_conversion_upload_service_proto_msgTypes[6]
+	mi := &file_google_ads_googleads_v24_services_conversion_upload_service_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -754,7 +765,7 @@ func (x *ExternalAttributionData) String() string {
 func (*ExternalAttributionData) ProtoMessage() {}
 
 func (x *ExternalAttributionData) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v23_services_conversion_upload_service_proto_msgTypes[6]
+	mi := &file_google_ads_googleads_v24_services_conversion_upload_service_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -767,7 +778,7 @@ func (x *ExternalAttributionData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExternalAttributionData.ProtoReflect.Descriptor instead.
 func (*ExternalAttributionData) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v23_services_conversion_upload_service_proto_rawDescGZIP(), []int{6}
+	return file_google_ads_googleads_v24_services_conversion_upload_service_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *ExternalAttributionData) GetExternalAttributionCredit() float64 {
@@ -784,7 +795,7 @@ func (x *ExternalAttributionData) GetExternalAttributionModel() string {
 	return ""
 }
 
-// Identifying information for a successfully processed ClickConversion.
+// Identifying information for a successfully processed `ClickConversion`.
 type ClickConversionResult struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// The Google Click ID (gclid) associated with this conversion.
@@ -808,7 +819,7 @@ type ClickConversionResult struct {
 
 func (x *ClickConversionResult) Reset() {
 	*x = ClickConversionResult{}
-	mi := &file_google_ads_googleads_v23_services_conversion_upload_service_proto_msgTypes[7]
+	mi := &file_google_ads_googleads_v24_services_conversion_upload_service_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -820,7 +831,7 @@ func (x *ClickConversionResult) String() string {
 func (*ClickConversionResult) ProtoMessage() {}
 
 func (x *ClickConversionResult) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v23_services_conversion_upload_service_proto_msgTypes[7]
+	mi := &file_google_ads_googleads_v24_services_conversion_upload_service_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -833,7 +844,7 @@ func (x *ClickConversionResult) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ClickConversionResult.ProtoReflect.Descriptor instead.
 func (*ClickConversionResult) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v23_services_conversion_upload_service_proto_rawDescGZIP(), []int{7}
+	return file_google_ads_googleads_v24_services_conversion_upload_service_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *ClickConversionResult) GetGclid() string {
@@ -898,7 +909,7 @@ type CallConversionResult struct {
 
 func (x *CallConversionResult) Reset() {
 	*x = CallConversionResult{}
-	mi := &file_google_ads_googleads_v23_services_conversion_upload_service_proto_msgTypes[8]
+	mi := &file_google_ads_googleads_v24_services_conversion_upload_service_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -910,7 +921,7 @@ func (x *CallConversionResult) String() string {
 func (*CallConversionResult) ProtoMessage() {}
 
 func (x *CallConversionResult) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v23_services_conversion_upload_service_proto_msgTypes[8]
+	mi := &file_google_ads_googleads_v24_services_conversion_upload_service_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -923,7 +934,7 @@ func (x *CallConversionResult) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CallConversionResult.ProtoReflect.Descriptor instead.
 func (*CallConversionResult) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v23_services_conversion_upload_service_proto_rawDescGZIP(), []int{8}
+	return file_google_ads_googleads_v24_services_conversion_upload_service_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *CallConversionResult) GetCallerId() string {
@@ -958,6 +969,7 @@ func (x *CallConversionResult) GetConversionDateTime() string {
 type CustomVariable struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Resource name of the custom variable associated with this conversion.
+	//
 	// Note: Although this resource name consists of a customer id and a
 	// conversion custom variable id, validation will ignore the customer id and
 	// use the conversion custom variable id as the sole identifier of the
@@ -973,7 +985,7 @@ type CustomVariable struct {
 
 func (x *CustomVariable) Reset() {
 	*x = CustomVariable{}
-	mi := &file_google_ads_googleads_v23_services_conversion_upload_service_proto_msgTypes[9]
+	mi := &file_google_ads_googleads_v24_services_conversion_upload_service_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -985,7 +997,7 @@ func (x *CustomVariable) String() string {
 func (*CustomVariable) ProtoMessage() {}
 
 func (x *CustomVariable) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v23_services_conversion_upload_service_proto_msgTypes[9]
+	mi := &file_google_ads_googleads_v24_services_conversion_upload_service_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -998,7 +1010,7 @@ func (x *CustomVariable) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CustomVariable.ProtoReflect.Descriptor instead.
 func (*CustomVariable) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v23_services_conversion_upload_service_proto_rawDescGZIP(), []int{9}
+	return file_google_ads_googleads_v24_services_conversion_upload_service_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *CustomVariable) GetConversionCustomVariable() string {
@@ -1026,7 +1038,7 @@ type CartData struct {
 	FeedLanguageCode string `protobuf:"bytes,3,opt,name=feed_language_code,json=feedLanguageCode,proto3" json:"feed_language_code,omitempty"`
 	// Sum of all transaction level discounts, such as free shipping and
 	// coupon discounts for the whole cart. The currency code is the same
-	// as that in the ClickConversion message.
+	// as that in the `ClickConversion` message.
 	LocalTransactionCost float64 `protobuf:"fixed64,4,opt,name=local_transaction_cost,json=localTransactionCost,proto3" json:"local_transaction_cost,omitempty"`
 	// Data of the items purchased.
 	Items         []*CartData_Item `protobuf:"bytes,5,rep,name=items,proto3" json:"items,omitempty"`
@@ -1036,7 +1048,7 @@ type CartData struct {
 
 func (x *CartData) Reset() {
 	*x = CartData{}
-	mi := &file_google_ads_googleads_v23_services_conversion_upload_service_proto_msgTypes[10]
+	mi := &file_google_ads_googleads_v24_services_conversion_upload_service_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1048,7 +1060,7 @@ func (x *CartData) String() string {
 func (*CartData) ProtoMessage() {}
 
 func (x *CartData) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v23_services_conversion_upload_service_proto_msgTypes[10]
+	mi := &file_google_ads_googleads_v24_services_conversion_upload_service_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1061,7 +1073,7 @@ func (x *CartData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CartData.ProtoReflect.Descriptor instead.
 func (*CartData) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v23_services_conversion_upload_service_proto_rawDescGZIP(), []int{10}
+	return file_google_ads_googleads_v24_services_conversion_upload_service_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *CartData) GetMerchantId() int64 {
@@ -1112,7 +1124,7 @@ type SessionAttributeKeyValuePair struct {
 
 func (x *SessionAttributeKeyValuePair) Reset() {
 	*x = SessionAttributeKeyValuePair{}
-	mi := &file_google_ads_googleads_v23_services_conversion_upload_service_proto_msgTypes[11]
+	mi := &file_google_ads_googleads_v24_services_conversion_upload_service_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1124,7 +1136,7 @@ func (x *SessionAttributeKeyValuePair) String() string {
 func (*SessionAttributeKeyValuePair) ProtoMessage() {}
 
 func (x *SessionAttributeKeyValuePair) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v23_services_conversion_upload_service_proto_msgTypes[11]
+	mi := &file_google_ads_googleads_v24_services_conversion_upload_service_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1137,7 +1149,7 @@ func (x *SessionAttributeKeyValuePair) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SessionAttributeKeyValuePair.ProtoReflect.Descriptor instead.
 func (*SessionAttributeKeyValuePair) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v23_services_conversion_upload_service_proto_rawDescGZIP(), []int{11}
+	return file_google_ads_googleads_v24_services_conversion_upload_service_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *SessionAttributeKeyValuePair) GetSessionAttributeKey() string {
@@ -1166,7 +1178,7 @@ type SessionAttributesKeyValuePairs struct {
 
 func (x *SessionAttributesKeyValuePairs) Reset() {
 	*x = SessionAttributesKeyValuePairs{}
-	mi := &file_google_ads_googleads_v23_services_conversion_upload_service_proto_msgTypes[12]
+	mi := &file_google_ads_googleads_v24_services_conversion_upload_service_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1178,7 +1190,7 @@ func (x *SessionAttributesKeyValuePairs) String() string {
 func (*SessionAttributesKeyValuePairs) ProtoMessage() {}
 
 func (x *SessionAttributesKeyValuePairs) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v23_services_conversion_upload_service_proto_msgTypes[12]
+	mi := &file_google_ads_googleads_v24_services_conversion_upload_service_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1191,7 +1203,7 @@ func (x *SessionAttributesKeyValuePairs) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SessionAttributesKeyValuePairs.ProtoReflect.Descriptor instead.
 func (*SessionAttributesKeyValuePairs) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v23_services_conversion_upload_service_proto_rawDescGZIP(), []int{12}
+	return file_google_ads_googleads_v24_services_conversion_upload_service_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *SessionAttributesKeyValuePairs) GetKeyValuePairs() []*SessionAttributeKeyValuePair {
@@ -1211,7 +1223,7 @@ type CartData_Item struct {
 	Quantity int32 `protobuf:"varint,2,opt,name=quantity,proto3" json:"quantity,omitempty"`
 	// Unit price excluding tax, shipping, and any transaction
 	// level discounts. The currency code is the same as that in the
-	// ClickConversion message.
+	// `ClickConversion` message.
 	UnitPrice     float64 `protobuf:"fixed64,3,opt,name=unit_price,json=unitPrice,proto3" json:"unit_price,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -1219,7 +1231,7 @@ type CartData_Item struct {
 
 func (x *CartData_Item) Reset() {
 	*x = CartData_Item{}
-	mi := &file_google_ads_googleads_v23_services_conversion_upload_service_proto_msgTypes[13]
+	mi := &file_google_ads_googleads_v24_services_conversion_upload_service_proto_msgTypes[13]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1231,7 +1243,7 @@ func (x *CartData_Item) String() string {
 func (*CartData_Item) ProtoMessage() {}
 
 func (x *CartData_Item) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v23_services_conversion_upload_service_proto_msgTypes[13]
+	mi := &file_google_ads_googleads_v24_services_conversion_upload_service_proto_msgTypes[13]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1244,7 +1256,7 @@ func (x *CartData_Item) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CartData_Item.ProtoReflect.Descriptor instead.
 func (*CartData_Item) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v23_services_conversion_upload_service_proto_rawDescGZIP(), []int{10, 0}
+	return file_google_ads_googleads_v24_services_conversion_upload_service_proto_rawDescGZIP(), []int{10, 0}
 }
 
 func (x *CartData_Item) GetProductId() string {
@@ -1268,28 +1280,28 @@ func (x *CartData_Item) GetUnitPrice() float64 {
 	return 0
 }
 
-var File_google_ads_googleads_v23_services_conversion_upload_service_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v24_services_conversion_upload_service_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v23_services_conversion_upload_service_proto_rawDesc = string([]byte{
+var file_google_ads_googleads_v24_services_conversion_upload_service_proto_rawDesc = string([]byte{
 	0x0a, 0x41, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x33, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x34, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69,
 	0x63, 0x65, 0x73, 0x2f, 0x63, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x5f, 0x75,
 	0x70, 0x6c, 0x6f, 0x61, 0x64, 0x5f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x70, 0x72,
 	0x6f, 0x74, 0x6f, 0x12, 0x21, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e, 0x73, 0x65,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e, 0x73, 0x65,
 	0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x1a, 0x2d, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61,
-	0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x33,
+	0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x34,
 	0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2f, 0x63, 0x6f, 0x6e, 0x73, 0x65, 0x6e, 0x74, 0x2e,
 	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x37, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64,
-	0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x33, 0x2f,
+	0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x34, 0x2f,
 	0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2f, 0x6f, 0x66, 0x66, 0x6c, 0x69, 0x6e, 0x65, 0x5f, 0x75,
 	0x73, 0x65, 0x72, 0x5f, 0x64, 0x61, 0x74, 0x61, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x3d,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x33, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x63,
+	0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x34, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x63,
 	0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x5f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d,
 	0x65, 0x72, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x40, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x33, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x63, 0x6f,
+	0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x34, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x63, 0x6f,
 	0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x5f, 0x65, 0x6e, 0x76, 0x69, 0x72, 0x6f, 0x6e,
 	0x6d, 0x65, 0x6e, 0x74, 0x5f, 0x65, 0x6e, 0x75, 0x6d, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a,
 	0x1c, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x6e, 0x6e, 0x6f,
@@ -1309,7 +1321,7 @@ var file_google_ads_googleads_v23_services_conversion_upload_service_proto_rawDe
 	0x03, 0xe0, 0x41, 0x02, 0x52, 0x0a, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x49, 0x64,
 	0x12, 0x59, 0x0a, 0x0b, 0x63, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x73, 0x18,
 	0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x32, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61,
-	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x33,
+	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34,
 	0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x43, 0x6c, 0x69, 0x63, 0x6b, 0x43,
 	0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x42, 0x03, 0xe0, 0x41, 0x02, 0x52, 0x0b,
 	0x63, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x73, 0x12, 0x2c, 0x0a, 0x0f, 0x70,
@@ -1330,7 +1342,7 @@ var file_google_ads_googleads_v23_services_conversion_upload_service_proto_rawDe
 	0x45, 0x72, 0x72, 0x6f, 0x72, 0x12, 0x52, 0x0a, 0x07, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x73,
 	0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x38, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
 	0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32,
-	0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x43, 0x6c, 0x69, 0x63, 0x6b,
+	0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x43, 0x6c, 0x69, 0x63, 0x6b,
 	0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x75, 0x6c, 0x74,
 	0x52, 0x07, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x73, 0x12, 0x15, 0x0a, 0x06, 0x6a, 0x6f, 0x62,
 	0x5f, 0x69, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x03, 0x52, 0x05, 0x6a, 0x6f, 0x62, 0x49, 0x64,
@@ -1341,7 +1353,7 @@ var file_google_ads_googleads_v23_services_conversion_upload_service_proto_rawDe
 	0x74, 0x6f, 0x6d, 0x65, 0x72, 0x49, 0x64, 0x12, 0x58, 0x0a, 0x0b, 0x63, 0x6f, 0x6e, 0x76, 0x65,
 	0x72, 0x73, 0x69, 0x6f, 0x6e, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x31, 0x2e, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73,
+	0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73,
 	0x2e, 0x43, 0x61, 0x6c, 0x6c, 0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x42,
 	0x03, 0xe0, 0x41, 0x02, 0x52, 0x0b, 0x63, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e,
 	0x73, 0x12, 0x2c, 0x0a, 0x0f, 0x70, 0x61, 0x72, 0x74, 0x69, 0x61, 0x6c, 0x5f, 0x66, 0x61, 0x69,
@@ -1358,7 +1370,7 @@ var file_google_ads_googleads_v23_services_conversion_upload_service_proto_rawDe
 	0x61, 0x6c, 0x46, 0x61, 0x69, 0x6c, 0x75, 0x72, 0x65, 0x45, 0x72, 0x72, 0x6f, 0x72, 0x12, 0x51,
 	0x0a, 0x07, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32,
 	0x37, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
 	0x63, 0x65, 0x73, 0x2e, 0x43, 0x61, 0x6c, 0x6c, 0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69,
 	0x6f, 0x6e, 0x52, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x52, 0x07, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74,
 	0x73, 0x22, 0xa0, 0x0b, 0x0a, 0x0f, 0x43, 0x6c, 0x69, 0x63, 0x6b, 0x43, 0x6f, 0x6e, 0x76, 0x65,
@@ -1385,30 +1397,30 @@ var file_google_ads_googleads_v23_services_conversion_upload_service_proto_rawDe
 	0x61, 0x74, 0x74, 0x72, 0x69, 0x62, 0x75, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x64, 0x61, 0x74, 0x61,
 	0x18, 0x07, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x3a, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
 	0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32,
-	0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x45, 0x78, 0x74, 0x65, 0x72,
+	0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x45, 0x78, 0x74, 0x65, 0x72,
 	0x6e, 0x61, 0x6c, 0x41, 0x74, 0x74, 0x72, 0x69, 0x62, 0x75, 0x74, 0x69, 0x6f, 0x6e, 0x44, 0x61,
 	0x74, 0x61, 0x52, 0x17, 0x65, 0x78, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x6c, 0x41, 0x74, 0x74, 0x72,
 	0x69, 0x62, 0x75, 0x74, 0x69, 0x6f, 0x6e, 0x44, 0x61, 0x74, 0x61, 0x12, 0x5c, 0x0a, 0x10, 0x63,
 	0x75, 0x73, 0x74, 0x6f, 0x6d, 0x5f, 0x76, 0x61, 0x72, 0x69, 0x61, 0x62, 0x6c, 0x65, 0x73, 0x18,
 	0x0f, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x31, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61,
-	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x33,
+	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34,
 	0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d,
 	0x56, 0x61, 0x72, 0x69, 0x61, 0x62, 0x6c, 0x65, 0x52, 0x0f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d,
 	0x56, 0x61, 0x72, 0x69, 0x61, 0x62, 0x6c, 0x65, 0x73, 0x12, 0x48, 0x0a, 0x09, 0x63, 0x61, 0x72,
 	0x74, 0x5f, 0x64, 0x61, 0x74, 0x61, 0x18, 0x10, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2b, 0x2e, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73,
+	0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73,
 	0x2e, 0x43, 0x61, 0x72, 0x74, 0x44, 0x61, 0x74, 0x61, 0x52, 0x08, 0x63, 0x61, 0x72, 0x74, 0x44,
 	0x61, 0x74, 0x61, 0x12, 0x5a, 0x0a, 0x10, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x65, 0x6e,
 	0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x73, 0x18, 0x11, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x2f, 0x2e,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e,
+	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e,
 	0x55, 0x73, 0x65, 0x72, 0x49, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x52, 0x0f,
 	0x75, 0x73, 0x65, 0x72, 0x49, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x73, 0x12,
 	0x86, 0x01, 0x0a, 0x16, 0x63, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x5f, 0x65,
 	0x6e, 0x76, 0x69, 0x72, 0x6f, 0x6e, 0x6d, 0x65, 0x6e, 0x74, 0x18, 0x14, 0x20, 0x01, 0x28, 0x0e,
 	0x32, 0x4f, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e, 0x65, 0x6e, 0x75, 0x6d,
+	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e, 0x65, 0x6e, 0x75, 0x6d,
 	0x73, 0x2e, 0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x45, 0x6e, 0x76, 0x69,
 	0x72, 0x6f, 0x6e, 0x6d, 0x65, 0x6e, 0x74, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x43, 0x6f, 0x6e, 0x76,
 	0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x45, 0x6e, 0x76, 0x69, 0x72, 0x6f, 0x6e, 0x6d, 0x65, 0x6e,
@@ -1416,11 +1428,11 @@ var file_google_ads_googleads_v23_services_conversion_upload_service_proto_rawDe
 	0x69, 0x72, 0x6f, 0x6e, 0x6d, 0x65, 0x6e, 0x74, 0x12, 0x42, 0x0a, 0x07, 0x63, 0x6f, 0x6e, 0x73,
 	0x65, 0x6e, 0x74, 0x18, 0x17, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x28, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
-	0x2e, 0x76, 0x32, 0x33, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x43, 0x6f, 0x6e, 0x73,
+	0x2e, 0x76, 0x32, 0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x43, 0x6f, 0x6e, 0x73,
 	0x65, 0x6e, 0x74, 0x52, 0x07, 0x63, 0x6f, 0x6e, 0x73, 0x65, 0x6e, 0x74, 0x12, 0x76, 0x0a, 0x0d,
 	0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x18, 0x1a, 0x20,
 	0x01, 0x28, 0x0e, 0x32, 0x51, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73,
-	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e, 0x65,
+	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e, 0x65,
 	0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x43,
 	0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x54, 0x79, 0x70, 0x65, 0x45, 0x6e, 0x75, 0x6d, 0x2e,
 	0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d,
@@ -1437,7 +1449,7 @@ var file_google_ads_googleads_v23_services_conversion_upload_service_proto_rawDe
 	0x65, 0x73, 0x5f, 0x6b, 0x65, 0x79, 0x5f, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x5f, 0x70, 0x61, 0x69,
 	0x72, 0x73, 0x18, 0x19, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x41, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e,
-	0x76, 0x32, 0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x53, 0x65, 0x73,
+	0x76, 0x32, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x53, 0x65, 0x73,
 	0x73, 0x69, 0x6f, 0x6e, 0x41, 0x74, 0x74, 0x72, 0x69, 0x62, 0x75, 0x74, 0x65, 0x73, 0x4b, 0x65,
 	0x79, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x50, 0x61, 0x69, 0x72, 0x73, 0x48, 0x00, 0x52, 0x1e, 0x73,
 	0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x41, 0x74, 0x74, 0x72, 0x69, 0x62, 0x75, 0x74, 0x65, 0x73,
@@ -1473,12 +1485,12 @@ var file_google_ads_googleads_v23_services_conversion_upload_service_proto_rawDe
 	0x01, 0x01, 0x12, 0x5c, 0x0a, 0x10, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x5f, 0x76, 0x61, 0x72,
 	0x69, 0x61, 0x62, 0x6c, 0x65, 0x73, 0x18, 0x0d, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x31, 0x2e, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73,
+	0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73,
 	0x2e, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x56, 0x61, 0x72, 0x69, 0x61, 0x62, 0x6c, 0x65, 0x52,
 	0x0f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x56, 0x61, 0x72, 0x69, 0x61, 0x62, 0x6c, 0x65, 0x73,
 	0x12, 0x42, 0x0a, 0x07, 0x63, 0x6f, 0x6e, 0x73, 0x65, 0x6e, 0x74, 0x18, 0x0e, 0x20, 0x01, 0x28,
 	0x0b, 0x32, 0x28, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e, 0x63, 0x6f, 0x6d,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e, 0x63, 0x6f, 0x6d,
 	0x6d, 0x6f, 0x6e, 0x2e, 0x43, 0x6f, 0x6e, 0x73, 0x65, 0x6e, 0x74, 0x52, 0x07, 0x63, 0x6f, 0x6e,
 	0x73, 0x65, 0x6e, 0x74, 0x42, 0x0c, 0x0a, 0x0a, 0x5f, 0x63, 0x61, 0x6c, 0x6c, 0x65, 0x72, 0x5f,
 	0x69, 0x64, 0x42, 0x17, 0x0a, 0x15, 0x5f, 0x63, 0x61, 0x6c, 0x6c, 0x5f, 0x73, 0x74, 0x61, 0x72,
@@ -1518,7 +1530,7 @@ var file_google_ads_googleads_v23_services_conversion_upload_service_proto_rawDe
 	0x01, 0x01, 0x12, 0x5a, 0x0a, 0x10, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x65, 0x6e, 0x74,
 	0x69, 0x66, 0x69, 0x65, 0x72, 0x73, 0x18, 0x07, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x2f, 0x2e, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x55,
+	0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x55,
 	0x73, 0x65, 0x72, 0x49, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x52, 0x0f, 0x75,
 	0x73, 0x65, 0x72, 0x49, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x73, 0x42, 0x08,
 	0x0a, 0x06, 0x5f, 0x67, 0x63, 0x6c, 0x69, 0x64, 0x42, 0x14, 0x0a, 0x12, 0x5f, 0x63, 0x6f, 0x6e,
@@ -1567,7 +1579,7 @@ var file_google_ads_googleads_v23_services_conversion_upload_service_proto_rawDe
 	0x6c, 0x6f, 0x63, 0x61, 0x6c, 0x54, 0x72, 0x61, 0x6e, 0x73, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e,
 	0x43, 0x6f, 0x73, 0x74, 0x12, 0x46, 0x0a, 0x05, 0x69, 0x74, 0x65, 0x6d, 0x73, 0x18, 0x05, 0x20,
 	0x03, 0x28, 0x0b, 0x32, 0x30, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73,
-	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e, 0x73,
+	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e, 0x73,
 	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x43, 0x61, 0x72, 0x74, 0x44, 0x61, 0x74, 0x61,
 	0x2e, 0x49, 0x74, 0x65, 0x6d, 0x52, 0x05, 0x69, 0x74, 0x65, 0x6d, 0x73, 0x1a, 0x60, 0x0a, 0x04,
 	0x49, 0x74, 0x65, 0x6d, 0x12, 0x1d, 0x0a, 0x0a, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x5f,
@@ -1590,7 +1602,7 @@ var file_google_ads_googleads_v23_services_conversion_upload_service_proto_rawDe
 	0x6c, 0x75, 0x65, 0x50, 0x61, 0x69, 0x72, 0x73, 0x12, 0x6c, 0x0a, 0x0f, 0x6b, 0x65, 0x79, 0x5f,
 	0x76, 0x61, 0x6c, 0x75, 0x65, 0x5f, 0x70, 0x61, 0x69, 0x72, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28,
 	0x0b, 0x32, 0x3f, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e, 0x73, 0x65, 0x72,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e, 0x73, 0x65, 0x72,
 	0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x53, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x41, 0x74, 0x74,
 	0x72, 0x69, 0x62, 0x75, 0x74, 0x65, 0x4b, 0x65, 0x79, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x50, 0x61,
 	0x69, 0x72, 0x42, 0x03, 0xe0, 0x41, 0x02, 0x52, 0x0d, 0x6b, 0x65, 0x79, 0x56, 0x61, 0x6c, 0x75,
@@ -1599,34 +1611,34 @@ var file_google_ads_googleads_v23_services_conversion_upload_service_proto_rawDe
 	0x63, 0x65, 0x12, 0x89, 0x02, 0x0a, 0x16, 0x55, 0x70, 0x6c, 0x6f, 0x61, 0x64, 0x43, 0x6c, 0x69,
 	0x63, 0x6b, 0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x73, 0x12, 0x40, 0x2e,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
 	0x73, 0x2e, 0x55, 0x70, 0x6c, 0x6f, 0x61, 0x64, 0x43, 0x6c, 0x69, 0x63, 0x6b, 0x43, 0x6f, 0x6e,
 	0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
 	0x41, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
 	0x63, 0x65, 0x73, 0x2e, 0x55, 0x70, 0x6c, 0x6f, 0x61, 0x64, 0x43, 0x6c, 0x69, 0x63, 0x6b, 0x43,
 	0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
 	0x73, 0x65, 0x22, 0x6a, 0xda, 0x41, 0x27, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x5f,
 	0x69, 0x64, 0x2c, 0x63, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x73, 0x2c, 0x70,
 	0x61, 0x72, 0x74, 0x69, 0x61, 0x6c, 0x5f, 0x66, 0x61, 0x69, 0x6c, 0x75, 0x72, 0x65, 0x82, 0xd3,
-	0xe4, 0x93, 0x02, 0x3a, 0x3a, 0x01, 0x2a, 0x22, 0x35, 0x2f, 0x76, 0x32, 0x33, 0x2f, 0x63, 0x75,
+	0xe4, 0x93, 0x02, 0x3a, 0x3a, 0x01, 0x2a, 0x22, 0x35, 0x2f, 0x76, 0x32, 0x34, 0x2f, 0x63, 0x75,
 	0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x73, 0x2f, 0x7b, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65,
 	0x72, 0x5f, 0x69, 0x64, 0x3d, 0x2a, 0x7d, 0x3a, 0x75, 0x70, 0x6c, 0x6f, 0x61, 0x64, 0x43, 0x6c,
 	0x69, 0x63, 0x6b, 0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x73, 0x12, 0x85,
 	0x02, 0x0a, 0x15, 0x55, 0x70, 0x6c, 0x6f, 0x61, 0x64, 0x43, 0x61, 0x6c, 0x6c, 0x43, 0x6f, 0x6e,
 	0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x73, 0x12, 0x3f, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e,
-	0x76, 0x32, 0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x55, 0x70, 0x6c,
+	0x76, 0x32, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x55, 0x70, 0x6c,
 	0x6f, 0x61, 0x64, 0x43, 0x61, 0x6c, 0x6c, 0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f,
 	0x6e, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x40, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
-	0x2e, 0x76, 0x32, 0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x55, 0x70,
+	0x2e, 0x76, 0x32, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x55, 0x70,
 	0x6c, 0x6f, 0x61, 0x64, 0x43, 0x61, 0x6c, 0x6c, 0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73, 0x69,
 	0x6f, 0x6e, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x69, 0xda, 0x41, 0x27,
 	0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x2c, 0x63, 0x6f, 0x6e, 0x76,
 	0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x73, 0x2c, 0x70, 0x61, 0x72, 0x74, 0x69, 0x61, 0x6c, 0x5f,
 	0x66, 0x61, 0x69, 0x6c, 0x75, 0x72, 0x65, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x39, 0x3a, 0x01, 0x2a,
-	0x22, 0x34, 0x2f, 0x76, 0x32, 0x33, 0x2f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x73,
+	0x22, 0x34, 0x2f, 0x76, 0x32, 0x34, 0x2f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x73,
 	0x2f, 0x7b, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x3d, 0x2a, 0x7d,
 	0x3a, 0x75, 0x70, 0x6c, 0x6f, 0x61, 0x64, 0x43, 0x61, 0x6c, 0x6c, 0x43, 0x6f, 0x6e, 0x76, 0x65,
 	0x72, 0x73, 0x69, 0x6f, 0x6e, 0x73, 0x1a, 0x45, 0xca, 0x41, 0x18, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
@@ -1635,82 +1647,82 @@ var file_google_ads_googleads_v23_services_conversion_upload_service_proto_rawDe
 	0x77, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x63, 0x6f, 0x6d,
 	0x2f, 0x61, 0x75, 0x74, 0x68, 0x2f, 0x61, 0x64, 0x77, 0x6f, 0x72, 0x64, 0x73, 0x42, 0x88, 0x02,
 	0x0a, 0x25, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73,
-	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e, 0x73,
+	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e, 0x73,
 	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x42, 0x1c, 0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x73,
 	0x69, 0x6f, 0x6e, 0x55, 0x70, 0x6c, 0x6f, 0x61, 0x64, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
 	0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x49, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
 	0x67, 0x6f, 0x6c, 0x61, 0x6e, 0x67, 0x2e, 0x6f, 0x72, 0x67, 0x2f, 0x67, 0x65, 0x6e, 0x70, 0x72,
 	0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x70, 0x69, 0x73, 0x2f, 0x61,
-	0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x33,
+	0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x34,
 	0x2f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x3b, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
 	0x65, 0x73, 0xa2, 0x02, 0x03, 0x47, 0x41, 0x41, 0xaa, 0x02, 0x21, 0x47, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2e, 0x41, 0x64, 0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e,
-	0x56, 0x32, 0x33, 0x2e, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0xca, 0x02, 0x21, 0x47,
+	0x56, 0x32, 0x34, 0x2e, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0xca, 0x02, 0x21, 0x47,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x5c, 0x41, 0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x41, 0x64, 0x73, 0x5c, 0x56, 0x32, 0x33, 0x5c, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73,
+	0x41, 0x64, 0x73, 0x5c, 0x56, 0x32, 0x34, 0x5c, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73,
 	0xea, 0x02, 0x25, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x3a, 0x3a, 0x41, 0x64, 0x73, 0x3a, 0x3a,
-	0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x32, 0x33, 0x3a, 0x3a,
+	0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x32, 0x34, 0x3a, 0x3a,
 	0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 })
 
 var (
-	file_google_ads_googleads_v23_services_conversion_upload_service_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v23_services_conversion_upload_service_proto_rawDescData []byte
+	file_google_ads_googleads_v24_services_conversion_upload_service_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v24_services_conversion_upload_service_proto_rawDescData []byte
 )
 
-func file_google_ads_googleads_v23_services_conversion_upload_service_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v23_services_conversion_upload_service_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v23_services_conversion_upload_service_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v23_services_conversion_upload_service_proto_rawDesc), len(file_google_ads_googleads_v23_services_conversion_upload_service_proto_rawDesc)))
+func file_google_ads_googleads_v24_services_conversion_upload_service_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v24_services_conversion_upload_service_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v24_services_conversion_upload_service_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v24_services_conversion_upload_service_proto_rawDesc), len(file_google_ads_googleads_v24_services_conversion_upload_service_proto_rawDesc)))
 	})
-	return file_google_ads_googleads_v23_services_conversion_upload_service_proto_rawDescData
+	return file_google_ads_googleads_v24_services_conversion_upload_service_proto_rawDescData
 }
 
-var file_google_ads_googleads_v23_services_conversion_upload_service_proto_msgTypes = make([]protoimpl.MessageInfo, 14)
-var file_google_ads_googleads_v23_services_conversion_upload_service_proto_goTypes = []any{
-	(*UploadClickConversionsRequest)(nil),                        // 0: google.ads.googleads.v23.services.UploadClickConversionsRequest
-	(*UploadClickConversionsResponse)(nil),                       // 1: google.ads.googleads.v23.services.UploadClickConversionsResponse
-	(*UploadCallConversionsRequest)(nil),                         // 2: google.ads.googleads.v23.services.UploadCallConversionsRequest
-	(*UploadCallConversionsResponse)(nil),                        // 3: google.ads.googleads.v23.services.UploadCallConversionsResponse
-	(*ClickConversion)(nil),                                      // 4: google.ads.googleads.v23.services.ClickConversion
-	(*CallConversion)(nil),                                       // 5: google.ads.googleads.v23.services.CallConversion
-	(*ExternalAttributionData)(nil),                              // 6: google.ads.googleads.v23.services.ExternalAttributionData
-	(*ClickConversionResult)(nil),                                // 7: google.ads.googleads.v23.services.ClickConversionResult
-	(*CallConversionResult)(nil),                                 // 8: google.ads.googleads.v23.services.CallConversionResult
-	(*CustomVariable)(nil),                                       // 9: google.ads.googleads.v23.services.CustomVariable
-	(*CartData)(nil),                                             // 10: google.ads.googleads.v23.services.CartData
-	(*SessionAttributeKeyValuePair)(nil),                         // 11: google.ads.googleads.v23.services.SessionAttributeKeyValuePair
-	(*SessionAttributesKeyValuePairs)(nil),                       // 12: google.ads.googleads.v23.services.SessionAttributesKeyValuePairs
-	(*CartData_Item)(nil),                                        // 13: google.ads.googleads.v23.services.CartData.Item
+var file_google_ads_googleads_v24_services_conversion_upload_service_proto_msgTypes = make([]protoimpl.MessageInfo, 14)
+var file_google_ads_googleads_v24_services_conversion_upload_service_proto_goTypes = []any{
+	(*UploadClickConversionsRequest)(nil),                        // 0: google.ads.googleads.v24.services.UploadClickConversionsRequest
+	(*UploadClickConversionsResponse)(nil),                       // 1: google.ads.googleads.v24.services.UploadClickConversionsResponse
+	(*UploadCallConversionsRequest)(nil),                         // 2: google.ads.googleads.v24.services.UploadCallConversionsRequest
+	(*UploadCallConversionsResponse)(nil),                        // 3: google.ads.googleads.v24.services.UploadCallConversionsResponse
+	(*ClickConversion)(nil),                                      // 4: google.ads.googleads.v24.services.ClickConversion
+	(*CallConversion)(nil),                                       // 5: google.ads.googleads.v24.services.CallConversion
+	(*ExternalAttributionData)(nil),                              // 6: google.ads.googleads.v24.services.ExternalAttributionData
+	(*ClickConversionResult)(nil),                                // 7: google.ads.googleads.v24.services.ClickConversionResult
+	(*CallConversionResult)(nil),                                 // 8: google.ads.googleads.v24.services.CallConversionResult
+	(*CustomVariable)(nil),                                       // 9: google.ads.googleads.v24.services.CustomVariable
+	(*CartData)(nil),                                             // 10: google.ads.googleads.v24.services.CartData
+	(*SessionAttributeKeyValuePair)(nil),                         // 11: google.ads.googleads.v24.services.SessionAttributeKeyValuePair
+	(*SessionAttributesKeyValuePairs)(nil),                       // 12: google.ads.googleads.v24.services.SessionAttributesKeyValuePairs
+	(*CartData_Item)(nil),                                        // 13: google.ads.googleads.v24.services.CartData.Item
 	(*status.Status)(nil),                                        // 14: google.rpc.Status
-	(*common.UserIdentifier)(nil),                                // 15: google.ads.googleads.v23.common.UserIdentifier
-	(enums.ConversionEnvironmentEnum_ConversionEnvironment)(0),   // 16: google.ads.googleads.v23.enums.ConversionEnvironmentEnum.ConversionEnvironment
-	(*common.Consent)(nil),                                       // 17: google.ads.googleads.v23.common.Consent
-	(enums.ConversionCustomerTypeEnum_ConversionCustomerType)(0), // 18: google.ads.googleads.v23.enums.ConversionCustomerTypeEnum.ConversionCustomerType
+	(*common.UserIdentifier)(nil),                                // 15: google.ads.googleads.v24.common.UserIdentifier
+	(enums.ConversionEnvironmentEnum_ConversionEnvironment)(0),   // 16: google.ads.googleads.v24.enums.ConversionEnvironmentEnum.ConversionEnvironment
+	(*common.Consent)(nil),                                       // 17: google.ads.googleads.v24.common.Consent
+	(enums.ConversionCustomerTypeEnum_ConversionCustomerType)(0), // 18: google.ads.googleads.v24.enums.ConversionCustomerTypeEnum.ConversionCustomerType
 }
-var file_google_ads_googleads_v23_services_conversion_upload_service_proto_depIdxs = []int32{
-	4,  // 0: google.ads.googleads.v23.services.UploadClickConversionsRequest.conversions:type_name -> google.ads.googleads.v23.services.ClickConversion
-	14, // 1: google.ads.googleads.v23.services.UploadClickConversionsResponse.partial_failure_error:type_name -> google.rpc.Status
-	7,  // 2: google.ads.googleads.v23.services.UploadClickConversionsResponse.results:type_name -> google.ads.googleads.v23.services.ClickConversionResult
-	5,  // 3: google.ads.googleads.v23.services.UploadCallConversionsRequest.conversions:type_name -> google.ads.googleads.v23.services.CallConversion
-	14, // 4: google.ads.googleads.v23.services.UploadCallConversionsResponse.partial_failure_error:type_name -> google.rpc.Status
-	8,  // 5: google.ads.googleads.v23.services.UploadCallConversionsResponse.results:type_name -> google.ads.googleads.v23.services.CallConversionResult
-	6,  // 6: google.ads.googleads.v23.services.ClickConversion.external_attribution_data:type_name -> google.ads.googleads.v23.services.ExternalAttributionData
-	9,  // 7: google.ads.googleads.v23.services.ClickConversion.custom_variables:type_name -> google.ads.googleads.v23.services.CustomVariable
-	10, // 8: google.ads.googleads.v23.services.ClickConversion.cart_data:type_name -> google.ads.googleads.v23.services.CartData
-	15, // 9: google.ads.googleads.v23.services.ClickConversion.user_identifiers:type_name -> google.ads.googleads.v23.common.UserIdentifier
-	16, // 10: google.ads.googleads.v23.services.ClickConversion.conversion_environment:type_name -> google.ads.googleads.v23.enums.ConversionEnvironmentEnum.ConversionEnvironment
-	17, // 11: google.ads.googleads.v23.services.ClickConversion.consent:type_name -> google.ads.googleads.v23.common.Consent
-	18, // 12: google.ads.googleads.v23.services.ClickConversion.customer_type:type_name -> google.ads.googleads.v23.enums.ConversionCustomerTypeEnum.ConversionCustomerType
-	12, // 13: google.ads.googleads.v23.services.ClickConversion.session_attributes_key_value_pairs:type_name -> google.ads.googleads.v23.services.SessionAttributesKeyValuePairs
-	9,  // 14: google.ads.googleads.v23.services.CallConversion.custom_variables:type_name -> google.ads.googleads.v23.services.CustomVariable
-	17, // 15: google.ads.googleads.v23.services.CallConversion.consent:type_name -> google.ads.googleads.v23.common.Consent
-	15, // 16: google.ads.googleads.v23.services.ClickConversionResult.user_identifiers:type_name -> google.ads.googleads.v23.common.UserIdentifier
-	13, // 17: google.ads.googleads.v23.services.CartData.items:type_name -> google.ads.googleads.v23.services.CartData.Item
-	11, // 18: google.ads.googleads.v23.services.SessionAttributesKeyValuePairs.key_value_pairs:type_name -> google.ads.googleads.v23.services.SessionAttributeKeyValuePair
-	0,  // 19: google.ads.googleads.v23.services.ConversionUploadService.UploadClickConversions:input_type -> google.ads.googleads.v23.services.UploadClickConversionsRequest
-	2,  // 20: google.ads.googleads.v23.services.ConversionUploadService.UploadCallConversions:input_type -> google.ads.googleads.v23.services.UploadCallConversionsRequest
-	1,  // 21: google.ads.googleads.v23.services.ConversionUploadService.UploadClickConversions:output_type -> google.ads.googleads.v23.services.UploadClickConversionsResponse
-	3,  // 22: google.ads.googleads.v23.services.ConversionUploadService.UploadCallConversions:output_type -> google.ads.googleads.v23.services.UploadCallConversionsResponse
+var file_google_ads_googleads_v24_services_conversion_upload_service_proto_depIdxs = []int32{
+	4,  // 0: google.ads.googleads.v24.services.UploadClickConversionsRequest.conversions:type_name -> google.ads.googleads.v24.services.ClickConversion
+	14, // 1: google.ads.googleads.v24.services.UploadClickConversionsResponse.partial_failure_error:type_name -> google.rpc.Status
+	7,  // 2: google.ads.googleads.v24.services.UploadClickConversionsResponse.results:type_name -> google.ads.googleads.v24.services.ClickConversionResult
+	5,  // 3: google.ads.googleads.v24.services.UploadCallConversionsRequest.conversions:type_name -> google.ads.googleads.v24.services.CallConversion
+	14, // 4: google.ads.googleads.v24.services.UploadCallConversionsResponse.partial_failure_error:type_name -> google.rpc.Status
+	8,  // 5: google.ads.googleads.v24.services.UploadCallConversionsResponse.results:type_name -> google.ads.googleads.v24.services.CallConversionResult
+	6,  // 6: google.ads.googleads.v24.services.ClickConversion.external_attribution_data:type_name -> google.ads.googleads.v24.services.ExternalAttributionData
+	9,  // 7: google.ads.googleads.v24.services.ClickConversion.custom_variables:type_name -> google.ads.googleads.v24.services.CustomVariable
+	10, // 8: google.ads.googleads.v24.services.ClickConversion.cart_data:type_name -> google.ads.googleads.v24.services.CartData
+	15, // 9: google.ads.googleads.v24.services.ClickConversion.user_identifiers:type_name -> google.ads.googleads.v24.common.UserIdentifier
+	16, // 10: google.ads.googleads.v24.services.ClickConversion.conversion_environment:type_name -> google.ads.googleads.v24.enums.ConversionEnvironmentEnum.ConversionEnvironment
+	17, // 11: google.ads.googleads.v24.services.ClickConversion.consent:type_name -> google.ads.googleads.v24.common.Consent
+	18, // 12: google.ads.googleads.v24.services.ClickConversion.customer_type:type_name -> google.ads.googleads.v24.enums.ConversionCustomerTypeEnum.ConversionCustomerType
+	12, // 13: google.ads.googleads.v24.services.ClickConversion.session_attributes_key_value_pairs:type_name -> google.ads.googleads.v24.services.SessionAttributesKeyValuePairs
+	9,  // 14: google.ads.googleads.v24.services.CallConversion.custom_variables:type_name -> google.ads.googleads.v24.services.CustomVariable
+	17, // 15: google.ads.googleads.v24.services.CallConversion.consent:type_name -> google.ads.googleads.v24.common.Consent
+	15, // 16: google.ads.googleads.v24.services.ClickConversionResult.user_identifiers:type_name -> google.ads.googleads.v24.common.UserIdentifier
+	13, // 17: google.ads.googleads.v24.services.CartData.items:type_name -> google.ads.googleads.v24.services.CartData.Item
+	11, // 18: google.ads.googleads.v24.services.SessionAttributesKeyValuePairs.key_value_pairs:type_name -> google.ads.googleads.v24.services.SessionAttributeKeyValuePair
+	0,  // 19: google.ads.googleads.v24.services.ConversionUploadService.UploadClickConversions:input_type -> google.ads.googleads.v24.services.UploadClickConversionsRequest
+	2,  // 20: google.ads.googleads.v24.services.ConversionUploadService.UploadCallConversions:input_type -> google.ads.googleads.v24.services.UploadCallConversionsRequest
+	1,  // 21: google.ads.googleads.v24.services.ConversionUploadService.UploadClickConversions:output_type -> google.ads.googleads.v24.services.UploadClickConversionsResponse
+	3,  // 22: google.ads.googleads.v24.services.ConversionUploadService.UploadCallConversions:output_type -> google.ads.googleads.v24.services.UploadCallConversionsResponse
 	21, // [21:23] is the sub-list for method output_type
 	19, // [19:21] is the sub-list for method input_type
 	19, // [19:19] is the sub-list for extension type_name
@@ -1718,35 +1730,35 @@ var file_google_ads_googleads_v23_services_conversion_upload_service_proto_depId
 	0,  // [0:19] is the sub-list for field type_name
 }
 
-func init() { file_google_ads_googleads_v23_services_conversion_upload_service_proto_init() }
-func file_google_ads_googleads_v23_services_conversion_upload_service_proto_init() {
-	if File_google_ads_googleads_v23_services_conversion_upload_service_proto != nil {
+func init() { file_google_ads_googleads_v24_services_conversion_upload_service_proto_init() }
+func file_google_ads_googleads_v24_services_conversion_upload_service_proto_init() {
+	if File_google_ads_googleads_v24_services_conversion_upload_service_proto != nil {
 		return
 	}
-	file_google_ads_googleads_v23_services_conversion_upload_service_proto_msgTypes[0].OneofWrappers = []any{}
-	file_google_ads_googleads_v23_services_conversion_upload_service_proto_msgTypes[4].OneofWrappers = []any{
+	file_google_ads_googleads_v24_services_conversion_upload_service_proto_msgTypes[0].OneofWrappers = []any{}
+	file_google_ads_googleads_v24_services_conversion_upload_service_proto_msgTypes[4].OneofWrappers = []any{
 		(*ClickConversion_SessionAttributesEncoded)(nil),
 		(*ClickConversion_SessionAttributesKeyValuePairs)(nil),
 	}
-	file_google_ads_googleads_v23_services_conversion_upload_service_proto_msgTypes[5].OneofWrappers = []any{}
-	file_google_ads_googleads_v23_services_conversion_upload_service_proto_msgTypes[6].OneofWrappers = []any{}
-	file_google_ads_googleads_v23_services_conversion_upload_service_proto_msgTypes[7].OneofWrappers = []any{}
-	file_google_ads_googleads_v23_services_conversion_upload_service_proto_msgTypes[8].OneofWrappers = []any{}
+	file_google_ads_googleads_v24_services_conversion_upload_service_proto_msgTypes[5].OneofWrappers = []any{}
+	file_google_ads_googleads_v24_services_conversion_upload_service_proto_msgTypes[6].OneofWrappers = []any{}
+	file_google_ads_googleads_v24_services_conversion_upload_service_proto_msgTypes[7].OneofWrappers = []any{}
+	file_google_ads_googleads_v24_services_conversion_upload_service_proto_msgTypes[8].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v23_services_conversion_upload_service_proto_rawDesc), len(file_google_ads_googleads_v23_services_conversion_upload_service_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v24_services_conversion_upload_service_proto_rawDesc), len(file_google_ads_googleads_v24_services_conversion_upload_service_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   14,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_google_ads_googleads_v23_services_conversion_upload_service_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v23_services_conversion_upload_service_proto_depIdxs,
-		MessageInfos:      file_google_ads_googleads_v23_services_conversion_upload_service_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v24_services_conversion_upload_service_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v24_services_conversion_upload_service_proto_depIdxs,
+		MessageInfos:      file_google_ads_googleads_v24_services_conversion_upload_service_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v23_services_conversion_upload_service_proto = out.File
-	file_google_ads_googleads_v23_services_conversion_upload_service_proto_goTypes = nil
-	file_google_ads_googleads_v23_services_conversion_upload_service_proto_depIdxs = nil
+	File_google_ads_googleads_v24_services_conversion_upload_service_proto = out.File
+	file_google_ads_googleads_v24_services_conversion_upload_service_proto_goTypes = nil
+	file_google_ads_googleads_v24_services_conversion_upload_service_proto_depIdxs = nil
 }

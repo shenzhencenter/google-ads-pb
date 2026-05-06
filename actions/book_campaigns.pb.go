@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.36.5
 // 	protoc        v4.24.4
-// source: google/ads/googleads/v23/actions/book_campaigns.proto
+// source: google/ads/googleads/v24/actions/book_campaigns.proto
 
 package actions
 
@@ -53,7 +53,7 @@ type BookCampaignsOperation struct {
 
 func (x *BookCampaignsOperation) Reset() {
 	*x = BookCampaignsOperation{}
-	mi := &file_google_ads_googleads_v23_actions_book_campaigns_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v24_actions_book_campaigns_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -65,7 +65,7 @@ func (x *BookCampaignsOperation) String() string {
 func (*BookCampaignsOperation) ProtoMessage() {}
 
 func (x *BookCampaignsOperation) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v23_actions_book_campaigns_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v24_actions_book_campaigns_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -78,7 +78,7 @@ func (x *BookCampaignsOperation) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BookCampaignsOperation.ProtoReflect.Descriptor instead.
 func (*BookCampaignsOperation) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v23_actions_book_campaigns_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v24_actions_book_campaigns_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *BookCampaignsOperation) GetCampaigns() []*BookCampaignsOperation_Campaign {
@@ -107,7 +107,7 @@ type BookCampaignsResult struct {
 
 func (x *BookCampaignsResult) Reset() {
 	*x = BookCampaignsResult{}
-	mi := &file_google_ads_googleads_v23_actions_book_campaigns_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v24_actions_book_campaigns_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -119,7 +119,7 @@ func (x *BookCampaignsResult) String() string {
 func (*BookCampaignsResult) ProtoMessage() {}
 
 func (x *BookCampaignsResult) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v23_actions_book_campaigns_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v24_actions_book_campaigns_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -132,7 +132,7 @@ func (x *BookCampaignsResult) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BookCampaignsResult.ProtoReflect.Descriptor instead.
 func (*BookCampaignsResult) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v23_actions_book_campaigns_proto_rawDescGZIP(), []int{1}
+	return file_google_ads_googleads_v24_actions_book_campaigns_proto_rawDescGZIP(), []int{1}
 }
 
 // A single campaign to book.
@@ -142,14 +142,14 @@ type BookCampaignsOperation_Campaign struct {
 	// Format: customers/{customer_id}/campaigns/{campaign_id}
 	Campaign string `protobuf:"bytes,1,opt,name=campaign,proto3" json:"campaign,omitempty"`
 	// Determines if the current request should book the inventory or hold it.
-	RequestType   enums.ReservationRequestTypeEnum_ReservationRequestType `protobuf:"varint,2,opt,name=request_type,json=requestType,proto3,enum=google.ads.googleads.v23.enums.ReservationRequestTypeEnum_ReservationRequestType" json:"request_type,omitempty"`
+	RequestType   enums.ReservationRequestTypeEnum_ReservationRequestType `protobuf:"varint,2,opt,name=request_type,json=requestType,proto3,enum=google.ads.googleads.v24.enums.ReservationRequestTypeEnum_ReservationRequestType" json:"request_type,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *BookCampaignsOperation_Campaign) Reset() {
 	*x = BookCampaignsOperation_Campaign{}
-	mi := &file_google_ads_googleads_v23_actions_book_campaigns_proto_msgTypes[2]
+	mi := &file_google_ads_googleads_v24_actions_book_campaigns_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -161,7 +161,7 @@ func (x *BookCampaignsOperation_Campaign) String() string {
 func (*BookCampaignsOperation_Campaign) ProtoMessage() {}
 
 func (x *BookCampaignsOperation_Campaign) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v23_actions_book_campaigns_proto_msgTypes[2]
+	mi := &file_google_ads_googleads_v24_actions_book_campaigns_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -174,7 +174,7 @@ func (x *BookCampaignsOperation_Campaign) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BookCampaignsOperation_Campaign.ProtoReflect.Descriptor instead.
 func (*BookCampaignsOperation_Campaign) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v23_actions_book_campaigns_proto_rawDescGZIP(), []int{0, 0}
+	return file_google_ads_googleads_v24_actions_book_campaigns_proto_rawDescGZIP(), []int{0, 0}
 }
 
 func (x *BookCampaignsOperation_Campaign) GetCampaign() string {
@@ -191,24 +191,24 @@ func (x *BookCampaignsOperation_Campaign) GetRequestType() enums.ReservationRequ
 	return enums.ReservationRequestTypeEnum_ReservationRequestType(0)
 }
 
-var File_google_ads_googleads_v23_actions_book_campaigns_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v24_actions_book_campaigns_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v23_actions_book_campaigns_proto_rawDesc = string([]byte{
+var file_google_ads_googleads_v24_actions_book_campaigns_proto_rawDesc = string([]byte{
 	0x0a, 0x35, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x33, 0x2f, 0x61, 0x63, 0x74, 0x69, 0x6f,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x34, 0x2f, 0x61, 0x63, 0x74, 0x69, 0x6f,
 	0x6e, 0x73, 0x2f, 0x62, 0x6f, 0x6f, 0x6b, 0x5f, 0x63, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e,
 	0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x20, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
 	0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32,
-	0x33, 0x2e, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x1a, 0x3d, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
+	0x34, 0x2e, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x1a, 0x3d, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f,
-	0x76, 0x32, 0x33, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x72, 0x65, 0x73, 0x65, 0x72, 0x76,
+	0x76, 0x32, 0x34, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x72, 0x65, 0x73, 0x65, 0x72, 0x76,
 	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x5f, 0x74, 0x79,
 	0x70, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0xc1, 0x02, 0x0a, 0x16, 0x42, 0x6f, 0x6f,
 	0x6b, 0x43, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x73, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x74,
 	0x69, 0x6f, 0x6e, 0x12, 0x5f, 0x0a, 0x09, 0x63, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x73,
 	0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x41, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
 	0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32,
-	0x33, 0x2e, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2e, 0x42, 0x6f, 0x6f, 0x6b, 0x43, 0x61,
+	0x34, 0x2e, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2e, 0x42, 0x6f, 0x6f, 0x6b, 0x43, 0x61,
 	0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x73, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e,
 	0x2e, 0x43, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x52, 0x09, 0x63, 0x61, 0x6d, 0x70, 0x61,
 	0x69, 0x67, 0x6e, 0x73, 0x12, 0x27, 0x0a, 0x0f, 0x71, 0x75, 0x6f, 0x74, 0x65, 0x5f, 0x73, 0x69,
@@ -219,7 +219,7 @@ var file_google_ads_googleads_v23_actions_book_campaigns_proto_rawDesc = string(
 	0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x12, 0x74, 0x0a, 0x0c, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73,
 	0x74, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x51, 0x2e, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x52, 0x65,
+	0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x52, 0x65,
 	0x73, 0x65, 0x72, 0x76, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
 	0x54, 0x79, 0x70, 0x65, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x52, 0x65, 0x73, 0x65, 0x72, 0x76, 0x61,
 	0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x54, 0x79, 0x70, 0x65, 0x52,
@@ -227,45 +227,45 @@ var file_google_ads_googleads_v23_actions_book_campaigns_proto_rawDesc = string(
 	0x42, 0x6f, 0x6f, 0x6b, 0x43, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x73, 0x52, 0x65, 0x73,
 	0x75, 0x6c, 0x74, 0x42, 0xf8, 0x01, 0x0a, 0x24, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
-	0x2e, 0x76, 0x32, 0x33, 0x2e, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x42, 0x12, 0x42, 0x6f,
+	0x2e, 0x76, 0x32, 0x34, 0x2e, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x42, 0x12, 0x42, 0x6f,
 	0x6f, 0x6b, 0x43, 0x61, 0x6d, 0x70, 0x61, 0x69, 0x67, 0x6e, 0x73, 0x50, 0x72, 0x6f, 0x74, 0x6f,
 	0x50, 0x01, 0x5a, 0x47, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x67, 0x6f, 0x6c, 0x61, 0x6e,
 	0x67, 0x2e, 0x6f, 0x72, 0x67, 0x2f, 0x67, 0x65, 0x6e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x70, 0x69, 0x73, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x33, 0x2f, 0x61, 0x63, 0x74, 0x69,
+	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x34, 0x2f, 0x61, 0x63, 0x74, 0x69,
 	0x6f, 0x6e, 0x73, 0x3b, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0xa2, 0x02, 0x03, 0x47, 0x41,
 	0x41, 0xaa, 0x02, 0x20, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x41, 0x64, 0x73, 0x2e, 0x47,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e, 0x56, 0x32, 0x33, 0x2e, 0x41, 0x63, 0x74,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e, 0x56, 0x32, 0x34, 0x2e, 0x41, 0x63, 0x74,
 	0x69, 0x6f, 0x6e, 0x73, 0xca, 0x02, 0x20, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x5c, 0x41, 0x64,
-	0x73, 0x5c, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x32, 0x33, 0x5c,
+	0x73, 0x5c, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x32, 0x34, 0x5c,
 	0x41, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0xea, 0x02, 0x24, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x3a, 0x3a, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73,
-	0x3a, 0x3a, 0x56, 0x32, 0x33, 0x3a, 0x3a, 0x41, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x62, 0x06,
+	0x3a, 0x3a, 0x56, 0x32, 0x34, 0x3a, 0x3a, 0x41, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x62, 0x06,
 	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 })
 
 var (
-	file_google_ads_googleads_v23_actions_book_campaigns_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v23_actions_book_campaigns_proto_rawDescData []byte
+	file_google_ads_googleads_v24_actions_book_campaigns_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v24_actions_book_campaigns_proto_rawDescData []byte
 )
 
-func file_google_ads_googleads_v23_actions_book_campaigns_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v23_actions_book_campaigns_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v23_actions_book_campaigns_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v23_actions_book_campaigns_proto_rawDesc), len(file_google_ads_googleads_v23_actions_book_campaigns_proto_rawDesc)))
+func file_google_ads_googleads_v24_actions_book_campaigns_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v24_actions_book_campaigns_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v24_actions_book_campaigns_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v24_actions_book_campaigns_proto_rawDesc), len(file_google_ads_googleads_v24_actions_book_campaigns_proto_rawDesc)))
 	})
-	return file_google_ads_googleads_v23_actions_book_campaigns_proto_rawDescData
+	return file_google_ads_googleads_v24_actions_book_campaigns_proto_rawDescData
 }
 
-var file_google_ads_googleads_v23_actions_book_campaigns_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
-var file_google_ads_googleads_v23_actions_book_campaigns_proto_goTypes = []any{
-	(*BookCampaignsOperation)(nil),                               // 0: google.ads.googleads.v23.actions.BookCampaignsOperation
-	(*BookCampaignsResult)(nil),                                  // 1: google.ads.googleads.v23.actions.BookCampaignsResult
-	(*BookCampaignsOperation_Campaign)(nil),                      // 2: google.ads.googleads.v23.actions.BookCampaignsOperation.Campaign
-	(enums.ReservationRequestTypeEnum_ReservationRequestType)(0), // 3: google.ads.googleads.v23.enums.ReservationRequestTypeEnum.ReservationRequestType
+var file_google_ads_googleads_v24_actions_book_campaigns_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_google_ads_googleads_v24_actions_book_campaigns_proto_goTypes = []any{
+	(*BookCampaignsOperation)(nil),                               // 0: google.ads.googleads.v24.actions.BookCampaignsOperation
+	(*BookCampaignsResult)(nil),                                  // 1: google.ads.googleads.v24.actions.BookCampaignsResult
+	(*BookCampaignsOperation_Campaign)(nil),                      // 2: google.ads.googleads.v24.actions.BookCampaignsOperation.Campaign
+	(enums.ReservationRequestTypeEnum_ReservationRequestType)(0), // 3: google.ads.googleads.v24.enums.ReservationRequestTypeEnum.ReservationRequestType
 }
-var file_google_ads_googleads_v23_actions_book_campaigns_proto_depIdxs = []int32{
-	2, // 0: google.ads.googleads.v23.actions.BookCampaignsOperation.campaigns:type_name -> google.ads.googleads.v23.actions.BookCampaignsOperation.Campaign
-	3, // 1: google.ads.googleads.v23.actions.BookCampaignsOperation.Campaign.request_type:type_name -> google.ads.googleads.v23.enums.ReservationRequestTypeEnum.ReservationRequestType
+var file_google_ads_googleads_v24_actions_book_campaigns_proto_depIdxs = []int32{
+	2, // 0: google.ads.googleads.v24.actions.BookCampaignsOperation.campaigns:type_name -> google.ads.googleads.v24.actions.BookCampaignsOperation.Campaign
+	3, // 1: google.ads.googleads.v24.actions.BookCampaignsOperation.Campaign.request_type:type_name -> google.ads.googleads.v24.enums.ReservationRequestTypeEnum.ReservationRequestType
 	2, // [2:2] is the sub-list for method output_type
 	2, // [2:2] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name
@@ -273,26 +273,26 @@ var file_google_ads_googleads_v23_actions_book_campaigns_proto_depIdxs = []int32
 	0, // [0:2] is the sub-list for field type_name
 }
 
-func init() { file_google_ads_googleads_v23_actions_book_campaigns_proto_init() }
-func file_google_ads_googleads_v23_actions_book_campaigns_proto_init() {
-	if File_google_ads_googleads_v23_actions_book_campaigns_proto != nil {
+func init() { file_google_ads_googleads_v24_actions_book_campaigns_proto_init() }
+func file_google_ads_googleads_v24_actions_book_campaigns_proto_init() {
+	if File_google_ads_googleads_v24_actions_book_campaigns_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v23_actions_book_campaigns_proto_rawDesc), len(file_google_ads_googleads_v23_actions_book_campaigns_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v24_actions_book_campaigns_proto_rawDesc), len(file_google_ads_googleads_v24_actions_book_campaigns_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   3,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_google_ads_googleads_v23_actions_book_campaigns_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v23_actions_book_campaigns_proto_depIdxs,
-		MessageInfos:      file_google_ads_googleads_v23_actions_book_campaigns_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v24_actions_book_campaigns_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v24_actions_book_campaigns_proto_depIdxs,
+		MessageInfos:      file_google_ads_googleads_v24_actions_book_campaigns_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v23_actions_book_campaigns_proto = out.File
-	file_google_ads_googleads_v23_actions_book_campaigns_proto_goTypes = nil
-	file_google_ads_googleads_v23_actions_book_campaigns_proto_depIdxs = nil
+	File_google_ads_googleads_v24_actions_book_campaigns_proto = out.File
+	file_google_ads_googleads_v24_actions_book_campaigns_proto_goTypes = nil
+	file_google_ads_googleads_v24_actions_book_campaigns_proto_depIdxs = nil
 }

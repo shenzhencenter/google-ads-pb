@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v23/services/data_link_service.proto
+// source: google/ads/googleads/v24/services/data_link_service.proto
 
 package services
 
@@ -33,9 +33,9 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	DataLinkService_CreateDataLink_FullMethodName = "/google.ads.googleads.v23.services.DataLinkService/CreateDataLink"
-	DataLinkService_RemoveDataLink_FullMethodName = "/google.ads.googleads.v23.services.DataLinkService/RemoveDataLink"
-	DataLinkService_UpdateDataLink_FullMethodName = "/google.ads.googleads.v23.services.DataLinkService/UpdateDataLink"
+	DataLinkService_CreateDataLink_FullMethodName = "/google.ads.googleads.v24.services.DataLinkService/CreateDataLink"
+	DataLinkService_RemoveDataLink_FullMethodName = "/google.ads.googleads.v24.services.DataLinkService/RemoveDataLink"
+	DataLinkService_UpdateDataLink_FullMethodName = "/google.ads.googleads.v24.services.DataLinkService/UpdateDataLink"
 )
 
 // DataLinkServiceClient is the client API for DataLinkService service.
@@ -47,8 +47,7 @@ const (
 type DataLinkServiceClient interface {
 	// Creates a data link. The requesting Google Ads account name and account ID
 	// will be shared with the third party (such as YouTube creators for video
-	// links) to whom you are creating the link with. Only customers on the
-	// allow-list can create data links.
+	// links) to whom you are creating the link with.
 	//
 	// List of thrown errors:
 	//
@@ -142,8 +141,7 @@ func (c *dataLinkServiceClient) UpdateDataLink(ctx context.Context, in *UpdateDa
 type DataLinkServiceServer interface {
 	// Creates a data link. The requesting Google Ads account name and account ID
 	// will be shared with the third party (such as YouTube creators for video
-	// links) to whom you are creating the link with. Only customers on the
-	// allow-list can create data links.
+	// links) to whom you are creating the link with.
 	//
 	// List of thrown errors:
 	//
@@ -286,7 +284,7 @@ func _DataLinkService_UpdateDataLink_Handler(srv interface{}, ctx context.Contex
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var DataLinkService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v23.services.DataLinkService",
+	ServiceName: "google.ads.googleads.v24.services.DataLinkService",
 	HandlerType: (*DataLinkServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -303,5 +301,5 @@ var DataLinkService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v23/services/data_link_service.proto",
+	Metadata: "google/ads/googleads/v24/services/data_link_service.proto",
 }

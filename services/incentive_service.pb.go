@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.36.5
 // 	protoc        v4.24.4
-// source: google/ads/googleads/v23/services/incentive_service.proto
+// source: google/ads/googleads/v24/services/incentive_service.proto
 
 package services
 
@@ -74,11 +74,11 @@ func (x FetchIncentiveRequest_IncentiveType) String() string {
 }
 
 func (FetchIncentiveRequest_IncentiveType) Descriptor() protoreflect.EnumDescriptor {
-	return file_google_ads_googleads_v23_services_incentive_service_proto_enumTypes[0].Descriptor()
+	return file_google_ads_googleads_v24_services_incentive_service_proto_enumTypes[0].Descriptor()
 }
 
 func (FetchIncentiveRequest_IncentiveType) Type() protoreflect.EnumType {
-	return &file_google_ads_googleads_v23_services_incentive_service_proto_enumTypes[0]
+	return &file_google_ads_googleads_v24_services_incentive_service_proto_enumTypes[0]
 }
 
 func (x FetchIncentiveRequest_IncentiveType) Number() protoreflect.EnumNumber {
@@ -87,7 +87,7 @@ func (x FetchIncentiveRequest_IncentiveType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use FetchIncentiveRequest_IncentiveType.Descriptor instead.
 func (FetchIncentiveRequest_IncentiveType) EnumDescriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v23_services_incentive_service_proto_rawDescGZIP(), []int{0, 0}
+	return file_google_ads_googleads_v24_services_incentive_service_proto_rawDescGZIP(), []int{0, 0}
 }
 
 // Types of acquisition incentive offers.
@@ -131,11 +131,11 @@ func (x IncentiveOffer_OfferType) String() string {
 }
 
 func (IncentiveOffer_OfferType) Descriptor() protoreflect.EnumDescriptor {
-	return file_google_ads_googleads_v23_services_incentive_service_proto_enumTypes[1].Descriptor()
+	return file_google_ads_googleads_v24_services_incentive_service_proto_enumTypes[1].Descriptor()
 }
 
 func (IncentiveOffer_OfferType) Type() protoreflect.EnumType {
-	return &file_google_ads_googleads_v23_services_incentive_service_proto_enumTypes[1]
+	return &file_google_ads_googleads_v24_services_incentive_service_proto_enumTypes[1]
 }
 
 func (x IncentiveOffer_OfferType) Number() protoreflect.EnumNumber {
@@ -144,7 +144,7 @@ func (x IncentiveOffer_OfferType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use IncentiveOffer_OfferType.Descriptor instead.
 func (IncentiveOffer_OfferType) EnumDescriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v23_services_incentive_service_proto_rawDescGZIP(), []int{3, 0}
+	return file_google_ads_googleads_v24_services_incentive_service_proto_rawDescGZIP(), []int{3, 0}
 }
 
 // Request for getting the acquisition incentive for a user.
@@ -166,14 +166,14 @@ type FetchIncentiveRequest struct {
 	Email *string `protobuf:"bytes,3,opt,name=email,proto3,oneof" json:"email,omitempty"`
 	// Optional. The type of incentive to get.
 	// Defaults to ACQUISITION.
-	Type          *FetchIncentiveRequest_IncentiveType `protobuf:"varint,4,opt,name=type,proto3,enum=google.ads.googleads.v23.services.FetchIncentiveRequest_IncentiveType,oneof" json:"type,omitempty"`
+	Type          *FetchIncentiveRequest_IncentiveType `protobuf:"varint,4,opt,name=type,proto3,enum=google.ads.googleads.v24.services.FetchIncentiveRequest_IncentiveType,oneof" json:"type,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *FetchIncentiveRequest) Reset() {
 	*x = FetchIncentiveRequest{}
-	mi := &file_google_ads_googleads_v23_services_incentive_service_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v24_services_incentive_service_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -185,7 +185,7 @@ func (x *FetchIncentiveRequest) String() string {
 func (*FetchIncentiveRequest) ProtoMessage() {}
 
 func (x *FetchIncentiveRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v23_services_incentive_service_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v24_services_incentive_service_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -198,7 +198,7 @@ func (x *FetchIncentiveRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FetchIncentiveRequest.ProtoReflect.Descriptor instead.
 func (*FetchIncentiveRequest) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v23_services_incentive_service_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v24_services_incentive_service_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *FetchIncentiveRequest) GetLanguageCode() string {
@@ -244,14 +244,14 @@ type Incentive struct {
 	// offers in a CYO offer.
 	IncentiveTermsAndConditionsUrl *string `protobuf:"bytes,3,opt,name=incentive_terms_and_conditions_url,json=incentiveTermsAndConditionsUrl,proto3,oneof" json:"incentive_terms_and_conditions_url,omitempty"`
 	// The type of the incentive.
-	Type          *FetchIncentiveRequest_IncentiveType `protobuf:"varint,4,opt,name=type,proto3,enum=google.ads.googleads.v23.services.FetchIncentiveRequest_IncentiveType,oneof" json:"type,omitempty"`
+	Type          *FetchIncentiveRequest_IncentiveType `protobuf:"varint,4,opt,name=type,proto3,enum=google.ads.googleads.v24.services.FetchIncentiveRequest_IncentiveType,oneof" json:"type,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *Incentive) Reset() {
 	*x = Incentive{}
-	mi := &file_google_ads_googleads_v23_services_incentive_service_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v24_services_incentive_service_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -263,7 +263,7 @@ func (x *Incentive) String() string {
 func (*Incentive) ProtoMessage() {}
 
 func (x *Incentive) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v23_services_incentive_service_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v24_services_incentive_service_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -276,7 +276,7 @@ func (x *Incentive) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Incentive.ProtoReflect.Descriptor instead.
 func (*Incentive) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v23_services_incentive_service_proto_rawDescGZIP(), []int{1}
+	return file_google_ads_googleads_v24_services_incentive_service_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *Incentive) GetIncentiveId() int64 {
@@ -323,7 +323,7 @@ type CyoIncentives struct {
 
 func (x *CyoIncentives) Reset() {
 	*x = CyoIncentives{}
-	mi := &file_google_ads_googleads_v23_services_incentive_service_proto_msgTypes[2]
+	mi := &file_google_ads_googleads_v24_services_incentive_service_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -335,7 +335,7 @@ func (x *CyoIncentives) String() string {
 func (*CyoIncentives) ProtoMessage() {}
 
 func (x *CyoIncentives) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v23_services_incentive_service_proto_msgTypes[2]
+	mi := &file_google_ads_googleads_v24_services_incentive_service_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -348,7 +348,7 @@ func (x *CyoIncentives) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CyoIncentives.ProtoReflect.Descriptor instead.
 func (*CyoIncentives) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v23_services_incentive_service_proto_rawDescGZIP(), []int{2}
+	return file_google_ads_googleads_v24_services_incentive_service_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *CyoIncentives) GetLowOffer() *Incentive {
@@ -377,7 +377,7 @@ func (x *CyoIncentives) GetHighOffer() *Incentive {
 type IncentiveOffer struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Required. The type of this acquisition incentive offer.
-	Type *IncentiveOffer_OfferType `protobuf:"varint,1,opt,name=type,proto3,enum=google.ads.googleads.v23.services.IncentiveOffer_OfferType,oneof" json:"type,omitempty"`
+	Type *IncentiveOffer_OfferType `protobuf:"varint,1,opt,name=type,proto3,enum=google.ads.googleads.v24.services.IncentiveOffer_OfferType,oneof" json:"type,omitempty"`
 	// Optional. The URL of the terms and conditions for the incentive offer.
 	ConsolidatedTermsAndConditionsUrl *string `protobuf:"bytes,2,opt,name=consolidated_terms_and_conditions_url,json=consolidatedTermsAndConditionsUrl,proto3,oneof" json:"consolidated_terms_and_conditions_url,omitempty"`
 	// The specific incentive details, which can only be one of the following.
@@ -392,7 +392,7 @@ type IncentiveOffer struct {
 
 func (x *IncentiveOffer) Reset() {
 	*x = IncentiveOffer{}
-	mi := &file_google_ads_googleads_v23_services_incentive_service_proto_msgTypes[3]
+	mi := &file_google_ads_googleads_v24_services_incentive_service_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -404,7 +404,7 @@ func (x *IncentiveOffer) String() string {
 func (*IncentiveOffer) ProtoMessage() {}
 
 func (x *IncentiveOffer) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v23_services_incentive_service_proto_msgTypes[3]
+	mi := &file_google_ads_googleads_v24_services_incentive_service_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -417,7 +417,7 @@ func (x *IncentiveOffer) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use IncentiveOffer.ProtoReflect.Descriptor instead.
 func (*IncentiveOffer) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v23_services_incentive_service_proto_rawDescGZIP(), []int{3}
+	return file_google_ads_googleads_v24_services_incentive_service_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *IncentiveOffer) GetType() IncentiveOffer_OfferType {
@@ -473,7 +473,7 @@ type FetchIncentiveResponse struct {
 
 func (x *FetchIncentiveResponse) Reset() {
 	*x = FetchIncentiveResponse{}
-	mi := &file_google_ads_googleads_v23_services_incentive_service_proto_msgTypes[4]
+	mi := &file_google_ads_googleads_v24_services_incentive_service_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -485,7 +485,7 @@ func (x *FetchIncentiveResponse) String() string {
 func (*FetchIncentiveResponse) ProtoMessage() {}
 
 func (x *FetchIncentiveResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v23_services_incentive_service_proto_msgTypes[4]
+	mi := &file_google_ads_googleads_v24_services_incentive_service_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -498,7 +498,7 @@ func (x *FetchIncentiveResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FetchIncentiveResponse.ProtoReflect.Descriptor instead.
 func (*FetchIncentiveResponse) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v23_services_incentive_service_proto_rawDescGZIP(), []int{4}
+	return file_google_ads_googleads_v24_services_incentive_service_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *FetchIncentiveResponse) GetIncentiveOffer() *IncentiveOffer {
@@ -530,7 +530,7 @@ type ApplyIncentiveRequest struct {
 
 func (x *ApplyIncentiveRequest) Reset() {
 	*x = ApplyIncentiveRequest{}
-	mi := &file_google_ads_googleads_v23_services_incentive_service_proto_msgTypes[5]
+	mi := &file_google_ads_googleads_v24_services_incentive_service_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -542,7 +542,7 @@ func (x *ApplyIncentiveRequest) String() string {
 func (*ApplyIncentiveRequest) ProtoMessage() {}
 
 func (x *ApplyIncentiveRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v23_services_incentive_service_proto_msgTypes[5]
+	mi := &file_google_ads_googleads_v24_services_incentive_service_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -555,7 +555,7 @@ func (x *ApplyIncentiveRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ApplyIncentiveRequest.ProtoReflect.Descriptor instead.
 func (*ApplyIncentiveRequest) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v23_services_incentive_service_proto_rawDescGZIP(), []int{5}
+	return file_google_ads_googleads_v24_services_incentive_service_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *ApplyIncentiveRequest) GetSelectedIncentiveId() int64 {
@@ -596,7 +596,7 @@ type ApplyIncentiveResponse struct {
 
 func (x *ApplyIncentiveResponse) Reset() {
 	*x = ApplyIncentiveResponse{}
-	mi := &file_google_ads_googleads_v23_services_incentive_service_proto_msgTypes[6]
+	mi := &file_google_ads_googleads_v24_services_incentive_service_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -608,7 +608,7 @@ func (x *ApplyIncentiveResponse) String() string {
 func (*ApplyIncentiveResponse) ProtoMessage() {}
 
 func (x *ApplyIncentiveResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v23_services_incentive_service_proto_msgTypes[6]
+	mi := &file_google_ads_googleads_v24_services_incentive_service_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -621,7 +621,7 @@ func (x *ApplyIncentiveResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ApplyIncentiveResponse.ProtoReflect.Descriptor instead.
 func (*ApplyIncentiveResponse) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v23_services_incentive_service_proto_rawDescGZIP(), []int{6}
+	return file_google_ads_googleads_v24_services_incentive_service_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *ApplyIncentiveResponse) GetCouponCode() string {
@@ -656,7 +656,7 @@ type Incentive_Requirement struct {
 
 func (x *Incentive_Requirement) Reset() {
 	*x = Incentive_Requirement{}
-	mi := &file_google_ads_googleads_v23_services_incentive_service_proto_msgTypes[7]
+	mi := &file_google_ads_googleads_v24_services_incentive_service_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -668,7 +668,7 @@ func (x *Incentive_Requirement) String() string {
 func (*Incentive_Requirement) ProtoMessage() {}
 
 func (x *Incentive_Requirement) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v23_services_incentive_service_proto_msgTypes[7]
+	mi := &file_google_ads_googleads_v24_services_incentive_service_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -681,7 +681,7 @@ func (x *Incentive_Requirement) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Incentive_Requirement.ProtoReflect.Descriptor instead.
 func (*Incentive_Requirement) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v23_services_incentive_service_proto_rawDescGZIP(), []int{1, 0}
+	return file_google_ads_googleads_v24_services_incentive_service_proto_rawDescGZIP(), []int{1, 0}
 }
 
 func (x *Incentive_Requirement) GetRequirement() isIncentive_Requirement_Requirement {
@@ -727,7 +727,7 @@ type Incentive_Requirement_Spend struct {
 
 func (x *Incentive_Requirement_Spend) Reset() {
 	*x = Incentive_Requirement_Spend{}
-	mi := &file_google_ads_googleads_v23_services_incentive_service_proto_msgTypes[8]
+	mi := &file_google_ads_googleads_v24_services_incentive_service_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -739,7 +739,7 @@ func (x *Incentive_Requirement_Spend) String() string {
 func (*Incentive_Requirement_Spend) ProtoMessage() {}
 
 func (x *Incentive_Requirement_Spend) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v23_services_incentive_service_proto_msgTypes[8]
+	mi := &file_google_ads_googleads_v24_services_incentive_service_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -752,7 +752,7 @@ func (x *Incentive_Requirement_Spend) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Incentive_Requirement_Spend.ProtoReflect.Descriptor instead.
 func (*Incentive_Requirement_Spend) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v23_services_incentive_service_proto_rawDescGZIP(), []int{1, 0, 0}
+	return file_google_ads_googleads_v24_services_incentive_service_proto_rawDescGZIP(), []int{1, 0, 0}
 }
 
 func (x *Incentive_Requirement_Spend) GetAwardAmount() *money.Money {
@@ -769,15 +769,15 @@ func (x *Incentive_Requirement_Spend) GetRequiredAmount() *money.Money {
 	return nil
 }
 
-var File_google_ads_googleads_v23_services_incentive_service_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v24_services_incentive_service_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v23_services_incentive_service_proto_rawDesc = string([]byte{
+var file_google_ads_googleads_v24_services_incentive_service_proto_rawDesc = string([]byte{
 	0x0a, 0x39, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x33, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x34, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69,
 	0x63, 0x65, 0x73, 0x2f, 0x69, 0x6e, 0x63, 0x65, 0x6e, 0x74, 0x69, 0x76, 0x65, 0x5f, 0x73, 0x65,
 	0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x21, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64,
-	0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x1a, 0x1c,
+	0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x1a, 0x1c,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x6e, 0x6e, 0x6f, 0x74,
 	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x17, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x63, 0x6c, 0x69, 0x65, 0x6e, 0x74, 0x2e,
@@ -796,7 +796,7 @@ var file_google_ads_googleads_v23_services_incentive_service_proto_rawDesc = str
 	0x20, 0x01, 0x28, 0x09, 0x42, 0x03, 0xe0, 0x41, 0x01, 0x48, 0x02, 0x52, 0x05, 0x65, 0x6d, 0x61,
 	0x69, 0x6c, 0x88, 0x01, 0x01, 0x12, 0x64, 0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x04, 0x20,
 	0x01, 0x28, 0x0e, 0x32, 0x46, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73,
-	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e, 0x73,
+	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e, 0x73,
 	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x46, 0x65, 0x74, 0x63, 0x68, 0x49, 0x6e, 0x63,
 	0x65, 0x6e, 0x74, 0x69, 0x76, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2e, 0x49, 0x6e,
 	0x63, 0x65, 0x6e, 0x74, 0x69, 0x76, 0x65, 0x54, 0x79, 0x70, 0x65, 0x42, 0x03, 0xe0, 0x41, 0x01,
@@ -814,7 +814,7 @@ var file_google_ads_googleads_v23_services_incentive_service_proto_rawDesc = str
 	0x76, 0x65, 0x49, 0x64, 0x88, 0x01, 0x01, 0x12, 0x5f, 0x0a, 0x0b, 0x72, 0x65, 0x71, 0x75, 0x69,
 	0x72, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x38, 0x2e, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73,
+	0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73,
 	0x2e, 0x49, 0x6e, 0x63, 0x65, 0x6e, 0x74, 0x69, 0x76, 0x65, 0x2e, 0x52, 0x65, 0x71, 0x75, 0x69,
 	0x72, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x48, 0x01, 0x52, 0x0b, 0x72, 0x65, 0x71, 0x75, 0x69, 0x72,
 	0x65, 0x6d, 0x65, 0x6e, 0x74, 0x88, 0x01, 0x01, 0x12, 0x4f, 0x0a, 0x22, 0x69, 0x6e, 0x63, 0x65,
@@ -825,14 +825,14 @@ var file_google_ads_googleads_v23_services_incentive_service_proto_rawDesc = str
 	0x6f, 0x6e, 0x73, 0x55, 0x72, 0x6c, 0x88, 0x01, 0x01, 0x12, 0x5f, 0x0a, 0x04, 0x74, 0x79, 0x70,
 	0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x46, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76,
-	0x32, 0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x46, 0x65, 0x74, 0x63,
+	0x32, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x46, 0x65, 0x74, 0x63,
 	0x68, 0x49, 0x6e, 0x63, 0x65, 0x6e, 0x74, 0x69, 0x76, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
 	0x74, 0x2e, 0x49, 0x6e, 0x63, 0x65, 0x6e, 0x74, 0x69, 0x76, 0x65, 0x54, 0x79, 0x70, 0x65, 0x48,
 	0x03, 0x52, 0x04, 0x74, 0x79, 0x70, 0x65, 0x88, 0x01, 0x01, 0x1a, 0xb0, 0x02, 0x0a, 0x0b, 0x52,
 	0x65, 0x71, 0x75, 0x69, 0x72, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x12, 0x5b, 0x0a, 0x05, 0x73, 0x70,
 	0x65, 0x6e, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x3e, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
-	0x2e, 0x76, 0x32, 0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x49, 0x6e,
+	0x2e, 0x76, 0x32, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x49, 0x6e,
 	0x63, 0x65, 0x6e, 0x74, 0x69, 0x76, 0x65, 0x2e, 0x52, 0x65, 0x71, 0x75, 0x69, 0x72, 0x65, 0x6d,
 	0x65, 0x6e, 0x74, 0x2e, 0x53, 0x70, 0x65, 0x6e, 0x64, 0x42, 0x03, 0xe0, 0x41, 0x01, 0x48, 0x00,
 	0x52, 0x05, 0x73, 0x70, 0x65, 0x6e, 0x64, 0x1a, 0xb4, 0x01, 0x0a, 0x05, 0x53, 0x70, 0x65, 0x6e,
@@ -856,18 +856,18 @@ var file_google_ads_googleads_v23_services_incentive_service_proto_rawDesc = str
 	0x02, 0x0a, 0x0d, 0x43, 0x79, 0x6f, 0x49, 0x6e, 0x63, 0x65, 0x6e, 0x74, 0x69, 0x76, 0x65, 0x73,
 	0x12, 0x53, 0x0a, 0x09, 0x6c, 0x6f, 0x77, 0x5f, 0x6f, 0x66, 0x66, 0x65, 0x72, 0x18, 0x01, 0x20,
 	0x01, 0x28, 0x0b, 0x32, 0x2c, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73,
-	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e, 0x73,
+	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e, 0x73,
 	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x49, 0x6e, 0x63, 0x65, 0x6e, 0x74, 0x69, 0x76,
 	0x65, 0x42, 0x03, 0xe0, 0x41, 0x02, 0x48, 0x00, 0x52, 0x08, 0x6c, 0x6f, 0x77, 0x4f, 0x66, 0x66,
 	0x65, 0x72, 0x88, 0x01, 0x01, 0x12, 0x59, 0x0a, 0x0c, 0x6d, 0x65, 0x64, 0x69, 0x75, 0x6d, 0x5f,
 	0x6f, 0x66, 0x66, 0x65, 0x72, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2c, 0x2e, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x64, 0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e,
+	0x64, 0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e,
 	0x49, 0x6e, 0x63, 0x65, 0x6e, 0x74, 0x69, 0x76, 0x65, 0x42, 0x03, 0xe0, 0x41, 0x02, 0x48, 0x01,
 	0x52, 0x0b, 0x6d, 0x65, 0x64, 0x69, 0x75, 0x6d, 0x4f, 0x66, 0x66, 0x65, 0x72, 0x88, 0x01, 0x01,
 	0x12, 0x55, 0x0a, 0x0a, 0x68, 0x69, 0x67, 0x68, 0x5f, 0x6f, 0x66, 0x66, 0x65, 0x72, 0x18, 0x03,
 	0x20, 0x01, 0x28, 0x0b, 0x32, 0x2c, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64,
-	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e,
+	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x49, 0x6e, 0x63, 0x65, 0x6e, 0x74, 0x69,
 	0x76, 0x65, 0x42, 0x03, 0xe0, 0x41, 0x02, 0x48, 0x02, 0x52, 0x09, 0x68, 0x69, 0x67, 0x68, 0x4f,
 	0x66, 0x66, 0x65, 0x72, 0x88, 0x01, 0x01, 0x42, 0x0c, 0x0a, 0x0a, 0x5f, 0x6c, 0x6f, 0x77, 0x5f,
@@ -877,7 +877,7 @@ var file_google_ads_googleads_v23_services_incentive_service_proto_rawDesc = str
 	0x69, 0x76, 0x65, 0x4f, 0x66, 0x66, 0x65, 0x72, 0x12, 0x59, 0x0a, 0x04, 0x74, 0x79, 0x70, 0x65,
 	0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x3b, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
 	0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32,
-	0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x49, 0x6e, 0x63, 0x65, 0x6e,
+	0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x49, 0x6e, 0x63, 0x65, 0x6e,
 	0x74, 0x69, 0x76, 0x65, 0x4f, 0x66, 0x66, 0x65, 0x72, 0x2e, 0x4f, 0x66, 0x66, 0x65, 0x72, 0x54,
 	0x79, 0x70, 0x65, 0x42, 0x03, 0xe0, 0x41, 0x02, 0x48, 0x01, 0x52, 0x04, 0x74, 0x79, 0x70, 0x65,
 	0x88, 0x01, 0x01, 0x12, 0x5a, 0x0a, 0x25, 0x63, 0x6f, 0x6e, 0x73, 0x6f, 0x6c, 0x69, 0x64, 0x61,
@@ -889,7 +889,7 @@ var file_google_ads_googleads_v23_services_incentive_service_proto_rawDesc = str
 	0x59, 0x0a, 0x0e, 0x63, 0x79, 0x6f, 0x5f, 0x69, 0x6e, 0x63, 0x65, 0x6e, 0x74, 0x69, 0x76, 0x65,
 	0x73, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x30, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76,
-	0x32, 0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x43, 0x79, 0x6f, 0x49,
+	0x32, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x43, 0x79, 0x6f, 0x49,
 	0x6e, 0x63, 0x65, 0x6e, 0x74, 0x69, 0x76, 0x65, 0x73, 0x48, 0x00, 0x52, 0x0d, 0x63, 0x79, 0x6f,
 	0x49, 0x6e, 0x63, 0x65, 0x6e, 0x74, 0x69, 0x76, 0x65, 0x73, 0x22, 0x4e, 0x0a, 0x09, 0x4f, 0x66,
 	0x66, 0x65, 0x72, 0x54, 0x79, 0x70, 0x65, 0x12, 0x0f, 0x0a, 0x0b, 0x55, 0x4e, 0x53, 0x50, 0x45,
@@ -906,7 +906,7 @@ var file_google_ads_googleads_v23_services_incentive_service_proto_rawDesc = str
 	0x0f, 0x69, 0x6e, 0x63, 0x65, 0x6e, 0x74, 0x69, 0x76, 0x65, 0x5f, 0x6f, 0x66, 0x66, 0x65, 0x72,
 	0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x31, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
 	0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32,
-	0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x49, 0x6e, 0x63, 0x65, 0x6e,
+	0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x49, 0x6e, 0x63, 0x65, 0x6e,
 	0x74, 0x69, 0x76, 0x65, 0x4f, 0x66, 0x66, 0x65, 0x72, 0x42, 0x03, 0xe0, 0x41, 0x02, 0x48, 0x00,
 	0x52, 0x0e, 0x69, 0x6e, 0x63, 0x65, 0x6e, 0x74, 0x69, 0x76, 0x65, 0x4f, 0x66, 0x66, 0x65, 0x72,
 	0x88, 0x01, 0x01, 0x42, 0x12, 0x0a, 0x10, 0x5f, 0x69, 0x6e, 0x63, 0x65, 0x6e, 0x74, 0x69, 0x76,
@@ -937,26 +937,26 @@ var file_google_ads_googleads_v23_services_incentive_service_proto_rawDesc = str
 	0x69, 0x76, 0x65, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0xad, 0x01, 0x0a, 0x0e, 0x46,
 	0x65, 0x74, 0x63, 0x68, 0x49, 0x6e, 0x63, 0x65, 0x6e, 0x74, 0x69, 0x76, 0x65, 0x12, 0x38, 0x2e,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
 	0x73, 0x2e, 0x46, 0x65, 0x74, 0x63, 0x68, 0x49, 0x6e, 0x63, 0x65, 0x6e, 0x74, 0x69, 0x76, 0x65,
 	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x39, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76,
-	0x32, 0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x46, 0x65, 0x74, 0x63,
+	0x32, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x46, 0x65, 0x74, 0x63,
 	0x68, 0x49, 0x6e, 0x63, 0x65, 0x6e, 0x74, 0x69, 0x76, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
-	0x73, 0x65, 0x22, 0x26, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x20, 0x12, 0x1e, 0x2f, 0x76, 0x32, 0x33,
+	0x73, 0x65, 0x22, 0x26, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x20, 0x12, 0x1e, 0x2f, 0x76, 0x32, 0x34,
 	0x2f, 0x69, 0x6e, 0x63, 0x65, 0x6e, 0x74, 0x69, 0x76, 0x65, 0x73, 0x3a, 0x66, 0x65, 0x74, 0x63,
 	0x68, 0x49, 0x6e, 0x63, 0x65, 0x6e, 0x74, 0x69, 0x76, 0x65, 0x12, 0xf3, 0x01, 0x0a, 0x0e, 0x41,
 	0x70, 0x70, 0x6c, 0x79, 0x49, 0x6e, 0x63, 0x65, 0x6e, 0x74, 0x69, 0x76, 0x65, 0x12, 0x38, 0x2e,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
 	0x73, 0x2e, 0x41, 0x70, 0x70, 0x6c, 0x79, 0x49, 0x6e, 0x63, 0x65, 0x6e, 0x74, 0x69, 0x76, 0x65,
 	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x39, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76,
-	0x32, 0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x41, 0x70, 0x70, 0x6c,
+	0x32, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x41, 0x70, 0x70, 0x6c,
 	0x79, 0x49, 0x6e, 0x63, 0x65, 0x6e, 0x74, 0x69, 0x76, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
 	0x73, 0x65, 0x22, 0x6c, 0xda, 0x41, 0x0c, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x72, 0x79, 0x5f, 0x63,
 	0x6f, 0x64, 0x65, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x57, 0x3a, 0x01, 0x2a, 0x22, 0x52, 0x2f, 0x76,
-	0x32, 0x33, 0x2f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x73, 0x2f, 0x7b, 0x63, 0x75,
+	0x32, 0x34, 0x2f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x73, 0x2f, 0x7b, 0x63, 0x75,
 	0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x3d, 0x2a, 0x7d, 0x2f, 0x69, 0x6e, 0x63,
 	0x65, 0x6e, 0x74, 0x69, 0x76, 0x65, 0x73, 0x2f, 0x7b, 0x73, 0x65, 0x6c, 0x65, 0x63, 0x74, 0x65,
 	0x64, 0x5f, 0x69, 0x6e, 0x63, 0x65, 0x6e, 0x74, 0x69, 0x76, 0x65, 0x5f, 0x69, 0x64, 0x3d, 0x2a,
@@ -967,69 +967,69 @@ var file_google_ads_googleads_v23_services_incentive_service_proto_rawDesc = str
 	0x6c, 0x65, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x61, 0x75, 0x74, 0x68, 0x2f,
 	0x61, 0x64, 0x77, 0x6f, 0x72, 0x64, 0x73, 0x42, 0x81, 0x02, 0x0a, 0x25, 0x63, 0x6f, 0x6d, 0x2e,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x33, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
 	0x73, 0x42, 0x15, 0x49, 0x6e, 0x63, 0x65, 0x6e, 0x74, 0x69, 0x76, 0x65, 0x53, 0x65, 0x72, 0x76,
 	0x69, 0x63, 0x65, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x49, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2e, 0x67, 0x6f, 0x6c, 0x61, 0x6e, 0x67, 0x2e, 0x6f, 0x72, 0x67, 0x2f, 0x67, 0x65,
 	0x6e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x70, 0x69,
 	0x73, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f,
-	0x76, 0x32, 0x33, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x3b, 0x73, 0x65, 0x72,
+	0x76, 0x32, 0x34, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x3b, 0x73, 0x65, 0x72,
 	0x76, 0x69, 0x63, 0x65, 0x73, 0xa2, 0x02, 0x03, 0x47, 0x41, 0x41, 0xaa, 0x02, 0x21, 0x47, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x41, 0x64, 0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41,
-	0x64, 0x73, 0x2e, 0x56, 0x32, 0x33, 0x2e, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0xca,
+	0x64, 0x73, 0x2e, 0x56, 0x32, 0x34, 0x2e, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0xca,
 	0x02, 0x21, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x5c, 0x41, 0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x32, 0x33, 0x5c, 0x53, 0x65, 0x72, 0x76, 0x69,
+	0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x32, 0x34, 0x5c, 0x53, 0x65, 0x72, 0x76, 0x69,
 	0x63, 0x65, 0x73, 0xea, 0x02, 0x25, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x3a, 0x3a, 0x41, 0x64,
 	0x73, 0x3a, 0x3a, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x32,
-	0x33, 0x3a, 0x3a, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f,
+	0x34, 0x3a, 0x3a, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f,
 	0x74, 0x6f, 0x33,
 })
 
 var (
-	file_google_ads_googleads_v23_services_incentive_service_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v23_services_incentive_service_proto_rawDescData []byte
+	file_google_ads_googleads_v24_services_incentive_service_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v24_services_incentive_service_proto_rawDescData []byte
 )
 
-func file_google_ads_googleads_v23_services_incentive_service_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v23_services_incentive_service_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v23_services_incentive_service_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v23_services_incentive_service_proto_rawDesc), len(file_google_ads_googleads_v23_services_incentive_service_proto_rawDesc)))
+func file_google_ads_googleads_v24_services_incentive_service_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v24_services_incentive_service_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v24_services_incentive_service_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v24_services_incentive_service_proto_rawDesc), len(file_google_ads_googleads_v24_services_incentive_service_proto_rawDesc)))
 	})
-	return file_google_ads_googleads_v23_services_incentive_service_proto_rawDescData
+	return file_google_ads_googleads_v24_services_incentive_service_proto_rawDescData
 }
 
-var file_google_ads_googleads_v23_services_incentive_service_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_google_ads_googleads_v23_services_incentive_service_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
-var file_google_ads_googleads_v23_services_incentive_service_proto_goTypes = []any{
-	(FetchIncentiveRequest_IncentiveType)(0), // 0: google.ads.googleads.v23.services.FetchIncentiveRequest.IncentiveType
-	(IncentiveOffer_OfferType)(0),            // 1: google.ads.googleads.v23.services.IncentiveOffer.OfferType
-	(*FetchIncentiveRequest)(nil),            // 2: google.ads.googleads.v23.services.FetchIncentiveRequest
-	(*Incentive)(nil),                        // 3: google.ads.googleads.v23.services.Incentive
-	(*CyoIncentives)(nil),                    // 4: google.ads.googleads.v23.services.CyoIncentives
-	(*IncentiveOffer)(nil),                   // 5: google.ads.googleads.v23.services.IncentiveOffer
-	(*FetchIncentiveResponse)(nil),           // 6: google.ads.googleads.v23.services.FetchIncentiveResponse
-	(*ApplyIncentiveRequest)(nil),            // 7: google.ads.googleads.v23.services.ApplyIncentiveRequest
-	(*ApplyIncentiveResponse)(nil),           // 8: google.ads.googleads.v23.services.ApplyIncentiveResponse
-	(*Incentive_Requirement)(nil),            // 9: google.ads.googleads.v23.services.Incentive.Requirement
-	(*Incentive_Requirement_Spend)(nil),      // 10: google.ads.googleads.v23.services.Incentive.Requirement.Spend
+var file_google_ads_googleads_v24_services_incentive_service_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
+var file_google_ads_googleads_v24_services_incentive_service_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
+var file_google_ads_googleads_v24_services_incentive_service_proto_goTypes = []any{
+	(FetchIncentiveRequest_IncentiveType)(0), // 0: google.ads.googleads.v24.services.FetchIncentiveRequest.IncentiveType
+	(IncentiveOffer_OfferType)(0),            // 1: google.ads.googleads.v24.services.IncentiveOffer.OfferType
+	(*FetchIncentiveRequest)(nil),            // 2: google.ads.googleads.v24.services.FetchIncentiveRequest
+	(*Incentive)(nil),                        // 3: google.ads.googleads.v24.services.Incentive
+	(*CyoIncentives)(nil),                    // 4: google.ads.googleads.v24.services.CyoIncentives
+	(*IncentiveOffer)(nil),                   // 5: google.ads.googleads.v24.services.IncentiveOffer
+	(*FetchIncentiveResponse)(nil),           // 6: google.ads.googleads.v24.services.FetchIncentiveResponse
+	(*ApplyIncentiveRequest)(nil),            // 7: google.ads.googleads.v24.services.ApplyIncentiveRequest
+	(*ApplyIncentiveResponse)(nil),           // 8: google.ads.googleads.v24.services.ApplyIncentiveResponse
+	(*Incentive_Requirement)(nil),            // 9: google.ads.googleads.v24.services.Incentive.Requirement
+	(*Incentive_Requirement_Spend)(nil),      // 10: google.ads.googleads.v24.services.Incentive.Requirement.Spend
 	(*money.Money)(nil),                      // 11: google.type.Money
 }
-var file_google_ads_googleads_v23_services_incentive_service_proto_depIdxs = []int32{
-	0,  // 0: google.ads.googleads.v23.services.FetchIncentiveRequest.type:type_name -> google.ads.googleads.v23.services.FetchIncentiveRequest.IncentiveType
-	9,  // 1: google.ads.googleads.v23.services.Incentive.requirement:type_name -> google.ads.googleads.v23.services.Incentive.Requirement
-	0,  // 2: google.ads.googleads.v23.services.Incentive.type:type_name -> google.ads.googleads.v23.services.FetchIncentiveRequest.IncentiveType
-	3,  // 3: google.ads.googleads.v23.services.CyoIncentives.low_offer:type_name -> google.ads.googleads.v23.services.Incentive
-	3,  // 4: google.ads.googleads.v23.services.CyoIncentives.medium_offer:type_name -> google.ads.googleads.v23.services.Incentive
-	3,  // 5: google.ads.googleads.v23.services.CyoIncentives.high_offer:type_name -> google.ads.googleads.v23.services.Incentive
-	1,  // 6: google.ads.googleads.v23.services.IncentiveOffer.type:type_name -> google.ads.googleads.v23.services.IncentiveOffer.OfferType
-	4,  // 7: google.ads.googleads.v23.services.IncentiveOffer.cyo_incentives:type_name -> google.ads.googleads.v23.services.CyoIncentives
-	5,  // 8: google.ads.googleads.v23.services.FetchIncentiveResponse.incentive_offer:type_name -> google.ads.googleads.v23.services.IncentiveOffer
-	10, // 9: google.ads.googleads.v23.services.Incentive.Requirement.spend:type_name -> google.ads.googleads.v23.services.Incentive.Requirement.Spend
-	11, // 10: google.ads.googleads.v23.services.Incentive.Requirement.Spend.award_amount:type_name -> google.type.Money
-	11, // 11: google.ads.googleads.v23.services.Incentive.Requirement.Spend.required_amount:type_name -> google.type.Money
-	2,  // 12: google.ads.googleads.v23.services.IncentiveService.FetchIncentive:input_type -> google.ads.googleads.v23.services.FetchIncentiveRequest
-	7,  // 13: google.ads.googleads.v23.services.IncentiveService.ApplyIncentive:input_type -> google.ads.googleads.v23.services.ApplyIncentiveRequest
-	6,  // 14: google.ads.googleads.v23.services.IncentiveService.FetchIncentive:output_type -> google.ads.googleads.v23.services.FetchIncentiveResponse
-	8,  // 15: google.ads.googleads.v23.services.IncentiveService.ApplyIncentive:output_type -> google.ads.googleads.v23.services.ApplyIncentiveResponse
+var file_google_ads_googleads_v24_services_incentive_service_proto_depIdxs = []int32{
+	0,  // 0: google.ads.googleads.v24.services.FetchIncentiveRequest.type:type_name -> google.ads.googleads.v24.services.FetchIncentiveRequest.IncentiveType
+	9,  // 1: google.ads.googleads.v24.services.Incentive.requirement:type_name -> google.ads.googleads.v24.services.Incentive.Requirement
+	0,  // 2: google.ads.googleads.v24.services.Incentive.type:type_name -> google.ads.googleads.v24.services.FetchIncentiveRequest.IncentiveType
+	3,  // 3: google.ads.googleads.v24.services.CyoIncentives.low_offer:type_name -> google.ads.googleads.v24.services.Incentive
+	3,  // 4: google.ads.googleads.v24.services.CyoIncentives.medium_offer:type_name -> google.ads.googleads.v24.services.Incentive
+	3,  // 5: google.ads.googleads.v24.services.CyoIncentives.high_offer:type_name -> google.ads.googleads.v24.services.Incentive
+	1,  // 6: google.ads.googleads.v24.services.IncentiveOffer.type:type_name -> google.ads.googleads.v24.services.IncentiveOffer.OfferType
+	4,  // 7: google.ads.googleads.v24.services.IncentiveOffer.cyo_incentives:type_name -> google.ads.googleads.v24.services.CyoIncentives
+	5,  // 8: google.ads.googleads.v24.services.FetchIncentiveResponse.incentive_offer:type_name -> google.ads.googleads.v24.services.IncentiveOffer
+	10, // 9: google.ads.googleads.v24.services.Incentive.Requirement.spend:type_name -> google.ads.googleads.v24.services.Incentive.Requirement.Spend
+	11, // 10: google.ads.googleads.v24.services.Incentive.Requirement.Spend.award_amount:type_name -> google.type.Money
+	11, // 11: google.ads.googleads.v24.services.Incentive.Requirement.Spend.required_amount:type_name -> google.type.Money
+	2,  // 12: google.ads.googleads.v24.services.IncentiveService.FetchIncentive:input_type -> google.ads.googleads.v24.services.FetchIncentiveRequest
+	7,  // 13: google.ads.googleads.v24.services.IncentiveService.ApplyIncentive:input_type -> google.ads.googleads.v24.services.ApplyIncentiveRequest
+	6,  // 14: google.ads.googleads.v24.services.IncentiveService.FetchIncentive:output_type -> google.ads.googleads.v24.services.FetchIncentiveResponse
+	8,  // 15: google.ads.googleads.v24.services.IncentiveService.ApplyIncentive:output_type -> google.ads.googleads.v24.services.ApplyIncentiveResponse
 	14, // [14:16] is the sub-list for method output_type
 	12, // [12:14] is the sub-list for method input_type
 	12, // [12:12] is the sub-list for extension type_name
@@ -1037,40 +1037,40 @@ var file_google_ads_googleads_v23_services_incentive_service_proto_depIdxs = []i
 	0,  // [0:12] is the sub-list for field type_name
 }
 
-func init() { file_google_ads_googleads_v23_services_incentive_service_proto_init() }
-func file_google_ads_googleads_v23_services_incentive_service_proto_init() {
-	if File_google_ads_googleads_v23_services_incentive_service_proto != nil {
+func init() { file_google_ads_googleads_v24_services_incentive_service_proto_init() }
+func file_google_ads_googleads_v24_services_incentive_service_proto_init() {
+	if File_google_ads_googleads_v24_services_incentive_service_proto != nil {
 		return
 	}
-	file_google_ads_googleads_v23_services_incentive_service_proto_msgTypes[0].OneofWrappers = []any{}
-	file_google_ads_googleads_v23_services_incentive_service_proto_msgTypes[1].OneofWrappers = []any{}
-	file_google_ads_googleads_v23_services_incentive_service_proto_msgTypes[2].OneofWrappers = []any{}
-	file_google_ads_googleads_v23_services_incentive_service_proto_msgTypes[3].OneofWrappers = []any{
+	file_google_ads_googleads_v24_services_incentive_service_proto_msgTypes[0].OneofWrappers = []any{}
+	file_google_ads_googleads_v24_services_incentive_service_proto_msgTypes[1].OneofWrappers = []any{}
+	file_google_ads_googleads_v24_services_incentive_service_proto_msgTypes[2].OneofWrappers = []any{}
+	file_google_ads_googleads_v24_services_incentive_service_proto_msgTypes[3].OneofWrappers = []any{
 		(*IncentiveOffer_CyoIncentives)(nil),
 	}
-	file_google_ads_googleads_v23_services_incentive_service_proto_msgTypes[4].OneofWrappers = []any{}
-	file_google_ads_googleads_v23_services_incentive_service_proto_msgTypes[5].OneofWrappers = []any{}
-	file_google_ads_googleads_v23_services_incentive_service_proto_msgTypes[6].OneofWrappers = []any{}
-	file_google_ads_googleads_v23_services_incentive_service_proto_msgTypes[7].OneofWrappers = []any{
+	file_google_ads_googleads_v24_services_incentive_service_proto_msgTypes[4].OneofWrappers = []any{}
+	file_google_ads_googleads_v24_services_incentive_service_proto_msgTypes[5].OneofWrappers = []any{}
+	file_google_ads_googleads_v24_services_incentive_service_proto_msgTypes[6].OneofWrappers = []any{}
+	file_google_ads_googleads_v24_services_incentive_service_proto_msgTypes[7].OneofWrappers = []any{
 		(*Incentive_Requirement_Spend_)(nil),
 	}
-	file_google_ads_googleads_v23_services_incentive_service_proto_msgTypes[8].OneofWrappers = []any{}
+	file_google_ads_googleads_v24_services_incentive_service_proto_msgTypes[8].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v23_services_incentive_service_proto_rawDesc), len(file_google_ads_googleads_v23_services_incentive_service_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v24_services_incentive_service_proto_rawDesc), len(file_google_ads_googleads_v24_services_incentive_service_proto_rawDesc)),
 			NumEnums:      2,
 			NumMessages:   9,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_google_ads_googleads_v23_services_incentive_service_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v23_services_incentive_service_proto_depIdxs,
-		EnumInfos:         file_google_ads_googleads_v23_services_incentive_service_proto_enumTypes,
-		MessageInfos:      file_google_ads_googleads_v23_services_incentive_service_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v24_services_incentive_service_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v24_services_incentive_service_proto_depIdxs,
+		EnumInfos:         file_google_ads_googleads_v24_services_incentive_service_proto_enumTypes,
+		MessageInfos:      file_google_ads_googleads_v24_services_incentive_service_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v23_services_incentive_service_proto = out.File
-	file_google_ads_googleads_v23_services_incentive_service_proto_goTypes = nil
-	file_google_ads_googleads_v23_services_incentive_service_proto_depIdxs = nil
+	File_google_ads_googleads_v24_services_incentive_service_proto = out.File
+	file_google_ads_googleads_v24_services_incentive_service_proto_goTypes = nil
+	file_google_ads_googleads_v24_services_incentive_service_proto_depIdxs = nil
 }
