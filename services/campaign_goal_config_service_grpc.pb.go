@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v23/services/campaign_goal_config_service.proto
+// source: google/ads/googleads/v24/services/campaign_goal_config_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	CampaignGoalConfigService_MutateCampaignGoalConfigs_FullMethodName = "/google.ads.googleads.v23.services.CampaignGoalConfigService/MutateCampaignGoalConfigs"
+	CampaignGoalConfigService_MutateCampaignGoalConfigs_FullMethodName = "/google.ads.googleads.v24.services.CampaignGoalConfigService/MutateCampaignGoalConfigs"
 )
 
 // CampaignGoalConfigServiceClient is the client API for CampaignGoalConfigService service.
@@ -151,7 +151,7 @@ func _CampaignGoalConfigService_MutateCampaignGoalConfigs_Handler(srv interface{
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CampaignGoalConfigService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v23.services.CampaignGoalConfigService",
+	ServiceName: "google.ads.googleads.v24.services.CampaignGoalConfigService",
 	HandlerType: (*CampaignGoalConfigServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -160,5 +160,5 @@ var CampaignGoalConfigService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v23/services/campaign_goal_config_service.proto",
+	Metadata: "google/ads/googleads/v24/services/campaign_goal_config_service.proto",
 }

@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v23/services/benchmarks_service.proto
+// source: google/ads/googleads/v24/services/benchmarks_service.proto
 
 package services
 
@@ -33,11 +33,11 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	BenchmarksService_ListBenchmarksAvailableDates_FullMethodName = "/google.ads.googleads.v23.services.BenchmarksService/ListBenchmarksAvailableDates"
-	BenchmarksService_ListBenchmarksLocations_FullMethodName      = "/google.ads.googleads.v23.services.BenchmarksService/ListBenchmarksLocations"
-	BenchmarksService_ListBenchmarksProducts_FullMethodName       = "/google.ads.googleads.v23.services.BenchmarksService/ListBenchmarksProducts"
-	BenchmarksService_ListBenchmarksSources_FullMethodName        = "/google.ads.googleads.v23.services.BenchmarksService/ListBenchmarksSources"
-	BenchmarksService_GenerateBenchmarksMetrics_FullMethodName    = "/google.ads.googleads.v23.services.BenchmarksService/GenerateBenchmarksMetrics"
+	BenchmarksService_ListBenchmarksAvailableDates_FullMethodName = "/google.ads.googleads.v24.services.BenchmarksService/ListBenchmarksAvailableDates"
+	BenchmarksService_ListBenchmarksLocations_FullMethodName      = "/google.ads.googleads.v24.services.BenchmarksService/ListBenchmarksLocations"
+	BenchmarksService_ListBenchmarksProducts_FullMethodName       = "/google.ads.googleads.v24.services.BenchmarksService/ListBenchmarksProducts"
+	BenchmarksService_ListBenchmarksSources_FullMethodName        = "/google.ads.googleads.v24.services.BenchmarksService/ListBenchmarksSources"
+	BenchmarksService_GenerateBenchmarksMetrics_FullMethodName    = "/google.ads.googleads.v24.services.BenchmarksService/GenerateBenchmarksMetrics"
 )
 
 // BenchmarksServiceClient is the client API for BenchmarksService service.
@@ -382,7 +382,7 @@ func _BenchmarksService_GenerateBenchmarksMetrics_Handler(srv interface{}, ctx c
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var BenchmarksService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v23.services.BenchmarksService",
+	ServiceName: "google.ads.googleads.v24.services.BenchmarksService",
 	HandlerType: (*BenchmarksServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -407,5 +407,5 @@ var BenchmarksService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v23/services/benchmarks_service.proto",
+	Metadata: "google/ads/googleads/v24/services/benchmarks_service.proto",
 }

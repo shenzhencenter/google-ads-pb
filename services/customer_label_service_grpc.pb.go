@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v23/services/customer_label_service.proto
+// source: google/ads/googleads/v24/services/customer_label_service.proto
 
 package services
 
@@ -33,14 +33,18 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	CustomerLabelService_MutateCustomerLabels_FullMethodName = "/google.ads.googleads.v23.services.CustomerLabelService/MutateCustomerLabels"
+	CustomerLabelService_MutateCustomerLabels_FullMethodName = "/google.ads.googleads.v24.services.CustomerLabelService/MutateCustomerLabels"
 )
 
 // CustomerLabelServiceClient is the client API for CustomerLabelService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 //
-// Service to manage labels on customers.
+// Service to manage labels on Google Ads customers.
+//
+// This service is commonly used by manager accounts to apply their own labels
+// to their client accounts. The label entity must exist under the manager
+// account.
 type CustomerLabelServiceClient interface {
 	// Creates and removes customer-label relationships.
 	// Operation statuses are returned.
@@ -81,7 +85,11 @@ func (c *customerLabelServiceClient) MutateCustomerLabels(ctx context.Context, i
 // All implementations must embed UnimplementedCustomerLabelServiceServer
 // for forward compatibility.
 //
-// Service to manage labels on customers.
+// Service to manage labels on Google Ads customers.
+//
+// This service is commonly used by manager accounts to apply their own labels
+// to their client accounts. The label entity must exist under the manager
+// account.
 type CustomerLabelServiceServer interface {
 	// Creates and removes customer-label relationships.
 	// Operation statuses are returned.
@@ -154,7 +162,7 @@ func _CustomerLabelService_MutateCustomerLabels_Handler(srv interface{}, ctx con
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CustomerLabelService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v23.services.CustomerLabelService",
+	ServiceName: "google.ads.googleads.v24.services.CustomerLabelService",
 	HandlerType: (*CustomerLabelServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -163,5 +171,5 @@ var CustomerLabelService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v23/services/customer_label_service.proto",
+	Metadata: "google/ads/googleads/v24/services/customer_label_service.proto",
 }
