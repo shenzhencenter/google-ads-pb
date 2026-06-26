@@ -43,7 +43,7 @@ type CampaignLifecycleGoal struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Immutable. The resource name of the customer lifecycle goal of a campaign.
 	//
-	// `customers/{customer_id}/campaignLifecycleGoal/{campaign_id}`
+	// `customers/{customer_id}/campaignLifecycleGoals/{campaign_id}`
 	ResourceName string `protobuf:"bytes,1,opt,name=resource_name,json=resourceName,proto3" json:"resource_name,omitempty"`
 	// Output only. The campaign where the goal is attached.
 	Campaign string `protobuf:"bytes,2,opt,name=campaign,proto3" json:"campaign,omitempty"`

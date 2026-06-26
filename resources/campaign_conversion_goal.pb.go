@@ -54,6 +54,15 @@ type CampaignConversionGoal struct {
 	// The conversion origin of this campaign conversion goal.
 	Origin enums.ConversionOriginEnum_ConversionOrigin `protobuf:"varint,4,opt,name=origin,proto3,enum=google.ads.googleads.v24.enums.ConversionOriginEnum_ConversionOrigin" json:"origin,omitempty"`
 	// The biddability of the campaign conversion goal.
+	//
+	// If left unspecified during campaign creation or update operations, this
+	// value will inherit the account-level default biddability for the
+	// corresponding conversion category and origin.
+	//
+	// Note: The account-level default may be set to `true` for newly created
+	// conversion goals. To explicitly prevent a campaign from bidding on this
+	// goal, you must explicitly set `biddable` to `false` and include "biddable"
+	// in your mutate operation's `update_mask`.
 	Biddable      bool `protobuf:"varint,5,opt,name=biddable,proto3" json:"biddable,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
