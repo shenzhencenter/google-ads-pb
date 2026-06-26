@@ -43,7 +43,10 @@ const (
 //
 // Content Creator Insights Service helps users find information about YouTube
 // Creators and their content and how these creators and their audiences can be
-// reached with Google Ads. Accessible to allowlisted customers only.
+// reached with Google Ads. Refer to the
+// [YouTube creator insights
+// guide](https://developers.google.com/google-ads/api/docs/insights/creator-insights)
+// for more details. Accessible to allowlisted customers only.
 type ContentCreatorInsightsServiceClient interface {
 	// Returns insights for a collection of YouTube Creators and Channels.
 	//
@@ -107,7 +110,10 @@ func (c *contentCreatorInsightsServiceClient) GenerateTrendingInsights(ctx conte
 //
 // Content Creator Insights Service helps users find information about YouTube
 // Creators and their content and how these creators and their audiences can be
-// reached with Google Ads. Accessible to allowlisted customers only.
+// reached with Google Ads. Refer to the
+// [YouTube creator insights
+// guide](https://developers.google.com/google-ads/api/docs/insights/creator-insights)
+// for more details. Accessible to allowlisted customers only.
 type ContentCreatorInsightsServiceServer interface {
 	// Returns insights for a collection of YouTube Creators and Channels.
 	//

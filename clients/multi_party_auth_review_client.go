@@ -33,14 +33,14 @@ import (
 	"google.golang.org/grpc/codes"
 )
 
-var newShareablePreviewClientHook clientHook
+var newMultiPartyAuthReviewClientHook clientHook
 
-// ShareablePreviewCallOptions contains the retry settings for each method of ShareablePreviewClient.
-type ShareablePreviewCallOptions struct {
-	GenerateShareablePreviews []gax.CallOption
+// MultiPartyAuthReviewCallOptions contains the retry settings for each method of MultiPartyAuthReviewClient.
+type MultiPartyAuthReviewCallOptions struct {
+	ResolveMultiPartyAuthReview []gax.CallOption
 }
 
-func defaultShareablePreviewGRPCClientOptions() []option.ClientOption {
+func defaultMultiPartyAuthReviewGRPCClientOptions() []option.ClientOption {
 	return []option.ClientOption{
 		internaloption.WithDefaultEndpoint("googleads.googleapis.com:443"),
 		internaloption.WithDefaultEndpointTemplate("googleads.UNIVERSE_DOMAIN:443"),
@@ -55,9 +55,9 @@ func defaultShareablePreviewGRPCClientOptions() []option.ClientOption {
 	}
 }
 
-func defaultShareablePreviewCallOptions() *ShareablePreviewCallOptions {
-	return &ShareablePreviewCallOptions{
-		GenerateShareablePreviews: []gax.CallOption{
+func defaultMultiPartyAuthReviewCallOptions() *MultiPartyAuthReviewCallOptions {
+	return &MultiPartyAuthReviewCallOptions{
+		ResolveMultiPartyAuthReview: []gax.CallOption{
 			gax.WithTimeout(14400000 * time.Millisecond),
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -73,45 +73,38 @@ func defaultShareablePreviewCallOptions() *ShareablePreviewCallOptions {
 	}
 }
 
-// internalShareablePreviewClient is an interface that defines the methods available from Google Ads API.
-type internalShareablePreviewClient interface {
+// internalMultiPartyAuthReviewClient is an interface that defines the methods available from Google Ads API.
+type internalMultiPartyAuthReviewClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GenerateShareablePreviews(context.Context, *servicespb.GenerateShareablePreviewsRequest, ...gax.CallOption) (*servicespb.GenerateShareablePreviewsResponse, error)
+	ResolveMultiPartyAuthReview(context.Context, *servicespb.ResolveMultiPartyAuthReviewRequest, ...gax.CallOption) (*servicespb.ResolveMultiPartyAuthReviewResponse, error)
 }
 
-// ShareablePreviewClient is a client for interacting with Google Ads API.
+// MultiPartyAuthReviewClient is a client for interacting with Google Ads API.
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 //
-// Service to generate Shareable Previews.
-//
-// Only Performance Max asset groups and certain YouTube video/audio ad formats
-// are supported. Other ad types, such as Responsive Search Ads or Responsive
-// Display Ads, are not supported and return an UNSUPPORTED_AD_TYPE error.
-//
-// The generated preview URLs cannot be embedded in an iframe because the
-// response headers include X-Frame-Options: deny.
-type ShareablePreviewClient struct {
+// Service to manage Multi-Party Authorization requests.
+type MultiPartyAuthReviewClient struct {
 	// The internal transport-dependent client.
-	internalClient internalShareablePreviewClient
+	internalClient internalMultiPartyAuthReviewClient
 
 	// The call options for this service.
-	CallOptions *ShareablePreviewCallOptions
+	CallOptions *MultiPartyAuthReviewCallOptions
 }
 
 // Wrapper methods routed to the internal client.
 
 // Close closes the connection to the API service. The user should invoke this when
 // the client is no longer required.
-func (c *ShareablePreviewClient) Close() error {
+func (c *MultiPartyAuthReviewClient) Close() error {
 	return c.internalClient.Close()
 }
 
 // setGoogleClientInfo sets the name and version of the application in
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
-func (c *ShareablePreviewClient) setGoogleClientInfo(keyval ...string) {
+func (c *MultiPartyAuthReviewClient) setGoogleClientInfo(keyval ...string) {
 	c.internalClient.setGoogleClientInfo(keyval...)
 }
 
@@ -119,27 +112,41 @@ func (c *ShareablePreviewClient) setGoogleClientInfo(keyval ...string) {
 //
 // Deprecated: Connections are now pooled so this method does not always
 // return the same resource.
-func (c *ShareablePreviewClient) Connection() *grpc.ClientConn {
+func (c *MultiPartyAuthReviewClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
 }
 
-// GenerateShareablePreviews returns the requested Shareable Preview.
-func (c *ShareablePreviewClient) GenerateShareablePreviews(ctx context.Context, req *servicespb.GenerateShareablePreviewsRequest, opts ...gax.CallOption) (*servicespb.GenerateShareablePreviewsResponse, error) {
-	return c.internalClient.GenerateShareablePreviews(ctx, req, opts...)
+// ResolveMultiPartyAuthReview resolves the status of a Multi-Party Authorization review.
+//
+// List of thrown errors:
+// AccessInvitationError (at )
+// AuthenticationError (at )
+// AuthorizationError (at )
+// CustomerUserAccessError (at )
+// FieldError (at )
+// HeaderError (at )
+// InternalError (at )
+// MultiPartyAuthReviewError (at )
+// MutateError (at )
+// QuotaError (at )
+// RangeError (at )
+// RequestError (at )
+func (c *MultiPartyAuthReviewClient) ResolveMultiPartyAuthReview(ctx context.Context, req *servicespb.ResolveMultiPartyAuthReviewRequest, opts ...gax.CallOption) (*servicespb.ResolveMultiPartyAuthReviewResponse, error) {
+	return c.internalClient.ResolveMultiPartyAuthReview(ctx, req, opts...)
 }
 
-// shareablePreviewGRPCClient is a client for interacting with Google Ads API over gRPC transport.
+// multiPartyAuthReviewGRPCClient is a client for interacting with Google Ads API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
-type shareablePreviewGRPCClient struct {
+type multiPartyAuthReviewGRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
 
-	// Points back to the CallOptions field of the containing ShareablePreviewClient
-	CallOptions **ShareablePreviewCallOptions
+	// Points back to the CallOptions field of the containing MultiPartyAuthReviewClient
+	CallOptions **MultiPartyAuthReviewCallOptions
 
 	// The gRPC API client.
-	shareablePreviewClient servicespb.ShareablePreviewServiceClient
+	multiPartyAuthReviewClient servicespb.MultiPartyAuthReviewServiceClient
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogHeaders []string
@@ -147,21 +154,14 @@ type shareablePreviewGRPCClient struct {
 	logger *slog.Logger
 }
 
-// NewShareablePreviewClient creates a new shareable preview service client based on gRPC.
+// NewMultiPartyAuthReviewClient creates a new multi party auth review service client based on gRPC.
 // The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
-// Service to generate Shareable Previews.
-//
-// Only Performance Max asset groups and certain YouTube video/audio ad formats
-// are supported. Other ad types, such as Responsive Search Ads or Responsive
-// Display Ads, are not supported and return an UNSUPPORTED_AD_TYPE error.
-//
-// The generated preview URLs cannot be embedded in an iframe because the
-// response headers include X-Frame-Options: deny.
-func NewShareablePreviewClient(ctx context.Context, opts ...option.ClientOption) (*ShareablePreviewClient, error) {
-	clientOpts := defaultShareablePreviewGRPCClientOptions()
-	if newShareablePreviewClientHook != nil {
-		hookOpts, err := newShareablePreviewClientHook(ctx, clientHookParams{})
+// Service to manage Multi-Party Authorization requests.
+func NewMultiPartyAuthReviewClient(ctx context.Context, opts ...option.ClientOption) (*MultiPartyAuthReviewClient, error) {
+	clientOpts := defaultMultiPartyAuthReviewGRPCClientOptions()
+	if newMultiPartyAuthReviewClientHook != nil {
+		hookOpts, err := newMultiPartyAuthReviewClientHook(ctx, clientHookParams{})
 		if err != nil {
 			return nil, err
 		}
@@ -172,13 +172,13 @@ func NewShareablePreviewClient(ctx context.Context, opts ...option.ClientOption)
 	if err != nil {
 		return nil, err
 	}
-	client := ShareablePreviewClient{CallOptions: defaultShareablePreviewCallOptions()}
+	client := MultiPartyAuthReviewClient{CallOptions: defaultMultiPartyAuthReviewCallOptions()}
 
-	c := &shareablePreviewGRPCClient{
-		connPool:               connPool,
-		shareablePreviewClient: servicespb.NewShareablePreviewServiceClient(connPool),
-		CallOptions:            &client.CallOptions,
-		logger:                 internaloption.GetLogger(opts),
+	c := &multiPartyAuthReviewGRPCClient{
+		connPool:                   connPool,
+		multiPartyAuthReviewClient: servicespb.NewMultiPartyAuthReviewServiceClient(connPool),
+		CallOptions:                &client.CallOptions,
+		logger:                     internaloption.GetLogger(opts),
 	}
 	c.setGoogleClientInfo()
 
@@ -191,14 +191,14 @@ func NewShareablePreviewClient(ctx context.Context, opts ...option.ClientOption)
 //
 // Deprecated: Connections are now pooled so this method does not always
 // return the same resource.
-func (c *shareablePreviewGRPCClient) Connection() *grpc.ClientConn {
+func (c *multiPartyAuthReviewGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
 }
 
 // setGoogleClientInfo sets the name and version of the application in
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
-func (c *shareablePreviewGRPCClient) setGoogleClientInfo(keyval ...string) {
+func (c *multiPartyAuthReviewGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", gax.GoVersion}, keyval...)
 	kv = append(kv, "gapic", getVersionClient(), "gax", gax.Version, "grpc", grpc.Version, "pb", protoVersion)
 	c.xGoogHeaders = []string{
@@ -208,20 +208,20 @@ func (c *shareablePreviewGRPCClient) setGoogleClientInfo(keyval ...string) {
 
 // Close closes the connection to the API service. The user should invoke this when
 // the client is no longer required.
-func (c *shareablePreviewGRPCClient) Close() error {
+func (c *multiPartyAuthReviewGRPCClient) Close() error {
 	return c.connPool.Close()
 }
 
-func (c *shareablePreviewGRPCClient) GenerateShareablePreviews(ctx context.Context, req *servicespb.GenerateShareablePreviewsRequest, opts ...gax.CallOption) (*servicespb.GenerateShareablePreviewsResponse, error) {
+func (c *multiPartyAuthReviewGRPCClient) ResolveMultiPartyAuthReview(ctx context.Context, req *servicespb.ResolveMultiPartyAuthReviewRequest, opts ...gax.CallOption) (*servicespb.ResolveMultiPartyAuthReviewResponse, error) {
 	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "customer_id", url.QueryEscape(req.GetCustomerId()))}
 
 	hds = append(c.xGoogHeaders, hds...)
 	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
-	opts = append((*c.CallOptions).GenerateShareablePreviews[0:len((*c.CallOptions).GenerateShareablePreviews):len((*c.CallOptions).GenerateShareablePreviews)], opts...)
-	var resp *servicespb.GenerateShareablePreviewsResponse
+	opts = append((*c.CallOptions).ResolveMultiPartyAuthReview[0:len((*c.CallOptions).ResolveMultiPartyAuthReview):len((*c.CallOptions).ResolveMultiPartyAuthReview)], opts...)
+	var resp *servicespb.ResolveMultiPartyAuthReviewResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		resp, err = executeRPC(ctx, c.shareablePreviewClient.GenerateShareablePreviews, req, settings.GRPC, c.logger, "GenerateShareablePreviews")
+		resp, err = executeRPC(ctx, c.multiPartyAuthReviewClient.ResolveMultiPartyAuthReview, req, settings.GRPC, c.logger, "ResolveMultiPartyAuthReview")
 		return err
 	}, opts...)
 	if err != nil {

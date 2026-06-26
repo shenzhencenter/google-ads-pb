@@ -37,7 +37,14 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-// A group placement view.
+// A view showing performance data for where your ads actually served on the
+// Display Network and YouTube, including both targeted (managed) and automatic
+// placements.
+//
+// Data for low-traffic placements may be aggregated. The scope
+// of placements shown is influenced by the ad group's `TargetingSetting` for
+// the `PLACEMENT` dimension. This view corresponds to the "Where ads showed"
+// section in the Google Ads UI.
 type GroupPlacementView struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Output only. The resource name of the group placement view.

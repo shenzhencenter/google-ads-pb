@@ -84,6 +84,13 @@ func (x *GenerateShareablePreviewsOperation) GetShareablePreviews() []*Shareable
 }
 
 // A shareable preview with its identifier.
+//
+// Only Performance Max asset groups and certain YouTube video/audio ad formats
+// are supported. Other ad types, such as Responsive Search Ads or Responsive
+// Display Ads, are not supported and return an `UNSUPPORTED_AD_TYPE` error.
+//
+// The generated preview URLs cannot be embedded in an iframe because the
+// response headers include `X-Frame-Options: deny`.
 type ShareablePreview struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Required. The type of preview to generate.

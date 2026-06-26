@@ -41,6 +41,13 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 //
 // Service to generate Shareable Previews.
+//
+// Only Performance Max asset groups and certain YouTube video/audio ad formats
+// are supported. Other ad types, such as Responsive Search Ads or Responsive
+// Display Ads, are not supported and return an `UNSUPPORTED_AD_TYPE` error.
+//
+// The generated preview URLs cannot be embedded in an iframe because the
+// response headers include `X-Frame-Options: deny`.
 type ShareablePreviewServiceClient interface {
 	// Returns the requested Shareable Preview.
 	GenerateShareablePreviews(ctx context.Context, in *GenerateShareablePreviewsRequest, opts ...grpc.CallOption) (*GenerateShareablePreviewsResponse, error)
@@ -69,6 +76,13 @@ func (c *shareablePreviewServiceClient) GenerateShareablePreviews(ctx context.Co
 // for forward compatibility.
 //
 // Service to generate Shareable Previews.
+//
+// Only Performance Max asset groups and certain YouTube video/audio ad formats
+// are supported. Other ad types, such as Responsive Search Ads or Responsive
+// Display Ads, are not supported and return an `UNSUPPORTED_AD_TYPE` error.
+//
+// The generated preview URLs cannot be embedded in an iframe because the
+// response headers include `X-Frame-Options: deny`.
 type ShareablePreviewServiceServer interface {
 	// Returns the requested Shareable Preview.
 	GenerateShareablePreviews(context.Context, *GenerateShareablePreviewsRequest) (*GenerateShareablePreviewsResponse, error)

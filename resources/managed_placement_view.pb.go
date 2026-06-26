@@ -36,7 +36,9 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-// A managed placement view.
+// A view providing performance data for placements explicitly targeted in your
+// ad groups. This view
+// corresponds to the "Placements" section in the Google Ads UI.
 type ManagedPlacementView struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Output only. The resource name of the Managed Placement view.
