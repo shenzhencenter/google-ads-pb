@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.36.5
 // 	protoc        v4.24.4
-// source: google/ads/googleads/v24/actions/generate_shareable_previews.proto
+// source: google/ads/googleads/v25/actions/generate_shareable_previews.proto
 
 package actions
 
@@ -48,7 +48,7 @@ type GenerateShareablePreviewsOperation struct {
 
 func (x *GenerateShareablePreviewsOperation) Reset() {
 	*x = GenerateShareablePreviewsOperation{}
-	mi := &file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v25_actions_generate_shareable_previews_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -60,7 +60,7 @@ func (x *GenerateShareablePreviewsOperation) String() string {
 func (*GenerateShareablePreviewsOperation) ProtoMessage() {}
 
 func (x *GenerateShareablePreviewsOperation) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v25_actions_generate_shareable_previews_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -73,7 +73,7 @@ func (x *GenerateShareablePreviewsOperation) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use GenerateShareablePreviewsOperation.ProtoReflect.Descriptor instead.
 func (*GenerateShareablePreviewsOperation) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v25_actions_generate_shareable_previews_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *GenerateShareablePreviewsOperation) GetShareablePreviews() []*ShareablePreview {
@@ -94,7 +94,7 @@ func (x *GenerateShareablePreviewsOperation) GetShareablePreviews() []*Shareable
 type ShareablePreview struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Required. The type of preview to generate.
-	PreviewType enums.PreviewTypeEnum_PreviewType `protobuf:"varint,1,opt,name=preview_type,json=previewType,proto3,enum=google.ads.googleads.v24.enums.PreviewTypeEnum_PreviewType" json:"preview_type,omitempty"`
+	PreviewType enums.PreviewTypeEnum_PreviewType `protobuf:"varint,1,opt,name=preview_type,json=previewType,proto3,enum=google.ads.googleads.v25.enums.PreviewTypeEnum_PreviewType" json:"preview_type,omitempty"`
 	// The identifier of the shareable preview.
 	//
 	// Types that are valid to be assigned to Identifier:
@@ -108,7 +108,7 @@ type ShareablePreview struct {
 
 func (x *ShareablePreview) Reset() {
 	*x = ShareablePreview{}
-	mi := &file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v25_actions_generate_shareable_previews_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -120,7 +120,7 @@ func (x *ShareablePreview) String() string {
 func (*ShareablePreview) ProtoMessage() {}
 
 func (x *ShareablePreview) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v25_actions_generate_shareable_previews_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -133,7 +133,7 @@ func (x *ShareablePreview) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ShareablePreview.ProtoReflect.Descriptor instead.
 func (*ShareablePreview) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_rawDescGZIP(), []int{1}
+	return file_google_ads_googleads_v25_actions_generate_shareable_previews_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ShareablePreview) GetPreviewType() enums.PreviewTypeEnum_PreviewType {
@@ -200,7 +200,7 @@ type GenerateShareablePreviewsResult struct {
 
 func (x *GenerateShareablePreviewsResult) Reset() {
 	*x = GenerateShareablePreviewsResult{}
-	mi := &file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_msgTypes[2]
+	mi := &file_google_ads_googleads_v25_actions_generate_shareable_previews_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -212,7 +212,7 @@ func (x *GenerateShareablePreviewsResult) String() string {
 func (*GenerateShareablePreviewsResult) ProtoMessage() {}
 
 func (x *GenerateShareablePreviewsResult) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_msgTypes[2]
+	mi := &file_google_ads_googleads_v25_actions_generate_shareable_previews_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -225,7 +225,7 @@ func (x *GenerateShareablePreviewsResult) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GenerateShareablePreviewsResult.ProtoReflect.Descriptor instead.
 func (*GenerateShareablePreviewsResult) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_rawDescGZIP(), []int{2}
+	return file_google_ads_googleads_v25_actions_generate_shareable_previews_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *GenerateShareablePreviewsResult) GetPreviews() []*ShareablePreviewResult {
@@ -260,7 +260,7 @@ type ShareablePreviewResult struct {
 
 func (x *ShareablePreviewResult) Reset() {
 	*x = ShareablePreviewResult{}
-	mi := &file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_msgTypes[3]
+	mi := &file_google_ads_googleads_v25_actions_generate_shareable_previews_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -272,7 +272,7 @@ func (x *ShareablePreviewResult) String() string {
 func (*ShareablePreviewResult) ProtoMessage() {}
 
 func (x *ShareablePreviewResult) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_msgTypes[3]
+	mi := &file_google_ads_googleads_v25_actions_generate_shareable_previews_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -285,7 +285,7 @@ func (x *ShareablePreviewResult) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ShareablePreviewResult.ProtoReflect.Descriptor instead.
 func (*ShareablePreviewResult) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_rawDescGZIP(), []int{3}
+	return file_google_ads_googleads_v25_actions_generate_shareable_previews_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *ShareablePreviewResult) GetExpirationDateTime() string {
@@ -395,7 +395,7 @@ type UiPreviewResult struct {
 
 func (x *UiPreviewResult) Reset() {
 	*x = UiPreviewResult{}
-	mi := &file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_msgTypes[4]
+	mi := &file_google_ads_googleads_v25_actions_generate_shareable_previews_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -407,7 +407,7 @@ func (x *UiPreviewResult) String() string {
 func (*UiPreviewResult) ProtoMessage() {}
 
 func (x *UiPreviewResult) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_msgTypes[4]
+	mi := &file_google_ads_googleads_v25_actions_generate_shareable_previews_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -420,7 +420,7 @@ func (x *UiPreviewResult) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UiPreviewResult.ProtoReflect.Descriptor instead.
 func (*UiPreviewResult) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_rawDescGZIP(), []int{4}
+	return file_google_ads_googleads_v25_actions_generate_shareable_previews_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *UiPreviewResult) GetShareablePreviewUrl() string {
@@ -443,7 +443,7 @@ type YouTubeLivePreviewResult struct {
 
 func (x *YouTubeLivePreviewResult) Reset() {
 	*x = YouTubeLivePreviewResult{}
-	mi := &file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_msgTypes[5]
+	mi := &file_google_ads_googleads_v25_actions_generate_shareable_previews_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -455,7 +455,7 @@ func (x *YouTubeLivePreviewResult) String() string {
 func (*YouTubeLivePreviewResult) ProtoMessage() {}
 
 func (x *YouTubeLivePreviewResult) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_msgTypes[5]
+	mi := &file_google_ads_googleads_v25_actions_generate_shareable_previews_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -468,7 +468,7 @@ func (x *YouTubeLivePreviewResult) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use YouTubeLivePreviewResult.ProtoReflect.Descriptor instead.
 func (*YouTubeLivePreviewResult) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_rawDescGZIP(), []int{5}
+	return file_google_ads_googleads_v25_actions_generate_shareable_previews_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *YouTubeLivePreviewResult) GetYoutubePreviewUrl() string {
@@ -485,17 +485,17 @@ func (x *YouTubeLivePreviewResult) GetYoutubeTvPreviewUrl() string {
 	return ""
 }
 
-var File_google_ads_googleads_v24_actions_generate_shareable_previews_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v25_actions_generate_shareable_previews_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_rawDesc = string([]byte{
+var file_google_ads_googleads_v25_actions_generate_shareable_previews_proto_rawDesc = string([]byte{
 	0x0a, 0x42, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x34, 0x2f, 0x61, 0x63, 0x74, 0x69, 0x6f,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x35, 0x2f, 0x61, 0x63, 0x74, 0x69, 0x6f,
 	0x6e, 0x73, 0x2f, 0x67, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x74, 0x65, 0x5f, 0x73, 0x68, 0x61, 0x72,
 	0x65, 0x61, 0x62, 0x6c, 0x65, 0x5f, 0x70, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77, 0x73, 0x2e, 0x70,
 	0x72, 0x6f, 0x74, 0x6f, 0x12, 0x20, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73,
-	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e, 0x61,
+	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x35, 0x2e, 0x61,
 	0x63, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x1a, 0x31, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61,
-	0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x34,
+	0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x35,
 	0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x70, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77, 0x5f, 0x74,
 	0x79, 0x70, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x1f, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x66, 0x69, 0x65, 0x6c, 0x64, 0x5f, 0x62, 0x65, 0x68, 0x61,
@@ -505,14 +505,14 @@ var file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_rawD
 	0x6e, 0x12, 0x66, 0x0a, 0x12, 0x73, 0x68, 0x61, 0x72, 0x65, 0x61, 0x62, 0x6c, 0x65, 0x5f, 0x70,
 	0x72, 0x65, 0x76, 0x69, 0x65, 0x77, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x32, 0x2e,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x73,
+	0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x35, 0x2e, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x73,
 	0x2e, 0x53, 0x68, 0x61, 0x72, 0x65, 0x61, 0x62, 0x6c, 0x65, 0x50, 0x72, 0x65, 0x76, 0x69, 0x65,
 	0x77, 0x42, 0x03, 0xe0, 0x41, 0x02, 0x52, 0x11, 0x73, 0x68, 0x61, 0x72, 0x65, 0x61, 0x62, 0x6c,
 	0x65, 0x50, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77, 0x73, 0x22, 0xca, 0x01, 0x0a, 0x10, 0x53, 0x68,
 	0x61, 0x72, 0x65, 0x61, 0x62, 0x6c, 0x65, 0x50, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77, 0x12, 0x63,
 	0x0a, 0x0c, 0x70, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x18, 0x01,
 	0x20, 0x01, 0x28, 0x0e, 0x32, 0x3b, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64,
-	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e,
+	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x35, 0x2e,
 	0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x50, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77, 0x54, 0x79, 0x70,
 	0x65, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x50, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77, 0x54, 0x79, 0x70,
 	0x65, 0x42, 0x03, 0xe0, 0x41, 0x02, 0x52, 0x0b, 0x70, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77, 0x54,
@@ -526,7 +526,7 @@ var file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_rawD
 	0x65, 0x77, 0x73, 0x52, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x12, 0x54, 0x0a, 0x08, 0x70, 0x72, 0x65,
 	0x76, 0x69, 0x65, 0x77, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x38, 0x2e, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x64, 0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2e, 0x53,
+	0x64, 0x73, 0x2e, 0x76, 0x32, 0x35, 0x2e, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2e, 0x53,
 	0x68, 0x61, 0x72, 0x65, 0x61, 0x62, 0x6c, 0x65, 0x50, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77, 0x52,
 	0x65, 0x73, 0x75, 0x6c, 0x74, 0x52, 0x08, 0x70, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77, 0x73, 0x22,
 	0x85, 0x03, 0x0a, 0x16, 0x53, 0x68, 0x61, 0x72, 0x65, 0x61, 0x62, 0x6c, 0x65, 0x50, 0x72, 0x65,
@@ -537,13 +537,13 @@ var file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_rawD
 	0x75, 0x69, 0x5f, 0x70, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77, 0x5f, 0x72, 0x65, 0x73, 0x75, 0x6c,
 	0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x31, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76,
-	0x32, 0x34, 0x2e, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2e, 0x55, 0x69, 0x50, 0x72, 0x65,
+	0x32, 0x35, 0x2e, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2e, 0x55, 0x69, 0x50, 0x72, 0x65,
 	0x76, 0x69, 0x65, 0x77, 0x52, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x48, 0x00, 0x52, 0x0f, 0x75, 0x69,
 	0x50, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77, 0x52, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x12, 0x7b, 0x0a,
 	0x1b, 0x79, 0x6f, 0x75, 0x74, 0x75, 0x62, 0x65, 0x5f, 0x6c, 0x69, 0x76, 0x65, 0x5f, 0x70, 0x72,
 	0x65, 0x76, 0x69, 0x65, 0x77, 0x5f, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x18, 0x02, 0x20, 0x01,
 	0x28, 0x0b, 0x32, 0x3a, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e, 0x61, 0x63,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x35, 0x2e, 0x61, 0x63,
 	0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2e, 0x59, 0x6f, 0x75, 0x54, 0x75, 0x62, 0x65, 0x4c, 0x69, 0x76,
 	0x65, 0x50, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77, 0x52, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x48, 0x00,
 	0x52, 0x18, 0x79, 0x6f, 0x75, 0x74, 0x75, 0x62, 0x65, 0x4c, 0x69, 0x76, 0x65, 0x50, 0x72, 0x65,
@@ -567,52 +567,52 @@ var file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_rawD
 	0x5f, 0x75, 0x72, 0x6c, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x13, 0x79, 0x6f, 0x75, 0x74,
 	0x75, 0x62, 0x65, 0x54, 0x76, 0x50, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77, 0x55, 0x72, 0x6c, 0x42,
 	0x84, 0x02, 0x0a, 0x24, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61,
-	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34,
+	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x35,
 	0x2e, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x42, 0x1e, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x61,
 	0x74, 0x65, 0x53, 0x68, 0x61, 0x72, 0x65, 0x61, 0x62, 0x6c, 0x65, 0x50, 0x72, 0x65, 0x76, 0x69,
 	0x65, 0x77, 0x73, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x47, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2e, 0x67, 0x6f, 0x6c, 0x61, 0x6e, 0x67, 0x2e, 0x6f, 0x72, 0x67, 0x2f, 0x67, 0x65,
 	0x6e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x70, 0x69,
 	0x73, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f,
-	0x76, 0x32, 0x34, 0x2f, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x3b, 0x61, 0x63, 0x74, 0x69,
+	0x76, 0x32, 0x35, 0x2f, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x3b, 0x61, 0x63, 0x74, 0x69,
 	0x6f, 0x6e, 0x73, 0xa2, 0x02, 0x03, 0x47, 0x41, 0x41, 0xaa, 0x02, 0x20, 0x47, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2e, 0x41, 0x64, 0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73,
-	0x2e, 0x56, 0x32, 0x34, 0x2e, 0x41, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0xca, 0x02, 0x20, 0x47,
+	0x2e, 0x56, 0x32, 0x35, 0x2e, 0x41, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0xca, 0x02, 0x20, 0x47,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x5c, 0x41, 0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x41, 0x64, 0x73, 0x5c, 0x56, 0x32, 0x34, 0x5c, 0x41, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0xea,
+	0x41, 0x64, 0x73, 0x5c, 0x56, 0x32, 0x35, 0x5c, 0x41, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0xea,
 	0x02, 0x24, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x3a, 0x3a, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x47,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x32, 0x34, 0x3a, 0x3a, 0x41,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x32, 0x35, 0x3a, 0x3a, 0x41,
 	0x63, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 })
 
 var (
-	file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_rawDescData []byte
+	file_google_ads_googleads_v25_actions_generate_shareable_previews_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v25_actions_generate_shareable_previews_proto_rawDescData []byte
 )
 
-func file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_rawDesc), len(file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_rawDesc)))
+func file_google_ads_googleads_v25_actions_generate_shareable_previews_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v25_actions_generate_shareable_previews_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v25_actions_generate_shareable_previews_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v25_actions_generate_shareable_previews_proto_rawDesc), len(file_google_ads_googleads_v25_actions_generate_shareable_previews_proto_rawDesc)))
 	})
-	return file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_rawDescData
+	return file_google_ads_googleads_v25_actions_generate_shareable_previews_proto_rawDescData
 }
 
-var file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
-var file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_goTypes = []any{
-	(*GenerateShareablePreviewsOperation)(nil), // 0: google.ads.googleads.v24.actions.GenerateShareablePreviewsOperation
-	(*ShareablePreview)(nil),                   // 1: google.ads.googleads.v24.actions.ShareablePreview
-	(*GenerateShareablePreviewsResult)(nil),    // 2: google.ads.googleads.v24.actions.GenerateShareablePreviewsResult
-	(*ShareablePreviewResult)(nil),             // 3: google.ads.googleads.v24.actions.ShareablePreviewResult
-	(*UiPreviewResult)(nil),                    // 4: google.ads.googleads.v24.actions.UiPreviewResult
-	(*YouTubeLivePreviewResult)(nil),           // 5: google.ads.googleads.v24.actions.YouTubeLivePreviewResult
-	(enums.PreviewTypeEnum_PreviewType)(0),     // 6: google.ads.googleads.v24.enums.PreviewTypeEnum.PreviewType
+var file_google_ads_googleads_v25_actions_generate_shareable_previews_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
+var file_google_ads_googleads_v25_actions_generate_shareable_previews_proto_goTypes = []any{
+	(*GenerateShareablePreviewsOperation)(nil), // 0: google.ads.googleads.v25.actions.GenerateShareablePreviewsOperation
+	(*ShareablePreview)(nil),                   // 1: google.ads.googleads.v25.actions.ShareablePreview
+	(*GenerateShareablePreviewsResult)(nil),    // 2: google.ads.googleads.v25.actions.GenerateShareablePreviewsResult
+	(*ShareablePreviewResult)(nil),             // 3: google.ads.googleads.v25.actions.ShareablePreviewResult
+	(*UiPreviewResult)(nil),                    // 4: google.ads.googleads.v25.actions.UiPreviewResult
+	(*YouTubeLivePreviewResult)(nil),           // 5: google.ads.googleads.v25.actions.YouTubeLivePreviewResult
+	(enums.PreviewTypeEnum_PreviewType)(0),     // 6: google.ads.googleads.v25.enums.PreviewTypeEnum.PreviewType
 }
-var file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_depIdxs = []int32{
-	1, // 0: google.ads.googleads.v24.actions.GenerateShareablePreviewsOperation.shareable_previews:type_name -> google.ads.googleads.v24.actions.ShareablePreview
-	6, // 1: google.ads.googleads.v24.actions.ShareablePreview.preview_type:type_name -> google.ads.googleads.v24.enums.PreviewTypeEnum.PreviewType
-	3, // 2: google.ads.googleads.v24.actions.GenerateShareablePreviewsResult.previews:type_name -> google.ads.googleads.v24.actions.ShareablePreviewResult
-	4, // 3: google.ads.googleads.v24.actions.ShareablePreviewResult.ui_preview_result:type_name -> google.ads.googleads.v24.actions.UiPreviewResult
-	5, // 4: google.ads.googleads.v24.actions.ShareablePreviewResult.youtube_live_preview_result:type_name -> google.ads.googleads.v24.actions.YouTubeLivePreviewResult
+var file_google_ads_googleads_v25_actions_generate_shareable_previews_proto_depIdxs = []int32{
+	1, // 0: google.ads.googleads.v25.actions.GenerateShareablePreviewsOperation.shareable_previews:type_name -> google.ads.googleads.v25.actions.ShareablePreview
+	6, // 1: google.ads.googleads.v25.actions.ShareablePreview.preview_type:type_name -> google.ads.googleads.v25.enums.PreviewTypeEnum.PreviewType
+	3, // 2: google.ads.googleads.v25.actions.GenerateShareablePreviewsResult.previews:type_name -> google.ads.googleads.v25.actions.ShareablePreviewResult
+	4, // 3: google.ads.googleads.v25.actions.ShareablePreviewResult.ui_preview_result:type_name -> google.ads.googleads.v25.actions.UiPreviewResult
+	5, // 4: google.ads.googleads.v25.actions.ShareablePreviewResult.youtube_live_preview_result:type_name -> google.ads.googleads.v25.actions.YouTubeLivePreviewResult
 	5, // [5:5] is the sub-list for method output_type
 	5, // [5:5] is the sub-list for method input_type
 	5, // [5:5] is the sub-list for extension type_name
@@ -620,16 +620,16 @@ var file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_depI
 	0, // [0:5] is the sub-list for field type_name
 }
 
-func init() { file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_init() }
-func file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_init() {
-	if File_google_ads_googleads_v24_actions_generate_shareable_previews_proto != nil {
+func init() { file_google_ads_googleads_v25_actions_generate_shareable_previews_proto_init() }
+func file_google_ads_googleads_v25_actions_generate_shareable_previews_proto_init() {
+	if File_google_ads_googleads_v25_actions_generate_shareable_previews_proto != nil {
 		return
 	}
-	file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_msgTypes[1].OneofWrappers = []any{
+	file_google_ads_googleads_v25_actions_generate_shareable_previews_proto_msgTypes[1].OneofWrappers = []any{
 		(*ShareablePreview_AdGroupAd)(nil),
 		(*ShareablePreview_AssetGroup)(nil),
 	}
-	file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_msgTypes[3].OneofWrappers = []any{
+	file_google_ads_googleads_v25_actions_generate_shareable_previews_proto_msgTypes[3].OneofWrappers = []any{
 		(*ShareablePreviewResult_UiPreviewResult)(nil),
 		(*ShareablePreviewResult_YoutubeLivePreviewResult)(nil),
 		(*ShareablePreviewResult_AdGroupAd)(nil),
@@ -639,17 +639,17 @@ func file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_ini
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_rawDesc), len(file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v25_actions_generate_shareable_previews_proto_rawDesc), len(file_google_ads_googleads_v25_actions_generate_shareable_previews_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_depIdxs,
-		MessageInfos:      file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v25_actions_generate_shareable_previews_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v25_actions_generate_shareable_previews_proto_depIdxs,
+		MessageInfos:      file_google_ads_googleads_v25_actions_generate_shareable_previews_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v24_actions_generate_shareable_previews_proto = out.File
-	file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_goTypes = nil
-	file_google_ads_googleads_v24_actions_generate_shareable_previews_proto_depIdxs = nil
+	File_google_ads_googleads_v25_actions_generate_shareable_previews_proto = out.File
+	file_google_ads_googleads_v25_actions_generate_shareable_previews_proto_goTypes = nil
+	file_google_ads_googleads_v25_actions_generate_shareable_previews_proto_depIdxs = nil
 }

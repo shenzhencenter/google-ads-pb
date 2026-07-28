@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v24/services/youtube_video_upload_service.proto
+// source: google/ads/googleads/v25/services/youtube_video_upload_service.proto
 
 package services
 
@@ -33,9 +33,9 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	YouTubeVideoUploadService_CreateYouTubeVideoUpload_FullMethodName = "/google.ads.googleads.v24.services.YouTubeVideoUploadService/CreateYouTubeVideoUpload"
-	YouTubeVideoUploadService_UpdateYouTubeVideoUpload_FullMethodName = "/google.ads.googleads.v24.services.YouTubeVideoUploadService/UpdateYouTubeVideoUpload"
-	YouTubeVideoUploadService_RemoveYouTubeVideoUpload_FullMethodName = "/google.ads.googleads.v24.services.YouTubeVideoUploadService/RemoveYouTubeVideoUpload"
+	YouTubeVideoUploadService_CreateYouTubeVideoUpload_FullMethodName = "/google.ads.googleads.v25.services.YouTubeVideoUploadService/CreateYouTubeVideoUpload"
+	YouTubeVideoUploadService_UpdateYouTubeVideoUpload_FullMethodName = "/google.ads.googleads.v25.services.YouTubeVideoUploadService/UpdateYouTubeVideoUpload"
+	YouTubeVideoUploadService_RemoveYouTubeVideoUpload_FullMethodName = "/google.ads.googleads.v25.services.YouTubeVideoUploadService/RemoveYouTubeVideoUpload"
 )
 
 // YouTubeVideoUploadServiceClient is the client API for YouTubeVideoUploadService service.
@@ -205,7 +205,7 @@ func _YouTubeVideoUploadService_RemoveYouTubeVideoUpload_Handler(srv interface{}
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var YouTubeVideoUploadService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v24.services.YouTubeVideoUploadService",
+	ServiceName: "google.ads.googleads.v25.services.YouTubeVideoUploadService",
 	HandlerType: (*YouTubeVideoUploadServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -222,5 +222,5 @@ var YouTubeVideoUploadService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v24/services/youtube_video_upload_service.proto",
+	Metadata: "google/ads/googleads/v25/services/youtube_video_upload_service.proto",
 }

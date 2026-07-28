@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v24/services/reservation_service.proto
+// source: google/ads/googleads/v25/services/reservation_service.proto
 
 package services
 
@@ -33,8 +33,8 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	ReservationService_QuoteCampaigns_FullMethodName = "/google.ads.googleads.v24.services.ReservationService/QuoteCampaigns"
-	ReservationService_BookCampaigns_FullMethodName  = "/google.ads.googleads.v24.services.ReservationService/BookCampaigns"
+	ReservationService_QuoteCampaigns_FullMethodName = "/google.ads.googleads.v25.services.ReservationService/QuoteCampaigns"
+	ReservationService_BookCampaigns_FullMethodName  = "/google.ads.googleads.v25.services.ReservationService/BookCampaigns"
 )
 
 // ReservationServiceClient is the client API for ReservationService service.
@@ -170,7 +170,7 @@ func _ReservationService_BookCampaigns_Handler(srv interface{}, ctx context.Cont
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ReservationService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v24.services.ReservationService",
+	ServiceName: "google.ads.googleads.v25.services.ReservationService",
 	HandlerType: (*ReservationServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -183,5 +183,5 @@ var ReservationService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v24/services/reservation_service.proto",
+	Metadata: "google/ads/googleads/v25/services/reservation_service.proto",
 }

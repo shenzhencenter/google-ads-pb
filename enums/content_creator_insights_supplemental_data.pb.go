@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.36.5
 // 	protoc        v4.24.4
-// source: google/ads/googleads/v24/enums/content_creator_insights_supplemental_data.proto
+// source: google/ads/googleads/v25/enums/content_creator_insights_supplemental_data.proto
 
 package enums
 
@@ -44,20 +44,21 @@ const (
 	// The value is unknown in this version.
 	ContentCreatorInsightsSupplementalDataEnum_UNKNOWN ContentCreatorInsightsSupplementalDataEnum_ContentCreatorInsightsSupplementalData = 1
 	// Populate local creator data in
-	// [ContentCreatorInsightsService.GenerateTrendingInsights][google.ads.googleads.v24.services.ContentCreatorInsightsService.GenerateTrendingInsights]
+	// [ContentCreatorInsightsService.GenerateTrendingInsights][google.ads.googleads.v25.services.ContentCreatorInsightsService.GenerateTrendingInsights]
 	// and
-	// [ContentCreatorInsightsService.GenerateCreatorInsights][google.ads.googleads.v24.services.ContentCreatorInsightsService.GenerateCreatorInsights].
+	// [ContentCreatorInsightsService.GenerateCreatorInsights][google.ads.googleads.v25.services.ContentCreatorInsightsService.GenerateCreatorInsights].
 	// This is only available when requesting trending or creator insights for
 	// a content or creator topic. These topics are Knowledge Graph entities
 	// tagged with
-	// [CONTENT_TRENDING_INSIGHTS][google.ads.googleads.v24.enums.InsightsKnowledgeGraphEntityCapabilitiesEnum.InsightsKnowledgeGraphEntityCapabilities.CONTENT_TRENDING_INSIGHTS]
+	// [CONTENT_TRENDING_INSIGHTS][google.ads.googleads.v25.enums.InsightsKnowledgeGraphEntityCapabilitiesEnum.InsightsKnowledgeGraphEntityCapabilities.CONTENT_TRENDING_INSIGHTS]
 	// or
-	// [CREATOR_TOPIC_INSIGHTS][google.ads.googleads.v24.enums.InsightsKnowledgeGraphEntityCapabilitiesEnum.InsightsKnowledgeGraphEntityCapabilities.CREATOR_TOPIC_INSIGHTS].
+	// [CREATOR_TOPIC_INSIGHTS][google.ads.googleads.v25.enums.InsightsKnowledgeGraphEntityCapabilitiesEnum.InsightsKnowledgeGraphEntityCapabilities.CREATOR_TOPIC_INSIGHTS].
 	// Local creator discovery is not supported when
-	// [GenerateCreatorInsightsRequest.sub_country_locations][] or
-	// [GenerateTrendingInsightsRequest.sub_country_locations][] is set. Use
-	// [AudienceInsightsService.ListAudienceInsightsAttributes][] to get the
-	// list of supported Knowledge Graph entities.
+	// [GenerateCreatorInsightsRequest.sub_country_locations][google.ads.googleads.v25.services.GenerateCreatorInsightsRequest.sub_country_locations]
+	// or
+	// [GenerateTrendingInsightsRequest.sub_country_locations][google.ads.googleads.v25.services.GenerateTrendingInsightsRequest.sub_country_locations]
+	// is set. Use [AudienceInsightsService.ListAudienceInsightsAttributes][] to
+	// get the list of supported Knowledge Graph entities.
 	ContentCreatorInsightsSupplementalDataEnum_LOCAL_CREATOR_DATA ContentCreatorInsightsSupplementalDataEnum_ContentCreatorInsightsSupplementalData = 3
 )
 
@@ -86,11 +87,11 @@ func (x ContentCreatorInsightsSupplementalDataEnum_ContentCreatorInsightsSupplem
 }
 
 func (ContentCreatorInsightsSupplementalDataEnum_ContentCreatorInsightsSupplementalData) Descriptor() protoreflect.EnumDescriptor {
-	return file_google_ads_googleads_v24_enums_content_creator_insights_supplemental_data_proto_enumTypes[0].Descriptor()
+	return file_google_ads_googleads_v25_enums_content_creator_insights_supplemental_data_proto_enumTypes[0].Descriptor()
 }
 
 func (ContentCreatorInsightsSupplementalDataEnum_ContentCreatorInsightsSupplementalData) Type() protoreflect.EnumType {
-	return &file_google_ads_googleads_v24_enums_content_creator_insights_supplemental_data_proto_enumTypes[0]
+	return &file_google_ads_googleads_v25_enums_content_creator_insights_supplemental_data_proto_enumTypes[0]
 }
 
 func (x ContentCreatorInsightsSupplementalDataEnum_ContentCreatorInsightsSupplementalData) Number() protoreflect.EnumNumber {
@@ -99,7 +100,7 @@ func (x ContentCreatorInsightsSupplementalDataEnum_ContentCreatorInsightsSupplem
 
 // Deprecated: Use ContentCreatorInsightsSupplementalDataEnum_ContentCreatorInsightsSupplementalData.Descriptor instead.
 func (ContentCreatorInsightsSupplementalDataEnum_ContentCreatorInsightsSupplementalData) EnumDescriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v24_enums_content_creator_insights_supplemental_data_proto_rawDescGZIP(), []int{0, 0}
+	return file_google_ads_googleads_v25_enums_content_creator_insights_supplemental_data_proto_rawDescGZIP(), []int{0, 0}
 }
 
 // Container for enum describing supplemental data for the Content Creator
@@ -112,7 +113,7 @@ type ContentCreatorInsightsSupplementalDataEnum struct {
 
 func (x *ContentCreatorInsightsSupplementalDataEnum) Reset() {
 	*x = ContentCreatorInsightsSupplementalDataEnum{}
-	mi := &file_google_ads_googleads_v24_enums_content_creator_insights_supplemental_data_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v25_enums_content_creator_insights_supplemental_data_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -124,7 +125,7 @@ func (x *ContentCreatorInsightsSupplementalDataEnum) String() string {
 func (*ContentCreatorInsightsSupplementalDataEnum) ProtoMessage() {}
 
 func (x *ContentCreatorInsightsSupplementalDataEnum) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v24_enums_content_creator_insights_supplemental_data_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v25_enums_content_creator_insights_supplemental_data_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -137,19 +138,19 @@ func (x *ContentCreatorInsightsSupplementalDataEnum) ProtoReflect() protoreflect
 
 // Deprecated: Use ContentCreatorInsightsSupplementalDataEnum.ProtoReflect.Descriptor instead.
 func (*ContentCreatorInsightsSupplementalDataEnum) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v24_enums_content_creator_insights_supplemental_data_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v25_enums_content_creator_insights_supplemental_data_proto_rawDescGZIP(), []int{0}
 }
 
-var File_google_ads_googleads_v24_enums_content_creator_insights_supplemental_data_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v25_enums_content_creator_insights_supplemental_data_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v24_enums_content_creator_insights_supplemental_data_proto_rawDesc = string([]byte{
+var file_google_ads_googleads_v25_enums_content_creator_insights_supplemental_data_proto_rawDesc = string([]byte{
 	0x0a, 0x4f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x34, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x35, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73,
 	0x2f, 0x63, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x5f, 0x63, 0x72, 0x65, 0x61, 0x74, 0x6f, 0x72,
 	0x5f, 0x69, 0x6e, 0x73, 0x69, 0x67, 0x68, 0x74, 0x73, 0x5f, 0x73, 0x75, 0x70, 0x70, 0x6c, 0x65,
 	0x6d, 0x65, 0x6e, 0x74, 0x61, 0x6c, 0x5f, 0x64, 0x61, 0x74, 0x61, 0x2e, 0x70, 0x72, 0x6f, 0x74,
 	0x6f, 0x12, 0x1e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e, 0x65, 0x6e, 0x75, 0x6d,
+	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x35, 0x2e, 0x65, 0x6e, 0x75, 0x6d,
 	0x73, 0x22, 0x8c, 0x01, 0x0a, 0x2a, 0x43, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x43, 0x72, 0x65,
 	0x61, 0x74, 0x6f, 0x72, 0x49, 0x6e, 0x73, 0x69, 0x67, 0x68, 0x74, 0x73, 0x53, 0x75, 0x70, 0x70,
 	0x6c, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x61, 0x6c, 0x44, 0x61, 0x74, 0x61, 0x45, 0x6e, 0x75, 0x6d,
@@ -161,42 +162,42 @@ var file_google_ads_googleads_v24_enums_content_creator_insights_supplemental_da
 	0x4c, 0x5f, 0x43, 0x52, 0x45, 0x41, 0x54, 0x4f, 0x52, 0x5f, 0x44, 0x41, 0x54, 0x41, 0x10, 0x03,
 	0x42, 0x85, 0x02, 0x0a, 0x22, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
 	0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32,
-	0x34, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x42, 0x2b, 0x43, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74,
+	0x35, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x42, 0x2b, 0x43, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74,
 	0x43, 0x72, 0x65, 0x61, 0x74, 0x6f, 0x72, 0x49, 0x6e, 0x73, 0x69, 0x67, 0x68, 0x74, 0x73, 0x53,
 	0x75, 0x70, 0x70, 0x6c, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x61, 0x6c, 0x44, 0x61, 0x74, 0x61, 0x50,
 	0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x43, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x67,
 	0x6f, 0x6c, 0x61, 0x6e, 0x67, 0x2e, 0x6f, 0x72, 0x67, 0x2f, 0x67, 0x65, 0x6e, 0x70, 0x72, 0x6f,
 	0x74, 0x6f, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x70, 0x69, 0x73, 0x2f, 0x61, 0x64,
-	0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x34, 0x2f,
+	0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x35, 0x2f,
 	0x65, 0x6e, 0x75, 0x6d, 0x73, 0x3b, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0xa2, 0x02, 0x03, 0x47, 0x41,
 	0x41, 0xaa, 0x02, 0x1e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x41, 0x64, 0x73, 0x2e, 0x47,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e, 0x56, 0x32, 0x34, 0x2e, 0x45, 0x6e, 0x75,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e, 0x56, 0x32, 0x35, 0x2e, 0x45, 0x6e, 0x75,
 	0x6d, 0x73, 0xca, 0x02, 0x1e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x5c, 0x41, 0x64, 0x73, 0x5c,
-	0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x32, 0x34, 0x5c, 0x45, 0x6e,
+	0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x32, 0x35, 0x5c, 0x45, 0x6e,
 	0x75, 0x6d, 0x73, 0xea, 0x02, 0x22, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x3a, 0x3a, 0x41, 0x64,
 	0x73, 0x3a, 0x3a, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x32,
-	0x34, 0x3a, 0x3a, 0x45, 0x6e, 0x75, 0x6d, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x35, 0x3a, 0x3a, 0x45, 0x6e, 0x75, 0x6d, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 })
 
 var (
-	file_google_ads_googleads_v24_enums_content_creator_insights_supplemental_data_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v24_enums_content_creator_insights_supplemental_data_proto_rawDescData []byte
+	file_google_ads_googleads_v25_enums_content_creator_insights_supplemental_data_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v25_enums_content_creator_insights_supplemental_data_proto_rawDescData []byte
 )
 
-func file_google_ads_googleads_v24_enums_content_creator_insights_supplemental_data_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v24_enums_content_creator_insights_supplemental_data_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v24_enums_content_creator_insights_supplemental_data_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v24_enums_content_creator_insights_supplemental_data_proto_rawDesc), len(file_google_ads_googleads_v24_enums_content_creator_insights_supplemental_data_proto_rawDesc)))
+func file_google_ads_googleads_v25_enums_content_creator_insights_supplemental_data_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v25_enums_content_creator_insights_supplemental_data_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v25_enums_content_creator_insights_supplemental_data_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v25_enums_content_creator_insights_supplemental_data_proto_rawDesc), len(file_google_ads_googleads_v25_enums_content_creator_insights_supplemental_data_proto_rawDesc)))
 	})
-	return file_google_ads_googleads_v24_enums_content_creator_insights_supplemental_data_proto_rawDescData
+	return file_google_ads_googleads_v25_enums_content_creator_insights_supplemental_data_proto_rawDescData
 }
 
-var file_google_ads_googleads_v24_enums_content_creator_insights_supplemental_data_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_google_ads_googleads_v24_enums_content_creator_insights_supplemental_data_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
-var file_google_ads_googleads_v24_enums_content_creator_insights_supplemental_data_proto_goTypes = []any{
-	(ContentCreatorInsightsSupplementalDataEnum_ContentCreatorInsightsSupplementalData)(0), // 0: google.ads.googleads.v24.enums.ContentCreatorInsightsSupplementalDataEnum.ContentCreatorInsightsSupplementalData
-	(*ContentCreatorInsightsSupplementalDataEnum)(nil),                                     // 1: google.ads.googleads.v24.enums.ContentCreatorInsightsSupplementalDataEnum
+var file_google_ads_googleads_v25_enums_content_creator_insights_supplemental_data_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_google_ads_googleads_v25_enums_content_creator_insights_supplemental_data_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_google_ads_googleads_v25_enums_content_creator_insights_supplemental_data_proto_goTypes = []any{
+	(ContentCreatorInsightsSupplementalDataEnum_ContentCreatorInsightsSupplementalData)(0), // 0: google.ads.googleads.v25.enums.ContentCreatorInsightsSupplementalDataEnum.ContentCreatorInsightsSupplementalData
+	(*ContentCreatorInsightsSupplementalDataEnum)(nil),                                     // 1: google.ads.googleads.v25.enums.ContentCreatorInsightsSupplementalDataEnum
 }
-var file_google_ads_googleads_v24_enums_content_creator_insights_supplemental_data_proto_depIdxs = []int32{
+var file_google_ads_googleads_v25_enums_content_creator_insights_supplemental_data_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type
 	0, // [0:0] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
@@ -205,28 +206,28 @@ var file_google_ads_googleads_v24_enums_content_creator_insights_supplemental_da
 }
 
 func init() {
-	file_google_ads_googleads_v24_enums_content_creator_insights_supplemental_data_proto_init()
+	file_google_ads_googleads_v25_enums_content_creator_insights_supplemental_data_proto_init()
 }
-func file_google_ads_googleads_v24_enums_content_creator_insights_supplemental_data_proto_init() {
-	if File_google_ads_googleads_v24_enums_content_creator_insights_supplemental_data_proto != nil {
+func file_google_ads_googleads_v25_enums_content_creator_insights_supplemental_data_proto_init() {
+	if File_google_ads_googleads_v25_enums_content_creator_insights_supplemental_data_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v24_enums_content_creator_insights_supplemental_data_proto_rawDesc), len(file_google_ads_googleads_v24_enums_content_creator_insights_supplemental_data_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v25_enums_content_creator_insights_supplemental_data_proto_rawDesc), len(file_google_ads_googleads_v25_enums_content_creator_insights_supplemental_data_proto_rawDesc)),
 			NumEnums:      1,
 			NumMessages:   1,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_google_ads_googleads_v24_enums_content_creator_insights_supplemental_data_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v24_enums_content_creator_insights_supplemental_data_proto_depIdxs,
-		EnumInfos:         file_google_ads_googleads_v24_enums_content_creator_insights_supplemental_data_proto_enumTypes,
-		MessageInfos:      file_google_ads_googleads_v24_enums_content_creator_insights_supplemental_data_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v25_enums_content_creator_insights_supplemental_data_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v25_enums_content_creator_insights_supplemental_data_proto_depIdxs,
+		EnumInfos:         file_google_ads_googleads_v25_enums_content_creator_insights_supplemental_data_proto_enumTypes,
+		MessageInfos:      file_google_ads_googleads_v25_enums_content_creator_insights_supplemental_data_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v24_enums_content_creator_insights_supplemental_data_proto = out.File
-	file_google_ads_googleads_v24_enums_content_creator_insights_supplemental_data_proto_goTypes = nil
-	file_google_ads_googleads_v24_enums_content_creator_insights_supplemental_data_proto_depIdxs = nil
+	File_google_ads_googleads_v25_enums_content_creator_insights_supplemental_data_proto = out.File
+	file_google_ads_googleads_v25_enums_content_creator_insights_supplemental_data_proto_goTypes = nil
+	file_google_ads_googleads_v25_enums_content_creator_insights_supplemental_data_proto_depIdxs = nil
 }

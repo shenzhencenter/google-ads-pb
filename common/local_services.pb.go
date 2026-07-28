@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.36.5
 // 	protoc        v4.24.4
-// source: google/ads/googleads/v24/common/local_services.proto
+// source: google/ads/googleads/v25/common/local_services.proto
 
 package common
 
@@ -47,7 +47,7 @@ type LocalServicesDocumentReadOnly struct {
 
 func (x *LocalServicesDocumentReadOnly) Reset() {
 	*x = LocalServicesDocumentReadOnly{}
-	mi := &file_google_ads_googleads_v24_common_local_services_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v25_common_local_services_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -59,7 +59,7 @@ func (x *LocalServicesDocumentReadOnly) String() string {
 func (*LocalServicesDocumentReadOnly) ProtoMessage() {}
 
 func (x *LocalServicesDocumentReadOnly) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v24_common_local_services_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v25_common_local_services_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -72,7 +72,7 @@ func (x *LocalServicesDocumentReadOnly) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LocalServicesDocumentReadOnly.ProtoReflect.Descriptor instead.
 func (*LocalServicesDocumentReadOnly) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v24_common_local_services_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v25_common_local_services_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *LocalServicesDocumentReadOnly) GetDocumentUrl() string {
@@ -90,14 +90,14 @@ type LocalServicesPhoneNumber struct {
 	// Upper-case, two-letter codes as defined by ISO-3166.
 	CountryCode *string `protobuf:"bytes,2,opt,name=country_code,json=countryCode,proto3,oneof" json:"country_code,omitempty"`
 	// The type of the phone number.
-	PhoneNumberType *enums.GlsPhoneNumberTypeEnum_GlsPhoneNumberType `protobuf:"varint,3,opt,name=phone_number_type,json=phoneNumberType,proto3,enum=google.ads.googleads.v24.enums.GlsPhoneNumberTypeEnum_GlsPhoneNumberType,oneof" json:"phone_number_type,omitempty"`
+	PhoneNumberType *enums.GlsPhoneNumberTypeEnum_GlsPhoneNumberType `protobuf:"varint,3,opt,name=phone_number_type,json=phoneNumberType,proto3,enum=google.ads.googleads.v25.enums.GlsPhoneNumberTypeEnum_GlsPhoneNumberType,oneof" json:"phone_number_type,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
 
 func (x *LocalServicesPhoneNumber) Reset() {
 	*x = LocalServicesPhoneNumber{}
-	mi := &file_google_ads_googleads_v24_common_local_services_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v25_common_local_services_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -109,7 +109,7 @@ func (x *LocalServicesPhoneNumber) String() string {
 func (*LocalServicesPhoneNumber) ProtoMessage() {}
 
 func (x *LocalServicesPhoneNumber) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v24_common_local_services_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v25_common_local_services_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -122,7 +122,7 @@ func (x *LocalServicesPhoneNumber) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LocalServicesPhoneNumber.ProtoReflect.Descriptor instead.
 func (*LocalServicesPhoneNumber) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v24_common_local_services_proto_rawDescGZIP(), []int{1}
+	return file_google_ads_googleads_v25_common_local_services_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *LocalServicesPhoneNumber) GetPhoneNumber() string {
@@ -146,17 +146,17 @@ func (x *LocalServicesPhoneNumber) GetPhoneNumberType() enums.GlsPhoneNumberType
 	return enums.GlsPhoneNumberTypeEnum_GlsPhoneNumberType(0)
 }
 
-var File_google_ads_googleads_v24_common_local_services_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v25_common_local_services_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v24_common_local_services_proto_rawDesc = string([]byte{
+var file_google_ads_googleads_v25_common_local_services_proto_rawDesc = string([]byte{
 	0x0a, 0x34, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x34, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x35, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
 	0x6e, 0x2f, 0x6c, 0x6f, 0x63, 0x61, 0x6c, 0x5f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73,
 	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x1f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61,
-	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34,
+	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x35,
 	0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x1a, 0x3a, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f,
 	0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32,
-	0x34, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x67, 0x6c, 0x73, 0x5f, 0x70, 0x68, 0x6f, 0x6e,
+	0x35, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x67, 0x6c, 0x73, 0x5f, 0x70, 0x68, 0x6f, 0x6e,
 	0x65, 0x5f, 0x6e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x2e, 0x70, 0x72,
 	0x6f, 0x74, 0x6f, 0x22, 0x58, 0x0a, 0x1d, 0x4c, 0x6f, 0x63, 0x61, 0x6c, 0x53, 0x65, 0x72, 0x76,
 	0x69, 0x63, 0x65, 0x73, 0x44, 0x6f, 0x63, 0x75, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x61, 0x64,
@@ -173,7 +173,7 @@ var file_google_ads_googleads_v24_common_local_services_proto_rawDesc = string([
 	0x74, 0x72, 0x79, 0x43, 0x6f, 0x64, 0x65, 0x88, 0x01, 0x01, 0x12, 0x7a, 0x0a, 0x11, 0x70, 0x68,
 	0x6f, 0x6e, 0x65, 0x5f, 0x6e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x18,
 	0x03, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x49, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61,
-	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34,
+	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x35,
 	0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x47, 0x6c, 0x73, 0x50, 0x68, 0x6f, 0x6e, 0x65, 0x4e,
 	0x75, 0x6d, 0x62, 0x65, 0x72, 0x54, 0x79, 0x70, 0x65, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x47, 0x6c,
 	0x73, 0x50, 0x68, 0x6f, 0x6e, 0x65, 0x4e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x54, 0x79, 0x70, 0x65,
@@ -183,43 +183,43 @@ var file_google_ads_googleads_v24_common_local_services_proto_rawDesc = string([
 	0x74, 0x72, 0x79, 0x5f, 0x63, 0x6f, 0x64, 0x65, 0x42, 0x14, 0x0a, 0x12, 0x5f, 0x70, 0x68, 0x6f,
 	0x6e, 0x65, 0x5f, 0x6e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x42, 0xf2,
 	0x01, 0x0a, 0x23, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64,
-	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e,
+	0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x35, 0x2e,
 	0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x42, 0x12, 0x4c, 0x6f, 0x63, 0x61, 0x6c, 0x53, 0x65, 0x72,
 	0x76, 0x69, 0x63, 0x65, 0x73, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x45, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x67, 0x6f, 0x6c, 0x61, 0x6e, 0x67, 0x2e, 0x6f, 0x72, 0x67, 0x2f,
 	0x67, 0x65, 0x6e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
 	0x70, 0x69, 0x73, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64,
-	0x73, 0x2f, 0x76, 0x32, 0x34, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x3b, 0x63, 0x6f, 0x6d,
+	0x73, 0x2f, 0x76, 0x32, 0x35, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x3b, 0x63, 0x6f, 0x6d,
 	0x6d, 0x6f, 0x6e, 0xa2, 0x02, 0x03, 0x47, 0x41, 0x41, 0xaa, 0x02, 0x1f, 0x47, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2e, 0x41, 0x64, 0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73,
-	0x2e, 0x56, 0x32, 0x34, 0x2e, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xca, 0x02, 0x1f, 0x47, 0x6f,
+	0x2e, 0x56, 0x32, 0x35, 0x2e, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xca, 0x02, 0x1f, 0x47, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x5c, 0x41, 0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41,
-	0x64, 0x73, 0x5c, 0x56, 0x32, 0x34, 0x5c, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xea, 0x02, 0x23,
+	0x64, 0x73, 0x5c, 0x56, 0x32, 0x35, 0x5c, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xea, 0x02, 0x23,
 	0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x3a, 0x3a, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x47, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x32, 0x34, 0x3a, 0x3a, 0x43, 0x6f, 0x6d,
+	0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x32, 0x35, 0x3a, 0x3a, 0x43, 0x6f, 0x6d,
 	0x6d, 0x6f, 0x6e, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 })
 
 var (
-	file_google_ads_googleads_v24_common_local_services_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v24_common_local_services_proto_rawDescData []byte
+	file_google_ads_googleads_v25_common_local_services_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v25_common_local_services_proto_rawDescData []byte
 )
 
-func file_google_ads_googleads_v24_common_local_services_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v24_common_local_services_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v24_common_local_services_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v24_common_local_services_proto_rawDesc), len(file_google_ads_googleads_v24_common_local_services_proto_rawDesc)))
+func file_google_ads_googleads_v25_common_local_services_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v25_common_local_services_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v25_common_local_services_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v25_common_local_services_proto_rawDesc), len(file_google_ads_googleads_v25_common_local_services_proto_rawDesc)))
 	})
-	return file_google_ads_googleads_v24_common_local_services_proto_rawDescData
+	return file_google_ads_googleads_v25_common_local_services_proto_rawDescData
 }
 
-var file_google_ads_googleads_v24_common_local_services_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
-var file_google_ads_googleads_v24_common_local_services_proto_goTypes = []any{
-	(*LocalServicesDocumentReadOnly)(nil),                // 0: google.ads.googleads.v24.common.LocalServicesDocumentReadOnly
-	(*LocalServicesPhoneNumber)(nil),                     // 1: google.ads.googleads.v24.common.LocalServicesPhoneNumber
-	(enums.GlsPhoneNumberTypeEnum_GlsPhoneNumberType)(0), // 2: google.ads.googleads.v24.enums.GlsPhoneNumberTypeEnum.GlsPhoneNumberType
+var file_google_ads_googleads_v25_common_local_services_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_google_ads_googleads_v25_common_local_services_proto_goTypes = []any{
+	(*LocalServicesDocumentReadOnly)(nil),                // 0: google.ads.googleads.v25.common.LocalServicesDocumentReadOnly
+	(*LocalServicesPhoneNumber)(nil),                     // 1: google.ads.googleads.v25.common.LocalServicesPhoneNumber
+	(enums.GlsPhoneNumberTypeEnum_GlsPhoneNumberType)(0), // 2: google.ads.googleads.v25.enums.GlsPhoneNumberTypeEnum.GlsPhoneNumberType
 }
-var file_google_ads_googleads_v24_common_local_services_proto_depIdxs = []int32{
-	2, // 0: google.ads.googleads.v24.common.LocalServicesPhoneNumber.phone_number_type:type_name -> google.ads.googleads.v24.enums.GlsPhoneNumberTypeEnum.GlsPhoneNumberType
+var file_google_ads_googleads_v25_common_local_services_proto_depIdxs = []int32{
+	2, // 0: google.ads.googleads.v25.common.LocalServicesPhoneNumber.phone_number_type:type_name -> google.ads.googleads.v25.enums.GlsPhoneNumberTypeEnum.GlsPhoneNumberType
 	1, // [1:1] is the sub-list for method output_type
 	1, // [1:1] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name
@@ -227,28 +227,28 @@ var file_google_ads_googleads_v24_common_local_services_proto_depIdxs = []int32{
 	0, // [0:1] is the sub-list for field type_name
 }
 
-func init() { file_google_ads_googleads_v24_common_local_services_proto_init() }
-func file_google_ads_googleads_v24_common_local_services_proto_init() {
-	if File_google_ads_googleads_v24_common_local_services_proto != nil {
+func init() { file_google_ads_googleads_v25_common_local_services_proto_init() }
+func file_google_ads_googleads_v25_common_local_services_proto_init() {
+	if File_google_ads_googleads_v25_common_local_services_proto != nil {
 		return
 	}
-	file_google_ads_googleads_v24_common_local_services_proto_msgTypes[0].OneofWrappers = []any{}
-	file_google_ads_googleads_v24_common_local_services_proto_msgTypes[1].OneofWrappers = []any{}
+	file_google_ads_googleads_v25_common_local_services_proto_msgTypes[0].OneofWrappers = []any{}
+	file_google_ads_googleads_v25_common_local_services_proto_msgTypes[1].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v24_common_local_services_proto_rawDesc), len(file_google_ads_googleads_v24_common_local_services_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v25_common_local_services_proto_rawDesc), len(file_google_ads_googleads_v25_common_local_services_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_google_ads_googleads_v24_common_local_services_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v24_common_local_services_proto_depIdxs,
-		MessageInfos:      file_google_ads_googleads_v24_common_local_services_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v25_common_local_services_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v25_common_local_services_proto_depIdxs,
+		MessageInfos:      file_google_ads_googleads_v25_common_local_services_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v24_common_local_services_proto = out.File
-	file_google_ads_googleads_v24_common_local_services_proto_goTypes = nil
-	file_google_ads_googleads_v24_common_local_services_proto_depIdxs = nil
+	File_google_ads_googleads_v25_common_local_services_proto = out.File
+	file_google_ads_googleads_v25_common_local_services_proto_goTypes = nil
+	file_google_ads_googleads_v25_common_local_services_proto_depIdxs = nil
 }

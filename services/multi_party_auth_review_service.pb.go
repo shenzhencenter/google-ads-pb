@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.36.5
 // 	protoc        v4.24.4
-// source: google/ads/googleads/v24/services/multi_party_auth_review_service.proto
+// source: google/ads/googleads/v25/services/multi_party_auth_review_service.proto
 
 package services
 
@@ -39,7 +39,7 @@ const (
 )
 
 // Request message for
-// [MultiPartyAuthReviewService.ResolveMultiPartyAuthReview][google.ads.googleads.v24.services.MultiPartyAuthReviewService.ResolveMultiPartyAuthReview].
+// [MultiPartyAuthReviewService.ResolveMultiPartyAuthReview][google.ads.googleads.v25.services.MultiPartyAuthReviewService.ResolveMultiPartyAuthReview].
 type ResolveMultiPartyAuthReviewRequest struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Required. The ID of the customer.
@@ -53,7 +53,7 @@ type ResolveMultiPartyAuthReviewRequest struct {
 
 func (x *ResolveMultiPartyAuthReviewRequest) Reset() {
 	*x = ResolveMultiPartyAuthReviewRequest{}
-	mi := &file_google_ads_googleads_v24_services_multi_party_auth_review_service_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v25_services_multi_party_auth_review_service_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -65,7 +65,7 @@ func (x *ResolveMultiPartyAuthReviewRequest) String() string {
 func (*ResolveMultiPartyAuthReviewRequest) ProtoMessage() {}
 
 func (x *ResolveMultiPartyAuthReviewRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v24_services_multi_party_auth_review_service_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v25_services_multi_party_auth_review_service_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -78,7 +78,7 @@ func (x *ResolveMultiPartyAuthReviewRequest) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use ResolveMultiPartyAuthReviewRequest.ProtoReflect.Descriptor instead.
 func (*ResolveMultiPartyAuthReviewRequest) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v24_services_multi_party_auth_review_service_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v25_services_multi_party_auth_review_service_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ResolveMultiPartyAuthReviewRequest) GetCustomerId() string {
@@ -96,7 +96,7 @@ func (x *ResolveMultiPartyAuthReviewRequest) GetOperations() []*ResolveMultiPart
 }
 
 // Response message for
-// [MultiPartyAuthReviewService.ResolveMultiPartyAuthReview][google.ads.googleads.v24.services.MultiPartyAuthReviewService.ResolveMultiPartyAuthReview].
+// [MultiPartyAuthReviewService.ResolveMultiPartyAuthReview][google.ads.googleads.v25.services.MultiPartyAuthReviewService.ResolveMultiPartyAuthReview].
 type ResolveMultiPartyAuthReviewResponse struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// The results of the operations.
@@ -107,7 +107,7 @@ type ResolveMultiPartyAuthReviewResponse struct {
 
 func (x *ResolveMultiPartyAuthReviewResponse) Reset() {
 	*x = ResolveMultiPartyAuthReviewResponse{}
-	mi := &file_google_ads_googleads_v24_services_multi_party_auth_review_service_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v25_services_multi_party_auth_review_service_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -119,7 +119,7 @@ func (x *ResolveMultiPartyAuthReviewResponse) String() string {
 func (*ResolveMultiPartyAuthReviewResponse) ProtoMessage() {}
 
 func (x *ResolveMultiPartyAuthReviewResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v24_services_multi_party_auth_review_service_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v25_services_multi_party_auth_review_service_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -132,7 +132,7 @@ func (x *ResolveMultiPartyAuthReviewResponse) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use ResolveMultiPartyAuthReviewResponse.ProtoReflect.Descriptor instead.
 func (*ResolveMultiPartyAuthReviewResponse) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v24_services_multi_party_auth_review_service_proto_rawDescGZIP(), []int{1}
+	return file_google_ads_googleads_v25_services_multi_party_auth_review_service_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ResolveMultiPartyAuthReviewResponse) GetResultOrError() []*ResolveMultiPartyAuthReviewResultOrError {
@@ -150,14 +150,14 @@ type ResolveMultiPartyAuthReviewOperation struct {
 	// Required. The status to which the Multi-Party Authorization review should
 	// be resolved. Valid values for requests are limited to: APPROVED, REJECTED,
 	// REVOKED.
-	NewStatus     enums.MultiPartyAuthReviewStatusEnum_MultiPartyAuthReviewStatus `protobuf:"varint,2,opt,name=new_status,json=newStatus,proto3,enum=google.ads.googleads.v24.enums.MultiPartyAuthReviewStatusEnum_MultiPartyAuthReviewStatus" json:"new_status,omitempty"`
+	NewStatus     enums.MultiPartyAuthReviewStatusEnum_MultiPartyAuthReviewStatus `protobuf:"varint,2,opt,name=new_status,json=newStatus,proto3,enum=google.ads.googleads.v25.enums.MultiPartyAuthReviewStatusEnum_MultiPartyAuthReviewStatus" json:"new_status,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *ResolveMultiPartyAuthReviewOperation) Reset() {
 	*x = ResolveMultiPartyAuthReviewOperation{}
-	mi := &file_google_ads_googleads_v24_services_multi_party_auth_review_service_proto_msgTypes[2]
+	mi := &file_google_ads_googleads_v25_services_multi_party_auth_review_service_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -169,7 +169,7 @@ func (x *ResolveMultiPartyAuthReviewOperation) String() string {
 func (*ResolveMultiPartyAuthReviewOperation) ProtoMessage() {}
 
 func (x *ResolveMultiPartyAuthReviewOperation) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v24_services_multi_party_auth_review_service_proto_msgTypes[2]
+	mi := &file_google_ads_googleads_v25_services_multi_party_auth_review_service_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -182,7 +182,7 @@ func (x *ResolveMultiPartyAuthReviewOperation) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use ResolveMultiPartyAuthReviewOperation.ProtoReflect.Descriptor instead.
 func (*ResolveMultiPartyAuthReviewOperation) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v24_services_multi_party_auth_review_service_proto_rawDescGZIP(), []int{2}
+	return file_google_ads_googleads_v25_services_multi_party_auth_review_service_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *ResolveMultiPartyAuthReviewOperation) GetMultiPartyAuthReview() string {
@@ -215,7 +215,7 @@ type ResolveMultiPartyAuthReviewResultOrError struct {
 
 func (x *ResolveMultiPartyAuthReviewResultOrError) Reset() {
 	*x = ResolveMultiPartyAuthReviewResultOrError{}
-	mi := &file_google_ads_googleads_v24_services_multi_party_auth_review_service_proto_msgTypes[3]
+	mi := &file_google_ads_googleads_v25_services_multi_party_auth_review_service_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -227,7 +227,7 @@ func (x *ResolveMultiPartyAuthReviewResultOrError) String() string {
 func (*ResolveMultiPartyAuthReviewResultOrError) ProtoMessage() {}
 
 func (x *ResolveMultiPartyAuthReviewResultOrError) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v24_services_multi_party_auth_review_service_proto_msgTypes[3]
+	mi := &file_google_ads_googleads_v25_services_multi_party_auth_review_service_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -240,7 +240,7 @@ func (x *ResolveMultiPartyAuthReviewResultOrError) ProtoReflect() protoreflect.M
 
 // Deprecated: Use ResolveMultiPartyAuthReviewResultOrError.ProtoReflect.Descriptor instead.
 func (*ResolveMultiPartyAuthReviewResultOrError) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v24_services_multi_party_auth_review_service_proto_rawDescGZIP(), []int{3}
+	return file_google_ads_googleads_v25_services_multi_party_auth_review_service_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *ResolveMultiPartyAuthReviewResultOrError) GetResultOrError() isResolveMultiPartyAuthReviewResultOrError_ResultOrError {
@@ -310,7 +310,7 @@ type ResolveMultiPartyAuthReviewResult struct {
 
 func (x *ResolveMultiPartyAuthReviewResult) Reset() {
 	*x = ResolveMultiPartyAuthReviewResult{}
-	mi := &file_google_ads_googleads_v24_services_multi_party_auth_review_service_proto_msgTypes[4]
+	mi := &file_google_ads_googleads_v25_services_multi_party_auth_review_service_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -322,7 +322,7 @@ func (x *ResolveMultiPartyAuthReviewResult) String() string {
 func (*ResolveMultiPartyAuthReviewResult) ProtoMessage() {}
 
 func (x *ResolveMultiPartyAuthReviewResult) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v24_services_multi_party_auth_review_service_proto_msgTypes[4]
+	mi := &file_google_ads_googleads_v25_services_multi_party_auth_review_service_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -335,7 +335,7 @@ func (x *ResolveMultiPartyAuthReviewResult) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use ResolveMultiPartyAuthReviewResult.ProtoReflect.Descriptor instead.
 func (*ResolveMultiPartyAuthReviewResult) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v24_services_multi_party_auth_review_service_proto_rawDescGZIP(), []int{4}
+	return file_google_ads_googleads_v25_services_multi_party_auth_review_service_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *ResolveMultiPartyAuthReviewResult) GetMultiPartyAuthReview() string {
@@ -391,18 +391,18 @@ func (*ResolveMultiPartyAuthReviewResult_CustomerUserAccessInvitation) isResolve
 func (*ResolveMultiPartyAuthReviewResult_CustomerUserAccess) isResolveMultiPartyAuthReviewResult_ResolvedResource() {
 }
 
-var File_google_ads_googleads_v24_services_multi_party_auth_review_service_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v25_services_multi_party_auth_review_service_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v24_services_multi_party_auth_review_service_proto_rawDesc = string([]byte{
+var file_google_ads_googleads_v25_services_multi_party_auth_review_service_proto_rawDesc = string([]byte{
 	0x0a, 0x47, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x34, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x35, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69,
 	0x63, 0x65, 0x73, 0x2f, 0x6d, 0x75, 0x6c, 0x74, 0x69, 0x5f, 0x70, 0x61, 0x72, 0x74, 0x79, 0x5f,
 	0x61, 0x75, 0x74, 0x68, 0x5f, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77, 0x5f, 0x73, 0x65, 0x72, 0x76,
 	0x69, 0x63, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x21, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e,
-	0x76, 0x32, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x1a, 0x43, 0x67, 0x6f,
+	0x76, 0x32, 0x35, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x1a, 0x43, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x64, 0x73, 0x2f, 0x76, 0x32, 0x34, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x6d, 0x75, 0x6c,
+	0x64, 0x73, 0x2f, 0x76, 0x32, 0x35, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x6d, 0x75, 0x6c,
 	0x74, 0x69, 0x5f, 0x70, 0x61, 0x72, 0x74, 0x79, 0x5f, 0x61, 0x75, 0x74, 0x68, 0x5f, 0x72, 0x65,
 	0x76, 0x69, 0x65, 0x77, 0x5f, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74,
 	0x6f, 0x1a, 0x1c, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x6e,
@@ -421,7 +421,7 @@ var file_google_ads_googleads_v24_services_multi_party_auth_review_service_proto
 	0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x49, 0x64, 0x12, 0x6c, 0x0a, 0x0a, 0x6f, 0x70,
 	0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x47,
 	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
+	0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x35, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
 	0x65, 0x73, 0x2e, 0x52, 0x65, 0x73, 0x6f, 0x6c, 0x76, 0x65, 0x4d, 0x75, 0x6c, 0x74, 0x69, 0x50,
 	0x61, 0x72, 0x74, 0x79, 0x41, 0x75, 0x74, 0x68, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x4f, 0x70,
 	0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x42, 0x03, 0xe0, 0x41, 0x02, 0x52, 0x0a, 0x6f, 0x70,
@@ -431,7 +431,7 @@ var file_google_ads_googleads_v24_services_multi_party_auth_review_service_proto
 	0x12, 0x73, 0x0a, 0x0f, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x5f, 0x6f, 0x72, 0x5f, 0x65, 0x72,
 	0x72, 0x6f, 0x72, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x4b, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
-	0x2e, 0x76, 0x32, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x52, 0x65,
+	0x2e, 0x76, 0x32, 0x35, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x52, 0x65,
 	0x73, 0x6f, 0x6c, 0x76, 0x65, 0x4d, 0x75, 0x6c, 0x74, 0x69, 0x50, 0x61, 0x72, 0x74, 0x79, 0x41,
 	0x75, 0x74, 0x68, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x52, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x4f,
 	0x72, 0x45, 0x72, 0x72, 0x6f, 0x72, 0x52, 0x0d, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x4f, 0x72,
@@ -447,7 +447,7 @@ var file_google_ads_googleads_v24_services_multi_party_auth_review_service_proto
 	0x74, 0x79, 0x41, 0x75, 0x74, 0x68, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x12, 0x7d, 0x0a, 0x0a,
 	0x6e, 0x65, 0x77, 0x5f, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0e,
 	0x32, 0x59, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e, 0x65, 0x6e, 0x75, 0x6d,
+	0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x35, 0x2e, 0x65, 0x6e, 0x75, 0x6d,
 	0x73, 0x2e, 0x4d, 0x75, 0x6c, 0x74, 0x69, 0x50, 0x61, 0x72, 0x74, 0x79, 0x41, 0x75, 0x74, 0x68,
 	0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x45, 0x6e, 0x75, 0x6d,
 	0x2e, 0x4d, 0x75, 0x6c, 0x74, 0x69, 0x50, 0x61, 0x72, 0x74, 0x79, 0x41, 0x75, 0x74, 0x68, 0x52,
@@ -458,7 +458,7 @@ var file_google_ads_googleads_v24_services_multi_party_auth_review_service_proto
 	0x74, 0x4f, 0x72, 0x45, 0x72, 0x72, 0x6f, 0x72, 0x12, 0x5e, 0x0a, 0x06, 0x72, 0x65, 0x73, 0x75,
 	0x6c, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x44, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e,
-	0x76, 0x32, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x52, 0x65, 0x73,
+	0x76, 0x32, 0x35, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x52, 0x65, 0x73,
 	0x6f, 0x6c, 0x76, 0x65, 0x4d, 0x75, 0x6c, 0x74, 0x69, 0x50, 0x61, 0x72, 0x74, 0x79, 0x41, 0x75,
 	0x74, 0x68, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x52, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x48, 0x00,
 	0x52, 0x06, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x12, 0x48, 0x0a, 0x15, 0x70, 0x61, 0x72, 0x74,
@@ -491,17 +491,17 @@ var file_google_ads_googleads_v24_services_multi_party_auth_review_service_proto
 	0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x8d, 0x02, 0x0a, 0x1b, 0x52, 0x65, 0x73, 0x6f, 0x6c, 0x76,
 	0x65, 0x4d, 0x75, 0x6c, 0x74, 0x69, 0x50, 0x61, 0x72, 0x74, 0x79, 0x41, 0x75, 0x74, 0x68, 0x52,
 	0x65, 0x76, 0x69, 0x65, 0x77, 0x12, 0x45, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61,
-	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34,
+	0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x35,
 	0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x52, 0x65, 0x73, 0x6f, 0x6c, 0x76,
 	0x65, 0x4d, 0x75, 0x6c, 0x74, 0x69, 0x50, 0x61, 0x72, 0x74, 0x79, 0x41, 0x75, 0x74, 0x68, 0x52,
 	0x65, 0x76, 0x69, 0x65, 0x77, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x46, 0x2e, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73,
+	0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x35, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73,
 	0x2e, 0x52, 0x65, 0x73, 0x6f, 0x6c, 0x76, 0x65, 0x4d, 0x75, 0x6c, 0x74, 0x69, 0x50, 0x61, 0x72,
 	0x74, 0x79, 0x41, 0x75, 0x74, 0x68, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x52, 0x65, 0x73, 0x70,
 	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x5f, 0xda, 0x41, 0x16, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65,
 	0x72, 0x5f, 0x69, 0x64, 0x2c, 0x6f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x82,
-	0xd3, 0xe4, 0x93, 0x02, 0x40, 0x3a, 0x01, 0x2a, 0x22, 0x3b, 0x2f, 0x76, 0x32, 0x34, 0x2f, 0x63,
+	0xd3, 0xe4, 0x93, 0x02, 0x40, 0x3a, 0x01, 0x2a, 0x22, 0x3b, 0x2f, 0x76, 0x32, 0x35, 0x2f, 0x63,
 	0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x73, 0x2f, 0x7b, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d,
 	0x65, 0x72, 0x5f, 0x69, 0x64, 0x3d, 0x2a, 0x7d, 0x2f, 0x6d, 0x75, 0x6c, 0x74, 0x69, 0x50, 0x61,
 	0x72, 0x74, 0x79, 0x41, 0x75, 0x74, 0x68, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x3a, 0x72, 0x65,
@@ -511,55 +511,55 @@ var file_google_ads_googleads_v24_services_multi_party_auth_review_service_proto
 	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x63, 0x6f, 0x6d, 0x2f,
 	0x61, 0x75, 0x74, 0x68, 0x2f, 0x61, 0x64, 0x77, 0x6f, 0x72, 0x64, 0x73, 0x42, 0x8c, 0x02, 0x0a,
 	0x25, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e, 0x73, 0x65,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x35, 0x2e, 0x73, 0x65,
 	0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x42, 0x20, 0x4d, 0x75, 0x6c, 0x74, 0x69, 0x50, 0x61, 0x72,
 	0x74, 0x79, 0x41, 0x75, 0x74, 0x68, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x53, 0x65, 0x72, 0x76,
 	0x69, 0x63, 0x65, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x49, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2e, 0x67, 0x6f, 0x6c, 0x61, 0x6e, 0x67, 0x2e, 0x6f, 0x72, 0x67, 0x2f, 0x67, 0x65,
 	0x6e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x70, 0x69,
 	0x73, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f,
-	0x76, 0x32, 0x34, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x3b, 0x73, 0x65, 0x72,
+	0x76, 0x32, 0x35, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x3b, 0x73, 0x65, 0x72,
 	0x76, 0x69, 0x63, 0x65, 0x73, 0xa2, 0x02, 0x03, 0x47, 0x41, 0x41, 0xaa, 0x02, 0x21, 0x47, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x41, 0x64, 0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41,
-	0x64, 0x73, 0x2e, 0x56, 0x32, 0x34, 0x2e, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0xca,
+	0x64, 0x73, 0x2e, 0x56, 0x32, 0x35, 0x2e, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0xca,
 	0x02, 0x21, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x5c, 0x41, 0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x32, 0x34, 0x5c, 0x53, 0x65, 0x72, 0x76, 0x69,
+	0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x32, 0x35, 0x5c, 0x53, 0x65, 0x72, 0x76, 0x69,
 	0x63, 0x65, 0x73, 0xea, 0x02, 0x25, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x3a, 0x3a, 0x41, 0x64,
 	0x73, 0x3a, 0x3a, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x32,
-	0x34, 0x3a, 0x3a, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f,
+	0x35, 0x3a, 0x3a, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f,
 	0x74, 0x6f, 0x33,
 })
 
 var (
-	file_google_ads_googleads_v24_services_multi_party_auth_review_service_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v24_services_multi_party_auth_review_service_proto_rawDescData []byte
+	file_google_ads_googleads_v25_services_multi_party_auth_review_service_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v25_services_multi_party_auth_review_service_proto_rawDescData []byte
 )
 
-func file_google_ads_googleads_v24_services_multi_party_auth_review_service_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v24_services_multi_party_auth_review_service_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v24_services_multi_party_auth_review_service_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v24_services_multi_party_auth_review_service_proto_rawDesc), len(file_google_ads_googleads_v24_services_multi_party_auth_review_service_proto_rawDesc)))
+func file_google_ads_googleads_v25_services_multi_party_auth_review_service_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v25_services_multi_party_auth_review_service_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v25_services_multi_party_auth_review_service_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v25_services_multi_party_auth_review_service_proto_rawDesc), len(file_google_ads_googleads_v25_services_multi_party_auth_review_service_proto_rawDesc)))
 	})
-	return file_google_ads_googleads_v24_services_multi_party_auth_review_service_proto_rawDescData
+	return file_google_ads_googleads_v25_services_multi_party_auth_review_service_proto_rawDescData
 }
 
-var file_google_ads_googleads_v24_services_multi_party_auth_review_service_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
-var file_google_ads_googleads_v24_services_multi_party_auth_review_service_proto_goTypes = []any{
-	(*ResolveMultiPartyAuthReviewRequest)(nil),                           // 0: google.ads.googleads.v24.services.ResolveMultiPartyAuthReviewRequest
-	(*ResolveMultiPartyAuthReviewResponse)(nil),                          // 1: google.ads.googleads.v24.services.ResolveMultiPartyAuthReviewResponse
-	(*ResolveMultiPartyAuthReviewOperation)(nil),                         // 2: google.ads.googleads.v24.services.ResolveMultiPartyAuthReviewOperation
-	(*ResolveMultiPartyAuthReviewResultOrError)(nil),                     // 3: google.ads.googleads.v24.services.ResolveMultiPartyAuthReviewResultOrError
-	(*ResolveMultiPartyAuthReviewResult)(nil),                            // 4: google.ads.googleads.v24.services.ResolveMultiPartyAuthReviewResult
-	(enums.MultiPartyAuthReviewStatusEnum_MultiPartyAuthReviewStatus)(0), // 5: google.ads.googleads.v24.enums.MultiPartyAuthReviewStatusEnum.MultiPartyAuthReviewStatus
+var file_google_ads_googleads_v25_services_multi_party_auth_review_service_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
+var file_google_ads_googleads_v25_services_multi_party_auth_review_service_proto_goTypes = []any{
+	(*ResolveMultiPartyAuthReviewRequest)(nil),                           // 0: google.ads.googleads.v25.services.ResolveMultiPartyAuthReviewRequest
+	(*ResolveMultiPartyAuthReviewResponse)(nil),                          // 1: google.ads.googleads.v25.services.ResolveMultiPartyAuthReviewResponse
+	(*ResolveMultiPartyAuthReviewOperation)(nil),                         // 2: google.ads.googleads.v25.services.ResolveMultiPartyAuthReviewOperation
+	(*ResolveMultiPartyAuthReviewResultOrError)(nil),                     // 3: google.ads.googleads.v25.services.ResolveMultiPartyAuthReviewResultOrError
+	(*ResolveMultiPartyAuthReviewResult)(nil),                            // 4: google.ads.googleads.v25.services.ResolveMultiPartyAuthReviewResult
+	(enums.MultiPartyAuthReviewStatusEnum_MultiPartyAuthReviewStatus)(0), // 5: google.ads.googleads.v25.enums.MultiPartyAuthReviewStatusEnum.MultiPartyAuthReviewStatus
 	(*status.Status)(nil),                                                // 6: google.rpc.Status
 }
-var file_google_ads_googleads_v24_services_multi_party_auth_review_service_proto_depIdxs = []int32{
-	2, // 0: google.ads.googleads.v24.services.ResolveMultiPartyAuthReviewRequest.operations:type_name -> google.ads.googleads.v24.services.ResolveMultiPartyAuthReviewOperation
-	3, // 1: google.ads.googleads.v24.services.ResolveMultiPartyAuthReviewResponse.result_or_error:type_name -> google.ads.googleads.v24.services.ResolveMultiPartyAuthReviewResultOrError
-	5, // 2: google.ads.googleads.v24.services.ResolveMultiPartyAuthReviewOperation.new_status:type_name -> google.ads.googleads.v24.enums.MultiPartyAuthReviewStatusEnum.MultiPartyAuthReviewStatus
-	4, // 3: google.ads.googleads.v24.services.ResolveMultiPartyAuthReviewResultOrError.result:type_name -> google.ads.googleads.v24.services.ResolveMultiPartyAuthReviewResult
-	6, // 4: google.ads.googleads.v24.services.ResolveMultiPartyAuthReviewResultOrError.partial_failure_error:type_name -> google.rpc.Status
-	0, // 5: google.ads.googleads.v24.services.MultiPartyAuthReviewService.ResolveMultiPartyAuthReview:input_type -> google.ads.googleads.v24.services.ResolveMultiPartyAuthReviewRequest
-	1, // 6: google.ads.googleads.v24.services.MultiPartyAuthReviewService.ResolveMultiPartyAuthReview:output_type -> google.ads.googleads.v24.services.ResolveMultiPartyAuthReviewResponse
+var file_google_ads_googleads_v25_services_multi_party_auth_review_service_proto_depIdxs = []int32{
+	2, // 0: google.ads.googleads.v25.services.ResolveMultiPartyAuthReviewRequest.operations:type_name -> google.ads.googleads.v25.services.ResolveMultiPartyAuthReviewOperation
+	3, // 1: google.ads.googleads.v25.services.ResolveMultiPartyAuthReviewResponse.result_or_error:type_name -> google.ads.googleads.v25.services.ResolveMultiPartyAuthReviewResultOrError
+	5, // 2: google.ads.googleads.v25.services.ResolveMultiPartyAuthReviewOperation.new_status:type_name -> google.ads.googleads.v25.enums.MultiPartyAuthReviewStatusEnum.MultiPartyAuthReviewStatus
+	4, // 3: google.ads.googleads.v25.services.ResolveMultiPartyAuthReviewResultOrError.result:type_name -> google.ads.googleads.v25.services.ResolveMultiPartyAuthReviewResult
+	6, // 4: google.ads.googleads.v25.services.ResolveMultiPartyAuthReviewResultOrError.partial_failure_error:type_name -> google.rpc.Status
+	0, // 5: google.ads.googleads.v25.services.MultiPartyAuthReviewService.ResolveMultiPartyAuthReview:input_type -> google.ads.googleads.v25.services.ResolveMultiPartyAuthReviewRequest
+	1, // 6: google.ads.googleads.v25.services.MultiPartyAuthReviewService.ResolveMultiPartyAuthReview:output_type -> google.ads.googleads.v25.services.ResolveMultiPartyAuthReviewResponse
 	6, // [6:7] is the sub-list for method output_type
 	5, // [5:6] is the sub-list for method input_type
 	5, // [5:5] is the sub-list for extension type_name
@@ -567,16 +567,16 @@ var file_google_ads_googleads_v24_services_multi_party_auth_review_service_proto
 	0, // [0:5] is the sub-list for field type_name
 }
 
-func init() { file_google_ads_googleads_v24_services_multi_party_auth_review_service_proto_init() }
-func file_google_ads_googleads_v24_services_multi_party_auth_review_service_proto_init() {
-	if File_google_ads_googleads_v24_services_multi_party_auth_review_service_proto != nil {
+func init() { file_google_ads_googleads_v25_services_multi_party_auth_review_service_proto_init() }
+func file_google_ads_googleads_v25_services_multi_party_auth_review_service_proto_init() {
+	if File_google_ads_googleads_v25_services_multi_party_auth_review_service_proto != nil {
 		return
 	}
-	file_google_ads_googleads_v24_services_multi_party_auth_review_service_proto_msgTypes[3].OneofWrappers = []any{
+	file_google_ads_googleads_v25_services_multi_party_auth_review_service_proto_msgTypes[3].OneofWrappers = []any{
 		(*ResolveMultiPartyAuthReviewResultOrError_Result)(nil),
 		(*ResolveMultiPartyAuthReviewResultOrError_PartialFailureError)(nil),
 	}
-	file_google_ads_googleads_v24_services_multi_party_auth_review_service_proto_msgTypes[4].OneofWrappers = []any{
+	file_google_ads_googleads_v25_services_multi_party_auth_review_service_proto_msgTypes[4].OneofWrappers = []any{
 		(*ResolveMultiPartyAuthReviewResult_CustomerUserAccessInvitation)(nil),
 		(*ResolveMultiPartyAuthReviewResult_CustomerUserAccess)(nil),
 	}
@@ -584,17 +584,17 @@ func file_google_ads_googleads_v24_services_multi_party_auth_review_service_prot
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v24_services_multi_party_auth_review_service_proto_rawDesc), len(file_google_ads_googleads_v24_services_multi_party_auth_review_service_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v25_services_multi_party_auth_review_service_proto_rawDesc), len(file_google_ads_googleads_v25_services_multi_party_auth_review_service_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_google_ads_googleads_v24_services_multi_party_auth_review_service_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v24_services_multi_party_auth_review_service_proto_depIdxs,
-		MessageInfos:      file_google_ads_googleads_v24_services_multi_party_auth_review_service_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v25_services_multi_party_auth_review_service_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v25_services_multi_party_auth_review_service_proto_depIdxs,
+		MessageInfos:      file_google_ads_googleads_v25_services_multi_party_auth_review_service_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v24_services_multi_party_auth_review_service_proto = out.File
-	file_google_ads_googleads_v24_services_multi_party_auth_review_service_proto_goTypes = nil
-	file_google_ads_googleads_v24_services_multi_party_auth_review_service_proto_depIdxs = nil
+	File_google_ads_googleads_v25_services_multi_party_auth_review_service_proto = out.File
+	file_google_ads_googleads_v25_services_multi_party_auth_review_service_proto_goTypes = nil
+	file_google_ads_googleads_v25_services_multi_party_auth_review_service_proto_depIdxs = nil
 }

@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.36.5
 // 	protoc        v4.24.4
-// source: google/ads/googleads/v24/resources/product_link_invitation.proto
+// source: google/ads/googleads/v25/resources/product_link_invitation.proto
 
 package resources
 
@@ -51,11 +51,11 @@ type ProductLinkInvitation struct {
 	ProductLinkInvitationId int64 `protobuf:"varint,2,opt,name=product_link_invitation_id,json=productLinkInvitationId,proto3" json:"product_link_invitation_id,omitempty"`
 	// Output only. The status of the product link invitation.
 	// This field is read only.
-	Status enums.ProductLinkInvitationStatusEnum_ProductLinkInvitationStatus `protobuf:"varint,3,opt,name=status,proto3,enum=google.ads.googleads.v24.enums.ProductLinkInvitationStatusEnum_ProductLinkInvitationStatus" json:"status,omitempty"`
+	Status enums.ProductLinkInvitationStatusEnum_ProductLinkInvitationStatus `protobuf:"varint,3,opt,name=status,proto3,enum=google.ads.googleads.v25.enums.ProductLinkInvitationStatusEnum_ProductLinkInvitationStatus" json:"status,omitempty"`
 	// Output only. The type of the invited account.
 	// This field is read only and can be used for filtering invitations with
 	// {@code GoogleAdsService.SearchGoogleAdsRequest}.
-	Type enums.LinkedProductTypeEnum_LinkedProductType `protobuf:"varint,6,opt,name=type,proto3,enum=google.ads.googleads.v24.enums.LinkedProductTypeEnum_LinkedProductType" json:"type,omitempty"`
+	Type enums.LinkedProductTypeEnum_LinkedProductType `protobuf:"varint,6,opt,name=type,proto3,enum=google.ads.googleads.v25.enums.LinkedProductTypeEnum_LinkedProductType" json:"type,omitempty"`
 	// An account invited to link to this Google Ads account.
 	//
 	// Types that are valid to be assigned to InvitedAccount:
@@ -76,7 +76,7 @@ type ProductLinkInvitation struct {
 
 func (x *ProductLinkInvitation) Reset() {
 	*x = ProductLinkInvitation{}
-	mi := &file_google_ads_googleads_v24_resources_product_link_invitation_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v25_resources_product_link_invitation_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -88,7 +88,7 @@ func (x *ProductLinkInvitation) String() string {
 func (*ProductLinkInvitation) ProtoMessage() {}
 
 func (x *ProductLinkInvitation) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v24_resources_product_link_invitation_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v25_resources_product_link_invitation_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -101,7 +101,7 @@ func (x *ProductLinkInvitation) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProductLinkInvitation.ProtoReflect.Descriptor instead.
 func (*ProductLinkInvitation) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v24_resources_product_link_invitation_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v25_resources_product_link_invitation_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ProductLinkInvitation) GetResourceName() string {
@@ -233,7 +233,7 @@ type HotelCenterLinkInvitationIdentifier struct {
 
 func (x *HotelCenterLinkInvitationIdentifier) Reset() {
 	*x = HotelCenterLinkInvitationIdentifier{}
-	mi := &file_google_ads_googleads_v24_resources_product_link_invitation_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v25_resources_product_link_invitation_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -245,7 +245,7 @@ func (x *HotelCenterLinkInvitationIdentifier) String() string {
 func (*HotelCenterLinkInvitationIdentifier) ProtoMessage() {}
 
 func (x *HotelCenterLinkInvitationIdentifier) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v24_resources_product_link_invitation_proto_msgTypes[1]
+	mi := &file_google_ads_googleads_v25_resources_product_link_invitation_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -258,7 +258,7 @@ func (x *HotelCenterLinkInvitationIdentifier) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use HotelCenterLinkInvitationIdentifier.ProtoReflect.Descriptor instead.
 func (*HotelCenterLinkInvitationIdentifier) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v24_resources_product_link_invitation_proto_rawDescGZIP(), []int{1}
+	return file_google_ads_googleads_v25_resources_product_link_invitation_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *HotelCenterLinkInvitationIdentifier) GetHotelCenterId() int64 {
@@ -280,7 +280,7 @@ type MerchantCenterLinkInvitationIdentifier struct {
 
 func (x *MerchantCenterLinkInvitationIdentifier) Reset() {
 	*x = MerchantCenterLinkInvitationIdentifier{}
-	mi := &file_google_ads_googleads_v24_resources_product_link_invitation_proto_msgTypes[2]
+	mi := &file_google_ads_googleads_v25_resources_product_link_invitation_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -292,7 +292,7 @@ func (x *MerchantCenterLinkInvitationIdentifier) String() string {
 func (*MerchantCenterLinkInvitationIdentifier) ProtoMessage() {}
 
 func (x *MerchantCenterLinkInvitationIdentifier) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v24_resources_product_link_invitation_proto_msgTypes[2]
+	mi := &file_google_ads_googleads_v25_resources_product_link_invitation_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -305,7 +305,7 @@ func (x *MerchantCenterLinkInvitationIdentifier) ProtoReflect() protoreflect.Mes
 
 // Deprecated: Use MerchantCenterLinkInvitationIdentifier.ProtoReflect.Descriptor instead.
 func (*MerchantCenterLinkInvitationIdentifier) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v24_resources_product_link_invitation_proto_rawDescGZIP(), []int{2}
+	return file_google_ads_googleads_v25_resources_product_link_invitation_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *MerchantCenterLinkInvitationIdentifier) GetMerchantCenterId() int64 {
@@ -327,7 +327,7 @@ type AdvertisingPartnerLinkInvitationIdentifier struct {
 
 func (x *AdvertisingPartnerLinkInvitationIdentifier) Reset() {
 	*x = AdvertisingPartnerLinkInvitationIdentifier{}
-	mi := &file_google_ads_googleads_v24_resources_product_link_invitation_proto_msgTypes[3]
+	mi := &file_google_ads_googleads_v25_resources_product_link_invitation_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -339,7 +339,7 @@ func (x *AdvertisingPartnerLinkInvitationIdentifier) String() string {
 func (*AdvertisingPartnerLinkInvitationIdentifier) ProtoMessage() {}
 
 func (x *AdvertisingPartnerLinkInvitationIdentifier) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v24_resources_product_link_invitation_proto_msgTypes[3]
+	mi := &file_google_ads_googleads_v25_resources_product_link_invitation_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -352,7 +352,7 @@ func (x *AdvertisingPartnerLinkInvitationIdentifier) ProtoReflect() protoreflect
 
 // Deprecated: Use AdvertisingPartnerLinkInvitationIdentifier.ProtoReflect.Descriptor instead.
 func (*AdvertisingPartnerLinkInvitationIdentifier) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v24_resources_product_link_invitation_proto_rawDescGZIP(), []int{3}
+	return file_google_ads_googleads_v25_resources_product_link_invitation_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *AdvertisingPartnerLinkInvitationIdentifier) GetCustomer() string {
@@ -375,7 +375,7 @@ type AdvertisingPartnerLinkInvitationProperties struct {
 
 func (x *AdvertisingPartnerLinkInvitationProperties) Reset() {
 	*x = AdvertisingPartnerLinkInvitationProperties{}
-	mi := &file_google_ads_googleads_v24_resources_product_link_invitation_proto_msgTypes[4]
+	mi := &file_google_ads_googleads_v25_resources_product_link_invitation_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -387,7 +387,7 @@ func (x *AdvertisingPartnerLinkInvitationProperties) String() string {
 func (*AdvertisingPartnerLinkInvitationProperties) ProtoMessage() {}
 
 func (x *AdvertisingPartnerLinkInvitationProperties) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v24_resources_product_link_invitation_proto_msgTypes[4]
+	mi := &file_google_ads_googleads_v25_resources_product_link_invitation_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -400,7 +400,7 @@ func (x *AdvertisingPartnerLinkInvitationProperties) ProtoReflect() protoreflect
 
 // Deprecated: Use AdvertisingPartnerLinkInvitationProperties.ProtoReflect.Descriptor instead.
 func (*AdvertisingPartnerLinkInvitationProperties) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v24_resources_product_link_invitation_proto_rawDescGZIP(), []int{4}
+	return file_google_ads_googleads_v25_resources_product_link_invitation_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *AdvertisingPartnerLinkInvitationProperties) GetAllowedDomain() string {
@@ -410,21 +410,21 @@ func (x *AdvertisingPartnerLinkInvitationProperties) GetAllowedDomain() string {
 	return ""
 }
 
-var File_google_ads_googleads_v24_resources_product_link_invitation_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v25_resources_product_link_invitation_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v24_resources_product_link_invitation_proto_rawDesc = string([]byte{
+var file_google_ads_googleads_v25_resources_product_link_invitation_proto_rawDesc = string([]byte{
 	0x0a, 0x40, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x34, 0x2f, 0x72, 0x65, 0x73, 0x6f, 0x75,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x35, 0x2f, 0x72, 0x65, 0x73, 0x6f, 0x75,
 	0x72, 0x63, 0x65, 0x73, 0x2f, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x5f, 0x6c, 0x69, 0x6e,
 	0x6b, 0x5f, 0x69, 0x6e, 0x76, 0x69, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x70, 0x72, 0x6f,
 	0x74, 0x6f, 0x12, 0x22, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e, 0x72, 0x65, 0x73,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x35, 0x2e, 0x72, 0x65, 0x73,
 	0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x1a, 0x38, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61,
-	0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x34,
+	0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x35,
 	0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2f, 0x6c, 0x69, 0x6e, 0x6b, 0x65, 0x64, 0x5f, 0x70, 0x72,
 	0x6f, 0x64, 0x75, 0x63, 0x74, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
 	0x1a, 0x43, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x34, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x35, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73,
 	0x2f, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x5f, 0x6c, 0x69, 0x6e, 0x6b, 0x5f, 0x69, 0x6e,
 	0x76, 0x69, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x2e,
 	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x1f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x70,
@@ -445,28 +445,28 @@ var file_google_ads_googleads_v24_resources_product_link_invitation_proto_rawDes
 	0x76, 0x69, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x64, 0x12, 0x78, 0x0a, 0x06, 0x73, 0x74,
 	0x61, 0x74, 0x75, 0x73, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x5b, 0x2e, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64,
-	0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x50, 0x72, 0x6f, 0x64,
+	0x73, 0x2e, 0x76, 0x32, 0x35, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x2e, 0x50, 0x72, 0x6f, 0x64,
 	0x75, 0x63, 0x74, 0x4c, 0x69, 0x6e, 0x6b, 0x49, 0x6e, 0x76, 0x69, 0x74, 0x61, 0x74, 0x69, 0x6f,
 	0x6e, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x50, 0x72, 0x6f, 0x64,
 	0x75, 0x63, 0x74, 0x4c, 0x69, 0x6e, 0x6b, 0x49, 0x6e, 0x76, 0x69, 0x74, 0x61, 0x74, 0x69, 0x6f,
 	0x6e, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x42, 0x03, 0xe0, 0x41, 0x03, 0x52, 0x06, 0x73, 0x74,
 	0x61, 0x74, 0x75, 0x73, 0x12, 0x60, 0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x06, 0x20, 0x01,
 	0x28, 0x0e, 0x32, 0x47, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e, 0x65, 0x6e,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x35, 0x2e, 0x65, 0x6e,
 	0x75, 0x6d, 0x73, 0x2e, 0x4c, 0x69, 0x6e, 0x6b, 0x65, 0x64, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63,
 	0x74, 0x54, 0x79, 0x70, 0x65, 0x45, 0x6e, 0x75, 0x6d, 0x2e, 0x4c, 0x69, 0x6e, 0x6b, 0x65, 0x64,
 	0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x54, 0x79, 0x70, 0x65, 0x42, 0x03, 0xe0, 0x41, 0x03,
 	0x52, 0x04, 0x74, 0x79, 0x70, 0x65, 0x12, 0x71, 0x0a, 0x0c, 0x68, 0x6f, 0x74, 0x65, 0x6c, 0x5f,
 	0x63, 0x65, 0x6e, 0x74, 0x65, 0x72, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x47, 0x2e, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65,
+	0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x35, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65,
 	0x73, 0x2e, 0x48, 0x6f, 0x74, 0x65, 0x6c, 0x43, 0x65, 0x6e, 0x74, 0x65, 0x72, 0x4c, 0x69, 0x6e,
 	0x6b, 0x49, 0x6e, 0x76, 0x69, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x64, 0x65, 0x6e, 0x74,
 	0x69, 0x66, 0x69, 0x65, 0x72, 0x42, 0x03, 0xe0, 0x41, 0x03, 0x48, 0x00, 0x52, 0x0b, 0x68, 0x6f,
 	0x74, 0x65, 0x6c, 0x43, 0x65, 0x6e, 0x74, 0x65, 0x72, 0x12, 0x7a, 0x0a, 0x0f, 0x6d, 0x65, 0x72,
 	0x63, 0x68, 0x61, 0x6e, 0x74, 0x5f, 0x63, 0x65, 0x6e, 0x74, 0x65, 0x72, 0x18, 0x05, 0x20, 0x01,
 	0x28, 0x0b, 0x32, 0x4a, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e, 0x72, 0x65,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x35, 0x2e, 0x72, 0x65,
 	0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e, 0x4d, 0x65, 0x72, 0x63, 0x68, 0x61, 0x6e, 0x74,
 	0x43, 0x65, 0x6e, 0x74, 0x65, 0x72, 0x4c, 0x69, 0x6e, 0x6b, 0x49, 0x6e, 0x76, 0x69, 0x74, 0x61,
 	0x74, 0x69, 0x6f, 0x6e, 0x49, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x42, 0x03,
@@ -474,7 +474,7 @@ var file_google_ads_googleads_v24_resources_product_link_invitation_proto_rawDes
 	0x65, 0x6e, 0x74, 0x65, 0x72, 0x12, 0x86, 0x01, 0x0a, 0x13, 0x61, 0x64, 0x76, 0x65, 0x72, 0x74,
 	0x69, 0x73, 0x69, 0x6e, 0x67, 0x5f, 0x70, 0x61, 0x72, 0x74, 0x6e, 0x65, 0x72, 0x18, 0x07, 0x20,
 	0x01, 0x28, 0x0b, 0x32, 0x4e, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73,
-	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e, 0x72,
+	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x35, 0x2e, 0x72,
 	0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e, 0x41, 0x64, 0x76, 0x65, 0x72, 0x74, 0x69,
 	0x73, 0x69, 0x6e, 0x67, 0x50, 0x61, 0x72, 0x74, 0x6e, 0x65, 0x72, 0x4c, 0x69, 0x6e, 0x6b, 0x49,
 	0x6e, 0x76, 0x69, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66,
@@ -484,7 +484,7 @@ var file_google_ads_googleads_v24_resources_product_link_invitation_proto_rawDes
 	0x61, 0x72, 0x74, 0x6e, 0x65, 0x72, 0x5f, 0x70, 0x72, 0x6f, 0x70, 0x65, 0x72, 0x74, 0x69, 0x65,
 	0x73, 0x18, 0x08, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x4e, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76,
-	0x32, 0x34, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e, 0x41, 0x64, 0x76,
+	0x32, 0x35, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x2e, 0x41, 0x64, 0x76,
 	0x65, 0x72, 0x74, 0x69, 0x73, 0x69, 0x6e, 0x67, 0x50, 0x61, 0x72, 0x74, 0x6e, 0x65, 0x72, 0x4c,
 	0x69, 0x6e, 0x6b, 0x49, 0x6e, 0x76, 0x69, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x50, 0x72, 0x6f,
 	0x70, 0x65, 0x72, 0x74, 0x69, 0x65, 0x73, 0x42, 0x03, 0xe0, 0x41, 0x03, 0x48, 0x01, 0x52, 0x1c,
@@ -529,53 +529,53 @@ var file_google_ads_googleads_v24_resources_product_link_invitation_proto_rawDes
 	0x88, 0x01, 0x01, 0x42, 0x11, 0x0a, 0x0f, 0x5f, 0x61, 0x6c, 0x6c, 0x6f, 0x77, 0x65, 0x64, 0x5f,
 	0x64, 0x6f, 0x6d, 0x61, 0x69, 0x6e, 0x42, 0x8c, 0x02, 0x0a, 0x26, 0x63, 0x6f, 0x6d, 0x2e, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65,
+	0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x35, 0x2e, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65,
 	0x73, 0x42, 0x1a, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x4c, 0x69, 0x6e, 0x6b, 0x49, 0x6e,
 	0x76, 0x69, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a,
 	0x4b, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x67, 0x6f, 0x6c, 0x61, 0x6e, 0x67, 0x2e, 0x6f,
 	0x72, 0x67, 0x2f, 0x67, 0x65, 0x6e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x61, 0x70, 0x69, 0x73, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x34, 0x2f, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63,
+	0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x35, 0x2f, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63,
 	0x65, 0x73, 0x3b, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0xa2, 0x02, 0x03, 0x47,
 	0x41, 0x41, 0xaa, 0x02, 0x22, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x41, 0x64, 0x73, 0x2e,
-	0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e, 0x56, 0x32, 0x34, 0x2e, 0x52, 0x65,
+	0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e, 0x56, 0x32, 0x35, 0x2e, 0x52, 0x65,
 	0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0xca, 0x02, 0x22, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x5c, 0x41, 0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56,
-	0x32, 0x34, 0x5c, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0xea, 0x02, 0x26, 0x47,
+	0x32, 0x35, 0x5c, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0xea, 0x02, 0x26, 0x47,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x3a, 0x3a, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x47, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x32, 0x34, 0x3a, 0x3a, 0x52, 0x65, 0x73, 0x6f,
+	0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x32, 0x35, 0x3a, 0x3a, 0x52, 0x65, 0x73, 0x6f,
 	0x75, 0x72, 0x63, 0x65, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 })
 
 var (
-	file_google_ads_googleads_v24_resources_product_link_invitation_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v24_resources_product_link_invitation_proto_rawDescData []byte
+	file_google_ads_googleads_v25_resources_product_link_invitation_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v25_resources_product_link_invitation_proto_rawDescData []byte
 )
 
-func file_google_ads_googleads_v24_resources_product_link_invitation_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v24_resources_product_link_invitation_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v24_resources_product_link_invitation_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v24_resources_product_link_invitation_proto_rawDesc), len(file_google_ads_googleads_v24_resources_product_link_invitation_proto_rawDesc)))
+func file_google_ads_googleads_v25_resources_product_link_invitation_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v25_resources_product_link_invitation_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v25_resources_product_link_invitation_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v25_resources_product_link_invitation_proto_rawDesc), len(file_google_ads_googleads_v25_resources_product_link_invitation_proto_rawDesc)))
 	})
-	return file_google_ads_googleads_v24_resources_product_link_invitation_proto_rawDescData
+	return file_google_ads_googleads_v25_resources_product_link_invitation_proto_rawDescData
 }
 
-var file_google_ads_googleads_v24_resources_product_link_invitation_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
-var file_google_ads_googleads_v24_resources_product_link_invitation_proto_goTypes = []any{
-	(*ProductLinkInvitation)(nil),                                          // 0: google.ads.googleads.v24.resources.ProductLinkInvitation
-	(*HotelCenterLinkInvitationIdentifier)(nil),                            // 1: google.ads.googleads.v24.resources.HotelCenterLinkInvitationIdentifier
-	(*MerchantCenterLinkInvitationIdentifier)(nil),                         // 2: google.ads.googleads.v24.resources.MerchantCenterLinkInvitationIdentifier
-	(*AdvertisingPartnerLinkInvitationIdentifier)(nil),                     // 3: google.ads.googleads.v24.resources.AdvertisingPartnerLinkInvitationIdentifier
-	(*AdvertisingPartnerLinkInvitationProperties)(nil),                     // 4: google.ads.googleads.v24.resources.AdvertisingPartnerLinkInvitationProperties
-	(enums.ProductLinkInvitationStatusEnum_ProductLinkInvitationStatus)(0), // 5: google.ads.googleads.v24.enums.ProductLinkInvitationStatusEnum.ProductLinkInvitationStatus
-	(enums.LinkedProductTypeEnum_LinkedProductType)(0),                     // 6: google.ads.googleads.v24.enums.LinkedProductTypeEnum.LinkedProductType
+var file_google_ads_googleads_v25_resources_product_link_invitation_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
+var file_google_ads_googleads_v25_resources_product_link_invitation_proto_goTypes = []any{
+	(*ProductLinkInvitation)(nil),                                          // 0: google.ads.googleads.v25.resources.ProductLinkInvitation
+	(*HotelCenterLinkInvitationIdentifier)(nil),                            // 1: google.ads.googleads.v25.resources.HotelCenterLinkInvitationIdentifier
+	(*MerchantCenterLinkInvitationIdentifier)(nil),                         // 2: google.ads.googleads.v25.resources.MerchantCenterLinkInvitationIdentifier
+	(*AdvertisingPartnerLinkInvitationIdentifier)(nil),                     // 3: google.ads.googleads.v25.resources.AdvertisingPartnerLinkInvitationIdentifier
+	(*AdvertisingPartnerLinkInvitationProperties)(nil),                     // 4: google.ads.googleads.v25.resources.AdvertisingPartnerLinkInvitationProperties
+	(enums.ProductLinkInvitationStatusEnum_ProductLinkInvitationStatus)(0), // 5: google.ads.googleads.v25.enums.ProductLinkInvitationStatusEnum.ProductLinkInvitationStatus
+	(enums.LinkedProductTypeEnum_LinkedProductType)(0),                     // 6: google.ads.googleads.v25.enums.LinkedProductTypeEnum.LinkedProductType
 }
-var file_google_ads_googleads_v24_resources_product_link_invitation_proto_depIdxs = []int32{
-	5, // 0: google.ads.googleads.v24.resources.ProductLinkInvitation.status:type_name -> google.ads.googleads.v24.enums.ProductLinkInvitationStatusEnum.ProductLinkInvitationStatus
-	6, // 1: google.ads.googleads.v24.resources.ProductLinkInvitation.type:type_name -> google.ads.googleads.v24.enums.LinkedProductTypeEnum.LinkedProductType
-	1, // 2: google.ads.googleads.v24.resources.ProductLinkInvitation.hotel_center:type_name -> google.ads.googleads.v24.resources.HotelCenterLinkInvitationIdentifier
-	2, // 3: google.ads.googleads.v24.resources.ProductLinkInvitation.merchant_center:type_name -> google.ads.googleads.v24.resources.MerchantCenterLinkInvitationIdentifier
-	3, // 4: google.ads.googleads.v24.resources.ProductLinkInvitation.advertising_partner:type_name -> google.ads.googleads.v24.resources.AdvertisingPartnerLinkInvitationIdentifier
-	4, // 5: google.ads.googleads.v24.resources.ProductLinkInvitation.advertising_partner_properties:type_name -> google.ads.googleads.v24.resources.AdvertisingPartnerLinkInvitationProperties
+var file_google_ads_googleads_v25_resources_product_link_invitation_proto_depIdxs = []int32{
+	5, // 0: google.ads.googleads.v25.resources.ProductLinkInvitation.status:type_name -> google.ads.googleads.v25.enums.ProductLinkInvitationStatusEnum.ProductLinkInvitationStatus
+	6, // 1: google.ads.googleads.v25.resources.ProductLinkInvitation.type:type_name -> google.ads.googleads.v25.enums.LinkedProductTypeEnum.LinkedProductType
+	1, // 2: google.ads.googleads.v25.resources.ProductLinkInvitation.hotel_center:type_name -> google.ads.googleads.v25.resources.HotelCenterLinkInvitationIdentifier
+	2, // 3: google.ads.googleads.v25.resources.ProductLinkInvitation.merchant_center:type_name -> google.ads.googleads.v25.resources.MerchantCenterLinkInvitationIdentifier
+	3, // 4: google.ads.googleads.v25.resources.ProductLinkInvitation.advertising_partner:type_name -> google.ads.googleads.v25.resources.AdvertisingPartnerLinkInvitationIdentifier
+	4, // 5: google.ads.googleads.v25.resources.ProductLinkInvitation.advertising_partner_properties:type_name -> google.ads.googleads.v25.resources.AdvertisingPartnerLinkInvitationProperties
 	6, // [6:6] is the sub-list for method output_type
 	6, // [6:6] is the sub-list for method input_type
 	6, // [6:6] is the sub-list for extension type_name
@@ -583,34 +583,34 @@ var file_google_ads_googleads_v24_resources_product_link_invitation_proto_depIdx
 	0, // [0:6] is the sub-list for field type_name
 }
 
-func init() { file_google_ads_googleads_v24_resources_product_link_invitation_proto_init() }
-func file_google_ads_googleads_v24_resources_product_link_invitation_proto_init() {
-	if File_google_ads_googleads_v24_resources_product_link_invitation_proto != nil {
+func init() { file_google_ads_googleads_v25_resources_product_link_invitation_proto_init() }
+func file_google_ads_googleads_v25_resources_product_link_invitation_proto_init() {
+	if File_google_ads_googleads_v25_resources_product_link_invitation_proto != nil {
 		return
 	}
-	file_google_ads_googleads_v24_resources_product_link_invitation_proto_msgTypes[0].OneofWrappers = []any{
+	file_google_ads_googleads_v25_resources_product_link_invitation_proto_msgTypes[0].OneofWrappers = []any{
 		(*ProductLinkInvitation_HotelCenter)(nil),
 		(*ProductLinkInvitation_MerchantCenter)(nil),
 		(*ProductLinkInvitation_AdvertisingPartner)(nil),
 		(*ProductLinkInvitation_AdvertisingPartnerProperties)(nil),
 	}
-	file_google_ads_googleads_v24_resources_product_link_invitation_proto_msgTypes[3].OneofWrappers = []any{}
-	file_google_ads_googleads_v24_resources_product_link_invitation_proto_msgTypes[4].OneofWrappers = []any{}
+	file_google_ads_googleads_v25_resources_product_link_invitation_proto_msgTypes[3].OneofWrappers = []any{}
+	file_google_ads_googleads_v25_resources_product_link_invitation_proto_msgTypes[4].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v24_resources_product_link_invitation_proto_rawDesc), len(file_google_ads_googleads_v24_resources_product_link_invitation_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v25_resources_product_link_invitation_proto_rawDesc), len(file_google_ads_googleads_v25_resources_product_link_invitation_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_google_ads_googleads_v24_resources_product_link_invitation_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v24_resources_product_link_invitation_proto_depIdxs,
-		MessageInfos:      file_google_ads_googleads_v24_resources_product_link_invitation_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v25_resources_product_link_invitation_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v25_resources_product_link_invitation_proto_depIdxs,
+		MessageInfos:      file_google_ads_googleads_v25_resources_product_link_invitation_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v24_resources_product_link_invitation_proto = out.File
-	file_google_ads_googleads_v24_resources_product_link_invitation_proto_goTypes = nil
-	file_google_ads_googleads_v24_resources_product_link_invitation_proto_depIdxs = nil
+	File_google_ads_googleads_v25_resources_product_link_invitation_proto = out.File
+	file_google_ads_googleads_v25_resources_product_link_invitation_proto_goTypes = nil
+	file_google_ads_googleads_v25_resources_product_link_invitation_proto_depIdxs = nil
 }

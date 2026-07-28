@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v24/services/audience_insights_service.proto
+// source: google/ads/googleads/v25/services/audience_insights_service.proto
 
 package services
 
@@ -33,14 +33,14 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	AudienceInsightsService_GenerateInsightsFinderReport_FullMethodName        = "/google.ads.googleads.v24.services.AudienceInsightsService/GenerateInsightsFinderReport"
-	AudienceInsightsService_ListAudienceInsightsAttributes_FullMethodName      = "/google.ads.googleads.v24.services.AudienceInsightsService/ListAudienceInsightsAttributes"
-	AudienceInsightsService_ListInsightsEligibleDates_FullMethodName           = "/google.ads.googleads.v24.services.AudienceInsightsService/ListInsightsEligibleDates"
-	AudienceInsightsService_GenerateAudienceCompositionInsights_FullMethodName = "/google.ads.googleads.v24.services.AudienceInsightsService/GenerateAudienceCompositionInsights"
-	AudienceInsightsService_GenerateAudienceDefinition_FullMethodName          = "/google.ads.googleads.v24.services.AudienceInsightsService/GenerateAudienceDefinition"
-	AudienceInsightsService_GenerateSuggestedTargetingInsights_FullMethodName  = "/google.ads.googleads.v24.services.AudienceInsightsService/GenerateSuggestedTargetingInsights"
-	AudienceInsightsService_GenerateAudienceOverlapInsights_FullMethodName     = "/google.ads.googleads.v24.services.AudienceInsightsService/GenerateAudienceOverlapInsights"
-	AudienceInsightsService_GenerateTargetingSuggestionMetrics_FullMethodName  = "/google.ads.googleads.v24.services.AudienceInsightsService/GenerateTargetingSuggestionMetrics"
+	AudienceInsightsService_GenerateInsightsFinderReport_FullMethodName        = "/google.ads.googleads.v25.services.AudienceInsightsService/GenerateInsightsFinderReport"
+	AudienceInsightsService_ListAudienceInsightsAttributes_FullMethodName      = "/google.ads.googleads.v25.services.AudienceInsightsService/ListAudienceInsightsAttributes"
+	AudienceInsightsService_ListInsightsEligibleDates_FullMethodName           = "/google.ads.googleads.v25.services.AudienceInsightsService/ListInsightsEligibleDates"
+	AudienceInsightsService_GenerateAudienceCompositionInsights_FullMethodName = "/google.ads.googleads.v25.services.AudienceInsightsService/GenerateAudienceCompositionInsights"
+	AudienceInsightsService_GenerateAudienceDefinition_FullMethodName          = "/google.ads.googleads.v25.services.AudienceInsightsService/GenerateAudienceDefinition"
+	AudienceInsightsService_GenerateSuggestedTargetingInsights_FullMethodName  = "/google.ads.googleads.v25.services.AudienceInsightsService/GenerateSuggestedTargetingInsights"
+	AudienceInsightsService_GenerateAudienceOverlapInsights_FullMethodName     = "/google.ads.googleads.v25.services.AudienceInsightsService/GenerateAudienceOverlapInsights"
+	AudienceInsightsService_GenerateTargetingSuggestionMetrics_FullMethodName  = "/google.ads.googleads.v25.services.AudienceInsightsService/GenerateTargetingSuggestionMetrics"
 )
 
 // AudienceInsightsServiceClient is the client API for AudienceInsightsService service.
@@ -587,7 +587,7 @@ func _AudienceInsightsService_GenerateTargetingSuggestionMetrics_Handler(srv int
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AudienceInsightsService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v24.services.AudienceInsightsService",
+	ServiceName: "google.ads.googleads.v25.services.AudienceInsightsService",
 	HandlerType: (*AudienceInsightsServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -624,5 +624,5 @@ var AudienceInsightsService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v24/services/audience_insights_service.proto",
+	Metadata: "google/ads/googleads/v25/services/audience_insights_service.proto",
 }
