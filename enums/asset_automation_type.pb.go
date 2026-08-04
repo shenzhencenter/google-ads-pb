@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.36.5
 // 	protoc        v4.24.4
-// source: google/ads/googleads/v24/enums/asset_automation_type.proto
+// source: google/ads/googleads/v25/enums/asset_automation_type.proto
 
 package enums
 
@@ -55,11 +55,11 @@ const (
 	AssetAutomationTypeEnum_TEXT_ASSET_AUTOMATION AssetAutomationTypeEnum_AssetAutomationType = 2
 	// Converts horizontal video assets to vertical orientation using
 	// content-aware technology. By default, advertisers are opted in for
-	// DemandGenVideoResponsiveAd.
+	// DemandGenVideoResponsiveAdInfo.
 	AssetAutomationTypeEnum_GENERATE_VERTICAL_YOUTUBE_VIDEOS AssetAutomationTypeEnum_AssetAutomationType = 3
 	// Shortens video assets to better capture user attention using
 	// content-aware technology. By default, advertisers are opted in for
-	// DemandGenVideoResponsiveAd.
+	// DemandGenVideoResponsiveAdInfo.
 	AssetAutomationTypeEnum_GENERATE_SHORTER_YOUTUBE_VIDEOS AssetAutomationTypeEnum_AssetAutomationType = 4
 	// Generates a preview of the landing page shown in the engagement panel.
 	//
@@ -69,7 +69,7 @@ const (
 	// these images on your behalf for advertising or other commercial purposes.
 	AssetAutomationTypeEnum_GENERATE_LANDING_PAGE_PREVIEW AssetAutomationTypeEnum_AssetAutomationType = 5
 	// Generates text information from the landing page to be shown in the
-	// engagement panel. Opted in by default for DemandGenVideoResponsiveAd.
+	// engagement panel. Opted in by default for DemandGenVideoResponsiveAdInfo.
 	AssetAutomationTypeEnum_GENERATE_LANDING_PAGE_TEXT AssetAutomationTypeEnum_AssetAutomationType = 14
 	// Generates video enhancements (vertical and shorter videos) for PMax
 	// campaigns. Opted in by default.
@@ -101,6 +101,9 @@ const (
 	// Generates videos using other Assets as input, such as images and text. By
 	// default, advertisers are opted in for DemandGenMultiAssetAd.
 	AssetAutomationTypeEnum_GENERATE_VIDEOS_FROM_OTHER_ASSETS AssetAutomationTypeEnum_AssetAutomationType = 12
+	// Generates animated images using other Assets as input, such as images and
+	// text. By default, advertisers are opted in for DemandGenMultiAssetAd.
+	AssetAutomationTypeEnum_GENERATE_ANIMATED_IMAGES_FROM_OTHER_ASSETS AssetAutomationTypeEnum_AssetAutomationType = 13
 )
 
 // Enum value maps for AssetAutomationTypeEnum_AssetAutomationType.
@@ -119,21 +122,23 @@ var (
 		10: "GENERATE_DESIGN_VERSIONS_FOR_IMAGES",
 		11: "FINAL_URL_EXPANSION_TEXT_ASSET_AUTOMATION",
 		12: "GENERATE_VIDEOS_FROM_OTHER_ASSETS",
+		13: "GENERATE_ANIMATED_IMAGES_FROM_OTHER_ASSETS",
 	}
 	AssetAutomationTypeEnum_AssetAutomationType_value = map[string]int32{
-		"UNSPECIFIED":                               0,
-		"UNKNOWN":                                   1,
-		"TEXT_ASSET_AUTOMATION":                     2,
-		"GENERATE_VERTICAL_YOUTUBE_VIDEOS":          3,
-		"GENERATE_SHORTER_YOUTUBE_VIDEOS":           4,
-		"GENERATE_LANDING_PAGE_PREVIEW":             5,
-		"GENERATE_LANDING_PAGE_TEXT":                14,
-		"GENERATE_ENHANCED_YOUTUBE_VIDEOS":          6,
-		"GENERATE_IMAGE_ENHANCEMENT":                7,
-		"GENERATE_IMAGE_EXTRACTION":                 9,
-		"GENERATE_DESIGN_VERSIONS_FOR_IMAGES":       10,
-		"FINAL_URL_EXPANSION_TEXT_ASSET_AUTOMATION": 11,
-		"GENERATE_VIDEOS_FROM_OTHER_ASSETS":         12,
+		"UNSPECIFIED":                                0,
+		"UNKNOWN":                                    1,
+		"TEXT_ASSET_AUTOMATION":                      2,
+		"GENERATE_VERTICAL_YOUTUBE_VIDEOS":           3,
+		"GENERATE_SHORTER_YOUTUBE_VIDEOS":            4,
+		"GENERATE_LANDING_PAGE_PREVIEW":              5,
+		"GENERATE_LANDING_PAGE_TEXT":                 14,
+		"GENERATE_ENHANCED_YOUTUBE_VIDEOS":           6,
+		"GENERATE_IMAGE_ENHANCEMENT":                 7,
+		"GENERATE_IMAGE_EXTRACTION":                  9,
+		"GENERATE_DESIGN_VERSIONS_FOR_IMAGES":        10,
+		"FINAL_URL_EXPANSION_TEXT_ASSET_AUTOMATION":  11,
+		"GENERATE_VIDEOS_FROM_OTHER_ASSETS":          12,
+		"GENERATE_ANIMATED_IMAGES_FROM_OTHER_ASSETS": 13,
 	}
 )
 
@@ -148,11 +153,11 @@ func (x AssetAutomationTypeEnum_AssetAutomationType) String() string {
 }
 
 func (AssetAutomationTypeEnum_AssetAutomationType) Descriptor() protoreflect.EnumDescriptor {
-	return file_google_ads_googleads_v24_enums_asset_automation_type_proto_enumTypes[0].Descriptor()
+	return file_google_ads_googleads_v25_enums_asset_automation_type_proto_enumTypes[0].Descriptor()
 }
 
 func (AssetAutomationTypeEnum_AssetAutomationType) Type() protoreflect.EnumType {
-	return &file_google_ads_googleads_v24_enums_asset_automation_type_proto_enumTypes[0]
+	return &file_google_ads_googleads_v25_enums_asset_automation_type_proto_enumTypes[0]
 }
 
 func (x AssetAutomationTypeEnum_AssetAutomationType) Number() protoreflect.EnumNumber {
@@ -161,7 +166,7 @@ func (x AssetAutomationTypeEnum_AssetAutomationType) Number() protoreflect.EnumN
 
 // Deprecated: Use AssetAutomationTypeEnum_AssetAutomationType.Descriptor instead.
 func (AssetAutomationTypeEnum_AssetAutomationType) EnumDescriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v24_enums_asset_automation_type_proto_rawDescGZIP(), []int{0, 0}
+	return file_google_ads_googleads_v25_enums_asset_automation_type_proto_rawDescGZIP(), []int{0, 0}
 }
 
 // Container for enum describing the type of asset automation.
@@ -173,7 +178,7 @@ type AssetAutomationTypeEnum struct {
 
 func (x *AssetAutomationTypeEnum) Reset() {
 	*x = AssetAutomationTypeEnum{}
-	mi := &file_google_ads_googleads_v24_enums_asset_automation_type_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v25_enums_asset_automation_type_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -185,7 +190,7 @@ func (x *AssetAutomationTypeEnum) String() string {
 func (*AssetAutomationTypeEnum) ProtoMessage() {}
 
 func (x *AssetAutomationTypeEnum) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v24_enums_asset_automation_type_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v25_enums_asset_automation_type_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -198,20 +203,20 @@ func (x *AssetAutomationTypeEnum) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AssetAutomationTypeEnum.ProtoReflect.Descriptor instead.
 func (*AssetAutomationTypeEnum) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v24_enums_asset_automation_type_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v25_enums_asset_automation_type_proto_rawDescGZIP(), []int{0}
 }
 
-var File_google_ads_googleads_v24_enums_asset_automation_type_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v25_enums_asset_automation_type_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v24_enums_asset_automation_type_proto_rawDesc = string([]byte{
+var file_google_ads_googleads_v25_enums_asset_automation_type_proto_rawDesc = string([]byte{
 	0x0a, 0x3a, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x34, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x35, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73,
 	0x2f, 0x61, 0x73, 0x73, 0x65, 0x74, 0x5f, 0x61, 0x75, 0x74, 0x6f, 0x6d, 0x61, 0x74, 0x69, 0x6f,
 	0x6e, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x1e, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x64, 0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x22, 0xdc, 0x03, 0x0a,
+	0x64, 0x73, 0x2e, 0x76, 0x32, 0x35, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x22, 0x8c, 0x04, 0x0a,
 	0x17, 0x41, 0x73, 0x73, 0x65, 0x74, 0x41, 0x75, 0x74, 0x6f, 0x6d, 0x61, 0x74, 0x69, 0x6f, 0x6e,
-	0x54, 0x79, 0x70, 0x65, 0x45, 0x6e, 0x75, 0x6d, 0x22, 0xc0, 0x03, 0x0a, 0x13, 0x41, 0x73, 0x73,
+	0x54, 0x79, 0x70, 0x65, 0x45, 0x6e, 0x75, 0x6d, 0x22, 0xf0, 0x03, 0x0a, 0x13, 0x41, 0x73, 0x73,
 	0x65, 0x74, 0x41, 0x75, 0x74, 0x6f, 0x6d, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x54, 0x79, 0x70, 0x65,
 	0x12, 0x0f, 0x0a, 0x0b, 0x55, 0x4e, 0x53, 0x50, 0x45, 0x43, 0x49, 0x46, 0x49, 0x45, 0x44, 0x10,
 	0x00, 0x12, 0x0b, 0x0a, 0x07, 0x55, 0x4e, 0x4b, 0x4e, 0x4f, 0x57, 0x4e, 0x10, 0x01, 0x12, 0x19,
@@ -239,44 +244,47 @@ var file_google_ads_googleads_v24_enums_asset_automation_type_proto_rawDesc = st
 	0x54, 0x5f, 0x41, 0x53, 0x53, 0x45, 0x54, 0x5f, 0x41, 0x55, 0x54, 0x4f, 0x4d, 0x41, 0x54, 0x49,
 	0x4f, 0x4e, 0x10, 0x0b, 0x12, 0x25, 0x0a, 0x21, 0x47, 0x45, 0x4e, 0x45, 0x52, 0x41, 0x54, 0x45,
 	0x5f, 0x56, 0x49, 0x44, 0x45, 0x4f, 0x53, 0x5f, 0x46, 0x52, 0x4f, 0x4d, 0x5f, 0x4f, 0x54, 0x48,
-	0x45, 0x52, 0x5f, 0x41, 0x53, 0x53, 0x45, 0x54, 0x53, 0x10, 0x0c, 0x42, 0xf2, 0x01, 0x0a, 0x22,
+	0x45, 0x52, 0x5f, 0x41, 0x53, 0x53, 0x45, 0x54, 0x53, 0x10, 0x0c, 0x12, 0x2e, 0x0a, 0x2a, 0x47,
+	0x45, 0x4e, 0x45, 0x52, 0x41, 0x54, 0x45, 0x5f, 0x41, 0x4e, 0x49, 0x4d, 0x41, 0x54, 0x45, 0x44,
+	0x5f, 0x49, 0x4d, 0x41, 0x47, 0x45, 0x53, 0x5f, 0x46, 0x52, 0x4f, 0x4d, 0x5f, 0x4f, 0x54, 0x48,
+	0x45, 0x52, 0x5f, 0x41, 0x53, 0x53, 0x45, 0x54, 0x53, 0x10, 0x0d, 0x42, 0xf2, 0x01, 0x0a, 0x22,
 	0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x34, 0x2e, 0x65, 0x6e, 0x75,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x35, 0x2e, 0x65, 0x6e, 0x75,
 	0x6d, 0x73, 0x42, 0x18, 0x41, 0x73, 0x73, 0x65, 0x74, 0x41, 0x75, 0x74, 0x6f, 0x6d, 0x61, 0x74,
 	0x69, 0x6f, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x43,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x67, 0x6f, 0x6c, 0x61, 0x6e, 0x67, 0x2e, 0x6f, 0x72,
 	0x67, 0x2f, 0x67, 0x65, 0x6e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x61, 0x70, 0x69, 0x73, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x34, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x3b, 0x65, 0x6e,
+	0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x35, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x3b, 0x65, 0x6e,
 	0x75, 0x6d, 0x73, 0xa2, 0x02, 0x03, 0x47, 0x41, 0x41, 0xaa, 0x02, 0x1e, 0x47, 0x6f, 0x6f, 0x67,
 	0x6c, 0x65, 0x2e, 0x41, 0x64, 0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73,
-	0x2e, 0x56, 0x32, 0x34, 0x2e, 0x45, 0x6e, 0x75, 0x6d, 0x73, 0xca, 0x02, 0x1e, 0x47, 0x6f, 0x6f,
+	0x2e, 0x56, 0x32, 0x35, 0x2e, 0x45, 0x6e, 0x75, 0x6d, 0x73, 0xca, 0x02, 0x1e, 0x47, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x5c, 0x41, 0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64,
-	0x73, 0x5c, 0x56, 0x32, 0x34, 0x5c, 0x45, 0x6e, 0x75, 0x6d, 0x73, 0xea, 0x02, 0x22, 0x47, 0x6f,
+	0x73, 0x5c, 0x56, 0x32, 0x35, 0x5c, 0x45, 0x6e, 0x75, 0x6d, 0x73, 0xea, 0x02, 0x22, 0x47, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x3a, 0x3a, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x47, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x32, 0x34, 0x3a, 0x3a, 0x45, 0x6e, 0x75, 0x6d, 0x73,
+	0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x32, 0x35, 0x3a, 0x3a, 0x45, 0x6e, 0x75, 0x6d, 0x73,
 	0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 })
 
 var (
-	file_google_ads_googleads_v24_enums_asset_automation_type_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v24_enums_asset_automation_type_proto_rawDescData []byte
+	file_google_ads_googleads_v25_enums_asset_automation_type_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v25_enums_asset_automation_type_proto_rawDescData []byte
 )
 
-func file_google_ads_googleads_v24_enums_asset_automation_type_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v24_enums_asset_automation_type_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v24_enums_asset_automation_type_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v24_enums_asset_automation_type_proto_rawDesc), len(file_google_ads_googleads_v24_enums_asset_automation_type_proto_rawDesc)))
+func file_google_ads_googleads_v25_enums_asset_automation_type_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v25_enums_asset_automation_type_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v25_enums_asset_automation_type_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v25_enums_asset_automation_type_proto_rawDesc), len(file_google_ads_googleads_v25_enums_asset_automation_type_proto_rawDesc)))
 	})
-	return file_google_ads_googleads_v24_enums_asset_automation_type_proto_rawDescData
+	return file_google_ads_googleads_v25_enums_asset_automation_type_proto_rawDescData
 }
 
-var file_google_ads_googleads_v24_enums_asset_automation_type_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_google_ads_googleads_v24_enums_asset_automation_type_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
-var file_google_ads_googleads_v24_enums_asset_automation_type_proto_goTypes = []any{
-	(AssetAutomationTypeEnum_AssetAutomationType)(0), // 0: google.ads.googleads.v24.enums.AssetAutomationTypeEnum.AssetAutomationType
-	(*AssetAutomationTypeEnum)(nil),                  // 1: google.ads.googleads.v24.enums.AssetAutomationTypeEnum
+var file_google_ads_googleads_v25_enums_asset_automation_type_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_google_ads_googleads_v25_enums_asset_automation_type_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_google_ads_googleads_v25_enums_asset_automation_type_proto_goTypes = []any{
+	(AssetAutomationTypeEnum_AssetAutomationType)(0), // 0: google.ads.googleads.v25.enums.AssetAutomationTypeEnum.AssetAutomationType
+	(*AssetAutomationTypeEnum)(nil),                  // 1: google.ads.googleads.v25.enums.AssetAutomationTypeEnum
 }
-var file_google_ads_googleads_v24_enums_asset_automation_type_proto_depIdxs = []int32{
+var file_google_ads_googleads_v25_enums_asset_automation_type_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type
 	0, // [0:0] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
@@ -284,27 +292,27 @@ var file_google_ads_googleads_v24_enums_asset_automation_type_proto_depIdxs = []
 	0, // [0:0] is the sub-list for field type_name
 }
 
-func init() { file_google_ads_googleads_v24_enums_asset_automation_type_proto_init() }
-func file_google_ads_googleads_v24_enums_asset_automation_type_proto_init() {
-	if File_google_ads_googleads_v24_enums_asset_automation_type_proto != nil {
+func init() { file_google_ads_googleads_v25_enums_asset_automation_type_proto_init() }
+func file_google_ads_googleads_v25_enums_asset_automation_type_proto_init() {
+	if File_google_ads_googleads_v25_enums_asset_automation_type_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v24_enums_asset_automation_type_proto_rawDesc), len(file_google_ads_googleads_v24_enums_asset_automation_type_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v25_enums_asset_automation_type_proto_rawDesc), len(file_google_ads_googleads_v25_enums_asset_automation_type_proto_rawDesc)),
 			NumEnums:      1,
 			NumMessages:   1,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_google_ads_googleads_v24_enums_asset_automation_type_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v24_enums_asset_automation_type_proto_depIdxs,
-		EnumInfos:         file_google_ads_googleads_v24_enums_asset_automation_type_proto_enumTypes,
-		MessageInfos:      file_google_ads_googleads_v24_enums_asset_automation_type_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v25_enums_asset_automation_type_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v25_enums_asset_automation_type_proto_depIdxs,
+		EnumInfos:         file_google_ads_googleads_v25_enums_asset_automation_type_proto_enumTypes,
+		MessageInfos:      file_google_ads_googleads_v25_enums_asset_automation_type_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v24_enums_asset_automation_type_proto = out.File
-	file_google_ads_googleads_v24_enums_asset_automation_type_proto_goTypes = nil
-	file_google_ads_googleads_v24_enums_asset_automation_type_proto_depIdxs = nil
+	File_google_ads_googleads_v25_enums_asset_automation_type_proto = out.File
+	file_google_ads_googleads_v25_enums_asset_automation_type_proto_goTypes = nil
+	file_google_ads_googleads_v25_enums_asset_automation_type_proto_depIdxs = nil
 }

@@ -126,7 +126,6 @@ func (c *CampaignGoalConfigClient) Connection() *grpc.ClientConn {
 // QuotaError (at )
 // RequestError (at )
 // CampaignGoalConfigError (at )
-// GoalServicesError (at )
 func (c *CampaignGoalConfigClient) MutateCampaignGoalConfigs(ctx context.Context, req *servicespb.MutateCampaignGoalConfigsRequest, opts ...gax.CallOption) (*servicespb.MutateCampaignGoalConfigsResponse, error) {
 	return c.internalClient.MutateCampaignGoalConfigs(ctx, req, opts...)
 }

@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v24/services/multi_party_auth_review_service.proto
+// source: google/ads/googleads/v25/services/multi_party_auth_review_service.proto
 
 package services
 
@@ -33,7 +33,7 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	MultiPartyAuthReviewService_ResolveMultiPartyAuthReview_FullMethodName = "/google.ads.googleads.v24.services.MultiPartyAuthReviewService/ResolveMultiPartyAuthReview"
+	MultiPartyAuthReviewService_ResolveMultiPartyAuthReview_FullMethodName = "/google.ads.googleads.v25.services.MultiPartyAuthReviewService/ResolveMultiPartyAuthReview"
 )
 
 // MultiPartyAuthReviewServiceClient is the client API for MultiPartyAuthReviewService service.
@@ -159,7 +159,7 @@ func _MultiPartyAuthReviewService_ResolveMultiPartyAuthReview_Handler(srv interf
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var MultiPartyAuthReviewService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v24.services.MultiPartyAuthReviewService",
+	ServiceName: "google.ads.googleads.v25.services.MultiPartyAuthReviewService",
 	HandlerType: (*MultiPartyAuthReviewServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -168,5 +168,5 @@ var MultiPartyAuthReviewService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v24/services/multi_party_auth_review_service.proto",
+	Metadata: "google/ads/googleads/v25/services/multi_party_auth_review_service.proto",
 }

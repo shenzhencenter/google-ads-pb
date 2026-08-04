@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v24/services/incentive_service.proto
+// source: google/ads/googleads/v25/services/incentive_service.proto
 
 package services
 
@@ -33,8 +33,8 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	IncentiveService_FetchIncentive_FullMethodName = "/google.ads.googleads.v24.services.IncentiveService/FetchIncentive"
-	IncentiveService_ApplyIncentive_FullMethodName = "/google.ads.googleads.v24.services.IncentiveService/ApplyIncentive"
+	IncentiveService_FetchIncentive_FullMethodName = "/google.ads.googleads.v25.services.IncentiveService/FetchIncentive"
+	IncentiveService_ApplyIncentive_FullMethodName = "/google.ads.googleads.v25.services.IncentiveService/ApplyIncentive"
 )
 
 // IncentiveServiceClient is the client API for IncentiveService service.
@@ -164,7 +164,7 @@ func _IncentiveService_ApplyIncentive_Handler(srv interface{}, ctx context.Conte
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var IncentiveService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v24.services.IncentiveService",
+	ServiceName: "google.ads.googleads.v25.services.IncentiveService",
 	HandlerType: (*IncentiveServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -177,5 +177,5 @@ var IncentiveService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v24/services/incentive_service.proto",
+	Metadata: "google/ads/googleads/v25/services/incentive_service.proto",
 }
