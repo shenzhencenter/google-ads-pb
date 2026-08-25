@@ -194,6 +194,14 @@ type GenerateAudienceCompositionInsightsRequest struct {
 	// AFFINITY_USER_INTEREST, IN_MARKET_USER_INTEREST, LIFE_EVENT_USER_INTEREST,
 	//
 	//	PARENTAL_STATUS, INCOME_RANGE, AGE_RANGE, GENDER, and USER_LIST.
+	//
+	// Note that when an
+	// [InsightsAudience.user_list][google.ads.googleads.v25.services.InsightsAudience.user_list]
+	// is requested:
+	//   - Only the following dimensions are supported: AFFINITY_USER_INTEREST,
+	//     AGE_RANGE, GENDER, IN_MARKET_USER_INTEREST
+	//   - The score field is omitted from AudienceCompositionMetrics of the
+	//     GenerateAudienceCompositionInsightsResponse.
 	Dimensions []enums.AudienceInsightsDimensionEnum_AudienceInsightsDimension `protobuf:"varint,4,rep,packed,name=dimensions,proto3,enum=google.ads.googleads.v25.enums.AudienceInsightsDimensionEnum_AudienceInsightsDimension" json:"dimensions,omitempty"`
 	// The name of the customer being planned for.  This is a user-defined value.
 	CustomerInsightsGroup string `protobuf:"bytes,5,opt,name=customer_insights_group,json=customerInsightsGroup,proto3" json:"customer_insights_group,omitempty"`
@@ -289,6 +297,12 @@ type GenerateAudienceCompositionInsightsResponse struct {
 	// The contents of the insights report, organized into sections.
 	// Each section is associated with one of the AudienceInsightsDimension values
 	// in the request. There may be more than one section per dimension.
+	//
+	// Note: When an
+	// [InsightsAudience.user_list][google.ads.googleads.v25.services.InsightsAudience.user_list]
+	// is requested in GenerateAudienceCompositionInsightsRequest, score is
+	// omitted from AudienceCompositionMetrics of the
+	// GenerateAudienceCompositionInsightsResponse.
 	Sections      []*AudienceCompositionSection `protobuf:"bytes,1,rep,name=sections,proto3" json:"sections,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -2009,6 +2023,11 @@ type AudienceCompositionMetrics struct {
 	// ratio is undefined or is not meaningful.
 	Index float64 `protobuf:"fixed64,3,opt,name=index,proto3" json:"index,omitempty"`
 	// A relevance score from 0 to 1 inclusive.
+	//
+	// Note: When an
+	// [InsightsAudience.user_list][google.ads.googleads.v25.services.InsightsAudience.user_list]
+	// is requested in GenerateAudienceCompositionInsightsRequest, score is
+	// omitted.
 	Score         float64 `protobuf:"fixed64,4,opt,name=score,proto3" json:"score,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache

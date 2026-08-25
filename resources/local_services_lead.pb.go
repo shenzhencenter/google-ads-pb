@@ -210,9 +210,11 @@ func (x *LocalServicesLead) GetLeadFeedbackSubmitted() bool {
 type ContactDetails struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Output only. Phone number of the consumer for the lead. This can be a real
-	// phone number or a tracking number. The phone number is returned in E164
-	// format. See https://support.google.com/google-ads/answer/16355235?hl=en to
-	// learn more. Example: +16504519489.
+	// phone number or a tracking number. The phone number is returned in E.164
+	// format. See https://support.google.com/google-ads/answer/16355235 to learn
+	// more.
+	//
+	// Example: "+16504519489".
 	PhoneNumber string `protobuf:"bytes,1,opt,name=phone_number,json=phoneNumber,proto3" json:"phone_number,omitempty"`
 	// Output only. Consumer name if consumer provided name from Message or
 	// Booking form on google.com

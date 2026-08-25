@@ -44,8 +44,8 @@ const (
 	// Used for return value only. Represents value unknown in this version.
 	GoalTypeEnum_UNKNOWN GoalTypeEnum_GoalType = 1
 	// Retention goal, which allows advertisers to optimize campaigns to win
-	// back lapsed customers.
-	// (https://support.google.com/google-ads/answer/14792043?hl=en)
+	// back lapsed customers. See
+	// https://support.google.com/google-ads/answer/14792043 to learn more.
 	GoalTypeEnum_CUSTOMER_RETENTION GoalTypeEnum_GoalType = 3
 	// New customer acquisition goal, which allows advertisers to optimize
 	// campaigns to acquire new customers.
