@@ -93,7 +93,14 @@ type Ad struct {
 	// Output only. If this ad is system managed, then this field will indicate
 	// the source. This field is read-only.
 	SystemManagedResourceSource enums.SystemManagedResourceSourceEnum_SystemManagedResourceSource `protobuf:"varint,27,opt,name=system_managed_resource_source,json=systemManagedResourceSource,proto3,enum=google.ads.googleads.v25.enums.SystemManagedResourceSourceEnum_SystemManagedResourceSource" json:"system_managed_resource_source,omitempty"`
-	// Synthetic content info for the ad.
+	// Synthetic content info for the ad. Only ads with specific ad types are
+	// eligible for updates using the `synthetic_content_info` field.
+	//
+	// Allowed `AdType` values:
+	//
+	// * `HTML5_UPLOAD_AD`
+	// * `DYNAMIC_HTML5_AD`
+	// * `IMAGE_AD`
 	SyntheticContentInfo *common.SyntheticContentInfo `protobuf:"bytes,65,opt,name=synthetic_content_info,json=syntheticContentInfo,proto3" json:"synthetic_content_info,omitempty"`
 	// Details pertinent to the ad type. Exactly one value must be set.
 	//

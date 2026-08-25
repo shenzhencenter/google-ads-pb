@@ -76,7 +76,14 @@ type Asset struct {
 	// Output only. Orientation of the asset. This is only supported for image and
 	// video assets.
 	Orientation *enums.AssetOrientationEnum_AssetOrientation `protobuf:"varint,54,opt,name=orientation,proto3,enum=google.ads.googleads.v25.enums.AssetOrientationEnum_AssetOrientation,oneof" json:"orientation,omitempty"`
-	// Synthetic content info for the asset.
+	// Synthetic content info for the asset. Only assets with specific asset
+	// types are eligible for updates using the `synthetic_content_info` field.
+	//
+	// Allowed `AssetType` values:
+	//
+	// * `IMAGE`
+	// * `MEDIA_BUNDLE`
+	// * `YOUTUBE_VIDEO`
 	SyntheticContentInfo *common.SyntheticContentInfo `protobuf:"bytes,55,opt,name=synthetic_content_info,json=syntheticContentInfo,proto3" json:"synthetic_content_info,omitempty"`
 	// The specific type of the asset.
 	//

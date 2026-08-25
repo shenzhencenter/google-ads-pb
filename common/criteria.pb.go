@@ -5089,6 +5089,53 @@ func (x *RetailTag) GetExpressionName() string {
 	return ""
 }
 
+// Represents an entity bid criterion.
+type EntityBid struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// The ID specifying a particular travel entity, such as a hotel, a thing
+	// to do, or an event.
+	ItemCode      *string `protobuf:"bytes,1,opt,name=item_code,json=itemCode,proto3,oneof" json:"item_code,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *EntityBid) Reset() {
+	*x = EntityBid{}
+	mi := &file_google_ads_googleads_v25_common_criteria_proto_msgTypes[85]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EntityBid) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EntityBid) ProtoMessage() {}
+
+func (x *EntityBid) ProtoReflect() protoreflect.Message {
+	mi := &file_google_ads_googleads_v25_common_criteria_proto_msgTypes[85]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EntityBid.ProtoReflect.Descriptor instead.
+func (*EntityBid) Descriptor() ([]byte, []int) {
+	return file_google_ads_googleads_v25_common_criteria_proto_rawDescGZIP(), []int{85}
+}
+
+func (x *EntityBid) GetItemCode() string {
+	if x != nil && x.ItemCode != nil {
+		return *x.ItemCode
+	}
+	return ""
+}
+
 var File_google_ads_googleads_v25_common_criteria_proto protoreflect.FileDescriptor
 
 var file_google_ads_googleads_v25_common_criteria_proto_rawDesc = string([]byte{
@@ -6008,22 +6055,26 @@ var file_google_ads_googleads_v25_common_criteria_proto_rawDesc = string([]byte{
 	0x28, 0x09, 0x48, 0x01, 0x52, 0x0e, 0x65, 0x78, 0x70, 0x72, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e,
 	0x4e, 0x61, 0x6d, 0x65, 0x88, 0x01, 0x01, 0x42, 0x08, 0x0a, 0x06, 0x5f, 0x76, 0x61, 0x6c, 0x75,
 	0x65, 0x42, 0x12, 0x0a, 0x10, 0x5f, 0x65, 0x78, 0x70, 0x72, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e,
-	0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x42, 0xed, 0x01, 0x0a, 0x23, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x64, 0x73, 0x2e, 0x76, 0x32, 0x35, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x42, 0x0d, 0x43,
-	0x72, 0x69, 0x74, 0x65, 0x72, 0x69, 0x61, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x45,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x67, 0x6f, 0x6c, 0x61, 0x6e, 0x67, 0x2e, 0x6f, 0x72,
-	0x67, 0x2f, 0x67, 0x65, 0x6e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x61, 0x70, 0x69, 0x73, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x35, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x3b, 0x63,
-	0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xa2, 0x02, 0x03, 0x47, 0x41, 0x41, 0xaa, 0x02, 0x1f, 0x47, 0x6f,
-	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x41, 0x64, 0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41,
-	0x64, 0x73, 0x2e, 0x56, 0x32, 0x35, 0x2e, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xca, 0x02, 0x1f,
-	0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x5c, 0x41, 0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x32, 0x35, 0x5c, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xea,
-	0x02, 0x23, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x3a, 0x3a, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x47,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x32, 0x35, 0x3a, 0x3a, 0x43,
-	0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x22, 0x3b, 0x0a, 0x09, 0x45, 0x6e, 0x74, 0x69, 0x74, 0x79, 0x42,
+	0x69, 0x64, 0x12, 0x20, 0x0a, 0x09, 0x69, 0x74, 0x65, 0x6d, 0x5f, 0x63, 0x6f, 0x64, 0x65, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x09, 0x48, 0x00, 0x52, 0x08, 0x69, 0x74, 0x65, 0x6d, 0x43, 0x6f, 0x64,
+	0x65, 0x88, 0x01, 0x01, 0x42, 0x0c, 0x0a, 0x0a, 0x5f, 0x69, 0x74, 0x65, 0x6d, 0x5f, 0x63, 0x6f,
+	0x64, 0x65, 0x42, 0xed, 0x01, 0x0a, 0x23, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
+	0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2e,
+	0x76, 0x32, 0x35, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x42, 0x0d, 0x43, 0x72, 0x69, 0x74,
+	0x65, 0x72, 0x69, 0x61, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x45, 0x67, 0x6f, 0x6f,
+	0x67, 0x6c, 0x65, 0x2e, 0x67, 0x6f, 0x6c, 0x61, 0x6e, 0x67, 0x2e, 0x6f, 0x72, 0x67, 0x2f, 0x67,
+	0x65, 0x6e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x70,
+	0x69, 0x73, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73,
+	0x2f, 0x76, 0x32, 0x35, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x3b, 0x63, 0x6f, 0x6d, 0x6d,
+	0x6f, 0x6e, 0xa2, 0x02, 0x03, 0x47, 0x41, 0x41, 0xaa, 0x02, 0x1f, 0x47, 0x6f, 0x6f, 0x67, 0x6c,
+	0x65, 0x2e, 0x41, 0x64, 0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e,
+	0x56, 0x32, 0x35, 0x2e, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xca, 0x02, 0x1f, 0x47, 0x6f, 0x6f,
+	0x67, 0x6c, 0x65, 0x5c, 0x41, 0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64,
+	0x73, 0x5c, 0x56, 0x32, 0x35, 0x5c, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0xea, 0x02, 0x23, 0x47,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x3a, 0x3a, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x47, 0x6f, 0x6f, 0x67,
+	0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x56, 0x32, 0x35, 0x3a, 0x3a, 0x43, 0x6f, 0x6d, 0x6d,
+	0x6f, 0x6e, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 })
 
 var (
@@ -6038,7 +6089,7 @@ func file_google_ads_googleads_v25_common_criteria_proto_rawDescGZIP() []byte {
 	return file_google_ads_googleads_v25_common_criteria_proto_rawDescData
 }
 
-var file_google_ads_googleads_v25_common_criteria_proto_msgTypes = make([]protoimpl.MessageInfo, 85)
+var file_google_ads_googleads_v25_common_criteria_proto_msgTypes = make([]protoimpl.MessageInfo, 86)
 var file_google_ads_googleads_v25_common_criteria_proto_goTypes = []any{
 	(*KeywordInfo)(nil),                                      // 0: google.ads.googleads.v25.common.KeywordInfo
 	(*PlacementInfo)(nil),                                    // 1: google.ads.googleads.v25.common.PlacementInfo
@@ -6125,36 +6176,37 @@ var file_google_ads_googleads_v25_common_criteria_proto_goTypes = []any{
 	(*RetailFilter)(nil),                                     // 82: google.ads.googleads.v25.common.RetailFilter
 	(*RetailFilterExpression)(nil),                           // 83: google.ads.googleads.v25.common.RetailFilterExpression
 	(*RetailTag)(nil),                                        // 84: google.ads.googleads.v25.common.RetailTag
-	(enums.KeywordMatchTypeEnum_KeywordMatchType)(0),         // 85: google.ads.googleads.v25.enums.KeywordMatchTypeEnum.KeywordMatchType
-	(enums.DeviceEnum_Device)(0),                             // 86: google.ads.googleads.v25.enums.DeviceEnum.Device
-	(enums.ListingGroupTypeEnum_ListingGroupType)(0),         // 87: google.ads.googleads.v25.enums.ListingGroupTypeEnum.ListingGroupType
-	(enums.ProductCategoryLevelEnum_ProductCategoryLevel)(0), // 88: google.ads.googleads.v25.enums.ProductCategoryLevelEnum.ProductCategoryLevel
-	(enums.ProductChannelEnum_ProductChannel)(0),             // 89: google.ads.googleads.v25.enums.ProductChannelEnum.ProductChannel
-	(enums.ProductChannelExclusivityEnum_ProductChannelExclusivity)(0),     // 90: google.ads.googleads.v25.enums.ProductChannelExclusivityEnum.ProductChannelExclusivity
-	(enums.ProductConditionEnum_ProductCondition)(0),                       // 91: google.ads.googleads.v25.enums.ProductConditionEnum.ProductCondition
-	(enums.ProductCustomAttributeIndexEnum_ProductCustomAttributeIndex)(0), // 92: google.ads.googleads.v25.enums.ProductCustomAttributeIndexEnum.ProductCustomAttributeIndex
-	(enums.ProductTypeLevelEnum_ProductTypeLevel)(0),                       // 93: google.ads.googleads.v25.enums.ProductTypeLevelEnum.ProductTypeLevel
-	(enums.HotelDateSelectionTypeEnum_HotelDateSelectionType)(0),           // 94: google.ads.googleads.v25.enums.HotelDateSelectionTypeEnum.HotelDateSelectionType
-	(enums.DayOfWeekEnum_DayOfWeek)(0),                                     // 95: google.ads.googleads.v25.enums.DayOfWeekEnum.DayOfWeek
-	(enums.InteractionTypeEnum_InteractionType)(0),                         // 96: google.ads.googleads.v25.enums.InteractionTypeEnum.InteractionType
-	(enums.MinuteOfHourEnum_MinuteOfHour)(0),                               // 97: google.ads.googleads.v25.enums.MinuteOfHourEnum.MinuteOfHour
-	(enums.AgeRangeTypeEnum_AgeRangeType)(0),                               // 98: google.ads.googleads.v25.enums.AgeRangeTypeEnum.AgeRangeType
-	(enums.GenderTypeEnum_GenderType)(0),                                   // 99: google.ads.googleads.v25.enums.GenderTypeEnum.GenderType
-	(enums.IncomeRangeTypeEnum_IncomeRangeType)(0),                         // 100: google.ads.googleads.v25.enums.IncomeRangeTypeEnum.IncomeRangeType
-	(enums.ParentalStatusTypeEnum_ParentalStatusType)(0),                   // 101: google.ads.googleads.v25.enums.ParentalStatusTypeEnum.ParentalStatusType
-	(enums.ProximityRadiusUnitsEnum_ProximityRadiusUnits)(0),               // 102: google.ads.googleads.v25.enums.ProximityRadiusUnitsEnum.ProximityRadiusUnits
-	(enums.ContentLabelTypeEnum_ContentLabelType)(0),                       // 103: google.ads.googleads.v25.enums.ContentLabelTypeEnum.ContentLabelType
-	(enums.WebpageConditionOperandEnum_WebpageConditionOperand)(0),         // 104: google.ads.googleads.v25.enums.WebpageConditionOperandEnum.WebpageConditionOperand
-	(enums.WebpageConditionOperatorEnum_WebpageConditionOperator)(0),       // 105: google.ads.googleads.v25.enums.WebpageConditionOperatorEnum.WebpageConditionOperator
-	(enums.AppPaymentModelTypeEnum_AppPaymentModelType)(0),                 // 106: google.ads.googleads.v25.enums.AppPaymentModelTypeEnum.AppPaymentModelType
-	(enums.LocationGroupRadiusUnitsEnum_LocationGroupRadiusUnits)(0),       // 107: google.ads.googleads.v25.enums.LocationGroupRadiusUnitsEnum.LocationGroupRadiusUnits
-	(enums.BrandRequestRejectionReasonEnum_BrandRequestRejectionReason)(0), // 108: google.ads.googleads.v25.enums.BrandRequestRejectionReasonEnum.BrandRequestRejectionReason
-	(enums.BrandStateEnum_BrandState)(0),                                   // 109: google.ads.googleads.v25.enums.BrandStateEnum.BrandState
+	(*EntityBid)(nil),                                        // 85: google.ads.googleads.v25.common.EntityBid
+	(enums.KeywordMatchTypeEnum_KeywordMatchType)(0),         // 86: google.ads.googleads.v25.enums.KeywordMatchTypeEnum.KeywordMatchType
+	(enums.DeviceEnum_Device)(0),                             // 87: google.ads.googleads.v25.enums.DeviceEnum.Device
+	(enums.ListingGroupTypeEnum_ListingGroupType)(0),         // 88: google.ads.googleads.v25.enums.ListingGroupTypeEnum.ListingGroupType
+	(enums.ProductCategoryLevelEnum_ProductCategoryLevel)(0), // 89: google.ads.googleads.v25.enums.ProductCategoryLevelEnum.ProductCategoryLevel
+	(enums.ProductChannelEnum_ProductChannel)(0),             // 90: google.ads.googleads.v25.enums.ProductChannelEnum.ProductChannel
+	(enums.ProductChannelExclusivityEnum_ProductChannelExclusivity)(0),     // 91: google.ads.googleads.v25.enums.ProductChannelExclusivityEnum.ProductChannelExclusivity
+	(enums.ProductConditionEnum_ProductCondition)(0),                       // 92: google.ads.googleads.v25.enums.ProductConditionEnum.ProductCondition
+	(enums.ProductCustomAttributeIndexEnum_ProductCustomAttributeIndex)(0), // 93: google.ads.googleads.v25.enums.ProductCustomAttributeIndexEnum.ProductCustomAttributeIndex
+	(enums.ProductTypeLevelEnum_ProductTypeLevel)(0),                       // 94: google.ads.googleads.v25.enums.ProductTypeLevelEnum.ProductTypeLevel
+	(enums.HotelDateSelectionTypeEnum_HotelDateSelectionType)(0),           // 95: google.ads.googleads.v25.enums.HotelDateSelectionTypeEnum.HotelDateSelectionType
+	(enums.DayOfWeekEnum_DayOfWeek)(0),                                     // 96: google.ads.googleads.v25.enums.DayOfWeekEnum.DayOfWeek
+	(enums.InteractionTypeEnum_InteractionType)(0),                         // 97: google.ads.googleads.v25.enums.InteractionTypeEnum.InteractionType
+	(enums.MinuteOfHourEnum_MinuteOfHour)(0),                               // 98: google.ads.googleads.v25.enums.MinuteOfHourEnum.MinuteOfHour
+	(enums.AgeRangeTypeEnum_AgeRangeType)(0),                               // 99: google.ads.googleads.v25.enums.AgeRangeTypeEnum.AgeRangeType
+	(enums.GenderTypeEnum_GenderType)(0),                                   // 100: google.ads.googleads.v25.enums.GenderTypeEnum.GenderType
+	(enums.IncomeRangeTypeEnum_IncomeRangeType)(0),                         // 101: google.ads.googleads.v25.enums.IncomeRangeTypeEnum.IncomeRangeType
+	(enums.ParentalStatusTypeEnum_ParentalStatusType)(0),                   // 102: google.ads.googleads.v25.enums.ParentalStatusTypeEnum.ParentalStatusType
+	(enums.ProximityRadiusUnitsEnum_ProximityRadiusUnits)(0),               // 103: google.ads.googleads.v25.enums.ProximityRadiusUnitsEnum.ProximityRadiusUnits
+	(enums.ContentLabelTypeEnum_ContentLabelType)(0),                       // 104: google.ads.googleads.v25.enums.ContentLabelTypeEnum.ContentLabelType
+	(enums.WebpageConditionOperandEnum_WebpageConditionOperand)(0),         // 105: google.ads.googleads.v25.enums.WebpageConditionOperandEnum.WebpageConditionOperand
+	(enums.WebpageConditionOperatorEnum_WebpageConditionOperator)(0),       // 106: google.ads.googleads.v25.enums.WebpageConditionOperatorEnum.WebpageConditionOperator
+	(enums.AppPaymentModelTypeEnum_AppPaymentModelType)(0),                 // 107: google.ads.googleads.v25.enums.AppPaymentModelTypeEnum.AppPaymentModelType
+	(enums.LocationGroupRadiusUnitsEnum_LocationGroupRadiusUnits)(0),       // 108: google.ads.googleads.v25.enums.LocationGroupRadiusUnitsEnum.LocationGroupRadiusUnits
+	(enums.BrandRequestRejectionReasonEnum_BrandRequestRejectionReason)(0), // 109: google.ads.googleads.v25.enums.BrandRequestRejectionReasonEnum.BrandRequestRejectionReason
+	(enums.BrandStateEnum_BrandState)(0),                                   // 110: google.ads.googleads.v25.enums.BrandStateEnum.BrandState
 }
 var file_google_ads_googleads_v25_common_criteria_proto_depIdxs = []int32{
-	85,  // 0: google.ads.googleads.v25.common.KeywordInfo.match_type:type_name -> google.ads.googleads.v25.enums.KeywordMatchTypeEnum.KeywordMatchType
-	86,  // 1: google.ads.googleads.v25.common.DeviceInfo.type:type_name -> google.ads.googleads.v25.enums.DeviceEnum.Device
-	87,  // 2: google.ads.googleads.v25.common.ListingGroupInfo.type:type_name -> google.ads.googleads.v25.enums.ListingGroupTypeEnum.ListingGroupType
+	86,  // 0: google.ads.googleads.v25.common.KeywordInfo.match_type:type_name -> google.ads.googleads.v25.enums.KeywordMatchTypeEnum.KeywordMatchType
+	87,  // 1: google.ads.googleads.v25.common.DeviceInfo.type:type_name -> google.ads.googleads.v25.enums.DeviceEnum.Device
+	88,  // 2: google.ads.googleads.v25.common.ListingGroupInfo.type:type_name -> google.ads.googleads.v25.enums.ListingGroupTypeEnum.ListingGroupType
 	10,  // 3: google.ads.googleads.v25.common.ListingGroupInfo.case_value:type_name -> google.ads.googleads.v25.common.ListingDimensionInfo
 	8,   // 4: google.ads.googleads.v25.common.ListingGroupInfo.path:type_name -> google.ads.googleads.v25.common.ListingDimensionPath
 	10,  // 5: google.ads.googleads.v25.common.ListingDimensionPath.dimensions:type_name -> google.ads.googleads.v25.common.ListingDimensionInfo
@@ -6182,34 +6234,34 @@ var file_google_ads_googleads_v25_common_criteria_proto_depIdxs = []int32{
 	37,  // 27: google.ads.googleads.v25.common.ListingDimensionInfo.activity_state:type_name -> google.ads.googleads.v25.common.ActivityStateInfo
 	38,  // 28: google.ads.googleads.v25.common.ListingDimensionInfo.activity_city:type_name -> google.ads.googleads.v25.common.ActivityCityInfo
 	28,  // 29: google.ads.googleads.v25.common.ListingDimensionInfo.unknown_listing_dimension:type_name -> google.ads.googleads.v25.common.UnknownListingDimensionInfo
-	88,  // 30: google.ads.googleads.v25.common.ProductCategoryInfo.level:type_name -> google.ads.googleads.v25.enums.ProductCategoryLevelEnum.ProductCategoryLevel
-	89,  // 31: google.ads.googleads.v25.common.ProductChannelInfo.channel:type_name -> google.ads.googleads.v25.enums.ProductChannelEnum.ProductChannel
-	90,  // 32: google.ads.googleads.v25.common.ProductChannelExclusivityInfo.channel_exclusivity:type_name -> google.ads.googleads.v25.enums.ProductChannelExclusivityEnum.ProductChannelExclusivity
-	91,  // 33: google.ads.googleads.v25.common.ProductConditionInfo.condition:type_name -> google.ads.googleads.v25.enums.ProductConditionEnum.ProductCondition
-	92,  // 34: google.ads.googleads.v25.common.ProductCustomAttributeInfo.index:type_name -> google.ads.googleads.v25.enums.ProductCustomAttributeIndexEnum.ProductCustomAttributeIndex
-	93,  // 35: google.ads.googleads.v25.common.ProductTypeInfo.level:type_name -> google.ads.googleads.v25.enums.ProductTypeLevelEnum.ProductTypeLevel
-	94,  // 36: google.ads.googleads.v25.common.HotelDateSelectionTypeInfo.type:type_name -> google.ads.googleads.v25.enums.HotelDateSelectionTypeEnum.HotelDateSelectionType
-	95,  // 37: google.ads.googleads.v25.common.HotelCheckInDayInfo.day_of_week:type_name -> google.ads.googleads.v25.enums.DayOfWeekEnum.DayOfWeek
-	96,  // 38: google.ads.googleads.v25.common.InteractionTypeInfo.type:type_name -> google.ads.googleads.v25.enums.InteractionTypeEnum.InteractionType
-	97,  // 39: google.ads.googleads.v25.common.AdScheduleInfo.start_minute:type_name -> google.ads.googleads.v25.enums.MinuteOfHourEnum.MinuteOfHour
-	97,  // 40: google.ads.googleads.v25.common.AdScheduleInfo.end_minute:type_name -> google.ads.googleads.v25.enums.MinuteOfHourEnum.MinuteOfHour
-	95,  // 41: google.ads.googleads.v25.common.AdScheduleInfo.day_of_week:type_name -> google.ads.googleads.v25.enums.DayOfWeekEnum.DayOfWeek
-	98,  // 42: google.ads.googleads.v25.common.AgeRangeInfo.type:type_name -> google.ads.googleads.v25.enums.AgeRangeTypeEnum.AgeRangeType
-	99,  // 43: google.ads.googleads.v25.common.GenderInfo.type:type_name -> google.ads.googleads.v25.enums.GenderTypeEnum.GenderType
-	100, // 44: google.ads.googleads.v25.common.IncomeRangeInfo.type:type_name -> google.ads.googleads.v25.enums.IncomeRangeTypeEnum.IncomeRangeType
-	101, // 45: google.ads.googleads.v25.common.ParentalStatusInfo.type:type_name -> google.ads.googleads.v25.enums.ParentalStatusTypeEnum.ParentalStatusType
+	89,  // 30: google.ads.googleads.v25.common.ProductCategoryInfo.level:type_name -> google.ads.googleads.v25.enums.ProductCategoryLevelEnum.ProductCategoryLevel
+	90,  // 31: google.ads.googleads.v25.common.ProductChannelInfo.channel:type_name -> google.ads.googleads.v25.enums.ProductChannelEnum.ProductChannel
+	91,  // 32: google.ads.googleads.v25.common.ProductChannelExclusivityInfo.channel_exclusivity:type_name -> google.ads.googleads.v25.enums.ProductChannelExclusivityEnum.ProductChannelExclusivity
+	92,  // 33: google.ads.googleads.v25.common.ProductConditionInfo.condition:type_name -> google.ads.googleads.v25.enums.ProductConditionEnum.ProductCondition
+	93,  // 34: google.ads.googleads.v25.common.ProductCustomAttributeInfo.index:type_name -> google.ads.googleads.v25.enums.ProductCustomAttributeIndexEnum.ProductCustomAttributeIndex
+	94,  // 35: google.ads.googleads.v25.common.ProductTypeInfo.level:type_name -> google.ads.googleads.v25.enums.ProductTypeLevelEnum.ProductTypeLevel
+	95,  // 36: google.ads.googleads.v25.common.HotelDateSelectionTypeInfo.type:type_name -> google.ads.googleads.v25.enums.HotelDateSelectionTypeEnum.HotelDateSelectionType
+	96,  // 37: google.ads.googleads.v25.common.HotelCheckInDayInfo.day_of_week:type_name -> google.ads.googleads.v25.enums.DayOfWeekEnum.DayOfWeek
+	97,  // 38: google.ads.googleads.v25.common.InteractionTypeInfo.type:type_name -> google.ads.googleads.v25.enums.InteractionTypeEnum.InteractionType
+	98,  // 39: google.ads.googleads.v25.common.AdScheduleInfo.start_minute:type_name -> google.ads.googleads.v25.enums.MinuteOfHourEnum.MinuteOfHour
+	98,  // 40: google.ads.googleads.v25.common.AdScheduleInfo.end_minute:type_name -> google.ads.googleads.v25.enums.MinuteOfHourEnum.MinuteOfHour
+	96,  // 41: google.ads.googleads.v25.common.AdScheduleInfo.day_of_week:type_name -> google.ads.googleads.v25.enums.DayOfWeekEnum.DayOfWeek
+	99,  // 42: google.ads.googleads.v25.common.AgeRangeInfo.type:type_name -> google.ads.googleads.v25.enums.AgeRangeTypeEnum.AgeRangeType
+	100, // 43: google.ads.googleads.v25.common.GenderInfo.type:type_name -> google.ads.googleads.v25.enums.GenderTypeEnum.GenderType
+	101, // 44: google.ads.googleads.v25.common.IncomeRangeInfo.type:type_name -> google.ads.googleads.v25.enums.IncomeRangeTypeEnum.IncomeRangeType
+	102, // 45: google.ads.googleads.v25.common.ParentalStatusInfo.type:type_name -> google.ads.googleads.v25.enums.ParentalStatusTypeEnum.ParentalStatusType
 	49,  // 46: google.ads.googleads.v25.common.ProximityInfo.geo_point:type_name -> google.ads.googleads.v25.common.GeoPointInfo
-	102, // 47: google.ads.googleads.v25.common.ProximityInfo.radius_units:type_name -> google.ads.googleads.v25.enums.ProximityRadiusUnitsEnum.ProximityRadiusUnits
+	103, // 47: google.ads.googleads.v25.common.ProximityInfo.radius_units:type_name -> google.ads.googleads.v25.enums.ProximityRadiusUnitsEnum.ProximityRadiusUnits
 	50,  // 48: google.ads.googleads.v25.common.ProximityInfo.address:type_name -> google.ads.googleads.v25.common.AddressInfo
-	103, // 49: google.ads.googleads.v25.common.ContentLabelInfo.type:type_name -> google.ads.googleads.v25.enums.ContentLabelTypeEnum.ContentLabelType
+	104, // 49: google.ads.googleads.v25.common.ContentLabelInfo.type:type_name -> google.ads.googleads.v25.enums.ContentLabelTypeEnum.ContentLabelType
 	58,  // 50: google.ads.googleads.v25.common.WebpageInfo.conditions:type_name -> google.ads.googleads.v25.common.WebpageConditionInfo
 	60,  // 51: google.ads.googleads.v25.common.WebpageInfo.sample:type_name -> google.ads.googleads.v25.common.WebpageSampleInfo
-	104, // 52: google.ads.googleads.v25.common.WebpageConditionInfo.operand:type_name -> google.ads.googleads.v25.enums.WebpageConditionOperandEnum.WebpageConditionOperand
-	105, // 53: google.ads.googleads.v25.common.WebpageConditionInfo.operator:type_name -> google.ads.googleads.v25.enums.WebpageConditionOperatorEnum.WebpageConditionOperator
-	106, // 54: google.ads.googleads.v25.common.AppPaymentModelInfo.type:type_name -> google.ads.googleads.v25.enums.AppPaymentModelTypeEnum.AppPaymentModelType
-	107, // 55: google.ads.googleads.v25.common.LocationGroupInfo.radius_units:type_name -> google.ads.googleads.v25.enums.LocationGroupRadiusUnitsEnum.LocationGroupRadiusUnits
-	108, // 56: google.ads.googleads.v25.common.BrandInfo.rejection_reason:type_name -> google.ads.googleads.v25.enums.BrandRequestRejectionReasonEnum.BrandRequestRejectionReason
-	109, // 57: google.ads.googleads.v25.common.BrandInfo.status:type_name -> google.ads.googleads.v25.enums.BrandStateEnum.BrandState
+	105, // 52: google.ads.googleads.v25.common.WebpageConditionInfo.operand:type_name -> google.ads.googleads.v25.enums.WebpageConditionOperandEnum.WebpageConditionOperand
+	106, // 53: google.ads.googleads.v25.common.WebpageConditionInfo.operator:type_name -> google.ads.googleads.v25.enums.WebpageConditionOperatorEnum.WebpageConditionOperator
+	107, // 54: google.ads.googleads.v25.common.AppPaymentModelInfo.type:type_name -> google.ads.googleads.v25.enums.AppPaymentModelTypeEnum.AppPaymentModelType
+	108, // 55: google.ads.googleads.v25.common.LocationGroupInfo.radius_units:type_name -> google.ads.googleads.v25.enums.LocationGroupRadiusUnitsEnum.LocationGroupRadiusUnits
+	109, // 56: google.ads.googleads.v25.common.BrandInfo.rejection_reason:type_name -> google.ads.googleads.v25.enums.BrandRequestRejectionReasonEnum.BrandRequestRejectionReason
+	110, // 57: google.ads.googleads.v25.common.BrandInfo.status:type_name -> google.ads.googleads.v25.enums.BrandStateEnum.BrandState
 	83,  // 58: google.ads.googleads.v25.common.RetailFilter.expression:type_name -> google.ads.googleads.v25.common.RetailFilterExpression
 	84,  // 59: google.ads.googleads.v25.common.RetailFilter.tag:type_name -> google.ads.googleads.v25.common.RetailTag
 	60,  // [60:60] is the sub-list for method output_type
@@ -6325,13 +6377,14 @@ func file_google_ads_googleads_v25_common_criteria_proto_init() {
 	}
 	file_google_ads_googleads_v25_common_criteria_proto_msgTypes[83].OneofWrappers = []any{}
 	file_google_ads_googleads_v25_common_criteria_proto_msgTypes[84].OneofWrappers = []any{}
+	file_google_ads_googleads_v25_common_criteria_proto_msgTypes[85].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v25_common_criteria_proto_rawDesc), len(file_google_ads_googleads_v25_common_criteria_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   85,
+			NumMessages:   86,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
