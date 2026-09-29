@@ -95,7 +95,8 @@ const (
 	AssetLinkErrorEnum_YOUTUBE_VIDEO_DURATION_NOT_DEFINED AssetLinkErrorEnum_AssetLinkError = 18
 	// User cannot create automatically created links.
 	AssetLinkErrorEnum_CANNOT_CREATE_AUTOMATICALLY_CREATED_LINKS AssetLinkErrorEnum_AssetLinkError = 19
-	// Advertiser links cannot link to automatically created asset.
+	// Advertiser links cannot link to text customization (formerly
+	// automatically created asset).
 	AssetLinkErrorEnum_CANNOT_LINK_TO_AUTOMATICALLY_CREATED_ASSET AssetLinkErrorEnum_AssetLinkError = 20
 	// Automatically created links cannot be changed into advertiser links or
 	// the reverse.

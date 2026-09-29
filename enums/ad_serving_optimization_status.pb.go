@@ -45,11 +45,12 @@ const (
 	//
 	// This is a response-only value.
 	AdServingOptimizationStatusEnum_UNKNOWN AdServingOptimizationStatusEnum_AdServingOptimizationStatus = 1
-	// Ad serving is optimized based on CTR for the campaign.
+	// Ad serving is optimized based on clickthrough rate (CTR) for the
+	// campaign.
 	AdServingOptimizationStatusEnum_OPTIMIZE AdServingOptimizationStatusEnum_AdServingOptimizationStatus = 2
-	// Ad serving is optimized based on CTR * Conversion for the campaign. If
-	// the campaign is not in the conversion optimizer bidding strategy, it will
-	// default to OPTIMIZED.
+	// Ad serving is optimized based on clickthrough rate (CTR) * Conversion for
+	// the campaign. If the campaign is not in the conversion optimizer bidding
+	// strategy, it will default to OPTIMIZED.
 	AdServingOptimizationStatusEnum_CONVERSION_OPTIMIZE AdServingOptimizationStatusEnum_AdServingOptimizationStatus = 3
 	// Ads are rotated evenly for 90 days, then optimized for clicks.
 	AdServingOptimizationStatusEnum_ROTATE AdServingOptimizationStatusEnum_AdServingOptimizationStatus = 4

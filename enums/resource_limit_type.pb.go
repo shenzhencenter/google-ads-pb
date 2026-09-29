@@ -231,11 +231,12 @@ const (
 	ResourceLimitTypeEnum_AD_IMAGE_CAMPAIGN_ASSETS_PER_CAMPAIGN ResourceLimitTypeEnum_ResourceLimitType = 175
 	// Number of ENABLED ad image AdGroupAssets per ad group.
 	ResourceLimitTypeEnum_AD_IMAGE_AD_GROUP_ASSETS_PER_AD_GROUP ResourceLimitTypeEnum_ResourceLimitType = 176
-	// Number of ENABLED page feed asset sets per customer.
+	// Number of ENABLED page URL inclusion sets per customer.
 	ResourceLimitTypeEnum_PAGE_FEED_ASSET_SETS_PER_CUSTOMER ResourceLimitTypeEnum_ResourceLimitType = 157
 	// Number of ENABLED dynamic education feed asset sets per customer.
 	ResourceLimitTypeEnum_DYNAMIC_EDUCATION_FEED_ASSET_SETS_PER_CUSTOMER ResourceLimitTypeEnum_ResourceLimitType = 158
-	// Number of ENABLED assets per page feed asset set.
+	// Number of ENABLED assets per page URL inclusion set (formerly page feed
+	// asset set).
 	ResourceLimitTypeEnum_ASSETS_PER_PAGE_FEED_ASSET_SET ResourceLimitTypeEnum_ResourceLimitType = 159
 	// Number of ENABLED assets per dynamic education asset set.
 	ResourceLimitTypeEnum_ASSETS_PER_DYNAMIC_EDUCATION_FEED_ASSET_SET ResourceLimitTypeEnum_ResourceLimitType = 160

@@ -226,14 +226,14 @@ const (
 	// Standard Shopping campaigns that are linked to a Comparison Shopping
 	// Service account cannot target this network.
 	CampaignErrorEnum_CANNOT_TARGET_NETWORK_FOR_COMPARISON_SHOPPING_SERVICE_LINKED_ACCOUNTS CampaignErrorEnum_CampaignError = 87
-	// Text asset automation settings can not be modified when there is an
-	// active Performance Max optimization automatically created assets
+	// Text asset automation settings cannot be modified when there is an
+	// active Performance Max optimization text customization
 	// experiment. End the experiment to modify these settings.
 	CampaignErrorEnum_CANNOT_MODIFY_TEXT_ASSET_AUTOMATION_WITH_ENABLED_TRIAL CampaignErrorEnum_CampaignError = 88
 	// Dynamic text asset cannot be opted out when final URL expansion is opted
 	// in.
 	CampaignErrorEnum_DYNAMIC_TEXT_ASSET_CANNOT_OPT_OUT_WITH_FINAL_URL_EXPANSION_OPT_IN CampaignErrorEnum_CampaignError = 89
-	// Can not set a campaign level match type.
+	// Cannot set a campaign level match type.
 	CampaignErrorEnum_CANNOT_SET_CAMPAIGN_KEYWORD_MATCH_TYPE CampaignErrorEnum_CampaignError = 90
 	// The campaign level keyword match type cannot be switched to non-broad
 	// when keyword conversion to broad match is in process.

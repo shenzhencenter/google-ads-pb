@@ -84,7 +84,7 @@ type internalAutomaticallyCreatedAssetRemovalClient interface {
 // AutomaticallyCreatedAssetRemovalClient is a client for interacting with Google Ads API.
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 //
-// Service to remove automatically created assets.
+// Service to remove text customization (formerly automatically created assets).
 type AutomaticallyCreatedAssetRemovalClient struct {
 	// The internal transport-dependent client.
 	internalClient internalAutomaticallyCreatedAssetRemovalClient
@@ -116,7 +116,8 @@ func (c *AutomaticallyCreatedAssetRemovalClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
 }
 
-// RemoveCampaignAutomaticallyCreatedAsset removes automatically created assets from a campaign.
+// RemoveCampaignAutomaticallyCreatedAsset removes text customization (formerly automatically created assets) from a
+// campaign.
 //
 // List of thrown errors:
 // AuthenticationError (at )
@@ -154,7 +155,7 @@ type automaticallyCreatedAssetRemovalGRPCClient struct {
 // NewAutomaticallyCreatedAssetRemovalClient creates a new automatically created asset removal service client based on gRPC.
 // The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
-// Service to remove automatically created assets.
+// Service to remove text customization (formerly automatically created assets).
 func NewAutomaticallyCreatedAssetRemovalClient(ctx context.Context, opts ...option.ClientOption) (*AutomaticallyCreatedAssetRemovalClient, error) {
 	clientOpts := defaultAutomaticallyCreatedAssetRemovalGRPCClientOptions()
 	if newAutomaticallyCreatedAssetRemovalClientHook != nil {

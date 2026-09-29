@@ -81,6 +81,7 @@ const (
 	RequestErrorEnum_CANNOT_MODIFY_FOREIGN_FIELD RequestErrorEnum_RequestError = 15
 	// Enum value is not permitted.
 	RequestErrorEnum_INVALID_ENUM_VALUE RequestErrorEnum_RequestError = 18
+	// Deprecated: Developer tokens have been sunset.
 	// The developer-token parameter is required for all requests.
 	RequestErrorEnum_DEVELOPER_TOKEN_PARAMETER_MISSING RequestErrorEnum_RequestError = 19
 	// The login-customer-id parameter is required for this request.

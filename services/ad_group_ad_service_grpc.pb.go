@@ -92,7 +92,8 @@ type AdGroupAdServiceClient interface {
 	//	[StringLengthError]()
 	//	[UrlFieldError]()
 	MutateAdGroupAds(ctx context.Context, in *MutateAdGroupAdsRequest, opts ...grpc.CallOption) (*MutateAdGroupAdsResponse, error)
-	// Remove automatically created assets from an ad.
+	// Remove text customization (formerly automatically created assets) from an
+	// ad.
 	//
 	// List of thrown errors:
 	//
@@ -190,7 +191,8 @@ type AdGroupAdServiceServer interface {
 	//	[StringLengthError]()
 	//	[UrlFieldError]()
 	MutateAdGroupAds(context.Context, *MutateAdGroupAdsRequest) (*MutateAdGroupAdsResponse, error)
-	// Remove automatically created assets from an ad.
+	// Remove text customization (formerly automatically created assets) from an
+	// ad.
 	//
 	// List of thrown errors:
 	//

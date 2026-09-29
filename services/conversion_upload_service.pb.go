@@ -403,16 +403,7 @@ type ClickConversion struct {
 	CustomerType enums.ConversionCustomerTypeEnum_ConversionCustomerType `protobuf:"varint,26,opt,name=customer_type,json=customerType,proto3,enum=google.ads.googleads.v25.enums.ConversionCustomerTypeEnum_ConversionCustomerType" json:"customer_type,omitempty"`
 	// The IP address of the customer when they arrived on the landing page after
 	// an ad click but before a conversion event. This is the IP address of the
-	// customer's device, not the advertiser's server. Google Ads does not support
-	// IP address matching for end users in the European Economic Area (EEA),
-	// United Kingdom (UK), or Switzerland (CH). Add logic to conditionally
-	// exclude sharing IP addresses from users from these regions and ensure that
-	// you provide users with clear and comprehensive information about the data
-	// you collect on your sites, apps, and other properties and get consent where
-	// required by law or any applicable Google policies. See
-	// [About offline conversion
-	// imports](//support.google.com/google-ads/answer/2998031) page for more
-	// details.
+	// customer's device, not the advertiser's server.
 	//
 	// This field is only available to allowlisted users. To include this field in
 	// conversion imports, upgrade to the Data Manager API.

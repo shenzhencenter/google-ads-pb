@@ -42,7 +42,7 @@
 //	// - It may require correct/in-range values for request initialization.
 //	// - It may require specifying regional endpoints when creating the service client as shown in:
 //	//   https://pkg.go.dev/cloud.google.com/go#hdr-Client_Options
-//	c, err := clients.NewAdClient(ctx)
+//	c, err := clients.NewConversionValueRuleClient(ctx)
 //	if err != nil {
 //		// TODO: Handle error.
 //	}
@@ -56,11 +56,11 @@
 //
 // The following is an example of making an API call with the newly created client, mentioned above.
 //
-//	req := &servicespb.MutateAdsRequest{
+//	req := &servicespb.MutateConversionValueRulesRequest{
 //		// TODO: Fill request struct fields.
-//		// See https://pkg.go.dev/github.com/shenzhencenter/google-ads-pb/services#MutateAdsRequest.
+//		// See https://pkg.go.dev/github.com/shenzhencenter/google-ads-pb/services#MutateConversionValueRulesRequest.
 //	}
-//	resp, err := c.MutateAds(ctx, req)
+//	resp, err := c.MutateConversionValueRules(ctx, req)
 //	if err != nil {
 //		// TODO: Handle error.
 //	}
@@ -69,7 +69,7 @@
 //
 // # Use of Context
 //
-// The ctx passed to NewAdClient is used for authentication requests and
+// The ctx passed to NewConversionValueRuleClient is used for authentication requests and
 // for creating the underlying connection, but is not used for subsequent calls.
 // Individual methods on the client use the ctx given to them.
 //

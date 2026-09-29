@@ -63,7 +63,7 @@ const (
 	AssetTypeEnum_STRUCTURED_SNIPPET AssetTypeEnum_AssetType = 10
 	// Sitelink asset.
 	AssetTypeEnum_SITELINK AssetTypeEnum_AssetType = 11
-	// Page Feed asset.
+	// Page URL inclusion.
 	AssetTypeEnum_PAGE_FEED AssetTypeEnum_AssetType = 12
 	// Dynamic Education asset.
 	AssetTypeEnum_DYNAMIC_EDUCATION AssetTypeEnum_AssetType = 13

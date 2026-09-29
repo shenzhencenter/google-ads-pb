@@ -77,7 +77,7 @@ const (
 	// An experiment that compares multiple variables across one or more
 	// campaigns, tests a mix of campaign types, and more.
 	ExperimentTypeEnum_COMPARE_CAMPAIGNS ExperimentTypeEnum_ExperimentType = 17
-	// An experiment that tests automatically created assets and lets Google AI
+	// An experiment that tests text customization and lets Google AI
 	// send traffic to relevant landing pages and generate text assets to better
 	// match search queries.
 	ExperimentTypeEnum_PMAX_TEXT_CUSTOMIZATION_FINAL_URL_EXPANSION ExperimentTypeEnum_ExperimentType = 18

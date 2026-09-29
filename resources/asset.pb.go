@@ -584,7 +584,7 @@ type Asset_SitelinkAsset struct {
 }
 
 type Asset_PageFeedAsset struct {
-	// A page feed asset.
+	// A page URL inclusion.
 	PageFeedAsset *common.PageFeedAsset `protobuf:"bytes,23,opt,name=page_feed_asset,json=pageFeedAsset,proto3,oneof"`
 }
 
