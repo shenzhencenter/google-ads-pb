@@ -39,6 +39,7 @@ var newSmartCampaignSettingClientHook clientHook
 type SmartCampaignSettingCallOptions struct {
 	GetSmartCampaignStatus      []gax.CallOption
 	MutateSmartCampaignSettings []gax.CallOption
+	GeneratePMaxDraftCampaign   []gax.CallOption
 }
 
 func defaultSmartCampaignSettingGRPCClientOptions() []option.ClientOption {
@@ -84,6 +85,19 @@ func defaultSmartCampaignSettingCallOptions() *SmartCampaignSettingCallOptions {
 				})
 			}),
 		},
+		GeneratePMaxDraftCampaign: []gax.CallOption{
+			gax.WithTimeout(14400000 * time.Millisecond),
+			gax.WithRetry(func() gax.Retryer {
+				return gax.OnCodes([]codes.Code{
+					codes.Unavailable,
+					codes.DeadlineExceeded,
+				}, gax.Backoff{
+					Initial:    5000 * time.Millisecond,
+					Max:        60000 * time.Millisecond,
+					Multiplier: 1.30,
+				})
+			}),
+		},
 	}
 }
 
@@ -94,6 +108,7 @@ type internalSmartCampaignSettingClient interface {
 	Connection() *grpc.ClientConn
 	GetSmartCampaignStatus(context.Context, *servicespb.GetSmartCampaignStatusRequest, ...gax.CallOption) (*servicespb.GetSmartCampaignStatusResponse, error)
 	MutateSmartCampaignSettings(context.Context, *servicespb.MutateSmartCampaignSettingsRequest, ...gax.CallOption) (*servicespb.MutateSmartCampaignSettingsResponse, error)
+	GeneratePMaxDraftCampaign(context.Context, *servicespb.GeneratePMaxDraftCampaignRequest, ...gax.CallOption) (*servicespb.GeneratePMaxDraftCampaignResponse, error)
 }
 
 // SmartCampaignSettingClient is a client for interacting with Google Ads API.
@@ -139,6 +154,14 @@ func (c *SmartCampaignSettingClient) GetSmartCampaignStatus(ctx context.Context,
 // MutateSmartCampaignSettings updates Smart campaign settings for campaigns.
 func (c *SmartCampaignSettingClient) MutateSmartCampaignSettings(ctx context.Context, req *servicespb.MutateSmartCampaignSettingsRequest, opts ...gax.CallOption) (*servicespb.MutateSmartCampaignSettingsResponse, error) {
 	return c.internalClient.MutateSmartCampaignSettings(ctx, req, opts...)
+}
+
+// GeneratePMaxDraftCampaign generates a Performance Max (PMax) draft campaign from an existing Smart
+// campaign, initialized with a status of [CampaignStatus.PAUSED] and a
+// creation status of [CampaignCreationStatus.INCOMPLETE]. Returns the draft
+// PMax campaign ID and related entity IDs.
+func (c *SmartCampaignSettingClient) GeneratePMaxDraftCampaign(ctx context.Context, req *servicespb.GeneratePMaxDraftCampaignRequest, opts ...gax.CallOption) (*servicespb.GeneratePMaxDraftCampaignResponse, error) {
+	return c.internalClient.GeneratePMaxDraftCampaign(ctx, req, opts...)
 }
 
 // smartCampaignSettingGRPCClient is a client for interacting with Google Ads API over gRPC transport.
@@ -246,6 +269,24 @@ func (c *smartCampaignSettingGRPCClient) MutateSmartCampaignSettings(ctx context
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
 		resp, err = executeRPC(ctx, c.smartCampaignSettingClient.MutateSmartCampaignSettings, req, settings.GRPC, c.logger, "MutateSmartCampaignSettings")
+		return err
+	}, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return resp, nil
+}
+
+func (c *smartCampaignSettingGRPCClient) GeneratePMaxDraftCampaign(ctx context.Context, req *servicespb.GeneratePMaxDraftCampaignRequest, opts ...gax.CallOption) (*servicespb.GeneratePMaxDraftCampaignResponse, error) {
+	hds := []string{"x-goog-request-params", fmt.Sprintf("%s=%v", "resource_name", url.QueryEscape(req.GetResourceName()))}
+
+	hds = append(c.xGoogHeaders, hds...)
+	ctx = gax.InsertMetadataIntoOutgoingContext(ctx, hds...)
+	opts = append((*c.CallOptions).GeneratePMaxDraftCampaign[0:len((*c.CallOptions).GeneratePMaxDraftCampaign):len((*c.CallOptions).GeneratePMaxDraftCampaign)], opts...)
+	var resp *servicespb.GeneratePMaxDraftCampaignResponse
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		resp, err = executeRPC(ctx, c.smartCampaignSettingClient.GeneratePMaxDraftCampaign, req, settings.GRPC, c.logger, "GeneratePMaxDraftCampaign")
 		return err
 	}, opts...)
 	if err != nil {

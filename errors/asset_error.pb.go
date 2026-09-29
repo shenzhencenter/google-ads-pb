@@ -119,11 +119,12 @@ const (
 	AssetErrorEnum_NAME_CONFLICT_FOR_ASSET_TYPE AssetErrorEnum_AssetError = 34
 	// Cannot modify asset source.
 	AssetErrorEnum_CANNOT_MODIFY_ASSET_SOURCE AssetErrorEnum_AssetError = 35
-	// User can not modify the automatically created asset.
+	// User cannot modify text customization (formerly automatically created
+	// asset).
 	AssetErrorEnum_CANNOT_MODIFY_AUTOMATICALLY_CREATED_ASSET AssetErrorEnum_AssetError = 36
 	// Lead Form is disallowed to use `LOCATION` answer type.
 	AssetErrorEnum_LEAD_FORM_LOCATION_ANSWER_TYPE_DISALLOWED AssetErrorEnum_AssetError = 37
-	// Page Feed label text contains invalid characters.
+	// Page URL inclusion label text contains invalid characters.
 	AssetErrorEnum_PAGE_FEED_INVALID_LABEL_TEXT AssetErrorEnum_AssetError = 38
 	// The customer is not in the allow-list for whatsapp message asset type.
 	AssetErrorEnum_CUSTOMER_NOT_ON_ALLOWLIST_FOR_WHATSAPP_MESSAGE_ASSETS AssetErrorEnum_AssetError = 39

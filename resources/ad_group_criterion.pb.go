@@ -945,7 +945,7 @@ type AdGroupCriterion_QualityInfo struct {
 	CreativeQualityScore enums.QualityScoreBucketEnum_QualityScoreBucket `protobuf:"varint,2,opt,name=creative_quality_score,json=creativeQualityScore,proto3,enum=google.ads.googleads.v25.enums.QualityScoreBucketEnum_QualityScoreBucket" json:"creative_quality_score,omitempty"`
 	// Output only. The quality score of the landing page.
 	PostClickQualityScore enums.QualityScoreBucketEnum_QualityScoreBucket `protobuf:"varint,3,opt,name=post_click_quality_score,json=postClickQualityScore,proto3,enum=google.ads.googleads.v25.enums.QualityScoreBucketEnum_QualityScoreBucket" json:"post_click_quality_score,omitempty"`
-	// Output only. The click-through rate compared to that of other
+	// Output only. The clickthrough rate (CTR) compared to that of other
 	// advertisers.
 	SearchPredictedCtr enums.QualityScoreBucketEnum_QualityScoreBucket `protobuf:"varint,4,opt,name=search_predicted_ctr,json=searchPredictedCtr,proto3,enum=google.ads.googleads.v25.enums.QualityScoreBucketEnum_QualityScoreBucket" json:"search_predicted_ctr,omitempty"`
 	unknownFields      protoimpl.UnknownFields

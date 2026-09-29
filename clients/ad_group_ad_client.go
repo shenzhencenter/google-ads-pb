@@ -181,7 +181,8 @@ func (c *AdGroupAdClient) MutateAdGroupAds(ctx context.Context, req *servicespb.
 	return c.internalClient.MutateAdGroupAds(ctx, req, opts...)
 }
 
-// RemoveAutomaticallyCreatedAssets remove automatically created assets from an ad.
+// RemoveAutomaticallyCreatedAssets remove text customization (formerly automatically created assets) from an
+// ad.
 //
 // List of thrown errors:
 // AdError (at )

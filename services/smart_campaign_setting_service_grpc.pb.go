@@ -35,6 +35,7 @@ const _ = grpc.SupportPackageIsVersion9
 const (
 	SmartCampaignSettingService_GetSmartCampaignStatus_FullMethodName      = "/google.ads.googleads.v25.services.SmartCampaignSettingService/GetSmartCampaignStatus"
 	SmartCampaignSettingService_MutateSmartCampaignSettings_FullMethodName = "/google.ads.googleads.v25.services.SmartCampaignSettingService/MutateSmartCampaignSettings"
+	SmartCampaignSettingService_GeneratePMaxDraftCampaign_FullMethodName   = "/google.ads.googleads.v25.services.SmartCampaignSettingService/GeneratePMaxDraftCampaign"
 )
 
 // SmartCampaignSettingServiceClient is the client API for SmartCampaignSettingService service.
@@ -47,6 +48,11 @@ type SmartCampaignSettingServiceClient interface {
 	GetSmartCampaignStatus(ctx context.Context, in *GetSmartCampaignStatusRequest, opts ...grpc.CallOption) (*GetSmartCampaignStatusResponse, error)
 	// Updates Smart campaign settings for campaigns.
 	MutateSmartCampaignSettings(ctx context.Context, in *MutateSmartCampaignSettingsRequest, opts ...grpc.CallOption) (*MutateSmartCampaignSettingsResponse, error)
+	// Generates a Performance Max (PMax) draft campaign from an existing Smart
+	// campaign, initialized with a status of [CampaignStatus.PAUSED] and a
+	// creation status of [CampaignCreationStatus.INCOMPLETE]. Returns the draft
+	// PMax campaign ID and related entity IDs.
+	GeneratePMaxDraftCampaign(ctx context.Context, in *GeneratePMaxDraftCampaignRequest, opts ...grpc.CallOption) (*GeneratePMaxDraftCampaignResponse, error)
 }
 
 type smartCampaignSettingServiceClient struct {
@@ -77,6 +83,16 @@ func (c *smartCampaignSettingServiceClient) MutateSmartCampaignSettings(ctx cont
 	return out, nil
 }
 
+func (c *smartCampaignSettingServiceClient) GeneratePMaxDraftCampaign(ctx context.Context, in *GeneratePMaxDraftCampaignRequest, opts ...grpc.CallOption) (*GeneratePMaxDraftCampaignResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GeneratePMaxDraftCampaignResponse)
+	err := c.cc.Invoke(ctx, SmartCampaignSettingService_GeneratePMaxDraftCampaign_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // SmartCampaignSettingServiceServer is the server API for SmartCampaignSettingService service.
 // All implementations must embed UnimplementedSmartCampaignSettingServiceServer
 // for forward compatibility.
@@ -87,6 +103,11 @@ type SmartCampaignSettingServiceServer interface {
 	GetSmartCampaignStatus(context.Context, *GetSmartCampaignStatusRequest) (*GetSmartCampaignStatusResponse, error)
 	// Updates Smart campaign settings for campaigns.
 	MutateSmartCampaignSettings(context.Context, *MutateSmartCampaignSettingsRequest) (*MutateSmartCampaignSettingsResponse, error)
+	// Generates a Performance Max (PMax) draft campaign from an existing Smart
+	// campaign, initialized with a status of [CampaignStatus.PAUSED] and a
+	// creation status of [CampaignCreationStatus.INCOMPLETE]. Returns the draft
+	// PMax campaign ID and related entity IDs.
+	GeneratePMaxDraftCampaign(context.Context, *GeneratePMaxDraftCampaignRequest) (*GeneratePMaxDraftCampaignResponse, error)
 	mustEmbedUnimplementedSmartCampaignSettingServiceServer()
 }
 
@@ -102,6 +123,9 @@ func (UnimplementedSmartCampaignSettingServiceServer) GetSmartCampaignStatus(con
 }
 func (UnimplementedSmartCampaignSettingServiceServer) MutateSmartCampaignSettings(context.Context, *MutateSmartCampaignSettingsRequest) (*MutateSmartCampaignSettingsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MutateSmartCampaignSettings not implemented")
+}
+func (UnimplementedSmartCampaignSettingServiceServer) GeneratePMaxDraftCampaign(context.Context, *GeneratePMaxDraftCampaignRequest) (*GeneratePMaxDraftCampaignResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GeneratePMaxDraftCampaign not implemented")
 }
 func (UnimplementedSmartCampaignSettingServiceServer) mustEmbedUnimplementedSmartCampaignSettingServiceServer() {
 }
@@ -161,6 +185,24 @@ func _SmartCampaignSettingService_MutateSmartCampaignSettings_Handler(srv interf
 	return interceptor(ctx, in, info, handler)
 }
 
+func _SmartCampaignSettingService_GeneratePMaxDraftCampaign_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GeneratePMaxDraftCampaignRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SmartCampaignSettingServiceServer).GeneratePMaxDraftCampaign(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: SmartCampaignSettingService_GeneratePMaxDraftCampaign_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SmartCampaignSettingServiceServer).GeneratePMaxDraftCampaign(ctx, req.(*GeneratePMaxDraftCampaignRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // SmartCampaignSettingService_ServiceDesc is the grpc.ServiceDesc for SmartCampaignSettingService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -175,6 +217,10 @@ var SmartCampaignSettingService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "MutateSmartCampaignSettings",
 			Handler:    _SmartCampaignSettingService_MutateSmartCampaignSettings_Handler,
+		},
+		{
+			MethodName: "GeneratePMaxDraftCampaign",
+			Handler:    _SmartCampaignSettingService_GeneratePMaxDraftCampaign_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -35,7 +35,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-// Enum describing possible automatically created asset removal errors.
+// Enum describing possible text customization removal errors.
 type AutomaticallyCreatedAssetRemovalErrorEnum_AutomaticallyCreatedAssetRemovalError int32
 
 const (
@@ -51,7 +51,7 @@ const (
 	AutomaticallyCreatedAssetRemovalErrorEnum_ASSET_DOES_NOT_EXIST AutomaticallyCreatedAssetRemovalErrorEnum_AutomaticallyCreatedAssetRemovalError = 4
 	// The asset field type does not match.
 	AutomaticallyCreatedAssetRemovalErrorEnum_ASSET_FIELD_TYPE_DOES_NOT_MATCH AutomaticallyCreatedAssetRemovalErrorEnum_AutomaticallyCreatedAssetRemovalError = 5
-	// Not an automatically created asset.
+	// Not a text customization (formerly automatically created asset).
 	AutomaticallyCreatedAssetRemovalErrorEnum_NOT_AN_AUTOMATICALLY_CREATED_ASSET AutomaticallyCreatedAssetRemovalErrorEnum_AutomaticallyCreatedAssetRemovalError = 6
 )
 
@@ -104,7 +104,7 @@ func (AutomaticallyCreatedAssetRemovalErrorEnum_AutomaticallyCreatedAssetRemoval
 	return file_google_ads_googleads_v25_errors_automatically_created_asset_removal_error_proto_rawDescGZIP(), []int{0, 0}
 }
 
-// Container for enum describing possible automatically created asset removal
+// Container for enum describing possible text customization removal
 // errors.
 type AutomaticallyCreatedAssetRemovalErrorEnum struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`

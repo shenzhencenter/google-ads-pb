@@ -105,7 +105,8 @@ func (x *RemoveCampaignAutomaticallyCreatedAssetRequest) GetPartialFailure() boo
 	return false
 }
 
-// A single operation to remove an automatically created asset from a campaign.
+// A single operation to remove a text customization (formerly automatically
+// created asset) from a campaign.
 type RemoveCampaignAutomaticallyCreatedAssetOperation struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Required. The resource name of the campaign.

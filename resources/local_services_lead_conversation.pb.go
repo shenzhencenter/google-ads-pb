@@ -219,7 +219,8 @@ type MessageDetails struct {
 	// Output only. Textual content of the message.
 	Text string `protobuf:"bytes,1,opt,name=text,proto3" json:"text,omitempty"`
 	// Output only. URL to the SMS or email attachments. These URLs can be used to
-	// download the contents of the attachment by using the developer token.
+	// download the contents of the attachment using authorized Google Cloud
+	// project credentials.
 	AttachmentUrls []string `protobuf:"bytes,2,rep,name=attachment_urls,json=attachmentUrls,proto3" json:"attachment_urls,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache

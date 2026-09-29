@@ -56,11 +56,21 @@ type YouTubeVideoUpload struct {
 	State enums.YouTubeVideoUploadStateEnum_YouTubeVideoUploadState `protobuf:"varint,5,opt,name=state,proto3,enum=google.ads.googleads.v25.enums.YouTubeVideoUploadStateEnum_YouTubeVideoUploadState" json:"state,omitempty"`
 	// Input only. Immutable. The title of the video.
 	//
-	// Only mutable on YouTube video upload creation. Immutable after creation.
+	// The video title is required, must not exceed 100 characters, and must not
+	// contain invalid characters. It can be modified when creating the YouTube
+	// video upload, but is immutable after creation.
+	//
+	// See the YouTube Help Center for more information:
+	// https://support.google.com/youtube/answer/57407
 	VideoTitle string `protobuf:"bytes,6,opt,name=video_title,json=videoTitle,proto3" json:"video_title,omitempty"`
 	// Input only. Immutable. The description of the video.
 	//
-	// Only mutable on YouTube video upload creation. Immutable after creation.
+	// The video description must not exceed 5000 characters and must not contain
+	// invalid characters. It can be modified when creating the YouTube video
+	// upload, but is immutable after creation.
+	//
+	// See the YouTube Help Center for more information:
+	// https://support.google.com/youtube/answer/57407
 	VideoDescription string `protobuf:"bytes,7,opt,name=video_description,json=videoDescription,proto3" json:"video_description,omitempty"`
 	// The privacy state of the video.
 	//

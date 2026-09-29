@@ -57,7 +57,7 @@ const (
 	ExperimentMetricEnum_CONVERSIONS_VALUE_PER_COST ExperimentMetricEnum_ExperimentMetric = 7
 	// The goal of the experiment is avg cpc.
 	ExperimentMetricEnum_AVERAGE_CPC ExperimentMetricEnum_ExperimentMetric = 8
-	// The goal of the experiment is ctr.
+	// The goal of the experiment is clickthrough rate (CTR).
 	ExperimentMetricEnum_CTR ExperimentMetricEnum_ExperimentMetric = 9
 	// The goal of the experiment is incremental conversions.
 	ExperimentMetricEnum_INCREMENTAL_CONVERSIONS ExperimentMetricEnum_ExperimentMetric = 10

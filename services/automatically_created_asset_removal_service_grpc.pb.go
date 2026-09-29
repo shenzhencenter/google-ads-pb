@@ -40,9 +40,10 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 //
-// Service to remove automatically created assets.
+// Service to remove text customization (formerly automatically created assets).
 type AutomaticallyCreatedAssetRemovalServiceClient interface {
-	// Removes automatically created assets from a campaign.
+	// Removes text customization (formerly automatically created assets) from a
+	// campaign.
 	//
 	// List of thrown errors:
 	//
@@ -80,9 +81,10 @@ func (c *automaticallyCreatedAssetRemovalServiceClient) RemoveCampaignAutomatica
 // All implementations must embed UnimplementedAutomaticallyCreatedAssetRemovalServiceServer
 // for forward compatibility.
 //
-// Service to remove automatically created assets.
+// Service to remove text customization (formerly automatically created assets).
 type AutomaticallyCreatedAssetRemovalServiceServer interface {
-	// Removes automatically created assets from a campaign.
+	// Removes text customization (formerly automatically created assets) from a
+	// campaign.
 	//
 	// List of thrown errors:
 	//

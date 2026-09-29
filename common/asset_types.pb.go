@@ -1565,7 +1565,7 @@ func (x *SitelinkAsset) GetAdScheduleTargets() []*AdScheduleInfo {
 	return nil
 }
 
-// A Page Feed asset.
+// A Page URL inclusion asset.
 type PageFeedAsset struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Required. The webpage that advertisers want to target.
@@ -3022,13 +3022,17 @@ func (x *DynamicFlightsAsset) GetCustomMapping() string {
 // A Demand Gen Carousel Card asset.
 type DemandGenCarouselCardAsset struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	// Asset resource name of the associated 1.91:1 marketing image. This and/or
-	// square marketing image asset is required.
+	// Asset resource name of the associated 1.91:1 marketing image. Either this
+	// image, or the square marketing image, or both, is required. Temporary IDs
+	// are not supported. Only existing image assets can be referenced.
 	MarketingImageAsset string `protobuf:"bytes,1,opt,name=marketing_image_asset,json=marketingImageAsset,proto3" json:"marketing_image_asset,omitempty"`
-	// Asset resource name of the associated square marketing image. This
-	// and/or a marketing image asset is required.
+	// Asset resource name of the associated square marketing image. Either this
+	// image, or the 1.91:1 marketing image, or both, is required. Temporary IDs
+	// are not supported. Only existing image assets can be referenced.
 	SquareMarketingImageAsset string `protobuf:"bytes,2,opt,name=square_marketing_image_asset,json=squareMarketingImageAsset,proto3" json:"square_marketing_image_asset,omitempty"`
 	// Asset resource name of the associated 4:5 portrait marketing image.
+	// Temporary IDs are not supported. Only existing image assets can be
+	// referenced.
 	PortraitMarketingImageAsset string `protobuf:"bytes,3,opt,name=portrait_marketing_image_asset,json=portraitMarketingImageAsset,proto3" json:"portrait_marketing_image_asset,omitempty"`
 	// Required. Headline of the carousel card.
 	Headline string `protobuf:"bytes,4,opt,name=headline,proto3" json:"headline,omitempty"`
