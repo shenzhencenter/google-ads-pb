@@ -16,7 +16,7 @@
 // versions:
 // 	protoc-gen-go v1.36.5
 // 	protoc        v4.24.4
-// source: google/ads/googleads/v25/enums/survey_intended_action.proto
+// source: google/ads/googleads/v26/enums/survey_intended_action.proto
 
 package enums
 
@@ -216,11 +216,11 @@ func (x SurveyIntendedActionEnum_SurveyIntendedAction) String() string {
 }
 
 func (SurveyIntendedActionEnum_SurveyIntendedAction) Descriptor() protoreflect.EnumDescriptor {
-	return file_google_ads_googleads_v25_enums_survey_intended_action_proto_enumTypes[0].Descriptor()
+	return file_google_ads_googleads_v26_enums_survey_intended_action_proto_enumTypes[0].Descriptor()
 }
 
 func (SurveyIntendedActionEnum_SurveyIntendedAction) Type() protoreflect.EnumType {
-	return &file_google_ads_googleads_v25_enums_survey_intended_action_proto_enumTypes[0]
+	return &file_google_ads_googleads_v26_enums_survey_intended_action_proto_enumTypes[0]
 }
 
 func (x SurveyIntendedActionEnum_SurveyIntendedAction) Number() protoreflect.EnumNumber {
@@ -229,7 +229,7 @@ func (x SurveyIntendedActionEnum_SurveyIntendedAction) Number() protoreflect.Enu
 
 // Deprecated: Use SurveyIntendedActionEnum_SurveyIntendedAction.Descriptor instead.
 func (SurveyIntendedActionEnum_SurveyIntendedAction) EnumDescriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v25_enums_survey_intended_action_proto_rawDescGZIP(), []int{0, 0}
+	return file_google_ads_googleads_v26_enums_survey_intended_action_proto_rawDescGZIP(), []int{0, 0}
 }
 
 // Container for enum
@@ -241,7 +241,7 @@ type SurveyIntendedActionEnum struct {
 
 func (x *SurveyIntendedActionEnum) Reset() {
 	*x = SurveyIntendedActionEnum{}
-	mi := &file_google_ads_googleads_v25_enums_survey_intended_action_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v26_enums_survey_intended_action_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -253,7 +253,7 @@ func (x *SurveyIntendedActionEnum) String() string {
 func (*SurveyIntendedActionEnum) ProtoMessage() {}
 
 func (x *SurveyIntendedActionEnum) ProtoReflect() protoreflect.Message {
-	mi := &file_google_ads_googleads_v25_enums_survey_intended_action_proto_msgTypes[0]
+	mi := &file_google_ads_googleads_v26_enums_survey_intended_action_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -266,18 +266,18 @@ func (x *SurveyIntendedActionEnum) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SurveyIntendedActionEnum.ProtoReflect.Descriptor instead.
 func (*SurveyIntendedActionEnum) Descriptor() ([]byte, []int) {
-	return file_google_ads_googleads_v25_enums_survey_intended_action_proto_rawDescGZIP(), []int{0}
+	return file_google_ads_googleads_v26_enums_survey_intended_action_proto_rawDescGZIP(), []int{0}
 }
 
-var File_google_ads_googleads_v25_enums_survey_intended_action_proto protoreflect.FileDescriptor
+var File_google_ads_googleads_v26_enums_survey_intended_action_proto protoreflect.FileDescriptor
 
-var file_google_ads_googleads_v25_enums_survey_intended_action_proto_rawDesc = string([]byte{
+var file_google_ads_googleads_v26_enums_survey_intended_action_proto_rawDesc = string([]byte{
 	0x0a, 0x3b, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x35, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73,
+	0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76, 0x32, 0x36, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73,
 	0x2f, 0x73, 0x75, 0x72, 0x76, 0x65, 0x79, 0x5f, 0x69, 0x6e, 0x74, 0x65, 0x6e, 0x64, 0x65, 0x64,
 	0x5f, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x1e, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x35, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x22, 0xf5, 0x04,
+	0x61, 0x64, 0x73, 0x2e, 0x76, 0x32, 0x36, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x22, 0xf5, 0x04,
 	0x0a, 0x18, 0x53, 0x75, 0x72, 0x76, 0x65, 0x79, 0x49, 0x6e, 0x74, 0x65, 0x6e, 0x64, 0x65, 0x64,
 	0x41, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x45, 0x6e, 0x75, 0x6d, 0x22, 0xd8, 0x04, 0x0a, 0x14, 0x53,
 	0x75, 0x72, 0x76, 0x65, 0x79, 0x49, 0x6e, 0x74, 0x65, 0x6e, 0x64, 0x65, 0x64, 0x41, 0x63, 0x74,
@@ -319,42 +319,42 @@ var file_google_ads_googleads_v25_enums_survey_intended_action_proto_rawDesc = s
 	0x0a, 0x11, 0x57, 0x41, 0x54, 0x43, 0x48, 0x5f, 0x49, 0x4e, 0x5f, 0x54, 0x48, 0x45, 0x41, 0x54,
 	0x45, 0x52, 0x53, 0x10, 0x26, 0x42, 0xf3, 0x01, 0x0a, 0x22, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x61, 0x64, 0x73, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61,
-	0x64, 0x73, 0x2e, 0x76, 0x32, 0x35, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x42, 0x19, 0x53, 0x75,
+	0x64, 0x73, 0x2e, 0x76, 0x32, 0x36, 0x2e, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x42, 0x19, 0x53, 0x75,
 	0x72, 0x76, 0x65, 0x79, 0x49, 0x6e, 0x74, 0x65, 0x6e, 0x64, 0x65, 0x64, 0x41, 0x63, 0x74, 0x69,
 	0x6f, 0x6e, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x43, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
 	0x65, 0x2e, 0x67, 0x6f, 0x6c, 0x61, 0x6e, 0x67, 0x2e, 0x6f, 0x72, 0x67, 0x2f, 0x67, 0x65, 0x6e,
 	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x70, 0x69, 0x73,
 	0x2f, 0x61, 0x64, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x61, 0x64, 0x73, 0x2f, 0x76,
-	0x32, 0x35, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x3b, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0xa2, 0x02,
+	0x32, 0x36, 0x2f, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0x3b, 0x65, 0x6e, 0x75, 0x6d, 0x73, 0xa2, 0x02,
 	0x03, 0x47, 0x41, 0x41, 0xaa, 0x02, 0x1e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x41, 0x64,
-	0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e, 0x56, 0x32, 0x35, 0x2e,
+	0x73, 0x2e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x2e, 0x56, 0x32, 0x36, 0x2e,
 	0x45, 0x6e, 0x75, 0x6d, 0x73, 0xca, 0x02, 0x1e, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x5c, 0x41,
-	0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x32, 0x35,
+	0x64, 0x73, 0x5c, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x5c, 0x56, 0x32, 0x36,
 	0x5c, 0x45, 0x6e, 0x75, 0x6d, 0x73, 0xea, 0x02, 0x22, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x3a,
 	0x3a, 0x41, 0x64, 0x73, 0x3a, 0x3a, 0x47, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x41, 0x64, 0x73, 0x3a,
-	0x3a, 0x56, 0x32, 0x35, 0x3a, 0x3a, 0x45, 0x6e, 0x75, 0x6d, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f,
+	0x3a, 0x56, 0x32, 0x36, 0x3a, 0x3a, 0x45, 0x6e, 0x75, 0x6d, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f,
 	0x74, 0x6f, 0x33,
 })
 
 var (
-	file_google_ads_googleads_v25_enums_survey_intended_action_proto_rawDescOnce sync.Once
-	file_google_ads_googleads_v25_enums_survey_intended_action_proto_rawDescData []byte
+	file_google_ads_googleads_v26_enums_survey_intended_action_proto_rawDescOnce sync.Once
+	file_google_ads_googleads_v26_enums_survey_intended_action_proto_rawDescData []byte
 )
 
-func file_google_ads_googleads_v25_enums_survey_intended_action_proto_rawDescGZIP() []byte {
-	file_google_ads_googleads_v25_enums_survey_intended_action_proto_rawDescOnce.Do(func() {
-		file_google_ads_googleads_v25_enums_survey_intended_action_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v25_enums_survey_intended_action_proto_rawDesc), len(file_google_ads_googleads_v25_enums_survey_intended_action_proto_rawDesc)))
+func file_google_ads_googleads_v26_enums_survey_intended_action_proto_rawDescGZIP() []byte {
+	file_google_ads_googleads_v26_enums_survey_intended_action_proto_rawDescOnce.Do(func() {
+		file_google_ads_googleads_v26_enums_survey_intended_action_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v26_enums_survey_intended_action_proto_rawDesc), len(file_google_ads_googleads_v26_enums_survey_intended_action_proto_rawDesc)))
 	})
-	return file_google_ads_googleads_v25_enums_survey_intended_action_proto_rawDescData
+	return file_google_ads_googleads_v26_enums_survey_intended_action_proto_rawDescData
 }
 
-var file_google_ads_googleads_v25_enums_survey_intended_action_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_google_ads_googleads_v25_enums_survey_intended_action_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
-var file_google_ads_googleads_v25_enums_survey_intended_action_proto_goTypes = []any{
-	(SurveyIntendedActionEnum_SurveyIntendedAction)(0), // 0: google.ads.googleads.v25.enums.SurveyIntendedActionEnum.SurveyIntendedAction
-	(*SurveyIntendedActionEnum)(nil),                   // 1: google.ads.googleads.v25.enums.SurveyIntendedActionEnum
+var file_google_ads_googleads_v26_enums_survey_intended_action_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_google_ads_googleads_v26_enums_survey_intended_action_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_google_ads_googleads_v26_enums_survey_intended_action_proto_goTypes = []any{
+	(SurveyIntendedActionEnum_SurveyIntendedAction)(0), // 0: google.ads.googleads.v26.enums.SurveyIntendedActionEnum.SurveyIntendedAction
+	(*SurveyIntendedActionEnum)(nil),                   // 1: google.ads.googleads.v26.enums.SurveyIntendedActionEnum
 }
-var file_google_ads_googleads_v25_enums_survey_intended_action_proto_depIdxs = []int32{
+var file_google_ads_googleads_v26_enums_survey_intended_action_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type
 	0, // [0:0] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
@@ -362,27 +362,27 @@ var file_google_ads_googleads_v25_enums_survey_intended_action_proto_depIdxs = [
 	0, // [0:0] is the sub-list for field type_name
 }
 
-func init() { file_google_ads_googleads_v25_enums_survey_intended_action_proto_init() }
-func file_google_ads_googleads_v25_enums_survey_intended_action_proto_init() {
-	if File_google_ads_googleads_v25_enums_survey_intended_action_proto != nil {
+func init() { file_google_ads_googleads_v26_enums_survey_intended_action_proto_init() }
+func file_google_ads_googleads_v26_enums_survey_intended_action_proto_init() {
+	if File_google_ads_googleads_v26_enums_survey_intended_action_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v25_enums_survey_intended_action_proto_rawDesc), len(file_google_ads_googleads_v25_enums_survey_intended_action_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_google_ads_googleads_v26_enums_survey_intended_action_proto_rawDesc), len(file_google_ads_googleads_v26_enums_survey_intended_action_proto_rawDesc)),
 			NumEnums:      1,
 			NumMessages:   1,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_google_ads_googleads_v25_enums_survey_intended_action_proto_goTypes,
-		DependencyIndexes: file_google_ads_googleads_v25_enums_survey_intended_action_proto_depIdxs,
-		EnumInfos:         file_google_ads_googleads_v25_enums_survey_intended_action_proto_enumTypes,
-		MessageInfos:      file_google_ads_googleads_v25_enums_survey_intended_action_proto_msgTypes,
+		GoTypes:           file_google_ads_googleads_v26_enums_survey_intended_action_proto_goTypes,
+		DependencyIndexes: file_google_ads_googleads_v26_enums_survey_intended_action_proto_depIdxs,
+		EnumInfos:         file_google_ads_googleads_v26_enums_survey_intended_action_proto_enumTypes,
+		MessageInfos:      file_google_ads_googleads_v26_enums_survey_intended_action_proto_msgTypes,
 	}.Build()
-	File_google_ads_googleads_v25_enums_survey_intended_action_proto = out.File
-	file_google_ads_googleads_v25_enums_survey_intended_action_proto_goTypes = nil
-	file_google_ads_googleads_v25_enums_survey_intended_action_proto_depIdxs = nil
+	File_google_ads_googleads_v26_enums_survey_intended_action_proto = out.File
+	file_google_ads_googleads_v26_enums_survey_intended_action_proto_goTypes = nil
+	file_google_ads_googleads_v26_enums_survey_intended_action_proto_depIdxs = nil
 }
