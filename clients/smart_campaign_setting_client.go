@@ -160,6 +160,18 @@ func (c *SmartCampaignSettingClient) MutateSmartCampaignSettings(ctx context.Con
 // campaign, initialized with a status of [CampaignStatus.PAUSED] and a
 // creation status of [CampaignCreationStatus.INCOMPLETE]. Returns the draft
 // PMax campaign ID and related entity IDs.
+//
+// Note:
+//
+//	Images are required for the draft PMax campaign to pass validation, so
+//	system default placeholder images are added automatically. Review and
+//	update the target images after the draft PMax campaign is generated.
+//
+//	Verify that the EU political advertising status
+//	([Campaign.contains_eu_political_advertising]) is accurate. By default,
+//	this field is set to
+//	[EuPoliticalAdvertisingStatus.DOES_NOT_CONTAIN_EU_POLITICAL_ADVERTISING]
+//	to satisfy Performance Max campaign validation requirements.
 func (c *SmartCampaignSettingClient) GeneratePMaxDraftCampaign(ctx context.Context, req *servicespb.GeneratePMaxDraftCampaignRequest, opts ...gax.CallOption) (*servicespb.GeneratePMaxDraftCampaignResponse, error) {
 	return c.internalClient.GeneratePMaxDraftCampaign(ctx, req, opts...)
 }

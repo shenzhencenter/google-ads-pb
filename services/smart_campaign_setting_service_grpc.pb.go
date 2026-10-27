@@ -16,7 +16,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.24.4
-// source: google/ads/googleads/v25/services/smart_campaign_setting_service.proto
+// source: google/ads/googleads/v26/services/smart_campaign_setting_service.proto
 
 package services
 
@@ -33,9 +33,9 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	SmartCampaignSettingService_GetSmartCampaignStatus_FullMethodName      = "/google.ads.googleads.v25.services.SmartCampaignSettingService/GetSmartCampaignStatus"
-	SmartCampaignSettingService_MutateSmartCampaignSettings_FullMethodName = "/google.ads.googleads.v25.services.SmartCampaignSettingService/MutateSmartCampaignSettings"
-	SmartCampaignSettingService_GeneratePMaxDraftCampaign_FullMethodName   = "/google.ads.googleads.v25.services.SmartCampaignSettingService/GeneratePMaxDraftCampaign"
+	SmartCampaignSettingService_GetSmartCampaignStatus_FullMethodName      = "/google.ads.googleads.v26.services.SmartCampaignSettingService/GetSmartCampaignStatus"
+	SmartCampaignSettingService_MutateSmartCampaignSettings_FullMethodName = "/google.ads.googleads.v26.services.SmartCampaignSettingService/MutateSmartCampaignSettings"
+	SmartCampaignSettingService_GeneratePMaxDraftCampaign_FullMethodName   = "/google.ads.googleads.v26.services.SmartCampaignSettingService/GeneratePMaxDraftCampaign"
 )
 
 // SmartCampaignSettingServiceClient is the client API for SmartCampaignSettingService service.
@@ -52,6 +52,16 @@ type SmartCampaignSettingServiceClient interface {
 	// campaign, initialized with a status of [CampaignStatus.PAUSED] and a
 	// creation status of [CampaignCreationStatus.INCOMPLETE]. Returns the draft
 	// PMax campaign ID and related entity IDs.
+	//
+	// Note:
+	//   - Images are required for the draft PMax campaign to pass validation, so
+	//     system default placeholder images are added automatically. Review and
+	//     update the target images after the draft PMax campaign is generated.
+	//   - Verify that the EU political advertising status
+	//     ([Campaign.contains_eu_political_advertising]) is accurate. By default,
+	//     this field is set to
+	//     [EuPoliticalAdvertisingStatus.DOES_NOT_CONTAIN_EU_POLITICAL_ADVERTISING]
+	//     to satisfy Performance Max campaign validation requirements.
 	GeneratePMaxDraftCampaign(ctx context.Context, in *GeneratePMaxDraftCampaignRequest, opts ...grpc.CallOption) (*GeneratePMaxDraftCampaignResponse, error)
 }
 
@@ -107,6 +117,16 @@ type SmartCampaignSettingServiceServer interface {
 	// campaign, initialized with a status of [CampaignStatus.PAUSED] and a
 	// creation status of [CampaignCreationStatus.INCOMPLETE]. Returns the draft
 	// PMax campaign ID and related entity IDs.
+	//
+	// Note:
+	//   - Images are required for the draft PMax campaign to pass validation, so
+	//     system default placeholder images are added automatically. Review and
+	//     update the target images after the draft PMax campaign is generated.
+	//   - Verify that the EU political advertising status
+	//     ([Campaign.contains_eu_political_advertising]) is accurate. By default,
+	//     this field is set to
+	//     [EuPoliticalAdvertisingStatus.DOES_NOT_CONTAIN_EU_POLITICAL_ADVERTISING]
+	//     to satisfy Performance Max campaign validation requirements.
 	GeneratePMaxDraftCampaign(context.Context, *GeneratePMaxDraftCampaignRequest) (*GeneratePMaxDraftCampaignResponse, error)
 	mustEmbedUnimplementedSmartCampaignSettingServiceServer()
 }
@@ -207,7 +227,7 @@ func _SmartCampaignSettingService_GeneratePMaxDraftCampaign_Handler(srv interfac
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var SmartCampaignSettingService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "google.ads.googleads.v25.services.SmartCampaignSettingService",
+	ServiceName: "google.ads.googleads.v26.services.SmartCampaignSettingService",
 	HandlerType: (*SmartCampaignSettingServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -224,5 +244,5 @@ var SmartCampaignSettingService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "google/ads/googleads/v25/services/smart_campaign_setting_service.proto",
+	Metadata: "google/ads/googleads/v26/services/smart_campaign_setting_service.proto",
 }
