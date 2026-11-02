@@ -119,6 +119,11 @@ type internalOfflineUserDataJobClient interface {
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 //
 // Service to manage offline user data jobs.
+// For help diagnosing and resolving conversion or user data upload issues, see
+// the conversion upload
+// troubleshooting guide (at /google-ads/api/docs/conversions/troubleshooting)
+// (or use the troubleshoot-conversions workflow in the Google Ads API
+// Developer Assistant (at /google-ads/api/docs/developer-toolkit/ai-assistant)).
 type OfflineUserDataJobClient struct {
 	// The internal transport-dependent client.
 	internalClient internalOfflineUserDataJobClient
@@ -241,6 +246,11 @@ type offlineUserDataJobGRPCClient struct {
 // The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
 // Service to manage offline user data jobs.
+// For help diagnosing and resolving conversion or user data upload issues, see
+// the conversion upload
+// troubleshooting guide (at /google-ads/api/docs/conversions/troubleshooting)
+// (or use the troubleshoot-conversions workflow in the Google Ads API
+// Developer Assistant (at /google-ads/api/docs/developer-toolkit/ai-assistant)).
 func NewOfflineUserDataJobClient(ctx context.Context, opts ...option.ClientOption) (*OfflineUserDataJobClient, error) {
 	clientOpts := defaultOfflineUserDataJobGRPCClientOptions()
 	if newOfflineUserDataJobClientHook != nil {

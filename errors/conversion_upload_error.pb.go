@@ -36,6 +36,12 @@ const (
 )
 
 // Enum describing possible conversion upload errors.
+//
+// For step-by-step resolution guidance, see the [Conversion upload
+// troubleshooting guide](/google-ads/api/docs/conversions/troubleshooting)
+// (or use the `troubleshoot-conversions` workflow in the [Google Ads API
+// Developer
+// Assistant](/google-ads/api/docs/developer-toolkit/ai-assistant)).
 type ConversionUploadErrorEnum_ConversionUploadError int32
 
 const (
@@ -318,6 +324,11 @@ func (ConversionUploadErrorEnum_ConversionUploadError) EnumDescriptor() ([]byte,
 }
 
 // Container for enum describing possible conversion upload errors.
+//
+// For help diagnosing and resolving these errors, see the [Conversion upload
+// troubleshooting guide](/google-ads/api/docs/conversions/troubleshooting) (or
+// use the `troubleshoot-conversions` workflow in the [Google Ads API Developer
+// Assistant](/google-ads/api/docs/developer-toolkit/ai-assistant)).
 type ConversionUploadErrorEnum struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	unknownFields protoimpl.UnknownFields

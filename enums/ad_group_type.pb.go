@@ -53,7 +53,8 @@ const (
 	AdGroupTypeEnum_SHOPPING_PRODUCT_ADS AdGroupTypeEnum_AdGroupType = 4
 	// The default ad group type for Hotel campaigns.
 	AdGroupTypeEnum_HOTEL_ADS AdGroupTypeEnum_AdGroupType = 6
-	// The type for ad groups in Smart Shopping campaigns.
+	// The type for ad groups in Smart Shopping campaigns. New Smart Shopping
+	// campaigns cannot be created.
 	AdGroupTypeEnum_SHOPPING_SMART_ADS AdGroupTypeEnum_AdGroupType = 7
 	// Short unskippable in-stream video ads.
 	AdGroupTypeEnum_VIDEO_BUMPER AdGroupTypeEnum_AdGroupType = 8

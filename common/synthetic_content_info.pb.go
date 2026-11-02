@@ -40,7 +40,8 @@ const (
 // Represents an attestation about synthetic content from a single source.
 type SyntheticContentAttestation struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	// Indicates whether the content is considered synthetic by this source.
+	// Indicates the attestation status for whether the content should be labeled
+	// as created or edited with AI by this source.
 	Status enums.SyntheticContentAttestationStatusEnum_SyntheticContentAttestationStatus `protobuf:"varint,1,opt,name=status,proto3,enum=google.ads.googleads.v26.enums.SyntheticContentAttestationStatusEnum_SyntheticContentAttestationStatus" json:"status,omitempty"`
 	// The source of the synthetic content attestation.
 	Source        enums.SyntheticContentSourceEnum_SyntheticContentSource `protobuf:"varint,2,opt,name=source,proto3,enum=google.ads.googleads.v26.enums.SyntheticContentSourceEnum_SyntheticContentSource" json:"source,omitempty"`

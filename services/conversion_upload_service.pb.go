@@ -41,16 +41,32 @@ const (
 
 // Request message for
 // [ConversionUploadService.UploadClickConversions][google.ads.googleads.v26.services.ConversionUploadService.UploadClickConversions].
+//
+// Important: Always set `partial_failure = true`. Partial failure mode is
+// required for conversion uploads. When enabled, valid conversions are
+// processed and any invalid conversions return individual errors in
+// `UploadClickConversionsResponse.partial_failure_error`. Setting
+// `partial_failure = false` or omitting the field is not supported and
+// causes the entire request to fail.
+//
+// When uploading enhanced conversions for leads with `user_identifiers`,
+// normalize raw identifier strings before hashing with SHA-256 (trim leading
+// and trailing whitespace, convert email addresses to lowercase, and format
+// phone numbers in E.164 format), and populate only one identifier field per
+// `UserIdentifier` object (`oneof identifier` is mutually exclusive).
+//
+// For help diagnosing conversion upload issues, see the conversion upload
+// [troubleshooting guide](/google-ads/api/docs/conversions/troubleshooting).
 type UploadClickConversionsRequest struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Required. The ID of the customer performing the upload.
 	CustomerId string `protobuf:"bytes,1,opt,name=customer_id,json=customerId,proto3" json:"customer_id,omitempty"`
 	// Required. The conversions that are being uploaded.
 	Conversions []*ClickConversion `protobuf:"bytes,2,rep,name=conversions,proto3" json:"conversions,omitempty"`
-	// Required. If `true`, successful operations will be carried out and invalid
-	// operations will return errors. If `false`, all operations will be carried
-	// out in one transaction if and only if they are all valid.
-	// This should always be set to `true`.
+	// Required. Must be set to `true`. Enables partial failure mode so that
+	// valid conversions are processed and any invalid conversions return
+	// individual errors in `partial_failure_error`. Setting this field to
+	// `false` is not supported and causes the entire request to fail.
 	//
 	// See
 	// [Best practices for partial
@@ -216,11 +232,10 @@ type UploadCallConversionsRequest struct {
 	CustomerId string `protobuf:"bytes,1,opt,name=customer_id,json=customerId,proto3" json:"customer_id,omitempty"`
 	// Required. The conversions that are being uploaded.
 	Conversions []*CallConversion `protobuf:"bytes,2,rep,name=conversions,proto3" json:"conversions,omitempty"`
-	// Required. If `true`, successful operations will be carried out and invalid
-	// operations will return errors. If `false`, all operations will be carried
-	// out in one transaction if and only if they are all valid.
-	//
-	// This should always be set to `true`.
+	// Required. Must be set to `true`. Enables partial failure mode so that
+	// valid conversions are processed and any invalid conversions return
+	// individual errors in `partial_failure_error`. Setting this field to
+	// `false` is not supported and causes the entire request to fail.
 	//
 	// See
 	// [Best practices for partial
@@ -357,6 +372,12 @@ func (x *UploadCallConversionsResponse) GetResults() []*CallConversionResult {
 }
 
 // A click conversion.
+//
+// For help diagnosing and resolving conversion upload issues, see the
+// conversion upload
+// [troubleshooting guide](/google-ads/api/docs/conversions/troubleshooting)
+// (or use the `troubleshoot-conversions` workflow in the [Google Ads API
+// Developer Assistant](/google-ads/api/docs/developer-toolkit/ai-assistant)).
 type ClickConversion struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// The Google click ID (gclid) associated with this conversion.
@@ -393,7 +414,11 @@ type ClickConversion struct {
 	CartData *CartData `protobuf:"bytes,16,opt,name=cart_data,json=cartData,proto3" json:"cart_data,omitempty"`
 	// The user identifiers associated with this conversion. Only hashed_email and
 	// hashed_phone_number are supported for conversion uploads. The maximum
-	// number of user identifiers for each conversion is 5.
+	// number of user identifiers for each conversion is 5. Each `UserIdentifier`
+	// in the list must have only one identifier field set (`oneof identifier` is
+	// mutually exclusive), and raw values must be normalized before SHA-256
+	// hashing (for email addresses, trim leading and trailing whitespace and
+	// convert to lowercase; for phone numbers, format in E.164 format).
 	UserIdentifiers []*common.UserIdentifier `protobuf:"bytes,17,rep,name=user_identifiers,json=userIdentifiers,proto3" json:"user_identifiers,omitempty"`
 	// The environment this conversion was recorded on, for example, App or Web.
 	ConversionEnvironment enums.ConversionEnvironmentEnum_ConversionEnvironment `protobuf:"varint,20,opt,name=conversion_environment,json=conversionEnvironment,proto3,enum=google.ads.googleads.v26.enums.ConversionEnvironmentEnum_ConversionEnvironment" json:"conversion_environment,omitempty"`
