@@ -90,6 +90,11 @@ type internalUserDataClient interface {
 // https://support.google.com/google-ads/answer/7474263 (at https://support.google.com/google-ads/answer/7474263). However, the uploads
 // made through this service will not be visible under the ‘Segment members’
 // section for the Customer Match List in the Google Ads UI.
+// For help diagnosing and resolving conversion or user data upload issues, see
+// the conversion upload
+// troubleshooting guide (at /google-ads/api/docs/conversions/troubleshooting)
+// (or use the troubleshoot-conversions workflow in the Google Ads API
+// Developer Assistant (at /google-ads/api/docs/developer-toolkit/ai-assistant)).
 type UserDataClient struct {
 	// The internal transport-dependent client.
 	internalClient internalUserDataClient
@@ -167,6 +172,11 @@ type userDataGRPCClient struct {
 // https://support.google.com/google-ads/answer/7474263 (at https://support.google.com/google-ads/answer/7474263). However, the uploads
 // made through this service will not be visible under the ‘Segment members’
 // section for the Customer Match List in the Google Ads UI.
+// For help diagnosing and resolving conversion or user data upload issues, see
+// the conversion upload
+// troubleshooting guide (at /google-ads/api/docs/conversions/troubleshooting)
+// (or use the troubleshoot-conversions workflow in the Google Ads API
+// Developer Assistant (at /google-ads/api/docs/developer-toolkit/ai-assistant)).
 func NewUserDataClient(ctx context.Context, opts ...option.ClientOption) (*UserDataClient, error) {
 	clientOpts := defaultUserDataGRPCClientOptions()
 	if newUserDataClientHook != nil {

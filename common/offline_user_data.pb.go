@@ -145,18 +145,34 @@ func (x *OfflineUserAddressInfo) GetHashedStreetAddress() string {
 }
 
 // User identifying information.
+//
+// Each `UserIdentifier` object represents a single identifier using a
+// mutually exclusive `oneof`. Only one identifier field (`hashed_email`,
+// `hashed_phone_number`, `mobile_id`, `third_party_user_id`, or
+// `address_info`) may be set per `UserIdentifier` instance. Setting multiple
+// fields on the same `UserIdentifier` clears the previously set field. To
+// provide multiple identifiers for the same user (for example, both an email
+// address and a phone number), add separate `UserIdentifier` objects to the
+// `user_identifiers` list.
+//
+// Before hashing with SHA-256, normalize the raw values. For `hashed_email`
+// and address fields, trim leading and trailing whitespace and convert all
+// characters to lowercase. Phone numbers must be formatted in E.164 format
+// (for example, `+16502531234`) before hashing.
 type UserIdentifier struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Source of the user identifier when the upload is from Store Sales,
 	// ConversionUploadService, or ConversionAdjustmentUploadService.
 	UserIdentifierSource enums.UserIdentifierSourceEnum_UserIdentifierSource `protobuf:"varint,6,opt,name=user_identifier_source,json=userIdentifierSource,proto3,enum=google.ads.googleads.v26.enums.UserIdentifierSourceEnum_UserIdentifierSource" json:"user_identifier_source,omitempty"`
-	// Exactly one must be specified. For OfflineUserDataJobService, Customer
-	// Match accepts hashed_email, hashed_phone_number, mobile_id,
-	// third_party_user_id, and address_info; Store Sales accepts hashed_email,
-	// hashed_phone_number, third_party_user_id, and address_info.
-	// ConversionUploadService accepts hashed_email and hashed_phone_number.
-	// ConversionAdjustmentUploadService accepts hashed_email,
-	// hashed_phone_number, and address_info.
+	// Exactly one must be specified. Setting more than one field in the same
+	// `UserIdentifier` object is not supported; to provide multiple identifiers
+	// for a single user, pass multiple `UserIdentifier` objects in the
+	// `user_identifiers` list. For OfflineUserDataJobService, Customer Match
+	// accepts hashed_email, hashed_phone_number, mobile_id, third_party_user_id,
+	// and address_info; Store Sales accepts hashed_email, hashed_phone_number,
+	// third_party_user_id, and address_info. ConversionUploadService accepts
+	// hashed_email and hashed_phone_number. ConversionAdjustmentUploadService
+	// accepts hashed_email, hashed_phone_number, and address_info.
 	//
 	// Types that are valid to be assigned to Identifier:
 	//
@@ -265,6 +281,8 @@ type isUserIdentifier_Identifier interface {
 
 type UserIdentifier_HashedEmail struct {
 	// Hashed email address using SHA-256 hash function after normalization.
+	// Normalize the email address by trimming leading and trailing whitespace
+	// and converting all characters to lowercase before hashing with SHA-256.
 	// Accepted for Customer Match, Store Sales, ConversionUploadService, and
 	// ConversionAdjustmentUploadService.
 	HashedEmail string `protobuf:"bytes,7,opt,name=hashed_email,json=hashedEmail,proto3,oneof"`
@@ -272,7 +290,9 @@ type UserIdentifier_HashedEmail struct {
 
 type UserIdentifier_HashedPhoneNumber struct {
 	// Hashed phone number using SHA-256 hash function after normalization
-	// (E164 standard). Accepted for Customer Match, Store Sales,
+	// (E164 standard). Normalize the phone number by trimming whitespace and
+	// formatting in E.164 format (for example, `+16502531234`) before hashing
+	// with SHA-256. Accepted for Customer Match, Store Sales,
 	// ConversionUploadService, and ConversionAdjustmentUploadService.
 	HashedPhoneNumber string `protobuf:"bytes,8,opt,name=hashed_phone_number,json=hashedPhoneNumber,proto3,oneof"`
 }

@@ -116,6 +116,22 @@ type internalGoogleAdsClient interface {
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 //
 // Service to fetch data and metrics across resources.
+// Use the interactive Google Ads Query
+// Builder (at /google-ads/api/fields/latest/overview_query_builder)
+// to construct and validate Google Ads Query Language (GAQL) queries.
+//
+// Search versus SearchStream:
+//
+//	Search: Paginated using next_page_token with up to 10,000 rows per
+//	page. Caches pages across requests. Best for small result sets (< 10,000
+//	rows) or user-driven paginated interfaces.
+//
+//	SearchStream: Delivers a single stream of response batches with up to
+//	10,000 rows per batch. Lower overhead without request caching. Best for large
+//	result sets (> 10,000 rows) or batch reporting workloads.
+//
+// For more details, see Streaming versus
+// paging (at /google-ads/api/docs/reporting/streaming).
 type GoogleAdsClient struct {
 	// The internal transport-dependent client.
 	internalClient internalGoogleAdsClient
@@ -148,6 +164,11 @@ func (c *GoogleAdsClient) Connection() *grpc.ClientConn {
 }
 
 // Search returns all rows that match the search query.
+// Uses pagination (next_page_token) with up to 10,000 rows per page. For
+// result sets larger than 10,000 rows, prefer
+// GoogleAdsService.SearchStream.
+// To build and validate queries, use the Google Ads Query
+// Builder (at /google-ads/api/fields/latest/overview_query_builder).
 //
 // List of thrown errors:
 // AuthenticationError (at )
@@ -165,6 +186,12 @@ func (c *GoogleAdsClient) Search(ctx context.Context, req *servicespb.SearchGoog
 }
 
 // SearchStream returns all rows that match the search stream query.
+// Streams batches of rows over a single connection without pagination
+// overhead, making it preferred over
+// GoogleAdsService.Search
+// for large result sets (> 10,000 rows). To build and validate queries, use
+// the Google Ads Query
+// Builder (at /google-ads/api/fields/latest/overview_query_builder).
 //
 // List of thrown errors:
 // AuthenticationError (at )
@@ -320,6 +347,22 @@ type googleAdsGRPCClient struct {
 // The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
 // Service to fetch data and metrics across resources.
+// Use the interactive Google Ads Query
+// Builder (at /google-ads/api/fields/latest/overview_query_builder)
+// to construct and validate Google Ads Query Language (GAQL) queries.
+//
+// Search versus SearchStream:
+//
+//	Search: Paginated using next_page_token with up to 10,000 rows per
+//	page. Caches pages across requests. Best for small result sets (< 10,000
+//	rows) or user-driven paginated interfaces.
+//
+//	SearchStream: Delivers a single stream of response batches with up to
+//	10,000 rows per batch. Lower overhead without request caching. Best for large
+//	result sets (> 10,000 rows) or batch reporting workloads.
+//
+// For more details, see Streaming versus
+// paging (at /google-ads/api/docs/reporting/streaming).
 func NewGoogleAdsClient(ctx context.Context, opts ...option.ClientOption) (*GoogleAdsClient, error) {
 	clientOpts := defaultGoogleAdsGRPCClientOptions()
 	if newGoogleAdsClientHook != nil {

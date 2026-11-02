@@ -1469,14 +1469,12 @@ type Campaign_ShoppingSetting struct {
 	// take precedence over those with lower priorities.
 	// This field is required for Shopping campaigns, with values between 0 and
 	// 2, inclusive.
-	// This field is optional for Smart Shopping campaigns, but must be equal to
-	// 3 if set.
 	CampaignPriority *int32 `protobuf:"varint,7,opt,name=campaign_priority,json=campaignPriority,proto3,oneof" json:"campaign_priority,omitempty"`
 	// Whether to include local products.
 	EnableLocal *bool `protobuf:"varint,8,opt,name=enable_local,json=enableLocal,proto3,oneof" json:"enable_local,omitempty"`
-	// Immutable. Whether to target Vehicle Listing inventory. This field is
-	// supported only in Smart Shopping Campaigns. For setting Vehicle Listing
-	// inventory in Performance Max campaigns, use `listing_type` instead.
+	// Immutable. Whether to target Vehicle Listing inventory. This field is no
+	// longer supported. Use Performance Max or Shopping campaigns with
+	// `listing_type` to target Vehicle Listing inventory.
 	UseVehicleInventory bool `protobuf:"varint,9,opt,name=use_vehicle_inventory,json=useVehicleInventory,proto3" json:"use_vehicle_inventory,omitempty"`
 	// The list of Google Ads accounts IDs of advertising partners cooperating
 	// within the campaign.

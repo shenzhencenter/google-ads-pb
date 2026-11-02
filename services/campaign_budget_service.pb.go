@@ -42,6 +42,11 @@ const (
 
 // Request message for
 // [CampaignBudgetService.MutateCampaignBudgets][google.ads.googleads.v26.services.CampaignBudgetService.MutateCampaignBudgets].
+//
+// Update operations in `operations` require an `update_mask` specifying the
+// fields to modify. Note that `explicitly_shared` defaults to `true` if
+// unspecified. A non-shared budget can be updated to explicitly shared, but an
+// explicitly shared budget cannot become non-shared.
 type MutateCampaignBudgetsRequest struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Required. The ID of the customer whose campaign budgets are being modified.
@@ -129,9 +134,15 @@ func (x *MutateCampaignBudgetsRequest) GetResponseContentType() enums.ResponseCo
 }
 
 // A single operation (create, update, remove) on a campaign budget.
+//
+// Update operations require an `update_mask` specifying which fields to modify.
+// Note that `explicitly_shared` defaults to `true` if unspecified. A non-shared
+// budget can be updated to explicitly shared, but an explicitly shared budget
+// cannot become non-shared.
 type CampaignBudgetOperation struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// FieldMask that determines which resource fields are modified in an update.
+	// Required for `update` operations.
 	UpdateMask *fieldmaskpb.FieldMask `protobuf:"bytes,4,opt,name=update_mask,json=updateMask,proto3" json:"update_mask,omitempty"`
 	// The mutate operation.
 	//
@@ -222,12 +233,18 @@ type isCampaignBudgetOperation_Operation interface {
 
 type CampaignBudgetOperation_Create struct {
 	// Create operation: No resource name is expected for the new budget.
+	// Note that `explicitly_shared` defaults to `true` if unspecified. A
+	// non-shared budget can be updated to explicitly shared, but an explicitly
+	// shared budget cannot become non-shared.
 	Create *resources.CampaignBudget `protobuf:"bytes,1,opt,name=create,proto3,oneof"`
 }
 
 type CampaignBudgetOperation_Update struct {
 	// Update operation: The campaign budget is expected to have a valid
-	// resource name.
+	// resource name, and `update_mask` must be populated with the fields to
+	// modify. Note that `explicitly_shared` defaults to `true` if
+	// unspecified. A non-shared budget can be updated to explicitly shared,
+	// but an explicitly shared budget cannot become non-shared.
 	Update *resources.CampaignBudget `protobuf:"bytes,2,opt,name=update,proto3,oneof"`
 }
 

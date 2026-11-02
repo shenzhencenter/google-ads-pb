@@ -44,6 +44,11 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 //
 // Service to manage offline user data jobs.
+// For help diagnosing and resolving conversion or user data upload issues, see
+// the conversion upload
+// [troubleshooting guide](/google-ads/api/docs/conversions/troubleshooting)
+// (or use the `troubleshoot-conversions` workflow in the [Google Ads API
+// Developer Assistant](/google-ads/api/docs/developer-toolkit/ai-assistant)).
 type OfflineUserDataJobServiceClient interface {
 	// Creates an offline user data job.
 	//
@@ -136,6 +141,11 @@ func (c *offlineUserDataJobServiceClient) RunOfflineUserDataJob(ctx context.Cont
 // for forward compatibility.
 //
 // Service to manage offline user data jobs.
+// For help diagnosing and resolving conversion or user data upload issues, see
+// the conversion upload
+// [troubleshooting guide](/google-ads/api/docs/conversions/troubleshooting)
+// (or use the `troubleshoot-conversions` workflow in the [Google Ads API
+// Developer Assistant](/google-ads/api/docs/developer-toolkit/ai-assistant)).
 type OfflineUserDataJobServiceServer interface {
 	// Creates an offline user data job.
 	//

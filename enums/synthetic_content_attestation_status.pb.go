@@ -43,9 +43,11 @@ const (
 	SyntheticContentAttestationStatusEnum_UNSPECIFIED SyntheticContentAttestationStatusEnum_SyntheticContentAttestationStatus = 0
 	// Used for return values only. Represents value unknown in this version.
 	SyntheticContentAttestationStatusEnum_UNKNOWN SyntheticContentAttestationStatusEnum_SyntheticContentAttestationStatus = 1
-	// The content is attested as not synthetic.
+	// The content is attested as not needing to be labeled as created or edited
+	// with AI.
 	SyntheticContentAttestationStatusEnum_NOT_SYNTHETIC SyntheticContentAttestationStatusEnum_SyntheticContentAttestationStatus = 2
-	// The content is attested as synthetic.
+	// The content is attested as needing to be labeled as created or edited
+	// with AI.
 	SyntheticContentAttestationStatusEnum_IS_SYNTHETIC SyntheticContentAttestationStatusEnum_SyntheticContentAttestationStatus = 3
 )
 
